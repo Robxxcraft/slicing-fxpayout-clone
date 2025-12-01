@@ -29,18 +29,20 @@ const benefits: Benefit[] = [
 
 const Benefits = () => {
   return (
-    <section className="relative">
-      <div className="px-56 absolute top-1/2 -translate-y-1/2">
-        <div className="flex gap-4 w-fit">
+    <section className="relative z-9999">
+      <div className="px-5 xl:px-24 2xl:px-56 md:absolute xl:top-1/2 w-full -translate-y-[10%] md:-translate-y-[20%] xl:-translate-y-1/2 flex justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-fit">
           {benefits.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 w-full max-w-[460px] rounded-2xl bg-white border border-[rgba(34,34,34,0.1)] shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
+              className="group p-5 w-full max-w-[460px] rounded-2xl bg-white border border-[rgba(34,34,34,0.1)] shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)] hover:bg-linear-to-t from-dark-primary to-primary">
               <div className="mb-3 flex gap-3 items-center">
                 <img src={`/${item.icon}`} alt={`icon ${item.title}`} />
-                <p className="text-lg font-semibold leading-7">{item.title}</p>
+                <p className="text-base 2xl:text-lg font-semibold leading-7 group-hover:text-white">
+                  {item.title}
+                </p>
               </div>
-              <p>{item.description}</p>
+              <p className="group-hover:text-white">{item.description}</p>
             </div>
           ))}
         </div>

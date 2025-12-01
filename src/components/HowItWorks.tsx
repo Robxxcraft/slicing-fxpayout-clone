@@ -1,0 +1,99 @@
+import { FaArrowRight } from "react-icons/fa6";
+
+type Workflow = {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+};
+
+const workflows: Workflow[] = [
+  {
+    title: "mulai",
+    subtitle: "Daftar lewat link resmi RebateFX",
+    description:
+      "Buat akun RebateFX dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan.",
+    image: "flow-start.png",
+  },
+  {
+    title: "trading",
+    subtitle: "Trading seperti biasa di broker Anda",
+    description:
+      "Lanjutkan aktivitas trading tanpa perubahan spread, leverage, atau kondisi lain. Semua tetap mengikuti aturan broker.",
+    image: "flow-trade.png",
+  },
+  {
+    title: "komisi",
+    subtitle: "Broker mengirim komisi IB ke RebateFX",
+    description:
+      "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke RebateFX secara otomatis.",
+    image: "flow-commision.png",
+  },
+  {
+    title: "rebate",
+    subtitle: "Rebate hingga 80% ke akun Anda",
+    description:
+      "Kami mengembalikan hingga 80% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet.",
+    image: "flow-rebate.png",
+  },
+];
+
+const HowItWorks = () => {
+  return (
+    <section className="px-5 xl:px-24 2xl:px-56 pt-4 md:pt-[270px] xl:pt-56">
+      <div className="flex flex-col items-center text-center">
+        <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
+          <img src="/workflow.svg" alt="workflow" />
+          <h3 className="text-base 2xl:text-xl font-semibold text-white">
+            CARA KERJA
+          </h3>
+        </div>
+        <h2 className="my-4 text-[28px] md:text-[36px] 2xl:text-[44px] font-bold leading-[132%]">
+          Cara Kerja RebateFX dalam 4 Langkah Sederhana
+        </h2>
+        <p className="text-base 2xl:text-xl leading-[160%]">
+          Tanpa mengubah strategi, Anda cukup trading seperti biasa. RebateFX
+          yang mengurus aliran komisi menjadi cashback untuk Anda.
+        </p>
+      </div>
+      <div className="mt-6 2xl:mt-10 flex justify-between gap-10 md:gap-3 2xl:gap-2 flex-wrap md:flex-nowrap">
+        {workflows.map((workflow, idx) => (
+          <div key={idx} className="relative">
+            <div className="p-4 xl:p-6 w-full max-w-full md:max-w-[360px] bg-[#F9F9F9] rounded-[30px] 2xl:rounded-[40px]">
+              <div className="flex items-center 2xl:gap-3 mb-2">
+                <div className="flex items-center justify-center size-[42px] bg-white rounded-full">
+                  <span className="text-base font-bold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                    {idx + 1}
+                  </span>
+                </div>
+                <p className="text-lg 2xl:text-2xl font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                  {workflow.title.toLocaleUpperCase()}
+                </p>
+              </div>
+              <h4 className="text-lg 2xl:text-2xl font-medium leading-[160%] mb-4">
+                {workflow.subtitle}
+              </h4>
+              <img
+                src={`/${workflow.image}`}
+                alt="Workflow image"
+                className="w-full h-[200px] rounded-2xl object-contain"
+              />
+              <p className="text-base 2xl:text-xl text-[rgba(0,0,0,0.5)] leading-[160%]">
+                {workflow.description}
+              </p>
+            </div>
+            {idx !== workflows.length - 1 && (
+              <div className="absolute top-full md:top-1/2 right-1/2 md:-right-8 translate-x-1/2 md:translate-x-0 -translate-y-1.5 md:-translate-y-1/2 flex items-center justify-center size-14 bg-[#EBECE7] rounded-full z-50 rotate-90 md:rotate-0">
+                <div className="flex items-center justify-center size-10 bg-linear-to-t from-dark-primary to-primary rounded-full">
+                  <FaArrowRight color="#fff" />
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorks;
