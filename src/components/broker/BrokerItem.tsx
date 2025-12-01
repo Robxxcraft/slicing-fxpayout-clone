@@ -1,4 +1,4 @@
-import type { BrokerPartner } from "./BrokerList";
+import type { BrokerPartner } from "../../utils/brokerPartner";
 
 const BrokerItem = ({ item }: { item: BrokerPartner }) => {
   return (
