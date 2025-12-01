@@ -63,7 +63,7 @@ const BrokerItem = ({ item }: { item: BrokerPartner }) => {
           </tbody>
         </table>
       </div>
-      <div className="mt-7 flex items-center gap-2">
+      <div className="mt-7 flex flex-col md:flex-row items-center gap-2">
         <button className="py-4 w-full  bg-linear-to-t from-dark-primary to-primary border border-white text-white rounded-full cursor-pointer">
           Daftar Broker
         </button>
