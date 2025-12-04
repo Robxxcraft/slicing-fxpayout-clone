@@ -17,7 +17,7 @@ import Footer from "../components/Footer";
 const BrokerDetailPage = () => {
 
   useEffect(() => {
-    document.title = "Rebate FX";
+    document.title = "Exness - Broker | Rebate FX";
   }, []);
 
   return (
