@@ -7,6 +7,11 @@
   --color-primary: #4160ff;
   --color-dark-primary: #213269;
   --color-light-gray: #e9e9e9;
+  --color-my-light-blue: #E3EBFF;
+  --color-my-red: #ff1500;
+  --color-my-purple: #170F49;
+  --color-my-half-purple: #6F6C8F;
+  --color-my-yellow: #FFC107;
 }
 
 ._no-scrollbar::-webkit-scrollbar {
@@ -32,3 +37,11 @@
 .next-btn {
   background: #000;
 }
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+

@@ -1,25 +1,26 @@
 import type { BrokerPartner } from "../../utils/brokerPartner";
+import Button from "../ui/Button";
 
 const BrokerItem = ({ item }: { item: BrokerPartner }) => {
   return (
-    <div className="p-6 w-full border border-[rgba(34,34,34,0.1)] rounded-3xl shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
+    <div className="p-4 md:p-5 2xl:p-6 w-full border border-[rgba(34,34,34,0.1)] rounded-2xl md:rounded-3xl shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3 2xl:gap-4">
           <img
             src={`/broker/${item.image_profil}`}
             alt={item.username}
-            className="size-14 2xl:size-16"
+            className="size-14 2xl:size-16 rounded-full object-cover object-center"
           />
           <h4 className="text-xl 2xl:text-2xl font-semibold text-[#222222]">
             {item.username}
           </h4>
         </div>
-        <button className="px-6 2xl:px-8 py-3 bg-linear-to-t from-dark-primary to-primary font-medium text-white rounded-full cursor-pointer">
+        <Button variant="primary-light" size="md" className="py-3! text-sm! 2xl:text-base! font-medium!">
           Pilih
-        </button>
+        </Button>
       </div>
       <p className="mt-2 text-[#222222] leading-[160%]">{item.description}</p>
-      <div className="my-4 h-[0.5px] w-full bg-[rgba(0,0,0,0.2)]"></div>
+      <div className="my-3 lg:my-4 h-[0.5px] w-full bg-[rgba(0,0,0,0.2)]"></div>
       <div>
         <p className="text-sm font-semibold text-[#222222]">
           Rebate per Instrumen
@@ -63,13 +64,13 @@ const BrokerItem = ({ item }: { item: BrokerPartner }) => {
           </tbody>
         </table>
       </div>
-      <div className="mt-7 flex flex-col md:flex-row items-center gap-2">
-        <button className="py-4 w-full  bg-linear-to-t from-dark-primary to-primary border border-white text-white rounded-full cursor-pointer">
+      <div className="mt-4 md:mt-5 xl:mt-7 flex flex-col md:flex-row items-center gap-2">
+        <Button variant="primary-light" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
           Daftar Broker
-        </button>
-        <button className="py-4 w-full  border border-black text-black rounded-full cursor-pointer">
+        </Button>
+        <Button buttonType="link" urlTo={`/broker/${item.url}`} variant="outline" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
           Link Broker
-        </button>
+        </Button>
       </div>
     </div>
   );

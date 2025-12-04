@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { languages, type Language } from "../utils/languageSupport";
 import LanguageSelector from "./LanguageSelector";
 import { listNavigation } from "../utils/listNavigation";
+import Button from "./ui/Button";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
@@ -34,7 +35,7 @@ const Navbar = ({ active }: { active: string }) => {
 
   return (
     <nav
-      className="z-99999999 w-full fixed px-5 xl:px-24 2xl:px-56 max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
+      className="z-99999999 w-full fixed px-5 xl:px-24 2xl:px-56 max-h-20 md:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:
@@ -48,7 +49,7 @@ const Navbar = ({ active }: { active: string }) => {
         <img
           src="/logo.svg"
           alt="logo fx payout"
-          className="w-8 2xl:w-[50px]"
+          className="w-10 xl:w-12 2xl:w-[50px]"
         />
         <span className="text-xl 2xl:text-3xl font-semibold text-white">
           FXPAYOUT
@@ -73,79 +74,78 @@ const Navbar = ({ active }: { active: string }) => {
           </span>
         ))}
       </div>
-      <div className="hidden xl:flex gap-4 items-center">
+      <div className="hidden xl:flex gap-2 2xl:gap-4 items-center">
         <LanguageSelector
           selectedLanguage={selectedLanguage}
           open={openLanguageSelector}
           setOpen={setOpenLanguageSelector}
           onChangeLanguage={handleChangeLanguage}
         />
-        <Link to="#">
-          <span className="px-6 2xl:px-10 py-3 text-base 2xl:text-xl font-medium text-light-gray border border-white rounded-full hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-            Login
-          </span>
-        </Link>
-        <Link to="#">
-          <span className="px-6 2xl:px-10 py-3 text-base 2xl:text-xl font-medium text-black bg-white border border-white rounded-full hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-            Daftar
-          </span>
-        </Link>
+        <Button buttonType="link" urlTo="#" variant="outline-light" size="lg" className="py-3! font-medium!">
+          Login
+        </Button>
+        <Button buttonType="link" urlTo="#" variant="light" size="lg" className="py-3! font-medium!">
+          Daftar
+        </Button>
       </div>
       <RxHamburgerMenu
         onClick={() => setOpenMenu(true)}
-        className="block xl:hidden text-[28px] text-white"
+        className="block xl:hidden text-2xl text-white cursor-pointer"
       />
 
       {/* MOBILE MENU */}
 
       <div
-        className="fixed top-0 left-0 py-10 flex flex-col xl:hidden bg-white w-full min-h-screen overflow-scroll transition-all duration-300"
+        className="fixed top-0 left-0 py-5 flex flex-col xl:hidden bg-white w-full min-h-screen overflow-auto transition-all duration-300"
         style={{
           left: openMenu ? "0" : "-100%",
         }}>
-        <div className="px-5 md:px-10 mb-6 flex item-center justify-between">
+        <div className="px-5 md:px-10 mb-4 flex items-center justify-between">
           <div className="flex gap-2 items-center">
             <img
               src="/logoBlue.svg"
               alt="logo fx payout"
-              className="w-[50px]"
+              className="w-10"
             />
-            <span className="text-3xl font-semibold text-primary">
+            <span className="text-2xl font-semibold text-primary">
               FXPAYOUT
             </span>
           </div>
-          <IoClose onClick={() => setOpenMenu(false)} className="text-[40px]" />
+          <IoClose onClick={() => {
+            setOpenMenu(false); 
+            setOpenLanguageSelector(false);
+          }} className="text-3xl cursor-pointer" />
         </div>
         {listNavigation.map(({ title, url }, index) => (
           <span
             key={index}
             className={`${
               active.toLocaleLowerCase() == title.toLocaleLowerCase()
-                ? "font-bold"
+                ? "font-medium"
                 : "font-normal"
-            } py-4 px-5 md:px-10 text-black text-2xl md:text-4xl border-b border-black/30 hover:font-bold transition-all duration-300 ease-out`}>
+            } py-4 px-5 md:px-10 text-black text-base md:text-base border-b border-black/30 hover:font-bold transition-all duration-300 ease-out`}>
             <Link to={url}>{title}</Link>
           </span>
         ))}
-        <div className="px-10 mt-6">
+        <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">
+          <Link to="#" className="w-fit text-center">
+            <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
+              Login
+            </span>
+          </Link>
+          <Link to="#" className="w-fit text-center">
+            <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
+              Daftar
+            </span>
+          </Link>
+        </div>
+        <div className="mx-auto mt-4">
           <LanguageSelector
             selectedLanguage={selectedLanguage}
             open={openLanguageSelector}
             setOpen={setOpenLanguageSelector}
             onChangeLanguage={handleChangeLanguage}
           />
-        </div>
-        <div className="px-5 md:px-10 mt-4 flex items-center w-full gap-4">
-          <Link to="#" className="w-full text-center">
-            <span className="block w-full py-3 text-xl font-medium bg-primary text-white border border-white rounded-full hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-              Login
-            </span>
-          </Link>
-          <Link to="#" className="w-full text-center">
-            <span className="block w-full py-3 text-base 2xl:text-xl font-medium text-black bg-white border border-black rounded-full hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-              Daftar
-            </span>
-          </Link>
         </div>
       </div>
     </nav>

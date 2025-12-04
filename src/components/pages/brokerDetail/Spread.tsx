@@ -1,0 +1,72 @@
+import HeadingSection from './ui/HeadingSection';
+import SubHeadingSection from './ui/SubHeadingSection';
+import BoundedIcon from './ui/BoundedIcon';
+import ContentHead from './ui/ContentHead';
+import ContentBody from './ui/ContentBody';
+
+type SpreadStructure = {
+  pair: string;
+  icon: string;
+  spreads: {
+    accountType: string;
+    spread: string;
+  }[]
+}
+
+const spreadItems: SpreadStructure[] = [
+  {
+    "pair": "EUR/USD",
+    "icon": "eur-usd.svg",
+    "spreads": [
+      { "accountType": "Raw", "spread": "0.0 - 0.1" },
+      { "accountType": "Zero", "spread": "0.0" },
+      { "accountType": "Pro", "spread": "0.3 - 0.7" },
+      { "accountType": "Standar", "spread": "0.8 - 1.2" },
+      { "accountType": "Standar Cent", "spread": "0.0" }
+    ]
+  },
+  {
+    "pair": "XAU/USD",
+    "icon": "xau-usd.svg",
+    "spreads": [
+      { "accountType": "Raw", "spread": "0.1 - 0.3" },
+      { "accountType": "Zero", "spread": "0.0" },
+      { "accountType": "Pro", "spread": "0.3 - 0.6" },
+      { "accountType": "Standar", "spread": "0.0" },
+      { "accountType": "Standar Cent", "spread": "0.0" }
+    ]
+  }
+];
+
+const Spread = () => {
+  return (
+    <section id="spread-komisi" className="scroll-mt-18 lg:scroll-mt-0 mt-10 md:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 xl:px-24 2xl:px-56">
+      <HeadingSection>Spread</HeadingSection>
+      <SubHeadingSection>Perbandingan spread pada instrumen utama broker.</SubHeadingSection>
+      <div className="mt-5 md:mt-6 2xl:mt-8 flex flex-col md:flex-row gap-4 md:gap-5 2xl:gap-6">
+        {spreadItems.map((item,idx) => (
+          <div key={idx} className="p-5 md:p-6 2xl:p-8 max-w-full md:max-w-1/2 w-full border border-[#D0D0D0] bg-white rounded-3xl">
+            <div className="flex items-center gap-4 md:gap-6">
+              <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="icon"/>
+              <HeadingSection variant="second">{item.pair}</HeadingSection>
+            </div>
+            <div className="mt-4 md:mt-5 2xl:mt-10">
+              <div className="py-2 2xl:py-3 text-sm 2xl:text-base flex justify-between w-full border-b border-[#828282]/50">
+                <p>Tipe Akun</p>
+                <p>Spread</p>
+              </div>
+              {item.spreads.map((spread, i) => (
+                <div key={i} className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
+                  <ContentHead>{spread.accountType}</ContentHead>
+                  <ContentBody>{spread.spread}</ContentBody>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default Spread;

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Benefits from "../components/Benefits";
 import CtaSection from "../components/CtaSection";
 import Footer from "../components/Footer";
@@ -9,6 +10,10 @@ import Reviews from "../components/Reviews";
 import Rewards from "../components/Rewards";
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title = "Rebate FX";
+  }, []);
+
   return (
     <div className="font-inter">
       <Navbar active="home" />

@@ -3,6 +3,7 @@ import { IoIosCalculator } from "react-icons/io";
 import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronDown } from "react-icons/fa6";
 import { brokerPartners } from "../utils/brokerPartner";
+import Button from "./ui/Button";
 
 const HeroHome = () => {
   const [lotperMonth, setLotperMoth] = useState<number>(1);
@@ -28,27 +29,27 @@ const HeroHome = () => {
       />
 
       {/* MAIN HERO */}
-      <div className="z-999 flex flex-col gap-6 2xl:gap-8 max-w-full xl:max-w-[60%] text-white">
-        <div className="py-2 px-6 flex items-center gap-2.5 w-fit border border-white bg-[rgba(255,255,255,0.2)] rounded-full">
+      <div className="z-999 flex flex-col gap-4 md:gap-5 2xl:gap-8 max-w-full xl:max-w-[60%] text-white">
+        <div className="py-2 px-4 md:px-5 2xl:px-6 flex items-center gap-2.5 w-fit border border-white bg-[rgba(255,255,255,0.2)] rounded-full">
           <img src="/badgeCirclePercent.svg" alt="badge percent" />
-          <span className="text-base 2xl:text-xl font-medium text-light-gray">
+          <span className="text-sm 2xl:text-xl font-medium text-light-gray">
             Dapatkan Rebate 80% Untuk Trader
           </span>
         </div>
         <h1 className="font-wix-madefor-display font-bold text-[36px] md:text-[50px] 2xl:text-[64px] leading-[120%]">
           Trading Lebih Untung — Rebate Hingga 80% untuk Trader Indonesia.
         </h1>
-        <p className="text-base md:text-lg 2xl:text-2xl font-medium text-light-gray md:leading-[200%] mb-3 2xl:mb-6">
+        <p className="text-base 2xl:text-2xl font-medium text-light-gray md:leading-[200%] md:mb-3 2xl:mb-6">
           RebateFX adalah platform rebate forex terpercaya yang memberikan
           cashback hingga 80% dari komisi broker langsung kepada trader.
         </p>
-        <div className="flex flex-col md:flex-row gap-4">
-          <button className="py-3 2xl:py-6 px-[60px] bg-white border border-white rounded-full font-medium text-lg 2xl:text-2xl text-black cursor-pointer hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-4">
+          <Button variant="light" size="xl" className="py-4! 2xl:py-6! text-base! font-medium!">
             Daftar Sekarang
-          </button>
-          <button className="py-3 2xl:py-6 px-[60px] border border-white rounded-full font-medium text-lg 2xl:text-2xl text-white cursor-pointer hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
+          </Button>
+          <Button variant="outline-light" size="xl" className="py-4! 2xl:py-6! text-base! font-medium!">
             Hitung Rebate
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -57,17 +58,17 @@ const HeroHome = () => {
         <div className="absolute -top-[25%] left-1/2 bg-[#ABF3DB] size-[140px] rounded-full blur-[60px]"></div>
         <div className="absolute top-0 left-[10%] bg-[#ABF3DB] size-[300px] rounded-full blur-[120px]"></div>
 
-        <div className="relative z-9999 flex flex-col gap-4 px-6 py-8 h-full w-full max-w-[470px] rounded-[20px] bg-white">
+        <div className="px-5 md:px-6 py-6 md:py-8 relative z-9999 flex flex-col gap-2 2xl:gap-4 h-full w-full max-w-[470px] rounded-[20px] bg-white">
           <div>
-            <div className="flex gap-3 items-center mb-2">
+            <div className="flex gap-2 2xl:gap-3 items-center mb-2">
               <IoIosCalculator className="text-primary text-4xl" />
               <p className="text-2xl font-semibold">Estimasi Rebate</p>
             </div>
-            <p className="text-base font-medium text-[rgba(0,0,0,0.5)] leading-[178%]">
+            <p className="text-base font-medium text-[rgba(0,0,0,0.5)] 2xl:leading-[178%]">
               Pilih broker dan masukkan lot per bulang untuk estimasi cepat
             </p>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2 2xl:gap-4">
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="broker"
@@ -114,18 +115,18 @@ const HeroHome = () => {
             <p className="text-[40px] font-semibold text-[#101828]">$6.00</p>
           </div>
           <div className="w-full flex flex-col md:flex-row items-center gap-2">
-            <button className="py-4 w-full max-w-full md:max-w-1/2 bg-linear-to-t from-dark-primary to-primary text-base font-medium text-white border border-white rounded-full cursor-pointer hover:brightness-110 transition-all duration-300 ease-out">
+            <Button variant="primary-light" size="md" className="px-0! w-full! text-sm! 2xl:text-base font-medium!">
               Daftar & Dapatkan
-            </button>
-            <button className="py-4 w-full max-w-full md:max-w-1/2 text-base font-medium text-black border border-black rounded-full cursor-pointer hover:bg-[rgba(0,0,0,0.1)] transition-all duration-300 ease-out">
+            </Button>
+            <Button variant="outline" size="md" className="px-0! w-full! text-sm! 2xl:text-base font-medium!">
               Klaim Manual
-            </button>
+            </Button>
           </div>
-          <div className="mt-4 md:mt-8 p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
-            <span className="flex items-center justify-center w-[60px] h-[30px] border border-primary rounded-full">
-              <TiInfoLarge className="text-[20px] text-primary" />
+          <div className="mt-4 2xl:mt-8 p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
+            <span className="flex items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
+              <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />
             </span>
-            <p className="text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
+            <p className="w-fit text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
               Kami mengembalikan hingga 80% komisi IB kepada trader. Proses
               cepat, aman, dan transparan tanpa mengubah spread atau kondisi
               trading.

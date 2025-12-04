@@ -12,15 +12,15 @@ import "swiper/css/free-mode";
 const Reviews = () => {
   return (
     <section className="mb-20 xl:mb-0">
-      <div className="px-5 xl:px-24 2xl:px-56 pt-18 xl:pt-[120px] 2xl:pt-56">
+      <div className="px-5 xl:px-24 2xl:px-56 pt-18 2xl:pt-28">
         <div className="flex flex-col items-center text-center">
-          <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
-            <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
-            <h3 className="text-base 2xl:text-xl font-semibold text-white">
+          <div className="px-4 md:px-5 2xl:px-6 py-2 w-fit flex gap-1 md:gap-2 items-center bg-primary rounded-full">
+            <BiSolidQuoteAltRight className="scale-x-[-1] text-xl md:text-2xl text-[#FAC14C]" />
+            <h3 className="text-sm md:text-base 2xl:text-xl font-semibold text-white">
               TESTIMONI
             </h3>
           </div>
-          <h2 className="my-4 text-[28px] md:text-[36px] 2xl:text-[44px] font-bold leading-[132%]">
+          <h2 className="my-2 md:my-3 2xl:my-4 text-[28px] md:text-[36px] 2xl:text-[44px] font-bold leading-[132%]">
             Apa Kata Trader yang Menggunakan RebateFX?
           </h2>
           <p className="text-base 2xl:text-xl leading-[160%]">
@@ -30,14 +30,14 @@ const Reviews = () => {
         </div>
       </div>
       <div className="relative">
-        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex gap-3.5">
+        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3.5">
           {/* BUTTON PREV */}
-          <button className="swiper-button-prev-custom flex justify-center items-center z-10 size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
+          <button className="swiper-button-prev-custom flex justify-center items-center z-10 size-12 md:size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
             <IoArrowBackOutline size={24} />
           </button>
 
           {/* BUTTON NEXT */}
-          <button className="swiper-button-next-custom flex justify-center items-center z-10 size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
+          <button className="swiper-button-next-custom flex justify-center items-center z-10 size-12 md:size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
             <IoArrowForward size={24} />
           </button>
         </div>
@@ -57,7 +57,7 @@ const Reviews = () => {
               freeMode: true,
             },
           }}
-          className="mt-10">
+          className="mt-6 md:mt-8 xl:mt-10">
           {testimonials.map((testimonial, idx) => (
             <SwiperSlide
               key={idx}
@@ -65,7 +65,7 @@ const Reviews = () => {
                 idx === 0 ? "ml-5 xl:ml-24 2xl:ml-56" : "md:ml-6"
               } ${
                 idx === testimonials.length - 1 && "mr-5 xl:mr-24 2xl:mr-56"
-              } relative p-6 2xl:p-10 w-fit md:w-[560px]! 2xl:w-[660px]! min-h-[260px]! max-h-[300px] bg-[#4160FB]/80 rounded-[20px]`}>
+              } relative p-5 md:p-6 2xl:p-10 w-fit md:w-[560px]! 2xl:w-[660px]! min-h-[200px] md:min-h-[260px]! max-h-[300px] bg-[#4160FB]/80 rounded-[20px]`}>
               <img
                 src="/quote.png"
                 alt="quote icon"
@@ -77,19 +77,19 @@ const Reviews = () => {
                     {Array.from({ length: testimonial.rate }).map((num) => (
                       <PiStarFill
                         key={`${testimonial.username}-${num}`}
-                        className="text-xl md:text-lg 2xl:text-xl text-[#FFC250]"
+                        className="text-2xl md:text-lg 2xl:text-xl text-[#FFC250]"
                       />
                     ))}
                   </div>
-                  <p className="mt-6 text-xl md:text-[25px] 2xl:text-[32px] leading-[160%] text-white">
+                  <p className="mt-4 md:mt-5 2xl:mt-6 text-xl md:text-[25px] 2xl:text-[32px] leading-[160%] text-white">
                     {testimonial.comment}
                   </p>
                 </div>
-                <div className="mt-6 flex gap-4">
+                <div className="mt-4 md:mt-5 2xl:mt-6 flex gap-3 md:gap-4">
                   <img
                     src={`/testimonial/${testimonial.image_profil}`}
                     alt={`Profil ${testimonial.username}`}
-                    className="size-[60px] rounded-full object-cover"
+                    className="size-[54px] md:size-[60px] rounded-full object-cover"
                   />
                   <div>
                     <p className="text-lg md:text-[21px] 2xl:text-[26px] text-white -tracking-[2.5%]">

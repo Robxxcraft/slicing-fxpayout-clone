@@ -1,0 +1,57 @@
+import { IoArrowForwardOutline } from "react-icons/io5";
+import Button from "../../ui/Button";
+import { TiInfoLarge } from "react-icons/ti";
+
+const RebateProgram = () => {
+  return (
+    <section className="scroll-mt-18 lg:scroll-mt-0 mt-10 md:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 xl:px-24 2xl:px-56">
+      <div className="px-6 md:px-8 2xl:px-10 py-10 2xl:py-14 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 2xl:gap-8 bg-primary rounded-2xl 2xl:rounded-3xl">
+        <div>
+          <h2 className="text-[32px] 2xl:text-[40px] font-bold leading-[132%] text-white">
+            Program Rebate (Estimasi)
+          </h2>
+          <p className="mt-3 2xl:mt-4 text-base 2xl:text-xl leading-[160%] text-white">
+            Perkiraan rebate yang bisa didapat trader melalul program rebate Anda.
+          </p>
+          <Button className="mt-4 md:mt-5 2xl:mt-6 w-full! md:w-fit!" variant="primary-light" icon={<IoArrowForwardOutline />} iconPosition="right" size="xl">
+            Kalkulator Rebate
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 2xl:gap-6">
+          <div className="px-6 md:px-8 2xl:px-10 py-4 md:py-3 2xl:py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl 2xl:rounded-[20px]">
+            <p className="text-base 2xl:text-xl font-semibold text-white">EUR/USD</p>
+            <div className="mt-2 flex items-end text-white">
+              <p className="text-3xl md:text-[38px] 2xl:text-[48px] leading-14 font-semibold">
+                $6
+              </p>
+              <p className="text-base md:text-lg 2xl:text-2xl leading-10 md:leading-9 2xl:leading-8 tracking-[10%] font-semibold">
+                / lot
+              </p>
+            </div>
+          </div>
+          <div className="px-6 md:px-8 2xl:px-10 py-4 md:py-3 2xl:py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl 2xl:rounded-[20px]">
+            <p className="text-base 2xl:text-xl font-semibold text-white">XAU/USD</p>
+            <div className="mt-2 flex items-end text-white">
+              <p className="text-3xl md:text-[38px] 2xl:text-[48px] leading-14 font-semibold">
+                $10
+              </p>
+              <p className="text-base md:text-lg 2xl:text-2xl leading-10 md:leading-9 2xl:leading-8 tracking-[10%] font-semibold">
+                / lot
+              </p>
+            </div>
+          </div>
+          <div className="col-span-2 p-4 flex gap-2 2xl:gap-3 bg-[#F0F9FF] rounded-[10px]">
+            <span className="flex items-center justify-center size-6 border border-primary rounded-full">
+              <TiInfoLarge className="text-sm text-primary" />
+            </span>
+            <p className="w-fit text-sm font-medium text-black/60">
+              Rebate dapat lebih tinggi untuk akun ECN dan volume trading yang besar, Nilal di atas bersifat estimasi dan dapat disesuaikan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default RebateProgram;

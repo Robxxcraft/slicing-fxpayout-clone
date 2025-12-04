@@ -42,13 +42,14 @@ const HowItWorks = () => {
   return (
     <section className="px-5 xl:px-24 2xl:px-56 pt-4 md:pt-[270px] xl:pt-56">
       <div className="flex flex-col items-center text-center">
-        <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
-          <img src="/workflow.svg" alt="workflow" />
-          <h3 className="text-base 2xl:text-xl font-semibold text-white">
+        <div className="px-4 xl:px-5 2xl:px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
+          <img src="/workflow.svg" alt="workflow" 
+            className="scale-90 md:scale-100"/>
+          <h3 className="text-sm md:text-base 2xl:text-xl font-semibold text-white">
             CARA KERJA
           </h3>
         </div>
-        <h2 className="my-4 text-[28px] md:text-[36px] 2xl:text-[44px] font-bold leading-[132%]">
+        <h2 className="my-2 md:my-3 2xl:my-4 text-[28px] md:text-[36px] 2xl:text-[44px] font-bold leading-[132%]">
           Cara Kerja RebateFX dalam 4 Langkah Sederhana
         </h2>
         <p className="text-base 2xl:text-xl leading-[160%]">
@@ -56,17 +57,17 @@ const HowItWorks = () => {
           yang mengurus aliran komisi menjadi cashback untuk Anda.
         </p>
       </div>
-      <div className="mt-6 2xl:mt-10 flex justify-between gap-10 md:gap-3 2xl:gap-2 flex-wrap md:flex-nowrap">
+      <div className="mt-4 xl:mt-6 2xl:mt-10 flex justify-between gap-10 md:gap-3 2xl:gap-2 flex-wrap md:flex-nowrap">
         {workflows.map((workflow, idx) => (
           <div key={idx} className="relative">
-            <div className="p-4 xl:p-6 w-full max-w-full md:max-w-[360px] bg-[#F9F9F9] rounded-[30px] 2xl:rounded-[40px]">
-              <div className="flex items-center 2xl:gap-3 mb-2">
-                <div className="flex items-center justify-center size-[42px] bg-white rounded-full">
+            <div className="p-3 md:p-4 xl:p-6 w-full max-w-full md:max-w-[360px] bg-[#F9F9F9] rounded-[30px] 2xl:rounded-[40px]">
+              <div className="flex items-center gap-2 2xl:gap-3 mb-2">
+                <div className="flex items-center justify-center size-9 md:size-[42px] bg-white rounded-full">
                   <span className="text-base font-bold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
                     {idx + 1}
                   </span>
                 </div>
-                <p className="text-lg 2xl:text-2xl font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                <p className="text-base md:text-lg 2xl:text-2xl font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
                   {workflow.title.toLocaleUpperCase()}
                 </p>
               </div>

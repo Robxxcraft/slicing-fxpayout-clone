@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BrokerList from "../components/broker/BrokerList";
 import Header from "../components/broker/Header";
 import NotifyBroker from "../components/broker/NotifyBroker";
@@ -8,6 +8,11 @@ import Navbar from "../components/Navbar";
 
 const Broker = () => {
   const [showNotify, setShowNotify] = useState<boolean>(true);
+
+  useEffect(() => {
+    document.title = "Broker | Rebate FX";
+  }, []);
+
   return (
     <div className="font-inter">
       <Navbar active="broker" />
