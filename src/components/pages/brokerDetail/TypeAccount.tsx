@@ -76,7 +76,7 @@ const TypeAccount = () => {
             }
           })}
         </div>
-        <div className="grid grid-cols-1 gap-4 2xl:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 2xl:gap-6">
           {accountDetail.map((detail, idx) => {
             if (idx > 2) {
               return <CardTypeAccount key={idx} account={detail} />
