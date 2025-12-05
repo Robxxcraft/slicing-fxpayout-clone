@@ -71,7 +71,7 @@ const NavigationBar = () => {
                 key={idx}
                 href={url}
                 onClick={() => setOpenMenu(false)}
-                className="px-5 py-2.5 text-base text-black border-b border-black/30 hover:font-medium">
+                className="px-5 py-3 text-base text-black border-b border-black/10 hover:font-medium">
                 {title}
               </a>
             ))}
