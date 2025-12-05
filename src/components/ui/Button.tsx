@@ -29,7 +29,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "h-fit rounded-full text-[15px] xl:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out cursor-pointer border inline-flex items-center justify-center gap-3";
+    "h-fit rounded-full text-[15px] md:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out cursor-pointer border inline-flex items-center justify-center gap-3";
 
   let variantStyles = "";
   let sizeStyles = "";
@@ -58,7 +58,7 @@ export default function Button({
   }
 
   if (size === "xl") {
-    sizeStyles = "px-8 md:px-12 2xl:px-14 py-5 md:py-4 2xl:py-5";
+    sizeStyles = "px-8 md:px-6 lg:px-12 2xl:px-14 py-5 md:py-4 2xl:py-5";
   }
 
   if (size === "lg") {
@@ -66,7 +66,7 @@ export default function Button({
   }
 
   if (size === "md") {
-    sizeStyles = "px-6 2xl:px-8 py-4 md:py-3 2xl:py-4";
+    sizeStyles = "px-6 2xl:px-8 py-4";
   }
 
   const finalClass = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}`;

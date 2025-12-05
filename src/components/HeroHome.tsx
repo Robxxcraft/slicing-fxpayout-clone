@@ -19,7 +19,7 @@ const HeroHome = () => {
   };
 
   return (
-    <header className="relative bg-primary px-5 xl:px-24 2xl:px-56 py-26 md:py-32 2xl:py-40 flex flex-col xl:flex-row gap-y-12 gap-8 items-center justify-between rounded-b-[80px]">
+    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-[120px] lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between rounded-b-[80px]">
       {/* BACKGROUND ORNAMENT */}
       <div className="absolute -top-[90px] -left-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
       <img
@@ -29,50 +29,50 @@ const HeroHome = () => {
       />
 
       {/* MAIN HERO */}
-      <div className="z-999 flex flex-col gap-4 md:gap-5 2xl:gap-8 max-w-full xl:max-w-[60%] text-white">
-        <div className="py-2 px-4 md:px-5 2xl:px-6 flex items-center gap-2.5 w-fit border border-white bg-[rgba(255,255,255,0.2)] rounded-full">
+      <div className="z-999 flex flex-col gap-6 2xl:gap-8 max-w-full lg:max-w-[60%] text-white">
+        <div className="py-1 lg:py-2 px-4 lg:px-5 2xl:px-6 flex items-center gap-2.5 w-fit border border-white bg-[rgba(255,255,255,0.2)] rounded-full">
           <img src="/badgeCirclePercent.svg" alt="badge percent" />
           <span className="text-sm 2xl:text-xl font-medium text-light-gray">
             Dapatkan Rebate 80% Untuk Trader
           </span>
         </div>
-        <h1 className="font-wix-madefor-display font-bold text-[36px] md:text-[50px] 2xl:text-[64px] leading-[120%]">
+        <h1 className="font-wix-madefor-display font-bold text-[40px] md:text-[48px] 2xl:text-[64px] leading-[120%]">
           Trading Lebih Untung — Rebate Hingga 80% untuk Trader Indonesia.
         </h1>
-        <p className="text-base 2xl:text-2xl font-medium text-light-gray md:leading-[200%] md:mb-3 2xl:mb-6">
+        <p className="lg:mb-3 2xl:mb-6 text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
           RebateFX adalah platform rebate forex terpercaya yang memberikan
           cashback hingga 80% dari komisi broker langsung kepada trader.
         </p>
-        <div className="flex flex-col md:flex-row gap-3 md:gap-4">
-          <Button variant="light" size="xl" className="py-4! 2xl:py-6! text-base! font-medium!">
+        <div className="flex flex-row gap-4 flex-wrap md:flex-nowrap">
+          <Button variant="light" size="xl" className="py-4! 2xl:py-6! flex md:block flex-1 text-base! font-medium! text-nowrap">
             Daftar Sekarang
           </Button>
-          <Button variant="outline-light" size="xl" className="py-4! 2xl:py-6! text-base! font-medium!">
+          <Button variant="outline-light" size="xl" className="py-4! 2xl:py-6! flex md:block flex-1 text-base! font-medium! text-nowrap">
             Hitung Rebate
           </Button>
         </div>
       </div>
 
       {/* CARD */}
-      <div className="relative">
+      <div className="relative w-full lg:w-fit">
         <div className="absolute -top-[25%] left-1/2 bg-[#ABF3DB] size-[140px] rounded-full blur-[60px]"></div>
         <div className="absolute top-0 left-[10%] bg-[#ABF3DB] size-[300px] rounded-full blur-[120px]"></div>
 
-        <div className="px-5 md:px-6 py-6 md:py-8 relative z-9999 flex flex-col gap-2 2xl:gap-4 h-full w-full max-w-[470px] rounded-[20px] bg-white">
+        <div className="px-6 py-8 relative z-9999 flex flex-col gap-2 md:gap-4 h-full w-full max-w-full lg:max-w-[470px] rounded-[20px] bg-white">
           <div>
-            <div className="flex gap-2 2xl:gap-3 items-center mb-2">
-              <IoIosCalculator className="text-primary text-4xl" />
+            <div className="flex gap-3 items-center mb-2">
+              <IoIosCalculator className="text-primary text-2xl xl:text-4xl" />
               <p className="text-2xl font-semibold">Estimasi Rebate</p>
             </div>
-            <p className="text-base font-medium text-[rgba(0,0,0,0.5)] 2xl:leading-[178%]">
+            <p className="text-sm md:text-base font-medium text-[rgba(0,0,0,0.5)] 2xl:leading-[178%]">
               Pilih broker dan masukkan lot per bulang untuk estimasi cepat
             </p>
           </div>
-          <div className="flex flex-col gap-2 2xl:gap-4">
+          <div className="flex flex-col gap-2 md:gap-4">
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="broker"
-                className="text-sm font-medium text-[#344054]">
+                className="text-sm md:text-base lg:text-sm font-medium text-[#344054]">
                 Broker
               </label>
               <div className="relative w-full">
@@ -94,7 +94,7 @@ const HeroHome = () => {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="lotpermonth"
-                className="text-sm font-medium text-[#344054]">
+                className="text-sm md:text-base lg:text-sm font-medium text-[#344054]">
                 Lot per Bulan
               </label>
               <input
@@ -109,24 +109,25 @@ const HeroHome = () => {
           </div>
           <div className="flex justify-between">
             <div className="text-base font-medium text-[rgba(16,24,40,0.8)]">
-              <p>Estimasi</p>
-              <p>Perkiraan</p>
+              <p className="leading-[19px]">Estimasi</p>
+              <p className="leading-[19px]">Perkiraan</p>
             </div>
-            <p className="text-[40px] font-semibold text-[#101828]">$6.00</p>
+            <p className="text-[40px] font-semibold text-[#101828] leading-12">$6.00</p>
           </div>
-          <div className="w-full flex flex-col md:flex-row items-center gap-2">
-            <Button variant="primary-light" size="md" className="px-0! w-full! text-sm! 2xl:text-base font-medium!">
+          <div className="w-full flex items-center gap-2 flex-wrap md:flex-nowrap">
+            <Button variant="primary-light" size="md" className="px-0! flex md:block flex-1 text-base! font-medium!">
               Daftar & Dapatkan
             </Button>
-            <Button variant="outline" size="md" className="px-0! w-full! text-sm! 2xl:text-base font-medium!">
+            <Button variant="outline" size="md" className="px-0! flex md:block flex-1 text-base! font-medium!">
               Klaim Manual
             </Button>
           </div>
-          <div className="mt-4 2xl:mt-8 p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
+          <div className="w-full h-[0.5px] bg-black/20"></div>
+          <div className="p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
             <span className="flex items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
               <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />
             </span>
-            <p className="w-fit text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
+            <p className="w-fit text-[12px] md:text-base lg:text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
               Kami mengembalikan hingga 80% komisi IB kepada trader. Proses
               cepat, aman, dan transparan tanpa mengubah spread atau kondisi
               trading.

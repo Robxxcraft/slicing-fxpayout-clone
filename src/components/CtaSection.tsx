@@ -2,16 +2,16 @@ import Button from "./ui/Button";
 
 const CtaSection = () => {
   return (
-    <section className="px-5 xl:px-24 2xl:px-56 pt-18 xl:pt-28">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-28">
       <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
-        <div className="z-999">
-          <h2 className="text-[28px] md:text-[32px] 2xl:text-[40px] font-bold text-white leading-[134%] max-w-[620px]">
+        <div className="z-999 w-full lg:w-fit">
+          <h2 className="text-2xl 2xl:text-[40px] font-bold text-white leading-[134%] max-w-[620px]">
             Siap meningkatkan efisiensi profit trading Anda?
           </h2>
-          <p className="mt-2 md:mt-3 2xl:mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620]">
+          <p className="mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620]">
             Daftar sekarang dan mulai dapatkan rebate hingga 80%.
           </p>
-          <Button size="xl" className="mt-5 md:mt-6 2xl:mt-8 font-medium!">
+          <Button variant="primary-light" size="xl" className="w-full! lg:w-fit! mt-8 font-medium!">
             Daftar Sekarang
           </Button>
         </div>

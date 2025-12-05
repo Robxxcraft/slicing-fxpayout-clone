@@ -11,20 +11,20 @@ import { listNavigation } from "../utils/listNavigation";
 
 const Footer = () => {
   return (
-    <footer className="mt-4 2xl:mt-5">
-      <div className="px-5 xl:px-24 2xl:px-56 py-10 md:py-16 xl:py-20 flex flex-col md:flex-row gap-8 md:gap-10">
-        <div className="flex flex-2 flex-col">
+    <footer className="xl:mt-4 2xl:mt-5">
+      <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-11 xl:py-20 flex flex-col md:flex-row gap-6 md:gap-10 flex-wrap lg:flex-nowrap">
+        <div className="mb-2 md:mb-0 flex flex-2 basis-full lg:basis-0 flex-col">
           <div className="flex gap-2 items-center">
             <img
               src="/logoBlue.svg"
               alt="logo fx payout"
-              className="w-14 md:w-10 2xl:w-[50px]"
+              className="w-10 2xl:w-[50px]"
             />
-            <span className="text-3xl md:text-2xl 2xl:text-3xl font-semibold text-primary">
+            <span className="text-2xl 2xl:text-3xl font-semibold text-primary">
               FXPAYOUT
             </span>
           </div>
-          <p className="mt-3 2xl:mt-4 mb-4 md:mb-5 2xl:mb-6 text-base 2xl:text-lg text-primary">
+          <p className="mt-2 lg:mt-3 2xl:mt-4 mb-4 2xl:mb-6 text-base 2xl:text-lg text-primary">
             Kami mengembalkan hingga 80% komisi IB kepada trader. Proses cepat,
             aman, dan transparan tanpa mengubah spread atau kondisi trading.
           </p>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col flex-1">
-          <p className="mb-3 md:mb-5 2xl:mb-6 text-base 2xl:text-xl font-semibold text-primary">
+          <p className="mb-[26px] lg:mb-5 2xl:mb-6 text-xl md:text-2xl lg:text-lg 2xl:text-xl font-semibold text-primary">
             Tautan Cepat
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
@@ -57,8 +57,8 @@ const Footer = () => {
             })}
           </div>
         </div>
-        <div className="flex flex-col flex-2">
-          <p className="mb-3 md:mb-5 2xl:mb-6 text-base 2xl:text-xl font-semibold text-primary">
+        <div className="flex flex-col flex-1 md:flex-2">
+          <p className="mb-[26px] lg:mb-5 2xl:mb-6 text-xl md:text-2xl lg:text-lg 2xl:text-xl font-semibold text-primary">
             Kontak Kami
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-primary text-sm md:text-base text-center py-4 2xl:py-5 text-white">
+      <div className="bg-primary text-sm lg:text-base text-center py-5 text-white">
         © 2025 FXPayout. All Right Reserved
       </div>
     </footer>

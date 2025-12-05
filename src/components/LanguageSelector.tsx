@@ -18,7 +18,7 @@ const LanguageSelector = ({
   // const [openOption, setOpenOption] = useState<boolean>(false);
   
   return (
-    <div className="lg:relative">
+    <div className="xl:relative">
       <button
         className="flex gap-2 items-center cursor-pointer"
         onClick={() => setOpen(!open)}>
@@ -27,11 +27,11 @@ const LanguageSelector = ({
           alt={`flag-${selectedLanguage.label}`}
           className="w-8"
         />
-        <span className="text-black xl:text-white text-base 2xl:text-xl">
+        <span className="text-white text-base 2xl:text-xl">
           {selectedLanguage.code.toLocaleUpperCase()}
         </span>
         <FaChevronDown
-          className="text-black xl:text-white"
+          className="text-white"
           style={{
             transform: open ? "rotate(180deg)" : "rotate(0deg)",
             transition: "0.3s ease",
@@ -41,7 +41,7 @@ const LanguageSelector = ({
       {open && (
         <>
           // DESKTOP
-          <div className="_no-scrollbar hidden max-h-[250px] overflow-auto absolute bottom-[120%] lg:bottom-auto lg:top-[120%] lg:translate-y-0 py-4 w-60 lg:flex flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
+          <div className="_no-scrollbar hidden xl:flex max-h-[250px] overflow-auto absolute bottom-[120%] xl:bottom-auto xl:top-[120%] xl:translate-y-0 py-4 w-60 flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
             {languages.map((lang, idx) => (
               <button
                 key={idx}
@@ -60,22 +60,22 @@ const LanguageSelector = ({
           </div>
 
           // MOBILE
-          <div className="absolute top-20 left-0 w-full h-screen border-t border-black/30 bg-white">
-            <div className="px-4 pt-5">
+          <div className="px-6 md:px-11 lg:px-18 absolute top-18 left-0 w-full h-screen bg-primary">
+            <div>
               <button 
                 onClick={() => setOpen(false)}
-                className="py-3 w-full flex gap-1 items-center-safe text-left h-fit border-b border-black/15">
+                className="py-3 w-full flex gap-1 items-center-safe text-left text-white h-fit border-b border-white/15 cursor-pointer">
                 <IoArrowBackOutline />
-                Kembali
+                Bahasa
               </button>
             </div>
-            <div className="mt-4">
+            <div className="mt-6 flex flex-col gap-6">
               {languages.map((lang, idx) => (
                 <button
                   key={idx}
                   onClick={() => onChangeLanguage(lang)}
-                  className="py-2 px-4 flex gap-2 items-center cursor-pointer hover:bg-light-gray">
-                  <span className="text-black text-base 2xl:text-xl">
+                  className="flex gap-2 items-center cursor-pointer hover:font-bold">
+                  <span className="text-white text-base 2xl:text-xl">
                     {lang.label}
                   </span>
                 </button>
