@@ -1,42 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { listNavigationBrokers } from "../../../utils/listNavigation";
 import Button from "../../ui/Button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import { throttle } from "lodash";
 
 const NavigationBar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [scrollY, setScrollY] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      setScrollY(window.scrollY);
+    }, 200);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
-      className="lg:py-8 2xl:py-10 px-5 xl:px-24 2xl:px-56 w-full top-0 fixed lg:static h-full min-h-18 max-h-18 flex lg:block items-center lg:max-h-fit bg-white shadow-[0_3px_40px_0_rgba(0,0,0,0.1)] lg:shadow-[0_3px_60px_0_rgba(0,0,0,0.1)] 2xl:shadow-[0_6px_126.7px_0_rgba(0,0,0,0.1)]">
+      className="z-999 lg:py-8 2xl:py-10 px-5 xl:px-24 2xl:px-56 w-full top-0 fixed lg:static h-full min-h-18 max-h-18 md:max-h-fit flex lg:block items-center bg-white shadow-[0_6px_126.7px_0_rgba(0,0,0,0.1)]">
       {/* ROW 1 */}
-      <div className="flex justify-between items-center w-full">
-        <div className="flex gap-3 lg:gap-5 2xl:gap-6">
-          <img
-            src="/broker/exness.png"
-            alt="Logo Broker"
-            className="size-12 lg:size-16 2xl:size-[84px] rounded-lg lg:rounded-xl 2xl:rounded-[20px]"
-          />
-          <div className="flex flex-col justify-between">
-            <p className="text-xl lg:text-[26px] 2xl:text-[36px] font-semibold text-black">Exness</p>
-            <p className="text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80">
-              Tier 1 Premium ECN Broker
-            </p>
+      <div className="py-5 lg:py-0 flex flex-col lg:flex-row gap-y-3 justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full lg:w-fit">
+          <div className="flex gap-3 lg:gap-5 2xl:gap-6">
+            <img
+              src="/broker/exness.png"
+              alt="Logo Broker"
+              className="size-12 lg:size-16 2xl:size-[84px] rounded-lg lg:rounded-xl 2xl:rounded-[20px]"
+            />
+            <div className="flex flex-col justify-between">
+              <p className="text-xl lg:text-[26px] 2xl:text-[36px] font-semibold text-black">Exness</p>
+              <p className="text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80">
+                Tier 1 Premium ECN Broker
+              </p>
+            </div>
           </div>
+          {!openMenu ? 
+            <RxHamburgerMenu
+              onClick={() => setOpenMenu(true)}
+              className="block lg:hidden text-2xl text-black cursor-pointer"
+            />
+          : <IoClose onClick={() => setOpenMenu(false)} className="text-3xl cursor-pointer" />
+          }
         </div>
-        <div className="hidden md:flex gap-3 2xl:gap-4">
-          <Button variant="primary">Daftar Sekarang</Button>
-          <Button variant="outline">Kunjungan Website</Button>
-        </div>
-        {!openMenu ? 
-          <RxHamburgerMenu
-            onClick={() => setOpenMenu(true)}
-            className="block lg:hidden text-2xl text-black cursor-pointer"
-          />
-        : <IoClose onClick={() => setOpenMenu(false)} className="text-3xl cursor-pointer" />
-        }
+        <ButtonCta scrollY={scrollY} />
       </div>
 
       {/* ROW 2 */}
@@ -54,7 +64,7 @@ const NavigationBar = () => {
 
       {/* MOBILE NAV */}
       {openMenu &&
-        <div className="pt-4 pb-18 absolute top-18 left-0 bg-white w-full h-screen overflow-auto">
+        <div className="_no-scrollbar pt-4 pb-18 absolute top-18 left-0 bg-white w-full h-[calc(100vh-70px)] md:h-[calc(100vh-260px)] overflow-auto">
           <div className="flex flex-col">
             {listNavigationBrokers.map(({ title, url }, idx) => (
               <a
@@ -83,5 +93,17 @@ const NavigationBar = () => {
     </nav>
   );
 };
+
+const ButtonCta = ({ scrollY }:{scrollY: number}) => {
+  return (
+    <div className={`
+      ${scrollY > 10 ? "lg:flex" : "md:flex"}
+       hidden gap-3 2xl:gap-4 w-full lg:w-fit
+    `}>
+      <Button variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
+      <Button variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
+    </div>
+  )
+}
 
 export default NavigationBar;

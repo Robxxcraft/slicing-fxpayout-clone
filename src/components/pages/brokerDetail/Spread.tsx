@@ -40,25 +40,25 @@ const spreadItems: SpreadStructure[] = [
 
 const Spread = () => {
   return (
-    <section id="spread-komisi" className="scroll-mt-18 lg:scroll-mt-0 mt-10 md:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 xl:px-24 2xl:px-56">
+    <section id="spread-komisi" className="scroll-mt-26 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>Spread</HeadingSection>
       <SubHeadingSection>Perbandingan spread pada instrumen utama broker.</SubHeadingSection>
-      <div className="mt-5 md:mt-6 2xl:mt-8 flex flex-col md:flex-row gap-4 md:gap-5 2xl:gap-6">
+      <div className="mt-6 2xl:mt-8 flex flex-col md:flex-row gap-3 lg:gap-5 2xl:gap-6">
         {spreadItems.map((item,idx) => (
-          <div key={idx} className="p-5 md:p-6 2xl:p-8 max-w-full md:max-w-1/2 w-full border border-[#D0D0D0] bg-white rounded-3xl">
-            <div className="flex items-center gap-4 md:gap-6">
-              <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="icon"/>
+          <div key={idx} className="p-6 2xl:p-8 max-w-full md:max-w-1/2 w-full border border-[#D0D0D0] bg-white rounded-3xl">
+            <div className="flex items-center gap-4 lg:gap-6">
+              <BoundedIcon variant='second' icon={`/brokerDetail/${item.icon}`} alt="icon"/>
               <HeadingSection variant="second">{item.pair}</HeadingSection>
             </div>
-            <div className="mt-4 md:mt-5 2xl:mt-10">
-              <div className="py-2 2xl:py-3 text-sm 2xl:text-base flex justify-between w-full border-b border-[#828282]/50">
+            <div className="mt-6 2xl:mt-10">
+              <div className="py-3 text-base flex justify-between w-full border-b border-[#828282]/50">
                 <p>Tipe Akun</p>
                 <p>Spread</p>
               </div>
               {item.spreads.map((spread, i) => (
-                <div key={i} className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-                  <ContentHead>{spread.accountType}</ContentHead>
-                  <ContentBody>{spread.spread}</ContentBody>
+                <div key={i} className="py-3 flex justify-between w-full border-b border-[#828282]/50">
+                  <ContentHead smText="text-xl">{spread.accountType}</ContentHead>
+                  <ContentBody smText="text-xl">{spread.spread}</ContentBody>
                 </div>
               ))}
             </div>

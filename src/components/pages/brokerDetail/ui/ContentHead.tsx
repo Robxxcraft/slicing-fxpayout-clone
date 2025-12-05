@@ -1,6 +1,6 @@
-const ContentHead = ({children}: {children: React.ReactNode}) => {
+const ContentHead = ({smText, children}: {smText?: string; children: React.ReactNode}) => {
   return (
-    <p className="text-base md:text-lg 2xl:text-2xl md:leading-[180%] text-black">
+    <p className={`${smText !== null ? smText : "text-base" } md:text-xl 2xl:text-2xl md:leading-[180%] text-black`}>
       {children}
     </p>
   )

@@ -104,9 +104,9 @@ const Navbar = ({ active }: { active: string }) => {
             <img
               src="/logo.svg"
               alt="logo fx payout"
-              className="w-9"
+              className="w-7 md:w-9"
             />
-            <span className="text-2xl font-semibold text-white">
+            <span className="text-base md:text-2xl font-semibold text-white">
               FXPAYOUT
             </span>
           </div>

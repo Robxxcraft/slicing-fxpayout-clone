@@ -3,15 +3,15 @@ import Button from "../ui/Button";
 
 const BrokerItem = ({ item }: { item: BrokerPartner }) => {
   return (
-    <div className="p-4 md:p-5 2xl:p-6 w-full border border-[rgba(34,34,34,0.1)] rounded-2xl md:rounded-3xl shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
+    <div className="p-6 w-full border border-[rgba(34,34,34,0.1)] rounded-3xl shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3 2xl:gap-4">
+        <div className="flex items-center gap-4">
           <img
             src={`/broker/${item.image_profil}`}
             alt={item.username}
-            className="size-14 2xl:size-16 rounded-full object-cover object-center"
+            className="size-16 rounded-full object-cover object-center"
           />
-          <h4 className="text-xl 2xl:text-2xl font-semibold text-[#222222]">
+          <h4 className="text-xl md:text-2xl font-semibold text-[#222222]">
             {item.username}
           </h4>
         </div>
@@ -64,7 +64,7 @@ const BrokerItem = ({ item }: { item: BrokerPartner }) => {
           </tbody>
         </table>
       </div>
-      <div className="mt-4 md:mt-5 xl:mt-7 flex flex-col md:flex-row items-center gap-2">
+      <div className="mt-4 md:mt-7 flex flex-row items-center gap-2 flex-wrap md:flex-nowrap">
         <Button variant="primary-light" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
           Daftar Broker
         </Button>

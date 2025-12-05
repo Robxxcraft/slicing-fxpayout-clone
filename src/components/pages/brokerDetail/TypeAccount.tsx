@@ -65,18 +65,18 @@ const accountDetail: AccountDetail[] = [
 
 const TypeAccount = () => {
   return (
-    <section id="jenis-akun" className="scroll-mt-18 lg:scroll-mt-0 mt-10 md:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
+    <section id="jenis-akun" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>Jenis Akun</HeadingSection>
       <SubHeadingSection>Pilihan akun untuk berbagai kebutuhan dan gaya trading.</SubHeadingSection>
-      <div className="mt-5 md:mt-6 2xl:mt-8 flex flex-col gap-4 2xl:gap-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 2xl:gap-6">
+      <div className="mt-6 2xl:mt-8 flex flex-col gap-3 lg:gap-4 2xl:gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-3 lg:gap-4 2xl:gap-6">
           {accountDetail.map((detail, idx) => {
             if (idx <= 2) {
               return <CardTypeAccount key={idx} account={detail} />
             }
           })}
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 2xl:gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 lg:gap-4 2xl:gap-6">
           {accountDetail.map((detail, idx) => {
             if (idx > 2) {
               return <CardTypeAccount key={idx} account={detail} />
