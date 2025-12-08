@@ -10,7 +10,7 @@ const Broker = () => {
   const [showNotify, setShowNotify] = useState<boolean>(true);
 
   useEffect(() => {
-    document.title = "Broker | Rebate FX";
+    document.title = "Broker | FX Payout";
   }, []);
 
   return (

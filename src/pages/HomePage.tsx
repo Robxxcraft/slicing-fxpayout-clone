@@ -11,7 +11,7 @@ import Rewards from "../components/Rewards";
 
 const HomePage = () => {
   useEffect(() => {
-    document.title = "Rebate FX";
+    document.title = "FX Payout";
   }, []);
 
   return (
