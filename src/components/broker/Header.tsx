@@ -22,7 +22,7 @@ const Header = () => {
           Broker Partner dan Detail
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-[786px]">
-          Broker pilihan dengan eksekusi terbaik dan skema rebate hingga 80%.
+          Broker pilihan dengan eksekusi terbaik dan skema rebate hingga 90%.
           bandingkan detail instrumen dan pilih broker yang paling cocok untuk
           strategi trading Anda.
         </p>

@@ -9,7 +9,7 @@ const CtaSection = () => {
             Siap meningkatkan efisiensi profit trading Anda?
           </h2>
           <p className="mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620]">
-            Daftar sekarang dan mulai dapatkan rebate hingga 80%.
+            Daftar sekarang dan mulai dapatkan rebate hingga 90%.
           </p>
           <Button variant="primary-light" size="xl" className="w-full! lg:w-fit! mt-8 font-medium!">
             Daftar Sekarang

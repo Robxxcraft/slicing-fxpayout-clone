@@ -28,7 +28,7 @@ const Rewards = () => {
             </div>
             <p className="text-sm md:text-base 2xl:text-xl font-semibold text-[rgba(255,255,255,0.8)]">
               Nikmati promo periode terbatas khusus untuk trader yang baru
-              bergabung di RebateFX.
+              bergabung di FXPayout.
             </p>
           </div>
         </div>

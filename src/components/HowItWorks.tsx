@@ -10,9 +10,9 @@ type Workflow = {
 const workflows: Workflow[] = [
   {
     title: "mulai",
-    subtitle: "Daftar lewat link resmi RebateFX",
+    subtitle: "Daftar lewat link resmi FXPayout",
     description:
-      "Buat akun RebateFX dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan.",
+      "Buat akun FXPayout dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan.",
     image: "flow-start.png",
   },
   {
@@ -24,16 +24,16 @@ const workflows: Workflow[] = [
   },
   {
     title: "komisi",
-    subtitle: "Broker mengirim komisi IB ke RebateFX",
+    subtitle: "Broker mengirim komisi IB ke FXPayout",
     description:
-      "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke RebateFX secara otomatis.",
+      "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke FXPayout secara otomatis.",
     image: "flow-commision.png",
   },
   {
     title: "rebate",
-    subtitle: "Rebate hingga 80% ke akun Anda",
+    subtitle: "Rebate hingga 90% ke akun Anda",
     description:
-      "Kami mengembalikan hingga 80% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet.",
+      "Kami mengembalikan hingga 90% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet.",
     image: "flow-rebate.png",
   },
 ];
@@ -50,10 +50,10 @@ const HowItWorks = () => {
           </h3>
         </div>
         <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
-          Cara Kerja RebateFX dalam 4 Langkah Sederhana
+          Cara Kerja FXPayout dalam 4 Langkah Sederhana
         </h2>
         <p className="text-base md:text-xl leading-[160%]">
-          Tanpa mengubah strategi, Anda cukup trading seperti biasa. RebateFX
+          Tanpa mengubah strategi, Anda cukup trading seperti biasa. FXPayout
           yang mengurus aliran komisi menjadi cashback untuk Anda.
         </p>
       </div>

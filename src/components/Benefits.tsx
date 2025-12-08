@@ -7,7 +7,7 @@ type Benefit = {
 const benefits: Benefit[] = [
   {
     icon: "trader.png",
-    title: "Rebate 80% untuk trader",
+    title: "Rebate 90% untuk trader",
     description: "Dapatkan Cashback terbesar setiap lot",
   },
   {

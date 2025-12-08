@@ -9,9 +9,9 @@ type FeatureProfile = {
 
 const featuresProfile: FeatureProfile[] = [
   {
-    title: "Rebate Hingga 80%",
+    title: "Rebate Hingga 90%",
     paragraph:
-      "Dapatkan cashback hingga 80% dari komisi broker langsung ke akun Anda.",
+      "Dapatkan cashback hingga 90% dari komisi broker langsung ke akun Anda.",
   },
   {
     title: "Fokus ke trader",
@@ -19,7 +19,7 @@ const featuresProfile: FeatureProfile[] = [
   },
   {
     title: "Local Support",
-    paragraph: "Bahasa Indonesia & jam operasional ramah trader.",
+    paragraph: "Support berbagai bahasa & jam operasional ramah trader.",
   },
 ];
 
@@ -41,7 +41,7 @@ const Profile = () => {
             <input
               id="search"
               name="search"
-              placeholder="rebate forex Indonesia, cashback trading, IB forex terpercaya..."
+              placeholder="rebate forex, cashback trading, IB forex terpercaya..."
               value={query}
               onChange={handleSearch}
               type="text"
@@ -50,7 +50,7 @@ const Profile = () => {
           </div>
           <div className="my-4 lg:my-5 2xl:my-6 flex flex-wrap gap-x-1 lg:gap-x-2 gap-y-3 lg:gap-y-2">
             {[
-              "Rebate Forex Indonesia",
+              "Rebate Forex",
               "Cashback Trading",
               "Rebate FBS",
               "Rebate Exness",
@@ -95,16 +95,16 @@ const Profile = () => {
                 ))}
               </div>
               <p className="text-sm md:text-base 2xl:text-xl font-medium text-[#E9E9E9] text-center">
-                Dipercaya komunitas trader Indonesia
+                Dipercaya komunitas trader
               </p>
             </div>
           </div>
           <h2 className="font-wix-madefor-display my-6 2xl:my-8 text-center lg:text-left text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[64px] font-bold leading-[120%]">
-            RebateFX, rujukan utama rebate forex bagi trader Indonesia.
+            FXPayout, rujukan utama rebate forex bagi trader.
           </h2>
           <p className="text-center lg:text-left text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">
-            RebateFX dikenal sebagai platform rebate forex Indonesia yang
-            mengembalikan hingga 80% komisi broker, memprioritaskan pembayaran
+            FXPayout dikenal sebagai platform rebate forex yang
+            mengembalikan hingga 90% komisi broker, memprioritaskan pembayaran
             cepat dan layanan support lokal untuk para trader.
           </p>
         </div>

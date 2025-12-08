@@ -4,7 +4,7 @@ import { IoArrowBackOutline, IoArrowForward } from "react-icons/io5";
 import { testimonials } from "../utils/testimonial";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, FreeMode } from "swiper/modules";
+import { Autoplay, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
@@ -21,10 +21,10 @@ const Reviews = () => {
             </h3>
           </div>
           <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
-            Apa Kata Trader yang Menggunakan RebateFX?
+            Apa Kata Trader yang Menggunakan FXPayout?
           </h2>
           <p className="text-base md:text-xl leading-[160%]">
-            Pengalaman nyata dari trader Indonesia yang mendapatkan tambahan
+            Pengalaman nyata dari trader yang mendapatkan tambahan
             profit dari program rebate.
           </p>
         </div>
@@ -44,17 +44,22 @@ const Reviews = () => {
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
-          modules={[Navigation, FreeMode]}
+          modules={[Autoplay, Navigation, FreeMode]}
           freeMode={false}
           navigation={{
             nextEl: ".swiper-button-next-custom",
             prevEl: ".swiper-button-prev-custom",
+          }}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: true,
           }}
           breakpoints={{
             768: {
               slidesPerView: "auto",
               spaceBetween: 0,
               freeMode: true,
+              autoplay: false
             },
           }}
           className="mt-6 lg:mt-8 xl:mt-10">

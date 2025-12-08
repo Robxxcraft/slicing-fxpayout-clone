@@ -33,15 +33,15 @@ const HeroHome = () => {
         <div className="py-1 lg:py-2 px-4 lg:px-5 2xl:px-6 flex items-center gap-2.5 w-fit border border-white bg-[rgba(255,255,255,0.2)] rounded-full">
           <img src="/badgeCirclePercent.svg" alt="badge percent" />
           <span className="text-sm 2xl:text-xl font-medium text-light-gray">
-            Dapatkan Rebate 80% Untuk Trader
+            Dapatkan Rebate 90% Untuk Trader
           </span>
         </div>
         <h1 className="font-wix-madefor-display font-bold text-[40px] md:text-[48px] 2xl:text-[64px] leading-[120%]">
-          Trading Lebih Untung — Rebate Hingga 80% untuk Trader Indonesia.
+          Trading Lebih Untung Rebate Hingga 90% untuk Trader.
         </h1>
         <p className="lg:mb-3 2xl:mb-6 text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
-          RebateFX adalah platform rebate forex terpercaya yang memberikan
-          cashback hingga 80% dari komisi broker langsung kepada trader.
+          FXPayout adalah platform rebate forex terpercaya yang memberikan
+          cashback hingga 90% dari komisi broker langsung kepada trader.
         </p>
         <div className="flex flex-row gap-4 flex-wrap md:flex-nowrap">
           <Button variant="light" size="xl" className="py-4! 2xl:py-6! flex md:block flex-1 text-base! font-medium! text-nowrap">
@@ -128,7 +128,7 @@ const HeroHome = () => {
               <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />
             </span>
             <p className="w-fit text-[12px] md:text-base lg:text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
-              Kami mengembalikan hingga 80% komisi IB kepada trader. Proses
+              Kami mengembalikan hingga 90% komisi IB kepada trader. Proses
               cepat, aman, dan transparan tanpa mengubah spread atau kondisi
               trading.
             </p>

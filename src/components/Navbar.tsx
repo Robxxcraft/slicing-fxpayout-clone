@@ -46,11 +46,11 @@ const Navbar = ({ active }: { active: string }) => {
             : "rgba(65,96,255,1)",
       }}>
       <div className="flex gap-2 items-center">
-        <img
+        {/* <img
           src="/logo.svg"
           alt="logo fx payout"
           className="w-7 md:w-9 lg:w-12 2xl:w-[50px]"
-        />
+        /> */}
         <span className="text-base md:text-xl 2xl:text-3xl font-semibold text-white">
           FXPAYOUT
         </span>

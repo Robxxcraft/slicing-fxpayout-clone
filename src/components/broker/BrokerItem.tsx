@@ -69,7 +69,7 @@ const BrokerItem = ({ item }: { item: BrokerPartner }) => {
           Daftar Broker
         </Button>
         <Button buttonType="link" urlTo={`/broker/${item.url}`} variant="outline" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
-          Link Broker
+          Selengkapnya
         </Button>
       </div>
     </div>

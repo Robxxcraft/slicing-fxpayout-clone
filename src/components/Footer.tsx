@@ -25,7 +25,7 @@ const Footer = () => {
             </span>
           </div>
           <p className="mt-2 lg:mt-3 2xl:mt-4 mb-4 2xl:mb-6 text-base 2xl:text-lg text-primary">
-            Kami mengembalkan hingga 80% komisi IB kepada trader. Proses cepat,
+            Kami mengembalkan hingga 90% komisi IB kepada trader. Proses cepat,
             aman, dan transparan tanpa mengubah spread atau kondisi trading.
           </p>
           <div className="flex items-center gap-4 2xl:gap-6">
@@ -84,7 +84,7 @@ const Footer = () => {
                 <IoMdMail className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
-                support@rebatefx.com
+                support@fxpayout.com
               </p>
             </div>
           </div>

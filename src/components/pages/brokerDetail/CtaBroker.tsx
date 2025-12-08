@@ -15,7 +15,7 @@ const CtaBroker = () => {
           </p>
           <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-3">
             <Button variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
-              Daftar Melalui RebateFX
+              Daftar Melalui FXPayout
             </Button>
             <Button variant="outline-light" size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
               Kunjungi Website Broker
