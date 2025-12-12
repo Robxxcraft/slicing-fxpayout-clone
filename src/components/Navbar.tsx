@@ -101,11 +101,11 @@ const Navbar = ({ active }: { active: string }) => {
         }}>
         <div className="mb-6 flex items-center justify-between">
           <div className="flex gap-2 items-center">
-            <img
+            {/* <img
               src="/logo.svg"
               alt="logo fx payout"
               className="w-7 md:w-9"
-            />
+            /> */}
             <span className="text-base md:text-2xl font-semibold text-white">
               FXPAYOUT
             </span>

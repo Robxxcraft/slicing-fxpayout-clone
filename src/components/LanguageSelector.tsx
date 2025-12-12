@@ -40,7 +40,7 @@ const LanguageSelector = ({
       </button>
       {open && (
         <>
-          // DESKTOP
+          {/* DESKTOP */}
           <div className="_no-scrollbar hidden xl:flex max-h-[250px] overflow-auto absolute bottom-[120%] xl:bottom-auto xl:top-[120%] xl:translate-y-0 py-4 w-60 flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
             {languages.map((lang, idx) => (
               <button
@@ -59,8 +59,8 @@ const LanguageSelector = ({
             ))}
           </div>
 
-          // MOBILE
-          <div className="px-6 md:px-11 lg:px-18 absolute top-18 left-0 w-full h-screen bg-primary">
+          {/* MOBILE */}
+          <div className="flex xl:hidden px-6 md:px-11 lg:px-18 absolute top-18 left-0 w-full h-screen bg-primary">
             <div>
               <button 
                 onClick={() => setOpen(false)}

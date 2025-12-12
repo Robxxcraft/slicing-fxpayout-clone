@@ -79,7 +79,7 @@ const Reviews = () => {
               <div className="flex flex-col justify-between h-full">
                 <div>
                   <div className="flex gap-1.5 md:gap-0.5">
-                    {Array.from({ length: testimonial.rate }).map((num) => (
+                    {Array.from({ length: testimonial.rate }).map((_, num) => (
                       <PiStarFill
                         key={`${testimonial.username}-${num}`}
                         className="text-xl text-[#FFC250]"
