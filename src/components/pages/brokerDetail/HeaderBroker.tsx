@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../../ui/Button";
 import BoundedIcon from "./ui/BoundedIcon";
 import { FaStar, FaStarHalf  } from "react-icons/fa6";
+import { links } from "../../../utils/listLink";
 
 type Spesification = {
   title: string;
@@ -135,7 +136,7 @@ const BioBroker = () => {
 const ButtonCta = () => {
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
-      <Button variant="primary" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={links.registerExness} variant="primary" size="md" className="text-nowrap flex-1">
         Daftar Sekarang
       </Button>
       <Button variant="outline" size="md" className="text-nowrap flex-1">

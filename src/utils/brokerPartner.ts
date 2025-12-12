@@ -2,7 +2,8 @@ export type BrokerPartner = {
   image_profil: string;
   username: string;
   description: string;
-  url: string;
+  urlDetail: string;
+  urlRegister: string;
   instruments: InstrumenBroker;
 };
 
@@ -18,7 +19,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "Exness",
     description:
       "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
-    url: "exness",
+    urlDetail: "exness",
+    urlRegister: "https://one.exnessonelink.com/a/8cegzmlbpk",
     instruments: {
       eur: 6,
       xau: 10,
@@ -30,7 +32,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "IC Markets",
     description:
       "Broker global dengan eksekusi cepat & spread rendah. Akun Raw/Zero populer untuk rebate tinggi.",
-    url: "exness",
+    urlDetail: "ic-markets",
+    urlRegister: "#",
     instruments: {
       eur: 8,
       xau: 10,
@@ -42,7 +45,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "Pepperstone",
     description:
       "Broker regulasi top dengan eksekusi sangat cepat dan kondisi raw spread.",
-    url: "exness",
+    urlDetail: "pepperstone",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,
@@ -54,7 +58,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "Tickmill",
     description:
       "Broker ECN terkenal dengan komisi rendah dan rebate kompetitif.",
-    url: "exness",
+    urlDetail: "tickmill",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,
@@ -66,7 +71,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "FP Markets",
     description:
       "Broker ECN Australia dengan eksekusi cepat & kondisi pro-trader.",
-    url: "exness",
+    urlDetail: "fp-markets",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,
@@ -78,7 +84,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "XM",
     description:
       "Broker global dengan akun XM Zero berkomisi tinggi sehingga rebate besar.",
-    url: "exness",
+    urlDetail: "xm",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,
@@ -89,7 +96,8 @@ export const brokerPartners: BrokerPartner[] = [
     image_profil: "eightcap.png",
     username: "Eightcap",
     description: "Broker ECN cepat, terintegrasi TradingView & kompatibel EA.",
-    url: "exness",
+    urlDetail: "eightcap",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,
@@ -101,7 +109,8 @@ export const brokerPartners: BrokerPartner[] = [
     username: "Vantage",
     description:
       "Broker ECN memiliki spread rendah, populer di Asia & Australia.",
-    url: "exness",
+    urlDetail: "vantage",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,
@@ -112,7 +121,8 @@ export const brokerPartners: BrokerPartner[] = [
     image_profil: "axi.png",
     username: "Axi",
     description: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
-    url: "exness",
+    urlDetail: "axi",
+    urlRegister: "#",
     instruments: {
       eur: 6,
       xau: 10,

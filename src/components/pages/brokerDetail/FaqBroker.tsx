@@ -14,19 +14,19 @@ const itemsFaq: FaqStructure[] = [
   },
   {
     summary: "Apakah Exness Menyediakan Akun Cent?",
-    paragraph: "Exness merupakan broker teregulasi oleh beberapa otoritas keuangan internasional, termasuk FSA, CySEC, FSCA, dan FSC. Perusahaan ini sudah beroperasi sejak 2008 dan dikenal transparan dalam menampilkan laporan keuangan serta statistik trading. Meski tidak berada di bawah regulasi Indonesia, Exness termasuk broker global yang banyak digunakan trader secara internasional."
+    paragraph: "Ya. Exness menyediakan akun Standard Cent, yaitu akun dengan ukuran kontrak lebih kecil sehingga cocok untuk latihan, uji strategi, atau trading dengan risiko modal rendah."
   },
   {
     summary: "Apakah Exness Cocok Untuk Pemula?",
-    paragraph: "Exness merupakan broker teregulasi oleh beberapa otoritas keuangan internasional, termasuk FSA, CySEC, FSCA, dan FSC. Perusahaan ini sudah beroperasi sejak 2008 dan dikenal transparan dalam menampilkan laporan keuangan serta statistik trading. Meski tidak berada di bawah regulasi Indonesia, Exness termasuk broker global yang banyak digunakan trader secara internasional."
+    paragraph: "Cocok. Exness menawarkan akun Cent, spread stabil, proses transaksi mudah, serta platform populer seperti MT4/MT5. Kombinasi ini membantu pemula belajar kondisi market nyata dengan risiko yang lebih terukur."
   },
   {
     summary: "Apakah Exness Cocok Untuk EA & Scalping?",
-    paragraph: "Exness merupakan broker teregulasi oleh beberapa otoritas keuangan internasional, termasuk FSA, CySEC, FSCA, dan FSC. Perusahaan ini sudah beroperasi sejak 2008 dan dikenal transparan dalam menampilkan laporan keuangan serta statistik trading. Meski tidak berada di bawah regulasi Indonesia, Exness termasuk broker global yang banyak digunakan trader secara internasional."
+    paragraph: "Ya. Exness mendukung EA, robot trading, algoritma, dan strategi scalping tanpa batasan khusus. Spread yang ketat serta kecepatan eksekusi yang sangat cepat membuatnya sering digunakan untuk strategi intensif."
   },
   {
     summary: "Seberapa Cepat Proses WD di Exness?",
-    paragraph: "Exness merupakan broker teregulasi oleh beberapa otoritas keuangan internasional, termasuk FSA, CySEC, FSCA, dan FSC. Perusahaan ini sudah beroperasi sejak 2008 dan dikenal transparan dalam menampilkan laporan keuangan serta statistik trading. Meski tidak berada di bawah regulasi Indonesia, Exness termasuk broker global yang banyak digunakan trader secara internasional."
+    paragraph: "Umumnya sangat cepat. Banyak metode withdrawal e-wallet dan pembayaran lokal yang diproses dalam hitungan menit, tergantung metode yang digunakan dan kondisi sistem. Proses bisa lebih lama pada jam tertentu atau metode tertentu."
   },
 ];
 

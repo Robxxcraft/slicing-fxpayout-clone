@@ -65,10 +65,10 @@ const BrokerItem = ({ item }: { item: BrokerPartner }) => {
         </table>
       </div>
       <div className="mt-4 md:mt-7 flex flex-row items-center gap-2 flex-wrap md:flex-nowrap">
-        <Button variant="primary-light" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
+        <Button buttonType="link" urlTo={item.urlRegister} variant="primary-light" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
           Daftar Broker
         </Button>
-        <Button buttonType="link" urlTo={`/broker/${item.url}`} variant="outline" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
+        <Button buttonType="link" urlTo={`/broker/${item.urlDetail}`} variant="outline" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
           Selengkapnya
         </Button>
       </div>

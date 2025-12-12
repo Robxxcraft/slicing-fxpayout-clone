@@ -5,6 +5,7 @@ import Button from "../../ui/Button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { throttle } from "lodash";
+import { links } from "../../../utils/listLink";
 
 const NavigationBar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -77,7 +78,7 @@ const NavigationBar = () => {
             ))}
           </div>
           <div className="px-5 mt-4 flex items-center justify-center w-full gap-2 flex-wrap">
-            <Link to="#" className="w-fit text-center">
+            <Link to={links.registerExness} className="w-fit text-center">
               <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
                 Daftar Sekarang
               </span>
@@ -100,7 +101,7 @@ const ButtonCta = ({ scrollY }:{scrollY: number}) => {
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
-      <Button variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
+      <Button buttonType="link" urlTo={links.registerExness} variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
       <Button variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
     </div>
   )

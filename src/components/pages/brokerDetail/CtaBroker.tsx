@@ -6,7 +6,7 @@ const CtaBroker = () => {
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-20">
       <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
-        <div className="z-9 w-full flex flex-col items-center">
+        <div className="z-11 w-full flex flex-col items-center">
           <h2 className="text-2xl 2xl:text-[40px] font-bold text-white leading-[134%] max-w-full">
             Siap Trading Dengan Exness?
           </h2>
