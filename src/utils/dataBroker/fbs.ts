@@ -141,7 +141,8 @@ export const fbsDetail: BrokerStruc = {
     score: 4.4,
     withdrawalSpeed: 4.5,
     stability: 4.4,
-    customerSupport: 4.3
+    customerSupport: 4.3,
+    quantityVote: 72
   },
   faq: [
     {

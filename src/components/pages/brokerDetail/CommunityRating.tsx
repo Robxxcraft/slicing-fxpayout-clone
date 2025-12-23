@@ -61,7 +61,7 @@ const CommunityRating = ({name, profileImage, ranking, communityRating}:
             </div>
             <div className="mt-4 lg:mt-5 2xl:mt-6 px-8 py-4 bg-[#F5F8FF] rounded-full text-nowrap">
               <p className="text-base">
-                Berdasarkan <span className="font-bold">121</span> Ulasan Komunitas
+                Berdasarkan <span className="font-bold">{communityRating.quantityVote}</span> Ulasan Komunitas
               </p>
             </div>
           </div>

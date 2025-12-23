@@ -129,7 +129,8 @@ export const xmDetail: BrokerStruc = {
     score: 4.3,
     withdrawalSpeed: 4.5,
     stability: 4.4,
-    customerSupport: 4.5
+    customerSupport: 4.5,
+    quantityVote: 97
   },
   faq: [
     {

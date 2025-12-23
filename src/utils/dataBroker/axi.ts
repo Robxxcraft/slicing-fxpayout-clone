@@ -116,7 +116,8 @@ export const axiDetail: BrokerStruc = {
     score: 4.5,
     withdrawalSpeed: 4.5,
     stability: 4.6,
-    customerSupport: 4.4
+    customerSupport: 4.4,
+    quantityVote: 72
   },
   faq: [
     {

@@ -129,7 +129,8 @@ export const octaFxDetail: BrokerStruc = {
     score: 4.5,
     withdrawalSpeed: 4.6,
     stability: 4.5,
-    customerSupport: 4.4
+    customerSupport: 4.4,
+    quantityVote: 97
   },
   faq: [
     {

@@ -53,6 +53,7 @@ export type Platform = {
 }
 export type CommunityRatingStruc = {
   score: number;
+  quantityVote: number;
   withdrawalSpeed: number;
   stability: number;
   customerSupport: number;

@@ -122,7 +122,8 @@ export const zfxDetail: BrokerStruc = {
     score: 4.4,
     withdrawalSpeed: 4.6,
     stability: 4.5,
-    customerSupport: 4.3
+    customerSupport: 4.3,
+    quantityVote: 70
   },
   faq: [
     {

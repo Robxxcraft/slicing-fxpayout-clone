@@ -124,7 +124,8 @@ export const icMarketDetail: BrokerStruc = {
     score: 4.7,
     withdrawalSpeed: 5,
     stability: 5,
-    customerSupport: 4.5
+    customerSupport: 4.5,
+    quantityVote: 102
   },
   faq: [
     {

@@ -120,7 +120,8 @@ export const fpMarketsDetail: BrokerStruc = {
     score: 4.6,
     withdrawalSpeed: 4.5,
     stability: 4.6,
-    customerSupport: 4.5
+    customerSupport: 4.5,
+    quantityVote: 88
   },
   faq: [
     {

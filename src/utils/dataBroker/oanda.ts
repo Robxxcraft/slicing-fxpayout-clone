@@ -104,7 +104,8 @@ export const oandaDetail: BrokerStruc = {
     score: 4.2,
     withdrawalSpeed: 4.4,
     stability: 4.3,
-    customerSupport: 4.2
+    customerSupport: 4.2,
+    quantityVote: 79
   },
   faq: [
     {

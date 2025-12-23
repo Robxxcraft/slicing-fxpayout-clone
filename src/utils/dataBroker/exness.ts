@@ -137,6 +137,7 @@ export const exnessDetail: BrokerStruc = {
   disadvantages: ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"],
   communityRating: {
     score: 4.8,
+    quantityVote: 121,
     withdrawalSpeed: 5,
     stability: 5,
     customerSupport: 4.5

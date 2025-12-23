@@ -6,7 +6,6 @@ import BrokerList from "@/components/broker/BrokerList";
 import NotifyBroker from "@/components/broker/NotifyBroker";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { useSearchParams } from "react-router-dom";
 
 const Broker = () => {

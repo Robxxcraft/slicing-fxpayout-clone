@@ -128,7 +128,8 @@ export const hfmDetail: BrokerStruc = {
     score: 4.3,
     withdrawalSpeed: 4.4,
     stability: 4.3,
-    customerSupport: 4.3
+    customerSupport: 4.3,
+    quantityVote: 76
   },
   faq: [
     {

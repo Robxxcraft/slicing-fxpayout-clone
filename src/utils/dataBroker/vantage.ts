@@ -127,7 +127,8 @@ export const vantageDetail: BrokerStruc = {
     score: 4.4,
     withdrawalSpeed: 4.4,
     stability: 4.5,
-    customerSupport: 4.3
+    customerSupport: 4.3,
+    quantityVote: 77
   },
   faq: [
     {

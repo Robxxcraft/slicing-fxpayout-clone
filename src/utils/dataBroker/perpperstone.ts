@@ -124,6 +124,7 @@ export const pepperstoneDetail: BrokerStruc = {
   disadvantages: ["Instrumen non-CFD nyata terbatas", "Support 24/7 tidak tersedia untuk semua wilayah", "Leverage bisa dibatasi tergantung lokasi"],
   communityRating: {
     score: 4.5,
+    quantityVote: 102,
     withdrawalSpeed: 5,
     stability: 4.5,
     customerSupport: 4.5

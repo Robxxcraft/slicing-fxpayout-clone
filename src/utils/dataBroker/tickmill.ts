@@ -125,7 +125,8 @@ export const tickmillDetail: BrokerStruc = {
     score: 4.4,
     withdrawalSpeed: 4.5,
     stability: 4.5,
-    customerSupport: 4.4
+    customerSupport: 4.4,
+    quantityVote: 84
   },
   faq: [
     {
