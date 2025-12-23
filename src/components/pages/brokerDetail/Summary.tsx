@@ -1,57 +1,26 @@
+import type { SummaryBroker } from "@/utils/dataBroker/typeDetailBroker";
 import BoundedIcon from "./ui/BoundedIcon";
 import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 
 type SumaryStructure = {
   title: string;
-  detail: string;
+  detail: string | string[];
   icon: string;
 }
 
-const summaryItems: SumaryStructure[] = [
-  {
-    title: "Min Deposit",
-    detail: "$10",
-    icon: "min-depo.svg"
-  },
-  {
-    title: "Jenis Akun",
-    detail: "Standard Cent, Standard, Raw Spread, Zero, Pro",
-    icon: "category-acc.svg"
-  },
-  {
-    title: "Spread",
-    detail: "Mulai 0.0 pips (Raw) — rata-rata sangat rendah",
-    icon: "spread.svg"
-  },
-  {
-    title: "Komisi",
-    detail: "Raw/Zero: $3.5–$8 per lot (tergantung pair)",
-    icon: "commision.svg"
-  },
-  {
-    title: "Leverage",
-    detail: "Hingga 1:2000+ (smart leverage system)",
-    icon: "leverage.svg"
-  },
-  {
-    title: "Eksekusi Order",
-    detail: "0.01–0.04 detik (super cepat)",
-    icon: "order.svg"
-  },
-  {
-    title: "Instrumen",
-    detail: "Forex, Gold, Crypto CFD, Indeks, Energi, Saham",
-    icon: "instrument.svg"
-  },
-  {
-    title: "Deposit & Withdraw",
-    detail: "Super cepat (<1 menit untuk e-wallet/crypto)",
-    icon: "depo-withdraw.svg"
-  },
-]
+const Summary = ({summaryBroker}: {summaryBroker: SummaryBroker}) => {
+  const summaryItems: SumaryStructure[] = [
+    { title: "Min Deposit", detail: summaryBroker.minDeposit, icon: "min-depo.svg" },
+    { title: "Jenis Akun", detail: summaryBroker.type, icon: "category-acc.svg" },
+    { title: "Spread", detail: summaryBroker.spread, icon: "spread.svg" },
+    { title: "Komisi", detail: summaryBroker.commission, icon: "commision.svg" },
+    { title: "Leverage", detail: summaryBroker.leverage, icon: "leverage.svg" },
+    { title: "Eksekusi Order", detail: summaryBroker.execution, icon: "order.svg" },
+    { title: "Instrumen", detail: summaryBroker.instruments, icon: "instrument.svg" },
+    { title: "Deposit & Withdraw", detail: summaryBroker.depositWithdrawal, icon: "depo-withdraw.svg" },
+  ]
 
-const Summary = () => {
   return (
     <section id="ringkasan" className="scroll-mt-18 lg:scroll-mt-0 pt-6 md:pt-10 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>Ringkasan Cepat (Quick Facts)</HeadingSection>
@@ -64,7 +33,14 @@ const Summary = () => {
             </div>
             <div className="flex w-fit flex-col gap-2 2xl:gap-4">
               <p className="text-base 2xl:text-xl leading-6 uppercase">{item.title}</p>
-              <p className="text-xl 2xl:text-2xl font-semibold leading-6">{item.detail}</p>
+              <p className="text-xl 2xl:text-2xl font-semibold leading-6">
+                {Array.isArray(item.detail) ? 
+                  item.detail.map((text: string) => (
+                    <span key={text}>{text} <br/></span>
+                  )):
+                  item.detail
+                }
+              </p>
             </div>
           </div>
         ))}

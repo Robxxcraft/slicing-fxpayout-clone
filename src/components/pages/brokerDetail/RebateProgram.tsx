@@ -1,8 +1,8 @@
+import Button from "@/components/ui/Button";
 import { IoArrowForwardOutline } from "react-icons/io5";
-import Button from "../../ui/Button";
 import { TiInfoLarge } from "react-icons/ti";
 
-const RebateProgram = () => {
+const RebateProgram = ({estimateEur, estimateXau}: {estimateEur: number; estimateXau: number}) => {
   return (
     <section className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <div className="px-6 2xl:px-10 py-10 2xl:py-14 grid grid-cols-1 lg:grid-cols-2 gap-6 2xl:gap-8 bg-primary rounded-2xl 2xl:rounded-3xl">
@@ -18,12 +18,12 @@ const RebateProgram = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-2 lg:gap-x-4 2xl:gap-x-6">
+        <div className="grid grid-cols-2 gap-y-4 gap-x-2 lg:gap-x-4 2xl:gap-x-6">
           <div className="px-6 md:px-8 2xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
             <p className="text-base 2xl:text-xl font-semibold text-white">EUR/USD</p>
             <div className="mt-3 lg:mt-2 flex items-end text-white">
               <p className="text-[30px] md:text-[36px] 2xl:text-[48px] lg:leading-14 font-semibold">
-                $6
+                ${estimateEur}
               </p>
               <p className="text-base lg:text-lg 2xl:text-2xl leading-10 md:leading-9 2xl:leading-8 tracking-[10%] font-semibold">
                 / lot
@@ -34,7 +34,7 @@ const RebateProgram = () => {
             <p className="text-base 2xl:text-xl font-semibold text-white">XAU/USD</p>
             <div className="mt-3 lg:mt-2 flex items-end text-white">
               <p className="text-[30px] md:text-[36px] 2xl:text-[48px] lg:leading-14 font-semibold">
-                $10
+                ${estimateXau}
               </p>
               <p className="text-base lg:text-lg 2xl:text-2xl leading-10 md:leading-9 2xl:leading-8 tracking-[10%] font-semibold">
                 / lot

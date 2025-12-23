@@ -2,32 +2,40 @@ import { FaStar, FaStarHalf } from "react-icons/fa";
 import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 import { IoMdStar } from "react-icons/io";
+import type { BrokerRanking, CommunityRatingStruc } from "@/utils/dataBroker/typeDetailBroker";
 
 type DetailRating = {
   type: string;
   rate: number;
 }
 
-const detailsRating: DetailRating[] = [
-  { type: "Kecepatan Withdraw (WD)", rate: 5.0 },
-  { type: "Stabilitas Server", rate: 5.0 },
-  { type: "Customer Support", rate: 4.5 },
-];
+const CommunityRating = ({name, profileImage, ranking, communityRating}: 
+  {
+    name: string; 
+    profileImage: string; 
+    ranking: BrokerRanking; 
+    communityRating: CommunityRatingStruc
+  }
+) => {
+  const detailsRating: DetailRating[] = [
+    { type: "Kecepatan Withdraw (WD)", rate: communityRating.withdrawalSpeed },
+    { type: "Stabilitas Server", rate: communityRating.stability },
+    { type: "Customer Support", rate: communityRating.customerSupport },
+  ];
 
-const CommunityRating = () => {
   return (
     <section id="rating" className="scroll-mt-26 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>Rating Komunitas</HeadingSection>
       <SubHeadingSection>Penilaian dan umpan balik dari pengguna broker.</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 flex flex-col lg:flex-row gap-6 2xl:gap-14">
         <div className="py-4 lg:py-6 2xl:py-8 flex-1 flex flex-col items-center justify-center w-full bg-[#F9F9F9] rounded-4xl 2xl:rounded-[40px]">
-          <img src="/broker/exness.png" alt="Icon" 
+          <img src={`/broker/${profileImage}`} alt={`Logo ${name}`} 
             className="size-16 lg:size-12 2xl:size-16 rounded-full object-cover" />
           <p className="mt-2 lg:mt-3 2xl:mt-4 text-2xl 2xl:text-[32px] font-semibold">
-            Exness
+            {name}
           </p>
           <p className="mt-3 2xl:mt-2 text-xl 2xl:text-2xl text-black/60">
-            Tier 1 Premium ECN Broker
+            Tier {ranking.tier} {ranking.title}
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-8 2xl:gap-10 flex-2">
@@ -37,18 +45,19 @@ const CommunityRating = () => {
             </p>
             <div className="mt-1 lg:mt-8 2xl:mt-10 flex items-end">
               <p className="text-[40px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
-                4.8
+                {communityRating.score}
               </p>
               <p className="text-2xl 2xl:text-[36px] leading-11 tracking-[10%] font-semibold">
                 /5
               </p>
             </div>
             <div className="mt-1 lg:mt-3 2xl:mt-4 flex gap-1 2xl:gap-2">
-              <FaStar className="text-2xl text-my-yellow" />
-              <FaStar className="text-2xl text-my-yellow" />
-              <FaStar className="text-2xl text-my-yellow" />
-              <FaStar className="text-2xl text-my-yellow" />
-              <FaStarHalf className="text-2xl text-my-yellow" />
+              {Array.from({length: Math.floor(communityRating.score)}).map((_, idx) => (
+                <FaStar key={idx} className="text-2xl text-my-yellow" />
+              ))}
+              {!Number.isInteger(communityRating.score) &&
+                <FaStarHalf className="text-2xl text-my-yellow" />
+              }
             </div>
             <div className="mt-4 lg:mt-5 2xl:mt-6 px-8 py-4 bg-[#F5F8FF] rounded-full text-nowrap">
               <p className="text-base">

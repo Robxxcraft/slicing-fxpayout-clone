@@ -3,10 +3,7 @@ import { MdThumbUp } from "react-icons/md";
 import HeadingSection from './ui/HeadingSection';
 import SubHeadingSection from './ui/SubHeadingSection';
 
-const advantages = ["Spread & eksekusi sangat stabil", "Withdraw super cepat", "Banyak metode deposit & withdraw", "Tersedia akun Cent untuk pemula", "Ramah EA & scalping", "Leverage besar dan fleksibel"];
-const disadvantages = ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"];
-
-const ProsCons = () => {
+const ProsCons = ({advantages, disadvantages}: {advantages: string[]; disadvantages: string[]}) => {
   return (
     <section id="kelebihan-kekurangan" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>Kelebihan & Kekurangan</HeadingSection>
@@ -28,7 +25,7 @@ const ProsCons = () => {
               {advantages.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <MdThumbUp className="text-primary text-2xl"/>  
-                  <p className="w-fit text-xl md:text-2xl leading-6">
+                  <p className="w-fit text-xl md:text-2xl leading-[29px]">
                     {item}
                   </p>
                 </div>
@@ -52,7 +49,7 @@ const ProsCons = () => {
               {disadvantages.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <MdThumbUp className="rotate-180 scale-x-[-1] text-[#FC685B] text-2xl"/>  
-                  <p className="w-fit text-xl md:text-2xl leading-6">
+                  <p className="w-fit text-xl md:text-2xl leading-[29px]">
                     {item}
                   </p>
                 </div>

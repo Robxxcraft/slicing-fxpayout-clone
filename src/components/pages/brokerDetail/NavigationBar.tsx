@@ -1,13 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { listNavigationBrokers } from "../../../utils/listNavigation";
-import Button from "../../ui/Button";
+import { listNavigationBrokers } from "@/utils/listNavigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { throttle } from "lodash";
-import { links } from "../../../utils/listLink";
+import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
+import Button from "@/components/ui/Button";
 
-const NavigationBar = () => {
+const NavigationBar = ({name, ranking, profileImage, registerUrl, websiteUrl}: 
+  {
+    name: string; 
+    ranking: BrokerRanking; 
+    profileImage: string; 
+    registerUrl: string; 
+    websiteUrl: string
+  }
+) => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
 
@@ -28,14 +36,14 @@ const NavigationBar = () => {
         <div className="flex justify-between items-center w-full lg:w-fit">
           <div className="flex gap-3 lg:gap-5 2xl:gap-6">
             <img
-              src="/broker/exness.png"
-              alt="Logo Broker"
+              src={`/broker/${profileImage}`}
+              alt={`Logo ${name}`}
               className="size-12 lg:size-16 2xl:size-[84px] rounded-lg lg:rounded-xl 2xl:rounded-[20px]"
             />
             <div className="flex flex-col justify-between">
-              <p className="text-xl lg:text-[26px] 2xl:text-[36px] font-semibold text-black">Exness</p>
+              <p className="text-xl lg:text-[26px] 2xl:text-[36px] font-semibold text-black">{name}</p>
               <p className="text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80">
-                Tier 1 Premium ECN Broker
+                Tier {ranking.tier} {ranking.title}
               </p>
             </div>
           </div>
@@ -47,7 +55,7 @@ const NavigationBar = () => {
           : <IoClose onClick={() => setOpenMenu(false)} className="text-3xl cursor-pointer" />
           }
         </div>
-        <ButtonCta scrollY={scrollY} />
+        <ButtonCta scrollY={scrollY} registerUrl={registerUrl} />
       </div>
 
       {/* ROW 2 */}
@@ -78,12 +86,12 @@ const NavigationBar = () => {
             ))}
           </div>
           <div className="px-5 mt-4 flex items-center justify-center w-full gap-2 flex-wrap">
-            <Link to={links.registerExness} className="w-fit text-center">
+            <Link to={registerUrl} className="w-fit text-center">
               <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
                 Daftar Sekarang
               </span>
             </Link>
-            <Link to="#" className="w-fit text-center">
+            <Link to={websiteUrl} className="w-fit text-center">
               <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
                 Kunjungan Website
               </span>
@@ -95,13 +103,13 @@ const NavigationBar = () => {
   );
 };
 
-const ButtonCta = ({ scrollY }:{scrollY: number}) => {
+const ButtonCta = ({ scrollY, registerUrl }:{scrollY: number; registerUrl: string}) => {
   return (
     <div className={`
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
-      <Button buttonType="link" urlTo={links.registerExness} variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
+      <Button buttonType="link" urlTo={registerUrl} variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
       <Button variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
     </div>
   )

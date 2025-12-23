@@ -1,24 +1,36 @@
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import Button from "../../ui/Button";
-import BoundedIcon from "./ui/BoundedIcon";
 import { FaStar, FaStarHalf  } from "react-icons/fa6";
-import { links } from "../../../utils/listLink";
+import type { OverallScore, BrokerRanking, Specification } from "@/utils/dataBroker/typeDetailBroker";
+import BoundedIcon from "./ui/BoundedIcon";
+import Button from "@/components/ui/Button";
 
-type Spesification = {
+type DetailBio = {
   title: string;
-  detail: string;
+  detail: string | string[];
   icon: string;
 }
 
-const spesification: Spesification[] = [
-  {title: "Tahun Berdiri", detail: "2008", icon: "year-founded.svg"},
-  {title: "Min Deposit", detail: "$10", icon: "min-depo.svg"},
-  {title: "Leverage", detail: "Hingga 1:2000+", icon: "leverage.svg"},
-  {title: "Spread", detail: "Mulai 0.0 pips (Raw)", icon: "spread.svg"},
-]
+const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, description, registerUrl, websiteUrl, spesification}: 
+  {
+    name: string; 
+    ranking: BrokerRanking; 
+    badges: string[]; 
+    profileImage: string; 
+    overallScore: OverallScore; 
+    description: string; 
+    registerUrl: string; 
+    websiteUrl: string; 
+    spesification: Specification
+  }
+) => {
+  const detailBio: DetailBio[] = [
+    {title: "Tahun Berdiri", detail: spesification.yearFounded, icon: "year-founded.svg"},
+    {title: "Min Deposit", detail: spesification.minDeposit, icon: "min-depo.svg"},
+    {title: "Leverage", detail: spesification.leverage, icon: "leverage.svg"},
+    {title: "Spread", detail: spesification.spread, icon: "spread.svg"},
+  ]
 
-const HeaderBroker = () => {
   return (
     <header className="mt-[92px] md:mt-[180px] lg:mt-[50px] 2xl:mt-[60px] px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <Link
@@ -29,17 +41,17 @@ const HeaderBroker = () => {
       </Link>
       <div className="mt-6 lg:mt-8 2xl:mt-10 flex flex-col md:flex-row gap-4 justify-between">
         <div className="flex gap-4 lg:gap-6 2xl:gap-8 items-start w-fit">
-          <img src="/broker/exness.png" alt="logo broker" 
+          <img src={`/broker/${profileImage}`} alt={`Logo ${name}`} 
             className="size-16 lg:size-28 xl:size-45 2xl:size-60 rounded-[10px] lg:rounded-[20px] object-center object-cover" 
           />
           <div>
             <h1 className="text-2xl lg:text-3xl xl:text-[36px] 2xl:text-[48px] font-semibold">
-              Exness
+              {name}
             </h1>
-            <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium text-black/80">
-              Tier 1 Premium ECN Broker
+            <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
+              Tier {ranking.tier} {ranking.title}
             </p>
-            <BioBroker />
+            <BioBroker badges={badges} registerUrl={registerUrl} websiteUrl={websiteUrl} />
           </div>
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
@@ -50,32 +62,33 @@ const HeaderBroker = () => {
           </p>
           <div className="mt-1 lg:mt-5 2xl:mt-10 flex items-end">
             <p className="text-[36px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
-              4.8
+              {overallScore.rate}
             </p>
             <p className="text-xl lg:text-[26px] 2xl:text-[36px] leading-11 tracking-[10%] font-semibold">
               /5
             </p>
           </div>
           <div className="lg:mt-5 2xl:mt-4 flex gap-2">
-            <FaStar className="text-2xl text-my-yellow" />
-            <FaStar className="text-2xl text-my-yellow" />
-            <FaStar className="text-2xl text-my-yellow" />
-            <FaStar className="text-2xl text-my-yellow" />
-            <FaStarHalf className="text-2xl text-my-yellow" />
+            {Array.from({length: Math.floor(overallScore.rate)}).map((_, idx) => (
+              <FaStar key={idx} className="text-2xl text-my-yellow" />
+            ))}
+            {!Number.isInteger(overallScore.rate) &&
+              <FaStarHalf className="text-2xl text-my-yellow" />
+            }
           </div>
-          <Link to="#" 
+          <Link to={overallScore.communityUrl} 
             className="mt-4 block text-base font-semibold bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text underline! decoration-dark-primary">
             Lihat Ulasan Komunitas
           </Link>
         </div>
       </div>
 
-      <div className="block lg:hidden"><ButtonCta /></div>
+      <div className="block lg:hidden"><ButtonCta registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
 
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
         <p className="text-base 2xl:text-2xl leading-[180%] text-black/80">
-          Broker global dengan eksekusi super cepat, spread rendah, serta pilihan akun yang sangat fleksibel termasuk akun CENT. Menyediakan akses ke Forex, Gold, Indeks, Energi, hingga CFD dengan kondisi stabil dan transparan. Didukung proses deposit-withdraw cepat serta platform trading modern untuk pemula hingga trader profesional.
+          {description}
 
           <Link to="#" className="ml-2 font-semibold text-primary">
             Selengkapnya…
@@ -83,9 +96,9 @@ const HeaderBroker = () => {
         </p>
       </div>
 
-      {/* SPESIFICATION */}
+      {/* DETAILBIO */}
       <div className="mt-4 lg:mt-8 2xl:mt-10 md:py-4 lg:py-6 2xl:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-[#828282]/50">
-        {spesification.map((item, idx) => (
+        {detailBio.map((item, idx) => (
           <div key={idx} className={`
             ${idx === 0 && "pt-4 md:pt-0 pb-4 lg:pb-0 border-b lg:border-b-0"}
             ${idx === 1 && "pt-4 md:pt-0 pb-4 lg:pb-0 border-b lg:border-b-0"}
@@ -99,10 +112,19 @@ const HeaderBroker = () => {
               ${idx % 2 !== 0 && "md:pl-10 md:border-l"}
               flex gap-4 2xl:gap-6 border-[#828282]/50`
             }>
-              <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="Icon" />
+              <div className="w-fit">
+                <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="Icon" />
+              </div>
               <div className="flex flex-col gap-1 lg:gap-2">
                 <p className="text-base 2xl:text-2xl text-black/80">{item.title}</p>
-                <p className="text-xl 2xl:text-[28px] 2xl:leading-8 font-semibold">{item.detail}</p>
+                <p className="text-xl 2xl:text-[28px] 2xl:leading-8 font-semibold">
+                  {Array.isArray(item.detail) ? 
+                    item.detail.map((text: string) => (
+                      <span key={text}>{text} <br/></span>
+                    )):
+                    item.detail
+                  }
+                </p>
               </div>
             </div>
           </div>
@@ -112,11 +134,11 @@ const HeaderBroker = () => {
   );
 };
 
-const BioBroker = () => {
+const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
   return (
     <>
       <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap xl:flex-nowrap gap-2 w-fit">
-        {["Tier 1", "ENC Broker", "Akun Cent", "Ultra-Fast Execution"].map((item) => (
+        {badges.map((item) => (
           <div key={item}
             className="bg-linear-to-t from-dark-primary to-primary border border-transparent bg-clip-border rounded-lg overflow-hidden"
           >
@@ -128,18 +150,18 @@ const BioBroker = () => {
           </div>
         ))}
       </div>
-      <div className="hidden lg:block"><ButtonCta /></div>
+      <div className="hidden lg:block"><ButtonCta registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
     </>
   )
 }
 
-const ButtonCta = () => {
+const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
-      <Button buttonType="link" urlTo={links.registerExness} variant="primary" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={registerUrl} variant="primary" size="md" className="text-nowrap flex-1">
         Daftar Sekarang
       </Button>
-      <Button variant="outline" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={websiteUrl} variant="outline" size="md" className="text-nowrap flex-1">
         Kunjungi Website
       </Button>
     </div>

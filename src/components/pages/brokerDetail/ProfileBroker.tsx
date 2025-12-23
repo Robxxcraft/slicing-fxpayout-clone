@@ -1,10 +1,11 @@
+import type { ProfileDetailBroker } from "@/utils/dataBroker/typeDetailBroker";
 import BoundedIcon from "./ui/BoundedIcon";
 import ContentBody from "./ui/ContentBody";
 import ContentHead from "./ui/ContentHead";
 import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 
-const ProfilBroker = () => {
+const ProfileBroker = ({profile}: {profile: ProfileDetailBroker}) => {
   return (
     <section id="profil" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>Profil Broker</HeadingSection>
@@ -25,7 +26,7 @@ const ProfilBroker = () => {
                 <ContentHead>Nama Broker</ContentHead>
               </div>
               <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>Exness</ContentBody>
+                <ContentBody>{profile.name}</ContentBody>
               </div>
             </div>
             <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
@@ -33,7 +34,7 @@ const ProfilBroker = () => {
                 <ContentHead>Slogan</ContentHead>
               </div>
               <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>Trade with accuracy, speed, and deep liquidity</ContentBody>
+                <ContentBody>{profile.slogan}</ContentBody>
               </div>
             </div>
             <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
@@ -41,7 +42,7 @@ const ProfilBroker = () => {
                 <ContentHead>Tier</ContentHead>
               </div>
               <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>Tier 1 — Premium ECN Broker</ContentBody>
+                <ContentBody>Tier {profile.ranking.tier} — {profile.ranking.title}</ContentBody>
               </div>
             </div>
             <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
@@ -49,7 +50,7 @@ const ProfilBroker = () => {
                 <ContentHead>Tahun Berdiri</ContentHead>
               </div>
               <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>2008</ContentBody>
+                <ContentBody>{profile.yearFounded}</ContentBody>
               </div>
             </div>
             <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
@@ -57,7 +58,7 @@ const ProfilBroker = () => {
                 <ContentHead>Jenis Broker</ContentHead>
               </div>
               <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>Multi-regulated, ECN/Market Execution</ContentBody>
+                <ContentBody>{profile.brokerCategory}</ContentBody>
               </div>
             </div>
           </div>
@@ -72,54 +73,16 @@ const ProfilBroker = () => {
             </HeadingSection>
           </div>
           <div className="mt-6 2xl:mt-10">
-            <div className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-              <div>
-                <ContentHead>FSA</ContentHead>
+            {profile.regulations.map((item, idx) => (
+              <div key={idx} className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
+                <div>
+                  <ContentHead>{item.name}</ContentHead>
+                </div>
+                <div className="text-right">
+                  <ContentBody>{item.country}</ContentBody>
+                </div>
               </div>
-              <div className="text-right">
-                <ContentBody>Seychelles</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-              <div>
-                <ContentHead>CySEC</ContentHead>
-              </div>
-              <div className="text-right">
-                <ContentBody>Eropa</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-              <div>
-                <ContentHead>FSC</ContentHead>
-              </div>
-              <div className="text-right">
-                <ContentBody>Mauritius</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-              <div>
-                <ContentHead>FSCA</ContentHead>
-              </div>
-              <div className="text-right">
-                <ContentBody>Afrika Selatan</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-              <div>
-                <ContentHead>CBCS</ContentHead>
-              </div>
-              <div className="text-right">
-                <ContentBody>Curacao</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex justify-between w-full border-b border-[#828282]/50">
-              <div>
-                <ContentHead>FCA (historis)</ContentHead>
-              </div>
-              <div className="text-right">
-                <ContentBody>United Kingdom</ContentBody>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -127,4 +90,4 @@ const ProfilBroker = () => {
   )
 }
 
-export default ProfilBroker;
+export default ProfileBroker;
