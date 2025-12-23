@@ -23,7 +23,7 @@ const LanguageSelector = ({
         className="flex gap-2 items-center cursor-pointer"
         onClick={() => setOpen(!open)}>
         <img
-          src={`flags/${selectedLanguage.flag}`}
+          src={`/flags/${selectedLanguage.flag}`}
           alt={`flag-${selectedLanguage.label}`}
           className="w-8"
         />

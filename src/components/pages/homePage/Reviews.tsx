@@ -1,13 +1,13 @@
 import { BiSolidQuoteAltRight } from "react-icons/bi";
 import { PiStarFill } from "react-icons/pi";
 import { IoArrowBackOutline, IoArrowForward } from "react-icons/io5";
-import { testimonials } from "../utils/testimonial";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import { testimonials } from "@/utils/testimonial";
 
 const Reviews = () => {
   return (

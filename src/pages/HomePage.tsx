@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import Benefits from "../components/Benefits";
-import CtaSection from "../components/CtaSection";
-import Footer from "../components/Footer";
-import HeroHome from "../components/HeroHome";
-import HowItWorks from "../components/HowItWorks";
-import Navbar from "../components/Navbar";
-import Profile from "../components/Profile";
-import Reviews from "../components/Reviews";
-import Rewards from "../components/Rewards";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Benefits from "@/components/pages/homePage/Benefits";
+import HeroHome from "@/components/pages/homePage/HeroHome";
+import HowItWorks from "@/components/pages/homePage/HowItWorks";
+import Profile from "@/components/pages/homePage/Profile";
+import Reviews from "@/components/pages/homePage/Reviews";
+import Rewards from "@/components/pages/homePage/Rewards";
 
 const HomePage = () => {
   useEffect(() => {

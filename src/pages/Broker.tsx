@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import BrokerList from "../components/broker/BrokerList";
-import Header from "../components/broker/Header";
-import NotifyBroker from "../components/broker/NotifyBroker";
-import CtaSection from "../components/CtaSection";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import { brokers } from "@/utils/dataBroker/brokers";
+import Navbar from "@/components/Navbar";
+import Header from "@/components/broker/Header";
+import BrokerList from "@/components/broker/BrokerList";
+import NotifyBroker from "@/components/broker/NotifyBroker";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
 
 const Broker = () => {
   const [showNotify, setShowNotify] = useState<boolean>(true);
+  const brokerPartners = Object.values(brokers);
 
   useEffect(() => {
     document.title = "Broker | FX Payout";
@@ -17,7 +19,7 @@ const Broker = () => {
     <div className="font-inter">
       <Navbar active="broker" />
       <Header />
-      <BrokerList />
+      <BrokerList brokerPartners={brokerPartners} />
       {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
       <CtaSection />
       <Footer />

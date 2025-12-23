@@ -2,14 +2,15 @@ import { useState, type ChangeEvent } from "react";
 import { IoIosCalculator } from "react-icons/io";
 import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronDown } from "react-icons/fa6";
-import { brokerPartners } from "../utils/brokerPartner";
-import Button from "./ui/Button";
+import Button from "@/components/ui/Button";
+import { brokers } from "@/utils/dataBroker/brokers";
 
 const HeroHome = () => {
   const [lotperMonth, setLotperMoth] = useState<number>(1);
   const [selectedBroker, setSelectedBroker] = useState<string>(
-    brokerPartners[0].username
+    Object.values(brokers)[0].name
   );
+  const allBrokers = Object.values(brokers);
 
   const handleChangeLotperMonth = (e: ChangeEvent<HTMLInputElement>) => {
     const num = Number(e.target.value);
@@ -82,9 +83,9 @@ const HeroHome = () => {
                   value={selectedBroker}
                   onChange={(e) => setSelectedBroker(e.target.value)}
                   className="_select-no-arrow px-4 py-3 w-full border border-[#D0D5DD] rounded-lg">
-                  {brokerPartners.map((broker, idx) => (
-                    <option key={idx} value={broker.username}>
-                      {broker.username}
+                  {allBrokers.map((broker, idx) => (
+                    <option key={idx} value={broker.name}>
+                      {broker.name}
                     </option>
                   ))}
                 </select>

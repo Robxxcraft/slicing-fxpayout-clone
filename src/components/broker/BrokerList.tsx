@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import BrokerItem from "./BrokerItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { brokerPartners } from "../../utils/brokerPartner";
-import { useNavigationToTop } from "../../hooks/useNavigationToTop";
+import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
+import { useNavigationToTop } from "@/hooks/useNavigationToTop";
 
-const BrokerList = () => {
+const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage] = useState<number>(6);
   const [startIndex, setStartIndex] = useState<number>(0);
@@ -26,7 +27,7 @@ const BrokerList = () => {
     }
     setStartIndex((currentPage - 1) * itemsPerPage);
     setEndIndex(currentPage * itemsPerPage);
-    
+    setIsLoading(false);
   }, [currentPage, itemsPerPage, navigateToTop, searchParams]);
 
   const handleClickPrevButton = () => {
@@ -65,6 +66,9 @@ const BrokerList = () => {
     return pages;
   }
 
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <>

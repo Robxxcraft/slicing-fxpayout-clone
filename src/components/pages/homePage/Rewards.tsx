@@ -1,5 +1,5 @@
+import Button from "@/components/ui/Button";
 import { IoMegaphone } from "react-icons/io5";
-import Button from "./ui/Button";
 
 const Rewards = () => {
   return (
