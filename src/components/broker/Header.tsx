@@ -1,12 +1,7 @@
-import { useState, type ChangeEvent } from "react";
+import type { ChangeEventHandler } from "react";
 import { CiSearch } from "react-icons/ci";
 
-const Header = () => {
-  const [query, setQuery] = useState<string>("");
-
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
+const Header = ({query, onHandleSearch}: {query: string; onHandleSearch: ChangeEventHandler<HTMLInputElement>}) => {
 
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-[120px] lg:pt-[150px] 2xl:pt-[200px]">
@@ -35,7 +30,7 @@ const Header = () => {
             name="search"
             placeholder="Cari broker disini"
             value={query}
-            onChange={handleSearch}
+            onChange={onHandleSearch}
             type="text"
             className="w-full text-base placeholder:text-[rgba(0,0,0,0.8)] focus:outline-0"
           />
