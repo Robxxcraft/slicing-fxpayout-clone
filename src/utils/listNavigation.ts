@@ -14,15 +14,15 @@ export const listNavigation: NavigationLink[] = [
   },
   {
     title: "Kalkulator",
-    url: "/kalkulator",
+    url: "#",
   },
   {
     title: "Klaim Rebate",
-    url: "/klaim-rebate",
+    url: "#",
   },
   {
     title: "Legal",
-    url: "/legal",
+    url: "#",
   },
 ];
 

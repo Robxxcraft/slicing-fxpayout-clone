@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="mb-2 md:mb-0 flex flex-2 basis-full lg:basis-0 flex-col">
           <div className="flex gap-2 items-center">
             <img
-              src="/logoBlue.svg"
+              src="/fxpayout-blue.svg"
               alt="logo fx payout"
               className="w-10 2xl:w-[50px]"
             />
