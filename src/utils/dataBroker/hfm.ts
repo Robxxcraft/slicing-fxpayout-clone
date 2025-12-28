@@ -10,7 +10,7 @@ const brokerRanking: BrokerRanking = {
 export const hfmDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "hfm.webp",
-  registerUrl: "#",
+  registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   websiteUrl: "#",
   detailUrl: "hfm",
   ranking: brokerRanking,

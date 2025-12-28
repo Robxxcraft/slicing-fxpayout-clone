@@ -10,7 +10,7 @@ const brokerRanking: BrokerRanking = {
 export const xmDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "xm.webp",
-  registerUrl: "#",
+  registerUrl: "https://affs.click/4gFt7",
   websiteUrl: "#",
   detailUrl: "xm",
   ranking: brokerRanking,
