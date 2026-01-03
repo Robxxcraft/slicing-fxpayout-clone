@@ -57,7 +57,7 @@ const HowItWorks = () => {
           yang mengurus aliran komisi menjadi cashback untuk Anda.
         </p>
       </div>
-      <div className="mt-6 2xl:mt-10 flex justify-between gap-2 flex-wrap lg:flex-nowrap">
+      <div className="mt-6 2xl:mt-10 flex justify-center gap-2 flex-wrap lg:flex-nowrap">
         {workflows.map((workflow, idx) => (
           <div key={idx} className="relative">
             <div className="p-6 w-full max-w-full lg:max-w-[360px] bg-[#F9F9F9] rounded-[40px]">

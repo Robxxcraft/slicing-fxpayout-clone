@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { listNavigationBrokers } from "@/utils/listNavigation";
@@ -91,7 +92,7 @@ const NavigationBar = ({name, ranking, profileImage, registerUrl, websiteUrl}:
                 Daftar Sekarang
               </span>
             </Link>
-            <Link to={websiteUrl} className="w-fit text-center">
+            <Link to={registerUrl} className="w-fit text-center">
               <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
                 Kunjungan Website
               </span>
@@ -110,7 +111,7 @@ const ButtonCta = ({ scrollY, registerUrl }:{scrollY: number; registerUrl: strin
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
       <Button buttonType="link" urlTo={registerUrl} variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
-      <Button variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
+      <Button buttonType="link" urlTo={registerUrl} variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
     </div>
   )
 }

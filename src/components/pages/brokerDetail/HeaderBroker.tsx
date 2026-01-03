@@ -155,13 +155,14 @@ const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registe
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
       <Button buttonType="link" urlTo={registerUrl} variant="primary" size="md" className="text-nowrap flex-1">
         Daftar Sekarang
       </Button>
-      <Button buttonType="link" urlTo={websiteUrl} variant="outline" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={registerUrl} variant="outline" size="md" className="text-nowrap flex-1">
         Kunjungi Website
       </Button>
     </div>
