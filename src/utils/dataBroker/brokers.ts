@@ -1,11 +1,11 @@
 import { axiDetail } from "./axi";
-import { eightcapDetail } from "./eightcap";
+// import { eightcapDetail } from "./eightcap";
 import { exnessDetail } from "./exness";
 import { fbsDetail } from "./fbs";
 import { finexDetail } from "./finex";
 import { fpMarketsDetail } from "./fpMarkets";
 import { hfmDetail } from "./hfm";
-import { icMarketDetail } from "./icMarket";
+// import { icMarketDetail } from "./icMarket";
 import { oandaDetail } from "./oanda";
 import { octaFxDetail } from "./octafx";
 import { pepperstoneDetail } from "./perpperstone";
@@ -22,10 +22,10 @@ export const brokers = {
   "zfx": zfxDetail,
   "tickmill": tickmillDetail,
   "pepperstone": pepperstoneDetail,
-  "ic-markets": icMarketDetail,
+  // "ic-markets": icMarketDetail,
   "fp-markets": fpMarketsDetail,
   "xm": xmDetail,
-  "eightcap": eightcapDetail,
+  // "eightcap": eightcapDetail,
   "vantage": vantageDetail,
   "axi": axiDetail,
   "finex": finexDetail,
