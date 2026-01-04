@@ -10,7 +10,7 @@ const brokerRanking: BrokerRanking = {
 export const vantageDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "vantage.webp",
-  registerUrl: "#",
+  registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   websiteUrl: "#",
   detailUrl: "vantage",
   ranking: brokerRanking,

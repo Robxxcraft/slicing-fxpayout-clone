@@ -10,7 +10,7 @@ const brokerRanking: BrokerRanking = {
 export const octaFxDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "octafx.webp",
-  registerUrl: "#",
+  registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   websiteUrl: "#",
   detailUrl: "octafx",
   ranking: brokerRanking,
