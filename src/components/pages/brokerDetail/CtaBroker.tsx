@@ -2,7 +2,7 @@ import { IoArrowForward } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 
-const CtaBroker = ({name, websiteUrl}: {name: string; websiteUrl: string}) => {
+const CtaBroker = ({name, registerUrl}: {name: string; registerUrl: string}) => {
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-20">
       <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
@@ -17,7 +17,7 @@ const CtaBroker = ({name, websiteUrl}: {name: string; websiteUrl: string}) => {
             <Button variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
               Daftar Melalui FXPayout
             </Button>
-            <Button variant="outline-light" buttonType="link" urlTo={websiteUrl} size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
+            <Button variant="outline-light" buttonType="link" urlTo={registerUrl} size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
               Kunjungi Website Broker
             </Button>
           </div>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { listNavigationBrokers } from "@/utils/listNavigation";
@@ -8,13 +7,12 @@ import { throttle } from "lodash";
 import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "@/components/ui/Button";
 
-const NavigationBar = ({name, ranking, profileImage, registerUrl, websiteUrl}: 
+const NavigationBar = ({name, ranking, profileImage, registerUrl}: 
   {
     name: string; 
     ranking: BrokerRanking; 
     profileImage: string; 
     registerUrl: string; 
-    websiteUrl: string
   }
 ) => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);

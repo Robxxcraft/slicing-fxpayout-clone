@@ -11,7 +11,7 @@ type DetailBio = {
   icon: string;
 }
 
-const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, description, registerUrl, websiteUrl, spesification}: 
+const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, description, registerUrl, spesification}: 
   {
     name: string; 
     ranking: BrokerRanking; 
@@ -20,7 +20,6 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
     overallScore: OverallScore; 
     description: string; 
     registerUrl: string; 
-    websiteUrl: string; 
     spesification: Specification
   }
 ) => {
@@ -51,7 +50,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
             <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
               Tier {ranking.tier} {ranking.title}
             </p>
-            <BioBroker badges={badges} registerUrl={registerUrl} websiteUrl={websiteUrl} />
+            <BioBroker badges={badges} registerUrl={registerUrl} />
           </div>
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
@@ -83,7 +82,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
         </div>
       </div>
 
-      <div className="block lg:hidden"><ButtonCta registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
+      <div className="block lg:hidden"><ButtonCta registerUrl={registerUrl} /></div>
 
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
@@ -134,7 +133,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
   );
 };
 
-const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
+const BioBroker = ({badges, registerUrl}: {badges: string[]; registerUrl: string}) => {
   return (
     <>
       <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap xl:flex-nowrap gap-2 w-fit">
@@ -150,13 +149,12 @@ const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registe
           </div>
         ))}
       </div>
-      <div className="hidden lg:block"><ButtonCta registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
+      <div className="hidden lg:block"><ButtonCta registerUrl={registerUrl} /></div>
     </>
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
+const ButtonCta = ({registerUrl}: {registerUrl: string}) => {
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
       <Button buttonType="link" urlTo={registerUrl} variant="primary" size="md" className="text-nowrap flex-1">
