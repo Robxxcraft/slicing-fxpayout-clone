@@ -58,7 +58,7 @@ const BrokerDetailPage = () => {
 
       <DepositWIthdraw paymentMethods={broker.depositWithdrawal.paymentMethods} platforms={broker.depositWithdrawal.platforms}/>
 
-      <RebateProgram estimateEur={broker.rebateProgram[0].estimate} estimateXau={broker.rebateProgram[1].estimate} />
+      <RebateProgram detailData={broker.rebateProgram} />
 
       <ProsCons advantages={broker.advantages} disadvantages={broker.disadvantages} />
       

@@ -5,13 +5,13 @@ import SubHeadingSection from "./ui/SubHeadingSection";
 const DepositWIthdraw = ({paymentMethods, platforms}: {paymentMethods: PaymentMethod[]; platforms: Platform[]}) => {
   return (
     <section className="mt-10 md:mt-12 2xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 2xl:gap-14">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 2xl:gap-14">
 
         {/* DEPOSIT & WITHDRAW */}
-        <div id="deposit-withdraw" className="scroll-mt-26 lg:scroll-mt-10 w-full">
+        <div id="deposit-withdraw" className="scroll-mt-26 lg:scroll-mt-10 lg:col-span-7 w-full">
           <HeadingSection>Deposit & Withdraw</HeadingSection>
           <SubHeadingSection>Informasi metode serta waktu proses transaksi.</SubHeadingSection>
-          <div className="mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-hidden rounded-2xl">
+          <div className="mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl">
             <table className="table-auto w-full text-[#1D2433] text-base 2xl:text-xl">
               <thead>
                 <tr>
@@ -19,8 +19,11 @@ const DepositWIthdraw = ({paymentMethods, platforms}: {paymentMethods: PaymentMe
                     Metode
                   </th>
                   <th className="px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold tracking-[2%] text-left">
-                    Waktu
-                   Proses</th>
+                    Waktu Deposit
+                  </th>
+                  <th className="px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold tracking-[2%] text-left">
+                    Waktu Withdraw
+                  </th>
                   <th className="px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold tracking-[2%] text-left">
                     Biaya
                   </th>
@@ -37,12 +40,12 @@ const DepositWIthdraw = ({paymentMethods, platforms}: {paymentMethods: PaymentMe
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
                       px-4 md:px-8 py-6 md:py-4 text-left`}
                     >
-                      {Array.isArray(method.time) ? 
-                        method.time.map((text: string) => (
-                          <span key={text}>{text} <br/></span>
-                        )):
-                        method.time
-                      }
+                      {method.time.deposit}
+                    </td>
+                    <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
+                      px-4 md:px-8 py-6 md:py-4 text-left`}
+                    >
+                      {method.time.withdraw}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
                       px-4 md:px-8 py-6 md:py-4 text-left`}
@@ -57,7 +60,7 @@ const DepositWIthdraw = ({paymentMethods, platforms}: {paymentMethods: PaymentMe
         </div>
         
         {/* PLATFORM */}
-        <div id="platform" className="scroll-mt-26 lg:scroll-mt-10 w-full">
+        <div id="platform" className="scroll-mt-26 lg:scroll-mt-10 lg:col-span-5 w-full">
           <HeadingSection>Platform Trading yang Didukung</HeadingSection>
           <SubHeadingSection>Daftar platform yang dapat digunakan untuk trading.</SubHeadingSection>
           <div className="mt-6 2xl:mt-10 flex flex-col gap-2 2xl:gap-3.5">

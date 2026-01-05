@@ -1,5 +1,5 @@
 export type BrokerRanking = {
-  tier: string | null;
+  tier: string;
   title: string;
 }
 export type OverallScore = {
@@ -10,14 +10,19 @@ export type Specification = {
   yearFounded: string;
   minDeposit: string;
   leverage: string | string[];
-  spread: string;
+  spread: string | string[];
 }
 export type ProfileDetailBroker = {
   name: string;
-  slogan: string;
+  slogan?: string;
+  entity?: string;
+  group?: string;
   ranking: BrokerRanking;
   yearFounded: string;
   brokerCategory: string;
+  model?: string;
+  totalUser?: string;
+  totalInstrument?: string;
   regulations: RegulationBroker[];
 }
 export type RegulationBroker = {
@@ -26,12 +31,12 @@ export type RegulationBroker = {
 }
 export type SummaryBroker = {
   minDeposit: string | string[];
-  type: string;
-  spread: string;
+  types: string[];
+  spread: string | string[];
   commission: string;
   leverage: string | string[];
   execution: string;
-  instruments: string;
+  instruments: string[];
   depositWithdrawal: string;
 }
 export type SpreadStructure = {
@@ -44,19 +49,34 @@ export type SpreadStructure = {
 }
 export type PaymentMethod = {
   method: string;
-  time: string | string[];
+  time: {
+    deposit: string;
+    withdraw: string;
+  };
   fee: string;
 }
 export type Platform = {
   username: string;
   icon: string;
 }
+export type RebateProgramType = string | {
+  pair: string;
+  estimate: number | {
+    min: number;
+    max: number;
+  }
+}[];
 export type CommunityRatingStruc = {
-  score: number;
+  score: number | {
+    min: number;
+    max: number;
+  };
   quantityVote: number;
-  withdrawalSpeed: number;
-  stability: number;
-  customerSupport: number;
+  classifications?: {
+    type: string;
+    rate: number;
+  }[],
+  reviewHighlights?: string[]
 }
 export type FaqStructure = {
   question: string;
@@ -90,10 +110,7 @@ export type BrokerStruc = {
     paymentMethods: PaymentMethod[];
     platforms: Platform[];
   },
-  rebateProgram: {
-    pair: string;
-    estimate: number
-  }[],
+  rebateProgram: RebateProgramType,
   advantages: string[];
   disadvantages: string[];
   communityRating: CommunityRatingStruc;

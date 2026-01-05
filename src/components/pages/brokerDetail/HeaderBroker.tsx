@@ -96,7 +96,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
       </div>
 
       {/* DETAILBIO */}
-      <div className="mt-4 lg:mt-8 2xl:mt-10 md:py-4 lg:py-6 2xl:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-[#828282]/50">
+      <div className="mt-4 lg:mt-8 2xl:mt-10 md:py-4 lg:py-6 2xl:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-2 border-t border-b border-[#828282]/50">
         {detailBio.map((item, idx) => (
           <div key={idx} className={`
             ${idx === 0 && "pt-4 md:pt-0 pb-4 lg:pb-0 border-b lg:border-b-0"}
@@ -136,13 +136,13 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
 const BioBroker = ({badges, registerUrl}: {badges: string[]; registerUrl: string}) => {
   return (
     <>
-      <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap xl:flex-nowrap gap-2 w-fit">
+      <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap gap-2 w-fit">
         {badges.map((item) => (
           <div key={item}
             className="bg-linear-to-t from-dark-primary to-primary border border-transparent bg-clip-border rounded-lg overflow-hidden"
           >
             <div className="px-3 lg:px-5 2xl:px-6 py-2 2xl:py-3 w-full bg-my-light-blue">
-              <p className="text-[12px] md:text-sm 2xl:text-base bg-linear-to-t from-dark-primary to-primary text-transparent font-semibold bg-clip-text">
+              <p className="text-[12px] md:text-sm 2xl:text-base bg-linear-to-t from-dark-primary to-primary text-transparent font-semibold bg-clip-text text-nowrap">
                 {item}
               </p>
             </div>
@@ -157,10 +157,10 @@ const BioBroker = ({badges, registerUrl}: {badges: string[]; registerUrl: string
 const ButtonCta = ({registerUrl}: {registerUrl: string}) => {
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
-      <Button buttonType="link" urlTo={registerUrl} variant="primary" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" size="md" className="text-nowrap flex-1">
         Daftar Sekarang
       </Button>
-      <Button buttonType="link" urlTo={registerUrl} variant="outline" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="outline" size="md" className="text-nowrap flex-1">
         Kunjungi Website
       </Button>
     </div>

@@ -44,12 +44,12 @@ export const pepperstoneDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$0 (tanpa minimum)",
-    type: "Standard, Razor, Pro",
+    types: ["Standard", "Razor", "Pro"],
     spread: "Mulai 0.0 pips (Razor)",
     commission: "Razor: $6–$7 per lot (round-turn)",
     leverage: "Hingga 1:500",
     execution: "Cepat",
-    instruments: "Forex, Komoditas, Indeks, Saham CFD, Crypto CFD",
+    instruments: ["Forex", "Komoditas", "Indeks", "Saham CFD", "Crypto CFD"],
     depositWithdrawal: "Cepat & banyak metode"
   },
   accountTypes: [
@@ -85,7 +85,7 @@ export const pepperstoneDetail: BrokerStruc = {
       ]
     },
     {
-      icon: "eur-usd.svg",
+      icon: "xau-usd.svg",
       pair: "XAU/USD",
       spreads: [
         {
@@ -102,9 +102,30 @@ export const pepperstoneDetail: BrokerStruc = {
   keyAdvantages: ["Spread ECN sangat rendah", "Eksekusi order cepat", "Regulasi tingkat atas (FCA, ASIC)", "Dukungan MT4, MT5, cTrader, TradingView", "Ramah scalping & EA", "Tidak ada biaya inaktif/biaya akun"],
   depositWithdrawal: {
       paymentMethods: [
-      { method: "E-Wallet", time: "Instan", fee: "$0" },
-      { method: "Bank Transfer", time: "1–3 hari kerja", fee: "$0" },
-      { method: "Crypto", time: "Instan", fee: "$0" },
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "1–3 hari kerja",
+          withdraw: "1–3 hari kerja"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Crypto", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
@@ -125,9 +146,11 @@ export const pepperstoneDetail: BrokerStruc = {
   communityRating: {
     score: 4.5,
     quantityVote: 102,
-    withdrawalSpeed: 5,
-    stability: 4.5,
-    customerSupport: 4.5
+    classifications: [
+      { type: "Kecepatan Withdraw (WD)", rate: 5 },
+      { type: "Stabilitas Server", rate: 4.5 },
+      { type: "Customer Support", rate: 4.5 },
+    ]
   },
   faq: [
     {

@@ -3,8 +3,8 @@ import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
 const brokerName = "FP Markets";
 const brokerFounded = "2005";
 const brokerRanking: BrokerRanking = {
-  tier: "1",
-  title: "Global ECN Broker"
+  tier: "Global",
+  title: "Forex & CFD Broker Multi-Platform & ECN/STP"
 };
 
 export const fpMarketsDetail: BrokerStruc = {
@@ -14,52 +14,53 @@ export const fpMarketsDetail: BrokerStruc = {
   websiteUrl: "#",
   detailUrl: "fp-markets",
   ranking: brokerRanking,
-  badges: ["Tier 1", "ECN Broker", "Low Spread", "Fast Execution"],
+  badges: ["Regulated Broker", "ECN/STP", "Low Spread", "Multi-Asset"],
   overallScore: {
-    rate: 4.6,
+    rate: 4.3,
     communityUrl: "#",
   },
-  detailDescription: "Broker global ternama yang telah beroperasi sejak 2005, memberikan pengalaman trading yang transparan, biaya rendah, dan eksekusi cepat. FP Markets dikenal karena spread ketat, platform lengkap, serta dukungan trading di Forex dan CFD di banyak instrumen keuangan.",
+  detailDescription: "FP Markets (First Prudential Markets) adalah broker forex & CFD global yang berdiri sejak 2005, berkantor pusat di Sydney, Australia. Broker ini dikenal karena spread kompetitif, eksekusi cepat, akses ke ribuan instrumen, serta dukungan platform trading populer seperti MetaTrader dan cTrader. FP Markets juga menyediakan teknologi trading profesional seperti cTrader, VPS, dan alat analitik tingkat lanjut.",
   cardDescription: "Broker ECN Australia dengan eksekusi cepat & kondisi pro-trader.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$100",
-    leverage: "Hingga 1:500",
-    spread: "Mulai 0.0 pips (Raw)",
+    leverage: "Hingga 1:500 (tergantung regulator & entitas)",
+    spread: ["Standard : mulai sekitar 1.0 pips", "Raw : mulai 0.0 pips"],
   },
   profile: {
-    name: brokerName,
-    slogan: "Trade Global Markets",
+    name: `${brokerName} (First Prudential Markets)`,
+    slogan: "Trusted Global Forex & CFD Broker",
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated, ECN/Market Execution",
+    brokerCategory: "Forex & CFD Broker (ECN/STP model)",
     regulations: [
       { name: "ASIC", country: "Australia" },
-      { name: "CySEC", country: "Eropa" },
+      { name: "CySEC", country: "Cyprus" },
       { name: "FSCA", country: "Afrika Selatan" },
       { name: "FSA", country: "Seychelles" },
+      { name: "CIMA", country: "Cayman Islands" },
     ]
   },
   summary: {
     minDeposit: "$100",
-    type: "Standard, Raw",
-    spread: "Mulai 0.0 pips (Raw)",
-    commission: "$6–$7 per lot (round-turn)",
-    leverage: "Hingga 1:500",
-    execution: "Cepat",
-    instruments: "Forex, Gold, Indeks, Energi, Saham CFD, Crypto CFD",
-    depositWithdrawal: "Cepat"
+    types: ["Standard", "Raw"],
+    spread: ["Standard : mulai sekitar 1.0 pips", "Raw : mulai 0.0 pips"],
+    commission: "Raw ECN ±$6 per lot total (±$3 per sisi)",
+    leverage: "Hingga 1:500 (tergantung regulator & entitas)",
+    execution: "Cepat & tanpa requote",
+    instruments: ["Forex", "Indeks", "Komoditas", "Logam", "Saham CFD", "ETF", "Obligasi", "Crypto (tergantung entitas)"],
+    depositWithdrawal: "Bank transfer, kartu, e-wallet"
   },
   accountTypes: [
     {
         name: "Standard Account",
-        level: "Umum",
-        features: ["Tanpa komisi", "Spread rendah", "Cocok untuk trading manual", "Min deposit : $100"]
+        level: "Retail Umum",
+        features: ["Min deposit : $100", "Spread mulai ±1.0 pips", "Tanpa komisi", "Cocok untuk trader retail umum", ]
     },
     {
-        name: "Raw Account (ECN)",
+        name: "Raw ECN Account",
         level: "Pro",
-        features: ["Spread mulai 0.0 pips", "Komisi rendah", "Eksekusi cepat", "Cocok untuk scalping & EA"]
+        features: ["Min deposit : $100", "Spread mulai 0.0 pips", "Komisi ±$3 per sisi per lot", "Cocok scalping, robot, EA"]
     },
   ],
   tradingSpreads: [
@@ -68,26 +69,40 @@ export const fpMarketsDetail: BrokerStruc = {
       pair: "EUR/USD",
       spreads: [
         {
-          accountType: "Raw",
-          spread: "0.0 – 0.1"
+          accountType: "Raw ECN",
+          spread: "mulai 0.0 – 0.2 pips"
         },
         {
           accountType: "Standard",
-          spread: "1.0 – 1.2"
+          spread: "±1.0 – 1.3 pips"
         },
       ]
     },
     {
       icon: "eur-usd.svg",
-      pair: "XAU/USD",
+      pair: "GBP/USD",
       spreads: [
         {
-          accountType: "Raw",
-          spread: "0.1 – 0.3"
+          accountType: "Raw ECN",
+          spread: "±0.1 – 0.3 pips"
         },
         {
           accountType: "Standard",
-          spread: "0.8 – 1.2"
+          spread: "±1.2 – 1.5 pips"
+        },
+      ]
+    },
+    {
+      icon: "xau-usd.svg",
+      pair: "XAU/USD",
+      spreads: [
+        {
+          accountType: "Raw ECN",
+          spread: "variabel rendah"
+        },
+        {
+          accountType: "Standard",
+          spread: "lebih lebar"
         },
       ]
     }
@@ -95,58 +110,75 @@ export const fpMarketsDetail: BrokerStruc = {
   keyAdvantages: ["Spread ECN sangat rendah", "Eksekusi cepat & stabil", "Likuiditas tinggi", "Ramah EA & scalping", "Platform trading lengkap", "Cocok untuk trader aktif"],
   depositWithdrawal: {
       paymentMethods: [
-      { method: "E-Wallet", time: "Instan", fee: "$0" },
-      { method: "Bank Transfer", time: "1–3 hari kerja", fee: "$0" },
-      { method: "Kartu Debit/Kredit", time: "1–3 hari kerja", fee: "$0" },
-      { method: "Crypto", time: "Instan", fee: "$0" },
+      { 
+        method: "E-Wallet (PayPal, Neteller, Skrill dll)", 
+        time: {
+          deposit: "Instan – 3 hari kerja",
+          withdraw: "Instan – 3 hari kerja"
+        }, 
+        fee: "Biasanya tanpa biaya broker" 
+      },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "Instan – 3 hari kerja",
+          withdraw: "Instan – 3 hari kerja"
+        },  
+        fee: "Biasanya tanpa biaya broker" 
+      },
+      { 
+        method: "Kartu Debit/Kredit", 
+        time: {
+          deposit: "Instan – 3 hari kerja",
+          withdraw: "Instan – 3 hari kerja"
+        },  
+        fee: "Biasanya tanpa biaya broker" 
+      },
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
       { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
       { username: "cTrader", icon: "c-trader.webp" },
-      { username: "TradingView", icon: "trading-view.webp" },
-      { username: "WebTrader", icon: "fp-markets.webp" },
+      { username: "TradingView integration", icon: "trading-view.webp" },
       { username: "Mobile App (iOS & Android)", icon: "fp-markets.webp" },
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 8 },
-    { pair: "XAU/USD", estimate: 10 },
+    { pair: "EUR/USD", estimate: 6 },
+    { pair: "XAU/USD", estimate: 8 },
     { pair: "AUD/USD", estimate: 5 },
   ],
-  advantages: ["Regulasi kuat", "Spread rendah & transparan", "Platform sangat lengkap", "Cocok untuk EA & scalping"],
-  disadvantages: ["Tidak menyediakan akun Cent", "Leverage dibatasi di wilayah tertentu"],
+  advantages: ["Spread sangat kompetitif (Raw ECN)", "Platform lengkap (MT4, MT5, cTrader)", "Tidak ada mark-up pada Raw account", "Regulasi kuat di banyak negara", "Cocok untuk trader manual, EA, scalping"],
+  disadvantages: ["Minimum deposit $100 lebih tinggi dari beberapa broker ringan", "Leverage bisa dibatasi oleh regulator di wilayah tertentu", "Spread Standard lebih lebar dibanding ECN"],
   communityRating: {
-    score: 4.6,
-    withdrawalSpeed: 4.5,
-    stability: 4.6,
-    customerSupport: 4.5,
-    quantityVote: 88
+    score: 4.3,
+    quantityVote: 88,
+    classifications: [
+      { type: "Customer Support", rate: 4.4 },
+      { type: "Fees & Spread", rate: 4.2 },
+      { type: "Execution Speed", rate: 4.3 },
+    ]
   },
   faq: [
     {
       question: "Apakah FP Markets aman?",
-      answer: "Ya. FP Markets diregulasi oleh ASIC, CySEC, FSCA, dan FSA."
+      answer: "Ya — teregulasi ASIC (Australia), CySEC (Siprus), FSCA (SA), FSA (Seychelles), dan CIMA."
     },
     {
-      question: "Berapa minimum deposit FP Markets?",
-      answer: "Minimum deposit adalah $100."
+      question: "Berapa minimum deposit?",
+      answer: "Minimum deposit untuk trading live adalah $100."
     },
     {
-      question: "Apakah FP Markets cocok untuk EA & scalping?",
-      answer: "Ya. FP Markets sangat ramah EA dan scalping."
+      question: "Platform apa saja yang didukung",
+      answer: "MT4, MT5, dan cTrader."
     },
     {
-      question: "Apakah FP Markets menyediakan akun Cent?",
-      answer: "Tidak. FP Markets hanya menyediakan akun Standard dan Raw."
+      question: "Berapa leverage maksimal?",
+      answer: "Hingga 1:500 untuk forex (tergantung entitas/regulator)."
     },
     {
-      question: "Berapa leverage maksimal FP Markets?",
-      answer: "Hingga 1:500, tergantung entitas dan regulasi."
-    },
-    {
-      question: "Platform apa saja yang didukung FP Markets?",
-      answer: "MT4, MT5, cTrader, dan TradingView."
+      question: "Apakah ada akun ECN?",
+      answer: "Ya — akun Raw ECN dengan spread mulai 0.0 pips + komisi."
     },
   ]
 }

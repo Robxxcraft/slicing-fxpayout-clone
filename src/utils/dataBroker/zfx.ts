@@ -1,10 +1,10 @@
 import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
 
 const brokerName = "ZFX";
-const brokerFounded = "2019 (brand ZFX di bawah Zeal Group)";
+const brokerFounded = "2017 (bagian dari Zeal Group)";
 const brokerRanking: BrokerRanking = {
   tier: "Global",
-  title: "Multi-Asset ECN Broker"
+  title: "Multi-Asset ECN/STP Broker"
 };
 
 export const zfxDetail: BrokerStruc = {
@@ -14,56 +14,56 @@ export const zfxDetail: BrokerStruc = {
   websiteUrl: "#",
   detailUrl: "zfx",
   ranking: brokerRanking,
-  badges: ["ECN Broker", "Multi-Asset", "Institutional Liquidity", "EA Friendly"],
+  badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],
   overallScore: {
-    rate: 4.4,
+    rate: 4.2,
     communityUrl: "#",
   },
-  detailDescription: "ZFX adalah broker global multi-aset yang berada di bawah Zeal Group, menyediakan akses trading ke pasar FX, Indeks, Komoditas, Saham CFD, dan Cryptocurrency. ZFX berfokus pada teknologi ECN, eksekusi ultra-cepat, serta transparansi harga dengan likuiditas institusional. Broker ini melayani trader ritel hingga profesional dengan infrastruktur teknologi internal milik Zeal Group.",
+  detailDescription: "ZFX adalah broker Forex & CFD yang merupakan bagian dari Zeal Group, menyediakan trading di pasar global termasuk Forex, indeks, komoditas, logam, dan saham melalui infrastruktur ECN / STP yang transparan. Perusahaan ini teregulasi di Inggris (FCA) dan Seychelles (FSA), fokus pada eksekusi cepat, spread kompetitif, dan multi-asset trading.",
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "≥ $15",
-    leverage: ["Hingga 1:2000 (Cent)", "Hingga 1:500 (Standard)", "Hingga 1:400 (ECN)"],
+    minDeposit: "$15 – $50 – $500 (tergantung akun)",
+    leverage: "Hingga 1:2000 (tergantung akun & wilayah)",
     spread: "Mulai 0.2 pips (ECN)",
   },
   profile: {
     name: brokerName,
-    slogan: "Akses Mudah ke Peluang Trading Global",
+    entity: "Zeal Capital Market (Seychelles) Limited",
+    group: "Zeal Group",
     ranking: brokerRanking,
-    yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated, ECN/Market Execution",
+    yearFounded: "±2017",
+    brokerCategory: "Forex & CFD Broker",
     regulations: [
-      { name: "FSA", country: "Seychelles (License SD027)" },
-      { name: "Entitas", country: "Zeal Capital Market (Seychelles) Limited" },
-      { name: "Group", country: "Zeal Group" },
+      { name: "FCA", country: "United Kingdom" },
+      { name: "FSA", country: "Seychelles" },
     ]
   },
   summary: {
-    minDeposit: ["Cent : ≥ $15", "Standard STP : ≥ $100", "ECN : ≥ $1,000"],
-    type: "Cent, Standard STP, ECN",
-    spread: "Mulai 0.2 pips (ECN)",
-    commission: "ECN — berbasis volume",
-    leverage: ["Hingga 1:2000 (Cent)", "Hingga 1:500 (Standard)", "Hingga 1:400 (ECN)"],
-    execution: "Ultra-fast (microsecond matching)",
-    instruments: "FX, Indeks, Komoditas, Saham CFD, Crypto",
-    depositWithdrawal: "Banyak metode"
+    minDeposit: ["$15 (Cent/Mini)", "$50 (Standard)", "$500–$1000 (ECN tergantung sumber)"],
+    types: ["Cent", "Standard STP", "ECN"],
+    spread: "Mulai 0.2 pips pada akun ECN; akun standard/cent lebih lebar",
+    commission: "ECN biasanya ada komisi (nilai tergantung instrumen)",
+    leverage: "Hingga 1:2000 untuk beberapa akun/entitas (tetapi peraturan sementara dapat menurunkan leverage pada saat event ekonomi besar)",
+    execution: "Cepat (MT4/MT5)",
+    instruments: ["Forex", "Indeks", "Komoditas", "Logam", "Saham CFD"],
+    depositWithdrawal: "Kartu, bank transfer, e-wallet; waktu tergantung metode"
   },
   accountTypes: [
     {
-        name: "Cent Account",
+        name: "Cent/Mini",
         level: "Pemula",
-        features: ["Min Deposit ≥ $15", "Spread Mulai 1.5 pips", "Leverage Hingga 1:2000"]
+        features: ["Min Deposit ≥ $15", "Spread Mulai ±0.2 pips", "Leverage Hingga 1:2000", "Eksekusi rata-rata ±480 ms", "Slippage: rendah (data pengujian)"]
     },
     {
         name: "Standard STP",
         level: "Trader retail",
-        features: ["Min Deposit ≥ $100", "Spread Mulai 1.3 pips", "Leverage Hingga 1:500"]
+        features: ["Min Deposit ≥ $50", "Spread Mulai ±1.3 – 1.5 pips", "Leverage Hingga 1:2000", "Eksekusi rata-rata ±480 ms", "Slippage: rendah (data pengujian)"]
     },
     {
         name: "ECN Account",
         level: "Pro, scalper, EA",
-        features: ["Min Deposit ≥ $1,000", "Spread Mulai 0.2 pips", "Leverage Hingga 1:400"]
+        features: ["Min Deposit ≥ $500", "Spread Mulai 0.2 pips", "Leverage Hingga 1:2000", "Eksekusi rata-rata ±480 ms", "Slippage: rendah (data pengujian)"]
     },
   ],
   tradingSpreads: [
@@ -73,74 +73,92 @@ export const zfxDetail: BrokerStruc = {
       spreads: [
         {
           accountType: "ECN",
-          spread: "mulai 0.2"
+          spread: "0.2 – 0.4 pips (typical)"
         },
         {
           accountType: "Standard",
-          spread: "mulai 1.3"
+          spread: "~1.3 – 1.5 pips"
         },
       ]
     },
     {
-      icon: "eur-usd.svg",
-      pair: "XAU/USD",
+      icon: "xau-usd.svg",
+      pair: "XAU/USD (Gold)",
       spreads: [
         {
           accountType: "ECN",
-          spread: "variabel rendah"
+          spread: "variabel rendah (but volatile)"
         },
         {
           accountType: "Standard",
-          spread: "variabel"
+          spread: "lebih lebar, tergantung likuiditas"
         },
       ]
     }
   ],
-  keyAdvantages: ["Teknologi ECN milik Zeal Group", "Likuiditas multi-provider institusional", "Eksekusi ultra-cepat (<1 ms)", "Tanpa dealing desk", "Segregasi dana klien", "Cocok untuk EA & scalping"],
+  keyAdvantages: ["Spread sangat kompetitif di akun ECN", "Regulasi & backing oleh Zeal Group", "Leverage tinggi tersedia (tergantung entitas)", "MT4/MT5 support penuh", "Pilihan akun untuk pemula sampai pro (cent → ECN)"],
   depositWithdrawal: {
     paymentMethods: [
-      { method: "Bank Transfer", time:  ["Deposit: Instan – 1 hari kerja", "Withdraw: 1–3 hari kerja"], fee: "Tergantung Metode" },
-      { method: "Debit/Kredit Card", time: ["Deposit: Instan – 1 hari kerja", "Withdraw: 1–3 hari kerja"], fee: "Tergantung Metode" },
-      { method: "E-Wallet (Alipay, WeChat Pay, dll)", time: ["Deposit: Instan – 1 hari kerja", "Withdraw: 1–3 hari kerja"], fee: "Tergantung Metode" },
+      { 
+        method: "Bank Transfer", 
+        time:  {
+          deposit: "1–3 hari",
+          withdraw: "1–3 hari"
+        },
+        fee: "$0 dari ZFX; biaya pihak ketiga bisa berlaku" 
+      },
+      { 
+        method: "Debit/Kredit Card", 
+        time:  {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0 dari ZFX; biaya pihak ketiga bisa berlaku" 
+      },
+      { 
+        method: "E-Wallet", 
+        time:  {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0 dari ZFX; biaya pihak ketiga bisa berlaku" 
+      },
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
       { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "ZFX Terminal (Mobile App)", icon: "zfx.webp" },
       { username: "Web Trading", icon: "zfx.webp" },
       { username: "iOS & Android", icon: "zfx.webp" },
     ]
   },
-  rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
-    { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 5 },
-  ],
-  advantages: ["Teknologi ECN kuat", "Eksekusi sangat cepat", "Spread rendah di akun ECN", "Pilihan leverage fleksibel", "Cocok untuk trader profesional"],
-  disadvantages: ["Min deposit ECN cukup tinggi", "Belum teregulasi regulator Eropa tier-1"],
+  rebateProgram: "Rebate diproses secara manual melalui transfer ke rekening klien. Oleh karena itu, klien diminta untuk mengisi nomor rekening pada formulir.",
+  advantages: ["Spread ECN kompetitif", "Leverage tinggi", "MT4 & MT5 tersedia", "Akun cent tersedia"],
+  disadvantages: ["Minimum deposit ECN cukup tinggi", "Rebate IB tidak transparan di publik", "Ada laporan keluhan pengguna (perlu kehati-hatian)"],
   communityRating: {
-    score: 4.4,
-    withdrawalSpeed: 4.6,
-    stability: 4.5,
-    customerSupport: 4.3,
-    quantityVote: 70
+    score: 4.2,
+    quantityVote: 70,
+    classifications: [
+      { type: "Kecepatan Eksekusi", rate: 4.4 },
+      { type: "Stabilitas Server", rate: 4.3 },
+      { type: "Customer Support", rate: 4.0 },
+    ]
   },
   faq: [
     {
       question: "Apakah ZFX aman?",
-      answer: "Ya. ZFX berada di bawah regulasi FSA Seychelles dengan segregasi dana klien."
-    },
-    {
-      question: "Apakah ZFX mendukung EA?",
-      answer: "Ya. Sangat kompatibel untuk EA & scalping."
+      answer: "ZFX beroperasi di bawah Zeal Group dan mencantumkan regulasi FCA & FSA untuk entitas grup; verifikasi entitas lokal diperlukan."
     },
     {
       question: "Berapa minimum deposit?",
-      answer: "Mulai dari $15 (Cent), $100 (Standard), $1,000 (ECN)."
+      answer: "Mulai $15 untuk Cent/Mini; $50 untuk Standard; ECN umumnya $500+ (cek akun di region kamu)."
     },
     {
-      question: "Platform apa yang didukung?",
-      answer: "MT4, MT5, ZFX Terminal, Web, Mobile."
+      question: "Apakah ada akun demo?",
+      answer: "Ya, tersedia demo MT4/MT5 di situs ZFX."
+    },
+    {
+      question: "Apakah ada program IB?",
+      answer: "Ya, ada partnership / IB program; rebate detail di-negosiasi."
     },
   ]
 }

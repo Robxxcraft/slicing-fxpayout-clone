@@ -12,12 +12,12 @@ type SumaryStructure = {
 const Summary = ({summaryBroker}: {summaryBroker: SummaryBroker}) => {
   const summaryItems: SumaryStructure[] = [
     { title: "Min Deposit", detail: summaryBroker.minDeposit, icon: "min-depo.svg" },
-    { title: "Jenis Akun", detail: summaryBroker.type, icon: "category-acc.svg" },
+    { title: "Jenis Akun", detail: summaryBroker.types.join(", "), icon: "category-acc.svg" },
     { title: "Spread", detail: summaryBroker.spread, icon: "spread.svg" },
     { title: "Komisi", detail: summaryBroker.commission, icon: "commision.svg" },
     { title: "Leverage", detail: summaryBroker.leverage, icon: "leverage.svg" },
     { title: "Eksekusi Order", detail: summaryBroker.execution, icon: "order.svg" },
-    { title: "Instrumen", detail: summaryBroker.instruments, icon: "instrument.svg" },
+    { title: "Instrumen", detail: summaryBroker.instruments.join(", "), icon: "instrument.svg" },
     { title: "Deposit & Withdraw", detail: summaryBroker.depositWithdrawal, icon: "depo-withdraw.svg" },
   ]
 

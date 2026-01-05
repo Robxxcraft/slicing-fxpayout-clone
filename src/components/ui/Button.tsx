@@ -15,6 +15,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconPosition?: IconPosition;
   buttonType?: ButtonType;
   urlTo?: string;
+  target?: string;
 }
 
 export default function Button({
@@ -26,6 +27,7 @@ export default function Button({
   iconPosition = "left",
   buttonType = "button",
   urlTo,
+  target = "_self",
   ...props
 }: ButtonProps) {
   const baseStyles =
@@ -73,7 +75,7 @@ export default function Button({
 
   if (buttonType === "link") {
     return (
-      <Link to={urlTo || "#"} className={finalClass}>
+      <Link to={urlTo || "#"} target={target} className={finalClass}>
         {/* ICON LEFT */}
         {icon && iconPosition === "left" && <span className="flex">{icon}</span>}
         {children}

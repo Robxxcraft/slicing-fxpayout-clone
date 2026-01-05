@@ -4,7 +4,7 @@ const brokerName = "FBS";
 const brokerFounded = "2009";
 const brokerRanking: BrokerRanking = {
   tier: "1",
-  title: "Global ECN/STP Broker"
+  title: "Global Forex & CFD Broker"
 };
 
 export const fbsDetail: BrokerStruc = {
@@ -14,7 +14,7 @@ export const fbsDetail: BrokerStruc = {
   websiteUrl: "#",
   detailUrl: "fbs",
   ranking: brokerRanking,
-  badges: ["Tier 1", "ECN/STP Broker", "Low Spread", "Fast Execution"],
+  badges: ["Low Minimum Deposit", "Leverage Tinggi", "Multi-Asset Trading", "Beginner Friendly"],
   overallScore: {
     rate: 4.4,
     communityUrl: "#",
@@ -42,12 +42,12 @@ export const fbsDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$1",
-    type: "Cent, Micro, Standard, Zero, ECN",
+    types: ["Cent", "Micro", "Standard", "Zero", "ECN"],
     spread: "Mulai 0.0 pips (Zero/ECN)",
     commission: "ECN: ±$6–$7 per lot (round-turn)",
     leverage: "Hingga 1:3000",
     execution: "Cepat",
-    instruments: "Forex, Logam, Indeks, Energi, Saham CFD, Crypto CFD",
+    instruments: ["Forex", "Logam", "Indeks", "Energi", "Saham CFD", "Crypto CFD"],
     depositWithdrawal: "Cepat & banyak metode"
   },
   accountTypes: [
@@ -97,7 +97,7 @@ export const fbsDetail: BrokerStruc = {
       ]
     },
     {
-      icon: "eur-usd.svg",
+      icon: "xau-usd.svg",
       pair: "XAU/USD",
       spreads: [
         {
@@ -118,10 +118,38 @@ export const fbsDetail: BrokerStruc = {
   keyAdvantages: ["Spread rendah terutama di ECN/Zero", "Leverage tinggi hingga 1:3000", "Akun Cent untuk pemula", "Program bonus menarik", "Eksekusi cepat", "Platform lengkap"],
   depositWithdrawal: {
     paymentMethods: [
-      { method: "Bank Transfer", time: "1–3 hari kerja", fee: "$0 (umumnya)" },
-      { method: "Debit/Kredit Card", time: "Instan – cepat", fee: "$0 (umumnya)" },
-      { method: "E-Wallet", time: "Instan", fee: "$0 (umumnya)" },
-      { method: "Crypto", time: "Instan", fee: "$0 (umumnya)" },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "1–3 hari kerja",
+          withdraw: "1–3 hari kerja"
+        },
+        fee: "$0 (umumnya)" 
+      },
+      { 
+        method: "Debit/Kredit Card", 
+        time: {
+          deposit: "Instan – cepat",
+          withdraw: "Instan – cepat"
+        },
+        fee: "$0 (umumnya)" 
+      },
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        },
+        fee: "$0 (umumnya)" 
+      },
+      { 
+        method: "Crypto", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        },
+        fee: "$0 (umumnya)" 
+      },
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
@@ -131,18 +159,20 @@ export const fbsDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 8 },
-    { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "EUR/USD", estimate: { min: 5, max: 6 }},
+    { pair: "XAU/USD", estimate: { min: 7, max: 9 }},
+    { pair: "AUD/USD", estimate: { min: 4, max: 5 }},
   ],
   advantages: ["Minimum deposit sangat rendah", "Leverage sangat tinggi", "Spread kompetitif di akun ECN/Zero", "Akun Cent untuk trader pemula"],
   disadvantages: ["Spread akun non-ECN bisa lebih lebar", "Opsi instrumen non-CFD nyata tidak tersedia"],
   communityRating: {
     score: 4.4,
-    withdrawalSpeed: 4.5,
-    stability: 4.4,
-    customerSupport: 4.3,
-    quantityVote: 72
+    quantityVote: 72,
+    classifications: [
+      { type: "Kecepatan Withdraw", rate: 4.5 },
+      { type: "Stabilitas Server", rate: 4.4 },
+      { type: "Customer Support", rate: 4.3 },
+    ]
   },
   faq: [
     {

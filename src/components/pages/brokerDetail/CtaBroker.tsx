@@ -14,10 +14,10 @@ const CtaBroker = ({name, registerUrl}: {name: string; registerUrl: string}) => 
             Gunakan link khusus Anda untuk mengakses rebate terbaik dan kondisi trading profesional di {name}.
           </p>
           <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-3">
-            <Button variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
+            <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
               Daftar Melalui FXPayout
             </Button>
-            <Button variant="outline-light" buttonType="link" urlTo={registerUrl} size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
+            <Button variant="outline-light" buttonType="link" urlTo={registerUrl} target="_blank" size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
               Kunjungi Website Broker
             </Button>
           </div>

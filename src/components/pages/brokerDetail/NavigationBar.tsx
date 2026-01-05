@@ -85,12 +85,12 @@ const NavigationBar = ({name, ranking, profileImage, registerUrl}:
             ))}
           </div>
           <div className="px-5 mt-4 flex items-center justify-center w-full gap-2 flex-wrap">
-            <Link to={registerUrl} className="w-fit text-center">
+            <Link to={registerUrl} target="_blank" className="w-fit text-center">
               <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
                 Daftar Sekarang
               </span>
             </Link>
-            <Link to={registerUrl} className="w-fit text-center">
+            <Link to={registerUrl} target="_blank" className="w-fit text-center">
               <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
                 Kunjungan Website
               </span>
@@ -108,8 +108,8 @@ const ButtonCta = ({ scrollY, registerUrl }:{scrollY: number; registerUrl: strin
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
-      <Button buttonType="link" urlTo={registerUrl} variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
-      <Button buttonType="link" urlTo={registerUrl} variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
+      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
+      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
     </div>
   )
 }

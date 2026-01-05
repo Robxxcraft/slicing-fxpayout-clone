@@ -42,12 +42,12 @@ export const oandaDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$0 (no minimum)",
-    type: "Standard",
+    types: ["Standard"],
     spread: "Mulai 0.6 pips (EUR/USD, variable)",
     commission: "Tanpa komisi pada akun standar",
     leverage: "Hingga 1:50 (tergantung regulator & wilayah)",
     execution: "Cepat & stabil",
-    instruments: "Forex, Logam, Indeks, Komoditas, CFD Saham",
+    instruments: ["Forex", "Logam", "Indeks", "Komoditas", "CFD Saham"],
     depositWithdrawal: "Cepat & luas metode"
   },
   accountTypes: [
@@ -82,9 +82,30 @@ export const oandaDetail: BrokerStruc = {
   keyAdvantages: ["Broker forex tertua & terpercaya", "Transparansi harga pasar tinggi", "Regulasi kuat dunia (FCA, ASIC, MAS, IIROC)", "Platform trading kuat & stabil", "Spread kompetitif untuk akun standar", "Akses ke banyak instrumen"],
   depositWithdrawal: {
       paymentMethods: [
-      { method: "Bank Transfer", time: "1–3 hari kerja", fee: "$0 (umumnya)" },
-      { method: "Debit/Kredit Card", time: "Instan – cepat", fee: "$0 (umumnya)" },
-      { method: "E-Wallet", time: "Instan", fee: "$0 (umumnya)" },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "1–3 hari kerja",
+          withdraw: "1–3 hari kerja"
+        }, 
+        fee: "$0 (umumnya)" 
+      },
+      { 
+        method: "Debit/Kredit Card", 
+        time: {
+          deposit: "Instan – cepat",
+          withdraw: "Instan – cepat"
+        }, 
+        fee: "$0 (umumnya)" 
+      },
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0 (umumnya)" 
+      },
     ],
     platforms: [
       { username: "OANDA Trade (Web & Desktop)", icon: "oanda.webp" },
@@ -102,9 +123,11 @@ export const oandaDetail: BrokerStruc = {
   disadvantages: ["Tidak ada akun ECN/Raw spread tradisional", "Leverage lebih rendah dibanding broker lain"],
   communityRating: {
     score: 4.2,
-    withdrawalSpeed: 4.4,
-    stability: 4.3,
-    customerSupport: 4.2,
+    classifications: [
+      { type: "Kecepatan Withdraw (WD)", rate: 4.4 },
+      { type: "Stabilitas Server", rate: 4.3 },
+      { type: "Customer Support", rate: 4.2 },
+    ],
     quantityVote: 79
   },
   faq: [

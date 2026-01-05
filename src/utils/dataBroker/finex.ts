@@ -24,37 +24,34 @@ export const finexDetail: BrokerStruc = {
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$10 (setoran awal)",
-    leverage: "Hingga 1:500",
-    spread: "Mulai ±0.5 pips (variabel)",
+    leverage: "Hingga 1:500 (Forex & logam; indeks/energi berbeda)",
+    spread: "Mengambang, mulai sekitar 0.5 pip (typical)",
   },
   profile: {
-    name: brokerName,
-    slogan: "Trusted Indonesian Forex Broker",
+    name: `PT Finex Bisnis Solusi Futures (${brokerName})`,
+    slogan: "(tidak spesifik, brand lokal)",
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated (BAPPEBTI, OJK), Futures & Forex Broker",
+    brokerCategory: "Forex & CFD Broker teregulasi Indonesia",
     regulations: [
-      { name: "BAPPEBTI", country: "Indonesia (Licensed Futures Broker" },
-      { name: "OJK", country: "Indonesia (Oversight for financial marketing)" },
-      { name: "Anggota", country: "Jakarta Futures Exchange (JFX)" },
-      { name: "Kliring", country: "PT Kliring Berjangka Indonesia (KBI)" },
+      { name: "BAPPEBTI", country: "Retail Forex License (47/BAPPEBTI/SI/04/2013)" },
     ]
   },
   summary: {
     minDeposit: "$10 (setoran awal)",
-    type: "Standard/Single Live Account",
+    types: ["Single Live Accoun"],
     spread: "Mulai ±0.5 pips (variabel)",
     commission: "±$1 per lot",
-    leverage: "Hingga 1:500",
+    leverage: "Hingga 1:500 (Forex & Logam)",
     execution: "Cepat",
-    instruments: "Forex, Indeks, Logam, Energi, Saham CFD",
+    instruments: ["Forex", "Indeks", "Logam", "Energi", "Saham CFD"],
     depositWithdrawal: "Bank lokal & e-wallet"
   },
   accountTypes: [
     {
-        name: "Live Account (Single)",
+        name: "Single Live Account",
         level: "Umum",
-        features: ["Min deposit : $10", "Spread variabel mulai ±0.5 pips", "Komisi : ±$1 per lot"]
+        features: ["Min deposit : $10", "Spread  mulai 0.5 pips", "Komisi : ±$1 per lot", "Leverage : hingga 1:500", "Instrumen trading lengkap"]
     },
   ],
   tradingSpreads: [
@@ -64,17 +61,27 @@ export const finexDetail: BrokerStruc = {
       spreads: [
         {
           accountType: "Standard",
-          spread: "±0.5 – 1.2"
+          spread: "±0.5 – 1.0 pips (typical)"
         },
       ]
     },
     {
-      icon: "eur-usd.svg",
+      icon: "xau-usd.svg",
       pair: "XAU/USD",
       spreads: [
         {
           accountType: "Standard",
-          spread: "±1.5 – 2.5"
+          spread: "variabel; umumnya lebih tinggi dibanding Forex"
+        },
+      ]
+    },
+    {
+      icon: "xau-usd.svg",
+      pair: "AUD/USD",
+      spreads: [
+        {
+          accountType: "Standard",
+          spread: "±0.7 – 1.2 pips (typical)"
         },
       ]
     }
@@ -82,9 +89,30 @@ export const finexDetail: BrokerStruc = {
   keyAdvantages: ["Regulasi resmi BAPPEBTI & OJK", "Deposit awal rendah", "Leverage tinggi sampai 1:500", "Eksekusi cepat", "Instrumen trading beragam", "Platform populer (MT5)"],
   depositWithdrawal: {
     paymentMethods: [
-      { method: "Bank Transfer (lokal)", time: "1–3 hari kerja", fee: "$0 – tergantung metode" },
-      { method: "Debit/Kredit", time: "Instan – cepat", fee: "$0 – tergantung metode" },
-      { method: "E-Wallet", time: "Instan", fee: "$0 – tergantung metode" },
+      { 
+        method: "Bank Transfer (USD/IDR)", 
+        time: {
+          deposit: "Instan / cepat",
+          withdraw: "Sekitar 20 menit – 2 jam (80% kasus)"
+        }, 
+        fee: "Biasanya $0 dari broker" 
+      },
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "Instan / cepat",
+          withdraw: "Sekitar 20 menit – 2 jam (80% kasus)"
+        }, 
+        fee: "Biasanya $0 dari broker" 
+      },
+      { 
+        method: "Debit/Kredit", 
+        time: {
+          deposit: "Instan / cepat",
+          withdraw: "Sekitar 20 menit – 2 jam (80% kasus)"
+        }, 
+        fee: "Biasanya $0 dari broker" 
+      },
     ],
     platforms: [
       { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
@@ -92,24 +120,18 @@ export const finexDetail: BrokerStruc = {
       { username: "Mobile App (iOS & Android)", icon: "finex.webp" },
     ]
   },
-  rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
-    { pair: "XAU/USD", estimate: 8 },
-    { pair: "AUD/USD", estimate: 5 },
-  ],
-  advantages: ["Broker resmi Indonesia (BAPPEBTI & OJK)", "Deposit rendah & leverage tinggi", "Komisi rendah per lot", "Eksekusi cepat"],
-  disadvantages: ["Spread bisa lebih tinggi dibanding broker ECN global", "Jenis akun terbatas"],
+  rebateProgram: "Rebate diproses secara manual melalui transfer ke rekening klien. Oleh karena itu, klien diminta untuk mengisi nomor rekening pada formulir.",
+  advantages: ["Broker resmi teregulasi BAPPEBTI", "Deposit rendah ($10)", "Spread & komisi relatif kompetitif", "Akses ke banyak instrumen", "Eksekusi cepat & dukungan bank lokal"],
+  disadvantages: ["Hanya satu tipe akun live", "Fitur edukasi & riset lebih sederhana dibanding broker global", "MT5 saja (tanpa MT4)"],
   communityRating: {
     score: 4.3,
-    withdrawalSpeed: 4.5,
-    stability: 4.4,
-    customerSupport: 4.5,
-    quantityVote: 68
+    quantityVote: 68,
+    reviewHighlights: ["Cepat dalam proses deposit/withdraw", "Biaya trading rendah", "MT5 nyaman dipakai", "Cocok untuk pemula & menengah"]
   },
   faq: [
     {
-      question: "Apakah Finex aman?",
-      answer: "Ya. Finex teregulasi oleh BAPPEBTI & diawasi OJK di Indonesia."
+      question: "Apakah Finex aman & legal?",
+      answer: "Ya. Finex terdaftar & berlisensi BAPPEBTI di Indonesia."
     },
     {
       question: "Berapa minimum deposit?",
@@ -117,15 +139,23 @@ export const finexDetail: BrokerStruc = {
     },
     {
       question: "Platform apa yang didukung?",
-      answer: "MetaTrader 5, WebTrader, Mobile."
+      answer: "MetaTrader 5."
     },
     {
       question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:500."
+      answer: "Hingga 1:500 untuk forex & logam."
     },
     {
-      question: "Apakah ada akun demo",
-      answer: "Ya — tersedia demo untuk latihan trading."
+      question: "Apakah Finex punya akun demo?",
+      answer: "Ya — tersedia demo untuk latihan."
+    },
+    {
+      question: "Apa spread terendahnya?",
+      answer: "Mulai ±0.5 pips untuk EUR/USD."
+    },
+    {
+      question: "Apakah ada program afiliasi / rebate?",
+      answer: "Ya — tersedia model partner/afiliasi, detail rebate dibicarakan di portal partner."
     },
   ]
 }

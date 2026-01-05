@@ -44,12 +44,12 @@ export const exnessDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$10",
-    type: "Standard Cent, Standard, Raw Spread, Zero, Pro",
+    types: ["Standard Cent", "Standard", "Raw Spread", "Zero", "Pro"],
     spread: "Mulai 0.0 pips (Raw) — rata-rata sangat rendah",
     commission: "Raw/Zero: $3.5–$8 per lot (tergantung pair)",
     leverage: "Hingga 1:2000+ (smart leverage system)",
     execution: "0.01–0.04 detik (super cepat)",
-    instruments: "Forex, Gold, Crypto CFD, Indeks, Energi, Saham",
+    instruments: ["Forex", "Gold", "Crypto CFD", "Indeks", "Energi", "Saham"],
     depositWithdrawal: "Super cepat (<1 menit untuk e-wallet/crypto)"
   },
   accountTypes: [
@@ -113,12 +113,54 @@ export const exnessDetail: BrokerStruc = {
   "Sangat cocok untuk scalping, EA, dan gold trader"],
   depositWithdrawal: {
     paymentMethods: [
-      { method: "E-Wallet", time: "<1m (Instant)", fee: "$0" },
-      { method: "Bank Transfer", time: "5–30 Menit", fee: "$0" },
-      { method: "VA Lokal (ID)", time: "5–30 Menit", fee: "$0" },
-      { method: "Crypto", time: "<1m (Instant)", fee: "$0" },
-      { method: "Skrill/Neteller", time: "<1m (Instant)", fee: "$0" },
-      { method: "Perfect Money", time: "<1m (Instant)", fee: "$0" }
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "<1m (Instant)",
+          withdraw: "<1m (Instant)"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "5–30 Menit",
+          withdraw: "5–30 Menit"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "VA Lokal (ID)", 
+        time: {
+          deposit: "5–30 Menit",
+          withdraw: "5–30 Menit"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Crypto", 
+        time: {
+          deposit: "<1m (Instant)",
+          withdraw: "<1m (Instant)"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Skrill/Neteller", 
+        time: {
+          deposit: "<1m (Instant)",
+          withdraw: "<1m (Instant)"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Perfect Money", 
+        time: {
+          deposit: "<1m (Instant)",
+          withdraw: "<1m (Instant)"
+        }, 
+        fee: "$0" 
+      }
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
@@ -138,9 +180,11 @@ export const exnessDetail: BrokerStruc = {
   communityRating: {
     score: 4.8,
     quantityVote: 121,
-    withdrawalSpeed: 5,
-    stability: 5,
-    customerSupport: 4.5
+    classifications: [
+      { type: "Kecepatan Withdraw (WD)", rate: 5 },
+      { type: "Stabilitas Server", rate: 5 },
+      { type: "Customer Support", rate: 4.5 },
+    ]
   },
   faq: [
     {
