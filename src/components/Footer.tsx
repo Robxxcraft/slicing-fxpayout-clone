@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaFacebookF,
-  FaTwitter,
 } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { listNavigation } from "../utils/listNavigation";
+import { RiTelegram2Fill } from "react-icons/ri";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoTiktok } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -33,6 +34,7 @@ const Footer = () => {
               <Link
                 to={item.url}
                 key={item.id}
+                target="_blank"
                 className="p-2.5 text-2xl text-primary bg-[#F4F4F4] rounded-full cursor-pointer">
                 {item.element}
               </Link>
@@ -101,18 +103,23 @@ export default Footer;
 
 const socialMedia = [
   {
-    id: "facebook",
-    url: "#",
-    element: <FaFacebookF />,
+    id: "telegram",
+    url: "https://t.me/fxpayout_support",
+    element: <RiTelegram2Fill />,
   },
   {
     id: "twitter",
-    url: "#",
-    element: <FaTwitter />,
+    url: "https://x.com/fxpayout?s=21",
+    element: <FaXTwitter />,
   },
   {
     id: "instagram",
-    url: "#",
+    url: "https://www.instagram.com/fxpayoutdotcom?igsh=MWFtb29vdHBqaGV0MA%3D%3D&utm_source=qr",
     element: <PiInstagramLogoFill />,
+  },
+  {
+    id: "tiktok",
+    url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-92pm7d95aXo",
+    element: <IoLogoTiktok />,
   },
 ];
