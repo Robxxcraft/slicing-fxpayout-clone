@@ -42,12 +42,12 @@ export const eightcapDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$100",
-    type: "Standard, Razor",
+    types: ["Standard", "Razor"],
     spread: "Mulai 0.0 pips (Razor)",
     commission: "Razor: $3.50 per lot per side",
     leverage: "Hingga 1:500",
     execution: "Cepat",
-    instruments: "Forex, Indeks, Komoditas, Saham CFD, Crypto CFD",
+    instruments: ["Forex", "Indeks", "Komoditas", "Saham CFD", "Crypto CFD"],
     depositWithdrawal: "Cepat"
   },
   accountTypes: [
@@ -95,10 +95,38 @@ export const eightcapDetail: BrokerStruc = {
   keyAdvantages: ["Spread ECN sangat rendah", "Eksekusi order cepat & stabil", "Regulasi kuat dari FCA & ASIC", "Platform trading lengkap", "Cocok untuk scalping & EA", "Likuiditas dalam"],
   depositWithdrawal: {
     paymentMethods: [
-      { method: "E-Wallet", time: "Instan", fee: "$0" },
-      { method: "Bank Transfer", time: "1–3 hari kerja", fee: "$0" },
-      { method: "Kartu Debit/Kredit", time: "Instan", fee: "$0" },
-      { method: "Crypto", time: "Instan", fee: "$0" }
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "1–3 hari kerja",
+          withdraw: "1–3 hari kerja"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Kartu Debit/Kredit", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Crypto", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      }
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
@@ -117,10 +145,12 @@ export const eightcapDetail: BrokerStruc = {
   disadvantages: ["Minimum deposit relatif tinggi", "Instrumen non-CFD nyata terbatas", "Leverage lebih kecil dibanding broker offshore"],
   communityRating: {
     score: 4.4,
-    withdrawalSpeed: 4.5,
-    stability: 4.4,
-    customerSupport: 4.3,
-    quantityVote: 80
+    quantityVote: 80,
+    classifications: [
+      { type: "Kecepatan Withdraw (WD)", rate: 4.5 },
+      { type: "Stabilitas Server", rate: 4.4 },
+      { type: "Customer Support", rate: 4.3 },
+    ]
   },
   faq: [
     {

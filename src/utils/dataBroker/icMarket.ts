@@ -42,12 +42,12 @@ export const icMarketDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$200",
-    type: "Standard, Raw Spread, cTrader Raw",
+    types: ["Standard", "Raw Spread", "cTrader Raw"],
     spread: "Mulai 0.0 pips (Raw)",
     commission: "$6–$7 per lot (round-turn)",
     leverage: "Hingga 1:500",
     execution: "< 40 ms",
-    instruments: "Forex, Gold, Crypto CFD, Indeks, Energi, Saham",
+    instruments: ["Forex", "Gold", "Crypto CFD", "Indeks", "Energi", "Saham"],
     depositWithdrawal: "Cepat"
   },
   accountTypes: [
@@ -100,10 +100,38 @@ export const icMarketDetail: BrokerStruc = {
   keyAdvantages: ["Ultra-fast execution", "Spread ECN sangat rendah & stabil", "Likuiditas institusional", "Platform stabil & ringan", "Ramah EA & scalping", "Mendukung MT4, MT5, dan cTrader", "Slippage rendah", "Cocok untuk trader volume besar"],
   depositWithdrawal: {
       paymentMethods: [
-      { method: "E-Wallet", time: "Instan", fee: "$0" },
-      { method: "Bank Transfer", time: "1–2 hari kerja", fee: "$0" },
-      { method: "Crypto", time: "Instan", fee: "$0" },
-      { method: "Skrill/Neteller", time: "Instan", fee: "$0" },
+      { 
+        method: "E-Wallet", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Bank Transfer", 
+        time: {
+          deposit: "1–2 hari kerja",
+          withdraw: "1–2 hari kerja"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Crypto", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
+      { 
+        method: "Skrill/Neteller", 
+        time: {
+          deposit: "Instan",
+          withdraw: "Instan"
+        }, 
+        fee: "$0" 
+      },
     ],
     platforms: [
       { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
@@ -122,10 +150,12 @@ export const icMarketDetail: BrokerStruc = {
   disadvantages: ["Tidak menyediakan akun Cent", "Minimum deposit relatif tinggi", "Leverage dibatasi di beberapa wilayah"],
   communityRating: {
     score: 4.7,
-    withdrawalSpeed: 5,
-    stability: 5,
-    customerSupport: 4.5,
-    quantityVote: 102
+    quantityVote: 102,
+    classifications: [
+      { type: "Kecepatan Withdraw (WD)", rate: 5 },
+      { type: "Stabilitas Server", rate: 5 },
+      { type: "Customer Support", rate: 4.5 },
+    ]
   },
   faq: [
     {
