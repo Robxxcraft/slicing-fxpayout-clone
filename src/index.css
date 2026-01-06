@@ -13,7 +13,7 @@
   --color-my-half-purple: #6F6C8F;
   --color-my-yellow: #FFC107;
 
-  --animate-marquee: marquee 5s linear infinite;
+  --animate-marquee: marquee 8s linear infinite;
   @keyframes marquee {
     0% {
       transform: translateX(0%);
