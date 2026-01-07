@@ -4,36 +4,36 @@ const brokerName = "XM";
 const brokerFounded = "2009";
 const brokerRanking: BrokerRanking = {
   tier: "Global",
-  title: "Multi-Asset Forex & CFD Broker"
+  title: "Multi-Regulated Forex & CFD Broker"
 };
 
 export const xmDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "xm.webp",
   registerUrl: "https://affs.click/4gFt7",
-  websiteUrl: "#",
+  websiteUrl: "https://affs.click/pcNLG",
   detailUrl: "xm",
   ranking: brokerRanking,
-  badges: ["Low Minimum Deposit", "Flexible Leverage", "Multi-Regulated"],
+  badges: ["Multi-Regulated", "Low Spread", "Fast Execution", "Human-Centered Broker"],
   overallScore: {
     rate: 4.3,
     communityUrl: "#",
   },
-  detailDescription: "XM adalah broker global yang berdiri sejak 2009, menyediakan layanan trading Forex dan CFD di berbagai instrumen seperti forex, indeks, energi, logam, saham CFD, dan cryptocurrency. Broker ini dikenal karena minimum deposit yang sangat rendah, leverage fleksibel, serta support platform trading lengkap seperti MetaTrader 4 dan MetaTrader 5. XM melayani jutaan trader di seluruh dunia dan menawarkan berbagai jenis akun yang cocok untuk pemula maupun profesional.",
+  detailDescription: "XM adalah broker global Forex & CFD yang berfokus pada keadilan trading, transparansi biaya, dan pengalaman manusiawi bagi trader. XM dikenal dengan eksekusi cepat, tanpa intervensi saat news besar, serta kondisi trading yang konsisten tanpa manipulasi.",
   cardDescription: "Broker global dengan akun XM Zero berkomisi tinggi sehingga rebate besar.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$5",
     leverage: "Hingga 1:1000",
-    spread: "Mulai 0.6 – 1.7 pips",
+    spread: "Mulai ±0.6 – 1.7 pips",
   },
   profile: {
     name: brokerName,
-    slogan: "Trading Made Simple",
+    slogan: "Big. Fair. Human.",
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-Regulated Forex & CFD Broker",
-    totalInstrument: "1000+ (Forex, CFD Saham, Energi, Logam, dll)",
+    brokerCategory: "Forex & CFD Broker",
+    totalInstrument: "1000+ (Forex, Indeks, Energi, Logam / Metal, Saham CFD, Crypto CFD, Turbo Instruments (lengkap), dll)",
     regulations: [
       { name: "ASIC", country: "Australia" },
       { name: "FCA", country: "United Kingdom" },
@@ -45,34 +45,35 @@ export const xmDetail: BrokerStruc = {
   },
   summary: {
     minDeposit: "$5",
-    types: ["Micro", "Standard", "Ultra Low", "Zero"],
+    types: ["Micro", "Standard", "Ultra Low"],
     spread: "Mulai 0.6 – 1.7 pips",
-    commission: "Zero Account ≈ $7 per lot round-turn",
+    commission: "0 (Micro, Standard, Ultra Low",
     leverage: "Hingga 1:1000 (tergantung regulator & wilayah)",
     execution: "Cepat & tanpa requote",
-    instruments: ["Forex", "Komoditas", "Indeks", "Saham CFD", "Energi", "Crypto CFD"],
+    instruments: ["Forex", "Komoditas", "Logam (Metal)", "Indeks", "Saham CFD", "Energi", "Crypto CFD", "Instrumen Turbo"],
     depositWithdrawal: "Banyak metode & cepat"
   },
   accountTypes: [
     {
         name: "Micro Account",
         level: "Pemula",
-        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0"]
+        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0", "Cocok untuk pemula & modal kecil"]
     },
     {
         name: "Standard Account",
         level: "Umum",
-        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0"]
+        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0", "Cocok untuk trader umum & manual trading"]
     },
     {
         name: "Ultra Low Account",
         level: "Trader",
-        features: ["Min deposit : $5", "Spread mulai ±0.6 pips", "Komisi : 0"]
+        features: ["Min deposit : $5", "Spread mulai ±0.6 pips", "Komisi : 0", "Cocok untuk trader aktif & spread lebih ketat"]
     },
     {
         name: "Zero Account",
         level: "Trader",
-        features: ["Min deposit : $5", "Spread mulai 0.0 pips", "Komisi ≈ $7 per lot (round-turn)"]
+        features: ["Min deposit : $5", "Spread mulai 0.0 pips", "Komisi : ± $7 per lot (round-turn)"],
+        notes: "Tersedia untuk klien tertentu (LN)"
     },
   ],
   tradingSpreads: [
@@ -88,10 +89,6 @@ export const xmDetail: BrokerStruc = {
           accountType: "Standard/Micro",
           spread: "±1.0 – 1.7"
         },
-        {
-          accountType: " Zero",
-          spread: "0.0 – 0.4"
-        },
       ]
     },
     {
@@ -106,10 +103,6 @@ export const xmDetail: BrokerStruc = {
           accountType: "Standard/Micro",
           spread: "±1.5 – 2.0"
         },
-        {
-          accountType: "Zero",
-          spread: "±0.3 – 0.8 (komisi berlaku)"
-        },
       ]
     }
   ],
@@ -117,7 +110,7 @@ export const xmDetail: BrokerStruc = {
   depositWithdrawal: {
       paymentMethods: [
       { 
-        method: "Bank Local", 
+        method: "Bank Lokal", 
         time: {
           deposit: "Instan – 2 hari kerja",
           withdraw: "Instan – 2 hari kerja"
@@ -151,7 +144,7 @@ export const xmDetail: BrokerStruc = {
   rebateProgram: [
     { pair: "EUR/USD", estimate: 7 },
     { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "AUD/USD", estimate: 6 },
   ],
   advantages: ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
   disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],
