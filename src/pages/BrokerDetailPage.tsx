@@ -42,9 +42,9 @@ const BrokerDetailPage = () => {
 
   return (
     <div className="font-inter">
-      <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} registerUrl={broker.registerUrl} />
+      <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} />
 
-      <HeaderBroker name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} registerUrl={broker.registerUrl} spesification={broker.specification} />
+      <HeaderBroker name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} spesification={broker.specification} />
       
       <ProfileBroker profile={broker.profile}/>
 
@@ -66,7 +66,7 @@ const BrokerDetailPage = () => {
 
       <FaqBroker dataFaq={broker.faq} />
 
-      <CtaBroker name={broker.name} registerUrl={broker.registerUrl} />
+      <CtaBroker name={broker.name} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} />
 
       <Footer />
     </div>

@@ -7,12 +7,13 @@ import { throttle } from "lodash";
 import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "@/components/ui/Button";
 
-const NavigationBar = ({name, ranking, profileImage, registerUrl}: 
+const NavigationBar = ({name, ranking, profileImage, registerUrl, websiteUrl}: 
   {
     name: string; 
     ranking: BrokerRanking; 
     profileImage: string; 
     registerUrl: string; 
+    websiteUrl: string;
   }
 ) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,7 @@ const NavigationBar = ({name, ranking, profileImage, registerUrl}:
             : <IoClose onClick={() => setOpenMenu(false)} className="text-3xl cursor-pointer" />
             }
           </div>
-          <ButtonCta scrollY={scrollY} registerUrl={registerUrl} />
+          <ButtonCta scrollY={scrollY} registerUrl={registerUrl} websiteUrl={websiteUrl} />
         </div>
 
         {/* ROW 2 */}
@@ -121,7 +122,7 @@ const NavigationBar = ({name, ranking, profileImage, registerUrl}:
                   Daftar Sekarang
                 </span>
               </Link>
-              <Link to={registerUrl} target="_blank" className="w-fit text-center">
+              <Link to={websiteUrl} target="_blank" className="w-fit text-center">
                 <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
                   Kunjungan Website
                 </span>
@@ -134,14 +135,14 @@ const NavigationBar = ({name, ranking, profileImage, registerUrl}:
   );
 };
 
-const ButtonCta = ({ scrollY, registerUrl }:{scrollY: number; registerUrl: string}) => {
+const ButtonCta = ({ scrollY, registerUrl, websiteUrl }:{scrollY: number; registerUrl: string; websiteUrl: string}) => {
   return (
     <div className={`
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
       <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
-      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
+      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
     </div>
   )
 }

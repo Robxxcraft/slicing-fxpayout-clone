@@ -11,7 +11,7 @@ type DetailBio = {
   icon: string;
 }
 
-const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, description, registerUrl, spesification}: 
+const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, description, registerUrl, spesification, websiteUrl}: 
   {
     name: string; 
     ranking: BrokerRanking; 
@@ -20,7 +20,8 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
     overallScore: OverallScore; 
     description: string; 
     registerUrl: string; 
-    spesification: Specification
+    spesification: Specification,
+    websiteUrl: string;
   }
 ) => {
   const detailBio: DetailBio[] = [
@@ -50,7 +51,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
             <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
               Tier {ranking.tier} {ranking.title}
             </p>
-            <BioBroker badges={badges} registerUrl={registerUrl} />
+            <BioBroker websiteUrl={websiteUrl} badges={badges} registerUrl={registerUrl} />
           </div>
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
@@ -82,7 +83,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
         </div>
       </div>
 
-      <div className="block lg:hidden"><ButtonCta registerUrl={registerUrl} /></div>
+      <div className="block lg:hidden"><ButtonCta websiteUrl={websiteUrl} registerUrl={registerUrl} /></div>
 
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
@@ -133,7 +134,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
   );
 };
 
-const BioBroker = ({badges, registerUrl}: {badges: string[]; registerUrl: string}) => {
+const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
   return (
     <>
       <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap gap-2 w-fit">
@@ -149,18 +150,18 @@ const BioBroker = ({badges, registerUrl}: {badges: string[]; registerUrl: string
           </div>
         ))}
       </div>
-      <div className="hidden lg:block"><ButtonCta registerUrl={registerUrl} /></div>
+      <div className="hidden lg:block"><ButtonCta websiteUrl={websiteUrl} registerUrl={registerUrl} /></div>
     </>
   )
 }
 
-const ButtonCta = ({registerUrl}: {registerUrl: string}) => {
+const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
       <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" size="md" className="text-nowrap flex-1">
         Daftar Sekarang
       </Button>
-      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="outline" size="md" className="text-nowrap flex-1">
+      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" size="md" className="text-nowrap flex-1">
         Kunjungi Website
       </Button>
     </div>
