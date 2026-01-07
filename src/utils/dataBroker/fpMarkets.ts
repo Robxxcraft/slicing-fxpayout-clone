@@ -79,7 +79,7 @@ export const fpMarketsDetail: BrokerStruc = {
       ]
     },
     {
-      icon: "eur-usd.svg",
+      icon: "gbp-usd.svg",
       pair: "GBP/USD",
       spreads: [
         {

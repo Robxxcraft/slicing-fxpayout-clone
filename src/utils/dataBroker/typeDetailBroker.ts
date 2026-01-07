@@ -85,7 +85,8 @@ export type FaqStructure = {
 export type AccountTypeStruc = {
   name: string;
   level: string;
-  features: string[]
+  features: string[],
+  notes?: string;
 }
 
 // BROKER STRUC

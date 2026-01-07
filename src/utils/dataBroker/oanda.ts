@@ -69,7 +69,7 @@ export const oandaDetail: BrokerStruc = {
       ]
     },
     {
-      icon: "eur-usd.svg",
+      icon: "xau-usd.svg",
       pair: "XAU/USD",
       spreads: [
         {

@@ -76,7 +76,7 @@ export const finexDetail: BrokerStruc = {
       ]
     },
     {
-      icon: "xau-usd.svg",
+      icon: "aud-usd.svg",
       pair: "AUD/USD",
       spreads: [
         {

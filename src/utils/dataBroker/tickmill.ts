@@ -97,7 +97,7 @@ export const tickmillDetail: BrokerStruc = {
       ]
     },
     {
-      icon: "eur-usd.svg",
+      icon: "aud-usd.svg",
       pair: "AUD/USD",
       spreads: [
         {
