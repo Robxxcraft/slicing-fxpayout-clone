@@ -66,7 +66,7 @@ const BrokerDetailPage = () => {
 
       <FaqBroker dataFaq={broker.faq} />
 
-      <CtaBroker name={broker.name} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} />
+      <CtaBroker name={broker.name} websiteUrl={broker.websiteUrl} />
 
       <Footer />
     </div>
