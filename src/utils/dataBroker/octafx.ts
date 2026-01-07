@@ -11,7 +11,7 @@ export const octaFxDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "octafx.webp",
   registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
-  websiteUrl: "#",
+  websiteUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   detailUrl: "octafx",
   ranking: brokerRanking,
   badges: ["Multi-Platform Trading", "Low Spread", "No Commission Deposit/Withdrawal", "Beginner & Advanced Friendly"],

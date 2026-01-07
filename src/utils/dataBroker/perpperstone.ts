@@ -10,8 +10,8 @@ const brokerRanking: BrokerRanking = {
 export const pepperstoneDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "pepperstone.webp",
-  registerUrl: "#",
-  websiteUrl: "#",
+  registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
+  websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   detailUrl: "pepperstone",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],

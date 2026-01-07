@@ -11,7 +11,7 @@ export const vantageDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "vantage.webp",
   registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
-  websiteUrl: "#",
+  websiteUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   detailUrl: "vantage",
   ranking: brokerRanking,
   badges: ["Multi-Asset Trading", "ECN/STP", "Spread Kompetitif", "Regulasi Kuat"],

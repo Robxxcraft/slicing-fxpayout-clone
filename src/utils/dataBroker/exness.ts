@@ -11,7 +11,7 @@ export const exnessDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "exness.webp",
   registerUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
-  websiteUrl: "#",
+  websiteUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   detailUrl: "exness",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Akun Cent", "Ultra-Fast Execution"],

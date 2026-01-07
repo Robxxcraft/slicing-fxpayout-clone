@@ -11,7 +11,7 @@ export const fpMarketsDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "fp-markets.webp",
   registerUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
-  websiteUrl: "#",
+  websiteUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   detailUrl: "fp-markets",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "ECN/STP", "Low Spread", "Multi-Asset"],

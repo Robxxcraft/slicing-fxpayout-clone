@@ -11,7 +11,7 @@ export const zfxDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "zfx.webp",
   registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
-  websiteUrl: "#",
+  websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   detailUrl: "zfx",
   ranking: brokerRanking,
   badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],

@@ -10,8 +10,8 @@ const brokerRanking: BrokerRanking = {
 export const fbsDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "fbs.webp",
-  registerUrl: "https://fbs.partners?ibl=569605&ibp=17852638",
-  websiteUrl: "#",
+  registerUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
+  websiteUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   detailUrl: "fbs",
   ranking: brokerRanking,
   badges: ["Low Minimum Deposit", "Leverage Tinggi", "Multi-Asset Trading", "Beginner Friendly"],
