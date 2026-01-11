@@ -13,6 +13,7 @@ export const fpMarketsDetail: BrokerStruc = {
   registerUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   websiteUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   detailUrl: "fp-markets",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "ECN/STP", "Low Spread", "Multi-Asset"],
   overallScore: {
@@ -144,9 +145,9 @@ export const fpMarketsDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
-    { pair: "XAU/USD", estimate: 8 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "EUR/USD", estimate: 4.4 },
+    { pair: "XAU/USD", estimate: 4.4 },
+    { pair: "CRYPTO", estimate: 4.4 },
   ],
   advantages: ["Spread sangat kompetitif (Raw ECN)", "Platform lengkap (MT4, MT5, cTrader)", "Tidak ada mark-up pada Raw account", "Regulasi kuat di banyak negara", "Cocok untuk trader manual, EA, scalping"],
   disadvantages: ["Minimum deposit $100 lebih tinggi dari beberapa broker ringan", "Leverage bisa dibatasi oleh regulator di wilayah tertentu", "Spread Standard lebih lebar dibanding ECN"],

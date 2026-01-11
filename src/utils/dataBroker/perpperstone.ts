@@ -13,6 +13,7 @@ export const pepperstoneDetail: BrokerStruc = {
   registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   detailUrl: "pepperstone",
+  statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
   overallScore: {
@@ -137,9 +138,9 @@ export const pepperstoneDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 8 },
-    { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "EUR/USD", estimate: 2.40 },
+    { pair: "XAU/USD", estimate: 2.40 },
+    { pair: "CRYPTO", estimate: 2.40 },
   ],
   advantages: ["Spread rendah & eksekusi stabil", "Regulasi kuat dan internasional", "Platform lengkap (MT4, MT5, cTrader, TradingView)"],
   disadvantages: ["Instrumen non-CFD nyata terbatas", "Support 24/7 tidak tersedia untuk semua wilayah", "Leverage bisa dibatasi tergantung lokasi"],

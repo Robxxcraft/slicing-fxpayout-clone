@@ -13,6 +13,7 @@ export const icMarketDetail: BrokerStruc = {
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "ic-markets",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
   overallScore: {

@@ -13,6 +13,7 @@ export const finexDetail: BrokerStruc = {
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "finex",
+  statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Tier Local", "Regulated Broker", "Low Deposit", "Beginner Friendly"],
   overallScore: {
@@ -23,7 +24,7 @@ export const finexDetail: BrokerStruc = {
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$10 (setoran awal)",
+    minDeposit: "$10",
     leverage: "Hingga 1:500 (Forex & logam; indeks/energi berbeda)",
     spread: "Mengambang, mulai sekitar 0.5 pip (typical)",
   },
@@ -38,7 +39,7 @@ export const finexDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$10 (setoran awal)",
+    minDeposit: "$10",
     types: ["Single Live Accoun"],
     spread: "Mulai ±0.5 pips (variabel)",
     commission: "±$1 per lot",
@@ -120,7 +121,11 @@ export const finexDetail: BrokerStruc = {
       { username: "Mobile App (iOS & Android)", icon: "finex.webp" },
     ]
   },
-  rebateProgram: "Rebate diproses secara manual melalui transfer ke rekening klien. Oleh karena itu, klien diminta untuk mengisi nomor rekening pada formulir.",
+  rebateProgram: [
+    { pair: "EUR/USD", estimate: 3 },
+    { pair: "XAU/USD", estimate: 5 },
+    { pair: "AUD/USD", estimate: 3 },
+  ],
   advantages: ["Broker resmi teregulasi BAPPEBTI", "Deposit rendah ($10)", "Spread & komisi relatif kompetitif", "Akses ke banyak instrumen", "Eksekusi cepat & dukungan bank lokal"],
   disadvantages: ["Hanya satu tipe akun live", "Fitur edukasi & riset lebih sederhana dibanding broker global", "MT5 saja (tanpa MT4)"],
   communityRating: {

@@ -13,6 +13,7 @@ export const axiDetail: BrokerStruc = {
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "axi",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN/STP Broker", "Low Spread", "Leverage Fleksibel"],
   overallScore: {
@@ -23,7 +24,7 @@ export const axiDetail: BrokerStruc = {
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$0 (direkomendasikan $200+)",
+    minDeposit: "$0",
     leverage: "Hingga 1:500 (tergantung regulator)",
     spread: "Mulai 0.0 pips (Pro)",
   },
@@ -127,9 +128,9 @@ export const axiDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
-    { pair: "XAU/USD", estimate: 8 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "EUR/USD", estimate: 4.5 },
+    { pair: "XAU/USD", estimate: 6 },
+    { pair: "AUD/USD", estimate: 4 },
   ],
   advantages: ["Spread rendah & eksekusi cepat", "Regulasi kuat (FCA/ASIC/FSCA)", "Platform trading populer", "Dukungan global"],
   disadvantages: ["Minimum efektif untuk ECN agak lebih tinggi", "Komisi per lot di Pro ECN"],

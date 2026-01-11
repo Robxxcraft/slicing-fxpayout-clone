@@ -13,6 +13,7 @@ export const xmDetail: BrokerStruc = {
   registerUrl: "https://affs.click/4gFt7",
   websiteUrl: "https://affs.click/pcNLG",
   detailUrl: "xm",
+  statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Multi-Regulated", "Low Spread", "Fast Execution", "Human-Centered Broker"],
   overallScore: {
@@ -142,9 +143,9 @@ export const xmDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 7 },
-    { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 6 },
+    { pair: "EUR/USD", estimate: 20 },
+    { pair: "XAU/USD", estimate: 13 },
+    { pair: "CRYPTO", estimate: 16 },
   ],
   advantages: ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
   disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],

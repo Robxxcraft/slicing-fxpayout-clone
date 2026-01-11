@@ -13,6 +13,7 @@ export const zfxDetail: BrokerStruc = {
   registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   detailUrl: "zfx",
+  statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],
   overallScore: {
@@ -23,7 +24,7 @@ export const zfxDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$15 – $50 – $500 (tergantung akun)",
+    minDeposit: "$15",
     leverage: "Hingga 1:2000 (tergantung akun & wilayah)",
     spread: "Mulai 0.2 pips (ECN)",
   },
@@ -131,7 +132,11 @@ export const zfxDetail: BrokerStruc = {
       { username: "iOS & Android", icon: "zfx.webp" },
     ]
   },
-  rebateProgram: "Rebate diproses secara manual melalui transfer ke rekening klien. Oleh karena itu, klien diminta untuk mengisi nomor rekening pada formulir.",
+  rebateProgram: [
+    { pair: "EUR/USD", estimate: 8 },
+    { pair: "XAU/USD", estimate: 12 },
+    { pair: "CRYPTO", estimate: 8 },
+  ],
   advantages: ["Spread ECN kompetitif", "Leverage tinggi", "MT4 & MT5 tersedia", "Akun cent tersedia"],
   disadvantages: ["Minimum deposit ECN cukup tinggi", "Rebate IB tidak transparan di publik", "Ada laporan keluhan pengguna (perlu kehati-hatian)"],
   communityRating: {

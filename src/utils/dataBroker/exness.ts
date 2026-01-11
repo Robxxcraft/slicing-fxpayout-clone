@@ -13,6 +13,7 @@ export const exnessDetail: BrokerStruc = {
   registerUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   websiteUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   detailUrl: "exness",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Akun Cent", "Ultra-Fast Execution"],
   overallScore: {
@@ -171,9 +172,9 @@ export const exnessDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
-    { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "EUR/USD", estimate: 3.20 },
+    { pair: "XAU/USD", estimate: 2.6 },
+    { pair: "CRYPTO", estimate: 16 },
   ],
   advantages: ["Spread & eksekusi sangat stabil", "Withdraw super cepat", "Banyak metode deposit & withdraw", "Tersedia akun Cent untuk pemula", "Ramah EA & scalping", "Leverage besar dan fleksibel"],
   disadvantages: ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"],

@@ -59,7 +59,7 @@ export type Platform = {
   username: string;
   icon: string;
 }
-export type RebateProgramType = string | {
+export type RebateProgramType = {
   pair: string;
   estimate: number | {
     min: number;
@@ -67,10 +67,7 @@ export type RebateProgramType = string | {
   }
 }[];
 export type CommunityRatingStruc = {
-  score: number | {
-    min: number;
-    max: number;
-  };
+  score: number;
   quantityVote: number;
   classifications?: {
     type: string;
@@ -95,6 +92,7 @@ export type BrokerStruc = {
   profileImage: string;
   registerUrl: string;
   websiteUrl: string;
+  statusRebate: string;
   detailUrl: string;
   ranking: BrokerRanking;
   badges: string[];

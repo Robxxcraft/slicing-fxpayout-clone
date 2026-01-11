@@ -6,7 +6,6 @@ import { finexDetail } from "./finex";
 import { fpMarketsDetail } from "./fpMarkets";
 import { hfmDetail } from "./hfm";
 // import { icMarketDetail } from "./icMarket";
-import { oandaDetail } from "./oanda";
 import { octaFxDetail } from "./octafx";
 import { pepperstoneDetail } from "./perpperstone";
 import { tickmillDetail } from "./tickmill";
@@ -29,5 +28,4 @@ export const brokers = {
   "vantage": vantageDetail,
   "axi": axiDetail,
   "finex": finexDetail,
-  "oanda": oandaDetail,
 }

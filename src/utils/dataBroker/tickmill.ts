@@ -13,6 +13,7 @@ export const tickmillDetail: BrokerStruc = {
   registerUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
   websiteUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
   detailUrl: "tickmill",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN", "Spread Tipis", "Leverage Fleksibel"],
   overallScore: {
@@ -148,8 +149,8 @@ export const tickmillDetail: BrokerStruc = {
   },
   rebateProgram: [
     { pair: "EUR/USD", estimate: 8 },
-    { pair: "XAU/USD", estimate: 10 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "XAU/USD", estimate: 8 },
+    { pair: "AUD/USD", estimate: 0.80 },
   ],
   advantages: ["Spread ECN sangat rendah", "Komisi kompetitif", "Eksekusi cepat & stabil", "Regulasi kuat di banyak wilayah", "Platform trading lengkap"],
   disadvantages: ["Min deposit $100 relatif lebih tinggi dibanding broker lain", "Komisi berlaku pada akun Pro/VIP", "Leverage bisa dibatasi oleh regulator"],

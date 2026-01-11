@@ -13,6 +13,7 @@ export const hfmDetail: BrokerStruc = {
   registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   websiteUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   detailUrl: "hfm",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "Multi-Asset", "MT4/MT5", "Leverage Tinggi"],
   overallScore: {
@@ -23,7 +24,7 @@ export const hfmDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$5",
+    minDeposit: "$0",
     leverage: "Hingga 1:2000",
     spread: "Mulai 0.0 pips (Zero)",
   },
@@ -153,14 +154,14 @@ export const hfmDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: { min: 6, max: 8 }},
-    { pair: "XAU/USD", estimate: { min: 8, max: 12 }},
-    { pair: "AUD/USD", estimate: { min: 5, max: 7 }},
+    { pair: "EUR/USD", estimate: 3.2},
+    { pair: "XAU/USD", estimate: 9},
+    { pair: "CRYPTO", estimate: 0.80},
   ],
   advantages: ["Spread Zero sangat kompetitif", "Regulasi lengkap di berbagai negara", "Dukungan trading multi-platform", "Cocok untuk pemula hingga profesional"],
   disadvantages: ["Struktur regulasi berbeda untuk tiap entitas", "Spread akun standar bisa lebih tinggi", "Tidak semua promosi bonus/nodeposit tersedia"],
   communityRating: {
-    score: { min: 4.3, max: 4.6 },
+    score: 4.3,
     quantityVote: 76,
     classifications: [
       { type: "Depo & Withdraw", rate: 4.5 },

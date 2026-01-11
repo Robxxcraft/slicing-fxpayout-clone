@@ -13,6 +13,7 @@ export const vantageDetail: BrokerStruc = {
   registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   websiteUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   detailUrl: "vantage",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Multi-Asset Trading", "ECN/STP", "Spread Kompetitif", "Regulasi Kuat"],
   overallScore: {
@@ -153,9 +154,9 @@ export const vantageDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
-    { pair: "XAU/USD", estimate: 8 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "EUR/USD", estimate: 7.20 },
+    { pair: "XAU/USD", estimate: 10.4 },
+    { pair: "AUD/USD", estimate: 1.60 },
   ],
   advantages: ["Regulasi kuat di banyak yurisdiksi global", "Spread rendah di Raw ECN / Pro ECN", "Pilihan akun fleksibel sesuai strategi trader", "Platform lengkap & fitur trading canggih", "Tidak ada biaya deposit/withdraw dari broker"],
   disadvantages: [" Spread Standard bisa lebih tinggi dibanding ECN", "Komisi per lot tetap berlaku di Raw ECN", "Regulasi entitas berbeda tergantung wilayah klien"],

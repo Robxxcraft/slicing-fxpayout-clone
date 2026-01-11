@@ -13,6 +13,7 @@ export const octaFxDetail: BrokerStruc = {
   registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   websiteUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   detailUrl: "octafx",
+  statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Multi-Platform Trading", "Low Spread", "No Commission Deposit/Withdrawal", "Beginner & Advanced Friendly"],
   overallScore: {
@@ -40,7 +41,7 @@ export const octaFxDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: " $25 (disarankan $100)",
+    minDeposit: " $50 (disarankan $100)",
     types: ["MT4", "MT5", "OctaTrader"],
     spread: "Mulai ±0.6 pips",
     commission: "Tidak ada komisi non-trading (deposit/withdrawal gratis)",
@@ -135,9 +136,9 @@ export const octaFxDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 6 },
+    { pair: "EUR/USD", estimate: 8 },
     { pair: "XAU/USD", estimate: 8 },
-    { pair: "AUD/USD", estimate: 5 },
+    { pair: "CRYPTO", estimate: 8 },
   ],
   advantages: [" Kondisi trading ramah biaya", "Spread kompetitif", "Platform lengkap (MT4, MT5, OctaTrader)", "Deposit & withdraw bebas komisi", "Banyak instrumen trading"],
   disadvantages: ["Tidak setinggi broker dengan regulasi top-tier seperti FCA/ASIC secara penuh di semua entitas", "Spread bisa melebar pada volatilitas tinggi", "Review pengguna ada yang menyebut masalah layanan tertentu (beberapa review mixed)"],

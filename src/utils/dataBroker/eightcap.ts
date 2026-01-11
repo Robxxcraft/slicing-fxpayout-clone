@@ -13,6 +13,7 @@ export const eightcapDetail: BrokerStruc = {
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "eightcap",
+  statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Low Spread", "Fast Execution"],
   overallScore: {
