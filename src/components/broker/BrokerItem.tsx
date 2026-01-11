@@ -21,20 +21,20 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
   return (
     <div className="p-6 flex flex-col justify-between w-full border border-[rgba(34,34,34,0.1)] rounded-3xl shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)]">
       <div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 justify-between">
+          <div className="w-fit flex items-center gap-2 md:gap-4 wrap-break-word">
             <img
               src={`/broker/${item.profileImage}`}
               alt={item.name}
-              className="size-16 rounded-full object-cover object-center"
+              className="size-14 md:size-16 rounded-full object-cover object-center"
             />
-            <h4 className="text-xl md:text-2xl font-semibold text-[#222222]">
+            <h4 className="text-xl md:text-2xl font-semibold text-[#222222] break-all">
               {item.name}
             </h4>
           </div>
-          <Button variant="primary-light" size="md" className="py-3! text-sm! 2xl:text-base! font-medium!">
-            Pilih
-          </Button>
+          <div className="px-2 2xl:px-4 py-3 text-sm 2xl:text-base font-medium bg-linear-to-t from-dark-primary to-primary text-white border-white h-fit rounded-full border inline-flex items-center justify-center gap-3 text-nowrap">
+            {item.statusRebate}
+          </div>
         </div>
         <p className="mt-2 text-[#222222] leading-[160%]">{item.cardDescription}</p>
         <div className="my-3 lg:my-4 h-[0.5px] w-full bg-[rgba(0,0,0,0.2)]"></div>
@@ -80,7 +80,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
                 </tr>
                 <tr>
                   <td className="py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    AUD/USD
+                    CRYPTO
                   </td>
                   <td className="font-semibold text-black py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
                     ${estimateAud}
