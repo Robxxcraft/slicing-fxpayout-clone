@@ -11,7 +11,7 @@ import Rewards from "@/components/pages/homePage/Rewards";
 
 const HomePage = () => {
   useEffect(() => {
-    document.title = "FX Payout";
+    document.title = "Trading Lebih Untung Rebate Hingga 90% | FX Payout";
   }, []);
 
   return (

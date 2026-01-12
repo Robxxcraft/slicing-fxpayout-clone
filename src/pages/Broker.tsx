@@ -15,7 +15,7 @@ const Broker = () => {
   const allBrokers = Object.values(brokers);
 
   useEffect(() => {
-    document.title = "Broker | FX Payout";
+    document.title = "Daftar Broker Partner dan Detail | FX Payout";
   }, []);
 
   useEffect(() => {
