@@ -18,7 +18,7 @@ const CommunityRating = ({name, profileImage, ranking, communityRating}:
       <HeadingSection>Rating Komunitas</HeadingSection>
       <SubHeadingSection>Penilaian dan umpan balik dari pengguna broker.</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 flex flex-col lg:flex-row gap-6 2xl:gap-14">
-        <div className="py-4 lg:py-6 2xl:py-8 flex-1 flex flex-col items-center justify-center w-full bg-[#F9F9F9] rounded-4xl 2xl:rounded-[40px]">
+        <div className="py-4 lg:py-6 2xl:py-8 px-4 flex-1 flex flex-col items-center justify-center w-full bg-[#F9F9F9] rounded-4xl 2xl:rounded-[40px]">
           <img src={`/broker/${profileImage}`} alt={`Logo ${name}`} 
             className="size-16 lg:size-12 2xl:size-16 rounded-full object-cover" />
           <p className="mt-2 lg:mt-3 2xl:mt-4 text-2xl 2xl:text-[32px] font-semibold">
@@ -35,10 +35,7 @@ const CommunityRating = ({name, profileImage, ranking, communityRating}:
             </p>
             <div className="mt-1 lg:mt-8 2xl:mt-10 flex items-end">
               <p className="text-[40px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
-                { typeof communityRating.score === "number" ? 
-                  communityRating.score :
-                  `${communityRating.score.min}-${communityRating.score.max}`
-                }
+                {communityRating.score}
               </p>
               <p className="text-2xl 2xl:text-[36px] leading-11 tracking-[10%] font-semibold">
                 /5
@@ -46,14 +43,11 @@ const CommunityRating = ({name, profileImage, ranking, communityRating}:
             </div>
             <div className="mt-1 lg:mt-3 2xl:mt-4 flex gap-1 2xl:gap-2">
               {Array.from({length: Math.floor(
-                typeof communityRating.score === "number" ? 
-                communityRating.score : communityRating.score.max
+                communityRating.score
               )}).map((_, idx) => (
                 <FaStar key={idx} className="text-2xl text-my-yellow" />
               ))}
-              {!Number.isInteger(
-                typeof communityRating.score === "number" ? 
-                communityRating.score : communityRating.score.max) &&
+              {!Number.isInteger(communityRating.score) &&
                 <FaStarHalf className="text-2xl text-my-yellow" />
               }
             </div>
@@ -87,10 +81,10 @@ const CommunityRating = ({name, profileImage, ranking, communityRating}:
             </div>
           }
           {communityRating.reviewHighlights &&
-            <div>
+            <div className="w-full">
               <p className="text-2xl 2xl:text-[32px] leading-9 font-semibold">Ulasan teratas</p>
               {communityRating.reviewHighlights.map((value, idx) => (
-                <p key={idx} className="my-2 px-4 py-2 bg-[#F5F8FF] rounded-lg">
+                <p key={idx} className="my-2 px-4 py-2 bg-[#F5F8FF] rounded-lg text-base 2xl:text-xl">
                   {value}
                 </p>
               ))}
