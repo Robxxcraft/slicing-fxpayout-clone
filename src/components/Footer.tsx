@@ -20,7 +20,7 @@ const Footer = () => {
             <img
               src="/fxpayout-blue.svg"
               alt="logo fx payout"
-              className="w-10 2xl:w-[50px]"
+              className="w-5 lg:w-6 2xl:w-8"
             />
             <span className="text-2xl 2xl:text-3xl font-semibold text-primary">
               FXPAYOUT

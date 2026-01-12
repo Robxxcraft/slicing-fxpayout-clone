@@ -49,7 +49,7 @@ const Navbar = ({ active }: { active: string }) => {
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
-          className="w-7 md:w-9 lg:w-12 2xl:w-[50px]"
+          className="w-4 md:w-5 lg:w-6 2xl:w-8"
         />
         <span className="text-base md:text-xl 2xl:text-3xl font-semibold text-white">
           FXPAYOUT
@@ -104,7 +104,7 @@ const Navbar = ({ active }: { active: string }) => {
             <img
               src="/fxpayout-white.svg"
               alt="logo fx payout"
-              className="w-7 md:w-9"
+              className="w-4 md:w-5"
             />
             <span className="text-base md:text-2xl font-semibold text-white">
               FXPAYOUT
