@@ -47,10 +47,12 @@ const Broker = () => {
   return (
     <div className="font-inter">
       <Navbar active="broker" />
-      <Header query={query} onHandleSearch={handleSearch} />
-      <BrokerList brokerPartners={brokerPartners} />
-      {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
-      <CtaSection />
+      <main>
+        <Header query={query} onHandleSearch={handleSearch} />
+        <BrokerList brokerPartners={brokerPartners} />
+        {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
+        <CtaSection />
+      </main>
       <Footer />
     </div>
   );

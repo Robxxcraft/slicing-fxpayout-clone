@@ -9,13 +9,13 @@ const Header = ({query, onHandleSearch}: {query: string; onHandleSearch: ChangeE
         <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
           <img src="/people_money.svg" alt="Reg broker"
             className="scale-90 md:scale-100" />
-          <h3 className="text-base md:text-xl font-medium text-white">
+          <span className="text-base md:text-xl font-medium text-white">
             DAFTAR BROKER
-          </h3>
+          </span>
         </div>
-        <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
+        <h1 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
           Broker Partner dan Detail
-        </h2>
+        </h1>
         <p className="text-base md:text-xl leading-[160%] max-w-[786px]">
           Broker pilihan dengan eksekusi terbaik dan skema rebate hingga 90%.
           bandingkan detail instrumen dan pilih broker yang paling cocok untuk

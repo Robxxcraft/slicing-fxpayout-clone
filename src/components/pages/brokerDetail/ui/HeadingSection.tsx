@@ -18,9 +18,9 @@ const HeadingSection = ({variant = "first", smText, children}: {variant?: Headin
   const finalClass = `${baseStyle} ${styleVariant}`;
 
   return (
-    <h2 className={finalClass}>
+    <h3 className={finalClass}>
       {children}
-    </h2>
+    </h3>
   )
 }
 

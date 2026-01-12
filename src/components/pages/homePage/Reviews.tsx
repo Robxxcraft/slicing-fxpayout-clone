@@ -16,9 +16,9 @@ const Reviews = () => {
         <div className="flex flex-col items-center text-center">
           <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
             <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
-            <h3 className="text-base md:text-xl font-medium text-white">
+            <span className="text-base md:text-xl font-medium text-white">
               TESTIMONI
-            </h3>
+            </span>
           </div>
           <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
             Apa Kata Trader yang Menggunakan FXPayout?
@@ -32,13 +32,13 @@ const Reviews = () => {
       <div className="relative">
         <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3.5">
           {/* BUTTON PREV */}
-          <button className="swiper-button-prev-custom flex justify-center items-center z-10 size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
-            <IoArrowBackOutline size={24} />
+          <button aria-label="Slide sebelumnya" className="swiper-button-prev-custom flex justify-center items-center z-10 size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
+            <IoArrowBackOutline size={24} aria-hidden="true" />
           </button>
 
           {/* BUTTON NEXT */}
-          <button className="swiper-button-next-custom flex justify-center items-center z-10 size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
-            <IoArrowForward size={24} />
+          <button aria-label="Slide berikutnya" className="swiper-button-next-custom flex justify-center items-center z-10 size-14 text-white rounded-full bg-linear-to-t from-dark-primary to-primary disabled:bg-white disabled:bg-none disabled:text-primary cursor-pointer">
+            <IoArrowForward size={24} aria-hidden="true" />
           </button>
         </div>
         <Swiper

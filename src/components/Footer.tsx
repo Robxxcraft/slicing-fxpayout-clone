@@ -53,6 +53,7 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={url}
+                    aria-label={`${title} FX Payout`}
                     className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
                     {title}
                   </Link>
@@ -106,26 +107,26 @@ const socialMedia = [
   {
     id: "telegram",
     url: "https://t.me/fxpayout_support",
-    element: <RiTelegram2Fill />,
+    element: <RiTelegram2Fill aria-hidden="true" />,
   },
   {
     id: "twitter",
     url: "https://x.com/fxpayout?s=21",
-    element: <FaXTwitter />,
+    element: <FaXTwitter aria-hidden="true" />,
   },
   {
     id: "instagram",
     url: "https://www.instagram.com/fxpayoutdotcom?igsh=MWFtb29vdHBqaGV0MA%3D%3D&utm_source=qr",
-    element: <PiInstagramLogoFill />,
+    element: <PiInstagramLogoFill aria-hidden="true" />,
   },
   {
     id: "tiktok",
     url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-92pm7d95aXo",
-    element: <IoLogoTiktok />,
+    element: <IoLogoTiktok aria-hidden="true" />,
   },
   {
     id: "whatsapp",
     url: "https://wa.me/62",
-    element: <FaWhatsapp />,
+    element: <FaWhatsapp aria-hidden="true" />,
   },
 ];

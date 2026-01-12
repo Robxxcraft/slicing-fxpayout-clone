@@ -13,9 +13,9 @@ const ProsCons = ({advantages, disadvantages}: {advantages: string[]; disadvanta
         {/* ADVANTAGES */}
         <div className="bg-[#F0F9FF] rounded-2xl md:rounded-4xl 2xl:rounded-[40px] shadow-[0_4px_50px_0_rgba(0,0,0,0.1)] 2xl:shadow-[0_4px_100px_0_rgba(0,0,0,0.1)]">
           <div className='relative py-5 md:py-6 w-full bg-primary rounded-2xl shadow-[0_7px_16.8px_0_rgba(65,96,255,0.28)]'>
-            <p className='text-xl md:text-2xl font-semibold text-white text-center'>
+            <h3 className='text-xl md:text-2xl font-semibold text-white text-center'>
               Kelebihan
-            </p>
+            </h3>
             <div className="absolute top-[70%] left-1/2 -translate-x-1/2">
               <TbTriangleInvertedFilled className="text-[48px] md:text-[56px] 2xl:text-[72px] text-primary"/>
             </div>
@@ -37,9 +37,9 @@ const ProsCons = ({advantages, disadvantages}: {advantages: string[]; disadvanta
         {/* DISADVANTAGES */}
         <div className="relative bg-[#FEF7F7] rounded-2xl md:rounded-4xl 2xl:rounded-[40px] shadow-[0_4px_50px_0_rgba(0,0,0,0.1)] 2xl:shadow-[0_4px_100px_0_rgba(0,0,0,0.1)]">
           <div className='relative py-5 md:py-6 w-full bg-[#FC685B] rounded-2xl shadow-[0_7px_16.8px_0_rgba(252,104,91,0.28)]'>
-            <p className='text-xl md:text-2xl font-semibold text-white text-center'>
+            <h3 className='text-xl md:text-2xl font-semibold text-white text-center'>
               Kekurangan
-            </p>
+            </h3>
             <div className="absolute top-[70%] left-1/2 -translate-x-1/2">
               <TbTriangleInvertedFilled className="text-[48px] md:text-[56px] 2xl:text-[72px] text-[#FC685B]"/>
             </div>

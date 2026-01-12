@@ -28,9 +28,9 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
               alt={item.name}
               className="size-14 md:size-16 rounded-full object-cover object-center"
             />
-            <h4 className="text-xl md:text-2xl font-semibold text-[#222222] break-all">
+            <h2 className="text-xl md:text-2xl font-semibold text-[#222222] break-all">
               {item.name}
-            </h4>
+            </h2>
           </div>
           <div className="px-2 2xl:px-4 py-3 text-sm 2xl:text-base font-medium bg-linear-to-t from-dark-primary to-primary text-white border-white h-fit rounded-full border inline-flex items-center justify-center gap-3 text-nowrap">
             {item.statusRebate}

@@ -45,9 +45,9 @@ const HowItWorks = () => {
         <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
           <img src="/workflow.svg" alt="workflow" 
             className="scale-90 md:scale-100"/>
-          <h3 className="text-base md:text-xl font-semibold text-white">
+          <span className="text-base md:text-xl font-semibold text-white">
             CARA KERJA
-          </h3>
+          </span>
         </div>
         <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
           Cara Kerja FXPayout dalam 4 Langkah Sederhana
@@ -71,9 +71,9 @@ const HowItWorks = () => {
                   {workflow.title.toLocaleUpperCase()}
                 </p>
               </div>
-              <h4 className="mb-4 text-xl md:text-2xl font-medium leading-[160%]">
+              <h2 className="mb-4 text-xl md:text-2xl font-medium leading-[160%]">
                 {workflow.subtitle}
-              </h4>
+              </h2>
               <img
                 src={`/${workflow.image}`}
                 alt="Workflow image"

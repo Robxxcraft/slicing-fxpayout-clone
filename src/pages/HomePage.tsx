@@ -17,13 +17,15 @@ const HomePage = () => {
   return (
     <div className="font-inter">
       <Navbar active="home" />
-      <HeroHome />
-      <Benefits />
-      <HowItWorks />
-      <Rewards />
-      <Reviews />
-      <Profile />
-      <CtaSection />
+      <main>
+        <HeroHome />
+        <Benefits />
+        <HowItWorks />
+        <Rewards />
+        <Reviews />
+        <Profile />
+        <CtaSection />
+      </main>
       <Footer />
     </div>
   );

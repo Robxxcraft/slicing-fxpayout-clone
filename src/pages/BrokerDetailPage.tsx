@@ -43,30 +43,32 @@ const BrokerDetailPage = () => {
   return (
     <div className="font-inter">
       <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} />
-
-      <HeaderBroker name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} spesification={broker.specification} />
       
-      <ProfileBroker profile={broker.profile}/>
+      <main>
+        <HeaderBroker name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} spesification={broker.specification} />
+        
+        <ProfileBroker profile={broker.profile}/>
 
-      <Summary summaryBroker={broker.summary} />
+        <Summary summaryBroker={broker.summary} />
 
-      <TypeAccount accountDetail={broker.accountTypes} />
+        <TypeAccount accountDetail={broker.accountTypes} />
 
-      <Spread tradingSpread={broker.tradingSpreads} />
-      
-      <MainAdvantage keyAdvantages={broker.keyAdvantages} />
+        <Spread tradingSpread={broker.tradingSpreads} />
+        
+        <MainAdvantage keyAdvantages={broker.keyAdvantages} />
 
-      <DepositWIthdraw paymentMethods={broker.depositWithdrawal.paymentMethods} platforms={broker.depositWithdrawal.platforms}/>
+        <DepositWIthdraw paymentMethods={broker.depositWithdrawal.paymentMethods} platforms={broker.depositWithdrawal.platforms}/>
 
-      <RebateProgram detailData={broker.rebateProgram} />
+        <RebateProgram detailData={broker.rebateProgram} />
 
-      <ProsCons advantages={broker.advantages} disadvantages={broker.disadvantages} />
-      
-      <CommunityRating name={broker.name} profileImage={broker.profileImage} ranking={broker.ranking} communityRating={broker.communityRating} />
+        <ProsCons advantages={broker.advantages} disadvantages={broker.disadvantages} />
+        
+        <CommunityRating name={broker.name} profileImage={broker.profileImage} ranking={broker.ranking} communityRating={broker.communityRating} />
 
-      <FaqBroker dataFaq={broker.faq} />
+        <FaqBroker dataFaq={broker.faq} />
 
-      <CtaBroker name={broker.name} websiteUrl={broker.websiteUrl} />
+        <CtaBroker name={broker.name} websiteUrl={broker.websiteUrl} />
+      </main>
 
       <Footer />
     </div>

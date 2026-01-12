@@ -59,38 +59,6 @@ const ProfileBroker = ({profile}: {profile: ProfileDetailBroker}) => {
                 </div>
               </div>
             ))}
-            {/* <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
-              <div className="w-1/2 md:w-fit">
-                <ContentHead>Slogan</ContentHead>
-              </div>
-              <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>{profile.slogan}</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
-              <div className="w-1/2 md:w-fit">
-                <ContentHead>Tier</ContentHead>
-              </div>
-              <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>Tier {profile.ranking.tier} — {profile.ranking.title}</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
-              <div className="w-1/2 md:w-fit">
-                <ContentHead>Tahun Berdiri</ContentHead>
-              </div>
-              <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>{profile.yearFounded}</ContentBody>
-              </div>
-            </div>
-            <div className="py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full border-b border-[#828282]/50">
-              <div className="w-1/2 md:w-fit">
-                <ContentHead>Jenis Broker</ContentHead>
-              </div>
-              <div className="w-1/2 md:w-fit text-right">
-                <ContentBody>{profile.brokerCategory}</ContentBody>
-              </div>
-            </div> */}
           </div>
         </div>
 
