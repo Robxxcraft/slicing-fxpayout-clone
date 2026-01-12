@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { PiInstagramLogoFill } from "react-icons/pi";
@@ -121,5 +122,10 @@ const socialMedia = [
     id: "tiktok",
     url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-92pm7d95aXo",
     element: <IoLogoTiktok />,
+  },
+  {
+    id: "whatsapp",
+    url: "https://wa.me/62",
+    element: <FaWhatsapp />,
   },
 ];
