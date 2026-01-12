@@ -35,6 +35,7 @@ const Footer = () => {
               <Link
                 to={item.url}
                 key={item.id}
+                aria-label={`${item} FX Payout`}
                 target="_blank"
                 className="p-2.5 text-2xl text-primary bg-[#F4F4F4] rounded-full cursor-pointer">
                 {item.element}
@@ -53,7 +54,6 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={url}
-                    aria-label={`${title} FX Payout`}
                     className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
                     {title}
                   </Link>
