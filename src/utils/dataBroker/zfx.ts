@@ -41,7 +41,7 @@ export const zfxDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: ["$15 (Cent/Mini)", "$50 (Standard)", "$500–$1000 (ECN tergantung sumber)"],
+    minDeposit: "$15",
     types: ["Cent", "Standard STP", "ECN"],
     spread: "Mulai 0.2 pips pada akun ECN; akun standard/cent lebih lebar",
     commission: "ECN biasanya ada komisi (nilai tergantung instrumen)",

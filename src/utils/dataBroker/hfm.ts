@@ -44,7 +44,7 @@ export const hfmDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$0 – tergantung akun",
+    minDeposit: "$0",
     types: ["Cent", "Zero Spread", "Pro", "Premium", "HFCopy"],
     spread: "Mulai 0.0 pips (Zero)",
     commission: "Tergantung akun (Zero & Pro dapat komisi)",

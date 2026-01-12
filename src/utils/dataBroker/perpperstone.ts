@@ -24,7 +24,7 @@ export const pepperstoneDetail: BrokerStruc = {
   cardDescription: "Broker regulasi top dengan eksekusi sangat cepat dan kondisi raw spread.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$0 (tanpa minimum)",
+    minDeposit: "$0",
     leverage: "Hingga 1:500",
     spread: "Mulai 0.0 pips (Razor)",
   },
@@ -44,7 +44,7 @@ export const pepperstoneDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$0 (tanpa minimum)",
+    minDeposit: "$0",
     types: ["Standard", "Razor", "Pro"],
     spread: "Mulai 0.0 pips (Razor)",
     commission: "Razor: $6–$7 per lot (round-turn)",

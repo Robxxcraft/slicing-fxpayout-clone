@@ -41,7 +41,7 @@ export const axiDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$0 (direkomendasikan $200+)",
+    minDeposit: "$0",
     types: ["Standard", "Pro ECN"],
     spread: "Mulai 0.0 – 0.2 pips (Pro ECN)",
     commission: "Pro ECN: ±$7 per lot (round-turn)",

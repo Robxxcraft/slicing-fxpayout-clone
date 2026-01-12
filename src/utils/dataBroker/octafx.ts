@@ -41,7 +41,7 @@ export const octaFxDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: " $50 (disarankan $100)",
+    minDeposit: " $50",
     types: ["MT4", "MT5", "OctaTrader"],
     spread: "Mulai ±0.6 pips",
     commission: "Tidak ada komisi non-trading (deposit/withdrawal gratis)",
