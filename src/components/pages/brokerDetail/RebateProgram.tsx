@@ -24,7 +24,7 @@ const RebateProgram = ({detailData}: {detailData: RebateProgramType}) => {
           <p className="mt-4 text-base 2xl:text-xl leading-[160%] text-white">
             Perkiraan rebate yang bisa didapat trader melalul program rebate Anda.
           </p>
-          <Button className="mt-6 w-full! lg:w-fit!" variant="primary-light" icon={<IoArrowForwardOutline />} iconPosition="right" size="xl">
+          <Button buttonType="link" urlTo="/" className="mt-6 w-full! lg:w-fit!" variant="primary-light" icon={<IoArrowForwardOutline />} iconPosition="right" size="xl">
             Kalkulator Rebate
           </Button>
         </div>

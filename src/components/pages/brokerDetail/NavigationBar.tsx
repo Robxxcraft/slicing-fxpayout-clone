@@ -37,10 +37,6 @@ const NavigationBar = ({name, ranking, profileImage, registerUrl, websiteUrl}:
     const checkOverflow = () => {
       if (containerRef.current && textRef.current && btnHamburgerRef.current) {
         const overflowing = textRef.current.offsetWidth > containerRef.current.offsetWidth - btnHamburgerRef.current.offsetWidth - 48;
-        console.log("text:" + textRef.current.offsetWidth);
-        console.log("container:" + containerRef.current.offsetWidth);
-        console.log("hamburger:" + btnHamburgerRef.current.offsetWidth);
-        
         setIsOverflowing(overflowing);
       }
     }

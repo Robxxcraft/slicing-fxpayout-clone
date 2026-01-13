@@ -23,7 +23,7 @@ const BrokerDetailPage = () => {
 
   useEffect(() => {
     const titleName = broker ? broker.name : "Not Found";
-    document.title = `${titleName} - Broker | FX Payout`;
+    document.title = `Rebate ${titleName} hingga $${broker.rebateProgram[0].estimate} per Lot | FX Payout`;
   }, [broker]);
 
   if (!broker) {
