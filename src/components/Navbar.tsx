@@ -6,7 +6,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { languages, type Language } from "../utils/languageSupport";
 import LanguageSelector from "./LanguageSelector";
 import { listNavigation } from "../utils/listNavigation";
-import Button from "./ui/Button";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
@@ -49,7 +48,7 @@ const Navbar = ({ active }: { active: string }) => {
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
-          className="w-4 md:w-5 lg:w-6 2xl:w-8"
+          className="mb-2 lg:mb-3 w-4 md:w-5 lg:w-6 2xl:w-8"
         />
         <span className="text-base md:text-xl 2xl:text-3xl font-semibold text-white">
           FXPAYOUT
@@ -81,12 +80,12 @@ const Navbar = ({ active }: { active: string }) => {
           setOpen={setOpenLanguageSelector}
           onChangeLanguage={handleChangeLanguage}
         />
-        <Button buttonType="link" urlTo="#" variant="outline-light" size="lg" className="py-3! font-medium!">
+        {/* <Button buttonType="link" urlTo="#" variant="outline-light" size="lg" className="py-3! font-medium!">
           Login
         </Button>
         <Button buttonType="link" urlTo="#" variant="light" size="lg" className="py-3! font-medium!">
           Daftar
-        </Button>
+        </Button> */}
       </div>
       <RxHamburgerMenu
         onClick={() => setOpenMenu(true)}
@@ -104,7 +103,7 @@ const Navbar = ({ active }: { active: string }) => {
             <img
               src="/fxpayout-white.svg"
               alt="logo fx payout"
-              className="w-4 md:w-5"
+              className="mb-2 w-4 md:w-5"
             />
             <span className="text-base md:text-2xl font-semibold text-white">
               FXPAYOUT
@@ -128,7 +127,7 @@ const Navbar = ({ active }: { active: string }) => {
             </span>
           ))}
         </div>
-        <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">
+        {/* <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">
           <Link to="#" className="w-fit text-center">
             <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
               Login
@@ -139,7 +138,7 @@ const Navbar = ({ active }: { active: string }) => {
               Daftar
             </span>
           </Link>
-        </div>
+        </div> */}
         <div className="mx-auto mt-4">
           <LanguageSelector
             selectedLanguage={selectedLanguage}
