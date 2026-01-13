@@ -18,7 +18,7 @@ export const icMarketDetail: BrokerStruc = {
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
   overallScore: {
     rate: 4.7,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/icmarkets.com",
   },
   detailDescription: "Broker global asal Australia dengan eksekusi sangat cepat, spread ECN ultra rendah, serta likuiditas institusional. IC Markets dikenal sebagai broker favorit scalper, trader EA, dan trader volume besar. Menyediakan akses ke Forex, Gold, Indeks, Energi, Saham CFD, hingga Crypto CFD dengan kondisi trading stabil dan transparan.",
   cardDescription: "Broker global dengan eksekusi cepat & spread rendah. Akun Raw/Zero populer untuk rebate tinggi.",
@@ -151,12 +151,12 @@ export const icMarketDetail: BrokerStruc = {
   disadvantages: ["Tidak menyediakan akun Cent", "Minimum deposit relatif tinggi", "Leverage dibatasi di beberapa wilayah"],
   communityRating: {
     score: 4.7,
-    quantityVote: 102,
+    quantityVote: 50.247,
     classifications: [
       { type: "Kecepatan Withdraw (WD)", rate: 5 },
       { type: "Stabilitas Server", rate: 5 },
       { type: "Customer Support", rate: 4.5 },
-    ]
+    ],
   },
   faq: [
     {

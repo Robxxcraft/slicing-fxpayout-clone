@@ -18,7 +18,7 @@ export const finexDetail: BrokerStruc = {
   badges: ["Tier Local", "Regulated Broker", "Low Deposit", "Beginner Friendly"],
   overallScore: {
     rate: 4.3,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/finex.co.id",
   },
   detailDescription: "Finex (PT Finex Bisnis Solusi Futures) adalah broker forex resmi Indonesia yang berdiri sejak 2012 dan diawasi oleh BAPPEBTI serta OJK melalui kerjasama dengan institusi kliring seperti PT KBI dan Jakarta Futures Exchange (JFX). Broker ini menyediakan akses trading ke berbagai instrumen seperti forex, indeks, logam, saham CFD, dan energi dengan kondisi trading yang kompetitif serta dukungan platform yang intuitif.",
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
@@ -130,8 +130,8 @@ export const finexDetail: BrokerStruc = {
   disadvantages: ["Hanya satu tipe akun live", "Fitur edukasi & riset lebih sederhana dibanding broker global", "MT5 saja (tanpa MT4)"],
   communityRating: {
     score: 4.3,
-    quantityVote: 68,
-    reviewHighlights: ["Cepat dalam proses deposit/withdraw", "Biaya trading rendah", "MT5 nyaman dipakai", "Cocok untuk pemula & menengah"]
+    quantityVote: 398,
+    reviewHighlights: ["Cepat dalam proses deposit/withdraw", "Biaya trading rendah", "MT5 nyaman dipakai", "Cocok untuk pemula & menengah"],
   },
   faq: [
     {

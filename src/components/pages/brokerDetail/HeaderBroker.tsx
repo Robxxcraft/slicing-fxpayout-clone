@@ -76,7 +76,7 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
               <FaStarHalf className="text-2xl text-my-yellow" />
             }
           </div>
-          <Link to={overallScore.communityUrl} 
+          <Link to={overallScore.communityUrl} target="_blank"
             className="mt-4 block text-base font-semibold bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text underline! decoration-dark-primary">
             Lihat Ulasan Komunitas
           </Link>
@@ -89,10 +89,6 @@ const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, descri
       <div className="mt-6 2xl:mt-10">
         <p className="text-base 2xl:text-2xl leading-[180%] text-black/80">
           {description}
-
-          <Link to="#" className="ml-2 font-semibold text-primary">
-            Selengkapnya…
-          </Link>
         </p>
       </div>
 

@@ -18,7 +18,7 @@ export const hfmDetail: BrokerStruc = {
   badges: ["Regulated Broker", "Multi-Asset", "MT4/MT5", "Leverage Tinggi"],
   overallScore: {
     rate: 4.3,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/hfm.com",
   },
   detailDescription: "HFM (HF Markets), sebelumnya dikenal sebagai HotForex, adalah broker multi-regulasi global yang berdiri sejak 2010 dan telah beroperasi lebih dari satu dekade di lebih dari 180 negara. Broker ini menyediakan layanan trading Forex, logam, komoditas, indeks, saham CFD, dan cryptocurrency dengan berbagai jenis akun dan platform trading termasuk MT4, MT5, dan aplikasi HFM.",
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
@@ -162,12 +162,12 @@ export const hfmDetail: BrokerStruc = {
   disadvantages: ["Struktur regulasi berbeda untuk tiap entitas", "Spread akun standar bisa lebih tinggi", "Tidak semua promosi bonus/nodeposit tersedia"],
   communityRating: {
     score: 4.3,
-    quantityVote: 76,
+    quantityVote: 2.865,
     classifications: [
       { type: "Depo & Withdraw", rate: 4.5 },
       { type: "Support", rate: 4.4 },
       { type: "Platform & Trade", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

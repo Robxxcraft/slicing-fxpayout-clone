@@ -18,7 +18,7 @@ export const tickmillDetail: BrokerStruc = {
   badges: ["Tier 1", "ECN", "Spread Tipis", "Leverage Fleksibel"],
   overallScore: {
     rate: 4.4,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/www.tickmill.com",
   },
   detailDescription: "Tickmill adalah broker forex dan CFD global yang berdiri sejak 2014, dikenal karena biaya trading yang rendah (spread tipis & komisi rendah), eksekusi cepat, serta dukungan platform populer seperti MetaTrader 4 dan MetaTrader 5. Tickmill melayani trader di banyak negara dengan fokus pada pengalaman trading profesional dan efisien.",
   cardDescription: "Broker ECN terkenal dengan komisi rendah dan rebate kompetitif.",
@@ -156,12 +156,12 @@ export const tickmillDetail: BrokerStruc = {
   disadvantages: ["Min deposit $100 relatif lebih tinggi dibanding broker lain", "Komisi berlaku pada akun Pro/VIP", "Leverage bisa dibatasi oleh regulator"],
   communityRating: {
     score: 4.4,
-    quantityVote: 84,
+    quantityVote: 1.078,
     classifications: [
       { type: "Execution & Spread", rate: 4.5 },
       { type: "Customer Support ", rate: 4.4 },
       { type: "Deposit / Withdrawal", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

@@ -18,13 +18,13 @@ export const exnessDetail: BrokerStruc = {
   badges: ["Tier 1", "ECN Broker", "Akun Cent", "Ultra-Fast Execution"],
   overallScore: {
     rate: 4.8,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/exness.com",
   },
   detailDescription: "Broker global dengan eksekusi super cepat, spread rendah, serta pilihan akun yang sangat fleksibel termasuk akun CENT. Menyediakan akses ke Forex, Gold, Indeks, Energi, hingga CFD dengan kondisi stabil dan transparan. Didukung proses deposit-withdraw cepat serta platform trading modern untuk pemula hingga trader profesional.",
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$10",
+    minDeposit: "$50",
     leverage: "Hingga 1:2000+",
     spread: "Mulai 0.0 pips (Raw)",
   },
@@ -44,7 +44,7 @@ export const exnessDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$10",
+    minDeposit: "$50",
     types: ["Standard Cent", "Standard", "Raw Spread", "Zero", "Pro"],
     spread: "Mulai 0.0 pips (Raw) — rata-rata sangat rendah",
     commission: "Raw/Zero: $3.5–$8 per lot (tergantung pair)",
@@ -180,12 +180,12 @@ export const exnessDetail: BrokerStruc = {
   disadvantages: ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"],
   communityRating: {
     score: 4.8,
-    quantityVote: 121,
+    quantityVote: 26.158,
     classifications: [
       { type: "Kecepatan Withdraw (WD)", rate: 5 },
       { type: "Stabilitas Server", rate: 5 },
       { type: "Customer Support", rate: 4.5 },
-    ]
+    ],
   },
   faq: [
     {

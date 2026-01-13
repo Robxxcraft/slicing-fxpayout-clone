@@ -18,7 +18,7 @@ export const fpMarketsDetail: BrokerStruc = {
   badges: ["Regulated Broker", "ECN/STP", "Low Spread", "Multi-Asset"],
   overallScore: {
     rate: 4.3,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/fpmarkets.com",
   },
   detailDescription: "FP Markets (First Prudential Markets) adalah broker forex & CFD global yang berdiri sejak 2005, berkantor pusat di Sydney, Australia. Broker ini dikenal karena spread kompetitif, eksekusi cepat, akses ke ribuan instrumen, serta dukungan platform trading populer seperti MetaTrader dan cTrader. FP Markets juga menyediakan teknologi trading profesional seperti cTrader, VPS, dan alat analitik tingkat lanjut.",
   cardDescription: "Broker ECN Australia dengan eksekusi cepat & kondisi pro-trader.",
@@ -153,12 +153,12 @@ export const fpMarketsDetail: BrokerStruc = {
   disadvantages: ["Minimum deposit $100 lebih tinggi dari beberapa broker ringan", "Leverage bisa dibatasi oleh regulator di wilayah tertentu", "Spread Standard lebih lebar dibanding ECN"],
   communityRating: {
     score: 4.3,
-    quantityVote: 88,
+    quantityVote: 9.782,
     classifications: [
       { type: "Customer Support", rate: 4.4 },
       { type: "Fees & Spread", rate: 4.2 },
       { type: "Execution Speed", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

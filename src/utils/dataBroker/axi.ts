@@ -18,7 +18,7 @@ export const axiDetail: BrokerStruc = {
   badges: ["Tier 1", "ECN/STP Broker", "Low Spread", "Leverage Fleksibel"],
   overallScore: {
     rate: 4.5,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/axi.com",
   },
   detailDescription: "Axi adalah broker forex dan CFD internasional yang berdiri sejak 2007 dan dikenal sebagai salah satu broker ECN yang ramah trader di berbagai level. Axi menawarkan spread kompetitif, eksekusi cepat, dan platform trading kuat seperti MetaTrader 4 dan MetaTrader 5. Broker ini melayani trader di banyak negara dengan regulasi global dan layanan lengkap.",
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
@@ -136,12 +136,12 @@ export const axiDetail: BrokerStruc = {
   disadvantages: ["Minimum efektif untuk ECN agak lebih tinggi", "Komisi per lot di Pro ECN"],
   communityRating: {
     score: 4.5,
-    quantityVote: 72,
+    quantityVote: 5.271,
     classifications: [
       { type: "Execution & Spread", rate: 4.6 },
       { type: "Customer Support", rate: 4.4 },
       { type: "Deposit/Withdrawal", rate: 4.5 },
-    ]
+    ],
   },
   faq: [
     {

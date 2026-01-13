@@ -18,7 +18,7 @@ export const zfxDetail: BrokerStruc = {
   badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],
   overallScore: {
     rate: 4.2,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/zfx.com",
   },
   detailDescription: "ZFX adalah broker Forex & CFD yang merupakan bagian dari Zeal Group, menyediakan trading di pasar global termasuk Forex, indeks, komoditas, logam, dan saham melalui infrastruktur ECN / STP yang transparan. Perusahaan ini teregulasi di Inggris (FCA) dan Seychelles (FSA), fokus pada eksekusi cepat, spread kompetitif, dan multi-asset trading.",
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
@@ -146,7 +146,7 @@ export const zfxDetail: BrokerStruc = {
       { type: "Kecepatan Eksekusi", rate: 4.4 },
       { type: "Stabilitas Server", rate: 4.3 },
       { type: "Customer Support", rate: 4.0 },
-    ]
+    ],
   },
   faq: [
     {

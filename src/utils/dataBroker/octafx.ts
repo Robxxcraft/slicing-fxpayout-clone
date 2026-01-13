@@ -18,7 +18,7 @@ export const octaFxDetail: BrokerStruc = {
   badges: ["Multi-Platform Trading", "Low Spread", "No Commission Deposit/Withdrawal", "Beginner & Advanced Friendly"],
   overallScore: {
     rate: 4.3,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/octafx.com",
   },
   detailDescription: "OctaFX adalah broker forex dan CFD internasional yang telah beroperasi sejak 2011, memberikan akses ke pasar global termasuk forex, logam, indeks, komoditas, dan cryptocurrency. OctaFX dikenal karena spread rendah, biaya trading yang kompetitif tanpa komisi pada banyak instrumen, serta platform trading yang kuat seperti MetaTrader dan OctaTrader. OctaFX juga menyediakan fitur copy trading dan dukungan 24/7 untuk klien secara global.",
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
@@ -143,13 +143,13 @@ export const octaFxDetail: BrokerStruc = {
   advantages: [" Kondisi trading ramah biaya", "Spread kompetitif", "Platform lengkap (MT4, MT5, OctaTrader)", "Deposit & withdraw bebas komisi", "Banyak instrumen trading"],
   disadvantages: ["Tidak setinggi broker dengan regulasi top-tier seperti FCA/ASIC secara penuh di semua entitas", "Spread bisa melebar pada volatilitas tinggi", "Review pengguna ada yang menyebut masalah layanan tertentu (beberapa review mixed)"],
   communityRating: {
-    score: 4.5,
-    quantityVote: 97,
+    score: 4.3,
+    quantityVote: 8.924,
     classifications: [
       { type: "Customer Service", rate: 4.2 },
       { type: "Platform & Execution", rate: 4.4 },
       { type: "Costs & Spreads", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

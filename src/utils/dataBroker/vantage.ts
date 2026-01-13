@@ -18,7 +18,7 @@ export const vantageDetail: BrokerStruc = {
   badges: ["Multi-Asset Trading", "ECN/STP", "Spread Kompetitif", "Regulasi Kuat"],
   overallScore: {
     rate: 4.3,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/vantagemarkets.com",
   },
   detailDescription: "Vantage (juga dikenal sebagai Vantage Markets) adalah broker forex dan CFD internasional yang berdiri sejak 2009, menyediakan akses trading ke berbagai instrumen keuangan global termasuk forex, indeks, logam, komoditas, CFD saham, ETF, dan obligasi. Vantage menggabungkan platform trading populer seperti MetaTrader 4, MetaTrader 5, ProTrader, serta aplikasinya sendiri untuk memberi pengalaman trading yang kuat dan fleksibel.",
   cardDescription: "Broker ECN memiliki spread rendah, populer di Asia & Australia.",
@@ -162,12 +162,12 @@ export const vantageDetail: BrokerStruc = {
   disadvantages: [" Spread Standard bisa lebih tinggi dibanding ECN", "Komisi per lot tetap berlaku di Raw ECN", "Regulasi entitas berbeda tergantung wilayah klien"],
   communityRating: {
     score: 4.3,
-    quantityVote: 77,
+    quantityVote: 11.568,
     classifications: [
       { type: "Platform & Tools", rate: 4.4 },
       { type: "Cost & Fees ", rate: 4.2 },
       { type: "Support & Service", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

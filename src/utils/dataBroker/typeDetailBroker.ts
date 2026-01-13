@@ -72,8 +72,8 @@ export type CommunityRatingStruc = {
   classifications?: {
     type: string;
     rate: number;
-  }[],
-  reviewHighlights?: string[]
+  }[];
+  reviewHighlights?: string[];
 }
 export type FaqStructure = {
   question: string;

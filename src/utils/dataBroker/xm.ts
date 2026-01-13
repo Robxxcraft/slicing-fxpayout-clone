@@ -18,7 +18,7 @@ export const xmDetail: BrokerStruc = {
   badges: ["Multi-Regulated", "Low Spread", "Fast Execution", "Human-Centered Broker"],
   overallScore: {
     rate: 4.3,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/xm.com",
   },
   detailDescription: "XM adalah broker global Forex & CFD yang berfokus pada keadilan trading, transparansi biaya, dan pengalaman manusiawi bagi trader. XM dikenal dengan eksekusi cepat, tanpa intervensi saat news besar, serta kondisi trading yang konsisten tanpa manipulasi.",
   cardDescription: "Broker global dengan akun XM Zero berkomisi tinggi sehingga rebate besar.",
@@ -151,12 +151,12 @@ export const xmDetail: BrokerStruc = {
   disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],
   communityRating: {
     score: 4.3,
-    quantityVote: 97,
+    quantityVote: 2.850,
     classifications: [
       { type: "Customer Support", rate: 4.4 },
       { type: "Execution & Platforms", rate: 4.3 },
       { type: "Fees & Costs", rate: 4.2 },
-    ]
+    ],
   },
   faq: [
     {

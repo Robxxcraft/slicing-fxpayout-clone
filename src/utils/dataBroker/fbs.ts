@@ -18,7 +18,7 @@ export const fbsDetail: BrokerStruc = {
   badges: ["Low Minimum Deposit", "Leverage Tinggi", "Multi-Asset Trading", "Beginner Friendly"],
   overallScore: {
     rate: 4.4,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/fbs.com",
   },
   detailDescription: "FBS adalah broker internasional yang berdiri sejak 2009, menyediakan layanan trading Forex dan CFD dengan kondisi trading yang kompetitif, berbagai jenis akun sesuai kebutuhan trader, serta eksekusi order yang cepat. FBS populer di kalangan trader pemula hingga profesional dengan program pendidikan, bonus, dan layanan pelanggan yang kuat",
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
@@ -168,12 +168,12 @@ export const fbsDetail: BrokerStruc = {
   disadvantages: ["Spread akun non-ECN bisa lebih lebar", "Opsi instrumen non-CFD nyata tidak tersedia"],
   communityRating: {
     score: 4.4,
-    quantityVote: 72,
+    quantityVote: 8.198,
     classifications: [
       { type: "Kecepatan Withdraw", rate: 4.5 },
       { type: "Stabilitas Server", rate: 4.4 },
       { type: "Customer Support", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

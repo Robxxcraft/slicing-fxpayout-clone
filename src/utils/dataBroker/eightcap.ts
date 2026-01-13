@@ -18,7 +18,7 @@ export const eightcapDetail: BrokerStruc = {
   badges: ["Tier 1", "ECN Broker", "Low Spread", "Fast Execution"],
   overallScore: {
     rate: 4.4,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/eightcap.com",
   },
   detailDescription: "Eightcap adalah broker global yang menyediakan layanan trading Forex dan CFD dengan spread rendah, eksekusi cepat, dan lebih dari 800 instrumen finansial termasuk Forex, indeks, logam, komoditas, saham CFD, dan cryptocurrency. Broker ini dikenal karena integrasi platform modern serta regulasi kuat dari beberapa otoritas tingkat atas.",
   cardDescription: "Broker ECN cepat, terintegrasi TradingView & kompatibel EA.",
@@ -146,12 +146,12 @@ export const eightcapDetail: BrokerStruc = {
   disadvantages: ["Minimum deposit relatif tinggi", "Instrumen non-CFD nyata terbatas", "Leverage lebih kecil dibanding broker offshore"],
   communityRating: {
     score: 4.4,
-    quantityVote: 80,
+    quantityVote: 3.375,
     classifications: [
       { type: "Kecepatan Withdraw (WD)", rate: 4.5 },
       { type: "Stabilitas Server", rate: 4.4 },
       { type: "Customer Support", rate: 4.3 },
-    ]
+    ],
   },
   faq: [
     {

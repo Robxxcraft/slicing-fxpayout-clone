@@ -18,7 +18,7 @@ export const pepperstoneDetail: BrokerStruc = {
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
   overallScore: {
     rate: 4.5,
-    communityUrl: "#",
+    communityUrl: "https://www.trustpilot.com/review/pepperstone.com",
   },
   detailDescription: "Broker global dengan eksekusi cepat, spread rendah, dan kondisi trading profesional. Pepperstone dikenal sebagai broker favorit untuk scalping, EA, dan trader aktif, dengan akses ke Forex, Gold, Indeks, Energi, Saham CFD, dan Crypto CFD. Didukung platform trading modern serta proses deposit–withdraw yang cepat dan transparan.",
   cardDescription: "Broker regulasi top dengan eksekusi sangat cepat dan kondisi raw spread.",
@@ -146,12 +146,12 @@ export const pepperstoneDetail: BrokerStruc = {
   disadvantages: ["Instrumen non-CFD nyata terbatas", "Support 24/7 tidak tersedia untuk semua wilayah", "Leverage bisa dibatasi tergantung lokasi"],
   communityRating: {
     score: 4.5,
-    quantityVote: 102,
+    quantityVote: 3.199,
     classifications: [
       { type: "Kecepatan Withdraw (WD)", rate: 5 },
       { type: "Stabilitas Server", rate: 4.5 },
       { type: "Customer Support", rate: 4.5 },
-    ]
+    ],
   },
   faq: [
     {
