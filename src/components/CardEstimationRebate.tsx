@@ -8,7 +8,7 @@ import { brokers } from "@/utils/dataBroker/brokers";
 const supportPairs = ["EUR/USD", "XAU/USD", "CRYPTO"];
 
 const CardEstimationRebate = () => {
-  const [lotperMonth, setLotperMoth] = useState<number>(1);
+  const [lotperMonth, setLotperMoth] = useState<string>('1');
   const [selectedPair, setSelectedPair] = useState<string>("EUR/USD");
   const [selectedBroker, setSelectedBroker] = useState<string>(
     Object.values(brokers)[0].name
@@ -17,10 +17,8 @@ const CardEstimationRebate = () => {
   const allBrokers = Object.values(brokers);
 
   const handleChangeLotperMonth = (e: ChangeEvent<HTMLInputElement>) => {
-    const num = Number(e.target.value);
-    if (num > 0) {
-      setLotperMoth(num);
-    }
+    const num = e.target.value;
+    setLotperMoth(num);
   };
 
   useEffect(() => {
@@ -33,7 +31,7 @@ const CardEstimationRebate = () => {
     const calculationEstimate = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD'
-    }).format(lotperMonth * pairValue);
+    }).format(Number(lotperMonth) * pairValue);
     setEstimationRebate(calculationEstimate);
   }, [allBrokers, lotperMonth, selectedBroker, selectedPair]);
 
@@ -86,6 +84,7 @@ const CardEstimationRebate = () => {
                   type="number"
                   name="lotpermonth"
                   id="lotpermonth"
+                  min='0'
                   value={lotperMonth}
                   onChange={handleChangeLotperMonth}
                   className="px-4 py-3 border border-[#D0D5DD] rounded-lg"
