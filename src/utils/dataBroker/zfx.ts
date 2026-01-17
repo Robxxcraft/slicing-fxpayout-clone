@@ -134,7 +134,7 @@ export const zfxDetail: BrokerStruc = {
   },
   rebateProgram: [
     { pair: "EUR/USD", estimate: 8 },
-    { pair: "XAU/USD", estimate: 12 },
+    { pair: "XAU/USD", estimate: 13 },
     { pair: "CRYPTO", estimate: 8 },
   ],
   advantages: ["Spread ECN kompetitif", "Leverage tinggi", "MT4 & MT5 tersedia", "Akun cent tersedia"],
