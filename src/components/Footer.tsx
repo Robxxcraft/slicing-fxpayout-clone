@@ -80,7 +80,7 @@ const Footer = () => {
                 <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
-                +124 621 4634
+                +62 821-2559-7634
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
@@ -126,7 +126,7 @@ const socialMedia = [
   },
   {
     id: "whatsapp",
-    url: "https://wa.me/62",
+    url: "https://wa.me/6282125597634",
     element: <FaWhatsapp aria-hidden="true" />,
   },
 ];

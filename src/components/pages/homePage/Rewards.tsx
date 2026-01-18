@@ -32,7 +32,7 @@ const Rewards = () => {
             </p>
           </div>
         </div>
-        <Button buttonType="link" urlTo="https://forms.gle/bVGJ5Km5WQUrbtsP6" target="_blank" variant="light" size="xl" className="py-4! 2xl:py-6! font-medium! w-full! xl:w-fit!">
+        <Button buttonType="link" urlTo="https://wa.me/6282125597634" target="_blank" variant="light" size="xl" className="py-4! 2xl:py-6! font-medium! w-full! xl:w-fit!">
           Daftar Sekarang
         </Button>
       </div>
