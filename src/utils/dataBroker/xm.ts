@@ -143,9 +143,9 @@ export const xmDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: 20 },
-    { pair: "XAU/USD", estimate: 13 },
-    { pair: "CRYPTO", estimate: 16 },
+    { pair: "EUR/USD", estimate: 9 },
+    { pair: "XAU/USD", estimate: 15 },
+    { pair: "CRYPTO", estimate: 25 },
   ],
   advantages: ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
   disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],
