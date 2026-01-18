@@ -10,8 +10,8 @@ const brokerRanking: BrokerRanking = {
 export const axiDetail: BrokerStruc = {
   name: brokerName,
   profileImage: "axi.webp",
-  registerUrl: "#",
-  websiteUrl: "#",
+  registerUrl: "https://www.axi.com/int/live-account?promocode=4736053",
+  websiteUrl: "https://www.axi.com/int/live-account?promocode=4736053",
   detailUrl: "axi",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
