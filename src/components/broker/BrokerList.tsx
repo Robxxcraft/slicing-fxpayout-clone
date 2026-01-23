@@ -4,6 +4,7 @@ import BrokerItem from "./BrokerItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { useNavigationToTop } from "@/hooks/useNavigationToTop";
+import { getPagination } from "@/helper/pagination";
 
 const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -44,28 +45,6 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
     navigateToTop(`/broker?page=${page}`);
   }
 
-  const getPagination = (maxButtons = 5) => {
-    const half = Math.floor(maxButtons / 2);
-    let start = currentPage - half;
-    let end = currentPage + half;
-
-    if (start < 1) {
-      start = 1;
-      end = maxButtons;
-    }
-    if (end > TOTAL_PAGES) {
-      end = TOTAL_PAGES;
-      start = TOTAL_PAGES - maxButtons + 1;
-    }
-    start = Math.max(1, start);
-    const pages = [];
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
-
-    return pages;
-  }
-
   if (isLoading) {
     return null;
   }
@@ -86,7 +65,7 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
           </button>
         } 
 
-        {getPagination().map((item) => {
+        {getPagination({currentPage, TOTAL_PAGES}).map((item) => {
           if (item === currentPage) {
             return (
               <button

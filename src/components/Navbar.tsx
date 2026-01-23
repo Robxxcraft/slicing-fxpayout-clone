@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { languages, type Language } from "../utils/languageSupport";
 import LanguageSelector from "./LanguageSelector";
 import { listNavigation } from "../utils/listNavigation";
+import { FaChevronDown } from "react-icons/fa6";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
@@ -55,22 +56,36 @@ const Navbar = ({ active }: { active: string }) => {
         </span>
       </div>
       <div className="hidden xl:flex gap-6">
-        {listNavigation.map(({ title, url }, index) => (
-          <span
+        {listNavigation.map((item, index) => (
+          <div
             key={index}
-            className={`${
-              active.toLocaleLowerCase() == title.toLocaleLowerCase()
-                ? "font-bold"
-                : "font-normal"
-            } py-2 px-2 text-light-gray text-base 2xl:text-xl border-white hover:font-bold transition-all duration-300 ease-out`}
+            className={`group flex items-center gap-2 relative py-2 px-2 text-light-gray text-base 2xl:text-xl border-white transition-all duration-300 ease-out`}
             style={{
               borderBottom:
-                active.toLocaleLowerCase() == title.toLocaleLowerCase()
+                active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
                   ? "4px solid"
                   : "0px solid",
             }}>
-            <Link to={url}>{title}</Link>
-          </span>
+            <Link to={item.url} className={`${
+              active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
+                ? "font-bold"
+                : "font-normal"
+            } group-hover:font-bold transition-all duration-300`}>{item.title}</Link>
+            {item.sublist !== undefined && 
+            <>
+              <FaChevronDown className="text-[14px] cursor-pointer group-hover:rotate-180 transition-all duration-200" />
+              <div className="absolute py-6 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
+                {item.sublist?.map((subNav, idx) => (
+                  <Link key={idx}
+                    to={subNav.url} className="px-6 py-3 text-black hover:bg-black/10">
+                    {subNav.title}
+                  </Link>
+                ))
+                }
+              </div>
+            </>
+            }
+          </div>
         ))}
       </div>
       <div className="hidden xl:flex gap-2 2xl:gap-4 items-center">
@@ -115,16 +130,33 @@ const Navbar = ({ active }: { active: string }) => {
           }} className="text-3xl text-white cursor-pointer" />
         </div>
         <div className="flex flex-col gap-6">
-          {listNavigation.map(({ title, url }, index) => (
-            <span
+          {listNavigation.map((item, index) => (
+            <div
               key={index}
               className={`${
-                active.toLocaleLowerCase() == title.toLocaleLowerCase()
-                  ? "font-bold border-b-4 text-white"
+                active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
+                  ? "font-bold text-white"
                   : "font-normal text-[#E9E9E9]"
-              } pb-0.5 w-fit text-base border-white hover:font-bold transition-all duration-300 ease-out`}>
-              <Link to={url}>{title}</Link>
-            </span>
+              }
+               `}>
+              <div className="flex justify-between pb-1 w-full text-base hover:font-bold">
+                <Link to={item.url}>{item.title}</Link>
+                {item.sublist !== undefined && <FaChevronDown className="text-[14px]" />}
+              </div>
+              {item.sublist !== undefined && 
+                <>
+                  <div className="py-2 flex flex-col h-fit font-normal">
+                    {item.sublist?.map((subNav, idx) => (
+                      <Link key={idx}
+                        to={subNav.url} className="px-4 py-2 text-white hover:bg-black/10">
+                        {subNav.title}
+                      </Link>
+                    ))
+                    }
+                  </div>
+                </>
+                }
+          </div>
           ))}
         </div>
         {/* <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">

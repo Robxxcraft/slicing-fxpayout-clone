@@ -4,8 +4,7 @@ import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronDown } from "react-icons/fa6";
 import Button from "@/components/ui/Button";
 import { brokers } from "@/utils/dataBroker/brokers";
-
-const supportPairs = ["EUR/USD", "XAU/USD", "CRYPTO"];
+import { supportPairs } from "@/utils/pairs";
 
 const CardEstimationRebate = () => {
   const [lotperMonth, setLotperMoth] = useState<string>('1');
@@ -119,7 +118,7 @@ const CardEstimationRebate = () => {
               <p className="leading-[19px]">Estimasi</p>
               <p className="leading-[19px]">Perkiraan</p>
             </div>
-            <p className="max-w-[70%] overflow-auto text-[32px] md:text-[40px] font-semibold text-[#101828] leading-12">{estimationRebate}</p>
+            <p className="max-w-[70%] overflow-auto text-[32px] md:text-[40px] font-semibold text-my-dark-purple leading-12">{estimationRebate}</p>
           </div>
           <div className="w-full flex items-center gap-2 flex-wrap md:flex-nowrap">
             <Button buttonType="link" urlTo="/broker" variant="primary-light" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">

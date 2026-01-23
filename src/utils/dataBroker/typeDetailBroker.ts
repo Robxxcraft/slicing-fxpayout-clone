@@ -92,6 +92,7 @@ export type BrokerStruc = {
   profileImage: string;
   registerUrl: string;
   websiteUrl: string;
+  scheduleUrl?: string;
   statusRebate: string;
   detailUrl: string;
   ranking: BrokerRanking;

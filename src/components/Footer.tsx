@@ -48,8 +48,8 @@ const Footer = () => {
             Tautan Cepat
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
-            {listNavigation.map(({ title, url }, index) => {
-              if (title.toLocaleLowerCase() !== "legal")
+            {listNavigation.map(({ title, url, sublist }, index) => {
+              if (sublist === undefined) {
                 return (
                   <Link
                     key={index}
@@ -58,6 +58,16 @@ const Footer = () => {
                     {title}
                   </Link>
                 );
+              } else {
+                return sublist.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.url}
+                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    {item.title}
+                  </Link>
+                ))
+              }
             })}
           </div>
         </div>

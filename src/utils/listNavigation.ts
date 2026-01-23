@@ -1,7 +1,13 @@
 export type NavigationLink = {
   title: string;
   url: string;
+  sublist?: SubNavigationList[];
 };
+
+type SubNavigationList = {
+  title: string;
+  url: string
+}
 
 export const listNavigation: NavigationLink[] = [
   {
@@ -14,15 +20,23 @@ export const listNavigation: NavigationLink[] = [
   },
   {
     title: "Kalkulator",
-    url: "#",
+    url: "/calculator",
   },
   {
     title: "Klaim Rebate",
     url: "#",
+    sublist: [
+      { title: "Rebate Forex", url: '/rebate-forex' },
+      { title: "Jadwal Rebate", url: '/schedule' },
+    ]
   },
   {
-    title: "Legal",
+    title: "Layanan",
     url: "#",
+    sublist: [
+      { title: "Validasi Akun", url: '/validation' },
+      { title: "Pindah Akun", url: '/transfer' },
+    ]
   },
 ];
 

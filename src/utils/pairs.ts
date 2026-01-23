@@ -1,0 +1,1 @@
+export const supportPairs = ["EUR/USD", "XAU/USD", "CRYPTO"];

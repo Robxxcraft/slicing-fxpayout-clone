@@ -11,7 +11,7 @@ const CtaSection = () => {
           <p className="mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620]">
             Daftar sekarang dan mulai dapatkan rebate hingga 90%.
           </p>
-          <Button buttonType="link" urlTo="/broker" variant="primary-light" size="xl" className="w-full! lg:w-fit! mt-8 font-medium!">
+          <Button buttonType="link" urlTo="/broker" variant="primary-light" size="xl" className="w-full! md:w-fit! mt-8 font-medium!">
             Daftar Sekarang
           </Button>
         </div>
