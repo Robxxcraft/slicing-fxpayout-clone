@@ -15,7 +15,7 @@ export const xmDetail: BrokerStruc = {
   detailUrl: "xm",
   statusRebate: "Manual Rebate",
   ranking: brokerRanking,
-  badges: ["Multi-Regulated", "Low Spread", "Fast Execution", "Human-Centered Broker"],
+  badges: ["Multi-Regulated", "Low Spread", "Ultra-Fast Execution", "Human-Centered Broker"],
   overallScore: {
     rate: 4.3,
     communityUrl: "https://www.trustpilot.com/review/xm.com",
@@ -50,7 +50,7 @@ export const xmDetail: BrokerStruc = {
     spread: "Mulai 0.6 – 1.7 pips",
     commission: "0 (Micro, Standard, Ultra Low",
     leverage: "Hingga 1:1000 (tergantung regulator & wilayah)",
-    execution: "Cepat & tanpa requote",
+    execution: "Ultra-fast execution, tanpa requotes atau penolakan",
     instruments: ["Forex", "Komoditas", "Logam (Metal)", "Indeks", "Saham CFD", "Energi", "Crypto CFD", "Instrumen Turbo"],
     depositWithdrawal: "Banyak metode & cepat"
   },
@@ -107,7 +107,7 @@ export const xmDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: ["Minimum deposit sangat rendah", "Leverage fleksibel hingga 1:1000", "Teregulasi banyak otoritas global", "Platform lengkap (MT4/MT5)", "Instrumen trading sangat banyak (>1000)", "Eksekusi cepat tanpa requote"],
+  keyAdvantages: ["Tanpa requotes atau penolakan", "Bonus sepanjang tahun", "Tanpa biaya tersembunyi", "Order dieksekusi dibawah 66ms saat rilit berita seperti NFP, FOMC, atau CPI"],
   depositWithdrawal: {
       paymentMethods: [
       { 
