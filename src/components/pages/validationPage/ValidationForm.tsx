@@ -78,13 +78,12 @@ const ValidationForm = () => {
             <p className="text-sm text-[#222222]/80 leading-[142%]">
               *Data Anda dijaga kerahasiaannya dan hanya digunakan untuk proses verifikasi serta pencairan rebate fxpayout.
             </p>
-            <div className="w-full h-fit">
+            <div className="flex justify-start md:justify-end w-full h-fit">
               <ReCAPTCHA 
                 ref={recaptchaRef}
                 sitekey={import.meta.env["VITE_KEY_CAPTHCA"]}
                 onChange={handleCaptchaChange}
-                size="compact"
-                // className="origin-left scale-90 md:scale-100"
+                className="g-recaptcha"
               />
             </div>
           </div>
