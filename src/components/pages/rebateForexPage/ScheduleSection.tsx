@@ -1,11 +1,11 @@
-import Table from '@/components/TableLayout';
-import { getPagination } from '@/helper/pagination';
-import { brokers } from '@/utils/dataBroker/brokers';
-import React, { useEffect, useMemo, useState } from 'react'
-import { CiSearch } from 'react-icons/ci';
-import { FaArrowDown, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Table from "@/components/TableLayout";
+import { getPagination } from "@/helper/pagination";
+import { brokers } from "@/utils/dataBroker/brokers";
+import React, { useEffect, useMemo, useState } from "react"
+import { CiSearch } from "react-icons/ci";
+import { FaArrowDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const supportEntry = [5, 10, 20, 50];
 

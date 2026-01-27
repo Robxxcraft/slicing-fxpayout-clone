@@ -31,7 +31,7 @@ const scheduleItems: Schedule[] = [
 
 const SchedulePage = () => {
   useEffect(() => {
-    document.title = "Trading Lebih Untung Rebate Hingga 90% | FX Payout";
+    document.title = "Cek Jadwal Rutin Rebate Axi Terbaru | FX Payout";
   }, []);
 
   return (
@@ -39,11 +39,11 @@ const SchedulePage = () => {
       <Navbar active="Klaim Rebate" />
       <main>
         <HeaderSection 
-            icon="/calendar-icon.svg" 
-            badge="JADWAL REBATE BROKER" 
-            title="JADWAL REBATE" 
-            titleHighlight="AXI"
-            paragraph="Berikut adalah jadwal rabat Axi dalam kondisi normal. Jadwal rabat dapat mengalami keterlambatan dalam kondisi tertentu, seperti masalah server, pemeliharaan sistem, gangguan pada sistem pembayaran, dan keterlambatan data rabat dari broker." />
+          icon="/calendar-icon.svg" 
+          badge="JADWAL REBATE BROKER" 
+          title="JADWAL REBATE" 
+          titleHighlight="AXI"
+          paragraph="Berikut adalah jadwal rabat Axi dalam kondisi normal. Jadwal rabat dapat mengalami keterlambatan dalam kondisi tertentu, seperti masalah server, pemeliharaan sistem, gangguan pada sistem pembayaran, dan keterlambatan data rabat dari broker." />
         <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">
           <Table>
             <Table.Heading>

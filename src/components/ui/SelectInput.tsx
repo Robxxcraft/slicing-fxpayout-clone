@@ -9,6 +9,7 @@ interface SelectInputProps {
   value: string;
   onChangeForm: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void;
   optionData: string[];
+  disabled?: boolean;
 }
 
 const SelectInput = ({
@@ -19,7 +20,8 @@ const SelectInput = ({
   defaultValue,
   value,
   onChangeForm,
-  optionData
+  optionData,
+  disabled
 }: SelectInputProps) => {
   return (
     <div className="flex flex-col gap-3">
@@ -36,12 +38,15 @@ const SelectInput = ({
           id={id}
           value={value}
           onChange={onChangeForm}
-          className="_select-no-arrow px-[54px] py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border border-[#D0D5DD] rounded-lg focus:outline-primary">
+          disabled={disabled}
+          className={`
+            _select-no-arrow px-[54px] py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border border-[#D0D5DD] rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed
+          `}>
             <option value="" disabled>
               {defaultValue}
             </option>
           {optionData.map((data, idx) => (
-            <option key={idx} value={data}>
+            <option key={idx} value={data} className="text-black">
               {data}
             </option>
           ))}

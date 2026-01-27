@@ -12,10 +12,10 @@ const NotifyBroker = ({
       <div className="p-4 md:p-6 bg-my-light-blue border border-primary rounded-[10px]">
         <div className="flex justify-between items-start">
           <div className="flex gap-2 md:gap-3">
-            <span className="flex items-center justify-center size-6 md:size-7 lg:size-9 border border-primary rounded-full">
+            <span className="flex shrink-0 items-center justify-center size-6 md:size-7 lg:size-9 border border-primary rounded-full">
               <TiInfoLarge className="text-base lg:text-[20px] text-primary" />
             </span>
-            <div className="w-fit">
+            <div>
               <p className="text-base lg:text-lg 2xl:text-xl font-semibold text-[rgba(0,0,0,0.8)]">
                 Transparansi Rebate
               </p>

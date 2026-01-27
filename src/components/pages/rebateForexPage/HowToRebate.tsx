@@ -1,5 +1,5 @@
-import WorkflowCards from '@/components/WorkflowCards';
-import React from 'react'
+import React from "react";
+import WorkflowCards from "@/components/WorkflowCards";
 
 const HowToRebate = ({sectionsRef}: {sectionsRef: React.RefObject<Record<string, HTMLElement | null>>}) => {
   return (

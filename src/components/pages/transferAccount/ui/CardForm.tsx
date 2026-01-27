@@ -1,10 +1,10 @@
 import TextInput from "@/components/ui/TextInput";
-import BoundedIcon from "../../brokerDetail/ui/BoundedIcon";
 import type { TransferFormState } from "../TransferForm"
 import SelectInput from "@/components/ui/SelectInput";
 import { brokers } from "@/utils/dataBroker/brokers";
+import BoundedIcon from "../../brokerDetail/ui/BoundedIcon";
 
-const CardForm = ({form, handleChangeForm}: 
+const CardForm = ({ form, handleChangeForm }: 
   {
     form: TransferFormState; 
     handleChangeForm: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>
@@ -49,6 +49,7 @@ const CardForm = ({form, handleChangeForm}:
           placeholder="Nama Sesuai Pemegang Rekening"
           value={form.username} 
           onChangeForm={handleChangeForm} 
+          autoComplete="cc-name" 
           typeInput={"text"} />
       </div>
     </div>

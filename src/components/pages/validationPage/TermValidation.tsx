@@ -1,6 +1,6 @@
-import type { Dispatch, SetStateAction } from 'react';
-import { IoClose } from 'react-icons/io5';
-import { TiInfoLarge } from 'react-icons/ti';
+import type { Dispatch, SetStateAction } from "react";
+import { IoClose } from "react-icons/io5";
+import { TiInfoLarge } from "react-icons/ti";
 
 type TermValidation = {
   title: string;

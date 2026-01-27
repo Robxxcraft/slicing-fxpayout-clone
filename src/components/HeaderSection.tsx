@@ -1,4 +1,18 @@
-const Header = ({icon, badge, title, titleHighlight, paragraph}: {icon: string; badge: string; title: string; titleHighlight?: string; paragraph: string}) => {
+type HeaderSection = {
+  icon: string; 
+  badge: string; 
+  title: string; 
+  titleHighlight?: string; 
+  paragraph: string
+}
+
+const HeaderSection = ({
+  icon, 
+  badge, 
+  title, 
+  titleHighlight, 
+  paragraph
+}: HeaderSection) => {
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-[120px] lg:pt-[150px] 2xl:pt-[200px]">
       <div className="flex flex-col items-center justify-center text-center">
@@ -21,4 +35,4 @@ const Header = ({icon, badge, title, titleHighlight, paragraph}: {icon: string; 
   );
 };
 
-export default Header;
+export default HeaderSection;

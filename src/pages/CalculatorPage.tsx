@@ -7,7 +7,7 @@ import CalculatorSection from "@/components/pages/calculatorPage/CalculatorSecti
 
 const CalculatorPage = () => {
   useEffect(() => {
-    document.title = "Trading Lebih Untung Rebate Hingga 90% | FX Payout";
+    document.title = "Kalkulator Rebate: Hitung Estimasi Cashback Trading | FX Payout";
   }, []);
 
   return (
@@ -15,10 +15,10 @@ const CalculatorPage = () => {
       <Navbar active="kalkulator" />
       <main>
         <HeaderSection 
-            icon="/kalkulator-icon.svg" 
-            badge="KALKULATOR REBATE FXPAYOUT" 
-            title="Hitung Estimasi Rebate Trading Anda Sekarang" 
-            paragraph="Masukkan broker, tipe akun, dan total lot trading Anda untuk mengetahui estimasi rebate yang bisa Anda dapatkan setiap bulan cepat, transparan, dan tanpa biaya." />
+          icon="/kalkulator-icon.svg" 
+          badge="KALKULATOR REBATE FXPAYOUT" 
+          title="Hitung Estimasi Rebate Trading Anda Sekarang" 
+          paragraph="Masukkan broker, tipe akun, dan total lot trading Anda untuk mengetahui estimasi rebate yang bisa Anda dapatkan setiap bulan cepat, transparan, dan tanpa biaya." />
         <CalculatorSection />
         <CtaSection />
       </main>

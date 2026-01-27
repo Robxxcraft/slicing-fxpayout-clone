@@ -1,5 +1,5 @@
-import LongArrowLine from '@/components/LongArrowLine';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import LongArrowLine from "@/components/LongArrowLine";
 
 type Workflow = {
   icon: string;
@@ -71,7 +71,7 @@ const HowItWorks = ({sectionsRef}: {sectionsRef: React.RefObject<Record<string, 
       </div>
       <div ref={gridRef} className="mt-6 md:mt-2 relative grid grid-cols-1 md:grid-cols-3 gap-[90px] md:gap-4 lg:gap-10">
         {workflows.map((workflow, idx) => (
-          <div key={idx} className="relative place-items-center">
+          <div key={idx} className="relative flex flex-col items-center">
             <div className="py-4 xl:py-6 px-4 xl:px-5 bg-my-light-blue w-fit rounded-lg ">
               <img src={workflow.icon} alt={workflow.altIcon} 
                 className="size-12 md:size-14 xl:size-20 object-contain"/>

@@ -12,7 +12,8 @@ interface TextInputProps {
   inputMode?: "text" | "search" | "email" | "tel" | "url" | "none" | "numeric" | "decimal" | undefined;
   pattern?: string;
   autoComplete?: React.HTMLInputAutoCompleteAttribute,
-  inputClassName?: string
+  inputClassName?: string;
+  disabled?: boolean;
 }
 
 const TextInput = ({
@@ -27,9 +28,10 @@ const TextInput = ({
   inputMode,
   pattern,
   autoComplete,
-  inputClassName
+  inputClassName,
+  disabled
 }: TextInputProps) => {
-  const styleInput =`pl-[54px] pr-4 py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border border-[#D0D5DD] rounded-lg focus:outline-primary ${inputClassName}`;
+  const styleInput =`pl-[54px] pr-4 py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border border-[#D0D5DD] rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed ${inputClassName}`;
   return (
     <div className="flex flex-col gap-3">
       <label
@@ -54,6 +56,7 @@ const TextInput = ({
           pattern={pattern}
           autoComplete={autoComplete}
           className={styleInput}
+          disabled={disabled}
         />
       </div>
     </div>

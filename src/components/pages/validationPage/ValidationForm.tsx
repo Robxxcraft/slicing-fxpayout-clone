@@ -22,7 +22,7 @@ export type FormBank = {
 }
 
 const ValidationForm = () => {
-  const recaptchaRef = useRef(null);
+  const recaptchaRef = useRef<never>(null);
   const formValidation = useForm<FormValidation>({
     broker: "",
     identityUsername: "",
@@ -64,21 +64,27 @@ const ValidationForm = () => {
         </div>
         <div className="mt-8 grid grid-cols-1 xl:grid-cols-12 gap-6">
           <div className="py-6 2xl:py-8 col-span-12 xl:col-span-7 border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
-            <CardValidation form={formValidation.values} handleChangeForm={formValidation.handleChange} />
+            <CardValidation 
+              form={formValidation.values} 
+              handleChangeForm={formValidation.handleChange} />
           </div>
           <div className="py-6 2xl:py-8 col-span-12 xl:col-span-5 border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
-            <CardBankForm form={formBank.values} handleChangeForm={formBank.handleChange}/>
+            <CardBankForm 
+              selectedBroker={formValidation.values.broker} 
+              form={formBank.values} 
+              handleChangeForm={formBank.handleChange}/>
           </div>
           <div className="col-span-12 xl:col-span-7 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-[#222222]/80 leading-[142%]">
               *Data Anda dijaga kerahasiaannya dan hanya digunakan untuk proses verifikasi serta pencairan rebate fxpayout.
             </p>
-            <div className="flex w-full justify-end h-fit">
+            <div className="w-full h-fit">
               <ReCAPTCHA 
                 ref={recaptchaRef}
                 sitekey={import.meta.env["VITE_KEY_CAPTHCA"]}
                 onChange={handleCaptchaChange}
-                className="origin-left scale-90 md:scale-100"
+                size="compact"
+                // className="origin-left scale-90 md:scale-100"
               />
             </div>
           </div>

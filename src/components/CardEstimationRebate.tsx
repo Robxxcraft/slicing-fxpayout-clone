@@ -130,7 +130,7 @@ const CardEstimationRebate = () => {
           </div>
           <div className="w-full h-[0.5px] bg-black/20"></div>
           <div className="p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
-            <span className="flex items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
+            <span className="flex shrink-0 items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
               <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />
             </span>
             <p className="w-fit text-[12px] md:text-base lg:text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">

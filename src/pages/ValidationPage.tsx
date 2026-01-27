@@ -10,7 +10,7 @@ const ValidationPage = () => {
   const [showNotify, setShowNotify] = useState<boolean>(true);
   
   useEffect(() => {
-    document.title = "Trading Lebih Untung Rebate Hingga 90% | FX Payout";
+    document.title = "Validasi Akun Trading & Klaim Rebate | FX Payout";
   }, []);
 
   return (

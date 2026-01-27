@@ -35,7 +35,8 @@ const CardValidation = ({ form, handleChangeForm }:
           altIcon="Icon user"
           value={form.identityUsername}
           onChangeForm={handleChangeForm} 
-          placeholder="Nama Lengkap Sesuai Identitas" 
+          placeholder="Nama Lengkap Sesuai Identitas"
+          autoComplete="name" 
           typeInput={"text"} />
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2">
@@ -48,6 +49,7 @@ const CardValidation = ({ form, handleChangeForm }:
               onChangeForm={handleChangeForm} 
               placeholder="Gunakan Email Aktif" 
               inputMode="email"
+              autoComplete="email" 
               typeInput={"text"} />
           </div>
           <div className="w-full md:w-1/2">
@@ -59,6 +61,7 @@ const CardValidation = ({ form, handleChangeForm }:
               value={form.accountNumber}
               onChangeForm={handleChangeForm} 
               placeholder="Nomor Akun Trading" 
+              autoComplete="off"
               inputMode="numeric"
               typeInput={"text"} />
           </div>
@@ -73,6 +76,7 @@ const CardValidation = ({ form, handleChangeForm }:
               value={form.tradingUsername}
               onChangeForm={handleChangeForm} 
               placeholder="Nama Sesuai Akun Trading" 
+              autoComplete="name" 
               typeInput={"text"} />
           </div>
           <div className="w-full md:w-1/2">
@@ -85,6 +89,7 @@ const CardValidation = ({ form, handleChangeForm }:
               onChangeForm={handleChangeForm} 
               placeholder="Gunakan Nomor Aktif" 
               inputMode="tel"
+              autoComplete="tel"
               typeInput={"text"} />
           </div>
         </div>

@@ -4,7 +4,9 @@ import { IoIosMail } from 'react-icons/io';
 import { TbCopy } from 'react-icons/tb';
 
 const EmailTemplate = ({
-  onCopy, isCopied, onSendEmail
+  onCopy, 
+  isCopied, 
+  onSendEmail
 }: {
   onCopy: () => Promise<void>; 
   isCopied: boolean,

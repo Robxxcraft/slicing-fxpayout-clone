@@ -3,15 +3,16 @@ import SelectInput from '@/components/ui/SelectInput';
 import TextInput from '@/components/ui/TextInput';
 import type { FormBank } from './ValidationForm';
 
-const CardBankForm = ({ form, handleChangeForm }: 
+const CardBankForm = ({ form, handleChangeForm, selectedBroker }: 
   {
     form: FormBank; 
-    handleChangeForm:React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>
+    handleChangeForm:React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
+    selectedBroker: string
   }) => {
   return (
     <>
       <div className="pb-5 2xl:pb-6 px-6 2xl:px-8 flex items-center gap-4 md:gap-6 border-b border-[#D0D0D0]">
-        <BoundedIcon variant="third" icon="/check.svg" alt="icon"/>
+        <BoundedIcon variant="third" icon="/bank-icon.svg" alt="icon" maskColor="bg-primary"/>
         <h3 className="text-xl md:text-2xl text-my-purple font-medium leading-[115%]">
           Data Bank Deposit & Pencairan
         </h3>
@@ -22,9 +23,10 @@ const CardBankForm = ({ form, handleChangeForm }:
           label="Rebate Ke" 
           icon="bank-icon.svg" 
           altIcon="Icon rebate" 
-          defaultValue="&lt;Pilih Broker Terlebih Dahulu&gt;" 
+          defaultValue={selectedBroker.trim() === "" ? `<Pilih Broker Terlebih Dahulu>` : "<Pilih Rebate>"}
           value={form.rebate} 
           onChangeForm={handleChangeForm} 
+          disabled={selectedBroker.trim() === ""}
           optionData={[]} />
         <SelectInput 
           id="bank" 
@@ -44,6 +46,7 @@ const CardBankForm = ({ form, handleChangeForm }:
           onChangeForm={handleChangeForm} 
           placeholder="Masukkan Nomor Rekening" 
           inputMode="numeric"
+          autoComplete="off"
           typeInput={"text"} />
         <TextInput
           id="holdingUsername"
@@ -53,6 +56,7 @@ const CardBankForm = ({ form, handleChangeForm }:
           value={form.holdingUsername}
           onChangeForm={handleChangeForm} 
           placeholder="Nama Sesuai Buku Rekening" 
+          autoComplete="cc-name" 
           typeInput={"text"} />
       </div>
     </>

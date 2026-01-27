@@ -1,7 +1,7 @@
 const LongArrowLine = ({ widthLine }: { widthLine: number }) => {
   return (
     <div 
-      className='relative mt-3 flex h-[58px] items-start' 
+      className="relative mt-3 flex h-[58px] items-start" 
       style={{ width: `${widthLine}px` }}
     >
       <svg

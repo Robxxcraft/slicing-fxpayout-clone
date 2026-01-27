@@ -9,6 +9,11 @@ type SubNavigationList = {
   url: string
 }
 
+type SectionsRebateForex = {
+  id: string;
+  name: string
+}
+
 export const listNavigation: NavigationLink[] = [
   {
     title: "Home",
@@ -51,4 +56,12 @@ export const listNavigationBrokers: NavigationLink[] = [
   { title: "Kelebihan & Kekurangan", url: "#kelebihan-kekurangan" },
   { title: "Rating", url: "#rating" },
   { title: "FAQ", url: "#faq" },
+];
+
+export const listSectionsRebateForex: SectionsRebateForex[] = [
+  { id: "definition", name: "Apa itu Rebate Forex?" },
+  { id: "how-to-rebate", name: "Cara Mendapatkan Rebate Forex" },
+  { id: "how-it-works", name: "Bagaimana Cara Kerjanya?" },
+  { id: "payment", name: "Sistem Pembayaran Rebate" },
+  { id: "schedule", name: "Jadwal Rebate" },
 ];

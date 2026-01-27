@@ -1,4 +1,12 @@
-const TripleBadgeFlow = ({first, second, third}: {first: string; second: string; third: string}) => {
+const TripleBadgeFlow = ({
+  first, 
+  second, 
+  third
+}: {
+  first: string; 
+  second: string; 
+  third: string
+}) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-5xl h-full">
       <div className="filter h-full drop-shadow-[0_0_1px_#000000]">

@@ -77,7 +77,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
             <div className="flex gap-4 2xl:gap-5">
-              <div className="relative size-6 2xl:size-8 bg-primary rounded-full">
+              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <FaMapMarkerAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
@@ -86,7 +86,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
-              <div className="relative size-6 2xl:size-8 bg-primary rounded-full">
+              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
@@ -94,7 +94,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
-              <div className="relative size-6 2xl:size-8 bg-primary rounded-full">
+              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <IoMdMail className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">

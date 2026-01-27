@@ -12,6 +12,7 @@ export type HandleChangeLanguage = (lang: Language) => void;
 
 const Navbar = ({ active }: { active: string }) => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
   const [openLanguageSelector, setOpenLanguageSelector] =
     useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
@@ -32,6 +33,9 @@ const Navbar = ({ active }: { active: string }) => {
     setOpenLanguageSelector(false);
     setSelectedLanguage(lang);
   };
+  const handleOpenSubMenu = (idx: number) => {
+    setOpenSubMenu((prev) => prev === idx ? null : idx);
+  }
 
   return (
     <nav
@@ -130,7 +134,9 @@ const Navbar = ({ active }: { active: string }) => {
           }} className="text-3xl text-white cursor-pointer" />
         </div>
         <div className="flex flex-col gap-6">
-          {listNavigation.map((item, index) => (
+          {listNavigation.map((item, index) => {
+            const isSubOpen = openSubMenu === index;
+            return (
             <div
               key={index}
               className={`${
@@ -139,11 +145,14 @@ const Navbar = ({ active }: { active: string }) => {
                   : "font-normal text-[#E9E9E9]"
               }
                `}>
-              <div className="flex justify-between pb-1 w-full text-base hover:font-bold">
+              <div
+                onClick={() => handleOpenSubMenu(index)} 
+                className="flex justify-between pb-1 w-full text-base hover:font-bold">
                 <Link to={item.url}>{item.title}</Link>
-                {item.sublist !== undefined && <FaChevronDown className="text-[14px]" />}
+                {item.sublist !== undefined && <FaChevronDown className={`
+                  ${isSubOpen ? "rotate-180" : "rotate-0"} text-[14px] transition-all duration-300 ease-out`} />}
               </div>
-              {item.sublist !== undefined && 
+              {item.sublist !== undefined && isSubOpen && 
                 <>
                   <div className="py-2 flex flex-col h-fit font-normal">
                     {item.sublist?.map((subNav, idx) => (
@@ -157,7 +166,7 @@ const Navbar = ({ active }: { active: string }) => {
                 </>
                 }
           </div>
-          ))}
+          )})}
         </div>
         {/* <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">
           <Link to="#" className="w-fit text-center">

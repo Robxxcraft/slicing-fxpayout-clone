@@ -7,7 +7,7 @@ import TransferForm from "@/components/pages/transferAccount/TransferForm";
 
 const TransferAccount = () => {
   useEffect(() => {
-    document.title = "Trading Lebih Untung Rebate Hingga 90% | FX Payout";
+    document.title = "Formulir Transfer IB Trading ke FX Payout | FX Payout";
   }, []);
 
   return (

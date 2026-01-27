@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import MaskSvg from "@/components/ui/MaskSvg";
 import SelectInput from "@/components/ui/SelectInput";
 import TextInput from "@/components/ui/TextInput";
 import { useForm } from "@/hooks/useForm";
@@ -24,30 +25,23 @@ const CalculatorSection = () => {
 
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">
-        {/* ! BORDER GRADIENT HOW??? */}
       <div className="relative px-5 md:px-10 py-8 bg-my-light-blue border border-primary rounded-[20px] overflow-hidden">
         <img src="/big-fxpayout.png" alt="big-payout" 
           className="absolute -bottom-16 -right-16 -rotate-13 opacity-10"/>
 
         <div className="flex justify-center items-center gap-3">
-          <div className="h-8 w-8 bg-linear-to-br from-primary to-dark-primary"
-            style={{ maskImage: "url('/kalkulator-icon.svg')",
-                maskRepeat: "no-repeat",
-                maskSize: "contain",
-                maskPosition: "center",
-                WebkitMaskImage: "url('/kalkulator-icon.svg')",
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskSize: "contain",
-                WebkitMaskPosition: "center"
-             }}
-          >
+          <MaskSvg 
+            icon={"/kalkulator-icon.svg"} 
+            label={"Icon Kalkulator"} 
+            className={"size-8"} 
+            color={"bg-linear-to-br from-primary to-dark-primary"} />
 
-          </div>
           <h2 className="text-2xl md:text-[28px] 2xl:text-[32px] text-my-dark-purple font-semibold">
-            Kalkulator Estimate Rebate</h2>
+            Kalkulator Estimate Rebate
+          </h2>
         </div>
         <p className="mt-2 w-full text-base xl:text-lg 2xl:text-xl font-medium text-black/50 text-center">
-            Pilih broker dan masukkan detail trading Anda untuk melihat estimasi rebate secara instan.
+          Pilih broker dan masukkan detail trading Anda untuk melihat estimasi rebate secara instan.
         </p>
         <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
           <SelectInput 
@@ -108,11 +102,11 @@ const CalculatorSection = () => {
           </div>
         </div>
         <div className="mt-8 p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
-          <span className="mt-2 flex items-center justify-center size-10 2xl:size-12 border border-primary rounded-full">
+          <span className="mt-2 flex shrink-0 items-center justify-center size-10 2xl:size-12 border border-primary rounded-full">
             <TiInfoLarge className="text-[24px] 2xl:text-[32px] text-primary" />
           </span>
           <p className="w-fit text-base 2xl:text-xl font-medium text-black/80 leading-[178%]">
-            <b>fxpayout</b> mengembalikan hingga 80% komisi IB kepada trader. Proses rebate dilakukan secara otomatis, aman, dan transparan tanpa mengubah spread, leverage, maupun kondisi trading Anda.
+            <b>fxpayout</b> mengembalikan hingga 90% komisi IB kepada trader. Proses rebate dilakukan secara otomatis, aman, dan transparan tanpa mengubah spread, leverage, maupun kondisi trading Anda.
           </p>
         </div>
       </div>
