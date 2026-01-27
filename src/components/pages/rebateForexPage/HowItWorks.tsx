@@ -74,7 +74,7 @@ const HowItWorks = ({sectionsRef}: {sectionsRef: React.RefObject<Record<string, 
           <div key={idx} className="relative flex flex-col items-center">
             <div className="py-4 xl:py-6 px-4 xl:px-5 bg-my-light-blue w-fit rounded-lg ">
               <img src={workflow.icon} alt={workflow.altIcon} 
-                className="size-12 md:size-14 xl:size-20 object-contain"/>
+                className="size-12 md:size-14 xl:size-16 2xl:size-20 object-contain"/>
             </div>
             {workflow.nameFlow !== undefined &&
               <div 
