@@ -13,6 +13,7 @@ export const pepperstoneDetail: BrokerStruc = {
   registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   detailUrl: "pepperstone",
+  scheduleUrl: "/schedule",
   statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],

@@ -13,6 +13,7 @@ export const fpMarketsDetail: BrokerStruc = {
   registerUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   websiteUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   detailUrl: "fp-markets",
+  scheduleUrl: "/schedule",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "ECN/STP", "Low Spread", "Multi-Asset"],

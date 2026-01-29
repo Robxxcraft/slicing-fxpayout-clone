@@ -13,6 +13,7 @@ export const exnessDetail: BrokerStruc = {
   registerUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   websiteUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   detailUrl: "exness",
+  scheduleUrl: "/schedule",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Akun Cent", "Ultra-Fast Execution"],

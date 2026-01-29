@@ -13,6 +13,7 @@ export const vantageDetail: BrokerStruc = {
   registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   websiteUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   detailUrl: "vantage",
+  scheduleUrl: "/schedule",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Multi-Asset Trading", "ECN/STP", "Spread Kompetitif", "Regulasi Kuat"],

@@ -13,6 +13,7 @@ export const hfmDetail: BrokerStruc = {
   registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   websiteUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   detailUrl: "hfm",
+  scheduleUrl: "/schedule",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "Multi-Asset", "MT4/MT5", "Leverage Tinggi"],

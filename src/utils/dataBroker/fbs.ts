@@ -13,6 +13,7 @@ export const fbsDetail: BrokerStruc = {
   registerUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   websiteUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   detailUrl: "fbs",
+  scheduleUrl: "/schedule",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Low Minimum Deposit", "Leverage Tinggi", "Multi-Asset Trading", "Beginner Friendly"],

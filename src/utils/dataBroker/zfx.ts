@@ -13,6 +13,7 @@ export const zfxDetail: BrokerStruc = {
   registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   detailUrl: "zfx",
+  scheduleUrl: "/schedule",
   statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],

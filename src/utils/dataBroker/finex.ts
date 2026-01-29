@@ -13,6 +13,7 @@ export const finexDetail: BrokerStruc = {
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "finex",
+  scheduleUrl: "/schedule",
   statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Tier Local", "Regulated Broker", "Low Deposit", "Beginner Friendly"],

@@ -13,6 +13,7 @@ export const octaFxDetail: BrokerStruc = {
   registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   websiteUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   detailUrl: "octafx",
+  scheduleUrl: "/schedule",
   statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Multi-Platform Trading", "Low Spread", "No Commission Deposit/Withdrawal", "Beginner & Advanced Friendly"],

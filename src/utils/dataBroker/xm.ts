@@ -13,6 +13,7 @@ export const xmDetail: BrokerStruc = {
   registerUrl: "https://affs.click/4gFt7",
   websiteUrl: "https://affs.click/pcNLG",
   detailUrl: "xm",
+  scheduleUrl: "/schedule",
   statusRebate: "Manual Rebate",
   ranking: brokerRanking,
   badges: ["Multi-Regulated", "Low Spread", "Ultra-Fast Execution", "Human-Centered Broker"],

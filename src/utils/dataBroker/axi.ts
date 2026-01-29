@@ -13,6 +13,7 @@ export const axiDetail: BrokerStruc = {
   registerUrl: "https://www.axi.com/int/live-account?promocode=4736053",
   websiteUrl: "https://www.axi.com/int/live-account?promocode=4736053",
   detailUrl: "axi",
+  scheduleUrl: "/schedule",
   statusRebate: "Auto Rebate",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN/STP Broker", "Low Spread", "Leverage Fleksibel"],
