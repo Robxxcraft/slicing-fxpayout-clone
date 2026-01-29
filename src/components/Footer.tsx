@@ -115,7 +115,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-primary text-sm lg:text-base text-center py-5 text-white">
-        © 2025 FXPayout. All Right Reserved
+        © 2026 FXPayout. All Right Reserved
       </div>
     </footer>
   );
