@@ -3,7 +3,7 @@ import { getPagination } from "@/helper/pagination";
 import { brokers } from "@/utils/dataBroker/brokers";
 import React, { useEffect, useMemo, useState } from "react"
 import { CiSearch } from "react-icons/ci";
-import { FaArrowDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -84,117 +84,117 @@ const ScheduleSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<str
     <section
       id="schedule"
       ref={el => {sectionsRef.current["scehdule"] = el}}
-      className="mt-10 lg:mt-18 xl:mt-20 scroll-mt-[136px] lg:scroll-mt-[120px]"
+      className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-[36px] border-t xl:border-0 border-[#E5E5E5]"
     >
-      <h2 className="font-medium text-2xl md:text-[32px] 2xl:text-[40px]">
-        Jadwal Rebate
-      </h2>
-      <p className="mb-6 mt-4 md:mt-6 text-base md:text-xl 2xl:text-2xl leading-[169.2%]">
-        Temukan jadwal pembayaran rebate berdasarkan broker trading Anda. Klik “Lihat Jadwal” untuk detail lengkap setiap broker.
-      </p>
-      <div className="p-6 flex flex-col gap-6 bg-[#F9F9F9] border border-[#D0D0D0] shadow-[0_1px_3px_0_rgba(0,0,0,0.2)] rounded-3xl">
-        <h3 className="font-medium text-xl 2xl:text-2xl">
-          Daftar Jadwal Rebate Broker
-        </h3>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-          <div className="flex items-center gap-1.5 text-[#212529]">
-            <span className="text-base 2xl:text-xl">Tampilkan</span>
-            <select 
-              name="entry" 
-              id="entry" 
-              value={totalEntry}
-              onChange={(e) => setTotalEntry(Number(e.target.value))}
-              className="px-3 py-2 text-base 2xl:text-xl text-[#495057] bg-white border border-[#CED4DA] rounded-md"
-            >
-              {supportEntry.map((item) => (
-                <option key={item} value={item}>{item}</option>
-              ))}
-            </select>
-            <span className="text-base 2xl:text-xl">entri</span>
+      <div className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56">
+        <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
+          Jadwal Rebate
+        </h2>
+        <p className="mb-4 md:mb-6 mt-6 text-xl 2xl:text-2xl leading-[169.2%]">
+          Temukan jadwal pembayaran rebate berdasarkan broker trading Anda. Klik “Lihat Jadwal” untuk detail lengkap setiap broker.
+        </p>
+        <div className="px-4 md:px-6 py-6 flex flex-col gap-4 md:gap-6 bg-[#F9F9F9] border border-[#D0D0D0] shadow-[0_1px_3px_0_rgba(0,0,0,0.2)] rounded-3xl">
+          <h3 className="font-medium text-xl md:text-2xl">
+            Daftar Jadwal Rebate Broker
+          </h3>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+            <div className="flex items-center gap-1.5 text-[#212529]">
+              <span className="text-base 2xl:text-xl">Tampilkan</span>
+              <select 
+                name="entry" 
+                id="entry" 
+                value={totalEntry}
+                onChange={(e) => setTotalEntry(Number(e.target.value))}
+                className="px-3 py-2 text-base 2xl:text-xl text-[#495057] bg-white border border-[#CED4DA] rounded-md"
+              >
+                {supportEntry.map((item) => (
+                  <option key={item} value={item}>{item}</option>
+                ))}
+              </select>
+              <span className="text-base 2xl:text-xl">entri</span>
+            </div>
+            <div className="py-4 px-4 md:px-8 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-xl max-w-[400px]">
+              <label htmlFor="search" className="cursor-pointer">
+                <CiSearch className="text-2xl text-[#7E7E7E]" />
+              </label>
+              <input
+                id="search"
+                name="search"
+                placeholder="Cari broker disini"
+                value={query}
+                onChange={handleSearch}
+                type="text"
+                className="w-full text-base placeholder:text-[rgba(0,0,0,0.8)] focus:outline-0"
+              />
+            </div>
           </div>
-          <div className="py-4 px-4 md:px-8 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-xl max-w-[400px]">
-            <label htmlFor="search" className="cursor-pointer">
-              <CiSearch className="text-2xl text-[#7E7E7E]" />
-            </label>
-            <input
-              id="search"
-              name="search"
-              placeholder="Cari broker disini"
-              value={query}
-              onChange={handleSearch}
-              type="text"
-              className="w-full text-base placeholder:text-[rgba(0,0,0,0.8)] focus:outline-0"
-            />
-          </div>
-        </div>
-        <Table className="mt-6!">
-          <Table.Heading>
-            <Table.HeadingItem className="text-nowrap">
-              <div
-                onClick={toggleSorting}
-                className="flex gap-2 items-center w-fit cursor-pointer">
-                <span>Nama Broker</span>
-                <FaArrowDown size={14} className={`${sorting === "ASC" ? "rotate-0" : "rotate-180"}`} />
-              </div>
-            </Table.HeadingItem>
-            <Table.HeadingItem className="text-center! text-nowrap">
-              Jadwal Rebate
-            </Table.HeadingItem>
-          </Table.Heading>
+          <Table className="mt-0!">
+            <Table.Heading>
+              <Table.HeadingItem className="text-nowrap">
+                <div
+                  onClick={toggleSorting}
+                  className="flex gap-2 items-center w-fit cursor-pointer">
+                  <span>Nama Broker</span>
+                  <FaArrowDown size={14} className={`${sorting === "ASC" ? "rotate-0" : "rotate-180"}`} />
+                </div>
+              </Table.HeadingItem>
+              <Table.HeadingItem className="text-center! text-nowrap">
+                Jadwal Rebate
+              </Table.HeadingItem>
+            </Table.Heading>
 
-          <Table.Body>
-            {showBroker.map((row, rowIdx) => (
-              <Table.Row key={rowIdx}>
-                <Table.Cell rowIndex={rowIdx}>
-                  {row.name}
-                </Table.Cell>
-                <Table.Cell rowIndex={rowIdx}>
-                  <Link to={row.schedule === undefined ? "#" : row.schedule} className="flex items-center justify-center gap-1 text-primary text-nowrap">
-                    <span>Lihat Jadwal</span>
-                    <FaArrowRight size={18} />
-                  </Link>
-                </Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-          <p className="text-sm 2xl:text-xl  text-[#212529]">
-            Menampilkan {showIndex.start} hingga {" "} 
-            {showIndex.end < filteredBrokers.length ? showIndex.end : filteredBrokers.length} 
-            {" "} dari {filteredBrokers.length} entri
-          </p>
-          <div className="flex items-center justify-center w-full md:w-fit">
-            <button 
-              onClick={handleClickPrevButton}
-               className={`${currentPage > 1 && "hover:bg-black/5"} px-3 py-2 bg-white border border-[#DEE2E6] rounded-l-sm cursor-pointer`}>
-              <span 
-                className={`${currentPage > 1 ? "bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text" 
-                  : "text-[#6C757D]"} hidden md:inline-block`}>
-                Sebelum
-              </span>
-              <FaChevronLeft className={`${currentPage > 1 ? "text-primary" : "text-[#6C757D]"} inline-block md:hidden`} />
-            </button>
-            {getPagination({maxButtons: 4, currentPage, TOTAL_PAGES}).map((page) => (
+            <Table.Body>
+              {showBroker.map((row, rowIdx) => (
+                <Table.Row key={rowIdx}>
+                  <Table.Cell rowIndex={rowIdx}>
+                    {row.name}
+                  </Table.Cell>
+                  <Table.Cell rowIndex={rowIdx}>
+                    <Link to={row.schedule === undefined ? "#" : row.schedule} className="flex items-center justify-center gap-1 text-primary text-nowrap">
+                      <span>Lihat Jadwal</span>
+                      <FaArrowRight size={18} />
+                    </Link>
+                  </Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+            <p className="text-sm 2xl:text-xl  text-[#212529]">
+              Menampilkan {showIndex.start + 1} hingga {" "} 
+              {showIndex.end < filteredBrokers.length ? showIndex.end : filteredBrokers.length} 
+              {" "} dari {filteredBrokers.length} entri
+            </p>
+            <div className="flex items-center justify-center w-full md:w-fit">
               <button 
-                onClick={() => handleChangePagination(page)}
-                className={`${page === currentPage ? "bg-linear-to-t from-dark-primary to-primary text-white": "hover:bg-black/5"}
-                px-3 py-2 w-10 border border-[#DEE2E6] cursor-pointer`}>
-                <span className={`${page !== currentPage && "bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text"}`}>
-                  {page}
+                onClick={handleClickPrevButton}
+                className={`${currentPage > 1 && "hover:bg-black/5"} px-3 py-2 bg-white border border-[#DEE2E6] rounded-l-sm cursor-pointer`}>
+                <span 
+                  className={`${currentPage > 1 ? "bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text" 
+                    : "text-[#6C757D]"} text-sm md:text-base`}>
+                  Sebelum
                 </span>
               </button>
-            ))}
-            <button 
-              onClick={handleClickNextButton}
-              className={`${currentPage < TOTAL_PAGES && "hover:bg-black/5"} px-3 py-2 bg-white border border-[#DEE2E6] rounded-l-sm cursor-pointer`}>
-              <span 
-                className={`${currentPage < TOTAL_PAGES ? "bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text" 
-                  : "text-[#6C757D]"} hidden md:inline-block`}>
-                Selanjutnya
-              </span>
-              <FaChevronRight className={`${currentPage < TOTAL_PAGES ? "text-primary" : "text-[#6C757D]"} inline-block md:hidden`} />
-            </button>
+              {getPagination({maxButtons: 4, currentPage, TOTAL_PAGES}).map((page) => (
+                <button 
+                  onClick={() => handleChangePagination(page)}
+                  className={`${page === currentPage ? "bg-linear-to-t from-dark-primary to-primary text-white": "hover:bg-black/5"}
+                  px-3 py-2 w-10 border border-[#DEE2E6] cursor-pointer`}>
+                  <span className={`${page !== currentPage && "bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text"}`}>
+                    {page}
+                  </span>
+                </button>
+              ))}
+              <button 
+                onClick={handleClickNextButton}
+                className={`${currentPage < TOTAL_PAGES && "hover:bg-black/5"} px-3 py-2 bg-white border border-[#DEE2E6] rounded-l-sm cursor-pointer`}>
+                <span 
+                  className={`${currentPage < TOTAL_PAGES ? "bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text" 
+                    : "text-[#6C757D]"} text-sm md:text-base`}>
+                  Selanjutnya
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

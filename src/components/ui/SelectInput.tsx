@@ -10,6 +10,8 @@ interface SelectInputProps {
   onChangeForm: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void;
   optionData: string[];
   disabled?: boolean;
+  mobileHelperText?: string;
+  showMobileHelperText?: boolean;
 }
 
 const SelectInput = ({
@@ -21,7 +23,9 @@ const SelectInput = ({
   value,
   onChangeForm,
   optionData,
-  disabled
+  disabled,
+  mobileHelperText,
+  showMobileHelperText = false
 }: SelectInputProps) => {
   return (
     <div className="flex flex-col gap-3">
@@ -53,6 +57,11 @@ const SelectInput = ({
         </select>
         <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#667085]" />
       </div>
+      {showMobileHelperText &&
+        <span className="inline-bloc md:hidden text-sm text-black/50">
+          {mobileHelperText}
+        </span>
+      }
     </div>
   )
 }

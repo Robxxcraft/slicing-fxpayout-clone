@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { throttle } from "lodash";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { IoClose } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { languages, type Language } from "../utils/languageSupport";
@@ -63,32 +64,40 @@ const Navbar = ({ active }: { active: string }) => {
         {listNavigation.map((item, index) => (
           <div
             key={index}
-            className={`group flex items-center gap-2 relative py-2 px-2 text-light-gray text-base 2xl:text-xl border-white transition-all duration-300 ease-out`}
-            style={{
-              borderBottom:
-                active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
-                  ? "4px solid"
-                  : "0px solid",
-            }}>
+            className={`relative group flex items-center gap-2 px-2 text-light-gray text-base 2xl:text-xl border-white transition-all duration-300 ease-out`}
+          >
             <Link to={item.url} className={`${
               active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
                 ? "font-bold"
                 : "font-normal"
-            } group-hover:font-bold transition-all duration-300`}>{item.title}</Link>
+            } relative py-2 group-hover:font-bold transition-all duration-300`}>
+              {item.title}
+              {active.toLocaleLowerCase() == item.title.toLocaleLowerCase() &&
+                <div className="absolute top-full left-1/2 -translate-x-1/2 h-1 w-[50%] bg-white rounded-full"></div>
+              }
+            </Link>
             {item.sublist !== undefined && 
             <>
               <FaChevronDown className="text-[14px] cursor-pointer group-hover:rotate-180 transition-all duration-200" />
               <div className="absolute py-6 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
                 {item.sublist?.map((subNav, idx) => (
-                  <Link key={idx}
-                    to={subNav.url} className="px-6 py-3 text-black hover:bg-black/10">
+                  <HashLink 
+                    smooth
+                    key={idx} 
+                    to={subNav.url} className="px-6 py-3 text-black hover:bg-black/10"
+                    scroll={(el) => {
+                      setTimeout(() => {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 200);
+                    }}>
                     {subNav.title}
-                  </Link>
+                  </HashLink>
                 ))
                 }
               </div>
             </>
             }
+            
           </div>
         ))}
       </div>
@@ -146,18 +155,34 @@ const Navbar = ({ active }: { active: string }) => {
               }
                `}>
               <div
-                onClick={() => handleOpenSubMenu(index)} 
-                className="flex justify-between pb-1 w-full text-base hover:font-bold">
+                onClick={() => {
+                  if (item.sublist !== undefined) {
+                    handleOpenSubMenu(index);
+                  } else if (active.toLocaleLowerCase() == item.title.toLocaleLowerCase()) {
+                    setOpenMenu(false); 
+                    setOpenLanguageSelector(false);
+                  }
+                }} 
+                className="relative flex justify-between pb-1 w-full text-base hover:font-bold">
                 <Link to={item.url}>{item.title}</Link>
                 {item.sublist !== undefined && <FaChevronDown className={`
                   ${isSubOpen ? "rotate-180" : "rotate-0"} text-[14px] transition-all duration-300 ease-out`} />}
+                {active.toLocaleLowerCase() == item.title.toLocaleLowerCase() &&
+                  <div className="absolute top-full rounded-full h-1 w-[20%] bg-white"></div>
+                }
               </div>
               {item.sublist !== undefined && isSubOpen && 
                 <>
                   <div className="py-2 flex flex-col h-fit font-normal">
                     {item.sublist?.map((subNav, idx) => (
                       <Link key={idx}
-                        to={subNav.url} className="px-4 py-2 text-white hover:bg-black/10">
+                        to={subNav.url} 
+                        onClick={() => {
+                          if (active.toLocaleLowerCase() == item.title.toLocaleLowerCase()) {
+                          setOpenMenu(false); 
+                          setOpenLanguageSelector(false);
+                        }}}
+                        className="px-4 py-2 text-white hover:bg-black/10">
                         {subNav.title}
                       </Link>
                     ))

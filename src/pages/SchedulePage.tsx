@@ -44,7 +44,7 @@ const SchedulePage = () => {
           title="JADWAL REBATE" 
           titleHighlight="AXI"
           paragraph="Berikut adalah jadwal rabat Axi dalam kondisi normal. Jadwal rabat dapat mengalami keterlambatan dalam kondisi tertentu, seperti masalah server, pemeliharaan sistem, gangguan pada sistem pembayaran, dan keterlambatan data rabat dari broker." />
-        <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">
+        <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-10 lg:mt-8 2xl:mt-10">
           <Table>
             <Table.Heading>
               <Table.HeadingItem>

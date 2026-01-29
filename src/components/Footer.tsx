@@ -49,7 +49,17 @@ const Footer = () => {
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
             {listNavigation.map(({ title, url, sublist }, index) => {
-              if (sublist === undefined) {
+              if (title === "Klaim Rebate") {
+                return (
+                  <Link
+                    key={index}
+                    to={"rebate-forex"}
+                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    {title}
+                  </Link>
+                )
+              } 
+              else if (sublist === undefined) {
                 return (
                   <Link
                     key={index}

@@ -51,7 +51,7 @@ Table.Cell = ({
 }) => {
   const baseStyle = `
     ${rowIndex % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"}
-    px-4 md:px-8 py-6 md:py-4 text-left ${className}
+    px-4 md:px-8 py-4 text-left leading-[36px] align-top text-base ${className}
   `
   return (
     <td

@@ -31,8 +31,11 @@ export const listNavigation: NavigationLink[] = [
     title: "Klaim Rebate",
     url: "#",
     sublist: [
-      { title: "Rebate Forex", url: '/rebate-forex' },
-      { title: "Jadwal Rebate", url: '/schedule' },
+      { title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
+      { title: "Cara Mendapatkan Rebate Forex", url: '/rebate-forex#how-to-rebate' },
+      { title: "Bagaimana Cara Kerjanya?", url: '/rebate-forex#how-it-works' },
+      { title: "Sistem Pembayaran Rebate", url: '/rebate-forex#payment' },
+      { title: "Jadwal Rebate", url: '/rebate-forex#schedule' },
     ]
   },
   {

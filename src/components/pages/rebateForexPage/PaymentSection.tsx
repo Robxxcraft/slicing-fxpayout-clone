@@ -44,33 +44,35 @@ const PaymentSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<stri
     <section
       id="payment"
       ref={el => {sectionsRef.current["payment"] = el}}
-      className="mt-10 lg:mt-18 xl:mt-20 scroll-mt-[136px] lg:scroll-mt-[120px]"
+      className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-[36px] border-t xl:border-0 border-[#E5E5E5]"
     >
-      <h2 className="font-medium text-2xl md:text-[32px] 2xl:text-[40px]">
-        Sistem Pembayaran Rebate
-      </h2>
-      <p className="mt-4 md:mt-6 text-base md:text-xl 2xl:text-2xl leading-[169.2%]">
-        fxpayout menyediakan berbagai metode pembayaran rebate yang fleksibel dan mudah diakses. Anda dapat memilih metode pencairan sesuai preferensi, dengan minimum penarikan yang rendah dan proses yang transparan.
-      </p>
-      <Table>
-        <Table.Heading>
-          {["Metode", "Pembayaran Minimum", "Mata Uang", "Biaya"].map((item, idx) => (
-            <Table.HeadingItem key={idx}>{item}</Table.HeadingItem>
-          ))}
-        </Table.Heading>
+      <div className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56">
+        <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
+          Sistem Pembayaran Rebate
+        </h2>
+        <p className="mt-6 text-xl 2xl:text-2xl leading-[169.2%]">
+          fxpayout menyediakan berbagai metode pembayaran rebate yang fleksibel dan mudah diakses. Anda dapat memilih metode pencairan sesuai preferensi, dengan minimum penarikan yang rendah dan proses yang transparan.
+        </p>
+        <Table>
+          <Table.Heading>
+            {["Metode", "Pembayaran Minimum", "Mata Uang", "Biaya"].map((item, idx) => (
+              <Table.HeadingItem key={idx}>{item}</Table.HeadingItem>
+            ))}
+          </Table.Heading>
 
-        <Table.Body>
-          {payments.map((row, rowIdx) => (
-            <Table.Row key={rowIdx}>
-              {Object.values(row).map((value, collIdx) => (
-                <Table.Cell key={collIdx} rowIndex={rowIdx} className={`${collIdx === 3 && "text-nowrap"}`}>
-                  {value}
-                </Table.Cell>
-              ))}
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          <Table.Body>
+            {payments.map((row, rowIdx) => (
+              <Table.Row key={rowIdx}>
+                {Object.values(row).map((value, collIdx) => (
+                  <Table.Cell key={collIdx} rowIndex={rowIdx} className={`${collIdx === 3 && "text-nowrap"}`}>
+                    {value}
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+      </div>
     </section>
   )
 }
