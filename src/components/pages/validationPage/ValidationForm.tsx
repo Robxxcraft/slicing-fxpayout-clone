@@ -1,10 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import TripleBadgeFlow from "@/components/ui/TripleBadgeFlow";
 import Button from "@/components/ui/Button";
 import CardValidation from "./CardValidation";
 import CardBankForm from "./CardBankForm";
 import { useForm } from "@/hooks/useForm";
+import SuccessModal from "@/components/ui/SuccessModal";
 
 export type FormValidation = {
   broker: string;
@@ -38,12 +39,26 @@ const ValidationForm = () => {
     holdingUsername: "",
   });
   const [isVerified, setIsVerified] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showModal]);
 
   const handleCaptchaChange = (value: string | null) => {
     if (value) setIsVerified(true);
   }
   const handleSubmit = () => {
     if (!isVerified) return;
+
+    setShowModal(true);
   }
 
   return (
@@ -94,7 +109,8 @@ const ValidationForm = () => {
           </div>
         </div>
       </div>
-      
+
+      {showModal && <SuccessModal isVisible={showModal} toggleModal={() => setShowModal(false)} />}
     </section>
   )
 }
