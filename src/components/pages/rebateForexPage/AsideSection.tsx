@@ -41,7 +41,11 @@ const AsideSection = ({
               smooth
               to={`#${item.id}`} 
               key={idx} 
-              onClick={() => setOpenSidebar(!openSidebar)}
+              onClick={() => {
+                if (openSidebar) {
+                  setOpenSidebar(false)
+                }
+              }}
               className={`${activeSection == item.id && "text-primary font-medium lg:after:content-[''] lg:after:absolute lg:after:left-0 lg:after:-bottom-0.5 lg:after:h-1 lg:after:w-20 lg:after:bg-primary lg:after:rounded-full"} 
               relative block pb-0 lg:pb-3 2xl:pb-5 lg:border-b border-[#CECECE] text-lg md:text-xl lg:text-base 2xl:text-xl hover:text-primary transition-all duration-300 ease-out`}
             >
