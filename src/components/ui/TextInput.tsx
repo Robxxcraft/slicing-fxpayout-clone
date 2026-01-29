@@ -39,9 +39,6 @@ const TextInput = ({
         className="text-base 2xl:text-xl font-medium text-[#344054]">
         {label}
       </label>
-      <span className="inline-bloc md:hidden text-sm text-black/70">
-        {placeholder}
-      </span>
       <div className="relative w-full">
         <img src={icon} alt={altIcon}
           className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -59,6 +56,11 @@ const TextInput = ({
           disabled={disabled}
         />
       </div>
+      {placeholder !== undefined &&
+        <span className="inline-block md:hidden text-sm text-black/50">
+          {placeholder}
+        </span>
+      }
     </div>
   )
 }

@@ -122,7 +122,7 @@ const Navbar = ({ active }: { active: string }) => {
 
       {/* MOBILE MENU */}
       <div
-        className="fixed top-0 left-0 px-6 md:px-11 lg:px-18 py-5 flex flex-col xl:hidden bg-primary w-full min-h-screen overflow-auto transition-all duration-300"
+        className="fixed top-0 left-0 px-6 md:px-11 lg:px-18 py-5 flex flex-col xl:hidden bg-primary w-full h-screen max-h-screen overflow-auto transition-all duration-300"
         style={{
           left: openMenu ? "0" : "-100%",
         }}>
