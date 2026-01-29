@@ -175,8 +175,13 @@ const Navbar = ({ active }: { active: string }) => {
                 <>
                   <div className="py-2 flex flex-col h-fit font-normal">
                     {item.sublist?.map((subNav, idx) => (
-                      <Link key={idx}
+                      <HashLink key={idx}
                         to={subNav.url} 
+                        scroll={(el) => {
+                          setTimeout(() => {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }, 200);
+                        }}
                         onClick={() => {
                           if (active.toLocaleLowerCase() == item.title.toLocaleLowerCase()) {
                           setOpenMenu(false); 
@@ -184,7 +189,7 @@ const Navbar = ({ active }: { active: string }) => {
                         }}}
                         className="px-4 py-2 text-white hover:bg-black/10">
                         {subNav.title}
-                      </Link>
+                      </HashLink>
                     ))
                     }
                   </div>

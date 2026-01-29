@@ -86,14 +86,14 @@ const CalculatorSection = () => {
             Hitung Estimasi Rebate
           </Button>
         </div>
-        <div className="mt-6 md:mt-8 flex flex-nowrap justify-center">
-          <div className="w-1/2 md:w-fit text-center pr-4 md:pr-8 border-r border-[#334BBB]">
+        <div className="mt-6 md:mt-8 flex flex-nowrap justify-center items-stretch">
+          <div className="flex flex-col justify-between w-1/2 md:w-fit text-center pr-4 md:pr-8 border-r border-[#334BBB]">
             <p className="text-base font-medium text-my-dark-purple/80">Estimates Rebates</p>
             <p className="text-[2rem] md:text-[3rem] 2xl:text-[64px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
               USD 0.00
             </p>
           </div>
-          <div className="w-1/2 md:w-fit text-center pl-4 md:pl-8">
+          <div className="flex flex-col justify-between w-1/2 md:w-fit text-center pl-4 md:pl-8">
             <p className="text-base font-medium text-my-dark-purple/80">Rebates per Lot</p>
             <p className="text-[2rem] md:text-[3rem] 2xl:text-[64px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
               USD 0.00
