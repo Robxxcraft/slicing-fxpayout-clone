@@ -3,13 +3,21 @@ import type { TransferFormState } from "../TransferForm"
 import SelectInput from "@/components/ui/SelectInput";
 import { brokers } from "@/utils/dataBroker/brokers";
 import BoundedIcon from "../../brokerDetail/ui/BoundedIcon";
+import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 
-const CardForm = ({ form, handleChangeForm }: 
+const CardForm = ({ form, handleChangeForm, setSelectedBroker }: 
   {
     form: TransferFormState; 
-    handleChangeForm: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>
+    handleChangeForm: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
+    setSelectedBroker: React.Dispatch<React.SetStateAction<BrokerStruc | null>>;
   }) => {
   const allBrokers = Object.values(brokers).map(broker => broker.name);
+
+  const handleChangeBroker = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const broker = Object.values(brokers).filter((broker) => broker.name === e.target.value);
+    if (broker.length > 0) setSelectedBroker(broker[0]);
+    handleChangeForm(e);
+  }
   
   return (
     <div className="py-6 2xl:py-8 border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
@@ -27,20 +35,23 @@ const CardForm = ({ form, handleChangeForm }:
           altIcon="Icon broker" 
           defaultValue="&lt;Pilih&gt;" 
           value={form.broker} 
-          onChangeForm={handleChangeForm} 
-          optionData={allBrokers} />
+          onChangeForm={handleChangeBroker} 
+          optionData={allBrokers}
+          required />
         <TextInput 
-          id="numberAccount"
+          id="accountNumber"
           label="Nomor Akun" 
           icon="/number-account-icon.svg"
           altIcon="Icon Number Account" 
           placeholder="Masukkan Nomor Akun"
-          value={form.numberAccount} 
+          value={form.accountNumber} 
           onChangeForm={handleChangeForm} 
           inputMode="numeric"
           pattern="[0-9]*"
           autoComplete="off"
-          typeInput={"text"} />
+          typeInput={"text"}
+          maxLength={16}
+          required />
         <TextInput 
           id="username"
           label="Nama Pemegang Rekening" 
@@ -50,7 +61,8 @@ const CardForm = ({ form, handleChangeForm }:
           value={form.username} 
           onChangeForm={handleChangeForm} 
           autoComplete="cc-name" 
-          typeInput={"text"} />
+          typeInput={"text"}
+          required />
       </div>
     </div>
   )

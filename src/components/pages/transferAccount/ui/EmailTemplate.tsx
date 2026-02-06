@@ -1,17 +1,26 @@
 import Button from '@/components/ui/Button';
 import { FaCheck } from 'react-icons/fa6';
-import { IoIosMail } from 'react-icons/io';
 import { TbCopy } from 'react-icons/tb';
+import type { TransferFormState } from '../TransferForm';
+import type { BrokerStruc } from '@/utils/dataBroker/typeDetailBroker';
 
 const EmailTemplate = ({
   onCopy, 
   isCopied, 
-  onSendEmail
+  onSendEmail,
+  selectedBroker,
+  values
 }: {
+  values: TransferFormState,
   onCopy: () => Promise<void>; 
-  isCopied: boolean,
+  isCopied: boolean;
+  selectedBroker: BrokerStruc | null;
   onSendEmail: () => void
 }) => {
+  const rawUsername = values.username.trim().length === 0 ? "xxxxx" : values.username.trim();
+  const rawAccountNumber = values.accountNumber.trim().length === 0 ? "xxxxx" : values.accountNumber.trim();
+  const rawBroker = values.broker.length === 0 ? "IB ll18ehwbyi" : values.broker;
+  
   return (
     <div className="py-6 2xl:py-8 border border-[#4160FF] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
       <div className="pb-4 md:pb-6 px-4 md:px-6 2xl:px-8 border-b border-[#D0D0D0]">
@@ -24,12 +33,22 @@ const EmailTemplate = ({
           <div className="flex items-start gap-2 md:gap-4">
             <img src="/quotes-icon.svg" alt="Icon Quotes" 
               className="mt-1 scale-70 md:scale-90 2xl:scale-100"/>
-            <p className="text-base md:text-xl 2xl:text-2xl text-black/60 whitespace-pre-line">
-              Yth. Tim Support, <br /><br />                      
-              Dengan ini saya memohon agar akun trading saya <b>xxxxx</b> ditempatkan di bawah <b>IB ll18ehwbyi.</b> <br /><br />
+            <p className="text-base md:text-lg 2xl:text-2xl text-black/60 whitespace-pre-line">
+              Yth. Tim Support {rawBroker}, <br /><br />
+
+              Saya mengajukan permohonan pemindahan akun trading saya ke bawah IB berikut: <br />
+              ID IB: xxxxxx <br />
+              Link IB: xxxxxx <br /><br />
+
+              Data akun saya: <br />
+              Nama: {rawUsername} <br />
+              Nomor Akun Trading: {rawAccountNumber} <br /><br />
+
+              Mohon bantuan untuk proses transfer IB tersebut. <br />
+              Terima kasih. <br /><br />
 
               Hormat saya, <br />
-              <b>xxxxx</b>
+              {rawUsername}
             </p>
           </div>
           <div
@@ -53,12 +72,11 @@ const EmailTemplate = ({
       </div>
       <div className="px-6 2xl:px-8 flex flex-col md:flex-row lg:flex-col xl:flex-row gap-3 justify-between items-center">
         <p className="text-base md:text-xl 2xl:text-2xl text-black font-semibold leading-[115%]">
-          Kirim ke Email:
+          Kirim ke {selectedBroker === null ? "Email" : selectedBroker.contactSupport.includes("@") ? "Email" : "WhatsApp"}:
         </p>
-        <Button buttonType="button" onClick={onSendEmail} 
-          iconPosition="left" icon={<IoIosMail className="text-white text-3xl" />}
-          variant="primary-light" size="md" className="py-3!">
-          support@fxpayout.com
+        <Button buttonType="button" onClick={onSendEmail} disabled={selectedBroker === null}
+          variant="primary-light" size="md" className="py-3! w-full! md:w-fit! lg:w-full! xl:w-fit!">
+          Contact Support
         </Button>
       </div>
     </div>

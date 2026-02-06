@@ -1,32 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardForm from "./ui/CardForm";
 import EmailTemplate from "./ui/EmailTemplate";
 import TripleBadgeFlow from "@/components/ui/TripleBadgeFlow";
 import { useForm } from "@/hooks/useForm";
+import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 
 export type TransferFormState = {
   broker: string;
-  numberAccount: string;
+  accountNumber: string;
   username: string;
 }
 
 const TransferForm = () => {
   const form = useForm<TransferFormState>({
     broker: "",
-    numberAccount: "",
+    accountNumber: "",
     username: ""
   });
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  
+  const [stepperActive, setStepperActive] = useState<number>(0);
+  const [selectedBroker, setSelectedBroker] = useState<BrokerStruc | null>(null);
+
+  useEffect(() => {
+    const isFormFilled = Object.values(form.values).every((str) => str.trim() !== "");
+    
+    if (isCopied && isFormFilled) {
+      setStepperActive(2);
+    } else if (isFormFilled && !isCopied) {
+      setStepperActive(1);
+    } else {
+      setStepperActive(0);
+    }
+  }, [form.values, isCopied]);
+
   const handleCopyTemplate = async () => {
     const rawUsername = form.values.username.trim().length === 0 ? "xxxxx" : form.values.username.trim();
+    const rawAccountNumber = form.values.accountNumber.trim().length === 0 ? "xxxxx" : form.values.accountNumber.trim();
     const rawBroker = form.values.broker.length === 0 ? "IB ll18ehwbyi" : form.values.broker;
-    const rawText = `Yth. Tim Support,
+    const rawText = `Yth. Tim Support ${rawBroker},
 
-Dengan ini saya memohon agar akun trading saya **${rawUsername}** ditempatkan di bawah **${rawBroker}.**
+Saya mengajukan permohonan pemindahan akun trading saya ke bawah IB berikut:
+ID IB: ${selectedBroker === null ? "xxxxxx" : selectedBroker.id_ib}
+Link IB: ${selectedBroker === null ? "xxxxxx" : selectedBroker.websiteUrl}
+
+Data akun saya:
+Nama: ${rawUsername}
+Nomor Akun Trading: ${rawAccountNumber}
+
+Mohon bantuan untuk proses transfer IB tersebut.
+Terima kasih.
 
 Hormat saya,
-**${rawUsername}**`;
+${rawUsername}`;
     
     const fallbackCopy = (text: string) => {
       const textArea = document.createElement("textarea");
@@ -60,20 +85,37 @@ Hormat saya,
   }
 
   const handleSendEmail = () => {
+    if (selectedBroker === null) return;
+
     const rawUsername = form.values.username.trim().length === 0 ? "xxxxx" : form.values.username.trim();
     const rawBroker = form.values.broker.length === 0 ? "IB ll18ehwbyi" : form.values.broker;
-    const recipient = "support@fxpayout.com";
+    const rawAccountNumber = form.values.accountNumber.trim().length === 0 ? "xxxxx" : form.values.accountNumber.trim();
+    const recipient = selectedBroker.contactSupport;
     const subject = encodeURIComponent("Permohonan Pindah IB");
-    const body = encodeURIComponent(`Yth. Tim Support,
+    const body = encodeURIComponent(`Yth. Tim Support ${rawBroker},
 
-Dengan ini saya memohon agar akun trading saya ${rawUsername} ditempatkan di bawah ${rawBroker}.
+Saya mengajukan permohonan pemindahan akun trading saya ke bawah IB berikut:
+ID IB: ${selectedBroker === null ? "xxxxxx" : selectedBroker.id_ib}
+Link IB: ${selectedBroker === null ? "xxxxxx" : selectedBroker.websiteUrl}
+
+Data akun saya:
+Nama: ${rawUsername}
+Nomor Akun Trading: ${rawAccountNumber}
+
+Mohon bantuan untuk proses transfer IB tersebut.
+Terima kasih.
 
 Hormat saya,
 ${rawUsername}`);
+  
+  let contactUrl;
+  if (recipient.includes("@")) {
+    contactUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  } else {
+    contactUrl = `https://wa.me/${recipient}?text=${body}`
+  }
 
-  const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
-
-  window.location.href = mailtoUrl;
+  window.location.href = contactUrl;
   };
 
   return (
@@ -89,14 +131,20 @@ ${rawUsername}`);
             </p>
           </div>
           <div className="flex justify-end w-full">
-            <TripleBadgeFlow first="Lengkapi Formulir" second="Salin Template Email" third="Kirim Email ke fxpayout" />
+            <TripleBadgeFlow 
+              stepperActive={stepperActive}
+              steps={["Lengkapi Formulir", "Salin Template Email", "Kirim Email ke fxpayout"]}
+            />
           </div>
         </div>
         <div className="mt-6 md:mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           <CardForm 
+            setSelectedBroker={setSelectedBroker}
             form={form.values} 
             handleChangeForm={form.handleChange} />
           <EmailTemplate 
+            values={form.values}
+            selectedBroker={selectedBroker}
             isCopied={isCopied}
             onCopy={handleCopyTemplate} 
             onSendEmail={handleSendEmail} />
