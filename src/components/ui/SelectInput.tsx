@@ -7,11 +7,13 @@ interface SelectInputProps {
   altIcon: string;
   defaultValue: string;
   value: string;
-  onChangeForm: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void;
+  onChangeForm: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   optionData: string[];
-  disabled?: boolean;
   mobileHelperText?: string;
   showMobileHelperText?: boolean;
+  disabled?: boolean;
+  required?: boolean;
+  errorMessage?: string;
 }
 
 const SelectInput = ({
@@ -25,14 +27,19 @@ const SelectInput = ({
   optionData,
   disabled,
   mobileHelperText,
-  showMobileHelperText = false
+  required,
+  showMobileHelperText = false,
+  errorMessage = "",
 }: SelectInputProps) => {
   return (
     <div className="flex flex-col gap-3">
       <label
         htmlFor={id}
-        className="text-base 2xl:text-xl font-medium text-[#344054]">
+        className="flex text-base 2xl:text-xl font-medium text-[#344054]">
         {label}
+        {!required &&
+          <span className="ml-1 text-base text-black/50">(opsional)</span>
+        }
       </label>
       <div className="relative w-full">
         <img src={icon} alt={altIcon} 
@@ -44,7 +51,8 @@ const SelectInput = ({
           onChange={onChangeForm}
           disabled={disabled}
           className={`
-            _select-no-arrow px-[54px] py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border border-[#D0D5DD] rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed
+            ${errorMessage === "" ? "border-[#D0D5DD]" : "border-red-500"}
+            _select-no-arrow px-[54px] py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed
           `}>
             <option value="" disabled>
               {defaultValue}
@@ -57,8 +65,13 @@ const SelectInput = ({
         </select>
         <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#667085]" />
       </div>
-      {showMobileHelperText &&
-        <span className="inline-bloc md:hidden text-sm text-black/50">
+      {errorMessage !== "" &&
+        <span className="-mt-1 text-sm text-red-500">
+          {errorMessage}
+        </span>
+      }
+      {errorMessage === "" && showMobileHelperText &&
+        <span className="inline-bloc md:hidden text-sm 2xl:text-base text-black/50">
           {mobileHelperText}
         </span>
       }
