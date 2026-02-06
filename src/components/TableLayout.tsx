@@ -1,13 +1,15 @@
 type TableProps = {
   children: React.ReactNode;
   className?: string;
+  tableClass?: string;
 };
 
-const Table = ({ children, className }: TableProps) => {
-  const baseStyle = `mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl ${className}`
+const Table = ({ children, className, tableClass }: TableProps) => {
+  const baseStyle = `mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl ${className}`;
+  const tableStyle = `table-auto w-full text-[#1D2433] text-base 2xl:text-xl ${tableClass}`;
   return (
     <div className={baseStyle}>
-      <table className="table-auto w-full text-[#1D2433] text-base 2xl:text-xl">
+      <table className={tableStyle}>
         {children}
       </table>
     </div>
@@ -22,10 +24,18 @@ Table.Heading = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-Table.HeadingItem = ({ children, className}: { children: React.ReactNode, className?: string; }) => {
+Table.HeadingItem = ({ 
+  children, 
+  className, 
+  handleClick 
+}: { 
+  children: React.ReactNode, 
+  className?: string; 
+  handleClick?: (event?: unknown) => void;
+}) => {
   const baseStyle = `px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold text-left ${className}`
   return (
-    <th className={baseStyle}>
+    <th className={baseStyle} onClick={handleClick}>
       {children}
     </th>
   );
@@ -37,7 +47,7 @@ Table.Body = ({ children }: { children: React.ReactNode }) => {
 };
 
 Table.Row = ({ children }: { children: React.ReactNode }) => {
-  return <tr>{children}</tr>;
+  return <tr className="group">{children}</tr>;
 };
 
 Table.Cell = ({
@@ -51,7 +61,7 @@ Table.Cell = ({
 }) => {
   const baseStyle = `
     ${rowIndex % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"}
-    px-4 md:px-8 py-4 text-left leading-[36px] align-top text-base ${className}
+    px-4 md:px-8 py-4 text-left leading-[36px] align-top text-base transition-all duration-300 ease-out ${className}
   `
   return (
     <td
