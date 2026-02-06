@@ -4,9 +4,10 @@ import TextInput from '@/components/ui/TextInput';
 import { brokers } from '@/utils/dataBroker/brokers';
 import type { FormValidation } from './ValidationForm';
 
-const CardValidation = ({ form, handleChangeForm }: 
+const CardValidation = ({ form, handleChangeForm, errors }: 
   {
     form: FormValidation; 
+    errors: Partial<Record<keyof FormValidation, string>>;
     handleChangeForm:React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>
   }) => {
   const allBrokers = Object.values(brokers).map((broker) => broker.name);
@@ -27,7 +28,9 @@ const CardValidation = ({ form, handleChangeForm }:
           defaultValue="&lt;Pilih&gt;" 
           value={form.broker} 
           onChangeForm={handleChangeForm} 
-          optionData={allBrokers} />
+          optionData={allBrokers}
+          errorMessage={errors.broker}
+          required />
         <TextInput
           id="identityUsername"
           label="Nama"
@@ -37,7 +40,9 @@ const CardValidation = ({ form, handleChangeForm }:
           onChangeForm={handleChangeForm} 
           placeholder="Nama Lengkap Sesuai Identitas"
           autoComplete="name" 
-          typeInput={"text"} />
+          typeInput={"text"}
+          errorMessage={errors.identityUsername}
+          required />
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2">
             <TextInput
@@ -50,7 +55,9 @@ const CardValidation = ({ form, handleChangeForm }:
               placeholder="Gunakan Email Aktif" 
               inputMode="email"
               autoComplete="email" 
-              typeInput={"text"} />
+              typeInput={"text"}
+              errorMessage={errors.email}
+              required />
           </div>
           <div className="w-full md:w-1/2">
             <TextInput
@@ -63,7 +70,9 @@ const CardValidation = ({ form, handleChangeForm }:
               placeholder="Nomor Akun Trading" 
               autoComplete="off"
               inputMode="numeric"
-              typeInput={"text"} />
+              typeInput={"text"}
+              errorMessage={errors.accountNumber}
+              required />
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
@@ -77,7 +86,9 @@ const CardValidation = ({ form, handleChangeForm }:
               onChangeForm={handleChangeForm} 
               placeholder="Nama Sesuai Akun Trading" 
               autoComplete="name" 
-              typeInput={"text"} />
+              typeInput={"text"}
+              errorMessage={errors.tradingUsername}
+              required />
           </div>
           <div className="w-full md:w-1/2">
             <TextInput
@@ -90,7 +101,9 @@ const CardValidation = ({ form, handleChangeForm }:
               placeholder="Gunakan Nomor Aktif" 
               inputMode="tel"
               autoComplete="tel"
-              typeInput={"text"} />
+              typeInput={"text"}
+              errorMessage={errors.handphoneNumber}
+              required />
           </div>
         </div>
       </div>
