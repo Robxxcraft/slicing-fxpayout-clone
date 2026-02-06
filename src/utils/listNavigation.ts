@@ -29,7 +29,7 @@ export const listNavigation: NavigationLink[] = [
   },
   {
     title: "Klaim Rebate",
-    url: "#",
+    url: "/rebate-forex#",
     sublist: [
       { title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
       { title: "Cara Mendapatkan Rebate Forex", url: '/rebate-forex#how-to-rebate' },
