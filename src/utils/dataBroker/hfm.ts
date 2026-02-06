@@ -164,19 +164,19 @@ export const hfmDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Cent", pair: "XAU/USD", rebatePerLot: 0.05 },
     { accountType: "Cent", pair: "EUR/USD", rebatePerLot: 0.04 },
-    { accountType: "Cent", pair: "BTC/USD", rebatePerLot: 2 },
+    { accountType: "Cent", pair: "CRYPTO", rebatePerLot: 2 },
 
     { accountType: "Premium", pair: "XAU/USD", rebatePerLot: 5 },
     { accountType: "Premium", pair: "EUR/USD", rebatePerLot: 4 },
-    { accountType: "Premium", pair: "BTC/USD", rebatePerLot: 2 },
+    { accountType: "Premium", pair: "CRYPTO", rebatePerLot: 2 },
 
     { accountType: "Zero", pair: "XAU/USD", rebatePerLot: 1 },
     { accountType: "Zero", pair: "EUR/USD", rebatePerLot: 0.5 },
-    { accountType: "Zero", pair: "BTC/USD", rebatePerLot: 2.73 },
+    { accountType: "Zero", pair: "CRYPTO", rebatePerLot: 2.73 },
 
     { accountType: "Pro", pair: "XAU/USD", rebatePerLot: 1 },
     { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 0.5 },
-    { accountType: "Pro", pair: "BTC/USD", rebatePerLot: 1 },
+    { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 1 },
   ],
   advantages: ["Spread Zero sangat kompetitif", "Regulasi lengkap di berbagai negara", "Dukungan trading multi-platform", "Cocok untuk pemula hingga profesional"],
   disadvantages: ["Struktur regulasi berbeda untuk tiap entitas", "Spread akun standar bisa lebih tinggi", "Tidak semua promosi bonus/nodeposit tersedia"],

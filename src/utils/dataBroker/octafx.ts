@@ -146,15 +146,15 @@ export const octaFxDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "MT4", pair: "XAU/USD", rebatePerLot: 2 },
     { accountType: "MT4", pair: "EUR/USD", rebatePerLot: 2 },
-    { accountType: "MT4", pair: "BTC/USD", rebatePerLot: 2 },
+    { accountType: "MT4", pair: "CRYPTO", rebatePerLot: 2 },
 
     { accountType: "MT5", pair: "XAU/USD", rebatePerLot: 2 },
     { accountType: "MT5", pair: "EUR/USD", rebatePerLot: 2 },
-    { accountType: "MT5", pair: "BTC/USD", rebatePerLot: 2 },
+    { accountType: "MT5", pair: "CRYPTO", rebatePerLot: 2 },
 
     { accountType: "Octa Trader", pair: "XAU/USD", rebatePerLot: 2 },
     { accountType: "Octa Trader", pair: "EUR/USD", rebatePerLot: 2 },
-    { accountType: "Octa Trader", pair: "BTC/USD", rebatePerLot: 2 },
+    { accountType: "Octa Trader", pair: "CRYPTO", rebatePerLot: 2 },
   ],
   advantages: [" Kondisi trading ramah biaya", "Spread kompetitif", "Platform lengkap (MT4, MT5, OctaTrader)", "Deposit & withdraw bebas komisi", "Banyak instrumen trading"],
   disadvantages: ["Tidak setinggi broker dengan regulasi top-tier seperti FCA/ASIC secara penuh di semua entitas", "Spread bisa melebar pada volatilitas tinggi", "Review pengguna ada yang menyebut masalah layanan tertentu (beberapa review mixed)"],

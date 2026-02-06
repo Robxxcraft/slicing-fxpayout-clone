@@ -147,7 +147,7 @@ export const eightcapDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 3 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.1 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.1 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.1 },
   ],
   advantages: ["Spread rendah & eksekusi cepat", "Regulasi kuat", "Platform lengkap", "Opsi akun cocok untuk semua trader"],
   disadvantages: ["Minimum deposit relatif tinggi", "Instrumen non-CFD nyata terbatas", "Leverage lebih kecil dibanding broker offshore"],

@@ -155,7 +155,7 @@ export const fpMarketsDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 4.40 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 4.40 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 4.40 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 4.40 },
   ],
   advantages: ["Spread sangat kompetitif (Raw ECN)", "Platform lengkap (MT4, MT5, cTrader)", "Tidak ada mark-up pada Raw account", "Regulasi kuat di banyak negara", "Cocok untuk trader manual, EA, scalping"],
   disadvantages: ["Minimum deposit $100 lebih tinggi dari beberapa broker ringan", "Leverage bisa dibatasi oleh regulator di wilayah tertentu", "Spread Standard lebih lebar dibanding ECN"],

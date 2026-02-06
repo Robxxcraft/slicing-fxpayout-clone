@@ -164,11 +164,11 @@ export const vantageDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard STP", pair: "XAU/USD", rebatePerLot: 10 },
     { accountType: "Standard STP", pair: "EUR/USD", rebatePerLot: 5 },
-    { accountType: "Standard STP", pair: "BTC/USD", rebatePerLot: 1.5 },
+    { accountType: "Standard STP", pair: "CRYPTO", rebatePerLot: 1.5 },
     
     { accountType: "Raw ECN", pair: "XAU/USD", rebatePerLot: 1.6 },
     { accountType: "Raw ECN", pair: "EUR/USD", rebatePerLot: 1.19 },
-    { accountType: "Raw ECN", pair: "BTC/USD", rebatePerLot: 1.6 },
+    { accountType: "Raw ECN", pair: "CRYPTO", rebatePerLot: 1.6 },
   ],
   advantages: ["Regulasi kuat di banyak yurisdiksi global", "Spread rendah di Raw ECN / Pro ECN", "Pilihan akun fleksibel sesuai strategi trader", "Platform lengkap & fitur trading canggih", "Tidak ada biaya deposit/withdraw dari broker"],
   disadvantages: [" Spread Standard bisa lebih tinggi dibanding ECN", "Komisi per lot tetap berlaku di Raw ECN", "Regulasi entitas berbeda tergantung wilayah klien"],

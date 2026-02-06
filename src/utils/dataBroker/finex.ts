@@ -132,7 +132,7 @@ export const finexDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 3 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.1 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.1 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.1 },
   ],
   advantages: ["Broker resmi teregulasi BAPPEBTI", "Deposit rendah ($10)", "Spread & komisi relatif kompetitif", "Akses ke banyak instrumen", "Eksekusi cepat & dukungan bank lokal"],
   disadvantages: ["Hanya satu tipe akun live", "Fitur edukasi & riset lebih sederhana dibanding broker global", "MT5 saja (tanpa MT4)"],

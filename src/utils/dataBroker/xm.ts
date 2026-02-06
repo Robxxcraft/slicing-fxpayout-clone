@@ -153,19 +153,19 @@ export const xmDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Micro", pair: "XAU/USD", rebatePerLot: 0.11 },
     { accountType: "Micro", pair: "EUR/USD", rebatePerLot: 0.06 },
-    { accountType: "Micro", pair: "BTC/USD", rebatePerLot: 0.14 },
+    { accountType: "Micro", pair: "CRYPTO", rebatePerLot: 0.14 },
     
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 11 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 6 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 14 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 14 },
 
     { accountType: "Ultra Low Micro", pair: "XAU/USD", rebatePerLot: 0.11 },
     { accountType: "Ultra Low Micro", pair: "EUR/USD", rebatePerLot: 0.06 },
-    { accountType: "Ultra Low Micro", pair: "BTC/USD", rebatePerLot: 0.14 },
+    { accountType: "Ultra Low Micro", pair: "CRYPTO", rebatePerLot: 0.14 },
 
     { accountType: "Ultra Low Standard", pair: "XAU/USD", rebatePerLot: 4 },
     { accountType: "Ultra Low Standard", pair: "EUR/USD", rebatePerLot: 2 },
-    { accountType: "Ultra Low Standard", pair: "BTC/USD", rebatePerLot: 4 },
+    { accountType: "Ultra Low Standard", pair: "CRYPTO", rebatePerLot: 4 },
   ],
   advantages: ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
   disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],

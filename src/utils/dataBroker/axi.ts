@@ -138,11 +138,11 @@ export const axiDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 2.40 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 4 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 4 },
     
     { accountType: "Pro", pair: "XAU/USD", rebatePerLot: 2.40 },
     { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 0.08 },
-    { accountType: "Pro", pair: "BTC/USD", rebatePerLot: 4 },
+    { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 4 },
   ],
   advantages: ["Spread rendah & eksekusi cepat", "Regulasi kuat (FCA/ASIC/FSCA)", "Platform trading populer", "Dukungan global"],
   disadvantages: ["Minimum efektif untuk ECN agak lebih tinggi", "Komisi per lot di Pro ECN"],

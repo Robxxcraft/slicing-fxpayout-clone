@@ -148,7 +148,7 @@ export const pepperstoneDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 2.40 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.40 },
   ],
   advantages: ["Spread rendah & eksekusi stabil", "Regulasi kuat dan internasional", "Platform lengkap (MT4, MT5, cTrader, TradingView)"],
   disadvantages: ["Instrumen non-CFD nyata terbatas", "Support 24/7 tidak tersedia untuk semua wilayah", "Leverage bisa dibatasi tergantung lokasi"],

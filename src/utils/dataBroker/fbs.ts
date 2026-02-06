@@ -170,11 +170,11 @@ export const fbsDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Cent", pair: "XAU/USD", rebatePerLot: 0.1 },
     { accountType: "Cent", pair: "EUR/USD", rebatePerLot: 0.04 },
-    { accountType: "Cent", pair: "BTC/USD", rebatePerLot: 0.2 },
+    { accountType: "Cent", pair: "CRYPTO", rebatePerLot: 0.2 },
 
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 10 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 3.61 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.36 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.36 },
   ],
   advantages: ["Minimum deposit sangat rendah", "Leverage sangat tinggi", "Spread kompetitif di akun ECN/Zero", "Akun Cent untuk trader pemula"],
   disadvantages: ["Spread akun non-ECN bisa lebih lebar", "Opsi instrumen non-CFD nyata tidak tersedia"],

@@ -182,23 +182,23 @@ export const exnessDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 3.2 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 3.2 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 7 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 7 },
 
     { accountType: "Standard Cent", pair: "XAU/USD", rebatePerLot: 0.32 },
     { accountType: "Standard Cent", pair: "EUR/USD", rebatePerLot: 0.32 },
-    { accountType: "Standard Cent", pair: "BTC/USD", rebatePerLot: 0.7 },
+    { accountType: "Standard Cent", pair: "CRYPTO", rebatePerLot: 0.7 },
 
     { accountType: "Pro", pair: "XAU/USD", rebatePerLot: 1.25 },
     { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 1.25 },
-    { accountType: "Pro", pair: "BTC/USD", rebatePerLot: 2.73 },
+    { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 2.73 },
 
     { accountType: "Raw Spread", pair: "XAU/USD", rebatePerLot: 1.08 },
     { accountType: "Raw Spread", pair: "EUR/USD", rebatePerLot: 1.08 },
-    { accountType: "Raw Spread", pair: "BTC/USD", rebatePerLot: 2.36 },
+    { accountType: "Raw Spread", pair: "CRYPTO", rebatePerLot: 2.36 },
 
     { accountType: "Zero", pair: "XAU/USD", rebatePerLot: 1.08 },
     { accountType: "Zero", pair: "EUR/USD", rebatePerLot: 1.08 },
-    { accountType: "Zero", pair: "BTC/USD", rebatePerLot: 2.36 },
+    { accountType: "Zero", pair: "CRYPTO", rebatePerLot: 2.36 },
   ],
   advantages: ["Spread & eksekusi sangat stabil", "Withdraw super cepat", "Banyak metode deposit & withdraw", "Tersedia akun Cent untuk pemula", "Ramah EA & scalping", "Leverage besar dan fleksibel"],
   disadvantages: ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"],

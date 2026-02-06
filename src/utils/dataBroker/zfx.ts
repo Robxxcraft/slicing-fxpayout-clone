@@ -143,15 +143,15 @@ export const zfxDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Mini", pair: "XAU/USD", rebatePerLot: 0.8 },
     { accountType: "Mini", pair: "EUR/USD", rebatePerLot: 0.8 },
-    { accountType: "Mini", pair: "BTC/USD", rebatePerLot: 0.8 },
+    { accountType: "Mini", pair: "CRYPTO", rebatePerLot: 0.8 },
 
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 13 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 8 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 8 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 8 },
 
     { accountType: "ECN", pair: "XAU/USD", rebatePerLot: 3 },
     { accountType: "ECN", pair: "EUR/USD", rebatePerLot: 3 },
-    { accountType: "ECN", pair: "BTC/USD", rebatePerLot: 3 },
+    { accountType: "ECN", pair: "CRYPTO", rebatePerLot: 3 },
   ],
   advantages: ["Spread ECN kompetitif", "Leverage tinggi", "MT4 & MT5 tersedia", "Akun cent tersedia"],
   disadvantages: ["Minimum deposit ECN cukup tinggi", "Rebate IB tidak transparan di publik", "Ada laporan keluhan pengguna (perlu kehati-hatian)"],

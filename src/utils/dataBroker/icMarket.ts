@@ -152,7 +152,7 @@ export const icMarketDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 2.40 },
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
-    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.40 },
   ],
   advantages: ["Spread & eksekusi sangat stabil", "Likuiditas tinggi (ECN)", "Ramah EA & scalping", "Platform trading lengkap", "Regulasi kuat"],
   disadvantages: ["Tidak menyediakan akun Cent", "Minimum deposit relatif tinggi", "Leverage dibatasi di beberapa wilayah"],

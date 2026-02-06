@@ -158,11 +158,11 @@ export const tickmillDetail: BrokerStruc = {
   rebateRates: [
     { accountType: "Classic", pair: "XAU/USD", rebatePerLot: 8 },
     { accountType: "Classic", pair: "EUR/USD", rebatePerLot: 8 },
-    { accountType: "Classic", pair: "BTC/USD", rebatePerLot: 0.8 },
+    { accountType: "Classic", pair: "CRYPTO", rebatePerLot: 0.8 },
 
     { accountType: "Raw", pair: "XAU/USD", rebatePerLot: 2 },
     { accountType: "Raw", pair: "EUR/USD", rebatePerLot: 2 },
-    { accountType: "Raw", pair: "BTC/USD", rebatePerLot: 0.8 },
+    { accountType: "Raw", pair: "CRYPTO", rebatePerLot: 0.8 },
   ],
   advantages: ["Spread ECN sangat rendah", "Komisi kompetitif", "Eksekusi cepat & stabil", "Regulasi kuat di banyak wilayah", "Platform trading lengkap"],
   disadvantages: ["Min deposit $100 relatif lebih tinggi dibanding broker lain", "Komisi berlaku pada akun Pro/VIP", "Leverage bisa dibatasi oleh regulator"],
