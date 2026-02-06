@@ -8,13 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const zfxDetail: BrokerStruc = {
+  id_ib: "Z940752S4",
+  contactSupport: "6287887786538",
   name: brokerName,
   profileImage: "zfx.webp",
   registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   detailUrl: "zfx",
   scheduleUrl: "/schedule",
-  statusRebate: "Manual Rebate",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],
   overallScore: {
@@ -137,6 +139,19 @@ export const zfxDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 8 },
     { pair: "XAU/USD", estimate: 13 },
     { pair: "CRYPTO", estimate: 8 },
+  ],
+  rebateRates: [
+    { accountType: "Mini", pair: "XAU/USD", rebatePerLot: 0.8 },
+    { accountType: "Mini", pair: "EUR/USD", rebatePerLot: 0.8 },
+    { accountType: "Mini", pair: "BTC/USD", rebatePerLot: 0.8 },
+
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 13 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 8 },
+    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 8 },
+
+    { accountType: "ECN", pair: "XAU/USD", rebatePerLot: 3 },
+    { accountType: "ECN", pair: "EUR/USD", rebatePerLot: 3 },
+    { accountType: "ECN", pair: "BTC/USD", rebatePerLot: 3 },
   ],
   advantages: ["Spread ECN kompetitif", "Leverage tinggi", "MT4 & MT5 tersedia", "Akun cent tersedia"],
   disadvantages: ["Minimum deposit ECN cukup tinggi", "Rebate IB tidak transparan di publik", "Ada laporan keluhan pengguna (perlu kehati-hatian)"],

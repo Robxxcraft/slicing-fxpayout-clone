@@ -86,14 +86,22 @@ export type AccountTypeStruc = {
   notes?: string;
 }
 
+export type RebateRate = {
+  accountType: string;   
+  pair: string;          
+  rebatePerLot: number; 
+};
+
 // BROKER STRUC
 export type BrokerStruc = { 
+  id_ib: string;
   name: string;
   profileImage: string;
+  contactSupport: string;
   registerUrl: string;
   websiteUrl: string;
   scheduleUrl?: string;
-  statusRebate: string;
+  statusRebate: "Auto" | "Manual";
   detailUrl: string;
   ranking: BrokerRanking;
   badges: string[];
@@ -111,6 +119,7 @@ export type BrokerStruc = {
     platforms: Platform[];
   },
   rebateProgram: RebateProgramType,
+  rebateRates: RebateRate[];
   advantages: string[];
   disadvantages: string[];
   communityRating: CommunityRatingStruc;

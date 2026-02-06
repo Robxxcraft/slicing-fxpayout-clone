@@ -8,13 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const finexDetail: BrokerStruc = {
+  id_ib: "5759",
+  contactSupport: "support@finex.com",
   name: brokerName,
   profileImage: "finex.webp",
-  registerUrl: "#",
-  websiteUrl: "#",
+  registerUrl: "https://track.finex.co.id/click?pid=5759&offer_id=12",
+  websiteUrl: "https://track.finex.co.id/click?pid=5759&offer_id=12",
   detailUrl: "finex",
   scheduleUrl: "/schedule",
-  statusRebate: "Manual Rebate",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: ["Tier Local", "Regulated Broker", "Low Deposit", "Beginner Friendly"],
   overallScore: {
@@ -126,6 +128,11 @@ export const finexDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 3 },
     { pair: "XAU/USD", estimate: 5 },
     { pair: "AUD/USD", estimate: 3 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 3 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.1 },
+    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.1 },
   ],
   advantages: ["Broker resmi teregulasi BAPPEBTI", "Deposit rendah ($10)", "Spread & komisi relatif kompetitif", "Akses ke banyak instrumen", "Eksekusi cepat & dukungan bank lokal"],
   disadvantages: ["Hanya satu tipe akun live", "Fitur edukasi & riset lebih sederhana dibanding broker global", "MT5 saja (tanpa MT4)"],

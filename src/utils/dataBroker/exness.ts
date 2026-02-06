@@ -8,13 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const exnessDetail: BrokerStruc = {
+  id_ib: "8cegzmlbpk",
+  contactSupport: "support@exness.com",
   name: brokerName,
   profileImage: "exness.webp",
   registerUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   websiteUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   detailUrl: "exness",
   scheduleUrl: "/schedule",
-  statusRebate: "Auto Rebate",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Akun Cent", "Ultra-Fast Execution"],
   overallScore: {
@@ -176,6 +178,27 @@ export const exnessDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 3.20 },
     { pair: "XAU/USD", estimate: 2.6 },
     { pair: "CRYPTO", estimate: 16 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 3.2 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 3.2 },
+    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 7 },
+
+    { accountType: "Standard Cent", pair: "XAU/USD", rebatePerLot: 0.32 },
+    { accountType: "Standard Cent", pair: "EUR/USD", rebatePerLot: 0.32 },
+    { accountType: "Standard Cent", pair: "BTC/USD", rebatePerLot: 0.7 },
+
+    { accountType: "Pro", pair: "XAU/USD", rebatePerLot: 1.25 },
+    { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 1.25 },
+    { accountType: "Pro", pair: "BTC/USD", rebatePerLot: 2.73 },
+
+    { accountType: "Raw Spread", pair: "XAU/USD", rebatePerLot: 1.08 },
+    { accountType: "Raw Spread", pair: "EUR/USD", rebatePerLot: 1.08 },
+    { accountType: "Raw Spread", pair: "BTC/USD", rebatePerLot: 2.36 },
+
+    { accountType: "Zero", pair: "XAU/USD", rebatePerLot: 1.08 },
+    { accountType: "Zero", pair: "EUR/USD", rebatePerLot: 1.08 },
+    { accountType: "Zero", pair: "BTC/USD", rebatePerLot: 2.36 },
   ],
   advantages: ["Spread & eksekusi sangat stabil", "Withdraw super cepat", "Banyak metode deposit & withdraw", "Tersedia akun Cent untuk pemula", "Ramah EA & scalping", "Leverage besar dan fleksibel"],
   disadvantages: ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"],

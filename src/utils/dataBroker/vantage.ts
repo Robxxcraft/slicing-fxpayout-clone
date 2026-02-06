@@ -8,13 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const vantageDetail: BrokerStruc = {
+  id_ib: "EJSu0LiT",
+  contactSupport: "support@vantagemarkets.com",
   name: brokerName,
   profileImage: "vantage.webp",
   registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   websiteUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
   detailUrl: "vantage",
   scheduleUrl: "/schedule",
-  statusRebate: "Auto Rebate",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Multi-Asset Trading", "ECN/STP", "Spread Kompetitif", "Regulasi Kuat"],
   overallScore: {
@@ -158,6 +160,15 @@ export const vantageDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 7.20 },
     { pair: "XAU/USD", estimate: 10.4 },
     { pair: "AUD/USD", estimate: 1.60 },
+  ],
+  rebateRates: [
+    { accountType: "Standard STP", pair: "XAU/USD", rebatePerLot: 10 },
+    { accountType: "Standard STP", pair: "EUR/USD", rebatePerLot: 5 },
+    { accountType: "Standard STP", pair: "BTC/USD", rebatePerLot: 1.5 },
+    
+    { accountType: "Raw ECN", pair: "XAU/USD", rebatePerLot: 1.6 },
+    { accountType: "Raw ECN", pair: "EUR/USD", rebatePerLot: 1.19 },
+    { accountType: "Raw ECN", pair: "BTC/USD", rebatePerLot: 1.6 },
   ],
   advantages: ["Regulasi kuat di banyak yurisdiksi global", "Spread rendah di Raw ECN / Pro ECN", "Pilihan akun fleksibel sesuai strategi trader", "Platform lengkap & fitur trading canggih", "Tidak ada biaya deposit/withdraw dari broker"],
   disadvantages: [" Spread Standard bisa lebih tinggi dibanding ECN", "Komisi per lot tetap berlaku di Raw ECN", "Regulasi entitas berbeda tergantung wilayah klien"],

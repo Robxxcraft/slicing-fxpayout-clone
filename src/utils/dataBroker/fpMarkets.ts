@@ -8,13 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const fpMarketsDetail: BrokerStruc = {
+  id_ib: "64952",
+  contactSupport: "partners@fpmarkets.com",
   name: brokerName,
   profileImage: "fp-markets.webp",
   registerUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   websiteUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
   detailUrl: "fp-markets",
   scheduleUrl: "/schedule",
-  statusRebate: "Auto Rebate",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "ECN/STP", "Low Spread", "Multi-Asset"],
   overallScore: {
@@ -149,6 +151,11 @@ export const fpMarketsDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 4.4 },
     { pair: "XAU/USD", estimate: 4.4 },
     { pair: "CRYPTO", estimate: 4.4 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 4.40 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 4.40 },
+    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 4.40 },
   ],
   advantages: ["Spread sangat kompetitif (Raw ECN)", "Platform lengkap (MT4, MT5, cTrader)", "Tidak ada mark-up pada Raw account", "Regulasi kuat di banyak negara", "Cocok untuk trader manual, EA, scalping"],
   disadvantages: ["Minimum deposit $100 lebih tinggi dari beberapa broker ringan", "Leverage bisa dibatasi oleh regulator di wilayah tertentu", "Spread Standard lebih lebar dibanding ECN"],

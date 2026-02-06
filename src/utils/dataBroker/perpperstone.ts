@@ -8,13 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const pepperstoneDetail: BrokerStruc = {
+  id_ib: "42191",
+  contactSupport: "support@pepperstone.com",
   name: brokerName,
   profileImage: "pepperstone.webp",
   registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   detailUrl: "pepperstone",
   scheduleUrl: "/schedule",
-  statusRebate: "Manual Rebate",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
   overallScore: {
@@ -142,6 +144,11 @@ export const pepperstoneDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 2.40 },
     { pair: "XAU/USD", estimate: 2.40 },
     { pair: "CRYPTO", estimate: 2.40 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "BTC/USD", rebatePerLot: 2.40 },
   ],
   advantages: ["Spread rendah & eksekusi stabil", "Regulasi kuat dan internasional", "Platform lengkap (MT4, MT5, cTrader, TradingView)"],
   disadvantages: ["Instrumen non-CFD nyata terbatas", "Support 24/7 tidak tersedia untuk semua wilayah", "Leverage bisa dibatasi tergantung lokasi"],
