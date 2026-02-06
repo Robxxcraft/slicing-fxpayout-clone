@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "light";
 type ButtonSize = "xl" | "lg" | "md";
 type IconPosition = "left" | "right";
-type ButtonType = "link" | "button";
+type ButtonType = "link" | "button" | "submit";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -16,6 +16,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonType?: ButtonType;
   urlTo?: string;
   target?: string;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -27,11 +28,12 @@ export default function Button({
   iconPosition = "left",
   buttonType = "button",
   urlTo,
+  disabled,
   target = "_self",
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "h-fit rounded-full text-[15px] md:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out cursor-pointer border inline-flex items-center justify-center gap-3";
+    "h-fit rounded-full text-[15px] md:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out border inline-flex items-center justify-center gap-3";
 
   let variantStyles = "";
   let sizeStyles = "";
@@ -71,7 +73,8 @@ export default function Button({
     sizeStyles = "px-6 2xl:px-8 py-4";
   }
 
-  const finalClass = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}`;
+  const finalClass = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}
+    ${disabled ? "cursor-not-allowed" : "cursor-pointer"}`;
 
   if (buttonType === "link") {
     return (
