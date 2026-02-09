@@ -8,12 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const fbsDetail: BrokerStruc = {
+  id_ib: "569605",
+  contactSupport: "support@fbs.com",
   name: brokerName,
   profileImage: "fbs.webp",
   registerUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   websiteUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   detailUrl: "fbs",
-  statusRebate: "Auto Rebate",
+  scheduleUrl: "/schedule",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Low Minimum Deposit", "Leverage Tinggi", "Multi-Asset Trading", "Beginner Friendly"],
   overallScore: {
@@ -163,6 +166,15 @@ export const fbsDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 3.61},
     { pair: "XAU/USD", estimate: 10},
     { pair: "CRYPTO", estimate: 2.5},
+  ],
+  rebateRates: [
+    { accountType: "Cent", pair: "XAU/USD", rebatePerLot: 0.1 },
+    { accountType: "Cent", pair: "EUR/USD", rebatePerLot: 0.04 },
+    { accountType: "Cent", pair: "CRYPTO", rebatePerLot: 0.2 },
+
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 10 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 3.61 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.36 },
   ],
   advantages: ["Minimum deposit sangat rendah", "Leverage sangat tinggi", "Spread kompetitif di akun ECN/Zero", "Akun Cent untuk trader pemula"],
   disadvantages: ["Spread akun non-ECN bisa lebih lebar", "Opsi instrumen non-CFD nyata tidak tersedia"],

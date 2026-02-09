@@ -9,6 +9,8 @@
   --color-light-gray: #e9e9e9;
   --color-my-light-blue: #E3EBFF;
   --color-my-red: #ff1500;
+  --color-my-pink: #FC685B;
+  --color-my-dark-purple: #101828;
   --color-my-purple: #170F49;
   --color-my-half-purple: #6F6C8F;
   --color-my-yellow: #FFC107;
@@ -22,6 +24,32 @@
       transform: translateX(-50%)
     }
   }
+}
+
+.primary-scrollbar {
+  scrollbar-width: thin;              /* Firefox */
+  scrollbar-color: #4160ff transparent; /* thumb | track */
+}
+
+/* Chrome, Edge, Safari */
+.primary-scrollbar::-webkit-scrollbar {
+  height: 6px;   
+  width: 6px;    
+}
+
+.primary-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.primary-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4160ff;
+  border-radius: 999px;
+}
+
+.primary-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 ._no-scrollbar::-webkit-scrollbar {
@@ -53,5 +81,21 @@ details > summary {
 }
 details > summary::-webkit-details-marker {
   display: none;
+}
+
+@media (max-width: 400px) {
+  .g-recaptcha {
+    transform: scale(0.9);
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.9);
+    -webkit-transform-origin: 0 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .g-recaptcha {
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+  }
 }
 

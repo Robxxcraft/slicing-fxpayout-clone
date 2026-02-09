@@ -8,12 +8,14 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const eightcapDetail: BrokerStruc = {
+  id_ib: "",
+  contactSupport: "",
   name: brokerName,
   profileImage: "eightcap.webp",
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "eightcap",
-  statusRebate: "Auto Rebate",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Low Spread", "Fast Execution"],
   overallScore: {
@@ -141,6 +143,11 @@ export const eightcapDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 8 },
     { pair: "XAU/USD", estimate: 10 },
     { pair: "AUD/USD", estimate: 5 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 3 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.1 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.1 },
   ],
   advantages: ["Spread rendah & eksekusi cepat", "Regulasi kuat", "Platform lengkap", "Opsi akun cocok untuk semua trader"],
   disadvantages: ["Minimum deposit relatif tinggi", "Instrumen non-CFD nyata terbatas", "Leverage lebih kecil dibanding broker offshore"],

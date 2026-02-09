@@ -8,12 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const hfmDetail: BrokerStruc = {
+  id_ib: "30494425",
+  contactSupport: "supportind@hfm.com",
   name: brokerName,
   profileImage: "hfm.webp",
   registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   websiteUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   detailUrl: "hfm",
-  statusRebate: "Auto Rebate",
+  scheduleUrl: "/schedule",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Regulated Broker", "Multi-Asset", "MT4/MT5", "Leverage Tinggi"],
   overallScore: {
@@ -157,6 +160,23 @@ export const hfmDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 3.2},
     { pair: "XAU/USD", estimate: 9},
     { pair: "CRYPTO", estimate: 0.80},
+  ],
+  rebateRates: [
+    { accountType: "Cent", pair: "XAU/USD", rebatePerLot: 0.05 },
+    { accountType: "Cent", pair: "EUR/USD", rebatePerLot: 0.04 },
+    { accountType: "Cent", pair: "CRYPTO", rebatePerLot: 2 },
+
+    { accountType: "Premium", pair: "XAU/USD", rebatePerLot: 5 },
+    { accountType: "Premium", pair: "EUR/USD", rebatePerLot: 4 },
+    { accountType: "Premium", pair: "CRYPTO", rebatePerLot: 2 },
+
+    { accountType: "Zero", pair: "XAU/USD", rebatePerLot: 1 },
+    { accountType: "Zero", pair: "EUR/USD", rebatePerLot: 0.5 },
+    { accountType: "Zero", pair: "CRYPTO", rebatePerLot: 2.73 },
+
+    { accountType: "Pro", pair: "XAU/USD", rebatePerLot: 1 },
+    { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 0.5 },
+    { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 1 },
   ],
   advantages: ["Spread Zero sangat kompetitif", "Regulasi lengkap di berbagai negara", "Dukungan trading multi-platform", "Cocok untuk pemula hingga profesional"],
   disadvantages: ["Struktur regulasi berbeda untuk tiap entitas", "Spread akun standar bisa lebih tinggi", "Tidak semua promosi bonus/nodeposit tersedia"],

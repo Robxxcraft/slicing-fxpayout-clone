@@ -48,8 +48,18 @@ const Footer = () => {
             Tautan Cepat
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
-            {listNavigation.map(({ title, url }, index) => {
-              if (title.toLocaleLowerCase() !== "legal")
+            {listNavigation.map(({ title, url, sublist }, index) => {
+              if (title === "Klaim Rebate") {
+                return (
+                  <Link
+                    key={index}
+                    to={"rebate-forex"}
+                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    {title}
+                  </Link>
+                )
+              } 
+              else if (sublist === undefined) {
                 return (
                   <Link
                     key={index}
@@ -58,6 +68,16 @@ const Footer = () => {
                     {title}
                   </Link>
                 );
+              } else {
+                return sublist.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.url}
+                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    {item.title}
+                  </Link>
+                ))
+              }
             })}
           </div>
         </div>
@@ -67,7 +87,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
             <div className="flex gap-4 2xl:gap-5">
-              <div className="relative size-6 2xl:size-8 bg-primary rounded-full">
+              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <FaMapMarkerAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
@@ -76,7 +96,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
-              <div className="relative size-6 2xl:size-8 bg-primary rounded-full">
+              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
@@ -84,7 +104,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
-              <div className="relative size-6 2xl:size-8 bg-primary rounded-full">
+              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <IoMdMail className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
@@ -95,7 +115,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-primary text-sm lg:text-base text-center py-5 text-white">
-        © 2025 FXPayout. All Right Reserved
+        © 2026 FXPayout. All Right Reserved
       </div>
     </footer>
   );

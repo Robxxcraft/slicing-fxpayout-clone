@@ -8,12 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const xmDetail: BrokerStruc = {
+  id_ib: "FDP7K",
+  contactSupport: "support@xm.com",
   name: brokerName,
   profileImage: "xm.webp",
   registerUrl: "https://affs.click/4gFt7",
   websiteUrl: "https://affs.click/pcNLG",
   detailUrl: "xm",
-  statusRebate: "Manual Rebate",
+  scheduleUrl: "/schedule",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: ["Multi-Regulated", "Low Spread", "Ultra-Fast Execution", "Human-Centered Broker"],
   overallScore: {
@@ -146,6 +149,23 @@ export const xmDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 9 },
     { pair: "XAU/USD", estimate: 15 },
     { pair: "CRYPTO", estimate: 25 },
+  ],
+  rebateRates: [
+    { accountType: "Micro", pair: "XAU/USD", rebatePerLot: 0.11 },
+    { accountType: "Micro", pair: "EUR/USD", rebatePerLot: 0.06 },
+    { accountType: "Micro", pair: "CRYPTO", rebatePerLot: 0.14 },
+    
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 11 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 6 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 14 },
+
+    { accountType: "Ultra Low Micro", pair: "XAU/USD", rebatePerLot: 0.11 },
+    { accountType: "Ultra Low Micro", pair: "EUR/USD", rebatePerLot: 0.06 },
+    { accountType: "Ultra Low Micro", pair: "CRYPTO", rebatePerLot: 0.14 },
+
+    { accountType: "Ultra Low Standard", pair: "XAU/USD", rebatePerLot: 4 },
+    { accountType: "Ultra Low Standard", pair: "EUR/USD", rebatePerLot: 2 },
+    { accountType: "Ultra Low Standard", pair: "CRYPTO", rebatePerLot: 4 },
   ],
   advantages: ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
   disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],

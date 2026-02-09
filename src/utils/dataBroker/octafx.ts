@@ -8,12 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
  
 export const octaFxDetail: BrokerStruc = {
+  id_ib: "47807098",
+  contactSupport: "support@octafx.com",
   name: brokerName,
   profileImage: "octafx.webp",
   registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   websiteUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
   detailUrl: "octafx",
-  statusRebate: "Manual Rebate",
+  scheduleUrl: "/schedule",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: ["Multi-Platform Trading", "Low Spread", "No Commission Deposit/Withdrawal", "Beginner & Advanced Friendly"],
   overallScore: {
@@ -139,6 +142,19 @@ export const octaFxDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 8 },
     { pair: "XAU/USD", estimate: 8 },
     { pair: "CRYPTO", estimate: 8 },
+  ],
+  rebateRates: [
+    { accountType: "MT4", pair: "XAU/USD", rebatePerLot: 2 },
+    { accountType: "MT4", pair: "EUR/USD", rebatePerLot: 2 },
+    { accountType: "MT4", pair: "CRYPTO", rebatePerLot: 2 },
+
+    { accountType: "MT5", pair: "XAU/USD", rebatePerLot: 2 },
+    { accountType: "MT5", pair: "EUR/USD", rebatePerLot: 2 },
+    { accountType: "MT5", pair: "CRYPTO", rebatePerLot: 2 },
+
+    { accountType: "Octa Trader", pair: "XAU/USD", rebatePerLot: 2 },
+    { accountType: "Octa Trader", pair: "EUR/USD", rebatePerLot: 2 },
+    { accountType: "Octa Trader", pair: "CRYPTO", rebatePerLot: 2 },
   ],
   advantages: [" Kondisi trading ramah biaya", "Spread kompetitif", "Platform lengkap (MT4, MT5, OctaTrader)", "Deposit & withdraw bebas komisi", "Banyak instrumen trading"],
   disadvantages: ["Tidak setinggi broker dengan regulasi top-tier seperti FCA/ASIC secara penuh di semua entitas", "Spread bisa melebar pada volatilitas tinggi", "Review pengguna ada yang menyebut masalah layanan tertentu (beberapa review mixed)"],

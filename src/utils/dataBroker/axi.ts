@@ -8,12 +8,15 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const axiDetail: BrokerStruc = {
+  id_ib: "4736053",
+  contactSupport: "service@axi.com",
   name: brokerName,
   profileImage: "axi.webp",
   registerUrl: "https://www.axi.com/int/live-account?promocode=4736053",
   websiteUrl: "https://www.axi.com/int/live-account?promocode=4736053",
   detailUrl: "axi",
-  statusRebate: "Auto Rebate",
+  scheduleUrl: "/schedule",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN/STP Broker", "Low Spread", "Leverage Fleksibel"],
   overallScore: {
@@ -131,6 +134,15 @@ export const axiDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 4.5 },
     { pair: "XAU/USD", estimate: 6 },
     { pair: "AUD/USD", estimate: 4 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 4 },
+    
+    { accountType: "Pro", pair: "XAU/USD", rebatePerLot: 2.40 },
+    { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 0.08 },
+    { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 4 },
   ],
   advantages: ["Spread rendah & eksekusi cepat", "Regulasi kuat (FCA/ASIC/FSCA)", "Platform trading populer", "Dukungan global"],
   disadvantages: ["Minimum efektif untuk ECN agak lebih tinggi", "Komisi per lot di Pro ECN"],

@@ -14,6 +14,7 @@ dist-ssr
 notes.md
 
 # Editor directories and files
+.env
 .vscode/*
 !.vscode/extensions.json
 .idea

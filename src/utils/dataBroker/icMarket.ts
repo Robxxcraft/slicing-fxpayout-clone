@@ -8,12 +8,14 @@ const brokerRanking: BrokerRanking = {
 };
 
 export const icMarketDetail: BrokerStruc = {
+  id_ib: "",
+  contactSupport: "",
   name: brokerName,
   profileImage: "ic-markets.webp",
   registerUrl: "#",
   websiteUrl: "#",
   detailUrl: "ic-markets",
-  statusRebate: "Auto Rebate",
+  statusRebate: "Auto",
   ranking: brokerRanking,
   badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
   overallScore: {
@@ -146,6 +148,11 @@ export const icMarketDetail: BrokerStruc = {
     { pair: "EUR/USD", estimate: 8 },
     { pair: "XAU/USD", estimate: 10 },
     { pair: "AUD/USD", estimate: 5 },
+  ],
+  rebateRates: [
+    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
+    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.40 },
   ],
   advantages: ["Spread & eksekusi sangat stabil", "Likuiditas tinggi (ECN)", "Ramah EA & scalping", "Platform trading lengkap", "Regulasi kuat"],
   disadvantages: ["Tidak menyediakan akun Cent", "Minimum deposit relatif tinggi", "Leverage dibatasi di beberapa wilayah"],
