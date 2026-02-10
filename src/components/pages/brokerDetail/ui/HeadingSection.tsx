@@ -1,6 +1,14 @@
 type HeadingVariant = "first" | "second"
 
-const HeadingSection = ({variant = "first", smText, children}: {variant?: HeadingVariant; smText?: string; children: React.ReactNode}) => {
+const HeadingSection = ({
+  variant = "first", 
+  smText, 
+  children
+}: {
+  variant?: HeadingVariant; 
+  smText?: string; 
+  children: React.ReactNode
+}) => {
   const baseStyle = `${variant === "second" ? 
       smText !== null ? `${smText} md:text-2xl 2xl:text-[32px]` 
       : "text-xl md:text-2xl 2xl:text-[32px]" 

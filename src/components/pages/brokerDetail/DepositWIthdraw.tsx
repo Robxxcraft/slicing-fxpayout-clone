@@ -2,7 +2,13 @@ import type { PaymentMethod, Platform } from "@/utils/dataBroker/typeDetailBroke
 import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 
-const DepositWIthdraw = ({paymentMethods, platforms}: {paymentMethods: PaymentMethod[]; platforms: Platform[]}) => {
+const DepositWIthdraw = ({
+  paymentMethods, 
+  platforms
+}: {
+  paymentMethods: PaymentMethod[]; 
+  platforms: Platform[]}
+) => {
   return (
     <section className="mt-10 md:mt-12 2xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 2xl:gap-14">

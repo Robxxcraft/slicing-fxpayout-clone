@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CardForm from "./ui/CardForm";
 import EmailTemplate from "./ui/EmailTemplate";
 import TripleBadgeFlow from "@/components/ui/TripleBadgeFlow";
@@ -18,20 +18,7 @@ const TransferForm = () => {
     username: ""
   });
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  const [stepperActive, setStepperActive] = useState<number>(0);
   const [selectedBroker, setSelectedBroker] = useState<BrokerStruc | null>(null);
-
-  useEffect(() => {
-    const isFormFilled = Object.values(form.values).every((str) => str.trim() !== "");
-    
-    if (isCopied && isFormFilled) {
-      setStepperActive(2);
-    } else if (isFormFilled && !isCopied) {
-      setStepperActive(1);
-    } else {
-      setStepperActive(0);
-    }
-  }, [form.values, isCopied]);
 
   const handleCopyTemplate = async () => {
     const rawUsername = form.values.username.trim().length === 0 ? "xxxxx" : form.values.username.trim();
@@ -117,6 +104,9 @@ ${rawUsername}`);
 
   window.location.href = contactUrl;
   };
+
+  const isFormFilled = Object.values(form.values).every((str) => str.trim() !== "");
+  const stepperActive = isCopied && isFormFilled ? 2 : isFormFilled ? 1 : 0;
 
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">

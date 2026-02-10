@@ -6,11 +6,11 @@ import BoundedIcon from "../../brokerDetail/ui/BoundedIcon";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 
 const CardForm = ({ form, handleChangeForm, setSelectedBroker }: 
-  {
-    form: TransferFormState; 
-    handleChangeForm: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
-    setSelectedBroker: React.Dispatch<React.SetStateAction<BrokerStruc | null>>;
-  }) => {
+{
+  form: TransferFormState; 
+  handleChangeForm: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
+  setSelectedBroker: React.Dispatch<React.SetStateAction<BrokerStruc | null>>;
+}) => {
   const allBrokers = Object.values(brokers).map(broker => broker.name);
 
   const handleChangeBroker = (e: React.ChangeEvent<HTMLSelectElement>) => {

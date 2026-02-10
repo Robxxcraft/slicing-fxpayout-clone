@@ -1,7 +1,7 @@
 import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 
-const MainAdvantage = ({keyAdvantages}: {keyAdvantages: string[]}) => {
+const MainAdvantage = ({ keyAdvantages }: { keyAdvantages: string[] }) => {
   return (
     <section id="keunggulan" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>Keunggulan Utama</HeadingSection>

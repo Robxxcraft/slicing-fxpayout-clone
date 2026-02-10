@@ -1,16 +1,17 @@
 import BoundedIcon from '../brokerDetail/ui/BoundedIcon';
 import SelectInput from '@/components/ui/SelectInput';
 import TextInput from '@/components/ui/TextInput';
-import type { FormBank } from './ValidationForm';
+import type { FormBank } from '@/types/validationForm';
 
-const SUPPORT_BANK = ["BCA","BRI","MANDIRI","BNI","BSI","LAINNYA"]
+const SUPPORT_BANK = ["BCA","BRI","Mandiri","BNI","BSI","LAINNYA"]
 
-const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors }: 
+const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors, handleTempBankChange }: 
   {
     form: FormBank; 
     handleChangeForm:React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
     selectedBroker: string;
     errors: Partial<Record<keyof FormBank, string>>;
+    handleTempBankChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
   }) => {
   
   return (
@@ -43,7 +44,7 @@ const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors }:
           altIcon="Icon bank" 
           defaultValue="&lt;Pilih Bank&gt;" 
           value={form.tempBank} 
-          onChangeForm={handleChangeForm} 
+          onChangeForm={handleTempBankChange} 
           optionData={SUPPORT_BANK}
           errorMessage={errors.tempBank}
           required />

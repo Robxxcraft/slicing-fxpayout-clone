@@ -5,7 +5,7 @@ import ContentHead from './ui/ContentHead';
 import ContentBody from './ui/ContentBody';
 import type { SpreadStructure } from '@/utils/dataBroker/typeDetailBroker';
 
-const Spread = ({tradingSpread}: {tradingSpread: SpreadStructure[]}) => {
+const Spread = ({ tradingSpread }: { tradingSpread: SpreadStructure[] }) => {
   return (
     <section id="spread-komisi" className="scroll-mt-26 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>Spread</HeadingSection>

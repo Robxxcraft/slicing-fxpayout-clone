@@ -7,7 +7,7 @@ import { throttle } from "lodash";
 import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "@/components/ui/Button";
 
-const NavigationBar = ({name, ranking, profileImage, registerUrl, websiteUrl}: 
+const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }: 
   {
     name: string; 
     ranking: BrokerRanking; 

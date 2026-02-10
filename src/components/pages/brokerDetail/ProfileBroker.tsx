@@ -17,7 +17,7 @@ type ProfileDetail = {
   totalInstrument?: string;
 }
 
-const ProfileBroker = ({profile}: {profile: ProfileDetailBroker}) => {
+const ProfileBroker = ({ profile }: { profile: ProfileDetailBroker }) => {
   const profileKeys = Object.keys(profile) as Array<keyof ProfileDetail>;
   const objectTitle: Record<keyof ProfileDetail, string> = {
     name: "Nama Broker",

@@ -1,7 +1,11 @@
 import React from "react";
 import BoundedIcon from "../brokerDetail/ui/BoundedIcon";
 
-const DefinitionSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<string, HTMLElement | null>>}) => {
+const DefinitionSection = ({ 
+  sectionsRef 
+}: {
+  sectionsRef: React.RefObject<Record<string, HTMLElement | null>>
+}) => {
   return (
     <section
       id="definition"

@@ -2,7 +2,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 import HeadingSection from "./HeadingSection";
 import type { AccountTypeStruc } from "@/utils/dataBroker/typeDetailBroker";
 
-const CardTypeAccount = ({account}: {account: AccountTypeStruc}) => {
+const CardTypeAccount = ({ account }: { account: AccountTypeStruc }) => {
   return (
     <div className="px-8 py-9 bg-white border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
       {account.notes &&

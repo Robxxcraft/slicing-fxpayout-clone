@@ -1,4 +1,4 @@
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import { IoIosCalculator } from "react-icons/io";
 import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronDown } from "react-icons/fa6";
@@ -13,7 +13,6 @@ const CardEstimationRebate = () => {
   const [selectedBroker, setSelectedBroker] = useState<string>(
     Object.values(brokers)[0].name
   );
-  const [estimationRebate, setEstimationRebate] = useState<string>('0');
   const allBrokers = Object.values(brokers);
 
   const handleChangeLotperMonth = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,15 +20,15 @@ const CardEstimationRebate = () => {
     setLotperMoth(num);
   };
 
-  useEffect(() => {
-    const selectedDetailBroker = allBrokers.find(broker => broker.name.toLocaleLowerCase() === selectedBroker.toLocaleLowerCase());
-    const pairIdx = supportPairs.findIndex(pair => pair === selectedPair);
-    if (selectedDetailBroker === undefined || pairIdx === -1) return;
-    const pairValue = typeof selectedDetailBroker.rebateProgram[pairIdx].estimate === "number" ?
-        selectedDetailBroker.rebateProgram[pairIdx].estimate : selectedDetailBroker.rebateProgram[pairIdx].estimate.min;
-    
-    setEstimationRebate(formattedUsd(Number(lotperMonth) * pairValue));
-  }, [allBrokers, lotperMonth, selectedBroker, selectedPair]);
+  const selectedDetailBroker = allBrokers.find(broker => broker.name.toLocaleLowerCase() === selectedBroker.toLocaleLowerCase());
+  const pairIdx = supportPairs.findIndex(pair => pair === selectedPair);
+
+  let pairValue = 0;
+  if (selectedDetailBroker && pairIdx !== -1) {
+    const estimateData = selectedDetailBroker.rebateProgram[pairIdx].estimate;
+    pairValue = typeof estimateData === "number" ? estimateData : estimateData.min;
+  }
+  const estimationRebate = formattedUsd(Number(lotperMonth) * pairValue);
 
   return (
     <div className="relative w-full lg:w-fit">

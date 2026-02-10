@@ -28,10 +28,22 @@ const HeroHome = () => {
           cashback hingga 90% dari komisi broker langsung kepada trader.
         </p>
         <div className="flex flex-row gap-4 flex-wrap md:flex-nowrap">
-          <Button buttonType="link" urlTo="/broker" variant="light" size="xl" className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! font-medium! text-nowrap">
+          <Button 
+            buttonType="link" 
+            urlTo="/broker" 
+            variant="light" 
+            size="xl" 
+            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! font-medium! text-nowrap"
+          >
             Daftar Sekarang
           </Button>
-          <Button variant="outline-light" size="xl" className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! font-medium! text-nowrap">
+          <Button 
+            buttonType="link"
+            urlTo="/calculator"
+            variant="outline-light" 
+            size="xl" 
+            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! font-medium! text-nowrap"
+          >
             Hitung Rebate
           </Button>
         </div>

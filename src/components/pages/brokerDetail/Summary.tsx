@@ -8,8 +8,8 @@ type SumaryStructure = {
   detail: string | string[];
   icon: string;
 }
-
-const Summary = ({summaryBroker}: {summaryBroker: SummaryBroker}) => {
+ 
+const Summary = ({ summaryBroker }: { summaryBroker: SummaryBroker }) => {
   const summaryItems: SumaryStructure[] = [
     { title: "Min Deposit", detail: summaryBroker.minDeposit, icon: "min-depo.svg" },
     { title: "Jenis Akun", detail: summaryBroker.types.join(", "), icon: "category-acc.svg" },

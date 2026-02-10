@@ -3,24 +3,14 @@ import MaskSvg from "@/components/ui/MaskSvg";
 import SelectInput from "@/components/ui/SelectInput";
 import TextInput from "@/components/ui/TextInput";
 import { formattedUsd, scrollToErrorInput } from "@/helper/formHelper";
+import { checkValidCalculator } from "@/helper/validationForm/calculatorValidation";
 import { useForm } from "@/hooks/useForm";
+import type { FormState, RebateResult } from "@/types/calculator";
 import { brokers } from "@/utils/dataBroker/brokers";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { supportPairs } from "@/utils/pairs";
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TiInfoLarge } from "react-icons/ti";
-
-type FormState = {
-  broker: string;
-  accountType: string;
-  pair: string;
-  lots: string;
-}
-
-type RebateResult = {
-  estimate: number;
-  rebatesPerLot: number;
-}
 
 const CalculatorSection = () => {
   const form = useForm<FormState>({
@@ -34,48 +24,38 @@ const CalculatorSection = () => {
     estimate: 0.0,
     rebatesPerLot: 0.0
   });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const allBrokers = Object.values(brokers);
 
-  useEffect(() => {
-    const broker = allBrokers.find((broker) => broker.name === form.values.broker);
-    if (broker === undefined) return;
-    setSelectedBroker(broker);
+  const handleBrokerChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+    form.handleChange(e);
 
-    form.setSpecificValue(
-      "accountType",
-      broker.rebateRates[0]?.accountType ?? ""
-    );
-  }, [form.values.broker]);
-
-  const checkValidForm = () => {
-    let inputError: string | null = null;
-    const isValidForm = form.validate((vals) => {
-      const newErrors: Partial<Record<keyof FormState, string>> = {};
-      if (!vals.broker) newErrors.broker = "Broker harus dipilih";
-      if (!vals.accountType) newErrors.accountType = "Tipe Akun harus dipilih";
-      if (!vals.pair) newErrors.pair = "Pair harus dipilih";
-      if (vals.lots.trim() === "") newErrors.lots = "Jumlah lots tidak boleh kosong";
-
-      const keys = Object.keys(newErrors);
-      if (keys.length > 0) inputError = keys[0];
-
-      return newErrors;
-    });
-    return {
-      inputError,
-      isFormOk: isValidForm
+    const broker = allBrokers.find((broker) => broker.name === value);
+    if (broker) {
+      setSelectedBroker(broker);
+      form.setSpecificValue(
+        "accountType",
+        broker.rebateRates[0]?.accountType ?? ""
+      );
     }
   }
 
   const handleCalculation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    const { inputError, isFormOk } = checkValidForm();
-    if (!isFormOk && inputError !== null) {
-      scrollToErrorInput(inputError);
+    const { isValidate, errorInput } = form.validate(checkValidCalculator);
+    if (!isValidate && errorInput !== null) {
+      if (errorInput) scrollToErrorInput(errorInput);
+      setIsLoading(false);
       return;
     }
-    if (selectedBroker === undefined) return;
+
+    if (selectedBroker === undefined) {
+      setIsLoading(false);
+      return;
+    }
     const rebateEst = selectedBroker.rebateRates.filter(
       (rate) => rate.accountType === form.values.accountType 
       && rate.pair === form.values.pair)[0];
@@ -83,6 +63,7 @@ const CalculatorSection = () => {
       estimate: rebateEst.rebatePerLot * Number(form.values.lots),
       rebatesPerLot: rebateEst.rebatePerLot,
     });
+    setIsLoading(false);
   }
 
   return (
@@ -114,7 +95,7 @@ const CalculatorSection = () => {
               altIcon="Icon broker" 
               defaultValue="&lt;Pilih&gt;" 
               value={form.values.broker} 
-              onChangeForm={form.handleChange} 
+              onChangeForm={handleBrokerChange} 
               optionData={allBrokers.map((broker) => broker.name)}
               errorMessage={form.errors.broker}
               required />
@@ -154,7 +135,12 @@ const CalculatorSection = () => {
               required />
           </div>
           <div className="text-center">
-            <Button buttonType="submit" variant="primary-light" className="py-4! 2xl:py-5! md:text-[20px]! 2xl:text-[24px]! font-medium! w-full md:w-[540px]!">
+            <Button 
+              disabled={isLoading} 
+              buttonType="submit" 
+              variant="primary-light" 
+              className="py-4! 2xl:py-5! md:text-[20px]! 2xl:text-[24px]! font-medium! w-full md:w-[540px]!"
+            >
               Hitung Estimasi Rebate
             </Button>
           </div>
