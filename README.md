@@ -43,3 +43,34 @@ Website di hosting melalui platform vercel yang dihubungkan dengan domain yang d
 ### Production & Preview
 - Domain Production: Domain production adalah domain resmi yang digunakan oleh pengguna. (https://fxpayout.com)
 - Domain Preview: Domain preview hanya digunakan untuk keperluan pengujian dan pengembangan. (https://fxpayout-demo.vercel.app/)
+
+# Dashboard Admin
+Dashboard admin digunakan sebagai tempat untuk melakukan monitoring data validasi yang dikirimkan oleh pengguna melalui laman https://fxpayout.com/validation.
+
+## Akses Laman
+- Login admin: https://fxpayout.com/dashboard/login
+- Monitoring data validasi: https://fxpayout.com/dashboard/validation-data
+- Pengaturan profil: https://fxpayout.com/dashboard/profile
+
+## Akses Login Admin
+1. Login dapat dilakukan dengan memasukkan username dan password yang sesuai.
+2. Login hanya dapat dilakukan oleh admin.
+3. Proses pembuatan akun tidak dilakukan di website dan hanya dilakukan di backend.
+4. Role terdiri dari admin dan user (pengguna).
+
+## Monitoring Data
+Admin dapat melakukan beberapa hal berikut dalam laman monitoring data: 
+  
+  1. Melihat data validasi yang masuk ke database. Data yang dapat dilihat berupa: nama lengkap, email, jenis broker, username akun trading, nomor akun trading, nomor handphone, jenis rebate, nama bank, nomor rekening bank, username akun bank, tanggal dikirim, dan status validasi.
+  2. Mencari data validasi berdasarkan nama lengkap, email, username akun trading, atau username akun bank.
+  3. Melakukan filter kolom yang ingin disembunyikan.
+  4. Menghapus data dalam kuantitas 1 atau lebih data.
+  5. Melakukan pengeditan data validasi.
+  6. Mengimport data secara manual melalui file .csv.
+  7. Melakukan reload melalui button untuk mendapatkan data terkini yang dikirimkan.
+
+## Pengturan Profil
+Melalui laman pengaturan profil, admin dapat melakukan:
+
+   1. Pengubahan username admin.
+   2. Mengganti password admin.
