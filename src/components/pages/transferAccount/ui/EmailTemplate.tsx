@@ -37,8 +37,8 @@ const EmailTemplate = ({
               Yth. Tim Support {rawBroker}, <br /><br />
 
               Saya mengajukan permohonan pemindahan akun trading saya ke bawah IB berikut: <br />
-              ID IB: xxxxxx <br />
-              Link IB: xxxxxx <br /><br />
+              ID IB: {selectedBroker ? selectedBroker.id_ib : "xxxxxx"} <br />
+              Link IB: {selectedBroker ? selectedBroker.websiteUrl : "xxxxxx"} <br /><br />
 
               Data akun saya: <br />
               Nama: {rawUsername} <br />
