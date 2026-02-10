@@ -33,7 +33,7 @@ const EmailTemplate = ({
           <div className="flex items-start gap-2 md:gap-4">
             <img src="/quotes-icon.svg" alt="Icon Quotes" 
               className="mt-1 scale-70 md:scale-90 2xl:scale-100"/>
-            <p className="text-base md:text-lg 2xl:text-2xl text-black/60 whitespace-pre-line">
+            <p className="text-base md:text-lg 2xl:text-2xl text-black/60 whitespace-pre-line break-all">
               Yth. Tim Support {rawBroker}, <br /><br />
 
               Saya mengajukan permohonan pemindahan akun trading saya ke bawah IB berikut: <br />
