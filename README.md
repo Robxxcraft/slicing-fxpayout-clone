@@ -1,69 +1,45 @@
-# React + TypeScript + Vite
+# Website FX Payout
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Gambaran umum sistem
+Frontend website dikembangkan menggunakan ReactJs, Typescript, Tailwind CSS. Website dideploy menggunakan platform Vercel dan telah terhubung dengan domain resmi milik klien yang dikelola melalui Hostinger. Vercel digunakan sebagai layanan hosting frontend dengan sistem deployment otomatis dari repository GitHub.
 
-Currently, two official plugins are available:
+## Cara menjalankan project secara lokal
+1. **Instal Node.js dan npm** (jika belum terinstal)
+   - Anda bisa mengunduh dan menginstalnya dari [Node.js](https://nodejs.org/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. **Download file proyek** dari repository github.
+   - Unduh atau clone repository proyek dari GitHub.
+   - Simpan proyek di direktori lokal komputer.
 
-## Expanding the ESLint configuration
+3. **Buka terminal** dan arahkan ke direktori proyek.
+   - Di Windows: Buka Command Prompt atau PowerShell dan gunakan perintah `cd` untuk masuk ke direktori proyek.
+   - Di MacOS/Linux: Buka Terminal dan gunakan perintah `cd` untuk masuk ke direktori proyek.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+4. **Instal dependensi:**
+   - Jalankan perintah berikut di terminal:
+     ```
+     npm install
+     ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   Perintah ini akan mengunduh semua dependensi yang diperlukan yang tercantum dalam file `package.json`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+5. **Jalankan Website secara lokal dengan menjalankan perintah berikut di terminal:**
+     ```
+     npm run dev
+     ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   Website dapat diakses secara lokal melalui http://localhost:5173
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+6. **Untuk melakukan build website dari React:**
+     ```
+     npm run build
+     ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deployment Website
+Website di hosting melalui platform vercel yang dihubungkan dengan domain yang disediakan oleh Hostinger. Setiap perubahan pada branch production akan otomatis dideploy oleh Vercel.
+### Domain Website
+- Dikelola melalui Hostinger
+- Dihubungkan ke Vercel menggunakan pengaturan DNS
+### Production & Preview
+- Domain Production: Domain production adalah domain resmi yang digunakan oleh pengguna. (https://fxpayout.com)
+- Domain Preview: Domain preview hanya digunakan untuk keperluan pengujian dan pengembangan. (https://fxpayout-demo.vercel.app/)
