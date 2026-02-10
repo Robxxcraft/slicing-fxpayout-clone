@@ -19,7 +19,7 @@ const CheckboxFilter = ({
 
   useEffect(() => {
     if (checkboxRef.current) {
-      checkboxRef.current.indeterminate = indeterminate;
+      checkboxRef.current.indeterminate = Boolean(indeterminate);
     }
   }, [indeterminate]);
   return (
