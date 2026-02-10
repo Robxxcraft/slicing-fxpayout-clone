@@ -16,15 +16,23 @@ import TypeAccount from "@/components/pages/brokerDetail/TypeAccount";
 import { brokers } from "@/utils/dataBroker/brokers";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import NotFound from "./NotFound";
 
 const BrokerDetailPage = () => {
   const { brokerId } = useParams();
   const broker = brokers[brokerId as keyof typeof brokers];
 
   useEffect(() => {
-    const titleName = broker ? broker.name : "Not Found";
-    document.title = `Rebate ${titleName} hingga $${broker.rebateProgram[0].estimate} per Lot | FX Payout`;
+    if (broker) {
+      document.title = `Rebate ${broker.name} hingga $${broker.rebateProgram[0].estimate} per Lot | FX Payout`;
+    } else {
+      document.title = "Broker Tidak Ditemukan | FX Payout";
+    }
   }, [broker]);
+
+  if (!broker) {
+    return <NotFound />
+  }
 
   if (!broker) {
     return (

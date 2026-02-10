@@ -4,6 +4,9 @@ import Navbar from "@/components/Navbar";
 import HeaderSection from "@/components/HeaderSection";
 import CtaSection from "@/components/CtaSection";
 import Table from "@/components/TableLayout";
+import { useParams } from "react-router-dom";
+import { brokers } from "@/utils/dataBroker/brokers";
+import NotFound from "./NotFound";
 
 type Schedule = {
   category: string;
@@ -30,9 +33,20 @@ const scheduleItems: Schedule[] = [
 ]
 
 const SchedulePage = () => {
+  const { brokerId } = useParams();
+  const broker = brokers[brokerId as keyof typeof brokers];
+  
   useEffect(() => {
-    document.title = "Cek Jadwal Rutin Rebate Axi Terbaru | FX Payout";
-  }, []);
+    if (broker) {
+      document.title = `Cek Jadwal Rutin Rebate ${broker.name} Terbaru | FX Payout`;
+    } else {
+      document.title = "Broker Tidak Ditemukan | FX Payout";
+    }
+  }, [broker]);
+
+  if (!broker) {
+    return <NotFound />
+  }
 
   return (
     <div className="font-inter">
@@ -42,8 +56,8 @@ const SchedulePage = () => {
           icon="/calendar-icon.svg" 
           badge="JADWAL REBATE BROKER" 
           title="JADWAL REBATE" 
-          titleHighlight="AXI"
-          paragraph="Berikut adalah jadwal rabat Axi dalam kondisi normal. Jadwal rabat dapat mengalami keterlambatan dalam kondisi tertentu, seperti masalah server, pemeliharaan sistem, gangguan pada sistem pembayaran, dan keterlambatan data rabat dari broker." />
+          titleHighlight={broker.name.toUpperCase()}
+          paragraph={`Berikut adalah jadwal rebate ${broker.name} dalam kondisi normal. Jadwal rebate dapat mengalami keterlambatan dalam kondisi tertentu, seperti masalah server, pemeliharaan sistem, gangguan pada sistem pembayaran, dan keterlambatan data rebate dari broker.`} />
         <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-10 lg:mt-8 2xl:mt-10">
           <Table>
             <Table.Heading>

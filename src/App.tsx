@@ -72,7 +72,7 @@ function App() {
         <Route path="/calculator" element={<CalculatorPage />} />
         <Route path="/transfer" element={<TransferAccount />} />
         <Route path="/validation" element={<ValidationPage />} />
-        <Route path="/schedule" element={<SchedulePage />} />
+        <Route path="/schedule/:brokerId" element={<SchedulePage />} />
         <Route path="/rebate-forex" element={<RebateForex />} />
 
         <Route path="/dashboard/login" element={<LoginPage authUser={authUser} />} />

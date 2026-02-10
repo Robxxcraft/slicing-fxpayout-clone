@@ -24,7 +24,7 @@ const ScheduleSection = ({
   });
   const allBrokers = Object.values(brokers).map((broker) => ({
     name: broker.name,
-    schedule: broker.scheduleUrl
+    schedule: broker.detailUrl
   }));
 
   // Transformasi & Filter Data
@@ -154,7 +154,7 @@ const ScheduleSection = ({
                     {row.name}
                   </Table.Cell>
                   <Table.Cell rowIndex={rowIdx}>
-                    <Link to={row.schedule === undefined ? "#" : row.schedule} className="flex items-center justify-center gap-1 text-primary text-nowrap">
+                    <Link to={row.schedule === undefined ? "#" : `/schedule/${row.schedule}`} className="flex items-center justify-center gap-1 text-primary text-nowrap">
                       <span>Lihat Jadwal</span>
                       <FaArrowRight size={18} />
                     </Link>
