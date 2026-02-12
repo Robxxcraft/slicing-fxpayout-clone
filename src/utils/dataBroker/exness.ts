@@ -91,8 +91,8 @@ export const exnessDetail: BrokerStruc = {
         { accountType: "Raw", spread: "0.0 - 0.1" },
         { accountType: "Zero", spread: "0.0" },
         { accountType: "Pro", spread: "0.3 - 0.7" },
-        { accountType: "Standar", spread: "0.8 - 1.2" },
-        { accountType: "Standar Cent", spread: "0.0" }
+        { accountType: "Standard", spread: "0.8 - 1.2" },
+        { accountType: "Standard Cent", spread: "0.0" }
       ]
     },
     {
@@ -102,8 +102,8 @@ export const exnessDetail: BrokerStruc = {
         { accountType: "Raw", spread: "0.1 - 0.3" },
         { accountType: "Zero", spread: "0.0" },
         { accountType: "Pro", spread: "0.3 - 0.6" },
-        { accountType: "Standar", spread: "0.0" },
-        { accountType: "Standar Cent", spread: "0.0" }
+        { accountType: "Standard", spread: "0.0" },
+        { accountType: "Standard Cent", spread: "0.0" }
       ]
     }
   ],

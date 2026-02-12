@@ -9,21 +9,23 @@ import { hfmDetail } from "./hfm";
 import { octaFxDetail } from "./octafx";
 import { pepperstoneDetail } from "./perpperstone";
 import { tickmillDetail } from "./tickmill";
+import { valetaxDetail } from "./valetax";
 import { vantageDetail } from "./vantage";
 import { xmDetail } from "./xm";
 import { zfxDetail } from "./zfx";
 
 export const brokers = {
   "exness": exnessDetail,
+  "valetax": valetaxDetail,
+  "zfx": zfxDetail,
+  "xm": xmDetail,
   "hfm": hfmDetail,
   "fbs": fbsDetail,
   "octafx": octaFxDetail,
-  "zfx": zfxDetail,
   "tickmill": tickmillDetail,
   "pepperstone": pepperstoneDetail,
   // "ic-markets": icMarketDetail,
   "fp-markets": fpMarketsDetail,
-  "xm": xmDetail,
   // "eightcap": eightcapDetail,
   "vantage": vantageDetail,
   "axi": axiDetail,
