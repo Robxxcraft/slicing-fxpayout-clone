@@ -39,12 +39,16 @@ const payments = [
   },
 ];
 
-const PaymentSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<string, HTMLElement | null>>}) => {
+const PaymentSection = ({
+  sectionsRef
+}: {
+  sectionsRef: React.RefObject<Record<string, HTMLElement | null>>
+}) => {
   return (
     <section
       id="payment"
       ref={el => {sectionsRef.current["payment"] = el}}
-      className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-[36px] border-t xl:border-0 border-[#E5E5E5]"
+      className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-9 border-t xl:border-0 border-[#E5E5E5]"
     >
       <div className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56">
         <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">

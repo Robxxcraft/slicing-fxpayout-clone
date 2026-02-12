@@ -22,7 +22,11 @@ export function useForm<T>(initialState: T) {
   const validate = (schema: (vals: T) => Partial<Record<keyof T, string>>) => {
     const validationsErrors = schema(values);
     setErrors(validationsErrors);
-    return Object.keys(validationsErrors).filter((error) => error !== "").length === 0;
+    const errorField = Object.keys(validationsErrors);
+    return {
+      isValidate: errorField.length === 0,
+      errorInput: errorField[0]
+    };
   } 
 
   const setSpecificValue = (name: keyof T, value: unknown) => {

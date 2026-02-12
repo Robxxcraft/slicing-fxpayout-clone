@@ -3,7 +3,7 @@ import type { RebateProgramType } from "@/utils/dataBroker/typeDetailBroker";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { TiInfoLarge } from "react-icons/ti";
 
-const RebateProgram = ({detailData}: {detailData: RebateProgramType}) => {
+const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
   let estimateEur;
   let estimateXau;
   const isRebateProgramText = typeof detailData === "string";

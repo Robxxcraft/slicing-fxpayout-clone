@@ -7,22 +7,11 @@ import CardBankForm from "./CardBankForm";
 import { useForm } from "@/hooks/useForm";
 import SuccessModal from "@/components/ui/SuccessModal";
 import { scrollToErrorInput, validateOnlyNumber } from "@/helper/formHelper";
-
-export type FormValidation = {
-  broker: string;
-  identityUsername: string;
-  email: string;
-  accountNumber: string;
-  tradingUsername: string;
-  handphoneNumber: string;
-}
-export type FormBank = {
-  rebate: string;
-  tempBank: string;
-  bank: string;
-  rekeningNumber: string;
-  holdingUsername: string;
-}
+import { postFormValidationData } from "@/utils/api";
+import type { ValidationData } from "@/models/validationData";
+import type { FormBank, FormValidation, ModalResponse } from "@/types/validationForm";
+import { checkValidFormValidation } from "@/helper/validationForm/formValAccount";
+import { toast } from "react-toastify";
 
 const ValidationForm = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -41,10 +30,10 @@ const ValidationForm = () => {
     rekeningNumber: "",
     holdingUsername: "",
   });
-  const [isVerified, setIsVerified] = useState<boolean>(false);
+  const [captchaValue, setCaptcaValue] = useState<string>("");
   const [errorMessageCapthca, setErrorMessageCapthca] = useState<string>("");
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const [stepperActive, setStepperActive] = useState<number>(0);
+  const [showModal, setShowModal] = useState<ModalResponse>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (showModal) {
@@ -57,114 +46,98 @@ const ValidationForm = () => {
     };
   }, [showModal]);
   
-  useEffect(() => {
-    const isValidationFilled = Object.values(formValidation.values).every((str) => str.trim() !== "");
-    const isBankFilled = Object.values(formBank.values).every((str) => str.trim() !== "");
-    
-    if (isBankFilled && isValidationFilled) {
-      setStepperActive(2);
-    } else if (isValidationFilled && !isBankFilled) {
-      setStepperActive(1);
-    } else {
-      setStepperActive(0);
-    }
-  }, [formBank.values, formValidation.values]);
+  const handleTempBankChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+    formBank.handleChange(e);
 
-  const checkValidFormValidation = () => {
-    let inputError: string | null = null;
-    const isValidFormValidation = formValidation.validate((vals) => {
-      const newErrors: Partial<Record<keyof FormValidation, string>> = {};
-      if (!vals.broker) newErrors.broker = "Broker harus dipilih";
-      if (!vals.identityUsername.trim()) newErrors.identityUsername = "Nama lengkap tidak boleh kosong";
-      if (vals.email.trim() === "") {
-        newErrors.email = "Email tidak boleh kosong";
-      } else if (!vals.email.includes("@")) {
-        newErrors.email = "Email tidak valid";
-      }
-      
-      if (!vals.accountNumber.trim()) {
-        newErrors.accountNumber = "Nomor akun tidak boleh kosong";
-      } else if (!validateOnlyNumber(vals.accountNumber)) {
-        newErrors.accountNumber = "Nomor akun tidak valid";
-      }
-
-      if (!vals.tradingUsername.trim()) newErrors.tradingUsername = "Nama akun tidak boleh kosong";
-
-      if (!vals.handphoneNumber.trim()) {
-        newErrors.handphoneNumber = "Nomor HP tidak boleh kosong";
-      } else if (!validateOnlyNumber(vals.handphoneNumber)) {
-        newErrors.handphoneNumber = "Nomor HP tidak valid";
-      }
-      const keys = Object.keys(newErrors);
-      if (keys.length > 0) inputError = keys[0];
-
-      return newErrors;
-    });
-    return {
-      inputError,
-      isFormValidationOk: isValidFormValidation
+    if (value !== "LAINNYA") {
+      formBank.setSpecificValue("bank", value);
+    } else if (value === "LAINNYA") {
+      formBank.setSpecificValue("bank", "");
     }
   }
 
-  const checkValidFormBank = () => {
-    let inputError: string | null = null;
-    const isValidFormValidation = formBank.validate((vals) => {
-      const newErrors: Partial<Record<keyof FormBank, string>> = {};
-      if (!vals.rebate) newErrors.rebate = "Broker harus dipilih";
+  const checkValidFormBank = (vals: FormBank) => {
+    const errors: Partial<Record<keyof FormBank, string>> = {};
+    if (!vals.rebate) errors.rebate = "Rebate harus dipilih";
     
-      if (formBank.values.tempBank === "LAINNYA") {
-        if (!vals.bank.trim()) newErrors.bank = "Nama bank tidak boleh kosong";
-      } else if (!vals.tempBank) {
-        newErrors.tempBank = "Bank harus dipilih"
-      }
-      
-      if (!vals.rekeningNumber.trim()) {
-        newErrors.rekeningNumber = "Nomor rekening tidak boleh kosong";
-      } else if (!validateOnlyNumber(vals.rekeningNumber)) {
-        newErrors.rekeningNumber = "Nomor rekening tidak valid";
-      }
-
-      if (!vals.holdingUsername.trim()) newErrors.holdingUsername = "Nama pemegang rekening tidak boleh kosong";
-
-      const keys = Object.keys(newErrors);
-      if (keys.length > 0) inputError = keys[0];
-
-      return newErrors;
-    });
-    return {
-      inputError,
-      isFormBankOk: isValidFormValidation
+    if (formBank.values.tempBank === "LAINNYA") {
+      if (!vals.bank.trim()) errors.bank = "Nama bank tidak boleh kosong";
+    } else {
+      formBank.setSpecificValue("bank", formBank.values.tempBank);
     }
+    if (!vals.tempBank) {
+      errors.tempBank = "Bank harus dipilih";
+    }
+    
+    if (!vals.rekeningNumber.trim()) {
+      errors.rekeningNumber = "Nomor rekening tidak boleh kosong";
+    } else if (!validateOnlyNumber(vals.rekeningNumber)) {
+      errors.rekeningNumber = "Nomor rekening tidak valid";
+    }  
+
+    if (!vals.holdingUsername.trim()) errors.holdingUsername = "Nama pemegang rekening tidak boleh kosong";  
+
+    return errors;
   }
 
   const handleCaptchaChange = (value: string | null) => {
-    if (value) setIsVerified(true);
+    if (value) {
+      setCaptcaValue(value);
+    }
     setErrorMessageCapthca("");
   }
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const checkFormValidation = checkValidFormValidation();
-    const checkFormBank = checkValidFormBank();
+    setIsLoading(true);
 
-    if (!(checkFormValidation.isFormValidationOk && checkFormBank.isFormBankOk)) {
-      const errorField = checkFormValidation.inputError || checkFormBank.inputError;
-
-      if (errorField) scrollToErrorInput(errorField);
-      return;
+    try {
+      const checkFormValidation = formValidation.validate(checkValidFormValidation);
+      const checkFormBank = formBank.validate(checkValidFormBank);
+  
+      if (!(checkFormValidation.isValidate && checkFormBank.isValidate)) {
+        const errorField = checkFormValidation.errorInput || checkFormBank.errorInput;
+        if (errorField) scrollToErrorInput(errorField);
+        return;
+      }
+      if (!captchaValue) {
+        setErrorMessageCapthca("Mohon konfirmasi bahwa Anda bukan robot");
+        return;
+      }
+      const item: ValidationData = {
+        id: "0",
+        full_name: formValidation.values.identityUsername,
+        email: formValidation.values.email,
+        broker: formValidation.values.broker,
+        trading_account_name: formValidation.values.tradingUsername,
+        trading_account_number: formValidation.values.accountNumber,
+        phone_number: formValidation.values.handphoneNumber,
+        rebate: formBank.values.rebate === "Bank" ? "bank" : "trading",
+        bank: formBank.values.bank,
+        bank_account_name: formBank.values.holdingUsername,
+        bank_account_number: formBank.values.rekeningNumber,
+      }
+  
+      const { error } = await postFormValidationData({ item, captchaValue });
+  
+      if (error) {
+        toast.error("Permintaan Gagal Dikirim. Coba beberapa saat lagi." );
+      } else {
+        setShowModal("SUCCESS");
+        formValidation.resetForm();
+        formBank.resetForm();
+        if (recaptchaRef.current !== null) recaptchaRef.current.reset();
+        setCaptcaValue("");
+      }
+    } finally {
+      setIsLoading(false);
     }
-    if (!isVerified) {
-      setErrorMessageCapthca("Mohon konfirmasi bahwa Anda bukan robot");
-      return;
-    }
-
-    if (recaptchaRef.current !== null) recaptchaRef.current.reset();
-    setIsVerified(false);
-    formValidation.resetForm();
-    formBank.resetForm();
-    setShowModal(true);
   }
+
+  const isValidationFilled = Object.values(formValidation.values).every((v) => v?.toString().trim() !== "");
+  const isBankFilled = Object.values(formBank.values).every((v) => v?.toString().trim() !== "");
+  const stepperActive = isBankFilled && isValidationFilled ? 2 : isValidationFilled ? 1 : 0;
 
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">
@@ -200,6 +173,7 @@ const ValidationForm = () => {
               selectedBroker={formValidation.values.broker} 
               form={formBank.values} 
               handleChangeForm={formBank.handleChange}
+              handleTempBankChange={handleTempBankChange}
               errors={formBank.errors} />
           </div>
           <div className="col-span-12 xl:col-span-7 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -212,7 +186,7 @@ const ValidationForm = () => {
                   ref={recaptchaRef}
                   sitekey={import.meta.env["VITE_KEY_CAPTHCA"]}
                   onChange={handleCaptchaChange}
-                  onExpired={() => setIsVerified(false)}
+                  onExpired={() => setCaptcaValue("")}
                   className="g-recaptcha"
                 />
               </div>
@@ -224,14 +198,22 @@ const ValidationForm = () => {
             </div>
           </div>
           <div className="col-span-12 xl:col-span-5">
-            <Button buttonType="submit" variant="primary-light" className="py-4! 2xl:py-5! md:text-[20px]! 2xl:text-[24px]! font-medium! w-full">
+            <Button 
+              loading={isLoading}
+              disabled={isLoading}
+              buttonType="submit" 
+              variant="primary-light" 
+              className="py-4! 2xl:py-5! md:text-[20px]! 2xl:text-[24px]! font-medium! w-full">
               Submit Validasi
             </Button>
           </div>
         </form>
       </div>
 
-      {showModal && <SuccessModal isVisible={showModal} toggleModal={() => setShowModal(false)} />}
+      {showModal === "SUCCESS" && 
+      <SuccessModal 
+        isVisible={showModal === "SUCCESS"} 
+        toggleModal={() => setShowModal(null)} />}
     </section>
   )
 }

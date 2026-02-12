@@ -2,7 +2,7 @@ import SelectInput from '@/components/ui/SelectInput';
 import BoundedIcon from '../brokerDetail/ui/BoundedIcon';
 import TextInput from '@/components/ui/TextInput';
 import { brokers } from '@/utils/dataBroker/brokers';
-import type { FormValidation } from './ValidationForm';
+import type { FormValidation } from '@/types/validationForm';
 
 const CardValidation = ({ form, handleChangeForm, errors }: 
   {

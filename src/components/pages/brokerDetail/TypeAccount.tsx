@@ -4,7 +4,7 @@ import CardTypeAccount from "./ui/CardTypeAccount";
 import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 
-const TypeAccount = ({accountDetail}: {accountDetail: AccountTypeStruc[]}) => {
+const TypeAccount = ({ accountDetail }: { accountDetail: AccountTypeStruc[] }) => {
   const gridCard = useMemo(() => {
     const MAX_COL = 3;
     const totalItems = accountDetail.length;

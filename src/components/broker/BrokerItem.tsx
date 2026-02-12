@@ -36,7 +36,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
             {item.statusRebate} Rebate
           </div>
         </div>
-        <p className="mt-2 text-[#222222] leading-[160%]">{item.cardDescription}</p>
+        <p className="mt-2 text-[#222222] leading-[160%]">{item.badges.join(", ")}</p>
         <div className="my-3 lg:my-4 h-[0.5px] w-full bg-[rgba(0,0,0,0.2)]"></div>
         {isRebateProgramText ? 
           <div className="flex gap-2 h-fit">

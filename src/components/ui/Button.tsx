@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
-type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "light";
+type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "light" | "danger" | "no-bg";
 type ButtonSize = "xl" | "lg" | "md";
 type IconPosition = "left" | "right";
 type ButtonType = "link" | "button" | "submit";
@@ -17,6 +18,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   urlTo?: string;
   target?: string;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 export default function Button({
@@ -29,36 +31,54 @@ export default function Button({
   buttonType = "button",
   urlTo,
   disabled,
+  loading,
   target = "_self",
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "h-fit rounded-full text-[15px] md:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out border inline-flex items-center justify-center gap-3";
+    "relative h-fit rounded-full text-[15px] md:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out border inline-flex items-center justify-center gap-3";
 
   let variantStyles = "";
   let sizeStyles = "";
+  let spinnerCircle = "";
 
   if (variant === "primary") {
     variantStyles =
-      "bg-linear-to-t from-dark-primary to-primary text-white border-black hover:brightness-80";
+      "bg-linear-to-t from-dark-primary to-primary text-white border-black hover:brightness-80 active:brightness-60 disabled:from-black/30 disabled:active:brightness-100 disabled:to-black/30 disabled:hover:brightness-100";
+    spinnerCircle = "text-white";
   }
   if (variant === "primary-light") {
     variantStyles =
-      "bg-linear-to-t from-dark-primary to-primary text-white border-white hover:brightness-80";
+      "bg-linear-to-t from-dark-primary to-primary text-white border-white hover:brightness-80 active:brightness-60 disabled:from-black/30 disabled:active:brightness-100 disabled:to-black/30 disabled:hover:brightness-100";
+    spinnerCircle = "text-white";
+  }
+
+  if (variant === "danger") {
+    variantStyles =
+      "bg-my-red text-white border-white hover:brightness-80 active:brightness-60 disabled:bg-black/30 disabled:active:brightness-100 disabled:hover:brightness-100";
+    spinnerCircle = "text-white";
   }
 
   if (variant === "outline") {
-    variantStyles =
-      "bg-transparent text-black border-black hover:bg-primary hover:text-white";
+    variantStyles = `bg-transparent text-black border-black hover:bg-primary hover:text-white active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60 disabled:border-black/60`;
+    spinnerCircle = "text-black/20";
   }
   if (variant === "outline-light") {
     variantStyles =
-      "bg-transparent text-white border-white hover:bg-white hover:text-primary";
+      "bg-transparent text-white border-white hover:bg-white hover:text-primary active:brightness-80 disabled:active:brightness-90";
+    spinnerCircle = "text-black/20";
   }
 
   if (variant === "light") {
     variantStyles =
-      "bg-white text-black border-white hover:bg-primary hover:text-white";
+      "bg-white text-black border-white hover:bg-primary hover:text-white active:brightness-80 disabled:hover:bg-white disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60";
+    spinnerCircle = "text-black/20";
+  }
+
+  if (variant === "no-bg") {
+    variantStyles =
+      "bg-transparent text-black border-transparent hover:underline active:brightness-80 disabled:active:text-black/60 disabled:text-black/60";
+    spinnerCircle = "text-black/20";
   }
 
   if (size === "xl") {
@@ -74,7 +94,7 @@ export default function Button({
   }
 
   const finalClass = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}
-    ${disabled ? "cursor-not-allowed" : "cursor-pointer"}`;
+    cursor-pointer disabled:cursor-auto`;
 
   if (buttonType === "link") {
     return (
@@ -89,12 +109,19 @@ export default function Button({
   }
 
   return (
-    <button className={finalClass} {...props}>
-      {/* ICON LEFT */}
-      {icon && iconPosition === "left" && <span className="flex">{icon}</span>}
-      {children}
-      {/* ICON RIGHT */}
-      {icon && iconPosition === "right" && <span className="flex">{icon}</span>}
+    <button className={finalClass} {...props} disabled={disabled}>
+      {loading && 
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Spinner circle={spinnerCircle} />
+        </div>
+      }
+      <div className={`flex items-center gap-2 ${loading ? "opacity-0" : "opacity-100"}`}>
+        {/* ICON LEFT */}
+        {icon && iconPosition === "left" && <span className="flex">{icon}</span>}
+        {children}
+        {/* ICON RIGHT */}
+        {icon && iconPosition === "right" && <span className="flex">{icon}</span>}
+      </div>
     </button>
   );
 }

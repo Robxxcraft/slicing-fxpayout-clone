@@ -26,7 +26,7 @@ const TripleBadgeFlow = ({
       }
 
       return (
-        <div className="filter h-full drop-shadow-[0_0_1px_#000000]">
+        <div key={index} className="filter h-full drop-shadow-[0_0_1px_#000000]">
           <div 
             className={`${stepperActive === index ? "text-primary" : stepperActive > index ? "text-black" : "text-[#ABB7C2]"} 
               px-6 py-3 h-full md:py-4 flex items-center gap-2 md:gap-4 bg-white`}

@@ -9,7 +9,11 @@ import { Link } from "react-router-dom";
 
 const supportEntry = [5, 10, 20, 50];
 
-const ScheduleSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<string, HTMLElement | null>>}) => {
+const ScheduleSection = ({
+  sectionsRef
+}: {
+  sectionsRef: React.RefObject<Record<string, HTMLElement | null>>
+}) => {
   const [query, setQuery] = useState<string>("");
   const [sorting, setSorting] = useState<"ASC" | "DESC">("ASC");
   const [totalEntry, setTotalEntry] = useState<number>(10);
@@ -20,7 +24,7 @@ const ScheduleSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<str
   });
   const allBrokers = Object.values(brokers).map((broker) => ({
     name: broker.name,
-    schedule: broker.scheduleUrl
+    schedule: broker.detailUrl
   }));
 
   // Transformasi & Filter Data
@@ -84,7 +88,7 @@ const ScheduleSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<str
     <section
       id="schedule"
       ref={el => {sectionsRef.current["scehdule"] = el}}
-      className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-[36px] border-t xl:border-0 border-[#E5E5E5]"
+      className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-9 border-t xl:border-0 border-[#E5E5E5]"
     >
       <div className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56">
         <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
@@ -150,7 +154,7 @@ const ScheduleSection = ({sectionsRef}: {sectionsRef: React.RefObject<Record<str
                     {row.name}
                   </Table.Cell>
                   <Table.Cell rowIndex={rowIdx}>
-                    <Link to={row.schedule === undefined ? "#" : row.schedule} className="flex items-center justify-center gap-1 text-primary text-nowrap">
+                    <Link to={row.schedule === undefined ? "#" : `/schedule/${row.schedule}`} className="flex items-center justify-center gap-1 text-primary text-nowrap">
                       <span>Lihat Jadwal</span>
                       <FaArrowRight size={18} />
                     </Link>

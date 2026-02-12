@@ -11,7 +11,11 @@ type DetailBio = {
   icon: string;
 }
 
-const HeaderBroker = ({name, ranking, badges, profileImage, overallScore, description, registerUrl, spesification, websiteUrl}: 
+const HeaderBroker = ({
+  name, ranking, badges, 
+  profileImage, overallScore, description, 
+  registerUrl, spesification, websiteUrl
+}: 
   {
     name: string; 
     ranking: BrokerRanking; 

@@ -17,7 +17,7 @@ type ProfileDetail = {
   totalInstrument?: string;
 }
 
-const ProfileBroker = ({profile}: {profile: ProfileDetailBroker}) => {
+const ProfileBroker = ({ profile }: { profile: ProfileDetailBroker }) => {
   const profileKeys = Object.keys(profile) as Array<keyof ProfileDetail>;
   const objectTitle: Record<keyof ProfileDetail, string> = {
     name: "Nama Broker",
@@ -50,7 +50,7 @@ const ProfileBroker = ({profile}: {profile: ProfileDetailBroker}) => {
                 <div className="w-1/2 md:w-fit">
                   <ContentHead>{objectTitle[key]}</ContentHead>
                 </div>
-                <div className="w-1/2 md:w-fit text-right">
+                <div className="w-1/2 md:w-fit lg:w-[70%] text-right">
                   <ContentBody>{
                     key === "ranking" ? 
                      `Tier ${profile.ranking.tier} — ${profile.ranking.title}` :

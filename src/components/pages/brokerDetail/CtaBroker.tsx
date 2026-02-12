@@ -2,7 +2,7 @@ import { IoArrowForward } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 
-const CtaBroker = ({name, websiteUrl}: {name: string; websiteUrl: string}) => {
+const CtaBroker = ({ name, websiteUrl }: { name: string; websiteUrl: string }) => {
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-20">
       <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
