@@ -8,22 +8,6 @@ import { LuArrowUpDown } from "react-icons/lu";
 import { FaArrowUpLong, FaArrowDownLong } from "react-icons/fa6";
 import Spinner from "../ui/Spinner";
 
-// ! FITUR:
-// ! [1] SORTING TIAP KOLOM
-// ! [2] FILTERING/SEARCH KE DATABASE
-// ! [3] PAGINATION
-// ! [4] HIDE KOLOM
-// ! [5] SELECTION ROW DATA
-// ! [6] DELETE 1 DATA
-// ! [7] DELETE MANY DATA
-// ! [8] EDIT DATA
-// ! [9] IMPORT BY CSV
-// ! [10] SORTING BY BROKER
-// ! [11] FORM POST DATA
-// ! [12] Visualisasi rebate & status
-
-// TODO: SELECTION STATUS VALIDATION
-
 const TableValData = ({ 
   tableInstance,
   isLoading,
@@ -49,11 +33,11 @@ const TableValData = ({
                   return (
                   <Table.HeadingItem 
                     key={cellEl.id}
-                    className={` ${isSelectRow ? "px-2! py-2! left-0 z-8" : "px-4! py-2! min-w-[180px] max-w-60"}
+                    className={` ${isSelectRow ? "px-2! py-2! left-0 z-8" : "px-2! py-2! min-w-60 max-w-[300px]"}
                       sticky top-0 border-r border-b border-[#A9A9A9] bg-gray-200 cursor-pointer shadow-[inset_-1px_0_0_0_#A9A9A9,inset_0_-1px_0_0_#A9A9A9]`}
                     handleClick={isLoading ? undefined : cellEl.column.getToggleSortingHandler()}
                   >
-                    <div className="flex justify-between items-center gap-2">
+                    <div className="flex justify-between items-center gap-4">
                       <span className="whitespace-nowrap font-normal">
                           {flexRender(
                           cellEl.column.columnDef.header,
@@ -61,9 +45,11 @@ const TableValData = ({
                           )}
                       </span>
                       { !isSelectRow && 
-                        (isSorted === "asc" ? <FaArrowUpLong className="text-[12px] text-black/80" />
-                        : isSorted === "desc" ? <FaArrowDownLong className="text-[12px] text-black/80" />
-                        : <LuArrowUpDown className="text-black/80" />)
+                        <div className="shrink-0">
+                          {isSorted === "asc" ? <FaArrowUpLong className="text-[12px] text-black/80" />
+                          : isSorted === "desc" ? <FaArrowDownLong className="text-[12px] text-black/80" />
+                          : <LuArrowUpDown className="text-black/80" />}
+                        </div>
                       }
                     </div>
                   </Table.HeadingItem>
@@ -82,10 +68,10 @@ const TableValData = ({
                 <Table.Cell 
                   key={cellEl.id}
                   rowIndex={rowIdx}
-                  className={` ${isSelectRow ? "px-2! py-2! sticky left-0 z-8" : "px-4! py-2! min-w-[180px] max-w-60"}
+                  className={` ${isSelectRow ? "px-2! py-2! sticky left-0 z-8" : "px-2! py-2! min-w-60 max-w-[300px]"}
                     border-r border-b border-[#A9A9A9] group-hover:bg-gray-100 cursor-pointer shadow-[inset_-1px_0_0_0_#A9A9A9,inset_0_-1px_0_0_#A9A9A9]`}
                 >
-                  <span className="block leading-normal whitespace-nowrap font-semibold">
+                  <span className="block leading-normal whitespace-nowrap overflow-hidden text-ellipsis font-semibold">
                     {flexRender(
                       cellEl.column.columnDef.cell,
                       cellEl.getContext()
