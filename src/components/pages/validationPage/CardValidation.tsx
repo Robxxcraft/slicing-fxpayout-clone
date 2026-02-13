@@ -77,17 +77,16 @@ const CardValidation = ({ form, handleChangeForm, errors }:
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2">
-            <TextInput
-              id="tradingUsername"
-              label="Atas Nama Akun"
-              icon="user-icon.svg"
-              altIcon="Icon user"
-              value={form.tradingUsername}
+            <SelectInput 
+              id="platform" 
+              label="Pilih Platform" 
+              icon="bank-icon.svg" 
+              altIcon="Icon platform" 
+              defaultValue="&lt;Pilih&gt;" 
+              value={form.platform} 
               onChangeForm={handleChangeForm} 
-              placeholder="Nama Sesuai Akun Trading" 
-              autoComplete="name" 
-              typeInput={"text"}
-              errorMessage={errors.tradingUsername}
+              optionData={["MT4", "MT5"]}
+              errorMessage={errors.platform}
               required />
           </div>
           <div className="w-full md:w-1/2">

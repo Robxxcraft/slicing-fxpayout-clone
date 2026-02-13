@@ -39,8 +39,8 @@ export const columnsDef = [
     header: "Broker"
   },
   {
-    accessorKey: "trading_account_name",
-    header: "Username Akun Trading"
+    accessorKey: "platform",
+    header: "Platform Trading"
   },
   {
     accessorKey: "trading_account_number",

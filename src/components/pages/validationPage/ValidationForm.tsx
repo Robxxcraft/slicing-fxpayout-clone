@@ -20,7 +20,7 @@ const ValidationForm = () => {
     identityUsername: "",
     email: "",
     accountNumber: "",
-    tradingUsername: "",
+    platform: "",
     handphoneNumber: ""
   });
   const formBank = useForm<FormBank>({
@@ -110,7 +110,7 @@ const ValidationForm = () => {
         full_name: formValidation.values.identityUsername,
         email: formValidation.values.email,
         broker: formValidation.values.broker,
-        trading_account_name: formValidation.values.tradingUsername,
+        platform: formValidation.values.platform,
         trading_account_number: formValidation.values.accountNumber,
         phone_number: formValidation.values.handphoneNumber,
         rebate: formBank.values.rebate === "Bank" ? "bank" : "trading",

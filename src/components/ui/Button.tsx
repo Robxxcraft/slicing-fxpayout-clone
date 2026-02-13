@@ -94,7 +94,8 @@ export default function Button({
   }
 
   const finalClass = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}
-    cursor-pointer disabled:cursor-auto`;
+    ${loading ? "disabled:cursor-wait" : "disabled:cursor-auto"}
+    cursor-pointer`;
 
   if (buttonType === "link") {
     return (

@@ -184,6 +184,26 @@ const getValidationData = async ({
   }
 }
 
+const exportCsvValidationData = async () => {
+  try {
+    const response = await _fetchWithAuth(`${BASE_URL}/validation-data/export-data`);
+    const blob = await response.blob();
+
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "validation-data.csv";
+    a.click();
+
+    return { error: false, message: "Success export data" };
+  } catch (error) {
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+    }
+  }
+}
+
 const bulkPostFormValidationData = async ({ items }: { items: ValidationData[] }) => {
   try {
     const response = await _fetchWithAuth(`${BASE_URL}/validation-data/bulk-create`, {
@@ -218,7 +238,7 @@ const updateValidationData = async ({ item }: { item: ValidationData }) => {
         email: item.email,  
         full_name: item.full_name, 
         trading_account_number: item.trading_account_number,  
-        trading_account_name: item.trading_account_name,  
+        platform: item.platform,  
         phone_number: item.phone_number,  
         rebate: item.rebate,
         bank: item.bank,
@@ -254,7 +274,7 @@ const postFormValidationData = async ({ item, captchaValue }: { item: Validation
         email: item.email,  
         full_name: item.full_name, 
         trading_account_number: item.trading_account_number,  
-        trading_account_name: item.trading_account_name,  
+        platform: item.platform,  
         phone_number: item.phone_number,  
         rebate: item.rebate,
         bank: item.bank,
@@ -326,6 +346,7 @@ export {
   updateProfilUser,
   changePasswordUser,
   getValidationData,
+  exportCsvValidationData,
   postFormValidationData,
   updateValidationData,
   deleteValidationData,

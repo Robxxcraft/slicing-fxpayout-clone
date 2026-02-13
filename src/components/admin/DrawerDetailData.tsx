@@ -26,7 +26,7 @@ const DrawerDetailData = ({
     id: validationData.id,
     full_name: validationData.full_name,
     email: validationData.email,
-    trading_account_name: validationData.trading_account_name,
+    platform: validationData.platform,
     trading_account_number: validationData.trading_account_number,
     phone_number: validationData.phone_number,
     rebate: validationData.rebate,
@@ -160,21 +160,18 @@ const DrawerDetailData = ({
                 errorMessage={formDetail.errors.broker}
                 required 
               />
-              <TextInput 
-                id="trading_account_name" 
-                label="Username Akun Trading"
-                placeholder="Masukan username akun trading" 
-                value={formDetail.values.trading_account_name} 
+              <SelectInput 
+                id="platform" 
+                label="Pilih Platform" 
+                defaultValue="&lt;Pilih&gt;" 
+                value={formDetail.values.platform} 
                 onChangeForm={formDetail.handleChange} 
-                typeInput="text"
-                inputMode="text"
-                autoComplete="name"
+                optionData={["MT4", "MT5"]}
                 labelClassName="text-sm! text-black/60!"
-                inputClassName="py-2.5! px-2!"
+                selectClassName="py-2.5! px-2!"
                 gap={8}
-                errorMessage={formDetail.errors.trading_account_name} 
-                required
-              />
+                errorMessage={formDetail.errors.platform}
+                required />
               <TextInput 
                 id="trading_account_number" 
                 label="Nomor Akun Trading"

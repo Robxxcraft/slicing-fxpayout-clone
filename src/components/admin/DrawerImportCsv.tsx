@@ -60,9 +60,9 @@ const DrawerImportCsv = ({
             return;
           }
           const detectedHeaders = Object.keys(data[0] || {});
-          const missinHeaders = Object.values(HEADER_MAPPING).filter((item) => !detectedHeaders.includes(item));
+          const missingHeaders = Object.values(HEADER_MAPPING).filter((item) => !detectedHeaders.includes(item));
           
-          if (missinHeaders.length > 0) {
+          if (missingHeaders.length > 0) {
             setErrorImport("File CSV tidak valid. Pastikan format kolom sesuai.");
             return;
           }
@@ -166,6 +166,7 @@ const DrawerImportCsv = ({
             <li>Kolom Broker wajib berisi {allBrokers.join(", ")}.</li>
             <li>Kolom Rebate hanya berisi Akun Trading atau Bank.</li>
             <li>Kolom Status harus sesuai ketentuan (Pending/Approved/Rejected).</li>
+            <li>Kolom Platform Trading hanya berisi MT4 atau MT5.</li>
             <li>Kolom Tanggal dapat bernilai kosong, default nilai mengikuti waktu import data.</li>
             <li>Nilai kolom Tanggal wajib dalam format YYYY-MM-DD (2026-31-01).</li>
           </ol>
