@@ -1,0 +1,90 @@
+{
+    "helmet": {
+        "title": "What is Forex Rebate? Get Your Trading Cost Refunds | FXPayout",
+        "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
+    },
+    "definition": {
+        "title": "What is Forex Rebate?",
+        "paragraph": "A Forex rebate is a partial refund of the commission or spread from every trading transaction. You continue to trade as usual with your broker, but a portion of your trading costs is returned to you as a rebate.",
+        "cards": [
+            {
+                "title": "Rebate Benefits",
+                "paragraph": "Spread, leverage, and execution remain exactly the same as a standard account. With rebates, you can reduce trading costs and potentially increase your long-term profits."
+            },
+            {
+                "title": "How Rebate Works",
+                "paragraph": "Every time you trade, the broker shares a portion of the commission with fxpayout as an IB. This commission is then returned to your account as a withdrawable rebate."
+            }
+        ]
+    },
+    "howRebate": {
+        "title": "How to Get Rebates",
+        "paragraph": "When you open a Forex trading account (or link an existing one) through us, your broker pays us a rebate for your trading activity."
+    },
+    "howWorks": {
+        "title": "How Does It Work?",
+        "paragraph": "Forex rebates work automatically behind the scenes. You trade as usual, while fxpayout manages the return of a portion of your trading commissions.",
+        "imageFlows": "how-it-works-flow-en.webp",
+        "flows": [
+            {
+                "flow": "Spread / Commission",
+                "title": "Trader",
+                "paragraph": "The trader executes trades as usual through their chosen broker with no changes to spread, leverage, or trading strategy."
+            },
+            {
+                "flow": "Reward",
+                "title": "Broker",
+                "paragraph": "The broker receives the spread or commission from each trade, then shares a portion of it with fxpayout as an Introducing Broker (IB)."
+            },
+            {
+                "flow": "Cashback / Rebate Distribution",
+                "title": "FXPayout",
+                "paragraph": "fxpayout returns a portion of the received commission to the trader as transparent and regular rebate payments."
+            }
+        ]
+    },
+    "payment": {
+        "title": "Rebate Payment System",
+        "paragraph": "fxpayout provides various flexible and accessible rebate payment methods. You can choose your preferred withdrawal method with low minimum limits and a transparent process.",
+        "tableHeaders": ["Method", "Minimum Payment", "Currency", "Fee"],
+        "tableItems": [
+            {
+                "method": "Cryptocurrencies",
+                "cost": "Up to 3 USDT"
+            },
+            {
+                "method": "Indonesian E-Wallet",
+                "cost": "$0"
+            },
+            {
+                "method": "Indonesian Bank",
+                "cost": "$0"
+            },
+            {
+                "method": "Neteller",
+                "cost": "1.45% (Min. $0.59)"
+            },
+            {
+                "method": "Skrill / Neteller",
+                "cost": "4.4% + 0.3 USD"
+            },
+            {
+                "method": "PayPal",
+                "cost": "1.45% (Min. $0.59)"
+            }
+        ]
+    },
+    "schedule": {
+        "title": "Rebate Schedule",
+        "paragraph": "Find the rebate payment schedule based on your trading broker. Click \"View Schedule\" for full details on each broker.",
+        "card": {
+            "title": "Broker Rebate Schedule List",
+            "showEntry": ["Show", "entries"],
+            "searchPlaceholder": "Search broker here",
+            "brokerName": "Broker Name",
+            "schedule": "Rebate Schedule",
+            "viewSchedule": "View Schedule",
+            "showList": "Showing {{startIndex}} to {{endIndex}} of {{totalIndex}} entries"
+        }
+    }
+}

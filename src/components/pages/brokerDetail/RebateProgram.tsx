@@ -1,9 +1,11 @@
 import Button from "@/components/ui/Button";
 import type { RebateProgramType } from "@/utils/dataBroker/typeDetailBroker";
+import { useTranslation } from "react-i18next";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { TiInfoLarge } from "react-icons/ti";
 
 const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
+  const { t } = useTranslation(["brokerdetailpage"]);
   let estimateEur;
   let estimateXau;
   const isRebateProgramText = typeof detailData === "string";
@@ -19,13 +21,13 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
       <div className="px-6 2xl:px-10 py-10 2xl:py-14 grid grid-cols-1 lg:grid-cols-2 gap-6 2xl:gap-8 bg-primary rounded-2xl 2xl:rounded-3xl">
         <div>
           <h2 className="text-[36px] 2xl:text-[40px] font-bold leading-[132%] text-white">
-            Program Rebate (Estimasi)
+            {t("brokerdetailpage:rebateProgram.title")}
           </h2>
           <p className="mt-4 text-base 2xl:text-xl leading-[160%] text-white">
-            Perkiraan rebate yang bisa didapat trader melalul program rebate Anda.
+            {t("brokerdetailpage:rebateProgram.subtitle")}
           </p>
           <Button buttonType="link" urlTo="/" className="mt-6 w-full! lg:w-fit!" variant="primary-light" icon={<IoArrowForwardOutline />} iconPosition="right" size="xl">
-            Kalkulator Rebate
+            {t("brokerdetailpage:rebateProgram.button")}
           </Button>
         </div>
 
@@ -66,7 +68,7 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
               </p>
             :
               <p className="w-fit text-sm font-medium text-black/60">
-                Rebate dapat lebih tinggi untuk akun ECN dan volume trading yang besar, Nilal di atas bersifat estimasi dan dapat disesuaikan.
+                {t("brokerdetailpage:rebateProgram.info")}
               </p>
             }
           </div>

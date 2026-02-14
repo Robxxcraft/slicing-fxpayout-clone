@@ -14,21 +14,14 @@ import Spread from "@/components/pages/brokerDetail/Spread";
 import Summary from "@/components/pages/brokerDetail/Summary";
 import TypeAccount from "@/components/pages/brokerDetail/TypeAccount";
 import { brokers } from "@/utils/dataBroker/brokers";
-import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import NotFound from "./NotFound";
+import { useTranslation } from "react-i18next";
 
 const BrokerDetailPage = () => {
+  const { t } = useTranslation(["brokerdetailpage"]);
   const { brokerId } = useParams();
   const broker = brokers[brokerId as keyof typeof brokers];
-
-  useEffect(() => {
-    if (broker) {
-      document.title = `Rebate ${broker.name} hingga $${broker.rebateProgram[0].estimate} per Lot | FX Payout`;
-    } else {
-      document.title = "Broker Tidak Ditemukan | FX Payout";
-    }
-  }, [broker]);
 
   if (!broker) {
     return <NotFound />
@@ -50,6 +43,12 @@ const BrokerDetailPage = () => {
 
   return (
     <div className="font-inter">
+      {broker &&
+        <title>
+          {t("brokerdetailpage:helmet.title", { brokerName: broker.name, brokerEstimate: broker.rebateProgram[0].estimate })}
+        </title>
+      }
+
       <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} />
       
       <main>

@@ -12,6 +12,7 @@ type SubNavigationList = {
 }
 
 type SectionsRebateForex = {
+  code: string;
   id: string;
   name: string
 }
@@ -21,7 +22,7 @@ const claimRebateSuNav: SubNavigationList[] = [
   { code: "howRebate", title: "Cara Mendapatkan Rebate Forex", url: '/rebate-forex#how-to-rebate' },
   { code: "howWorks", title: "Bagaimana Cara Kerjanya?", url: '/rebate-forex#how-it-works' },
   { code: "payment", title: "Sistem Pembayaran Rebate", url: '/rebate-forex#payment' },
-  { code: "shcedule", title: "Jadwal Rebate", url: '/rebate-forex#schedule' },
+  { code: "schedule", title: "Jadwal Rebate", url: '/rebate-forex#schedule' },
 ];
 
 const serviceSubNav: SubNavigationList[] = [
@@ -63,7 +64,7 @@ export const listNavigationBrokers: NavigationLink[] = [
   { code: "profil", title: "Profil", url: "#profil" },
   { code: "summary", title: "Ringkasan", url: "#ringkasan" },
   { code: "accountType", title: "Jenis Akun", url: "#jenis-akun" },
-  { code: "spreadComission", title: "Spread & Komisi", url: "#spread-komisi" },
+  { code: "spreadCommission", title: "Spread & Komisi", url: "#spread-komisi" },
   { code: "advantage", title: "Keunggulan", url: "#keunggulan" },
   { code: "platform", title: "Platform", url: "#platform" },
   { code: "depositWithdraw", title: "Deposit & Withdraw", url: "#deposit-withdraw" },
@@ -73,9 +74,9 @@ export const listNavigationBrokers: NavigationLink[] = [
 ];
 
 export const listSectionsRebateForex: SectionsRebateForex[] = [
-  { id: "definition", name: "Apa itu Rebate Forex?" },
-  { id: "how-to-rebate", name: "Cara Mendapatkan Rebate Forex" },
-  { id: "how-it-works", name: "Bagaimana Cara Kerjanya?" },
-  { id: "payment", name: "Sistem Pembayaran Rebate" },
-  { id: "schedule", name: "Jadwal Rebate" },
+  { code: "definition", id: "definition", name: "Apa itu Rebate Forex?" },
+  { code: "howRebate", id: "how-to-rebate", name: "Cara Mendapatkan Rebate Forex" },
+  { code: "howWorks", id: "how-it-works", name: "Bagaimana Cara Kerjanya?" },
+  { code: "payment", id: "payment", name: "Sistem Pembayaran Rebate" },
+  { code: "schedule", id: "schedule", name: "Jadwal Rebate" },
 ];

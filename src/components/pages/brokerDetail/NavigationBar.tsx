@@ -6,6 +6,7 @@ import { IoClose } from "react-icons/io5";
 import { throttle } from "lodash";
 import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "@/components/ui/Button";
+import { useTranslation } from "react-i18next";
 
 const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }: 
   {
@@ -16,6 +17,7 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
     websiteUrl: string;
   }
 ) => {
+  const { t } = useTranslation(["common", "brokerdetailpage"]);
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const btnHamburgerRef = useRef<HTMLSpanElement>(null);
@@ -88,12 +90,12 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
         {/* ROW 2 */}
         {/* DESKTOP NAV */}
         <div className="mt-5 2xl:mt-8 hidden lg:flex gap-8 2xl:gap-10">
-          {listNavigationBrokers.map(({ title, url }, idx) => (
+          {listNavigationBrokers.map(({ title, url, code }) => (
             <a
               href={url}
-              key={idx}
+              key={title}
               className="text-sm 2xl:text-xl text-black hover:font-medium">
-              {title}
+              {t(`brokerdetailpage:navbar.${code}`)}
             </a>
           ))}
         </div>
@@ -102,25 +104,25 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
         {openMenu &&
           <div className="_no-scrollbar pt-4 pb-18 absolute top-18 left-0 bg-white w-full h-[calc(100vh-70px)] md:h-[calc(100vh-260px)] overflow-auto">
             <div className="flex flex-col">
-              {listNavigationBrokers.map(({ title, url }, idx) => (
+              {listNavigationBrokers.map(({ title, url, code }) => (
                 <a
-                  key={idx}
+                  key={title}
                   href={url}
                   onClick={() => setOpenMenu(false)}
                   className="px-5 py-3 text-base text-black border-b border-black/10 hover:font-medium">
-                  {title}
+                  {t(`brokerdetailpage:navbar.${code}`)}
                 </a>
               ))}
             </div>
             <div className="px-5 mt-4 flex items-center justify-center w-full gap-2 flex-wrap">
               <Link to={registerUrl} target="_blank" className="w-fit text-center">
                 <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-                  Daftar Sekarang
+                  {t("button.registerNow")}
                 </span>
               </Link>
               <Link to={websiteUrl} target="_blank" className="w-fit text-center">
                 <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-                  Kunjungan Website
+                  {t("button.visitWebsite")}
                 </span>
               </Link>
             </div>
@@ -132,13 +134,18 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
 };
 
 const ButtonCta = ({ scrollY, registerUrl, websiteUrl }:{scrollY: number; registerUrl: string; websiteUrl: string}) => {
+  const { t } = useTranslation(["common"])
   return (
     <div className={`
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
-      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" className="w-full! lg:w-auto text-nowrap">Daftar Sekarang</Button>
-      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" className="w-full! lg:w-auto text-nowrap">Kunjungan Website</Button>
+      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" className="w-full! lg:w-auto text-nowrap">
+        {t("button.registerNow")}
+      </Button>
+      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" className="w-full! lg:w-auto text-nowrap">
+        {t("button.visitWebsite")}
+      </Button>
     </div>
   )
 }

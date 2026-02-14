@@ -12,8 +12,10 @@ import type { ValidationData } from "@/models/validationData";
 import type { FormBank, FormValidation, ModalResponse } from "@/types/validationForm";
 import { checkValidFormValidation } from "@/helper/validationForm/formValAccount";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const ValidationForm = () => {
+  const { t, i18n } = useTranslation(["validationpage"]);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const formValidation = useForm<FormValidation>({
     broker: "",
@@ -34,6 +36,7 @@ const ValidationForm = () => {
   const [errorMessageCapthca, setErrorMessageCapthca] = useState<string>("");
   const [showModal, setShowModal] = useState<ModalResponse>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const otherBank = t("validationpage:card.bankForm.otherBank");
 
   useEffect(() => {
     if (showModal) {
@@ -50,33 +53,34 @@ const ValidationForm = () => {
     const { value } = e.target;
     formBank.handleChange(e);
 
-    if (value !== "LAINNYA") {
+    if (value !== otherBank) {
       formBank.setSpecificValue("bank", value);
-    } else if (value === "LAINNYA") {
+    } else if (value === otherBank) {
       formBank.setSpecificValue("bank", "");
     }
   }
 
   const checkValidFormBank = (vals: FormBank) => {
     const errors: Partial<Record<keyof FormBank, string>> = {};
-    if (!vals.rebate) errors.rebate = "Rebate harus dipilih";
+    const key = "validationpage:card.bankForm.errors";
+    if (!vals.rebate) errors.rebate = `${key}.rebateRequired`;
     
-    if (formBank.values.tempBank === "LAINNYA") {
-      if (!vals.bank.trim()) errors.bank = "Nama bank tidak boleh kosong";
+    if (formBank.values.tempBank === otherBank) {
+      if (!vals.bank.trim()) errors.bank = `${key}.bankRequired`;
     } else {
       formBank.setSpecificValue("bank", formBank.values.tempBank);
     }
     if (!vals.tempBank) {
-      errors.tempBank = "Bank harus dipilih";
+      errors.tempBank = `${key}.otherBankRequired`;
     }
     
     if (!vals.rekeningNumber.trim()) {
-      errors.rekeningNumber = "Nomor rekening tidak boleh kosong";
+      errors.rekeningNumber = `${key}.rekeningNumberRequired`;
     } else if (!validateOnlyNumber(vals.rekeningNumber)) {
-      errors.rekeningNumber = "Nomor rekening tidak valid";
+      errors.rekeningNumber = `${key}.rekeningNumberInvalid`;
     }  
 
-    if (!vals.holdingUsername.trim()) errors.holdingUsername = "Nama pemegang rekening tidak boleh kosong";  
+    if (!vals.holdingUsername.trim()) errors.holdingUsername = `${key}.holdingUsernameRequired`;;  
 
     return errors;
   }
@@ -102,7 +106,7 @@ const ValidationForm = () => {
         return;
       }
       if (!captchaValue) {
-        setErrorMessageCapthca("Mohon konfirmasi bahwa Anda bukan robot");
+        setErrorMessageCapthca("validationpage:card.errors.captcha");
         return;
       }
       const item: ValidationData = {
@@ -122,7 +126,7 @@ const ValidationForm = () => {
       const { error } = await postFormValidationData({ item, captchaValue });
   
       if (error) {
-        toast.error("Permintaan Gagal Dikirim. Coba beberapa saat lagi." );
+        toast.error(t("validationpage:card.failedSubmit"));
       } else {
         setShowModal("SUCCESS");
         formValidation.resetForm();
@@ -145,16 +149,16 @@ const ValidationForm = () => {
         <div className="flex flex-col xl:flex-row gap-8 items-start xl:items-center">
           <div className="xl:max-w-[540px]">
             <h2 className="text-xl md:text-[1.75rem] 2xl:text-[2rem] text-black font-semibold">
-              Validasi Akun Trading
+              {t("validationpage:card.title")}
             </h2>
             <p className="mt-2 w-full text-base 2xl:text-2xl font-medium text-black/60 leading-[160%]">
-              Lengkapi formulir di bawah ini untuk  dan ikuti panduan untuk memverifikasi akun trading Anda.
+              {t("validationpage:card.paragraph")}
             </p>
           </div>
           <div className="flex justify-end w-full">
             <TripleBadgeFlow 
               stepperActive={stepperActive}
-              steps={["Isi Data Akun Trading", "Isi Data Bank Pencairan", "Kirim & Tunggu Verifikasi"]} 
+              steps={[t("validationpage:card.steps.0"), t("validationpage:card.steps.1"), t("validationpage:card.steps.2")]} 
             />
           </div>
         </div>
@@ -178,21 +182,23 @@ const ValidationForm = () => {
           </div>
           <div className="col-span-12 xl:col-span-7 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-[#222222]/80 leading-[142%]">
-              *Data Anda dijaga kerahasiaannya dan hanya digunakan untuk proses verifikasi serta pencairan rebate fxpayout.
+              {t("validationpage:card.warning")}
             </p>
             <div>
               <div className="flex justify-start md:justify-end w-full h-fit">
                 <ReCAPTCHA 
+                  key={i18n.language}
                   ref={recaptchaRef}
                   sitekey={import.meta.env["VITE_KEY_CAPTHCA"]}
                   onChange={handleCaptchaChange}
                   onExpired={() => setCaptcaValue("")}
                   className="g-recaptcha"
+                  hl={i18n.language}
                 />
               </div>
               {errorMessageCapthca &&
                 <span className="text-sm 2xl:text-base text-red-500">
-                  {errorMessageCapthca}
+                  {t(errorMessageCapthca)}
                 </span>
               }
             </div>
@@ -204,7 +210,7 @@ const ValidationForm = () => {
               buttonType="submit" 
               variant="primary-light" 
               className="py-4! 2xl:py-5! md:text-[20px]! 2xl:text-[24px]! font-medium! w-full">
-              Submit Validasi
+              {t("validationpage:card.button")}
             </Button>
           </div>
         </form>

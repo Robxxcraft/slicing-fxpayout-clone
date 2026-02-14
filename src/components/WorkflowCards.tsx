@@ -16,7 +16,7 @@ const workflows: Workflow[] = [
     description:
       "Buat akun FXPayout dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan.",
     image: "flow-start.png",
-    translateKey: "homePage.howItWorks.workflows.0" 
+    translateKey: "homepage:howItWorks.workflows.0" 
   },
   {
     title: "trading",
@@ -24,7 +24,7 @@ const workflows: Workflow[] = [
     description:
       "Lanjutkan aktivitas trading tanpa perubahan spread, leverage, atau kondisi lain. Semua tetap mengikuti aturan broker.",
     image: "flow-trade.png",
-    translateKey: "homePage.howItWorks.workflows.1" 
+    translateKey: "homepage:howItWorks.workflows.1" 
   },
   {
     title: "komisi",
@@ -32,7 +32,7 @@ const workflows: Workflow[] = [
     description:
       "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke FXPayout secara otomatis.",
     image: "flow-commision.png",
-    translateKey: "homePage.howItWorks.workflows.2" 
+    translateKey: "homepage:howItWorks.workflows.2" 
   },
   {
     title: "rebate",
@@ -40,12 +40,12 @@ const workflows: Workflow[] = [
     description:
       "Kami mengembalikan hingga 90% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet.",
     image: "flow-rebate.png",
-    translateKey: "homePage.howItWorks.workflows.3" 
+    translateKey: "homepage:howItWorks.workflows.3" 
   },
 ];
 
 const WorkflowCards = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["homepage"]);
   return (
     <div className="mt-6 2xl:mt-10 flex justify-center gap-2 flex-wrap lg:flex-nowrap">
       {workflows.map((workflow, idx) => (

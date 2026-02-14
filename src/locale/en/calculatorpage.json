@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Rebate Calculator: Estimate Your Trading Cashback | FXPayout",
+        "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
+    },
+    "header": {
+        "title": "Calculate Your Trading Rebate Estimate Now",
+        "paragraph": "Enter your broker, account type, and total trading lots to discover the rebate estimates you can earn every month fast, transparent, and at no cost.",
+        "tag": "FXPAYOUT REBATE CALCULATOR"
+    },
+    "card": {
+        "title": "Rebate Estimate Calculator",
+        "paragraph": "Select a broker and enter your trading details to see your instant rebate estimate.",
+        "broker": "Broker",
+        "accountType": "Account Type",
+        "pair": "Pair / Trading Instrument",
+        "lots": "Lots",
+        "accountTypePlaceholder": "Select broker first",
+        "pairPlaceholder": "Enter Lots",
+        "button": "Calculate Estimated Rebate",
+        "estimatesRebates": "Estimated Rebates",
+        "rebatePerLot": "Rebate per Lot",
+        "info": "<0>fxpayout</0> returns up to 90% of IB commissions to traders. The rebate process is automated, secure, and transparent, without changing your spreads, leverage, or trading conditions.",
+        "errors": {
+            "brokerRequired": "Broker must be selected",
+            "accountTypeRequired": "Account type must be selected",
+            "pairRequired": "Pair must be selected",
+            "lotsRequired": "Total lots cannot be empty"
+        }
+    }
+}

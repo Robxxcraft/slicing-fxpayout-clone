@@ -9,6 +9,7 @@ import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
 
 const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
+  const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage] = useState<number>(6);
@@ -16,7 +17,6 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
   const [endIndex, setEndIndex] = useState<number>(6);
   const [searchParams] = useSearchParams();
   const navigateToTop = useNavigationToTop();
-  const { i18n } = useTranslation();
 
   const TOTAL_PAGES = Math.ceil(brokerPartners.length / itemsPerPage);
 

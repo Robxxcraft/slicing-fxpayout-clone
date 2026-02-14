@@ -1,8 +1,10 @@
 import { FaCircleCheck } from "react-icons/fa6";
 import HeadingSection from "./HeadingSection";
 import type { AccountTypeStruc } from "@/utils/dataBroker/typeDetailBroker";
+import { useTranslation } from "react-i18next";
 
 const CardTypeAccount = ({ account }: { account: AccountTypeStruc }) => {
+  const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <div className="px-8 py-9 bg-white border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
       {account.notes &&
@@ -28,7 +30,7 @@ const CardTypeAccount = ({ account }: { account: AccountTypeStruc }) => {
       </div>
       <div className="mt-8 md:mt-10 lg:mt-8">
         <p className="text-xl font-medium leading-[115%] text-my-purple">
-          Keuntungan:
+          {t("brokerdetailpage:accountType.profit")}:
         </p>
         <div className="mt-4 md:mt-6 flex flex-col gap-5 lg:gap-3">
           {account.features.map((feature, idx) => (

@@ -1,4 +1,4 @@
-import { type Dispatch } from "react";
+import { useEffect, useRef, type Dispatch } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { languages, type Language } from "../utils/languageSupport";
 import type { HandleChangeLanguage } from "./Navbar";
@@ -15,13 +15,32 @@ const LanguageSelector = ({
   setOpen: Dispatch<React.SetStateAction<boolean>>;
   onChangeLanguage: HandleChangeLanguage;
 }) => {
-  // const [openOption, setOpenOption] = useState<boolean>(false);
+  const selectorRef = useRef<HTMLDivElement>(null);
   
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const isDesktop = window.innerWidth >= 1280;
+      if (!isDesktop) return;
+      
+      if (selectorRef.current && !selectorRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectorRef]);
   return (
-    <div className="xl:relative">
+    <div ref={selectorRef} className="xl:relative">
       <button
         className="flex gap-2 items-center cursor-pointer"
-        onClick={() => setOpen(!open)}>
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpen(!open)
+        }}>
         <img
           src={`/flags/${selectedLanguage.flag}`}
           alt={`flag-${selectedLanguage.label}`}

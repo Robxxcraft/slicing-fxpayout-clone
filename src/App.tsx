@@ -57,7 +57,6 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <TawkChat />
       <ToastContainer 
         position="bottom-right"
         autoClose={5000}
@@ -68,6 +67,7 @@ function App() {
         theme="light"
         transition={Bounce}
       />
+      <TawkChat />
 
       <Routes>
         <Route path="/:lng" element={<MainLayout />}>

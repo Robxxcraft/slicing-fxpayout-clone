@@ -4,6 +4,7 @@ import SelectInput from "@/components/ui/SelectInput";
 import { brokers } from "@/utils/dataBroker/brokers";
 import BoundedIcon from "../../brokerDetail/ui/BoundedIcon";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
+import { useTranslation } from "react-i18next";
 
 const CardForm = ({ form, handleChangeForm, setSelectedBroker }: 
 {
@@ -11,6 +12,7 @@ const CardForm = ({ form, handleChangeForm, setSelectedBroker }:
   handleChangeForm: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
   setSelectedBroker: React.Dispatch<React.SetStateAction<BrokerStruc | null>>;
 }) => {
+  const { t } = useTranslation(["common", "transferpage"]);
   const allBrokers = Object.values(brokers).map(broker => broker.name);
 
   const handleChangeBroker = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -24,26 +26,26 @@ const CardForm = ({ form, handleChangeForm, setSelectedBroker }:
       <div className="pb-4 md:pb-6 px-4 md:px-6 2xl:px-8 flex items-center gap-6 border-b border-[#D0D0D0]">
         <BoundedIcon variant="third" icon="/form-icon.svg" alt="icon"/>
         <h3 className="text-xl md:text-2xl text-my-purple font-medium leading-[115%]">
-          Lengkapi Formulir
+          {t("transferpage:card.emailForm.title")}
         </h3>
       </div>
       <div className="px-4 md:px-6 2xl:px-8 mt-4 md:mt-6 flex flex-col gap-4">
         <SelectInput 
           id="broker" 
-          label="Pilih Broker" 
+          label={t("transferpage:card.emailForm.brokerLabel")} 
           icon="bank-icon.svg" 
           altIcon="Icon broker" 
-          defaultValue="&lt;Pilih&gt;" 
+          defaultValue={`<${t("text.select")}>`}
           value={form.broker} 
           onChangeForm={handleChangeBroker} 
           optionData={allBrokers}
           required />
         <TextInput 
           id="accountNumber"
-          label="Nomor Akun" 
+          label={t("transferpage:card.emailForm.accountNumberLabel")}
           icon="/number-account-icon.svg"
           altIcon="Icon Number Account" 
-          placeholder="Masukkan Nomor Akun"
+          placeholder={t("transferpage:card.emailForm.accountNumberPlaceholder")}
           value={form.accountNumber} 
           onChangeForm={handleChangeForm} 
           inputMode="numeric"
@@ -54,10 +56,10 @@ const CardForm = ({ form, handleChangeForm, setSelectedBroker }:
           required />
         <TextInput 
           id="username"
-          label="Nama Pemegang Rekening" 
+          label={t("transferpage:card.emailForm.usernameLabel")}
           icon="/user-icon.svg"
           altIcon="Icon User" 
-          placeholder="Nama Sesuai Pemegang Rekening"
+          placeholder={t("transferpage:card.emailForm.usernamePlaceholder")}
           value={form.username} 
           onChangeForm={handleChangeForm} 
           autoComplete="cc-name" 
@@ -68,4 +70,4 @@ const CardForm = ({ form, handleChangeForm, setSelectedBroker }:
   )
 }
 
-export default CardForm
+export default CardForm;

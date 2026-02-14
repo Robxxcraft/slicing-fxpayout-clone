@@ -5,12 +5,12 @@ import { useTranslation } from "react-i18next";
 import { getLocalizedPath } from "@/helper/pathHelper";
 
 const BrokerItem = ({ item }: { item: BrokerStruc }) => {
+  const { t, i18n } = useTranslation(["brokerpage"]);
   let estimateEur;
   let estimateXau;
   let estimateAud;
   const rebateProgram = item.rebateProgram;
   const isRebateProgramText = typeof rebateProgram === "string";
-  const { t, i18n } = useTranslation();
   
   if (!isRebateProgramText) {
     estimateEur = typeof rebateProgram[0].estimate === "number" ?
@@ -51,16 +51,16 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
         :
           <div>
             <p className="text-sm font-semibold text-[#222222]">
-              {t("brokerPage.card.rebatePerInstrument")}
+              {t("brokerpage:card.rebatePerInstrument")}
             </p>
             <table className="table-fixed mt-3 border-collapse text-[#222222] w-full">
               <thead>
                 <tr className="text-left">
                   <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    {t("brokerPage.card.instrument")}
+                    {t("brokerpage:card.instrument")}
                   </th>
                   <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    {t("brokerPage.card.rebate")}
+                    {t("brokerpage:card.rebate")}
                   </th>
                 </tr>
               </thead>
@@ -103,7 +103,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
           size="md" 
           className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
         >
-          {t("brokerPage.card.register")}
+          {t("brokerpage:card.register")}
         </Button>
         <Button 
           buttonType="link" 
@@ -112,7 +112,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
           size="md" 
           className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
         >
-          {t("brokerPage.card.detail")}
+          {t("brokerpage:card.detail")}
         </Button>
       </div>
     </div>

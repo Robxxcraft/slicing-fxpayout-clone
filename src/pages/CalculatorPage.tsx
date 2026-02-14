@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeaderSection from "@/components/HeaderSection";
@@ -7,20 +6,18 @@ import CalculatorSection from "@/components/pages/calculatorPage/CalculatorSecti
 import { useTranslation } from "react-i18next";
 
 const CalculatorPage = () => {
-  const { t } = useTranslation();
-  useEffect(() => {
-    document.title = "Kalkulator Rebate: Hitung Estimasi Cashback Trading | FX Payout";
-  }, []);
+  const { t } = useTranslation(["calculatorpage"]);
 
   return (
     <div className="font-inter">
+      <title>{t("calculatorpage:helmet.title")}</title>
       <Navbar active="kalkulator" />
       <main>
         <HeaderSection 
           icon="/kalkulator-icon.svg" 
-          badge={t("calculatorPage.header.tag")} 
-          title={t("calculatorPage.header.title")} 
-          paragraph={t("calculatorPage.header.paragraph")} />
+          badge={t("calculatorpage:header.tag")} 
+          title={t("calculatorpage:header.title")} 
+          paragraph={t("calculatorpage:header.paragraph")} />
         <CalculatorSection />
         <CtaSection />
       </main>

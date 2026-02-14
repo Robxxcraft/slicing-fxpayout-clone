@@ -1,0 +1,23 @@
+{
+    "helmet": {
+        "title": "Daftar Broker Partner dan Detail | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "header": {
+        "title": "Broker Partner dan Detail",
+        "paragraph": "Broker pilihan dengan eksekusi terbaik dan skema rebate hingga 90%. bandingkan detail instrumen dan pilih broker yang paling cocok untuk strategi trading Anda.",
+        "tag": "DAFTAR BROKER",
+        "searchPlaceholder": "Cari broker disini"
+    },
+    "card": {
+        "rebatePerInstrument": "Rebate per Instrumen",
+        "instrument": "Instrumen",
+        "rebate": "Rebate",
+        "register": "Daftar Broker",
+        "detail": "Selengkapnya"
+    },
+    "notify": {
+        "title": "Transparansi Rebate",
+        "paragraph": "Kami menyimpan riwayat komisi & rebate yang dapat diaudit oleh pengguna. (Demo: data disimpan di browser)."
+    }
+}

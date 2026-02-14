@@ -1,0 +1,117 @@
+{
+    "helmet": {
+        "title": "Rebate {{brokerName}} hingga {{brokerEstimate}} per Lot | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "navbar": {
+        "profil": "Profil",
+        "summary": "Ringkasan",
+        "accountType": "Jenis Akun", 
+        "spreadCommission": "Spread & Komisi",
+        "advantage": "Keunggulan",
+        "platform": "Platform", 
+        "depositWithdraw": "Deposit & Withdraw",
+        "advantagesDisadvantages": "Kelebihan & Kekurangan", 
+        "rating": "Rating",
+        "faq": "FAQ"
+    },
+    "back": "Kembali ke Daftar Broker",
+    "overallScore": "Overall Score",
+    "header": {
+        "viewRating": "Lihat Ulasan Komunitas",
+        "detailHeaders": ["Tahun Berdiri", "Min Deposit", "Leverage", "Spread"]
+    },
+    "profile": {
+        "title": "Profil Broker",
+        "subtitle": "Informasi resmi mengenai identitas dan regulasi broker.",
+        "cards": [
+            {
+                "title": "Informasi Utama",
+                "headers": {
+                    "brokerName": "Nama Broker",
+                    "slogan": "Slogan",
+                    "entity": "Entitas",
+                    "group": "Group",
+                    "ranking": "Tier",
+                    "yearFounded": "Tahun Berdiri",
+                    "brokerCategory": "Jenis Broker",
+                    "model": "Model",
+                    "totalInstrument": "Jumlah Instrumen"
+                }
+            },
+            {
+                "title": "Regulasi Utama"
+            }
+        ]
+    },
+    "summary": {
+        "title": "Ringkasan Cepat (Quick Facts)",
+        "subtitle": "Informasi inti broker untuk wawasan cepat kamu",
+        "cardHeaders": {
+            "minDeposit": "Min Deposit", 
+            "accountType": "Jenis Akun", 
+            "spread": "Spread", 
+            "commission": "Komisi", 
+            "leverage": "Leverage", 
+            "execution": "Eksekusi Order", 
+            "instrument": "Instrumen", 
+            "depositWithdrawal": "Deposit & Withdraw"
+        }
+    },
+    "accountType": {
+        "title": "Jenis Akun",
+        "subtitle": "Pilihan akun untuk berbagai kebutuhan dan gaya trading.",
+        "profit": "Keuntungan",
+        "level": {
+            "general": "Umum",
+            "beginner": "Pemula",
+            "pro": "Pro",
+            "advanced": "Advanced",
+            "trader": "Trader",
+            "newsTrader": "News Trader"
+        }
+    },
+    "spread": {
+        "title": "Spread",
+        "subtitle": "Perbandingan spread pada instrumen utama broker.",
+        "accountType": "Tipe Akun"
+    },
+    "advantage": {
+        "title": "Keunggulan Utama",
+        "subtitle": "Fitur unggulan yang menjadi nilai lebih dari broker."
+    },
+    "platform": {
+        "title": "Platform Trading yang Didukung",
+        "subtitle": "Daftar platform yang dapat digunakan untuk trading."
+    },
+    "depositWithdraw": {
+        "title": "Deposit & Withdraw",
+        "subtitle": "Informasi metode serta waktu proses transaksi.",
+        "tableHeaders": ["Metode", "Waktu Deposit", "Waktu Withdraw", "Biaya"]
+    },
+    "rebateProgram": {
+        "title": "Program Rebate (Estimasi)",
+        "subtitle": "Perkiraan rebate yang bisa didapat trader melalul program rebate Anda.",
+        "button": "Kalkulator Rebate",
+        "info": "Rebate dapat lebih tinggi untuk akun ECN dan volume trading yang besar, Nilal di atas bersifat estimasi dan dapat disesuaikan."
+    },
+    "advantagesDisadvantages": {
+        "title": "Kelebihan & Kekurangan",
+        "subtitle": "Ringkasan poin positif dan hal yang perlu diperhatikan."
+    },
+    "rating": {
+        "title": "Rating Komunitas",
+        "subtitle": "Penilaian dan umpan balik dari pengguna broker.",
+        "summaryReview": "Berdasarkan <0>{{totalReview}}</0> Ulasan Komunitas"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Pertanyaan yang paling sering diajukan oleh pengguna."
+    },
+    "cta": {
+        "title": "Siap Trading Dengan {{brokerName}}?",
+        "paragraph": "Gunakan link khusus Anda untuk mengakses rebate terbaik dan kondisi trading profesional di {{brokerName}}.",
+        "registerFxpayout": "Daftar melalui FXPayout",
+        "visitWebsite": "Kunjungi Website Broker"
+    }
+}

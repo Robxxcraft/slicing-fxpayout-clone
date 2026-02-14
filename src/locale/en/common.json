@@ -1,0 +1,41 @@
+{
+    "text": {
+        "select": "Select",
+        "copy": "Copy",
+        "next": "Next",
+        "tableOfContents": "Table of Contents",
+        "previous": "Previous",
+        "advantage": "Pros",
+        "disadvantage": "Cons"
+    },
+    "button": {
+        "registerNow": "Register Now",
+        "calculateRebate": "Calculate Rebate",
+        "visitWebsite": "Visit Website"
+    },
+    "cta": {
+        "title": "Ready to increase your trading profit efficiency?",
+        "paragraph": "Register now and start getting up to 90% rebates."
+    },
+    "navbar": {
+        "home": "Home",
+        "broker": "Broker",
+        "calculator": "Calculator",
+        "claimRebate": "Claim Rebate",
+        "service": "Service",
+        "subNav": {
+            "definition": "What is Forex Rebate?",
+            "howRebate": "How to Get Forex Rebates", 
+            "howWorks": "How It Works", 
+            "payment": "Rebate Payment System", 
+            "schedule": "Rebate Schedule",
+            "validation": "Account Validation",
+            "transfer": "Account Transfer"    
+        }
+    },
+    "footer": {
+        "paragraph": "We return up to 90% of the IB commission to traders. The process is fast, secure, and transparent without changing spreads or trading conditions.",
+        "quickLink": "Quick Links",
+        "contact": "Contact Us"
+    }
+}

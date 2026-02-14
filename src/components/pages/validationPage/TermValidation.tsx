@@ -1,25 +1,16 @@
 import type { Dispatch, SetStateAction } from "react";
+import { useTranslation } from "react-i18next";
 import { IoClose } from "react-icons/io5";
 import { TiInfoLarge } from "react-icons/ti";
 
 type TermValidation = {
-  title: string;
-  description: string;
+  translateKey: string;
 }
 
 const terms: TermValidation[] = [
-  {
-    title: "Validasi akun hanya dapat dilakukan satu kali.",
-    description: "Pastikan seluruh data telah diisi dengan benar. Jika terjadi kesalahan pengisian, silakan hubungi tim support fxpayout sebelum mengirim formulir."
-  },
-  {
-    title: "Pastikan seluruh data sesuai dengan identitas dan akun trading Anda.",
-    description: "Data yang tidak sesuai dapat menyebabkan proses verifikasi tertunda atau ditolak."
-  },
-  {
-    title: "Gunakan rekening bank yang aktif dan atas nama pribadi.",
-    description: "Rekening ini akan digunakan untuk proses pencairan rebate. Pastikan nama pemegang rekening sesuai dengan data."
-  },
+  { translateKey: "validationpage:notify.terms.0" },
+  { translateKey: "validationpage:notify.terms.1" },
+  { translateKey: "validationpage:notify.terms.2" },
 ];
 
 const TermValidation = ({
@@ -27,6 +18,7 @@ const TermValidation = ({
 }: {
   setShowNotify: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const { t } = useTranslation(["validationpage"]);
   return (
     <div className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-8 lg:pt-10">
       <div className="p-4 md:p-6 bg-my-light-blue border border-primary rounded-[10px]">
@@ -36,7 +28,7 @@ const TermValidation = ({
               <TiInfoLarge className="text-base lg:text-[20px] text-primary" />
             </span>
             <p className="text-base lg:text-lg 2xl:text-xl font-semibold text-[rgba(0,0,0,0.8)]">
-              Ketentuan Validasi Akun
+              {t("validationpage:notify.title")}
             </p>
           </div>
           <button
@@ -53,10 +45,10 @@ const TermValidation = ({
               </span>
               <div>
               <p className="text-base 2xl:text-xl font-medium leading-[142%]">
-                {term.title}
+                {t(`${term.translateKey}.title`)}
               </p>
               <p className="mt-2.5 text-sm md:text-base leading-[142%]">
-                {term.description}
+                {t(`${term.translateKey}.description`)}
               </p>
               </div>
             </div>

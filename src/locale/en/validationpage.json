@@ -1,0 +1,89 @@
+{
+    "helmet": {
+        "title": "Trading Account Validation & Rebate Claim | FXPayout",
+        "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
+    },
+    "header": {
+        "title": "Verify Your Trading Account to Start Earning Rebates",
+        "paragraph": "Complete the validation form below to link your trading account with fxpayout and start receiving automated rebates.",
+        "tag": "TRADING ACCOUNT VALIDATION"
+    },
+    "card": {
+        "title": "Trading Account Validation",
+        "paragraph": "Complete the form below and follow the guidelines to verify your trading account.",
+        "steps": [ "Fill in Trading Account Data", "Fill in Bank Withdrawal Data", "Submit & Wait for Verification"],
+        "validationForm": {
+            "title": "Validation Form",
+            "brokerLabel": "Select Broker",
+            "usernameLabel": "Full Name",
+            "usernamePlaceholder": "Full Name as per ID",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Email Address",
+            "accountNumberLabel": "Account Number",
+            "accountNumberPlaceholder": "Trading Account Number",
+            "platformLabel": "Select Platform",
+            "handphoneNumberLabel": "Phone Number",
+            "handphoneNumberPlaceholder": "Phone Number",
+            "errors": {
+                "brokerRequired": "Broker must be selected",
+                "usernameRequired": "Full name cannot be empty",
+                "emailRequired": "Email cannot be empty",
+                "emailInvalid": "Invalid email address",
+                "accountNumberRequired": "Account number cannot be empty",
+                "accountNumberInvalid": "Invalid account number",
+                "platformRequired": "Platform must be selected",
+                "handphoneNumberRequired": "Phone number cannot be empty",
+                "handphoneNumberInvalid": "Invalid phone number"
+            }
+        },
+        "bankForm": {
+            "title": "Deposit & Withdrawal Bank Data",
+            "rebateLabel": "Rebate To",
+            "rebatePlaceholder": "Select Broker First",
+            "bankLabel": "Bank",
+            "bankPlaceholder": "Select Bank",
+            "rekeningNumberLabel": "Account Number",
+            "rekeningNumberPlaceholder": "Bank Account Number",
+            "holdingUsernameLabel": "Account Holder Name",
+            "holdingUsernamePlaceholder": "Name as per Bank Statement",
+            "otherBank": "OTHERS",
+            "otherBankLabel": "Bank Name",
+            "otherBankPlaceholder": "Example: SeaBank",
+            "otherBankHelper": "Ensure it matches your destination account to avoid transfer errors.",
+            "errors": {
+                "rebateRequired": "Rebate must be selected",
+                "bankRequired": "Bank name cannot be empty",
+                "otherBankRequired": "Bank must be selected",
+                "rekeningNumberRequired": "Account number cannot be empty",
+                "rekeningNumberInvalid": "Invalid account number",
+                "holdingUsernameRequired": "Account holder name cannot be empty"
+            }
+        },
+        "errors": { "captcha": "Please confirm that you are not a robot" },
+        "warning": "*Your data is kept confidential and is only used for the verification and fxpayout rebate withdrawal process.",
+        "button": "Submit Validation",
+        "failedSubmit": "Request failed to send. Please try again in a moment."
+    },
+    "notify": {
+        "title": "Account Validation Terms",
+        "terms": [
+            {
+                "title": "Account validation can only be done once.",
+                "description": "Please ensure all data is entered correctly. If there is an error in the form, please contact fxpayout support before submitting."
+            },
+            {
+                "title": "Ensure all data matches your identity and trading account.",
+                "description": "Inconsistent data may lead to delays or rejection of the verification process."
+            },
+            {
+                "title": "Use an active bank account under your own name.",
+                "description": "This account will be used for rebate withdrawals. Ensure the account holder name matches your records."
+            }
+        ]
+    },
+    "success": {
+        "title": "Trading Account Validation Request Sent Successfully",
+        "paragraph": "The verification process takes up to 3 working days. A confirmation will be sent via email.",
+        "back": "Back"
+    }
+}

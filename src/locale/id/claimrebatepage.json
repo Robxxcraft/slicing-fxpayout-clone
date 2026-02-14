@@ -1,0 +1,90 @@
+{
+    "helmet": {
+        "title": "Apa itu Rebate Forex? Dapatkan Pengembalian Biaya Trading | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "definition": {
+        "title": "Apa itu Rebate Forex?",
+        "paragraph": "Rebate forex adalah pengembalian sebagian komisi atau spread dari setiap transaksi trading. Anda tetap trading seperti biasa di broker, namun sebagian biaya trading akan dikembalikan kepada Anda dalam bentuk rebate.",
+        "cards": [
+            {
+                "title": "Keunggulan Rebate",
+                "paragraph": "Spread, leverage, dan eksekusi trading tetap sama seperti akun biasa. Dengan rebate, Anda bisa mengurangi biaya trading dan berpotensi meningkatkan profit dalam jangka panjang."
+            },
+            {
+                "title": "Sistem Kerja Rebate",
+                "paragraph": "Setiap kali Anda melakukan transaksi, broker membagikan sebagian komisi kepada fxpayout sebagai IB. Komisi tersebut kemudian dikembalikan ke akun Anda sebagai rebate dan dapat cairkan."
+            }
+        ]
+    },
+    "howRebate": {
+        "title": "Cara Mendapat Rebate",
+        "paragraph": "Saat Anda membuka akun trading Forex (atau menghubungkan akun yang sudah ada) melalui kami, broker Anda akan membayar rebate kepada kami"
+    },
+    "howWorks": {
+        "title": "Bagaimana Cara Kerjanya?",
+        "paragraph": "Rebate forex bekerja secara otomatis di belakang layar. Anda tetap trading seperti biasa di broker, sementara fxpayout mengelola pengembalian sebagian komisi trading Anda dalam bentuk rebate.",
+        "imageFlows": "how-it-works-flow-id.webp",
+        "flows": [
+            {
+                "flow": "Spread / Komisi",
+                "title": "Pedagang / Trader",
+                "paragraph": "Trader melakukan transaksi trading seperti biasa melalui broker pilihan tanpa perubahan spread, leverage, maupun strategi trading."
+            },
+            {
+                "flow": "Reward / Hadiah",
+                "title": "Broker",
+                "paragraph": "Broker menerima spread atau komisi dari setiap transaksi, lalu membagikan sebagian komisi tersebut kepada fxpayout sebagai Introducing Broker (IB)."
+            },
+            {
+                "flow": "Pengiriman Cashback / Rebate",
+                "title": "FXPayout",
+                "paragraph": "fxpayout mengembalikan sebagian komisi yang diterima kepada trader dalam bentuk rebate yang dibayarkan secara berkala dan transparan."
+            }
+        ]
+    },
+    "payment": {
+        "title": "Sistem Pembayaran Rebate",
+        "paragraph": "fxpayout menyediakan berbagai metode pembayaran rebate yang fleksibel dan mudah diakses. Anda dapat memilih metode pencairan sesuai preferensi, dengan minimum penarikan yang rendah dan proses yang transparan.",
+        "tableHeaders": ["Metode", "Pembayaran Minimum", "Mata Uang", "Biaya"],
+        "tableItems": [
+            {
+                "method": "Cryptocurrencies",
+                "cost": "Up to 3 USDT"
+            },
+            {
+                "method": "E-Wallet Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Bank Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Neteller",
+                "cost": "1.45% (Min. $0.59)"
+            },
+            {
+                "method": "Skrill / Neteller",
+                "cost": "4.4% + 0.3 USD"
+            },
+            {
+                "method": "PayPal",
+                "cost": "1.45% (Min. $0.59)"
+            }
+        ]
+    },
+    "schedule": {
+        "title": "Jadwal Rebate",
+        "paragraph": "Temukan jadwal pembayaran rebate berdasarkan broker trading Anda. Klik “Lihat Jadwal” untuk detail lengkap setiap broker.",
+        "card": {
+            "title": "Daftar Jadwal Rebate Broker",
+            "showEntry": ["Tampilkan", "entri"],
+            "searchPlaceholder": "Cari broker disini",
+            "brokerName": "Nama Broker",
+            "schedule": "Jadwal Rebate",
+            "viewSchedule": "Lihat Jadwal",
+            "showList": "Menampilkan {{startIndex}} hingga {{endIndex}} dari {{totalIndex}} entri"
+        }
+    }
+}

@@ -12,30 +12,30 @@ const benefits: Benefit[] = [
     icon: "trader.png",
     title: "Rebate 90% untuk trader",
     description: "Dapatkan Cashback terbesar setiap lot",
-    translateKey: "homePage.benefit.items.0"
+    translateKey: "homepage:benefit.items.0"
   },
   {
     icon: "wallet.png",
     title: "Pembayaran mingguan atau on-demand",
     description: "Nikmati Cair cepat via bank lokal/e-wallet.",
-    translateKey: "homePage.benefit.items.1"
+    translateKey: "homepage:benefit.items.1"
   },
   {
     icon: "dashboard.png",
     title: "Dashboard monitoring real-time",
     description: "Pantau Riwayat rebate secara lengkap.",
-    translateKey: "homePage.benefit.items.2"
+    translateKey: "homepage:benefit.items.2"
   },
   {
     icon: "support.png",
     title: "Support lokal WhatsApp & Telegram",
     description: "Dilengkapi Support dengan respon cepat",
-    translateKey: "homePage.benefit.items.3"
+    translateKey: "homepage:benefit.items.3"
   },
 ];
 
 const Benefits = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["homepage"]);
   return (
     <section className="relative z-9999">
       <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 md:absolute xl:top-1/2 w-full -translate-y-[10%] md:-translate-y-[20%] xl:-translate-y-1/2 flex justify-center items-center">

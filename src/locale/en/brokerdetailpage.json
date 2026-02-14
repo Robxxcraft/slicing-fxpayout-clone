@@ -1,0 +1,117 @@
+{
+    "helmet": {
+        "title": "{{brokerName}} rebate until {{brokerEstimate}} per Lot | FXPayout",
+        "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
+    },
+    "navbar": {
+        "profil": "Profile",
+        "summary": "Summary",
+        "accountType": "Account Types", 
+        "spreadCommission": "Spread & Commission",
+        "advantage": "Features",
+        "platform": "Platforms", 
+        "depositWithdraw": "Deposit & Withdrawal",
+        "advantagesDisadvantages": "Pros & Cons", 
+        "rating": "Ratings",
+        "faq": "FAQ"
+    },
+    "back": "Back to Broker List",
+    "overallScore": "Overall Score",
+    "header": {
+        "viewRating": "View Community Reviews",
+        "detailHeaders": ["Founded", "Min Deposit", "Leverage", "Spread"]
+    },
+    "profile": {
+        "title": "Broker Profile",
+        "subtitle": "Official information regarding broker identity and regulation.",
+        "cards": [
+            {
+                "title": "Core Information",
+                "headers": {
+                    "brokerName": "Broker Name",
+                    "slogan": "Slogan",
+                    "entity": "Entity",
+                    "group": "Group",
+                    "ranking": "Tier",
+                    "yearFounded": "Year Founded",
+                    "brokerCategory": "Broker Type",
+                    "model": "Model",
+                    "totalInstrument": "Total Instruments"
+                }
+            },
+            {
+                "title": "Main Regulation"
+            }
+        ]
+    },
+    "summary": {
+        "title": "Quick Facts",
+        "subtitle": "Key broker information for your quick insight.",
+        "cardHeaders": {
+            "minDeposit": "Min Deposit", 
+            "accountType": "Account Type", 
+            "spread": "Spread", 
+            "commission": "Commission", 
+            "leverage": "Leverage", 
+            "execution": "Order Execution", 
+            "instrument": "Instruments", 
+            "depositWithdrawal": "Deposit & Withdrawal"
+        }
+    },
+    "accountType": {
+        "title": "Account Types",
+        "subtitle": "A variety of account options for different needs and trading styles.",
+        "profit": "Benefits",
+        "level": {
+            "general": "General",
+            "beginner": "Beginner",
+            "pro": "Pro",
+            "advanced": "Advanced",
+            "trader": "Trader",
+            "newsTrader": "News Trader"
+        }
+    },
+    "spread": {
+        "title": "Spread",
+        "subtitle": "Spread comparison across the broker's main instruments.",
+        "accountType": "Account Type"
+    },
+    "advantage": {
+        "title": "Key Advantages",
+        "subtitle": "Superior features that provide added value for traders."
+    },
+    "platform": {
+        "title": "Supported Trading Platforms",
+        "subtitle": "List of platforms available for trading."
+    },
+    "depositWithdraw": {
+        "title": "Deposit & Withdrawal",
+        "subtitle": "Information on transaction methods and processing times.",
+        "tableHeaders": ["Method", "Deposit Time", "Withdrawal Time", "Fee"]
+    },
+    "rebateProgram": {
+        "title": "Rebate Program (Estimation)",
+        "subtitle": "Estimated rebates you can earn through your rebate program.",
+        "button": "Rebate Calculator",
+        "info": "Rebates may be higher for ECN accounts and high trading volumes. The values above are estimates and subject to adjustment."
+    },
+    "advantagesDisadvantages": {
+        "title": "Pros & Cons",
+        "subtitle": "A summary of positive points and things to consider."
+    },
+    "rating": {
+        "title": "Community Ratings",
+        "subtitle": "Ratings and feedback from broker users.",
+        "summaryReview": "Based on <0>{{totalReview}}</0> Community Reviews"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Frequently asked questions by users."
+    },
+    "cta": {
+        "title": "Ready to Trade with {{brokerName}}?",
+        "paragraph": "Use your exclusive link to access the best rebates and professional trading conditions at {{brokerName}}.",
+        "registerFxpayout": "Register via FXPayout",
+        "visitWebsite": "Visit Broker Website"
+    }
+}

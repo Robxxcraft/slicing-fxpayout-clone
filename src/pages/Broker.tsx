@@ -7,16 +7,14 @@ import NotifyBroker from "@/components/broker/NotifyBroker";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Broker = () => {
+  const { t } = useTranslation(["brokerpage"]);
   const [showNotify, setShowNotify] = useState<boolean>(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState<string>(() => searchParams.get("search") || "");
   const allBrokers = Object.values(brokers);
-
-  useEffect(() => {
-    document.title = "Daftar Broker Partner dan Detail | FX Payout";
-  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
@@ -46,6 +44,7 @@ const Broker = () => {
 
   return (
     <div className="font-inter">
+      <title>{t("brokerpage:helmet.title")}</title>
       <Navbar active="broker" />
       <main>
         <Header query={query} onHandleSearch={handleSearch} />

@@ -2,8 +2,7 @@ import BoundedIcon from '../brokerDetail/ui/BoundedIcon';
 import SelectInput from '@/components/ui/SelectInput';
 import TextInput from '@/components/ui/TextInput';
 import type { FormBank } from '@/types/validationForm';
-
-const SUPPORT_BANK = ["BCA","BRI","Mandiri","BNI","BSI","LAINNYA"]
+import { useTranslation } from 'react-i18next';
 
 const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors, handleTempBankChange }: 
   {
@@ -13,79 +12,83 @@ const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors, handleTe
     errors: Partial<Record<keyof FormBank, string>>;
     handleTempBankChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
   }) => {
-  
+  const { t } = useTranslation(["common", "validationpage"]);
+  const SUPPORT_BANK = ["BCA", "BRI", "Mandiri", "BNI", "BSI", t("validationpage:card.bankForm.otherBank")];
+
   return (
     <>
       <div className="pb-4 md:pb-6 px-4 md:px-6 2xl:px-8 flex items-center gap-6 border-b border-[#D0D0D0]">
         <BoundedIcon variant="third" icon="/bank-icon.svg" alt="icon" maskColor="bg-primary"/>
         <h3 className="text-xl md:text-2xl text-my-purple font-medium leading-[115%]">
-          Data Bank Deposit & Pencairan
+          {t("validationpage:card.bankForm.title")}
         </h3>
       </div>
       <div className="px-4 md:px-6 2xl:px-8 mt-4 md:mt-6 flex flex-col gap-4">
         <SelectInput 
           id="rebate" 
-          label="Rebate Ke" 
-          icon="bank-icon.svg" 
+          label={t("validationpage:card.bankForm.rebateLabel")} 
+          icon="/bank-icon.svg" 
           altIcon="Icon rebate" 
-          mobileHelperText="Pilih Broker Terlebih Dahulu"
+          mobileHelperText={selectedBroker.trim() === "" ? 
+            `<${t("validationpage:card.bankForm.rebatePlaceholder")}>` : `<${t("text.select")}>`}
           showMobileHelperText={selectedBroker.trim() === ""}
-          defaultValue={selectedBroker.trim() === "" ? `<Pilih Broker Terlebih Dahulu>` : "<Pilih Rebate>"}
+          defaultValue={selectedBroker.trim() === "" ? 
+            `<${t("validationpage:card.bankForm.rebatePlaceholder")}>` : `<${t("text.select")}>`}
           value={form.rebate} 
           onChangeForm={handleChangeForm} 
           disabled={selectedBroker.trim() === ""}
           optionData={["Akun Trading", "Bank"]}
-          errorMessage={errors.rebate}
+          errorMessage={errors.rebate && t(errors.rebate)}
           required />
         <SelectInput 
           id="tempBank" 
-          label="Bank" 
-          icon="bank-icon.svg" 
+          label={t("validationpage:card.bankForm.bankLabel")} 
+          icon="/bank-icon.svg" 
           altIcon="Icon bank" 
-          defaultValue="&lt;Pilih Bank&gt;" 
+          defaultValue={`<${t("text.select")}>`} 
           value={form.tempBank} 
           onChangeForm={handleTempBankChange} 
           optionData={SUPPORT_BANK}
-          errorMessage={errors.tempBank}
+          errorMessage={errors.tempBank && t(errors.tempBank)}
           required />
-        {form.tempBank === "LAINNYA" &&
+        {form.tempBank === t("validationpage:card.bankForm.otherBank") &&
           <TextInput
             id="bank"
-            label="Nama Bank"
-            icon="bank-icon.svg"
+            label={t("validationpage:card.bankForm.otherBankLabel")} 
+            icon="/bank-icon.svg"
             altIcon="Icon bank"
             value={form.bank}
             onChangeForm={handleChangeForm} 
-            placeholder="Contoh: SeaBank" 
+            placeholder={t("validationpage:card.bankForm.otherBankPlaceholder")} 
             typeInput={"text"}
-            errorMessage={errors.bank}
-            helperText="Pastikan sesuai dengan rekening tujuan untuk menghindari kesalahan transfer."
+            errorMessage={errors.bank && t(errors.bank)}
+            helperText={t("validationpage:card.bankForm.otherBankHelper")} 
             required />
         }
         <TextInput
           id="rekeningNumber"
-          label="Nomor Rekening"
-          icon="wallet-icon.svg"
+          label={t("validationpage:card.bankForm.rekeningNumberLabel")} 
+          icon="/wallet-icon.svg"
           altIcon="Icon card"
           value={form.rekeningNumber}
           onChangeForm={handleChangeForm} 
-          placeholder="Masukkan Nomor Rekening" 
+          placeholder={t("validationpage:card.bankForm.rekeningNumberPlaceholder")} 
           inputMode="numeric"
           autoComplete="off"
           typeInput={"text"}
-          errorMessage={errors.rekeningNumber}
+          errorMessage={errors.rekeningNumber && t(errors.rekeningNumber)}
           required />
         <TextInput
           id="holdingUsername"
-          label="Nama Pemegang Rekening"
-          icon="user-icon.svg"
+          label={t("validationpage:card.bankForm.holdingUsernameLabel")} 
+          icon="/user-icon.svg"
           altIcon="Icon user"
           value={form.holdingUsername}
           onChangeForm={handleChangeForm} 
-          placeholder="Nama Sesuai Buku Rekening" 
+          placeholder={t("validationpage:card.bankForm.holdingUsernamePlaceholder")} 
           autoComplete="cc-name" 
           typeInput={"text"}
-          errorMessage={errors.holdingUsername}
+          errorMessage={errors.holdingUsername && t(errors.holdingUsername)}
           required />
       </div>
     </>

@@ -1,0 +1,41 @@
+{
+    "helmet": {
+        "title": "Trading IB Transfer Form to FXPayout | FXPayout",
+        "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
+    },
+    "header": {
+        "title": "Transfer Your Trading Account to fxpayout IB",
+        "paragraph": "Complete the form below to initiate an IB Transfer and link your trading account to fxpayout.",
+        "tag": "IB TRANSFER"
+    },
+    "card": {
+        "title": "Introducing Broker (IB) Transfer",
+        "paragraph": "Complete the form below to perform an IB Transfer to fxpayout.",
+        "steps": ["Fill Out Form", "Copy Email Template", "Send Email to Support"],
+        "emailForm": {
+            "title": "Complete the Form",
+            "brokerLabel": "Select Broker",
+            "accountNumberLabel": "Account Number",
+            "accountNumberPlaceholder": "Account Number",
+            "usernameLabel": "Account Holder Name",
+            "usernamePlaceholder": "Name as per Account Records"
+        },
+        "emailTemplate": {
+            "title": "IB Transfer Email Template",
+            "template": {
+                "subject": "Request for IB Transfer",
+                "greeting": "Dear Support Team",
+                "intro": "I am writing to request a transfer of my trading account to the following IB:",
+                "ibId": "IB ID:",
+                "ibLink": "IB Link:",
+                "accountData": "My account details:",
+                "name": "Name:",
+                "tradingAccount": "Trading Account Number:",
+                "closing": "Please assist me with this IB transfer process.\nThank you.",
+                "regards": "Best regards,"
+            },
+            "send": "Send to",
+            "contactSupport": "Contact Support"
+        }
+    }
+}

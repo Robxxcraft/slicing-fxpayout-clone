@@ -8,7 +8,7 @@ const NotifyBroker = ({
 }: {
   setShowNotify: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["brokerpage"]);
   return (
     <div className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-8 lg:pt-10">
       <div className="p-4 md:p-6 bg-my-light-blue border border-primary rounded-[10px]">
@@ -19,10 +19,10 @@ const NotifyBroker = ({
             </span>
             <div>
               <p className="text-base lg:text-lg 2xl:text-xl font-semibold text-[rgba(0,0,0,0.8)]">
-                {t("brokerPage.notify.title")}
+                {t("brokerpage:notify.title")}
               </p>
               <p className="mt-1 text-sm md:text-base font-medium text-[rgba(0,0,0,0.6)]">
-                {t("brokerPage.notify.paragraph")}
+                {t("brokerpage:notify.paragraph")}
               </p>
             </div>
           </div>

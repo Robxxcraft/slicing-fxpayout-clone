@@ -3,19 +3,19 @@ import Button from "./ui/Button";
 import { getLocalizedPath } from "@/helper/pathHelper";
 
 const CtaSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common"]);
   return (
     <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-28">
       <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
         <div className="z-999 w-full lg:w-fit">
           <h2 className="text-2xl 2xl:text-[40px] font-bold text-white leading-[134%] max-w-[620px]">
-            {t("common.cta.title")}
+            {t("cta.title")}
           </h2>
           <p className="mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620]">
-            {t("common.cta.paragraph")}
+            {t("cta.paragraph")}
           </p>
           <Button buttonType="link" urlTo={`${getLocalizedPath("/broker", i18n.language)}`} variant="primary-light" size="xl" className="w-full! md:w-fit! mt-8 font-medium!">
-            {t("common.button.registerNow")}
+            {t("button.registerNow")}
           </Button>
         </div>
         <img

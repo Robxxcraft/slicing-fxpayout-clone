@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Kalkulator Rebate: Hitung Estimasi Cashback Trading | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "header": {
+        "title": "Hitung Estimasi Rebate Trading Anda Sekarang",
+        "paragraph": "Masukkan broker, tipe akun, dan total lot trading Anda untuk mengetahui estimasi rebate yang bisa Anda dapatkan setiap bulan cepat, transparan, dan tanpa biaya.",
+        "tag": "KALKULATOR REBATE FXPAYOUT"
+    },
+    "card": {
+        "title": "Kalkulator Estimate Rebate",
+        "paragraph": "Pilih broker dan masukkan detail trading Anda untuk melihat estimasi rebate secara instan.",
+        "broker": "Broker",
+        "accountType": "Tipe Akun",
+        "pair": "Pair / Instrumen Trading",
+        "lots": "Lots",
+        "accountTypePlaceholder": "Pilih broker terlebih dahulu",
+        "pairPlaceholder": "Masukkan Lot",
+        "button": "Hitung Estimasi Rebate",
+        "estimatesRebates": "Estimasi Rebate",
+        "rebatePerLot": "Rebate per Lot",
+        "info": "<0>fxpayout</0> mengembalikan hingga 90% komisi IB kepada trader. Proses rebate dilakukan secara otomatis, aman, dan transparan tanpa mengubah spread, leverage, maupun kondisi trading Anda.",
+        "errors": {
+            "brokerRequired": "Broker harus dipilih",
+            "accountTypeRequired": "Tipe Akun harus dipilih",
+            "pairRequired": "Pair harus dipilih",
+            "lotsRequired": "Jumlah lots tidak boleh kosong"
+        }
+    }
+}

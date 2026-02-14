@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { getLocalizedPath } from "@/helper/pathHelper";
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common"]);
   return (
     <footer className="xl:mt-4 2xl:mt-5">
       <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-11 xl:py-20 flex flex-col md:flex-row gap-6 md:gap-10 flex-wrap lg:flex-nowrap">

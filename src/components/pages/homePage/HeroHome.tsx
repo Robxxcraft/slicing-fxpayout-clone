@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { getLocalizedPath } from "@/helper/pathHelper";
 
 const HeroHome = () => {
-  const { t, i18n } = useTranslation(['translation']);
+  const { t, i18n } = useTranslation(["common", "homepage"]);
   
   return (
     <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-[120px] lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between rounded-b-[80px]">
@@ -21,14 +21,14 @@ const HeroHome = () => {
         <div className="py-1 lg:py-2 px-4 lg:px-5 2xl:px-6 flex items-center gap-2.5 w-fit border border-white bg-[rgba(255,255,255,0.2)] rounded-full">
           <img src="/badgeCirclePercent.svg" alt="badge percent" />
           <span className="text-sm 2xl:text-xl font-medium text-light-gray">
-            {t('homePage.hero.badge')}
+            {t('homepage:hero.badge')}
           </span>
         </div>
         <h1 className="font-wix-madefor-display font-bold text-[40px] md:text-[48px] 2xl:text-[64px] leading-[120%]">
-          {t("homePage.hero.title")}
+          {t("homepage:hero.title")}
         </h1>
         <p className="lg:mb-3 2xl:mb-6 text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
-          {t("homePage.hero.subtitle")}
+          {t("homepage:hero.subtitle")}
         </p>
         <div className="flex flex-row gap-4 flex-wrap md:flex-nowrap">
           <Button 
@@ -38,7 +38,7 @@ const HeroHome = () => {
             size="xl" 
             className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! font-medium! text-nowrap"
           >
-            {t("common.button.registerNow")}
+            {t("button.registerNow")}
           </Button>
           <Button 
             buttonType="link"
@@ -47,7 +47,7 @@ const HeroHome = () => {
             size="xl" 
             className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! font-medium! text-nowrap"
           >
-            {t("common.button.calculateRebate")}
+            {t("button.calculateRebate")}
           </Button>
         </div>
       </div>

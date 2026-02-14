@@ -4,17 +4,17 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { IoClose } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { DEFAULT_LANGUAGE, languages, SUPPORT_LANGUAGE, type Language } from "../utils/languageSupport";
+import { languages, type Language } from "../utils/languageSupport";
 import LanguageSelector from "./LanguageSelector";
 import { listNavigation } from "../utils/listNavigation";
 import { FaChevronDown } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
-import { getLocalizedPath } from "@/helper/pathHelper";
+import { getLocalizedPath, navigateChangeLng } from "@/helper/pathHelper";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
 const Navbar = ({ active }: { active: string }) => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common"]);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
   const [openLanguageSelector, setOpenLanguageSelector] =
@@ -40,21 +40,10 @@ const Navbar = ({ active }: { active: string }) => {
     setOpenLanguageSelector(false);
     i18n.changeLanguage(lng.code);
     setSelectedLanguage(lng);
-    navigateChangeLng(lng.code)
+    navigateChangeLng(lng.code, navigate, pathname)
   };
 
-  const navigateChangeLng = (newLng: string) => {
-    const segments = pathname.split("/").filter(Boolean);
 
-    if (SUPPORT_LANGUAGE.includes(segments[0])) {
-      segments.shift()
-    }
-    if (newLng === DEFAULT_LANGUAGE) {
-      navigate(`/${segments.join("/")}`);
-    } else {
-      navigate(`/${newLng}/${segments.join("/")}`);
-    }
-  };
 
   const handleOpenSubMenu = (idx: number) => {
     setOpenSubMenu((prev) => prev === idx ? null : idx);
@@ -88,7 +77,9 @@ const Navbar = ({ active }: { active: string }) => {
             key={index}
             className={`relative group flex items-center gap-2 px-2 text-light-gray text-base 2xl:text-xl border-white transition-all duration-300 ease-out`}
           >
-            <Link to={getLocalizedPath(url, i18n.language)} className={`${
+            <Link 
+              to={getLocalizedPath(url, i18n.language)} 
+              className={`${
               active.toLocaleLowerCase() == title.toLocaleLowerCase()
                 ? "font-bold"
                 : "font-normal"
@@ -211,7 +202,7 @@ const Navbar = ({ active }: { active: string }) => {
                           setOpenLanguageSelector(false);
                         }}}
                         className="px-4 py-2 text-white hover:bg-black/10">
-                        {t(`navbar.subNav${subNav.code}`)}
+                        {t(`navbar.subNav.${subNav.code}`)}
                       </HashLink>
                     ))
                     }

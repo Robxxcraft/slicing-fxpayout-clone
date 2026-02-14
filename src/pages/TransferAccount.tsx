@@ -1,25 +1,25 @@
-import { useEffect } from "react";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeaderSection from "@/components/HeaderSection";
 import TransferForm from "@/components/pages/transferAccount/TransferForm";
+import { useTranslation } from "react-i18next";
 
 const TransferAccount = () => {
-  useEffect(() => {
-    document.title = "Formulir Transfer IB Trading ke FX Payout | FX Payout";
-  }, []);
+  const { t } = useTranslation(["transferpage"]);
 
   return (
     <div className="font-inter">
+      <title>{t("transferpage:helmet.title")}</title>
+
       <Navbar active="layanan" />
       <main>
         <div className="bg-[#F9F9F9] pb-10">
           <HeaderSection 
             icon="/transfer-ib.svg" 
-            badge="Transfer IB" 
-            title="Pindahkan Akun Trading Anda ke IB fxpayout" 
-            paragraph="Lengkapi formulir di bawah ini untuk melakukan Transfer IB dan menghubungkan akun trading Anda ke fxpayout." />
+            badge={t("transferpage:header.tag")} 
+            title={t("transferpage:header.title")} 
+            paragraph={t("transferpage:header.paragraph")} />
           <TransferForm />
         </div>
         <CtaSection />

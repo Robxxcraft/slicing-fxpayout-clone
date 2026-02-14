@@ -2,6 +2,7 @@ import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { MdThumbUp } from "react-icons/md";
 import HeadingSection from './ui/HeadingSection';
 import SubHeadingSection from './ui/SubHeadingSection';
+import { useTranslation } from "react-i18next";
 
 const ProsCons = ({
   advantages, 
@@ -10,17 +11,18 @@ const ProsCons = ({
   advantages: string[]; 
   disadvantages: string[]
 }) => {
+  const { t } = useTranslation(["common", "brokerdetailpage"]);
   return (
     <section id="kelebihan-kekurangan" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
-      <HeadingSection>Kelebihan & Kekurangan</HeadingSection>
-      <SubHeadingSection>Ringkasan poin positif dan hal yang perlu diperhatikan.</SubHeadingSection>
+      <HeadingSection>{t("brokerdetailpage:advantagesDisadvantages.title")}</HeadingSection>
+      <SubHeadingSection>{t("brokerdetailpage:advantagesDisadvantages.subtitle")}</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 grid grid-cols-1 xl:grid-cols-2 gap-6 lg:gap-10 2xl:gap-14">
         
         {/* ADVANTAGES */}
         <div className="bg-[#F0F9FF] rounded-2xl md:rounded-4xl 2xl:rounded-[40px] shadow-[0_4px_50px_0_rgba(0,0,0,0.1)] 2xl:shadow-[0_4px_100px_0_rgba(0,0,0,0.1)]">
           <div className='relative py-5 md:py-6 w-full bg-primary rounded-2xl shadow-[0_7px_16.8px_0_rgba(65,96,255,0.28)]'>
             <h3 className='text-xl md:text-2xl font-semibold text-white text-center'>
-              Kelebihan
+              {t("text.advantage")}
             </h3>
             <div className="absolute top-[70%] left-1/2 -translate-x-1/2">
               <TbTriangleInvertedFilled className="text-[48px] md:text-[56px] 2xl:text-[72px] text-primary"/>
@@ -44,7 +46,7 @@ const ProsCons = ({
         <div className="relative bg-[#FEF7F7] rounded-2xl md:rounded-4xl 2xl:rounded-[40px] shadow-[0_4px_50px_0_rgba(0,0,0,0.1)] 2xl:shadow-[0_4px_100px_0_rgba(0,0,0,0.1)]">
           <div className='relative py-5 md:py-6 w-full bg-my-pink rounded-2xl shadow-[0_7px_16.8px_0_rgba(252,104,91,0.28)]'>
             <h3 className='text-xl md:text-2xl font-semibold text-white text-center'>
-              Kekurangan
+              {t("text.disadvantage")}
             </h3>
             <div className="absolute top-[70%] left-1/2 -translate-x-1/2">
               <TbTriangleInvertedFilled className="text-[48px] md:text-[56px] 2xl:text-[72px] text-my-pink"/>

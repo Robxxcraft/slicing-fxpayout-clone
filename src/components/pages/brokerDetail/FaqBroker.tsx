@@ -2,12 +2,14 @@ import { FaChevronDown } from 'react-icons/fa';
 import HeadingSection from './ui/HeadingSection';
 import SubHeadingSection from './ui/SubHeadingSection';
 import type { FaqStructure } from '@/utils/dataBroker/typeDetailBroker';
+import { useTranslation } from 'react-i18next';
 
 const FaqBroker = ({ dataFaq }: { dataFaq: FaqStructure[] }) => {
+  const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <section id="faq" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
-      <HeadingSection>FAQ</HeadingSection>
-      <SubHeadingSection>Pertanyaan yang paling sering diajukan oleh pengguna.</SubHeadingSection>
+      <HeadingSection>{t("brokerdetailpage:faq.title")}</HeadingSection>
+      <SubHeadingSection>{t("brokerdetailpage:faq.subtitle")}</SubHeadingSection>
       <div className='mt-6 2xl:mt-8 flex flex-col gap-2 lg:gap-3 2xl:gap-4'>
         {dataFaq.map((f, idx) => (
           <details key={idx} name="faq-broker" open={idx === 0}

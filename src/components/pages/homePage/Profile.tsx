@@ -14,22 +14,22 @@ const featuresProfile: FeatureProfile[] = [
     title: "Rebate Hingga 90%",
     paragraph:
       "Dapatkan cashback hingga 90% dari komisi broker langsung ke akun Anda.",
-    translateKey: "homePage.profile.features.0"
+    translateKey: "homepage:profile.features.0"
   },
   {
     title: "Fokus ke trader",
     paragraph: "Cashback langsung tanpa mengubah kondisi trading.",
-    translateKey: "homePage.profile.features.1"
+    translateKey: "homepage:profile.features.1"
   },
   {
     title: "Local Support",
     paragraph: "Support berbagai bahasa & jam operasional ramah trader.",
-    translateKey: "homePage.profile.features.2"
+    translateKey: "homepage:profile.features.2"
   },
 ];
 
 const Profile = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["homepage"]);
   const [query, setQuery] = useState<string>("");
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +47,7 @@ const Profile = () => {
             <input
               id="search"
               name="search"
-              placeholder={t("homePage.profile.searchPlaceholder")}
+              placeholder={t("homepage:profile.searchPlaceholder")}
               value={query}
               onChange={handleSearch}
               type="text"
@@ -56,12 +56,12 @@ const Profile = () => {
           </div>
           <div className="my-4 lg:my-5 2xl:my-6 flex flex-wrap gap-x-1 lg:gap-x-2 gap-y-3 lg:gap-y-2">
             {[
-              "homePage.profile.badges.0",
-              "homePage.profile.badges.1",
-              "homePage.profile.badges.2",
-              "homePage.profile.badges.3",
-              "homePage.profile.badges.4",
-              "homePage.profile.badges.5",
+              "homepage:profile.badges.0",
+              "homepage:profile.badges.1",
+              "homepage:profile.badges.2",
+              "homepage:profile.badges.3",
+              "homepage:profile.badges.4",
+              "homepage:profile.badges.5",
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -101,15 +101,15 @@ const Profile = () => {
                 ))}
               </div>
               <p className="text-sm md:text-base 2xl:text-xl font-medium text-[#E9E9E9] text-center">
-                {t("homePage.profile.tag")}
+                {t("homepage:profile.tag")}
               </p>
             </div>
           </div>
           <h2 className="font-wix-madefor-display my-6 2xl:my-8 text-center lg:text-left text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[64px] font-bold leading-[120%]">
-            {t("homePage.profile.title")}
+            {t("homepage:profile.title")}
           </h2>
           <p className="text-center lg:text-left text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">
-            {t("homePage.profile.paragraph")}
+            {t("homepage:profile.paragraph")}
           </p>
         </div>
       </div>
