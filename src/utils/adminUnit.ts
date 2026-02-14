@@ -2,7 +2,7 @@ export const HEADER_MAPPING: Record<string, string> = {
   "Nama Lengkap": "full_name",
   "Email": "email",
   "Broker": "broker",
-  "Nama Akun Trading": "trading_account_name",
+  "Platform Trading": "platform",
   "Nomor Akun": "trading_account_number",
   "No HP": "phone_number",
   "Rebate": "rebate",

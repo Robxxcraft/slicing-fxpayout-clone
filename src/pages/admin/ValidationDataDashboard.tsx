@@ -14,7 +14,9 @@ import ModalDeleteValidationData from "@/components/ui/ModalDeleteValidationData
 import DrawerImportCsv from "@/components/admin/DrawerImportCsv";
 import type { ValidationData } from "@/models/validationData";
 import { columnsDef } from "@/helper/columnsValidation";
-import { bulkDeleteValidationData, deleteValidationData, getLocalStorage, getValidationData, setLocalStorage } from "@/utils/api";
+import { bulkDeleteValidationData, deleteValidationData, exportCsvValidationData, getLocalStorage, getValidationData, setLocalStorage } from "@/utils/api";
+import { TbTableExport } from "react-icons/tb";
+import Tooltip from "@/components/ui/Tooltip";
 
 type DrawerType = "FILTER" | "DETAIL" | "IMPORT" | null;
 
@@ -179,6 +181,17 @@ const ValidationDataDashboard = () => {
     }
   }
 
+  const handleExportData = async () => {
+    setIsLoading(true);
+    const { error, message } = await exportCsvValidationData();
+    if (error) {
+      toast.error(message);
+    } else {
+      toast.success(message);
+    }
+    setIsLoading(false);
+  }
+
   return (
     <>
       <div className="px-4 md:px-8 pt-4">
@@ -197,7 +210,7 @@ const ValidationDataDashboard = () => {
               <input
                 id="search"
                 name="search"
-                placeholder="Cari nama, email, nama akun trading, atau akun bank"
+                placeholder="Cari nama, email, atau akun bank"
                 value={querySearch}
                 onChange={(e) => setQuerySearch(e.target.value)}
                 type="text"
@@ -231,35 +244,38 @@ const ValidationDataDashboard = () => {
             <div className="flex">
               <button
                 onClick={tableInstance.previousPage}
-                disabled={!tableInstance.getCanPreviousPage()}
+                disabled={isLoading || !tableInstance.getCanPreviousPage()}
                 className="p-2 rounded-l-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
               >
                 <FaChevronLeft />
               </button>
               <button
                 onClick={tableInstance.nextPage}
-                disabled={!tableInstance.getCanNextPage()}
+                disabled={isLoading || !tableInstance.getCanNextPage()}
                 className="p-2 rounded-r-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
               >
                 <FaChevronRight />
               </button>
             </div>
-            <button
+            <Tooltip 
               disabled={isLoading}
-              onClick={fetchData}
-              className="p-2 rounded-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto">
-              <LuRefreshCcw />
-            </button>
-            <button
-              onClick={openImport}
-              className="p-2 rounded-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto">
-              <MdOutlineFileUpload className="text-lg" />
-            </button>
-            <div
-              onClick={openFilter} 
-              className="p-2 rounded-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out">
-              <IoFilter />
-            </div>
+              icon={<LuRefreshCcw />} 
+              handleClick={fetchData} 
+              detail={"Reload Data"} />
+            <Tooltip 
+              disabled={isLoading}
+              icon={<TbTableExport className="text-lg" />} 
+              handleClick={handleExportData} 
+              detail={"Export CSV"} />
+            <Tooltip 
+              disabled={isLoading}
+              icon={<MdOutlineFileUpload className="text-lg" />} 
+              handleClick={openImport} 
+              detail={"Import CSV"} />
+            <Tooltip 
+              icon={<IoFilter />} 
+              handleClick={openFilter} 
+              detail={"Filter"} />
           </div>
         </div>
       </div>
