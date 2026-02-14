@@ -47,7 +47,7 @@ const LanguageSelector = ({
             onClick={() => onChangeLanguage(lang)}
             className="py-2 px-4 flex gap-2 items-center cursor-pointer hover:bg-light-gray">
             <img
-              src={`flags/${lang.flag}`}
+              src={`/flags/${lang.flag}`}
               alt={`flag-${lang.label}`}
               className="w-8"
             />

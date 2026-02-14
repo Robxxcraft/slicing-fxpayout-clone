@@ -1,10 +1,12 @@
 import { useState, type ChangeEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { CiSearch } from "react-icons/ci";
 import { PiStarFill } from "react-icons/pi";
 
 type FeatureProfile = {
   title: string;
   paragraph: string;
+  translateKey: string;
 };
 
 const featuresProfile: FeatureProfile[] = [
@@ -12,18 +14,22 @@ const featuresProfile: FeatureProfile[] = [
     title: "Rebate Hingga 90%",
     paragraph:
       "Dapatkan cashback hingga 90% dari komisi broker langsung ke akun Anda.",
+    translateKey: "homePage.profile.features.0"
   },
   {
     title: "Fokus ke trader",
     paragraph: "Cashback langsung tanpa mengubah kondisi trading.",
+    translateKey: "homePage.profile.features.1"
   },
   {
     title: "Local Support",
     paragraph: "Support berbagai bahasa & jam operasional ramah trader.",
+    translateKey: "homePage.profile.features.2"
   },
 ];
 
 const Profile = () => {
+  const { t } = useTranslation();
   const [query, setQuery] = useState<string>("");
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +47,7 @@ const Profile = () => {
             <input
               id="search"
               name="search"
-              placeholder="rebate forex, cashback trading, IB forex terpercaya..."
+              placeholder={t("homePage.profile.searchPlaceholder")}
               value={query}
               onChange={handleSearch}
               type="text"
@@ -50,18 +56,18 @@ const Profile = () => {
           </div>
           <div className="my-4 lg:my-5 2xl:my-6 flex flex-wrap gap-x-1 lg:gap-x-2 gap-y-3 lg:gap-y-2">
             {[
-              "Rebate Forex",
-              "Cashback Trading",
-              "Rebate FBS",
-              "Rebate Exness",
-              "Rebate XM",
-              "IB Forex Terpercaya",
+              "homePage.profile.badges.0",
+              "homePage.profile.badges.1",
+              "homePage.profile.badges.2",
+              "homePage.profile.badges.3",
+              "homePage.profile.badges.4",
+              "homePage.profile.badges.5",
             ].map((item, idx) => (
               <div
                 key={idx}
                 className="px-4 lg:px-5 2xl:px-6 py-2 lg:py-3 bg-my-light-blue border border-primary rounded-full">
                 <p className="text-[12px] md:text-base lg:text-sm bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
-                  {item}
+                  {t(item)}
                 </p>
               </div>
             ))}
@@ -75,8 +81,8 @@ const Profile = () => {
                   className="mt-1"
                 />
                 <div>
-                  <h3 className="text-xl lg:text-lg font-semibold">{item.title}</h3>
-                  <p className="text-[12px] md:text-sm">{item.paragraph}</p>
+                  <h3 className="text-xl lg:text-lg font-semibold">{t(`${item.translateKey}.title`)}</h3>
+                  <p className="text-[12px] md:text-sm">{t(`${item.translateKey}.paragraph`)}</p>
                 </div>
               </div>
             ))}
@@ -95,17 +101,15 @@ const Profile = () => {
                 ))}
               </div>
               <p className="text-sm md:text-base 2xl:text-xl font-medium text-[#E9E9E9] text-center">
-                Dipercaya komunitas trader
+                {t("homePage.profile.tag")}
               </p>
             </div>
           </div>
           <h2 className="font-wix-madefor-display my-6 2xl:my-8 text-center lg:text-left text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[64px] font-bold leading-[120%]">
-            FXPayout, rujukan utama rebate forex bagi trader.
+            {t("homePage.profile.title")}
           </h2>
           <p className="text-center lg:text-left text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">
-            FXPayout dikenal sebagai platform rebate forex yang
-            mengembalikan hingga 90% komisi broker, memprioritaskan pembayaran
-            cepat dan layanan support lokal untuk para trader.
+            {t("homePage.profile.paragraph")}
           </p>
         </div>
       </div>

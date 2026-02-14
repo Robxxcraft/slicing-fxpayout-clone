@@ -1,0 +1,172 @@
+{
+    "common": {
+        "button": {
+            "registerNow": "Register Now",
+            "calculateRebate": "Calculate Rebate"
+        },
+        "cta": {
+            "title": "Ready to increase the efficiency of your trading profit?",
+            "paragraph": "Register now and start getting up to 90% rebates."
+        },
+        "input": {
+            "choose": "Choose"
+        }
+    },
+    "navbar": {
+        "home": "Home",
+        "broker": "Broker",
+        "calculator": "Calculator",
+        "claimRebate": "Claim Rebate",
+        "service": "Service",
+        "subNav": {
+            "definition": "What is Forex Rebate?",
+            "howRebate": "How to Get Forex Rebates", 
+            "howWorks": "How It Works", 
+            "payment": "Rebate Payment System", 
+            "shcedule": "Rebate Schedule",
+            "validation": "Account Validation",
+            "transfer": "Account Transfer"    
+        }
+    },
+    "footer": {
+        "paragraph": "We return up to 90% of the IB commission to traders. The process is fast, secure, and transparent without changing spreads or trading conditions.",
+        "quickLink": "Quick Links",
+        "contact": "Contact Us"
+    },
+    "homePage": {
+        "hero": {
+            "title": "Trade More Profitably with Up to 90% Rebates for Traders.",
+            "subtitle": "FXPayout is a trusted forex rebate platform providing up to 90% cashback from broker commissions directly to traders.",
+            "badge": "Get 90% Rebate For Traders",
+            "estimateRebate": {
+                "title": "Rebate Estimation",
+                "subtitle": "Select a broker and enter lots per month for a quick estimation",
+                "broker": "Broker",
+                "lotPerMonth": "Lots per Month",
+                "pair": "Pair",
+                "register": "Register & Get",
+                "estimation": ["Estimate", "Rebate"],
+                "claim": "Manual Claim",
+                "info": "We return up to 90% of the IB commission to traders. The process is fast, secure, and transparent without changing spreads or trading conditions."
+            }
+        },
+        "benefit": {
+            "items": [
+                {
+                    "title": "90% rebate for traders",
+                    "description": "Get the largest cashback every lot"
+                },
+                {
+                    "title": "Weekly or on-demand payments",
+                    "description": "Enjoy fast withdrawals via local banks/e-wallets."
+                },
+                {
+                    "title": "Real-time monitoring dashboard",
+                    "description": "Monitor rebate history completely."
+                },
+                {
+                    "title": "Local support WhatsApp & Telegram",
+                    "description": "Equipped with Support with fast response"
+                }
+            ]
+        },
+        "howItWorks": {
+            "title": "How FXPayout Works in 4 Simple Steps",
+            "paragraph": "Without changing your strategy, you simply trade as usual. FXPayout takes care of the commission flow into cashback for you.",
+            "tag": "HOW IT WORKS",
+            "workflows": [
+                {
+                    "title": "START",
+                    "subtitle": "Register via the official FXPayout link",
+                    "paragraph": "Create an FXPayout account and link your trading account through the official link we provide from your chosen broker."
+                },
+                {
+                    "title": "TRADE",
+                    "subtitle": "Trade as usual with your broker",
+                    "paragraph": "Continue your trading activities without changing spreads, leverage, or other conditions. Everything follows the broker's rules."
+                },
+                {
+                    "title": "COMMISSION",
+                    "subtitle": "Broker sends IB commission to FXPayout",
+                    "paragraph": "Based on the lot volume you trade, the broker automatically sends the IB commission to FXPayout."
+                },
+                {
+                    "title": "REBATE",
+                    "subtitle": "Up to 90% rebate to your account",
+                    "paragraph": "We return up to 90% of that commission as cashback, which can be withdrawn quickly via local banks or e-wallets."
+                }
+            ]
+        },
+        "rewards": {
+            "title": "Bonus Rebate +10% for New Accounts",
+            "paragraph": "Enjoy a limited-time promo specifically for traders who just joined FXPayout.",
+            "tag": "Limited Time"
+        },
+        "reviews": {
+            "title": "What Do Traders Who Use FXPayout Say?",
+            "paragraph": "Real experiences from traders earning additional profit from the rebate program.",
+            "tag": "TESTIMONIALS"
+        },
+        "profile": {
+            "title": "FXPayout, the main reference for forex rebates for traders.",
+            "paragraph": "FXPayout is known as a forex rebate platform that returns up to 90% of broker commissions, prioritizing fast payments and local support services for traders.",
+            "tag": "Trusted by the trading community",
+            "searchPlaceholder": "rebate forex, trading cashback, trusted forex IB...",
+            "badges": ["Forex Rebate", "Trading Cashback", "FBS Rebate", "Exness Rebate", "XM Rebate", "Trusted Forex IB"],
+            "features": [
+                {
+                    "title": "Up to 90% Rebate",
+                    "paragraph": "Get up to 90% cashback from broker commissions directly to your account."
+                },
+                {
+                    "title": "Focus on traders",
+                    "paragraph": "Instant cashback without changing trading conditions."
+                },
+                {
+                    "title": "Local Support",
+                    "paragraph": "Multi-language support & trader-friendly operating hours."
+                }
+            ]
+        }
+    },
+    "brokerPage": {
+        "header": {
+            "title": "Broker Partners and Details",
+            "paragraph": "Selected brokers with top-tier execution and rebate schemes of up to 90%. Compare instrument details and choose the broker that best fits your trading strategy.",
+            "tag": "BROKER LIST",
+            "searchPlaceholder": "Search for a broker"
+        },
+        "card": {
+            "rebatePerInstrument": "Rebate per Instrument",
+            "instrument": "Instrument",
+            "rebate": "Rebate",
+            "register": "Register Broker",
+            "detail": "More Detail"
+        },
+        "notify": {
+            "title": "Rebate Transparency",
+            "paragraph": "We store commission and rebate history that can be audited by users. (Demo: data is stored in the browser.)"
+        }
+    },
+    "calculatorPage": {
+        "header": {
+            "title": "Calculate Your Trading Rebate Estimate Now",
+            "paragraph": "Enter your broker, account type, and total trading lots to discover the rebate estimates you can earn every month fast, transparent, and at no cost.",
+            "tag": "FXPAYOUT REBATE CALCULATOR"
+        },
+        "card": {
+            "title": "Rebate Estimate Calculator",
+            "paragraph": "Select a broker and enter your trading details to see your instant rebate estimate.",
+            "broker": "Broker",
+            "accountType": "Account Type",
+            "pair": "Pair / Trading Instrument",
+            "lots": "Lots",
+            "accountTypePlaceholder": "Please select a broker first",
+            "pairPlaceholder": "Enter Lots",
+            "button": "Calculate Estimated Rebate",
+            "estimatesRebates": "Estimated Rebate",
+            "rebatePerLot": "Rebate per Lot",
+            "info": "<0>fxpayout</0> returns up to 90% of IB commissions to traders. The rebate process is automated, secure, and transparent, without changing your spreads, leverage, or trading conditions."
+        }
+    }
+}

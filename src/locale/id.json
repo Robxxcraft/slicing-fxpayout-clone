@@ -1,0 +1,176 @@
+{
+    "common": {
+        "button": {
+            "registerNow": "Daftar Sekarang",
+            "calculateRebate": "Hitung Rebate"
+        },
+        "cta": {
+            "title": "Siap meningkatkan efisiensi profit trading Anda?",
+            "paragraph": "Daftar sekarang dan mulai dapatkan rebate hingga 90%."
+        },
+        "input": {
+            "choose": "Pilih"
+        }
+    },
+    "navbar": {
+        "home": "Home",
+        "broker": "Broker",
+        "calculator": "Kalkulator",
+        "claimRebate": "Klaim Rebate",
+        "service": "Layanan",
+        "subNav": {
+            "definition": "Apa itu Rebate Forex?",
+            "howRebate": "Cara Mendapatkan Rebate Forex", 
+            "howWorks": "Bagaimana Cara Kerjanya?", 
+            "payment": "Sistem Pembayaran Rebate", 
+            "shcedule": "Jadwal Rebate",
+            "validation": "Validasi Akun",
+            "transfer": "Transfer Akun"     
+        }
+    },
+    "footer": {
+        "paragraph": "Kami mengembalkan hingga 90% komisi IB kepada trader. Proses cepat, aman, dan transparan tanpa mengubah spread atau kondisi trading.",
+        "quickLink": "Tautan Cepat",
+        "contact": "Kontak Kami"
+    },
+    "homePage": {
+        "helmet": {
+            "title": "Trading Lebih Untung Rebate Hingga 90% | FX Payout",
+            "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+        },
+        "hero": {
+            "title": "Trading Lebih Untung Rebate Hingga 90% untuk Trader.",
+            "subtitle": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader.",
+            "badge": "Dapatkan Rebate 90% Untuk Trader",
+            "estimateRebate": {
+                "title": "Estimasi Rebate",
+                "subtitle": "Pilih broker dan masukkan lot per bulang untuk estimasi cepat",
+                "broker": "Broker",
+                "lotPerMonth": "Lot per Bulan",
+                "pair": "Pair",
+                "register": "Daftar & Dapatkan",
+                "estimation": ["Estimasi", "Perkiraan"],
+                "claim": "Klaim Manual",
+                "info": "Kami mengembalikan hingga 90% komisi IB kepada trader. Proses cepat, aman, dan transparan tanpa mengubah spread atau kondisi trading." 
+            }
+        },
+        "benefit": {
+            "items": [
+                {
+                    "title": "Rebate 90% untuk trader",
+                    "description": "Dapatkan Cashback terbesar setiap lot"
+                },
+                {
+                    "title": "Pembayaran mingguan atau on-demand",
+                    "description": "Nikmati Cair cepat via bank lokal/e-wallet."
+                },
+                {
+                    "title": "Dashboard monitoring real-time",
+                    "description": "Pantau Riwayat rebate secara lengkap."
+                },
+                {
+                    "title": "Support lokal WhatsApp & Telegram",
+                    "description": "Dilengkapi Support dengan respon cepat"
+                }
+            ]
+        },
+        "howItWorks": {
+            "title": "Cara Kerja FXPayout dalam 4 Langkah Sederhana",
+            "paragraph": "Tanpa mengubah strategi, Anda cukup trading seperti biasa. FXPayout yang mengurus aliran komisi menjadi cashback untuk Anda.",
+            "tag": "CARA KERJA",
+            "workflows": [
+                {
+                    "title": "MULAI",
+                    "subtitle": "Daftar lewat link resmi FXPayout",
+                    "paragraph": "Buat akun FXPayout dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan."
+                },
+                {
+                    "title": "TRADING",
+                    "subtitle": "Trading seperti biasa di broker Anda",
+                    "paragraph": "Lanjutkan aktivitas trading tanpa perubahan spread, leverage, atau kondisi lain. Semua tetap mengikuti aturan broker."
+                },
+                {
+                    "title": "KOMISI",
+                    "subtitle": "Broker mengirim komisi IB ke FXPayout",
+                    "paragraph": "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke FXPayout secara otomatis."
+                },
+                {
+                    "title": "REBATE",
+                    "subtitle": "Rebate hingga 90% ke akun Anda",
+                    "paragraph": "Kami mengembalikan hingga 90% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet."
+                }
+            ]
+        },
+        "rewards": {
+            "title": "Bonus Rebate +10% untuk Akun Baru",
+            "paragraph": "Nikmati promo periode terbatas khusus untuk trader yang baru bergabung di FXPayout.",
+            "tag": "Periode Terbatas"
+        },
+        "reviews": {
+            "title": "Apa Kata Trader yang Menggunakan FXPayout?",
+            "paragraph": "Pengalaman nyata dari trader yang mendapatkan tambahan profit dari program rebate.",
+            "tag": "TESTIMONI"
+        },
+        "profile": {
+            "title": "FXPayout, rujukan utama rebate forex bagi trader.",
+            "paragraph": "FXPayout dikenal sebagai platform rebate forex yang mengembalikan hingga 90% komisi broker, memprioritaskan pembayaran cepat dan layanan support lokal untuk para trader.",
+            "tag": "Dipercaya komunitas trader",
+            "searchPlaceholder": "rebate forex, cashback trading, IB forex terpercaya...",
+            "badges": ["Rebate Forex", "Cashback Trading", "Rebate FBS", "Rebate Exness", "Rebate XM", "IB Forex Terpercaya"],
+            "features": [
+                {
+                    "title": "Rebate Hingga 90%",
+                    "paragraph": "Dapatkan cashback hingga 90% dari komisi broker langsung ke akun Anda."
+                },
+                {
+                    "title": "Fokus ke trader",
+                    "paragraph": "Cashback langsung tanpa mengubah kondisi trading."
+                },
+                {
+                    "title": "Local Support",
+                    "paragraph": "Support berbagai bahasa & jam operasional ramah trader."
+                }
+            ]
+        }
+    },
+    "brokerPage": {
+        "header": {
+            "title": "Broker Partner dan Detail",
+            "paragraph": "Broker pilihan dengan eksekusi terbaik dan skema rebate hingga 90%. bandingkan detail instrumen dan pilih broker yang paling cocok untuk strategi trading Anda.",
+            "tag": "DAFTAR BROKER",
+            "searchPlaceholder": "Cari broker disini"
+        },
+        "card": {
+            "rebatePerInstrument": "Rebate per Instrumen",
+            "instrument": "Instrumen",
+            "rebate": "Rebate",
+            "register": "Daftar Broker",
+            "detail": "Selengkapnya"
+        },
+        "notify": {
+            "title": "Transparansi Rebate",
+            "paragraph": "Kami menyimpan riwayat komisi & rebate yang dapat diaudit oleh pengguna. (Demo: data disimpan di browser)."
+        }
+    },
+    "calculatorPage": {
+        "header": {
+            "title": "Hitung Estimasi Rebate Trading Anda Sekarang",
+            "paragraph": "Masukkan broker, tipe akun, dan total lot trading Anda untuk mengetahui estimasi rebate yang bisa Anda dapatkan setiap bulan cepat, transparan, dan tanpa biaya.",
+            "tag": "KALKULATOR REBATE FXPAYOUT"
+        },
+        "card": {
+            "title": "Kalkulator Estimate Rebate",
+            "paragraph": "Pilih broker dan masukkan detail trading Anda untuk melihat estimasi rebate secara instan.",
+            "broker": "Broker",
+            "accountType": "Tipe Akun",
+            "pair": "Pair / Instrumen Trading",
+            "lots": "Lots",
+            "accountTypePlaceholder": "Pilih broker terlebih dahulu",
+            "pairPlaceholder": "Masukkan Lot",
+            "button": "Hitung Estimasi Rebate",
+            "estimatesRebates": "Estimasi Rebate",
+            "rebatePerLot": "Rebate per Lot",
+            "info": "<0>fxpayout</0> mengembalikan hingga 90% komisi IB kepada trader. Proses rebate dilakukan secara otomatis, aman, dan transparan tanpa mengubah spread, leverage, maupun kondisi trading Anda."
+        }
+    }
+}

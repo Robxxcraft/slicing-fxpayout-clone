@@ -1,6 +1,8 @@
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "../ui/Button";
 import { TiInfoLarge } from "react-icons/ti";
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const BrokerItem = ({ item }: { item: BrokerStruc }) => {
   let estimateEur;
@@ -8,6 +10,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
   let estimateAud;
   const rebateProgram = item.rebateProgram;
   const isRebateProgramText = typeof rebateProgram === "string";
+  const { t, i18n } = useTranslation();
   
   if (!isRebateProgramText) {
     estimateEur = typeof rebateProgram[0].estimate === "number" ?
@@ -48,16 +51,16 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
         :
           <div>
             <p className="text-sm font-semibold text-[#222222]">
-              Rebate per Instrumen
+              {t("brokerPage.card.rebatePerInstrument")}
             </p>
             <table className="table-fixed mt-3 border-collapse text-[#222222] w-full">
               <thead>
                 <tr className="text-left">
                   <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    Instrumen
+                    {t("brokerPage.card.instrument")}
                   </th>
                   <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    Rebate
+                    {t("brokerPage.card.rebate")}
                   </th>
                 </tr>
               </thead>
@@ -92,11 +95,24 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
         }
       </div>
       <div className="mt-4 md:mt-7 flex flex-row items-center gap-2 flex-wrap md:flex-nowrap">
-        <Button buttonType="link" urlTo={item.registerUrl} target="_blank" variant="primary-light" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
-          Daftar Broker
+        <Button 
+          buttonType="link" 
+          urlTo={item.registerUrl}
+          target="_blank" 
+          variant="primary-light" 
+          size="md" 
+          className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
+        >
+          {t("brokerPage.card.register")}
         </Button>
-        <Button buttonType="link" urlTo={`/broker/${item.detailUrl}#`} variant="outline" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
-          Selengkapnya
+        <Button 
+          buttonType="link" 
+          urlTo={getLocalizedPath(`/broker/${item.detailUrl}#`, i18n.language)}
+          variant="outline" 
+          size="md" 
+          className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
+        >
+          {t("brokerPage.card.detail")}
         </Button>
       </div>
     </div>

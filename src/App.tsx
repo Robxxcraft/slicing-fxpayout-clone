@@ -17,6 +17,8 @@ import NotFound from "./pages/NotFound";
 import ContainerDashboard from "./components/admin/ContainerDashboard";
 import ProfileDashboard from "./pages/admin/ProfileDashboard";
 import { Bounce, ToastContainer } from "react-toastify";
+import TawkChat from "./components/TawkChat";
+import MainLayout from "./components/MainLayout";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -55,6 +57,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <TawkChat />
       <ToastContainer 
         position="bottom-right"
         autoClose={5000}
@@ -65,15 +68,29 @@ function App() {
         theme="light"
         transition={Bounce}
       />
+
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/broker" element={<Broker />} />
-        <Route path="/broker/:brokerId" element={<BrokerDetailPage />} />
-        <Route path="/calculator" element={<CalculatorPage />} />
-        <Route path="/transfer" element={<TransferAccount />} />
-        <Route path="/validation" element={<ValidationPage />} />
-        <Route path="/schedule/:brokerId" element={<SchedulePage />} />
-        <Route path="/rebate-forex" element={<RebateForex />} />
+        <Route path="/:lng" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="broker" element={<Broker />} />
+          <Route path="broker/:brokerId" element={<BrokerDetailPage />} />
+          <Route path="calculator" element={<CalculatorPage />} />
+          <Route path="transfer" element={<TransferAccount />} />
+          <Route path="validation" element={<ValidationPage />} />
+          <Route path="schedule/:brokerId" element={<SchedulePage />} />
+          <Route path="rebate-forex" element={<RebateForex />} />
+        </Route>
+        
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="broker" element={<Broker />} />
+          <Route path="broker/:brokerId" element={<BrokerDetailPage />} />
+          <Route path="calculator" element={<CalculatorPage />} />
+          <Route path="transfer" element={<TransferAccount />} />
+          <Route path="validation" element={<ValidationPage />} />
+          <Route path="schedule/:brokerId" element={<SchedulePage />} />
+          <Route path="rebate-forex" element={<RebateForex />} />
+        </Route>
 
         <Route path="/dashboard/login" element={<LoginPage authUser={authUser} />} />
         {authUser && isAdmin &&
