@@ -18,7 +18,7 @@ export const checkValidFormValidation = (vals: FormValidation) => {
     errors.accountNumber = "Nomor akun tidak valid";
   }
 
-  if (!vals.tradingUsername.trim()) errors.tradingUsername = "Nama akun tidak boleh kosong";
+  if (!vals.platform) errors.platform = "Platform harus dipilih";
 
   if (!vals.handphoneNumber.trim()) {
     errors.handphoneNumber = "Nomor HP tidak boleh kosong";

@@ -3,7 +3,7 @@ export type FormValidation = {
   identityUsername: string;
   email: string;
   accountNumber: string;
-  tradingUsername: string;
+  platform: string;
   handphoneNumber: string;
 }
 export type FormBank = {

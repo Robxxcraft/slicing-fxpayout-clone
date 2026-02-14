@@ -3,7 +3,7 @@ export type ValidationData = {
   full_name: string;
   email: string;
   broker: string;
-  trading_account_name: string;
+  platform: string;
   trading_account_number: string;
   phone_number: string;
   rebate: string;

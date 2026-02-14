@@ -10,7 +10,7 @@ export const checkValidForm = (vals: ValidationData) => {
     errors.email = "Email tidak valid";
   }
   if (!vals.broker) errors.broker = "Broker harus dipilih";
-  if (!vals.trading_account_name.trim()) errors.trading_account_name = "Nama akun tidak boleh kosong";
+  if (!vals.platform.trim()) errors.platform = "Nama akun tidak boleh kosong";
   
   if (!vals.trading_account_number.trim()) {
     errors.trading_account_number = "Nomor akun tidak boleh kosong";
