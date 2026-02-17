@@ -23,6 +23,7 @@ import MainLayout from "./components/MainLayout";
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [isDashboard, setIsDashboard] = useState<boolean>(false);
   const [initialization, setInitialization] = useState<boolean>(true);
   const location = useLocation();
 
@@ -32,6 +33,7 @@ function App() {
         if (authUser !== null) return;
         setInitialization(true);
         if (location.pathname.includes("dashboard") || location.pathname.includes("login")) {
+          setIsDashboard(true);
           const { error, data }: { error: boolean; data: UserProfile | null } = await getAuthUser();
           if (!error) {
             setAuthUser(data as UserProfile);
@@ -41,6 +43,8 @@ function App() {
           } else {
             setAuthUser(null);
           }
+        } else {
+          setIsDashboard(false);
         }
       } finally {
         setInitialization(false);
@@ -66,8 +70,9 @@ function App() {
         draggable={false}
         theme="light"
         transition={Bounce}
+        style={{ bottom: isDashboard ? "0px" : "90px" }}
       />
-      <TawkChat />
+      {!isDashboard && <TawkChat />}
 
       <Routes>
         <Route path="/:lng" element={<MainLayout />}>
