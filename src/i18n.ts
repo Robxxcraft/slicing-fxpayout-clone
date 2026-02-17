@@ -10,7 +10,7 @@ i18n
   .init({
     resources,
     detection: {
-      order: ["localStorage", "cookie", "path", "htmlTag", "navigator"],
+      order: ["localStorage", "navigator", "htmlTag", "path", "cookie"],
       lookupFromPathIndex: 0,
       caches: ["localStorage", "cookie"],
     },
@@ -18,6 +18,15 @@ i18n
     defaultNS: "common",
     fallbackLng: "en",
     interpolation: { escapeValue: false }
+  }, (error) => {
+    if (!error) {
+      const detectedLng = i18n.language;
+      document.documentElement.lang = detectedLng;
+    }
   });
+
+i18n.on("languageChanged", (lng: string) => {
+  document.documentElement.lang = lng;
+});
 
 export default i18n;
