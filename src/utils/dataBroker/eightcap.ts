@@ -1,4 +1,4 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import type { BrokerRanking } from "./typeDetailBroker";
 
 const brokerName = "Eightcap";
 const brokerFounded = "2009";
@@ -7,7 +7,7 @@ const brokerRanking: BrokerRanking = {
   title: "Global ECN Broker"
 };
 
-export const eightcapDetail: BrokerStruc = {
+export const eightcapDetail = {
   id_ib: "",
   contactSupport: "",
   name: brokerName,
