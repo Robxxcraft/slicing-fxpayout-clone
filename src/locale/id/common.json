@@ -17,6 +17,18 @@
         "title": "Siap meningkatkan efisiensi profit trading Anda?",
         "paragraph": "Daftar sekarang dan mulai dapatkan rebate hingga 90%."
     },
+    "methods": {
+        "bank_transfer": "Bank Transfer",
+        "bank_transfer_usd_idr": "Bank Transfer (USD/IDR)",
+        "crypto": "Crypto",
+        "debit_credit_card": "Kartu Debit/Kredit",
+        "e_wallet": "E-Wallet",
+        "indonesian_local_va": "Lokal VA (ID)",
+        "indonesian_e_wallet": "E-Wallet Indonesia",
+        "local_bank": "Bank Lokal",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
     "navbar": {
         "home": "Home",
         "broker": "Broker",

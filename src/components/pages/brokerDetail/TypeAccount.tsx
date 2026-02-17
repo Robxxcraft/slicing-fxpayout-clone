@@ -5,7 +5,13 @@ import HeadingSection from "./ui/HeadingSection";
 import SubHeadingSection from "./ui/SubHeadingSection";
 import { useTranslation } from "react-i18next";
 
-const TypeAccount = ({ accountDetail }: { accountDetail: AccountTypeStruc[] }) => {
+const TypeAccount = ({ 
+  brokerId,
+  accountDetail 
+}: { 
+  brokerId: string;
+  accountDetail: AccountTypeStruc[] 
+}) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   const gridCard = useMemo(() => {
     const MAX_COL = 3;
@@ -44,7 +50,7 @@ const TypeAccount = ({ accountDetail }: { accountDetail: AccountTypeStruc[] }) =
           return (
             <div key={index} className={containerClass}>
               {accountDetail.slice(startIndex, lastIndex).map((detail, idx) => {
-                return <CardTypeAccount key={idx} account={detail} />
+                return <CardTypeAccount key={idx} brokerId={brokerId} account={detail} />
               })}
             </div>
           )

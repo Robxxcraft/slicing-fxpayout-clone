@@ -4,13 +4,15 @@ import SubHeadingSection from "./ui/SubHeadingSection";
 import { useTranslation } from "react-i18next";
 
 const DepositWIthdraw = ({
+  brokerId,
   paymentMethods, 
   platforms
 }: {
+  brokerId: string;
   paymentMethods: PaymentMethod[]; 
   platforms: Platform[]}
 ) => {
-  const { t } = useTranslation(["brokerdetailpage"]);
+  const { t } = useTranslation([brokerId, "brokerdetailpage"]);
   return (
     <section className="mt-10 md:mt-12 2xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 2xl:gap-14">
@@ -41,22 +43,22 @@ const DepositWIthdraw = ({
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
                       px-4 md:px-8 py-6 md:py-4 text-left`}
                     >
-                      {method.method}
+                      {t(method.method)}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
                       px-4 md:px-8 py-6 md:py-4 text-left`}
                     >
-                      {method.time.deposit}
+                      {t(method.time.deposit)}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
                       px-4 md:px-8 py-6 md:py-4 text-left`}
                     >
-                      {method.time.withdraw}
+                      {t(method.time.withdraw)}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
                       px-4 md:px-8 py-6 md:py-4 text-left`}
                     >
-                      {method.fee}
+                      {t(method.fee)}
                     </td>
                   </tr>
                 ))}
@@ -77,7 +79,7 @@ const DepositWIthdraw = ({
                 <div className="bg-linear-to-t from-dark-primary to-primary border border-transparent bg-clip-border rounded-lg overflow-hidden">
                   <div className="px-6 py-3 bg-my-light-blue">
                     <p className="text-base font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-                        {platform.username}
+                        {t(platform.username)}
                     </p>
                   </div>
                 </div>

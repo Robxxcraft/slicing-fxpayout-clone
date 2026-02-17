@@ -1,6 +1,7 @@
-import type { BrokerStruc, BrokerRanking } from "./typeDetailBroker";
+import { titleKey, instrumentsKey, levelKey, platformsKey, regulationsKey, timeKey, type BrokerRanking, type BrokerStruc } from "./typeDetailBroker";
 
 const brokerName = "Exness";
+const brokerId = "exness";
 const brokerFounded = "2008";
 const brokerRanking: BrokerRanking = {
   tier: "1",
@@ -14,73 +15,73 @@ export const exnessDetail: BrokerStruc = {
   profileImage: "exness.webp",
   registerUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
   websiteUrl: "https://one.exnessonelink.com/a/8cegzmlbpk",
-  detailUrl: "exness",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
   ranking: brokerRanking,
-  badges: ["Tier 1", "ECN Broker", "Akun Cent", "Ultra-Fast Execution"],
+  badges: [`${titleKey}.tier_1`, `${titleKey}.ecn_broker`, `${titleKey}.cent_account`, `${titleKey}.ultra_fast_execution`],
   overallScore: {
     rate: 4.8,
     communityUrl: "https://www.trustpilot.com/review/exness.com",
   },
-  detailDescription: "Broker global dengan eksekusi super cepat, spread rendah, serta pilihan akun yang sangat fleksibel termasuk akun CENT. Menyediakan akses ke Forex, Gold, Indeks, Energi, hingga CFD dengan kondisi stabil dan transparan. Didukung proses deposit-withdraw cepat serta platform trading modern untuk pemula hingga trader profesional.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$50",
-    leverage: "Hingga 1:2000+",
-    spread: "Mulai 0.0 pips (Raw)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
-    slogan: "Trade with accuracy, speed, and deep liquidity",
+    slogan: `${brokerId}:profile.slogan`,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated, ECN/Market Execution",
+    brokerCategory: [`${titleKey}.multi_regulated`, `${titleKey}.ecn_market_execution`],
     regulations: [
-      { name: "FSA", country: "Seychelles" },
-      { name: "CySEC", country: "Eropa" },
-      { name: "FSC", country: "Mauritius" },
-      { name: "FSCA", country: "Afrika Selatan" },
-      { name: "CBCS", country: "Curacao" },
-      { name: "FCA (historis)", country: "United Kingdom" },
+      { name: "FSA", country: `${regulationsKey}.fsa` },
+      { name: "CySEC", country: `${regulationsKey}.cysec` },
+      { name: "FSC", country: `${regulationsKey}.fsc` },
+      { name: "FSCA", country: `${regulationsKey}.fsca` },
+      { name: "CBCS", country: `${regulationsKey}.cbcs` },
+      { name: "FCA", country: `${regulationsKey}.fca` },
     ]
   },
   summary: {
     minDeposit: "$50",
     types: ["Standard Cent", "Standard", "Raw Spread", "Zero", "Pro"],
-    spread: "Mulai 0.0 pips (Raw) — rata-rata sangat rendah",
-    commission: "Raw/Zero: $3.5–$8 per lot (tergantung pair)",
-    leverage: "Hingga 1:2000+ (smart leverage system)",
-    execution: "0.01–0.04 detik (super cepat)",
-    instruments: ["Forex", "Gold", "Crypto CFD", "Indeks", "Energi", "Saham"],
-    depositWithdrawal: "Super cepat (<1 menit untuk e-wallet/crypto)"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:gold`, `${instrumentsKey}:crypto_cfd`, `${instrumentsKey}:indices`, `${instrumentsKey}:energy`, `${instrumentsKey}:stocks`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
-        name: "Standard Cent (Akun Cent)",
-        level: "Pemula",
-        features: ["Cocok untuk pemula & testing strategi", "Lot Micro/Nano", "Leverage tinggi", "Spread mulai 0.3 pips", "Tanpa komisi", "Deposit minimum: $10", "Catatan: Tidak semua instrumen tersedia di akun Cent"]
+        name: "Standard Cent",
+        level: `${levelKey}:beginner`,
+        features: `${brokerId}:accountTypes.0` 
     },
     {
         name: "Standard",
-        level: "Umum",
-        features: ["Spread rendah", "Tanpa komisi", "Cocok untuk trading manual", "Min deposit: $10"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.1` 
     },
     {
         name: "Raw Spread (ECN)",
-        level: "Pro & Scalper",
-        features: ["Spread 0.0 - 0.3 pips", "Komisi rendah ($3.5–$4 per lot per side)", "Eksekusi sangat cepat", "Ideal untuk scalping & EA"]
+        level: `${levelKey}:pro_scalper`,
+        features: `${brokerId}:accountTypes.2` 
     },
     {
         name: "Zero Account",
-        level: "News Trader",
-        features: ["Spread 0.0 pada 30+ pasangan", "Komisi lebih besar", "Ideal untuk news trading & high-impact event"]
+        level: `${levelKey}:news_trader`,
+        features: `${brokerId}:accountTypes.3` 
     },
     {
         name: "Pro Account",
-        level: "Advanced",
-        features: ["Tanpa komisi", "Spread sangat rendah", "Eksekusi instan", "Ideal untuk trader harian & swing"]
+        level: `${levelKey}:advanced`,
+        features: `${brokerId}:accountTypes.4` 
     },
   ],
   tradingSpreads: [
@@ -107,71 +108,64 @@ export const exnessDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: [  "Ultra-fast execution (0.01–0.04 detik)",
-  "Spread paling stabil di industri",
-  "Platform sangat ringan dan stabil",
-  "Withdraw tercepat di antara broker global populer",
-  "Akun CENT (jarang di broker Tier 1)",
-  "Likuiditas dalam & slippage rendah",
-  "Unlimited leverage (region tertentu)",
-  "Sangat cocok untuk scalping, EA, dan gold trader"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
     paymentMethods: [
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: {
-          deposit: "<1m (Instant)",
-          withdraw: "<1m (Instant)"
+          deposit: `${timeKey}.instant_1m`,
+          withdraw: `${timeKey}.instant_1m`
         }, 
         fee: "$0" 
       },
       { 
-        method: "Bank Transfer", 
+        method: "common:methods.bank_transfer", 
         time: {
-          deposit: "5–30 Menit",
-          withdraw: "5–30 Menit"
+          deposit: `${timeKey}.interval_5_30`,
+          withdraw: `${timeKey}.interval_5_30`
         }, 
         fee: "$0" 
       },
       { 
-        method: "VA Lokal (ID)", 
+        method: "common:methods.indonesian_local_va", 
         time: {
-          deposit: "5–30 Menit",
-          withdraw: "5–30 Menit"
+          deposit: `${timeKey}.interval_5_30`,
+          withdraw: `${timeKey}.interval_5_30`
         }, 
         fee: "$0" 
       },
       { 
-        method: "Crypto", 
+        method: "common:methods.crypto", 
         time: {
-          deposit: "<1m (Instant)",
-          withdraw: "<1m (Instant)"
+          deposit: `${timeKey}.instant_1m`,
+          withdraw: `${timeKey}.instant_1m`
         }, 
         fee: "$0" 
       },
       { 
-        method: "Skrill/Neteller", 
+        method: "common:methods.skrill_neteller", 
         time: {
-          deposit: "<1m (Instant)",
-          withdraw: "<1m (Instant)"
+          deposit: `${timeKey}.instant_1m`,
+          withdraw: `${timeKey}.instant_1m`
         }, 
         fee: "$0" 
       },
       { 
-        method: "Perfect Money", 
+        method: "common:methods.perfect_money", 
         time: {
-          deposit: "<1m (Instant)",
-          withdraw: "<1m (Instant)"
+          deposit: `${timeKey}.instant_1m`,
+          withdraw: `${timeKey}.instant_1m`
         }, 
         fee: "$0" 
       }
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "Exness Terminal (Web-based)", icon: "exness.webp" },
-      { username: "Copy Trading App", icon: "copy-trading.webp" },
-      { username: "Exness Mobile App", icon: "exness-mobile.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.exness_terminal`, icon: "exness.webp" },
+      { username: `${platformsKey}.copy_trading`, icon: "copy-trading.webp" },
+      { username: `${platformsKey}.exness_mobile`, icon: "exness-mobile.webp" },
     ]
   },
   rebateProgram: [
@@ -200,37 +194,16 @@ export const exnessDetail: BrokerStruc = {
     { accountType: "Zero", pair: "EUR/USD", rebatePerLot: 1.08 },
     { accountType: "Zero", pair: "CRYPTO", rebatePerLot: 2.36 },
   ],
-  advantages: ["Spread & eksekusi sangat stabil", "Withdraw super cepat", "Banyak metode deposit & withdraw", "Tersedia akun Cent untuk pemula", "Ramah EA & scalping", "Leverage besar dan fleksibel"],
-  disadvantages: ["Komisi berbeda-beda per pair di akun Raw/Zero", "Leverage dibatasi pada beberapa regulasi", "Tidak semua instrumen tersedia di akun Cent"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.8,
     quantityVote: 26.158,
     classifications: [
-      { type: "Kecepatan Withdraw (WD)", rate: 5 },
-      { type: "Stabilitas Server", rate: 5 },
-      { type: "Customer Support", rate: 4.5 },
+      { type: `${brokerId}:classifications.0`, rate: 5 },
+      { type: `${brokerId}:classifications.1`, rate: 5 },
+      { type: `${brokerId}:classifications.2`, rate: 4.5 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah Exness Aman?",
-      answer: "Exness merupakan broker teregulasi oleh beberapa otoritas keuangan internasional, termasuk FSA, CySEC, FSCA, dan FSC. Perusahaan ini sudah beroperasi sejak 2008 dan dikenal transparan dalam menampilkan laporan keuangan serta statistik trading. Meski tidak berada di bawah regulasi Indonesia, Exness termasuk broker global yang banyak digunakan trader secara internasional."
-    },
-    {
-      question: "Apakah Exness Menyediakan Akun Cent?",
-      answer: "Ya. Exness menyediakan akun Standard Cent, yaitu akun dengan ukuran kontrak lebih kecil sehingga cocok untuk latihan, uji strategi, atau trading dengan risiko modal rendah."
-    },
-    {
-      question: "Apakah Exness Cocok Untuk Pemula?",
-      answer: "Cocok. Exness menawarkan akun Cent, spread stabil, proses transaksi mudah, serta platform populer seperti MT4/MT5. Kombinasi ini membantu pemula belajar kondisi market nyata dengan risiko yang lebih terukur."
-    },
-    {
-      question: "Apakah Exness Cocok Untuk EA & Scalping?",
-      answer: "Ya. Exness mendukung EA, robot trading, algoritma, dan strategi scalping tanpa batasan khusus. Spread yang ketat serta kecepatan eksekusi yang sangat cepat membuatnya sering digunakan untuk strategi intensif."
-    },
-    {
-      question: "Seberapa Cepat Proses WD di Exness?",
-      answer: "Umumnya sangat cepat. Banyak metode withdrawal e-wallet dan pembayaran lokal yang diproses dalam hitungan menit, tergantung metode yang digunakan dan kondisi sistem. Proses bisa lebih lama pada jam tertentu atau metode tertentu."
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

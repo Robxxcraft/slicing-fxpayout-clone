@@ -38,7 +38,7 @@
             },
             {
                 "flow": "Cashback / Rebate Distribution",
-                "title": "FXPayout",
+                "title": "FXPAYOUT",
                 "paragraph": "fxpayout returns a portion of the received commission to the trader as transparent and regular rebate payments."
             }
         ]

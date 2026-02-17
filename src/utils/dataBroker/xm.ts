@@ -1,6 +1,7 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import { feeKey, instrumentsKey, levelKey, platformsKey, regulationsKey, timeKey, titleKey, type BrokerRanking, type BrokerStruc } from "./typeDetailBroker";
 
 const brokerName = "XM";
+const brokerId = "xm";
 const brokerFounded = "2009";
 const brokerRanking: BrokerRanking = {
   tier: "Global",
@@ -14,70 +15,70 @@ export const xmDetail: BrokerStruc = {
   profileImage: "xm.webp",
   registerUrl: "https://affs.click/4gFt7",
   websiteUrl: "https://affs.click/pcNLG",
-  detailUrl: "xm",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
   ranking: brokerRanking,
-  badges: ["Multi-Regulated", "Low Spread", "Ultra-Fast Execution", "Human-Centered Broker"],
+  badges: [`${titleKey}.multi_regulated`, `${titleKey}.low_spread`, `${titleKey}.ultra_fast_execution`, `${titleKey}.human_centered_broker`],
   overallScore: {
     rate: 4.3,
     communityUrl: "https://www.trustpilot.com/review/xm.com",
   },
-  detailDescription: "XM adalah broker global Forex & CFD yang berfokus pada keadilan trading, transparansi biaya, dan pengalaman manusiawi bagi trader. XM dikenal dengan eksekusi cepat, tanpa intervensi saat news besar, serta kondisi trading yang konsisten tanpa manipulasi.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker global dengan akun XM Zero berkomisi tinggi sehingga rebate besar.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$5",
-    leverage: "Hingga 1:1000",
-    spread: "Mulai ±0.6 – 1.7 pips",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
-    slogan: "Big. Fair. Human.",
+    slogan:  `${brokerId}:profile.slogan`,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Forex & CFD Broker",
-    totalInstrument: "1000+ (Forex, Indeks, Energi, Logam / Metal, Saham CFD, Crypto CFD, Turbo Instruments (lengkap), dll)",
+    brokerCategory: `${titleKey}.forex_cfd`,
+    totalInstrument: `${brokerId}:profile.total_instruments`,
     regulations: [
-      { name: "ASIC", country: "Australia" },
-      { name: "FCA", country: "United Kingdom" },
-      { name: "CySEC", country: "Cyprus" },
-      { name: "DFSA", country: "Dubai" },
-      { name: "IFSC", country: "Belize" },
-      { name: "FSCA", country: "Afrika Selatan" },
+      { name: "ASIC", country: `${regulationsKey}.asic` },
+      { name: "FCA", country: `${regulationsKey}.fca` },
+      { name: "CySEC", country: `${regulationsKey}.cysec` },
+      { name: "DFSA", country: `${regulationsKey}.dfsa` },
+      { name: "IFSC", country: `${regulationsKey}.ifsc` },
+      { name: "FSCA", country: `${regulationsKey}.fsca` },
     ]
   },
   summary: {
     minDeposit: "$5",
     types: ["Micro", "Standard", "Ultra Low"],
-    spread: "Mulai 0.6 – 1.7 pips",
-    commission: "0 (Micro, Standard, Ultra Low",
-    leverage: "Hingga 1:1000 (tergantung regulator & wilayah)",
-    execution: "Ultra-fast execution, tanpa requotes atau penolakan",
-    instruments: ["Forex", "Komoditas", "Logam (Metal)", "Indeks", "Saham CFD", "Energi", "Crypto CFD", "Instrumen Turbo"],
-    depositWithdrawal: "Banyak metode & cepat"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:commodity`, `${instrumentsKey}:metal`, `${instrumentsKey}:indices`, `${instrumentsKey}:stocks_cfd`, `${instrumentsKey}:energy`, `${instrumentsKey}:crypto_cfd`, `${instrumentsKey}:turbo_instrument`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
         name: "Micro Account",
-        level: "Pemula",
-        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0", "Cocok untuk pemula & modal kecil"]
+        level: `${levelKey}:beginner`,
+        features: `${brokerId}:accountTypes.0` 
     },
     {
         name: "Standard Account",
-        level: "Umum",
-        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0", "Cocok untuk trader umum & manual trading"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.1` 
     },
     {
         name: "Ultra Low Account",
-        level: "Trader",
-        features: ["Min deposit : $5", "Spread mulai ±0.6 pips", "Komisi : 0", "Cocok untuk trader aktif & spread lebih ketat"]
+        level: `${levelKey}:trader`,
+        features: `${brokerId}:accountTypes.2`
     },
     {
         name: "Zero Account",
-        level: "Trader",
-        features: ["Min deposit : $5", "Spread mulai 0.0 pips", "Komisi : ± $7 per lot (round-turn)"],
-        notes: "Tersedia untuk klien tertentu (LN)"
+        level: `${levelKey}:trader`,
+        features: `${brokerId}:accountTypes.3`,
+        notes: `${brokerId}:accountNotes`
     },
   ],
   tradingSpreads: [
@@ -110,39 +111,39 @@ export const xmDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: ["Tanpa requotes atau penolakan", "Bonus sepanjang tahun", "Tanpa biaya tersembunyi", "Order dieksekusi dibawah 66ms saat rilit berita seperti NFP, FOMC, atau CPI"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
       paymentMethods: [
       { 
-        method: "Bank Lokal", 
+        method: "common:methods.local_bank", 
         time: {
-          deposit: "Instan – 2 hari kerja",
-          withdraw: "Instan – 2 hari kerja"
+          deposit: `${timeKey}.interval_instant_2d`,
+          withdraw: `${timeKey}.interval_instant_2d`
         }, 
-        fee: "Umumnya tanpa biaya broker" 
+        fee: `${feeKey}.zero_broker`
       },
       { 
-        method: "Kartu Debit/Kredit", 
+        method: "common:methods.debit_credit_card", 
         time: {
-          deposit: "Instan – 2 hari kerja",
-          withdraw: "Instan – 2 hari kerja"
+          deposit: `${timeKey}.interval_instant_2d`,
+          withdraw: `${timeKey}.interval_instant_2d`
         },  
-        fee: "Umumnya tanpa biaya broker" 
+        fee: `${feeKey}.zero_broker`
       },
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: {
-          deposit: "Instan – 2 hari kerja",
-          withdraw: "Instan – 2 hari kerja"
+          deposit: `${timeKey}.interval_instant_2d`,
+          withdraw: `${timeKey}.interval_instant_2d`
         },  
-        fee: "Umumnya tanpa biaya broker" 
+        fee: `${feeKey}.zero_broker`
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "WebTrader", icon: "xm.webp" },
-      { username: "Mobile App (Android & iOS", icon: "xm.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "xm.webp" },
+      { username: `${platformsKey}.ios_android`, icon: "xm.webp" },
     ]
   },
   rebateProgram: [
@@ -167,41 +168,16 @@ export const xmDetail: BrokerStruc = {
     { accountType: "Ultra Low Standard", pair: "EUR/USD", rebatePerLot: 2 },
     { accountType: "Ultra Low Standard", pair: "CRYPTO", rebatePerLot: 4 },
   ],
-  advantages: ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
-  disadvantages: ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.3,
     quantityVote: 2.850,
     classifications: [
-      { type: "Customer Support", rate: 4.4 },
-      { type: "Execution & Platforms", rate: 4.3 },
-      { type: "Fees & Costs", rate: 4.2 },
+      { type: `${brokerId}:classifications.0`, rate: 4.4 },
+      { type: `${brokerId}:classifications.1`, rate: 4.3 },
+      { type: `${brokerId}:classifications.2`, rate: 4.2 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah XM aman?",
-      answer: "Ya. XM teregulasi oleh beberapa otoritas besar seperti FCA, ASIC, CySEC, dsb."
-    },
-    {
-      question: "Berapa minimum deposit?",
-      answer: "Minimum deposit adalah $5."
-    },
-    {
-      question: "Platform apa yang didukung?",
-      answer: "MT4, MT5, WebTrader, Mobile."
-    },
-    {
-      question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:1000 tergantung negara/entitas."
-    },
-    {
-      question: "Apakah ada akun demo?",
-      answer: "Ya, tersedia demo untuk latihan trading."
-    },
-    {
-      question: "Apakah ada akun swap-free/Islamic?",
-      answer: "Ya, tersedia untuk entitas/regional tertentu."
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

@@ -1,0 +1,52 @@
+{
+  "description": "FP Markets (First Prudential Markets) adalah broker forex & CFD global yang berdiri sejak 2005, berkantor pusat di Sydney, Australia. Broker ini dikenal karena spread kompetitif, eksekusi cepat, akses ke ribuan instrumen, serta dukungan platform trading populer seperti MetaTrader dan cTrader. FP Markets juga menyediakan teknologi trading profesional seperti cTrader, VPS, dan alat analitik tingkat lanjut.",
+  "specification": {
+    "leverage": "Hingga 1:500 (tergantung regulator & entitas)",
+    "spread": ["Standard : mulai sekitar 1.0 pips", "Raw : mulai 0.0 pips"]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": ["Standard : mulai sekitar 1.0 pips", "Raw : mulai 0.0 pips"],
+    "commission": "Raw ECN ±$6 per lot total (±$3 per sisi)",
+    "leverage": "Hingga 1:500 (tergantung regulator & entitas)",
+    "execution": "Cepat & tanpa requote",
+    "depositWithdrawal": "Bank transfer, kartu, e-wallet"
+  },
+  "spread": ["mulai 0.0 – 0.2 pips", "variabel rendah", "lebih lebar"],
+  "accountTypes": [
+    ["Min deposit : $100", "Spread mulai ±1.0 pips", "Tanpa komisi", "Cocok untuk trader retail umum"],
+    ["Min deposit : $100", "Spread mulai 0.0 pips", "Komisi ±$3 per sisi per lot", "Cocok scalping, robot, EA"]
+  ],
+  "keyAdvantages": ["Spread ECN sangat rendah", "Eksekusi cepat & stabil", "Likuiditas tinggi", "Ramah EA & scalping", "Platform trading lengkap", "Cocok untuk trader aktif"],
+  "advantages": ["Spread sangat kompetitif (Raw ECN)", "Platform lengkap (MT4, MT5, cTrader)", "Tidak ada mark-up pada Raw account", "Regulasi kuat di banyak negara", "Cocok untuk trader manual, EA, scalping"],
+  "disadvantages": ["Minimum deposit $100 lebih tinggi dari beberapa broker ringan", "Leverage bisa dibatasi oleh regulator di wilayah tertentu", "Spread Standard lebih lebar dibanding ECN"],
+  "classifications": [
+    "Customer Support",
+    "Fees & Spread",
+    "Execution Speed"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah FP Markets aman?",
+      "answer": "Ya — teregulasi ASIC (Australia), CySEC (Siprus), FSCA (SA), FSA (Seychelles), dan CIMA."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Minimum deposit untuk trading live adalah $100."
+    },
+    {
+      "question": "Platform apa saja yang didukung",
+      "answer": "MT4, MT5, dan cTrader."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:500 untuk forex (tergantung entitas/regulator)."
+    },
+    {
+      "question": "Apakah ada akun ECN?",
+      "answer": "Ya — akun Raw ECN dengan spread mulai 0.0 pips + komisi."
+    }
+  ]
+}

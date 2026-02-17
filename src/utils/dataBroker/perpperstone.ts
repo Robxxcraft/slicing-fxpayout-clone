@@ -1,6 +1,7 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import { instrumentsKey, levelKey, platformsKey, regulationsKey, timeKey, titleKey, type BrokerRanking, type BrokerStruc } from "./typeDetailBroker";
 
 const brokerName = "Pepperstone";
+const brokerId = "pepperstone";
 const brokerFounded = "2010";
 const brokerRanking: BrokerRanking = {
   tier: "1",
@@ -14,63 +15,63 @@ export const pepperstoneDetail: BrokerStruc = {
   profileImage: "pepperstone.webp",
   registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
   websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
-  detailUrl: "pepperstone",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
   ranking: brokerRanking,
-  badges: ["Tier 1", "ECN Broker", "Raw Spread", "Ultra-Fast Execution"],
+  badges: [`${titleKey}.tier_1`, `${titleKey}.ecn_broker`, `${titleKey}.raw_spread`, `${titleKey}.ultra_fast_execution`],
   overallScore: {
     rate: 4.5,
     communityUrl: "https://www.trustpilot.com/review/pepperstone.com",
   },
-  detailDescription: "Broker global dengan eksekusi cepat, spread rendah, dan kondisi trading profesional. Pepperstone dikenal sebagai broker favorit untuk scalping, EA, dan trader aktif, dengan akses ke Forex, Gold, Indeks, Energi, Saham CFD, dan Crypto CFD. Didukung platform trading modern serta proses deposit–withdraw yang cepat dan transparan.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker regulasi top dengan eksekusi sangat cepat dan kondisi raw spread.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$0",
-    leverage: "Hingga 1:500",
-    spread: "Mulai 0.0 pips (Razor)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
-    slogan: "Award-Winning Global Forex Broker",
+    slogan: `${brokerId}:profile.slogan`,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated, ECN/NDD Broker",
+    brokerCategory: [`${titleKey}.multi_regulated`, `${titleKey}.ecn_ndd`],
     regulations: [
-      { name: "ASIC", country: "Australia" },
-      { name: "FCA", country: "Inggris" },
-      { name: "DFSA", country: "Dubai" },
-      { name: "BaFin", country: "Jerman" },
-      { name: "CySEC", country: "Siprus" },
-      { name: "SCB", country: "Bahamas" },
+      { name: "ASIC", country: `${regulationsKey}.asic` },
+      { name: "FCA", country: `${regulationsKey}.fca` },
+      { name: "DFSA", country: `${regulationsKey}.dfsa` },
+      { name: "BaFin", country: `${regulationsKey}.bafin` },
+      { name: "CySEC", country: `${regulationsKey}.cysec` },
+      { name: "SCB", country: `${regulationsKey}.scb` },
     ]
   },
   summary: {
     minDeposit: "$0",
     types: ["Standard", "Razor", "Pro"],
-    spread: "Mulai 0.0 pips (Razor)",
-    commission: "Razor: $6–$7 per lot (round-turn)",
-    leverage: "Hingga 1:500",
-    execution: "Cepat",
-    instruments: ["Forex", "Komoditas", "Indeks", "Saham CFD", "Crypto CFD"],
-    depositWithdrawal: "Cepat & banyak metode"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:commodity`, `${instrumentsKey}:indices`, `${instrumentsKey}:stocks_cfd`, `${instrumentsKey}:crypto_cfd`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
         name: "Standard Account",
-        level: "Umum",
-        features: ["Spread mulai ±1.0 pips", "Tanpa komisi"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.0`  
     },
     {
         name: "Razor Account",
-        level: "Trader",
-        features: ["Spread mulai 0.0 pips", "Komisi $3.50 per side (±$7 round-turn)"]
+        level: `${levelKey}:trader`,
+        features: `${brokerId}:accountTypes.1`  
     },
     {
         name: "Pro Account",
-        level: "Pro",
-        features: ["Kondisi trading profesional", "Leverage fleksibel"]
+        level: `${levelKey}:pro`,
+        features: `${brokerId}:accountTypes.2`  
     },
   ],
   tradingSpreads: [
@@ -103,41 +104,41 @@ export const pepperstoneDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: ["Spread ECN sangat rendah", "Eksekusi order cepat", "Regulasi tingkat atas (FCA, ASIC)", "Dukungan MT4, MT5, cTrader, TradingView", "Ramah scalping & EA", "Tidak ada biaya inaktif/biaya akun"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
       paymentMethods: [
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: {
-          deposit: "Instan",
-          withdraw: "Instan"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         }, 
         fee: "$0" 
       },
       { 
-        method: "Bank Transfer", 
+        method: "common:methods.bank_transfer", 
         time: {
-          deposit: "1–3 hari kerja",
-          withdraw: "1–3 hari kerja"
+          deposit: `${timeKey}.days_1_3_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         }, 
         fee: "$0" 
       },
       { 
-        method: "Crypto", 
+        method: "common:methods.crypto", 
         time: {
-          deposit: "Instan",
-          withdraw: "Instan"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         }, 
         fee: "$0" 
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "cTrader", icon: "c-trader.webp" },
-      { username: "TradingView", icon: "trading-view.webp" },
-      { username: "WebTrader", icon: "pepperstone.webp" },
-      { username: "Mobile App (iOS & Android)", icon: "pepperstone.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username:`${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.c_trader`, icon: "c-trader.webp" },
+      { username: `${platformsKey}.trading_view`, icon: "trading-view.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "pepperstone.webp" },
+      { username: `${platformsKey}.ios_android`, icon: "pepperstone.webp" },
     ]
   },
   rebateProgram: [
@@ -150,41 +151,16 @@ export const pepperstoneDetail: BrokerStruc = {
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 2.40 },
     { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.40 },
   ],
-  advantages: ["Spread rendah & eksekusi stabil", "Regulasi kuat dan internasional", "Platform lengkap (MT4, MT5, cTrader, TradingView)"],
-  disadvantages: ["Instrumen non-CFD nyata terbatas", "Support 24/7 tidak tersedia untuk semua wilayah", "Leverage bisa dibatasi tergantung lokasi"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.5,
     quantityVote: 3.199,
     classifications: [
-      { type: "Kecepatan Withdraw (WD)", rate: 5 },
-      { type: "Stabilitas Server", rate: 4.5 },
-      { type: "Customer Support", rate: 4.5 },
+      { type: `${brokerId}:classifications.0`, rate: 5 },
+      { type: `${brokerId}:classifications.1`, rate: 4.5 },
+      { type: `${brokerId}:classifications.2`, rate: 4.5 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah Pepperstone aman?",
-      answer: "Ya. Diawasi oleh FCA, ASIC, DFSA, BaFin, CySEC, SCB."
-    },
-    {
-      question: "Apakah ada minimum deposit?",
-      answer: "Tidak ada minimum deposit resmi, tapi disarankan setoran awal ~$200."
-    },
-    {
-      question: "Apakah cocok untuk scalping & EA?",
-      answer: "Ya, sangat cocok terutama di akun Razor."
-    },
-    {
-      question: "Apa spread paling rendah?",
-      answer: "Mulai 0.0 pips pada akun Razor."
-    },
-    {
-      question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:500, tergantung regulator & wilayah."
-    },
-    {
-      question: "Berapa biaya deposit/withdraw?",
-      answer: "Sebagian besar metode: $0."
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

@@ -1,0 +1,49 @@
+{
+  "description": "Valetax adalah broker forex dan CFD global yang menawarkan berbagai jenis akun trading dengan leverage yang fleksibel dan spread kompetitif. Platform ini mendukung akses ke lebih dari 60 pasangan mata uang serta berbagai instrumen lain seperti logam, indeks, energi, dan kripto melalui platform populer MT4 dan MT5, cocok untuk trader pemula maupun berpengalaman.",
+  "specification": {
+    "leverage": "Hingga 1:2000",
+    "spread": "Mulai 0.0 pips"
+  },
+  "summary": {
+    "spread": "Mulai 0.0 pips",
+    "commission": "ECN: $4 per lot (beberapa akun bebas komisi)",
+    "leverage": "Hingga 1:2000",
+    "execution": "Eksekusi pasar cepat & stabil",
+    "depositWithdrawal": "Proses cepat-instan/4 jam untuk local/crypto (tergantung metode)"
+  },
+  "spread": ["Mulai 0.0"],
+  "accountTypes": [
+    ["Min deposit : $1", "Spread : ±1.2 pips", "Komisi : 0", "Cocok untuk pemula"],
+    ["Min deposit : ±$8–$10", "Spread : ±1.2 pips", "Komisi : 0"],
+    ["Min deposit : $50", "Spread : mulai 0.0 pips", "Komisi : ±$4 per lot"],
+    ["Min deposit : ±$8", "Spread : ±2.0 pips", "Komisi : 0"],
+    ["Min deposit : ±$8", "Spread : ±2.0 pips", "Komisi : 0"],
+    ["Min deposit : $500", "Spread : ±0.6 pips", "Komisi : 0"]
+  ],
+  "keyAdvantages": ["Minimum deposit sangat rendah mulai dari $1", "Spread kompetitif hingga 0.0 pips pada akun ECN", "Dukungan platform MT4, MT5, Web, Mobile", "Akses lebih dari 60+ pasangan forex dan beberapa kelas aset lainnya", "Dukungan 24/7 customer service"],
+  "advantages": [" Spread & Eksekusi Kompetitif", "Deposit Minimum Sangat Rendah", "Leverage Fleksibel Tinggi", "Dukungan Platform Lengkap", "Instrumen Perdagangan Variatif", "Beragam Jenis Akun", "Fitur Tambahan seperti Copy Trading (Menurut Beberapa Sumber)", "Opsi Deposit Lokal & 24/7 Support (Website Resmi)"],
+  "disadvantages": ["Regulasi headquarter berada di offshore (Mauritius & St. Vincent & Grenadines) → risiko lebih tinggi dibanding broker teregulasi di FCA/ASIC/CySEC.", "Terdapat beberapa ulasan negatif terkait kurangnya pengawasan dan risiko leverage tinggi."],
+  "classifications": [
+    "Platform & Tools",
+    "Cost & Fees",
+    "Support & Service"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah Valetax aman?",
+      "answer": "Valetax memiliki lisensi di Mauritius dan St. Vincent & Grenadines, tetapi regulasi ini tergolong offshore dan memiliki risiko lebih tinggi dibanding regulator kelas atas."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Minimum deposit mulai dari $1."
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MT4, MT5, Web, dan Mobile."
+    },
+    {
+      "question": "Instrumen apa saja yang tersedia?",
+      "answer": "Forex 60+ pair, logam, indeks, energi, crypto."
+    }
+  ]
+}

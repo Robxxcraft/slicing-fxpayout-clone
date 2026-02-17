@@ -1,0 +1,74 @@
+{
+  "description": "A global broker featuring ultra-fast execution, low spreads, and highly flexible account options including CENT accounts. Provides access to Forex, Gold, Indices, Energy, and CFDs with stable and transparent conditions. Supported by rapid deposit withdrawal processes and a modern trading platform for everyone from beginners to professional traders.",
+  "specification": {
+    "leverage": "Up to 1:2000+",
+    "spread": "From 0.0 pips (Raw)"
+  },
+  "profile": {
+    "slogan": "Trade with accuracy, speed, and deep liquidity"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 pips (Raw) — very low averages",
+    "commission": "Raw/Zero: $3.5–$8 per lot (depending on pair)",
+    "leverage": "Up to 1:2000+ (smart leverage system)",
+    "execution": "0.01–0.04 seconds (ultra-fast)",
+    "depositWithdrawal": "Super fast (<1 minute for e-wallet/crypto)"
+  },
+  "accountTypes": [
+    ["Suitable for beginners & strategy testing", "Micro/Nano Lots", "High leverage", "Spreads starting from 0.3 pips", "No commission", "Minimum deposit: $10", "Note: Not all instruments are available on Cent accounts"],
+    ["Low spreads", "No commission", "Suitable for manual trading", "Min deposit: $10"],
+    ["Spreads 0.0 - 0.3 pips", "Low commission ($3.5–$4 per lot per side)", "Ultra-fast execution", "Ideal for scalping & EA"],
+    ["0.0 spreads on 30+ pairs", "Higher commission", "Ideal for news trading & high impact events"],
+    ["No commission", "Ultra-low spreads", "Instant execution", "Ideal for daily & swing traders"]
+  ],
+  "keyAdvantages": [
+    "Ultra-fast execution (0.01–0.04 seconds)",
+    "Most stable spreads in the industry",
+    "Very lightweight and stable platform",
+    "Fastest withdrawals among popular global brokers",
+    "CENT accounts (rare among Tier 1 brokers)",
+    "Deep liquidity & low slippage",
+    "Unlimited leverage (certain regions)",
+    "Highly suitable for scalping, EA, and gold traders"
+  ],
+  "advantages": [
+    "Highly stable spreads & execution",
+    "Super fast withdrawals",
+    "Numerous deposit & withdrawal methods",
+    "Cent accounts available for beginners",
+    "EA & scalping friendly",
+    "High and flexible leverage"
+  ],
+  "disadvantages": [
+    "Commissions vary per pair on Raw/Zero accounts",
+    "Leverage restricted under certain regulations",
+    "Not all instruments available on Cent accounts"
+  ],
+  "classifications": [
+    "Withdrawal (WD) Speed",
+    "Server Stability",
+    "Customer Support"
+  ],
+  "faqs": [
+    {
+      "question": "Is Exness Safe?",
+      "answer": "Exness is a broker regulated by several international financial authorities, including the FSA, CySEC, FSCA, and FSC. The company has been operating since 2008 and is known for transparency in displaying financial reports and trading statistics. Although it is not under Indonesian regulation, Exness is a global broker widely used by international traders."
+    },
+    {
+      "question": "Does Exness Provide Cent Accounts?",
+      "answer": "Yes. Exness provides Standard Cent accounts, which are accounts with smaller contract sizes suitable for practice, strategy testing, or trading with low capital risk."
+    },
+    {
+      "question": "Is Exness Suitable for Beginners?",
+      "answer": "Yes. Exness offers Cent accounts, stable spreads, easy transaction processes, and popular platforms like MT4/MT5. This combination helps beginners learn real market conditions with more measurable risk."
+    },
+    {
+      "question": "Is Exness Suitable for EA & Scalping?",
+      "answer": "Yes. Exness supports EAs, trading robots, algorithms, and scalping strategies without specific restrictions. Tight spreads and extremely fast execution speeds make it frequently used for intensive strategies."
+    },
+    {
+      "question": "How Fast is the Withdrawal Process at Exness?",
+      "answer": "Generally very fast. Many e-wallet and local payment withdrawal methods are processed within minutes, depending on the method used and system conditions. The process may take longer during certain hours or for specific methods."
+    }
+  ]
+}

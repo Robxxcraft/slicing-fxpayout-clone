@@ -1,0 +1,85 @@
+{
+  "description": "FP Markets (First Prudential Markets) is a global Forex & CFD broker established in 2005, headquartered in Sydney, Australia. The broker is renowned for its competitive spreads, lightning-fast execution, access to thousands of instruments, and support for popular trading platforms such as MetaTrader and cTrader. FP Markets also provides professional trading technology, including VPS services and advanced analytical tools.",
+  "specification": {
+    "leverage": "Up to 1:500 (depending on regulator & entity)",
+    "spread": [
+      "Standard: From approx. 1.0 pips",
+      "Raw: From 0.0 pips"
+    ]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": [
+      "Standard: starting from approx. 1.0 pips",
+      "Raw: starting from 0.0 pips"
+    ],
+    "commission": "Raw ECN ±$6 per lot round-turn (±$3 per side)",
+    "leverage": "Up to 1:500 (depending on regulator & entity)",
+    "execution": "Fast & no requotes",
+    "depositWithdrawal": "Bank transfer, cards, e-wallets"
+  },
+  "spread": ["from 0.0 – 0.2 pips", "low variable", "wider"],
+  "accountTypes": [
+    [
+      "Min deposit: $100",
+      "Spreads from ±1.0 pips",
+      "Zero commission",
+      "Ideal for general retail traders"
+    ],
+    [
+      "Min deposit: $100",
+      "Spreads from 0.0 pips",
+      "Commission: ±$3 per side per lot",
+      "Ideal for scalping, robots, and EAs"
+    ]
+  ],
+  "keyAdvantages": [
+    "Ultra-low ECN spreads",
+    "Fast and stable execution",
+    "High liquidity",
+    "EA and scalping friendly",
+    "Comprehensive trading platform support",
+    "Designed for active traders"
+  ],
+  "advantages": [
+    "Highly competitive spreads (Raw ECN)",
+    "Multi-platform support (MT4, MT5, cTrader)",
+    "No mark-ups on Raw accounts",
+    "Strong regulation in many countries",
+    "Suitable for manual, EA, and scalping strategies"
+  ],
+  "disadvantages": [
+    "$100 minimum deposit is higher than some entry level brokers",
+    "Leverage may be restricted by regional regulators",
+    "Standard account spreads are wider compared to ECN"
+  ],
+  "classifications": [
+    "Customer Support",
+    "Fees & Spreads",
+    "Execution Speed"
+  ],
+  "faqs": [
+    {
+      "question": "Is FP Markets safe?",
+      "answer": "Yes — regulated by ASIC (Australia), CySEC (Cyprus), FSCA (South Africa), FSA (Seychelles), and CIMA."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "The minimum deposit to start live trading is $100."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, and cTrader."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:500 for Forex (depending on the entity and regulator)."
+    },
+    {
+      "question": "Does FP Markets offer ECN accounts?",
+      "answer": "Yes — the Raw ECN account features spreads starting from 0.0 pips plus commission."
+    }
+  ]
+}

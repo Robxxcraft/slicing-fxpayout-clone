@@ -1,6 +1,7 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import { instrumentsKey, levelKey, platformsKey, regulationsKey, timeKey, titleKey, type BrokerRanking, type BrokerStruc } from "./typeDetailBroker";
 
 const brokerName = "HFM";
+const brokerId = "hfm";
 const brokerFounded = "2010";
 const brokerRanking: BrokerRanking = {
   tier: "Global",
@@ -14,73 +15,73 @@ export const hfmDetail: BrokerStruc = {
   profileImage: "hfm.webp",
   registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
   websiteUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
-  detailUrl: "hfm",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
   ranking: brokerRanking,
-  badges: ["Regulated Broker", "Multi-Asset", "MT4/MT5", "Leverage Tinggi"],
+  badges: [`${titleKey}.regulated_broker`, `${titleKey}.multi_asset`, `${titleKey}.mt4_mt5`, `${titleKey}.high_leverage`],
   overallScore: {
     rate: 4.3,
     communityUrl: "https://www.trustpilot.com/review/hfm.com",
   },
-  detailDescription: "HFM (HF Markets), sebelumnya dikenal sebagai HotForex, adalah broker multi-regulasi global yang berdiri sejak 2010 dan telah beroperasi lebih dari satu dekade di lebih dari 180 negara. Broker ini menyediakan layanan trading Forex, logam, komoditas, indeks, saham CFD, dan cryptocurrency dengan berbagai jenis akun dan platform trading termasuk MT4, MT5, dan aplikasi HFM.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$0",
-    leverage: "Hingga 1:2000",
-    spread: "Mulai 0.0 pips (Zero)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: `${brokerName} (HF Markets/HotForex)`,
-    slogan: " Trusted Global Forex & CFD Broker",
+    slogan:  `${brokerId}:profile.slogan`,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated Forex & CFD Broker",
+    brokerCategory: [`${titleKey}.multi_regulated`, `${titleKey}.forex_cfd`],
     regulations: [
-      { name: "FCA", country: "Inggris" },
-      { name: "CySEC", country: "Siprus" },
-      { name: "FSCA", country: "Afrika Selatan" },
-      { name: "DFSA", country: "Dubai" },
-      { name: "FSA", country: "Seychelles" },
-      { name: "CMA", country: "Kenya" },
+      { name: "FCA", country: `${regulationsKey}.fca` },
+      { name: "CySEC", country: `${regulationsKey}.cysec` },
+      { name: "FSCA", country: `${regulationsKey}.fsca` },
+      { name: "DFSA", country: `${regulationsKey}.dfsa` },
+      { name: "FSA", country: `${regulationsKey}.fsa` },
+      { name: "CMA", country: `${regulationsKey}.cma` },
     ]
   },
   summary: {
     minDeposit: "$0",
     types: ["Cent", "Zero Spread", "Pro", "Premium", "HFCopy"],
-    spread: "Mulai 0.0 pips (Zero)",
-    commission: "Tergantung akun (Zero & Pro dapat komisi)",
-    leverage: "Hingga 1:2000 (tergantung entitas/negara)",
-    execution: "Cepat & kompetitif",
-    instruments: ["Forex", "Metals", "Commodities", "Stocks", "Indices", "Crypto"],
-    depositWithdrawal: "Bank, kartu, e-wallet, crypto"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:metal`, `${instrumentsKey}:commodity`, `${instrumentsKey}:stocks`, `${instrumentsKey}:indices`, `${instrumentsKey}:crypto`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
         name: "Cent Account",
-        level: "Pemula",
-        features: ["Min deposit : $0", "Spread : variable (mulai 1.4 pips)", "Leverage tinggi"]
+        level: `${levelKey}:beginner`,
+        features: `${brokerId}:accountTypes.0`  
     },
     {
         name: "Zero Spread Account",
-        level: "Umum",
-        features: ["Min deposit : $0", "Spread : 0.0", "Komisi : iya"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.1`  
     },
     {
         name: "Pro Account",
-        level: "News Trader",
-        features: ["Min deposit : ±$100", "Spread : ±0.6 pips"]
+        level: `${levelKey}:news_trader`,
+        features: `${brokerId}:accountTypes.2`  
     },
     {
         name: "Premium Account",
-        level: "Advanced",
-        features: ["Min deposit : $0", "Spread : ±1.4 pips"]
+        level: `${levelKey}:advanced`,
+        features: `${brokerId}:accountTypes.3`  
     },
     {
         name: "HFCopy Account",
-        level: "Copy Trading",
-        features: ["Untuk copy trading/social trading"]
+        level: `${levelKey}:copy_trading`,
+        features: `${brokerId}:accountTypes.4`  
     },
   ],
   tradingSpreads: [
@@ -108,52 +109,52 @@ export const hfmDetail: BrokerStruc = {
       spreads: [
         {
           accountType: "Zero/Pro",
-          spread: "variabel (cenderung lebih besar)"
+          spread: `${brokerId}:spread.0`
         },
       ]
     }
   ],
-  keyAdvantages: ["Regulasi multi-yurisdiksi", "Spread kompetitif terutama di akun Zero", "Leverage maksimal tinggi", "Platform trading kuat (MT4, MT5, HFM App)", "Layanan support 24/5", "Cepat deposit & withdrawal"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
     paymentMethods: [
       { 
-        method: "Bank Transfer", 
+        method: "common:methods.bank_transfer", 
         time: { 
-          deposit: "Instant - 1 hari kerja", 
-          withdraw: " 1 - 3 hari kerja" 
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work` 
         }, 
         fee: "$0" 
       },
       { 
-        method: "Debit/Kredit Card", 
+        method: "common:methods.debit_credit_card", 
         time: { 
-          deposit: "Instant - 1 hari kerja", 
-          withdraw: " 1 - 3 hari kerja" 
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work` 
         },  
         fee: "$0" 
       },
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: { 
-          deposit: "Instant - 1 hari kerja", 
-          withdraw: " 1 - 3 hari kerja" 
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work` 
         },  
         fee: "$0" 
       },
       { 
-        method: "Crypto", 
+        method: "common:methods.crypto", 
         time: { 
-          deposit: "Instant - 1 hari kerja", 
-          withdraw: " 1 - 3 hari kerja" 
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work` 
         },  
         fee: "$0" 
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "HFM Mobile App", icon: "hfm.webp" },
-      { username: "WebTrader", icon: "hfm.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.hfm_mobile`, icon: "hfm.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "hfm.webp" },
     ]
   },
   rebateProgram: [
@@ -178,37 +179,16 @@ export const hfmDetail: BrokerStruc = {
     { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 0.5 },
     { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 1 },
   ],
-  advantages: ["Spread Zero sangat kompetitif", "Regulasi lengkap di berbagai negara", "Dukungan trading multi-platform", "Cocok untuk pemula hingga profesional"],
-  disadvantages: ["Struktur regulasi berbeda untuk tiap entitas", "Spread akun standar bisa lebih tinggi", "Tidak semua promosi bonus/nodeposit tersedia"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.3,
     quantityVote: 2.865,
     classifications: [
-      { type: "Depo & Withdraw", rate: 4.5 },
-      { type: "Support", rate: 4.4 },
-      { type: "Platform & Trade", rate: 4.3 },
+      { type: `${brokerId}:classifications.0`, rate: 4.5 },
+      { type: `${brokerId}:classifications.1`, rate: 4.4 },
+      { type: `${brokerId}:classifications.2`, rate: 4.3 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah HFM aman?",
-      answer: "Ya — teregulasi di banyak yurisdiksi besar (termasuk FCA & CySEC)."
-    },
-    {
-      question: "Berapa minimum deposit?",
-      answer: "Bisa dimulai dari $0 tergantung akun."
-    },
-    {
-      question: "Platform apa yang didukung?",
-      answer: "MT4, MT5, Web & HFM App."
-    },
-    {
-      question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:2000 (tergantung entitas dan wilayah)."
-    },
-    {
-      question: "Apakah ada akun copy trading?",
-      answer: "Ya — HFCopy"
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

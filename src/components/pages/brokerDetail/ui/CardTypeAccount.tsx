@@ -3,14 +3,21 @@ import HeadingSection from "./HeadingSection";
 import type { AccountTypeStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { useTranslation } from "react-i18next";
 
-const CardTypeAccount = ({ account }: { account: AccountTypeStruc }) => {
-  const { t } = useTranslation(["brokerdetailpage"]);
+const CardTypeAccount = ({ 
+  brokerId,
+  account 
+}: { 
+  brokerId: string;
+  account: AccountTypeStruc 
+}) => {
+  const { t } = useTranslation([brokerId, "brokerdetailpage"]);
+  const features = t(account.features, { returnObjects: true })
   return (
     <div className="px-8 py-9 bg-white border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
       {account.notes &&
         <div className="mb-2 px-3 py-1 w-fit bg-red-200 text-right">
           <p className="text-base text-red-800">
-            {account.notes}
+            {t(account.notes)}
           </p>
         </div>
       }
@@ -22,7 +29,7 @@ const CardTypeAccount = ({ account }: { account: AccountTypeStruc }) => {
           <div className="w-full h-fit bg-linear-to-t from-dark-primary to-primary bg-clip-border border border-transparent rounded-lg overflow-hidden">
             <div className="px-4 md:px-6 py-2 bg-my-light-blue">
               <p className="text-sm md:text-base font-semibold bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text md:text-nowrap text-center">
-                  {account.level}
+                {t(account.level)}
               </p>
             </div>
           </div>
@@ -33,7 +40,7 @@ const CardTypeAccount = ({ account }: { account: AccountTypeStruc }) => {
           {t("brokerdetailpage:accountType.profit")}:
         </p>
         <div className="mt-4 md:mt-6 flex flex-col gap-5 lg:gap-3">
-          {account.features.map((feature, idx) => (
+          {Array.isArray(features) && features.map((feature, idx) => (
             <div key={idx} className="flex items-start gap-2">
               <div className="w-5">
                 <FaCircleCheck className="text-lg text-primary" />

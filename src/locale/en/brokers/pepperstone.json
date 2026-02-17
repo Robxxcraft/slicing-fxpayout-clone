@@ -1,0 +1,71 @@
+{
+  "description": "A global broker featuring rapid execution, low spreads, and professional trading conditions. Pepperstone is widely recognized as a preferred choice for scalping, EAs, and active traders, providing access to Forex, Gold, Indices, Energy, Stock CFDs, and Crypto CFDs. Supported by modern trading platforms and a fast, transparent deposit withdrawal process.",
+  "specification": {
+    "leverage": "Up to 1:500",
+    "spread": "From 0.0 pips (Razor)"
+  },
+  "profile": {
+    "slogan": "Award-Winning Global Forex Broker"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 pips (Razor)",
+    "commission": "Razor: $6–$7 per lot (round-turn)",
+    "leverage": "Up to 1:500",
+    "execution": "Fast",
+    "depositWithdrawal": "Fast processing with multiple methods"
+  },
+  "accountTypes": [
+    ["Spreads from ±1.0 pips", "Zero commission"],
+    ["Spreads from 0.0 pips", "Commission: $3.50 per side (±$7 round-turn)"],
+    ["Professional trading conditions", "Flexible leverage"]
+  ],
+  "keyAdvantages": [
+    "Ultra-low ECN spreads",
+    "Rapid order execution",
+    "Top tier regulation (FCA, ASIC)",
+    "Full support for MT4, MT5, cTrader, and TradingView",
+    "Scalping and EA friendly",
+    "No inactivity or account maintenance fees"
+  ],
+  "advantages": [
+    "Low spreads and stable execution",
+    "Strong international regulatory oversight",
+    "Comprehensive platform selection (MT4, MT5, cTrader, TradingView)"
+  ],
+  "disadvantages": [
+    "Limited selection of real non-CFD instruments",
+    "24/7 support may not be available in all regions",
+    "Leverage restrictions apply depending on location"
+  ],
+  "classifications": [
+    "Withdrawal Speed",
+    "Server Stability",
+    "Customer Support"
+  ],
+  "faqs": [
+    {
+      "question": "Is Pepperstone safe?",
+      "answer": "Yes. Pepperstone is supervised by top tier authorities including the FCA, ASIC, DFSA, BaFin, CySEC, and SCB."
+    },
+    {
+      "question": "Is there a minimum deposit?",
+      "answer": "There is no official minimum deposit, though an initial deposit of ~$200 is recommended."
+    },
+    {
+      "question": "Is it suitable for scalping and EAs?",
+      "answer": "Yes, it is highly suitable, especially when using the Razor account."
+    },
+    {
+      "question": "What is the lowest spread?",
+      "answer": "Spreads start from 0.0 pips on the Razor account."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:500, depending on the regulator and region."
+    },
+    {
+      "question": "What are the deposit/withdrawal fees?",
+      "answer": "Most methods incur $0 in fees."
+    }
+  ]
+}

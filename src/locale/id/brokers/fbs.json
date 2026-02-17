@@ -1,0 +1,58 @@
+{
+  "description": "FBS adalah broker internasional yang berdiri sejak 2009, menyediakan layanan trading Forex dan CFD dengan kondisi trading yang kompetitif, berbagai jenis akun sesuai kebutuhan trader, serta eksekusi order yang cepat. FBS populer di kalangan trader pemula hingga profesional dengan program pendidikan, bonus, dan layanan pelanggan yang kuat",
+  "specification": {
+    "leverage": "Hingga 1:3000",
+    "spread": "Mulai 0.0 pips (Zero/ECN)"
+  },
+  "profile": {
+    "slogan": "Trade Forex Worldwide"
+  },
+  "summary": {
+    "spread": "Mulai 0.0 pips (Zero/ECN)",
+    "commission": "ECN: ±$6–$7 per lot (round-turn)",
+    "leverage": "Hingga 1:3000",
+    "execution": "Cepat",
+    "depositWithdrawal": "Cepat & banyak metode"
+  },
+  "accountTypes": [
+    ["Min deposit : $1", "Spread mulai ±1.0 pips", "Cocok pemula & latihan"],
+    ["Min deposit : $5", "Spread mulai ±1.0 pips", "Tanpa komisi"],
+    ["Min deposit : $100", "Spread mulai ±0.5 – 1.2", "Tanpa komisi"],
+    ["Min deposit : $500", "Spread mulai 0.0 pips", "Komisi sekitar $7 per lot"],
+    ["Min deposit : $100", "Spread mulai 0.0 pips", "Komisi kompetitif"]
+  ],
+  "keyAdvantages": ["Spread rendah terutama di ECN/Zero", "Leverage tinggi hingga 1:3000", "Akun Cent untuk pemula", "Program bonus menarik", "Eksekusi cepat", "Platform lengkap"],
+  "advantages": ["Minimum deposit sangat rendah", "Leverage sangat tinggi", "Spread kompetitif di akun ECN/Zero", "Akun Cent untuk trader pemula"],
+  "disadvantages": ["Spread akun non-ECN bisa lebih lebar", "Opsi instrumen non-CFD nyata tidak tersedia"],
+  "classifications": [
+    "Kecepatan Withdraw",
+    "Stabilitas Server",
+    "Customer Support"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah FBS aman?",
+      "answer": "Ya. FBS diregulasi oleh ASIC, CySEC, IFSC, dan FSCA tergantung entitas."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Minimum deposit mulai dari $1 (Cent Account)."
+    },
+    {
+      "question": "Apakah FBS cocok untuk pemula?",
+      "answer": "Ya. Akun Cent & layanan edukasi cocok untuk pemula."
+    },
+    {
+      "question": "Apakah ada akun ECN/Zero?",
+      "answer": "Ya. Tersedia Zero dan ECN dengan spread 0.0 pips."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:3000 tergantung regulator & wilayah."
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MT4, MT5, WebTrader & Mobile App."
+    }
+  ]
+}

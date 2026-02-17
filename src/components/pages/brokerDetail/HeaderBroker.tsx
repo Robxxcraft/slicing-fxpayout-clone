@@ -13,6 +13,7 @@ type DetailBio = {
 }
 
 type TypeHeader = {
+  brokerId: string;
   name: string; 
   ranking: BrokerRanking; 
   badges: string[]; 
@@ -25,17 +26,18 @@ type TypeHeader = {
 }
 
 const HeaderBroker = ({
-  name, ranking, badges, 
+  brokerId, name, ranking, badges, 
   profileImage, overallScore, description, 
   registerUrl, spesification, websiteUrl
 }: TypeHeader ) => {
-  const { t } = useTranslation(["brokerdetailpage"]);
+  const { t } = useTranslation([brokerId, "brokerdetailpage"]);
 
+  const finalSpread = Array.isArray(spesification.spread) ? spesification.spread.map((s) => t(s)) : t(spesification.spread);
   const detailBio: DetailBio[] = [
     {title: "brokerdetailpage:header.detailHeaders.0", detail: spesification.yearFounded, icon: "year-founded.svg"},
     {title: "brokerdetailpage:header.detailHeaders.1", detail: spesification.minDeposit, icon: "min-depo.svg"},
-    {title: "brokerdetailpage:header.detailHeaders.2", detail: spesification.leverage, icon: "leverage.svg"},
-    {title: "brokerdetailpage:header.detailHeaders.3", detail: spesification.spread, icon: "spread.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.2", detail: t(spesification.leverage), icon: "leverage.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.3", detail: finalSpread, icon: "spread.svg"},
   ]
 
   return (
@@ -95,7 +97,7 @@ const HeaderBroker = ({
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
         <p className="text-base 2xl:text-2xl leading-[180%] text-black/80">
-          {description}
+          {t(description)}
         </p>
       </div>
 
@@ -125,7 +127,7 @@ const HeaderBroker = ({
                 <p className="text-xl 2xl:text-[28px] 2xl:leading-8 font-semibold">
                   {Array.isArray(item.detail) ? 
                     item.detail.map((text: string) => (
-                      <span key={text}>{text} <br/></span>
+                      <span key={text}>{text}<br/></span>
                     )):
                     item.detail
                   }
@@ -140,16 +142,17 @@ const HeaderBroker = ({
 };
 
 const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
+  const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <>
       <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap gap-2 w-fit">
-        {badges.map((item) => (
-          <div key={item}
+        {badges.map((item, idx) => (
+          <div key={idx}
             className="bg-linear-to-t from-dark-primary to-primary border border-transparent bg-clip-border rounded-lg overflow-hidden"
           >
             <div className="px-3 lg:px-5 2xl:px-6 py-2 2xl:py-3 w-full bg-my-light-blue">
               <p className="text-[12px] md:text-sm 2xl:text-base bg-linear-to-t from-dark-primary to-primary text-transparent font-semibold bg-clip-text text-nowrap">
-                {item}
+                {t(item)}
               </p>
             </div>
           </div>

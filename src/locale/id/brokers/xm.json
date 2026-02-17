@@ -1,0 +1,59 @@
+{
+  "description": "XM adalah broker global Forex & CFD yang berfokus pada keadilan trading, transparansi biaya, dan pengalaman manusiawi bagi trader. XM dikenal dengan eksekusi cepat, tanpa intervensi saat news besar, serta kondisi trading yang konsisten tanpa manipulasi.",
+  "specification": {
+    "leverage": "Hingga 1:1000",
+    "spread": "Mulai ±0.6 – 1.7 pips"
+  },
+  "profile": {
+    "slogan": "Big. Fair. Human.",
+    "total_instruments": "1000+ (Forex, Indeks, Energi, Logam / Metal, Saham CFD, Crypto CFD, Turbo Instruments (lengkap), dll)"
+  },
+  "summary": {
+    "spread": "Mulai 0.6 – 1.7 pips",
+    "commission": "0 (Micro, Standard, Ultra Low",
+    "leverage": "Hingga 1:1000 (tergantung regulator & wilayah)",
+    "execution": "Ultra-fast execution, tanpa requotes atau penolakan",
+    "depositWithdrawal": "Banyak metode & cepat"
+  },
+  "accountTypes": [
+    ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0", "Cocok untuk pemula & modal kecil"],
+    ["Min deposit : $5", "Spread mulai ±1.0 pips", "Komisi : 0", "Cocok untuk trader umum & manual trading"],
+    ["Min deposit : $5", "Spread mulai ±0.6 pips", "Komisi : 0", "Cocok untuk trader aktif & spread lebih ketat"],
+    ["Min deposit : $5", "Spread mulai 0.0 pips", "Komisi : ± $7 per lot (round-turn)"]
+  ],
+  "accountNotes": "Tersedia untuk klien tertentu (LN)",
+  "keyAdvantages": ["Tanpa requotes atau penolakan", "Bonus sepanjang tahun", "Tanpa biaya tersembunyi", "Order dieksekusi dibawah 66ms saat rilit berita seperti NFP, FOMC, atau CPI"],
+  "advantages": ["Modal awal sangat rendah ($5)", "Spread kompetitif di akun Ultra Low & Zero", "Dukungan platform kuat (MT4, MT5)", "Regulasi global banyak", "Banyak instrumen trading"],
+  "disadvantages": ["Spread akun standar bisa lebih tinggi", "Komisi Zero tergolong standard ($7 per lot)", "Fitur edukasi tidak sekuat beberapa broker top"],
+  "classifications": [
+    "Customer Support",
+    "Execution & Platforms",
+    "Fees & Costs"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah XM aman?",
+      "answer": "Ya. XM teregulasi oleh beberapa otoritas besar seperti FCA, ASIC, CySEC, dsb."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Minimum deposit adalah $5."
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MT4, MT5, WebTrader, Mobile."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:1000 tergantung negara/entitas."
+    },
+    {
+      "question": "Apakah ada akun demo?",
+      "answer": "Ya, tersedia demo untuk latihan trading."
+    },
+    {
+      "question": "Apakah ada akun swap-free/Islamic?",
+      "answer": "Ya, tersedia untuk entitas/regional tertentu."
+    }
+  ]
+}

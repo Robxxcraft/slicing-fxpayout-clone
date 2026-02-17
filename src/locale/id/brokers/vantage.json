@@ -1,0 +1,51 @@
+{
+  "description": "Vantage (juga dikenal sebagai Vantage Markets) adalah broker forex dan CFD internasional yang berdiri sejak 2009, menyediakan akses trading ke berbagai instrumen keuangan global termasuk forex, indeks, logam, komoditas, CFD saham, ETF, dan obligasi. Vantage menggabungkan platform trading populer seperti MetaTrader 4, MetaTrader 5, ProTrader, serta aplikasinya sendiri untuk memberi pengalaman trading yang kuat dan fleksibel.",
+  "specification": {
+    "leverage": "Hingga 1:500 (beberapa entitas Premium sampai 1:2000)",
+    "spread": "Mulai dari 0.0 pips (Raw / Pro)"
+  },
+  "summary": {
+    "spread":"Mulai dari 0.0 pips (Raw / Pro)",
+    "commission": "Mulai dari ±$3 per lot per sisi di Raw ECN",
+    "leverage": "Hingga 1:500 (beberapa entitas Premium sampai 1:2000)",
+    "execution": "Cepat & stabil via ECN/STP",
+    "depositWithdrawal": "Banyak metode, biasanya tanpa biaya broker"
+  },
+  "spread": ["mulai 0.0 pips", "mulai ±0.3 – 0.5 pips", "mulai ±0.3 – 0.5 pips"],
+  "accountTypes": [
+    ["Min deposit : $50", "Spread : mulai ≈ 1.1 – 1.6 pips", "Komisi : $0"],
+    ["Min deposit : $50", "Spread : mulai 0.0 pips", "Komisi : ±$3 per lot per side"],
+    ["Min deposit : ±$50 – $10,000 (tergantung entitas)", "Spread : mulai 0.0 pips", " Komisi : ±$1.50 – $3 per lot per side"],
+    ["Varian akun tambahan", "Fitur sesuai kebutuhan trader berbeda"]
+  ],
+  "keyAdvantages": ["Spread & eksekusi kompetitif", "Akses ke 1,000+ instrumen CFD", "Regulasi global kuat", "Opsi ECN & STP", "Perlindungan saldo negatif", "Integrasi copy trading (ZuluTrade, DupliTrade)", "Platform trading modern"],
+  "advantages": ["Regulasi kuat di banyak yurisdiksi global", "Spread rendah di Raw ECN / Pro ECN", "Pilihan akun fleksibel sesuai strategi trader", "Platform lengkap & fitur trading canggih", "Tidak ada biaya deposit/withdraw dari broker"],
+  "disadvantages": [" Spread Standard bisa lebih tinggi dibanding ECN", "Komisi per lot tetap berlaku di Raw ECN", "Regulasi entitas berbeda tergantung wilayah klien"],
+  "classifications": [
+    "Platform & Tools",
+    "Cost & Fees",
+    "Support & Service"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah Vantage aman?",
+      "answer": "Ya — teregulasi oleh ASIC, FCA, FSCA, CIMA & VFSC tergantung entitas."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Mulai dari $50 (tergantung akun & entitas)"
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MT4, MT5, ProTrader, Web, dan Mobile."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:500 (ada entitas Premium sampai 1:2000)."
+    },
+    {
+      "question": "Apakah ada akun ECN?",
+      "answer": "Ya — tersedia Raw ECN & Pro ECN dengan spread rendah dan komisi kompetitif."
+    }
+  ]
+}

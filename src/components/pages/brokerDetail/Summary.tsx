@@ -10,18 +10,50 @@ type SumaryStructure = {
   icon: string;
 }
  
-const Summary = ({ summaryBroker }: { summaryBroker: SummaryBroker }) => {
-  const { t } = useTranslation(["brokerdetailpage"]);
+const Summary = ({ 
+  brokerId,
+  summaryBroker
+}: { 
+  brokerId: string;
+  summaryBroker: SummaryBroker 
+}) => {
+  const { t } = useTranslation([brokerId, "brokerdetailpage"]);
+  const finalSpread = Array.isArray(summaryBroker.spread) ? summaryBroker.spread.map((s) => t(s)) : t(summaryBroker.spread);
   const summaryItems: SumaryStructure[] = [
-    { title: "brokerdetailpage:summary.cardHeaders.minDeposit", detail: summaryBroker.minDeposit, icon: "min-depo.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.accountType", detail: summaryBroker.types.join(", "), icon: "category-acc.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.spread", detail: summaryBroker.spread, icon: "spread.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.commission", detail: summaryBroker.commission, icon: "commision.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.leverage", detail: summaryBroker.leverage, icon: "leverage.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.execution", detail: summaryBroker.execution, icon: "order.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.instrument", detail: summaryBroker.instruments.join(", "), icon: "instrument.svg" },
-    { title: "brokerdetailpage:summary.cardHeaders.depositWithdrawal", detail: summaryBroker.depositWithdrawal, icon: "depo-withdraw.svg" },
-  ]
+    { 
+      title: "brokerdetailpage:summary.cardHeaders.minDeposit", 
+      detail: summaryBroker.minDeposit, 
+      icon: "min-depo.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.accountType", 
+      detail: summaryBroker.types.join(", "), 
+      icon: "category-acc.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.spread", 
+      detail: finalSpread, 
+      icon: "spread.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.commission", 
+      detail: t(summaryBroker.commission), 
+      icon: "commision.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.leverage", 
+      detail: t(summaryBroker.leverage), 
+      icon: "leverage.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.execution", 
+      detail: t(summaryBroker.execution), 
+      icon: "order.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.instrument", 
+      detail: summaryBroker.instruments.map((instrument) => t(instrument)).join(", "), 
+      icon: "instrument.svg" 
+    },    { 
+      title: "brokerdetailpage:summary.cardHeaders.depositWithdrawal", 
+      detail: t(summaryBroker.depositWithdrawal), 
+      icon: "depo-withdraw.svg" 
+    }
+  ];
 
   return (
     <section id="ringkasan" className="scroll-mt-18 lg:scroll-mt-0 pt-6 md:pt-10 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">

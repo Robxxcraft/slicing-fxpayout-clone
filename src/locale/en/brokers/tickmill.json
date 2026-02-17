@@ -1,0 +1,69 @@
+{
+  "description": "Tickmill is a global Forex and CFD broker established in 2014, recognized for its low trading costs (tight spreads & low commissions), rapid execution, and support for popular platforms like MetaTrader 4 and MetaTrader 5. Tickmill serves traders across numerous countries with a focus on providing a professional and efficient trading experience.",
+  "specification": {
+    "leverage": "Up to 1:1000 (region dependent)",
+    "spread": "From 0.0 – 0.3 pips (Pro/VIP)"
+  },
+  "profile": {
+    "model": "ECN Trading"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 – 0.3 pips (Pro/VIP)",
+    "commission": "±$3 per lot per side (Pro / VIP accounts)",
+    "leverage": "Up to 1:1000 (region dependent)",
+    "execution": "Fast",
+    "depositWithdrawal": "Bank transfer, debit/credit cards, e-wallets"
+  },
+  "accountTypes": [
+    ["Minimum deposit: $100", "Spreads from ±1.6 pips", "Zero commission"],
+    ["Minimum deposit: $100", "Spreads from 0.0 – 0.3 pips", "Commission: $2 per lot per side"],
+    ["Higher minimum deposit requirement", "Ultra-tight spreads", "Commission: $1 per lot per side"]
+  ],
+  "keyAdvantages": [
+    "Ultra-low spreads (ECN/Raw)",
+    "Competitive commission",
+    "Fast and stable order execution",
+    "Strong global regulation",
+    "Swap-free (Islamic) account options",
+    "Full support for MT4, MT5, and TradingView"
+  ],
+  "advantages": [
+    "Extremely low ECN spreads",
+    "Competitive commissions",
+    "Fast and reliable execution",
+    "Strong regulatory oversight across multiple jurisdictions",
+    "Comprehensive trading platform availability"
+  ],
+  "disadvantages": [
+    "$100 minimum deposit is relatively higher than other brokers",
+    "Commission fees apply to Pro and VIP accounts",
+    "Leverage may be restricted based on regulations"
+  ],
+  "classifications": [
+    "Execution & Spread",
+    "Customer Support",
+    "Deposit / Withdrawal"
+  ],
+  "faqs": [
+    {
+      "question": "Is Tickmill safe?",
+      "answer": "Yes — Tickmill is regulated by top tier authorities including the FCA, CySEC, FSCA, and FSA."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "The minimum deposit for most account types is $100."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "Tickmill supports MT4, MT5, Web, and Mobile platforms."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:1000, depending on the regulatory jurisdiction and entity."
+    },
+    {
+      "question": "Does Tickmill offer ECN accounts?",
+      "answer": "Yes — the Pro and VIP accounts function with an ECN style model offering low raw spreads."
+    }
+  ]
+}

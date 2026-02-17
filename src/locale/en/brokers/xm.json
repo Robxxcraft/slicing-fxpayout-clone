@@ -1,0 +1,74 @@
+{
+  "description": "XM is a global Forex & CFD broker focusing on trading fairness, cost transparency, and a human-centric experience for traders. XM is renowned for its rapid execution, zero intervention during major news events, and consistent trading conditions without manipulation.",
+  "specification": {
+    "leverage": "Up to 1:1000",
+    "spread": "From ±0.6 – 1.7 pips"
+  },
+  "profile": {
+    "slogan": "Big. Fair. Human.",
+    "total_instruments": "1000+ (Forex, Indices, Energy, Metals, Stock CFDs, Crypto CFDs, Turbo Instruments (comprehensive), etc.)"
+  },
+  "summary": {
+    "spread": "From 0.6 – 1.7 pips",
+    "commission": "0 (Micro, Standard, Ultra Low)",
+    "leverage": "Up to 1:1000 (depending on regulator & region)",
+    "execution": "Ultra-fast execution, no requotes or rejections",
+    "depositWithdrawal": "Multiple methods & fast processing"
+  },
+  "accountTypes": [
+    ["Min deposit: $5", "Spreads from ±1.0 pips", "Commission: 0", "Ideal for beginners & small capital"],
+    ["Min deposit: $5", "Spreads from ±1.0 pips", "Commission: 0", "Ideal for general traders & manual trading"],
+    ["Min deposit: $5", "Spreads from ±0.6 pips", "Commission: 0", "Ideal for active traders & tighter spreads"],
+    ["Min deposit: $5", "Spreads from 0.0 pips", "Commission: ±$7 per lot (round-turn)"]
+  ],
+  "accountNotes": "Available for specific clients (International)",
+  "keyAdvantages": [
+    "No requotes or rejections",
+    "Bonus throughout the year",
+    "No hidden fees",
+    "Orders executed under 66ms during high impact news like NFP, FOMC, or CPI"
+  ],
+  "advantages": [
+    "Ultra-low initial capital ($5)",
+    "Competitive spreads on Ultra Low & Zero accounts",
+    "Robust platform support (MT4, MT5)",
+    "Extensive global regulation",
+    "Wide range of trading instruments"
+  ],
+  "disadvantages": [
+    "Standard account spreads can be higher",
+    "Zero account commission is standard ($7 per lot)",
+    "Educational features are not as strong as some top tier brokers"
+  ],
+  "classifications": [
+    "Customer Support",
+    "Execution & Platforms",
+    "Fees & Costs"
+  ],
+  "faqs": [
+    {
+      "question": "Is XM safe?",
+      "answer": "Yes. XM is regulated by several major authorities such as the FCA, ASIC, CySEC, etc."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "The minimum deposit is $5."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, WebTrader, and Mobile."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:1000 depending on the country/entity."
+    },
+    {
+      "question": "Is a demo account available?",
+      "answer": "Yes, demo accounts are available for trading practice."
+    },
+    {
+      "question": "Is there a swap-free/Islamic account?",
+      "answer": "Yes, available for specific entities/regions."
+    }
+  ]
+}

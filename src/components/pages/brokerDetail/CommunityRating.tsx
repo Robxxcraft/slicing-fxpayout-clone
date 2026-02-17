@@ -5,14 +5,15 @@ import { IoMdStar } from "react-icons/io";
 import type { BrokerRanking, CommunityRatingStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { Trans, useTranslation } from "react-i18next";
 
-const CommunityRating = ({ name, profileImage, ranking, communityRating }: 
+const CommunityRating = ({ brokerId, name, profileImage, ranking, communityRating }: 
 {
+  brokerId: string;
   name: string; 
   profileImage: string; 
   ranking: BrokerRanking; 
   communityRating: CommunityRatingStruc
 }) => {
-  const { t } = useTranslation(["brokerdetailpage"]);
+  const { t } = useTranslation([brokerId, "brokerdetailpage"]);
   return (
     <section id="rating" className="scroll-mt-26 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>{t("brokerdetailpage:rating.title")}</HeadingSection>
@@ -67,7 +68,7 @@ const CommunityRating = ({ name, profileImage, ranking, communityRating }:
                 <div key={idx}>
                   <div className="flex justify-between">
                     <p className="text-base 2xl:text-xl font-medium">
-                      {item.type}
+                      {t(item.type)}
                     </p>
                     <div className="flex gap-1 2xl:gap-1.5 items-start">
                       <IoMdStar className="mt-px text-my-yellow text-xl 2xl:text-3xl" />
@@ -89,7 +90,7 @@ const CommunityRating = ({ name, profileImage, ranking, communityRating }:
               <p className="text-2xl 2xl:text-[32px] leading-9 font-semibold">Ulasan teratas</p>
               {communityRating.reviewHighlights.map((value, idx) => (
                 <p key={idx} className="my-2 px-4 py-2 bg-[#F5F8FF] rounded-lg text-base 2xl:text-xl">
-                  {value}
+                  {t(value)}
                 </p>
               ))}
             </div>

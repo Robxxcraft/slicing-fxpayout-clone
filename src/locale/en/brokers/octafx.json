@@ -1,0 +1,74 @@
+{
+  "description": "OctaFX is an international Forex and CFD broker operating since 2011, providing access to global markets including Forex, metals, indices, commodities, and cryptocurrencies. OctaFX is recognized for its low spreads, competitive trading costs with zero commission on many instruments, and robust trading platforms such as MetaTrader and OctaTrader. Additionally, OctaFX offers copy trading features and 24/7 global customer support.",
+  "specification": {
+    "leverage": "Up to 1:500",
+    "spread": "From ±0.6 pips"
+  },
+  "profile": {
+    "slogan": "Trusted Forex & CFD Broker",
+    "totalUser": "40+ million traders across 180+ countries",
+    "totalInstrument": "Instrument Count: 300+ (Forex, Stock CFDs, Metals, Indices, Crypto)"
+  },
+  "summary": {
+    "spread": "Starting from ±0.6 pips",
+    "commission": "Zero non-trading fees (free deposits and withdrawals)",
+    "leverage": "Up to 1:500 (depending on instrument and entity)",
+    "execution": "Fast & stable execution",
+    "depositWithdrawal": "Multiple methods with zero non-trading fees"
+  },
+  "spreadAccount": ["All Accounts"],
+  "spread": ["variable, higher than forex depending on market conditions"],
+  "accountTypes": [
+    ["Min deposit: $50", "Spreads from ±1.0 pips", "Ideal for beginners"],
+    ["Min deposit: $50", "Spreads from ±0.3 – 0.8 pips", "Zero commission"],
+    ["Min deposit: $100", "Spreads from 0.0 pips", "Competitive commission"]
+  ],
+  "keyAdvantages": [
+    "Low spreads (typical from 0.6 pips)",
+    "Commission-free deposits and withdrawals",
+    "Flexible leverage up to 1:500",
+    "Robust trading platforms (MT4, MT5, OctaTrader)",
+    "Copy trading and social features",
+    "Access to over 300 global instruments",
+    "24/7 customer support"
+  ],
+  "advantages": [
+    "Cost efficient trading conditions",
+    "Competitive spreads",
+    "Comprehensive platform support (MT4, MT5, OctaTrader)",
+    "Zero commission deposits and withdrawals",
+    "Diverse range of trading instruments"
+  ],
+  "disadvantages": [
+    "Regulatory oversight may not match top tier brokers (e.g., FCA/ASIC) across all entities",
+    "Spreads may widen during periods of high volatility",
+    "User reviews mention some service issues (some reviews are mixed)"
+  ],
+  "classifications": [
+    "Customer Service",
+    "Platform & Execution",
+    "Costs & Spreads"
+  ],
+  "faqs": [
+    {
+      "question": "Is OctaFX safe?",
+      "answer": "Yes, OctaFX has been in operation since 2011 and is regulated through its CySEC entity for European operations."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "$25 (though $100 is recommended for healthier margin levels)."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, OctaTrader, mobile, and web platforms."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:500, depending on the instrument and region."
+    },
+    {
+      "question": "Is a demo account available?",
+      "answer": "Yes, OctaFX provides free demo accounts for practice."
+    }
+  ]
+}

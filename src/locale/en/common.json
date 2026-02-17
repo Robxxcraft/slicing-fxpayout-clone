@@ -17,6 +17,18 @@
         "title": "Ready to increase your trading profit efficiency?",
         "paragraph": "Register now and start getting up to 90% rebates."
     },
+    "methods": {
+        "bank_transfer": "Bank Transfer",
+        "bank_transfer_usd_idr": "Bank Transfer (USD/IDR)",
+        "crypto": "Crypto",
+        "debit_credit_card": "Debit/Credit Card",
+        "e_wallet": "E-Wallet",
+        "indonesian_local_va": "Local VA (ID)",
+        "indonesian_e_wallet": "Indonesian E-Wallet",
+        "local_bank": "Local Bank",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
     "navbar": {
         "home": "Home",
         "broker": "Broker",

@@ -62,7 +62,7 @@ const HowItWorks = ({
           {t("claimrebatepage:howWorks.paragraph")}
         </p>
         <img 
-          src={t("claimrebatepage:howWorks.imageFlows")} alt="flow" 
+          src={`/${t("claimrebatepage:howWorks.imageFlows")}`} alt="flow" 
           className="block xl:hidden mt-4 md:mt-6 xl:mt-10"  
         />
         <div className="hidden xl:block">

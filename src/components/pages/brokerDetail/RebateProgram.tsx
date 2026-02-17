@@ -1,11 +1,12 @@
 import Button from "@/components/ui/Button";
+import { getLocalizedPath } from "@/helper/pathHelper";
 import type { RebateProgramType } from "@/utils/dataBroker/typeDetailBroker";
 import { useTranslation } from "react-i18next";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { TiInfoLarge } from "react-icons/ti";
 
 const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
-  const { t } = useTranslation(["brokerdetailpage"]);
+  const { t, i18n } = useTranslation(["brokerdetailpage"]);
   let estimateEur;
   let estimateXau;
   const isRebateProgramText = typeof detailData === "string";
@@ -26,7 +27,14 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
           <p className="mt-4 text-base 2xl:text-xl leading-[160%] text-white">
             {t("brokerdetailpage:rebateProgram.subtitle")}
           </p>
-          <Button buttonType="link" urlTo="/" className="mt-6 w-full! lg:w-fit!" variant="primary-light" icon={<IoArrowForwardOutline />} iconPosition="right" size="xl">
+          <Button 
+            buttonType="link" 
+            urlTo={getLocalizedPath("calculator", i18n.language)} 
+            className="mt-6 w-full! lg:w-fit!" 
+            variant="primary-light" 
+            icon={<IoArrowForwardOutline />} 
+            iconPosition="right" size="xl"
+          >
             {t("brokerdetailpage:rebateProgram.button")}
           </Button>
         </div>
