@@ -33,7 +33,7 @@ const CardForm = ({ form, handleChangeForm, setSelectedBroker }:
         <SelectInput 
           id="broker" 
           label={t("transferpage:card.emailForm.brokerLabel")} 
-          icon="bank-icon.svg" 
+          icon="/bank-icon.svg" 
           altIcon="Icon broker" 
           defaultValue={`<${t("text.select")}>`}
           value={form.broker} 

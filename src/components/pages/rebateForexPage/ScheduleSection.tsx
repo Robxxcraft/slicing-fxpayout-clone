@@ -187,8 +187,9 @@ const ScheduleSection = ({
                   {t("text.previous")}
                 </span>
               </button>
-              {getPagination({maxButtons: 4, currentPage, TOTAL_PAGES}).map((page) => (
+              {getPagination({maxButtons: 4, currentPage, TOTAL_PAGES}).map((page, idx) => (
                 <button 
+                  key={idx}
                   onClick={() => handleChangePagination(page)}
                   className={`${page === currentPage ? "bg-linear-to-t from-dark-primary to-primary text-white": "hover:bg-black/5"}
                   px-3 py-2 w-10 border border-[#DEE2E6] cursor-pointer`}>
