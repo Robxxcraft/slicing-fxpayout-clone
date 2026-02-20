@@ -9,7 +9,7 @@
         "badge": "Dapatkan Rebate 90% Untuk Trader",
         "estimateRebate": {
             "title": "Estimasi Rebate",
-            "subtitle": "Pilih broker dan masukkan lot per bulang untuk estimasi cepat",
+            "subtitle": "Pilih broker dan masukkan lot per bulan untuk estimasi cepat",
             "broker": "Broker",
             "lotPerMonth": "Lot per Bulan",
             "pair": "Pair",
