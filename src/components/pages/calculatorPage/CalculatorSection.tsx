@@ -40,6 +40,10 @@ const CalculatorSection = () => {
         "accountType",
         broker.rebateRates[0]?.accountType ?? ""
       );
+      form.setSpecificValue(
+        "pair",
+        broker.rebateRates[0]?.pair ?? ""
+      );
     }
   }
 
@@ -110,7 +114,8 @@ const CalculatorSection = () => {
                 `<${t("calculatorpage:card.accountTypePlaceholder")}>` : `<${t("text.select")}>`} 
               value={form.values.accountType} 
               onChangeForm={form.handleChange} 
-              optionData={selectedBroker === undefined ? [] : Array.from(new Set(selectedBroker.rebateRates.map((rebate) => rebate.accountType)))}
+              optionData={selectedBroker === undefined ? [] 
+                : Array.from(new Set(selectedBroker.rebateRates.map((rebate) => rebate.accountType)))}
               errorMessage={form.errors.accountType && t(form.errors.accountType)}
               disabled={form.values.broker.trim().length === 0}
               required />
@@ -119,11 +124,16 @@ const CalculatorSection = () => {
               label={t("calculatorpage:card.pair")}
               icon="/sync-icon.svg" 
               altIcon="Icon Pair" 
-              defaultValue={`<${t("text.select")}>`} 
+              defaultValue={form.values.broker.trim().length === 0 ? 
+                `<${t("calculatorpage:card.accountTypePlaceholder")}>` : `<${t("text.select")}>`} 
               value={form.values.pair} 
               onChangeForm={form.handleChange} 
-              optionData={supportPairs}
+              optionData={selectedBroker === undefined ? [] 
+                : Array.from(new Set(
+                  selectedBroker.rebateRates.map((rebate) => rebate.pair)
+                  .filter((reb) => supportPairs.includes(reb))))}
               errorMessage={form.errors.pair && t(form.errors.pair)}
+              disabled={form.values.broker.trim().length === 0}
               required />
             <TextInput 
               id="lots"

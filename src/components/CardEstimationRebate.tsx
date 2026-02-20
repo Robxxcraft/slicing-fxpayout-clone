@@ -100,8 +100,12 @@ const CardEstimationRebate = () => {
                     id="pair"
                     value={selectedPair}
                     onChange={(e) => setSelectedPair(e.target.value)}
-                    className="_select-no-arrow px-4 py-3 w-full border border-[#D0D5DD] rounded-lg">
-                    {supportPairs.map((pair, idx) => (
+                    disabled={selectedDetailBroker === undefined}
+                    className="_select-no-arrow px-4 py-3 w-full border border-[#D0D5DD] rounded-lg disabled:bg-black/5 disabled:cursor-not-allowed">
+                    {selectedDetailBroker === undefined ? [] 
+                      : Array.from(new Set(
+                        selectedDetailBroker.rebateRates.map((rebate) => rebate.pair)
+                        .filter((reb) => supportPairs.includes(reb)))).map((pair, idx) => (
                       <option key={idx} value={pair}>
                         {pair}
                       </option>
