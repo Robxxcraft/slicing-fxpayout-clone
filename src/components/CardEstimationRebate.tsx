@@ -12,7 +12,9 @@ import { getLocalizedPath } from "@/helper/pathHelper";
 const CardEstimationRebate = () => {
   const { t, i18n} = useTranslation(["homepage"]);
   const [lotperMonth, setLotperMoth] = useState<string>('1');
-  const [selectedPair, setSelectedPair] = useState<string>("EUR/USD");
+  const [selectedPair, setSelectedPair] = useState<string>(
+    Object.values(brokers)[0].rebateProgram[0].pair
+  );
   const [selectedBroker, setSelectedBroker] = useState<string>(
     Object.values(brokers)[0].name
   );
@@ -24,14 +26,24 @@ const CardEstimationRebate = () => {
   };
 
   const selectedDetailBroker = allBrokers.find(broker => broker.name.toLocaleLowerCase() === selectedBroker.toLocaleLowerCase());
-  const pairIdx = supportPairs.findIndex(pair => pair === selectedPair);
+  const estimate = selectedDetailBroker?.rebateProgram.find((rebate) => 
+    rebate.pair === selectedPair
+  );
 
   let pairValue = 0;
-  if (selectedDetailBroker && pairIdx !== -1) {
-    const estimateData = selectedDetailBroker.rebateProgram[pairIdx].estimate;
-    pairValue = typeof estimateData === "number" ? estimateData : estimateData.min;
+  if (selectedDetailBroker && estimate !== undefined) {
+    pairValue = typeof estimate.estimate === "number" ? estimate.estimate : estimate.estimate.min;
   }
   const estimationRebate = formattedUsd(Number(lotperMonth) * pairValue);
+
+  const handleChangeBroker = (e: ChangeEvent<HTMLSelectElement>) => {
+    const brokerName = e.target.value;
+    setSelectedBroker(brokerName);
+    const selectedDetailBroker = allBrokers.find(broker => broker.name.toLocaleLowerCase() === brokerName.toLocaleLowerCase());
+    if (selectedDetailBroker) {
+      setSelectedPair(selectedDetailBroker?.rebateProgram[0].pair);
+    }
+  }
 
   return (
     <div className="relative w-full lg:w-fit">
@@ -60,7 +72,7 @@ const CardEstimationRebate = () => {
                   name="broker"
                   id="broker"
                   value={selectedBroker}
-                  onChange={(e) => setSelectedBroker(e.target.value)}
+                  onChange={handleChangeBroker}
                   className="_select-no-arrow px-4 py-3 w-full border border-[#D0D5DD] rounded-lg">
                   {allBrokers.map((broker, idx) => (
                     <option key={idx} value={broker.name}>
@@ -100,11 +112,10 @@ const CardEstimationRebate = () => {
                     id="pair"
                     value={selectedPair}
                     onChange={(e) => setSelectedPair(e.target.value)}
-                    disabled={selectedDetailBroker === undefined}
-                    className="_select-no-arrow px-4 py-3 w-full border border-[#D0D5DD] rounded-lg disabled:bg-black/5 disabled:cursor-not-allowed">
+                    className="_select-no-arrow px-4 py-3 w-full border border-[#D0D5DD] rounded-lg">
                     {selectedDetailBroker === undefined ? [] 
                       : Array.from(new Set(
-                        selectedDetailBroker.rebateRates.map((rebate) => rebate.pair)
+                        selectedDetailBroker.rebateProgram.map((rebate) => rebate.pair)
                         .filter((reb) => supportPairs.includes(reb)))).map((pair, idx) => (
                       <option key={idx} value={pair}>
                         {pair}
