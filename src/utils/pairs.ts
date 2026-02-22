@@ -1,1 +1,1 @@
-export const supportPairs = ["EUR/USD", "XAU/USD", "GBP/USD", "AUD/USD", "CRYPTO"];
+export const supportPairs = ["EUR/USD", "XAU/USD", "GBP/USD", "AUD/USD", "CRYPTO", "FOREX"];
