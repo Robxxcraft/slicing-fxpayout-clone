@@ -3,19 +3,15 @@ import Button from "../ui/Button";
 import { TiInfoLarge } from "react-icons/ti";
 
 const BrokerItem = ({ item }: { item: BrokerStruc }) => {
-  let estimateEur;
-  let estimateXau;
-  let estimateAud;
   const rebateProgram = item.rebateProgram;
   const isRebateProgramText = typeof rebateProgram === "string";
   
-  if (!isRebateProgramText) {
-    estimateEur = typeof rebateProgram[0].estimate === "number" ?
-      `${rebateProgram[0].estimate}` : `${rebateProgram[0].estimate.max}`;
-    estimateXau = typeof rebateProgram[1].estimate === "number" ?
-      `${rebateProgram[1].estimate}` : `${rebateProgram[1].estimate.max}`;
-    estimateAud = typeof rebateProgram[2].estimate === "number" ?
-      `${rebateProgram[2].estimate}` : `${rebateProgram[2].estimate.max}`;
+  const getEstimateValue = (estimate: number | {
+    min: number;
+    max: number;
+  }) => {
+    return typeof estimate === "number" ?
+      `${estimate}` : `${estimate.max}`
   }
 
   return (
@@ -62,30 +58,16 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    EUR/USD
-                  </td>
-                  <td className="font-semibold text-black py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    ${estimateEur}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    XAU/USD
-                  </td>
-                  <td className="font-semibold text-black py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    ${estimateXau}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    CRYPTO
-                  </td>
-                  <td className="font-semibold text-black py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    ${estimateAud}
-                  </td>
-                </tr>
+                {item.rebateProgram.slice(0, 3).map((rebate, idx) => (
+                  <tr key={idx}>
+                    <td className="py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
+                      {rebate.pair}
+                    </td>
+                    <td className="font-semibold text-black py-2 border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
+                      ${getEstimateValue(rebate.estimate)}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
