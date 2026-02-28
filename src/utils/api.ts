@@ -284,11 +284,39 @@ const postFormValidationData = async ({ item, captchaValue }: { item: Validation
       })
     });
     const responseJson = await response.json();
-    if(response.status === 201) {
+    if (response.status === 201) {
       return { error: false, message: responseJson.message }
+    }
+    if (response.status === 400) {
+      if (responseJson.message === "Required parameter missing or empty") {
+        return { error: true, message: "Formulir tidak boleh kosong." };
+      }
+      if (responseJson.message === "Invalid email format") {
+        return { error: true, message: "Format email tidak valid." };
+      }
+      if (responseJson.message === "Invalid value broker") {
+        return { error: true, message: "Pilihan broker tidak ditemukan atau tidak valid." };
+      }
+      if (responseJson.message.includes("Invalid value rebate")) {
+        return { error: true, message: "Tipe rebate yang dipilih tidak sesuai." };
+      }
+      if (responseJson.message.includes("Invalid value platform trading")) {
+        return { error: true, message: "Platform trading tidak valid." };
+      }
+      if (responseJson.message === "Captcha token is required") {
+        return { error: true, message: "Silahkan selesaikan verifikasi Captcha." };
+      }
+    }
+    if (response.status === 403 && responseJson.message === "Captcha verification failed") {
+      console.error(`Error validation captcha: ${responseJson.errors}`)
+      return { error: true, message: "Verifikasi Captcha gagal. Silakan coba lagi." };
+    }
+    if (response.status === 500) {
+      return { error: true, message: "Internal Server Error. Coba beberapa saat lagi" };
     }
     return { error: true, message: responseJson.message }
   } catch (error) {
+    console.error(`Failed send form validation. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`
