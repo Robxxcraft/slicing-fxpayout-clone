@@ -17,7 +17,7 @@ export const fbsDetail: BrokerStruc = {
   websiteUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
-  statusRebate: "Auto",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: [`${titleKey}.low_deposit`, `${titleKey}.high_leverage`, `${titleKey}.multi_asset`, `${titleKey}.beginner_friendly`],
   overallScore: {

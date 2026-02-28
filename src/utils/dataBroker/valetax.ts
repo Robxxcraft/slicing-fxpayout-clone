@@ -17,7 +17,7 @@ export const valetaxDetail: BrokerStruc = {
   websiteUrl: "https://ma.valetax-indonesia.com/p/5808172",
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
-  statusRebate: "Auto",
+  statusRebate: "Manual",
   ranking: brokerRanking,
   badges: [`${titleKey}.low_deposit`, `${titleKey}.high_leverage`, `${titleKey}.mt4_mt5`, `${titleKey}.ecn_account`, `${titleKey}.global_forex_cfd`],
   overallScore: {
