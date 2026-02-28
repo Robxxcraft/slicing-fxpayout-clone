@@ -123,10 +123,12 @@ const ValidationForm = () => {
         bank_account_number: formBank.values.rekeningNumber,
       }
   
-      const { error } = await postFormValidationData({ item, captchaValue });
+      const { error, message } = await postFormValidationData({ item, captchaValue });
   
       if (error) {
-        toast.error(t("validationpage:card.failedSubmit"));
+        toast.error(t(message));
+        if (recaptchaRef.current !== null) recaptchaRef.current.reset();
+        setCaptcaValue("");
       } else {
         setShowModal("SUCCESS");
         formValidation.resetForm();

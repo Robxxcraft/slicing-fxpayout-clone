@@ -62,7 +62,16 @@
         "errors": { "captcha": "Please confirm that you are not a robot" },
         "warning": "*Your data is kept confidential and is only used for the verification and fxpayout rebate withdrawal process.",
         "button": "Submit Validation",
-        "failedSubmit": "Request failed to send. Please try again in a moment."
+        "feedbackError": {
+            "requiredFields": "Form fields cannot be empty. Please fill in all data.",
+            "invalidEmail": "Invalid email format. Please use a valid email address.",
+            "invalidBroker": "The selected broker is invalid or not found.",
+            "invalidRebate": "The selected rebate type is invalid.",
+            "invalidPlatform": "Invalid trading platform selection.",
+            "captchaRequired": "Please complete the Captcha verification.",
+            "captchaFailed": "Captcha verification failed. Please try again.",
+            "serverError": "Internal server error. Please try again later."
+        }
     },
     "notify": {
         "title": "Account Validation Terms",

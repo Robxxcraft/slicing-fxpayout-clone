@@ -62,7 +62,16 @@
         "errors": { "captcha": "Mohon konfirmasi bahwa Anda bukan robot" },
         "warning": "*Data Anda dijaga kerahasiaannya dan hanya digunakan untuk proses verifikasi serta pencairan rebate fxpayout.",
         "button": "Submit Validasi",
-        "failedSubmit": "Permintaan Gagal Dikirim. Coba beberapa saat lagi."
+        "feedbackError": {
+            "requiredFields": "Formulir tidak boleh kosong. Harap lengkapi semua data.",
+            "invalidEmail": "Format email tidak valid. Gunakan email yang benar.",
+            "invalidBroker": "Pilihan broker tidak ditemukan atau tidak valid.",
+            "invalidRebate": "Tipe rebate yang dipilih tidak sesuai.",
+            "invalidPlatform": "Platform trading tidak valid.",
+            "captchaRequired": "Harap selesaikan verifikasi Captcha.",
+            "captchaFailed": "Verifikasi Captcha gagal. Silakan coba lagi.",
+            "serverError": "Terjadi kesalahan pada server. Harap coba beberapa saat lagi."
+        }
     },
     "notify": {
         "title": "Ketentuan Validasi Akun",
