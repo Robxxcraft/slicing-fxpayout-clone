@@ -76,7 +76,7 @@ const CalculatorSection = () => {
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">
       <div className="relative px-4 md:px-8 xl:px-10 py-8 bg-my-light-blue border border-primary rounded-[20px] overflow-hidden">
         <img src="/big-fxpayout.png" alt="big-payout" 
-          className="absolute -bottom-16 -right-16 -rotate-13 opacity-10"/>
+          className="absolute -bottom-16 -right-16 -rotate-13 opacity-10 pointer-events-none"/>
 
         <div className="flex justify-center items-center gap-3">
           <MaskSvg 
@@ -159,24 +159,28 @@ const CalculatorSection = () => {
           </div>
         </form>
         <div className="mt-6 md:mt-8 flex flex-nowrap justify-center items-stretch w-full">
-          <div className="primary-scrollbar overflow-auto w-1/2 border-r border-[#334BBB]">
-            <div className="ml-auto flex flex-col justify-between md:w-fit text-center pr-4 md:pr-8">
+          <div className="primary-scrollbar pr-4 md:pr-8 w-1/2 border-r border-[#334BBB]">
+            <div className="ml-auto flex flex-col justify-between w-full text-center">
               <p className="text-base font-medium text-my-dark-purple/80">
                 {t("calculatorpage:card.estimatesRebates")}
               </p>
-              <p className="whitespace-nowrap text-[2rem] md:text-[3rem] 2xl:text-[64px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-                USD {formattedUsd(Number(rebateResult.estimate)).replace("$", "")}
-              </p>
+              <div className="overflow-x-auto w-full">
+                <p className="min-w-max shrink-0 whitespace-nowrap text-[2rem] md:text-[3rem] 2xl:text-[64px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                  USD {formattedUsd(Number(rebateResult.estimate)).replace("$", "")}
+                </p>
+              </div>
             </div>
           </div>
-          <div className="overflow-auto w-1/2">
-            <div className="flex flex-col justify-between md:w-fit text-center pl-4 md:pl-8">
+          <div className="primary-scrollbar pl-4 md:pl-8 w-1/2">
+            <div className="flex flex-col justify-between w-full text-center">
               <p className="text-base font-medium text-my-dark-purple/80">
                 {t("calculatorpage:card.rebatePerLot")}
               </p>
-              <p className="whitespace-nowrap text-[2rem] md:text-[3rem] 2xl:text-[64px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-                USD {formattedUsd(Number(rebateResult.rebatesPerLot)).replace("$", "")}
-              </p>
+              <div className="overflow-x-auto w-full">
+                <p className="min-w-max shrink-0 whitespace-nowrap text-[2rem] md:text-[3rem] 2xl:text-[64px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                  USD {formattedUsd(Number(rebateResult.rebatesPerLot)).replace("$", "")}
+                </p>
+              </div>
             </div>
           </div>
         </div>
