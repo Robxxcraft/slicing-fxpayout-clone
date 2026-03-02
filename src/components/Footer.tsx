@@ -93,8 +93,7 @@ const Footer = () => {
                 <FaMapMarkerAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                1 Raffles Quay, #10-02 <br /> Singapore 048583
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
