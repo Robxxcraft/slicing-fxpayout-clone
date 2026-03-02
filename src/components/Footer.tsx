@@ -155,7 +155,7 @@ const socialMedia = [
   },
   {
     id: "tiktok",
-    url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-92pm7d95aXo",
+    url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-94MFu3SZZJJ",
     element: <IoLogoTiktok aria-hidden="true" />,
   },
   {
