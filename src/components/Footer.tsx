@@ -101,14 +101,22 @@ const Footer = () => {
               <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
               </div>
-              <div>
-                <p className="w-fit text-base 2xl:text-[18px] text-primary">
+              <div className="flex flex-col">
+                <a href="https://wa.me/6282125597634" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
                   +62 821-2559-7634
-                </p>
-                <p className="w-fit text-base 2xl:text-[18px] text-primary">
+                </a>
+                <a href="https://wa.me/628984785573" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
                   +62 898-4785-573
-                </p>
+                </a>
               </div>
+            </div>
+            <div className="flex gap-4 2xl:gap-5">
+              <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
+                <FaWhatsapp className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
+              </div>
+              <a href="https://whatsapp.com/channel/0029VbBwSxf8fewzsFqX8B2f" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
+                WhatsApp Channel
+              </a>
             </div>
             <div className="flex gap-4 2xl:gap-5">
               <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
