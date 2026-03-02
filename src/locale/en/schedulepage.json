@@ -1,0 +1,30 @@
+{
+    "helmet": {
+        "title": "Check the Latest {{brokerName}} Rebate Schedule | FXPayout",
+        "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
+    },
+    "header": {
+        "title": "REBATE SCHEDULE",
+        "paragraph": "Below is the {{brokerName}} rebate schedule under normal conditions. Please note that the schedule may experience delays due to certain factors such as server issues, system maintenance, payment gateway disruptions, or delays in receiving rebate data from the broker.",
+        "tag": "BROKER REBATE SCHEDULE"
+    },
+    "tableHeader": ["Category", "Rebate Schedule"],
+    "tableItems": [
+        {
+            "category": "Rebate Reports Appear in System",
+            "schedule": "Daily: One day after order closure, from 00:00 to 16:59 UTC (GMT+0)."
+        },
+        {
+            "category": "Rebate Credited to Rebate Balance",
+            "schedule": "Daily: One day after order closure, from 00:00 to 16:59 UTC (GMT+0)."
+        },
+        {
+            "category": "AutoRebate to Trading Account or Broker Wallet",
+            "schedule": "Feature not available."
+        },
+        {
+            "category": "AutoRebate from Rebate Balance to Bank / E-Currency",
+            "schedule": "Weekly: Every Monday to Wednesday at 16:59 UTC (GMT+0), provided the minimum payment threshold has been reached."
+        }
+    ]
+}

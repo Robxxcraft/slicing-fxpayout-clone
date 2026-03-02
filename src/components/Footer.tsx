@@ -10,8 +10,11 @@ import { listNavigation } from "../utils/listNavigation";
 import { RiTelegram2Fill } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoTiktok } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation(["common"]);
   return (
     <footer className="xl:mt-4 2xl:mt-5">
       <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-11 xl:py-20 flex flex-col md:flex-row gap-6 md:gap-10 flex-wrap lg:flex-nowrap">
@@ -27,8 +30,7 @@ const Footer = () => {
             </span>
           </div>
           <p className="mt-2 lg:mt-3 2xl:mt-4 mb-4 2xl:mb-6 text-base 2xl:text-lg text-primary">
-            Kami mengembalkan hingga 90% komisi IB kepada trader. Proses cepat,
-            aman, dan transparan tanpa mengubah spread atau kondisi trading.
+           {t("footer.paragraph")}
           </p>
           <div className="flex items-center gap-4 2xl:gap-6">
             {socialMedia.map((item) => (
@@ -45,17 +47,17 @@ const Footer = () => {
         </div>
         <div className="flex flex-col flex-1">
           <p className="mb-[26px] lg:mb-5 2xl:mb-6 text-xl md:text-2xl lg:text-lg 2xl:text-xl font-semibold text-primary">
-            Tautan Cepat
+            {t("footer.quickLink")}
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
-            {listNavigation.map(({ title, url, sublist }, index) => {
+            {listNavigation.map(({ title, url, code, sublist }, index) => {
               if (title === "Klaim Rebate") {
                 return (
                   <Link
                     key={index}
-                    to={"rebate-forex"}
+                    to={getLocalizedPath("rebate-forex", i18n.language)}
                     className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
-                    {title}
+                    {t(`navbar.${code}`)}
                   </Link>
                 )
               } 
@@ -63,18 +65,18 @@ const Footer = () => {
                 return (
                   <Link
                     key={index}
-                    to={url}
+                    to={getLocalizedPath(url, i18n.language)}
                     className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
-                    {title}
+                    {t(`navbar.${code}`)}
                   </Link>
                 );
               } else {
                 return sublist.map((item, idx) => (
                   <Link
                     key={idx}
-                    to={item.url}
+                    to={getLocalizedPath(item.url, i18n.language)}
                     className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
-                    {item.title}
+                     {t(`navbar.subNav.${item.code}`)}
                   </Link>
                 ))
               }
@@ -83,7 +85,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col flex-1 md:flex-2">
           <p className="mb-[26px] lg:mb-5 2xl:mb-6 text-xl md:text-2xl lg:text-lg 2xl:text-xl font-semibold text-primary">
-            Kontak Kami
+            {t("footer.contact")}
           </p>
           <div className="flex flex-col gap-3 2xl:gap-4">
             <div className="flex gap-4 2xl:gap-5">
@@ -91,22 +93,29 @@ const Footer = () => {
                 <FaMapMarkerAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
               </div>
               <p className="w-fit text-base 2xl:text-[18px] text-primary">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                1 Raffles Quay, #10-02 <br /> Singapore 048583
               </p>
             </div>
             <div className="flex gap-4 2xl:gap-5">
               <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
                 <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
               </div>
-              <div>
-                <p className="w-fit text-base 2xl:text-[18px] text-primary">
+              <div className="flex flex-col">
+                <a href="https://wa.me/6282125597634" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
                   +62 821-2559-7634
-                </p>
-                <p className="w-fit text-base 2xl:text-[18px] text-primary">
+                </a>
+                <a href="https://wa.me/628984785573" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
                   +62 898-4785-573
-                </p>
+                </a>
               </div>
+            </div>
+            <div className="flex gap-4 2xl:gap-5">
+              <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
+                <FaWhatsapp className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
+              </div>
+              <a href="https://whatsapp.com/channel/0029VbBwSxf8fewzsFqX8B2f" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
+                WhatsApp Channel
+              </a>
             </div>
             <div className="flex gap-4 2xl:gap-5">
               <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
@@ -146,7 +155,7 @@ const socialMedia = [
   },
   {
     id: "tiktok",
-    url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-92pm7d95aXo",
+    url: "https://www.tiktok.com/@fxpayout.com?_r=1&_t=ZS-94MFu3SZZJJ",
     element: <IoLogoTiktok aria-hidden="true" />,
   },
   {

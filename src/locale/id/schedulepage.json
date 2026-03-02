@@ -1,0 +1,30 @@
+{
+    "helmet": {
+        "title": "Cek Jadwal Rutin Rebate {{brokerName}} Terbaru | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "header": {
+        "title": "JADWAL REBATE",
+        "paragraph": "Berikut adalah jadwal rebate {{brokerName}} dalam kondisi normal. Jadwal rebate dapat mengalami keterlambatan dalam kondisi tertentu, seperti masalah server, pemeliharaan sistem, gangguan pada sistem pembayaran, dan keterlambatan data rebate dari broker.",
+        "tag": "JADWAL REBATE BROKER"
+    },
+    "tableHeader": ["Kategori", "Jadwal Rebate"],
+    "tableItems": [
+        {
+            "category": "Laporan Rebate Muncul di Sistem",
+            "schedule": "Harian: Sehari setelah penutupan order, yaitu dari pukul 00.00 hingga 16.59 UTC (GMT+0)."
+        },
+        {
+            "category": "Rebate Dikreditkan ke Saldo Rebate",
+            "schedule": "Harian: Sehari setelah penutupan order, yaitu dari pukul 00.00 hingga 16.59 UTC (GMT+0)."
+        },
+        {
+            "category": "AutoRebate ke Akun Trading atau Dompet Broker",
+            "schedule": "Fitur tidak tersedia."
+        },
+        {
+            "category": "AutoRebate dari Saldo Rebate ke Bank / E-Currency",
+            "schedule": "Mingguan: Setiap Senin hingga Rabu pukul 16.59 UTC (GMT+0), jika batas minimum pembayaran telah tercapai."
+        }
+    ]
+}

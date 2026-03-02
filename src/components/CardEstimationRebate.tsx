@@ -6,8 +6,11 @@ import Button from "@/components/ui/Button";
 import { brokers } from "@/utils/dataBroker/brokers";
 import { supportPairs } from "@/utils/pairs";
 import { formattedUsd } from "@/helper/formHelper";
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const CardEstimationRebate = () => {
+  const { t, i18n} = useTranslation(["homepage"]);
   const [lotperMonth, setLotperMoth] = useState<string>('1');
   const [selectedPair, setSelectedPair] = useState<string>(
     Object.values(brokers)[0].rebateProgram[0].pair
@@ -51,10 +54,10 @@ const CardEstimationRebate = () => {
           <div>
             <div className="flex gap-3 items-center mb-2">
               <IoIosCalculator className="text-primary text-2xl xl:text-4xl" />
-              <p className="text-2xl font-semibold">Estimasi Rebate</p>
+              <p className="text-2xl font-semibold">{t("homepage:hero.estimateRebate.title")}</p>
             </div>
             <p className="text-sm md:text-base font-medium text-[rgba(0,0,0,0.5)] 2xl:leading-[178%]">
-              Pilih broker dan masukkan lot per bulang untuk estimasi cepat
+              {t("homepage:hero.estimateRebate.subtitle")}
             </p>
           </div>
           <div className="flex flex-col gap-2 md:gap-4">
@@ -62,7 +65,7 @@ const CardEstimationRebate = () => {
               <label
                 htmlFor="broker"
                 className="text-sm md:text-base lg:text-sm font-medium text-[#344054]">
-                Broker
+                {t("homepage:hero.estimateRebate.broker")}
               </label>
               <div className="relative w-full">
                 <select
@@ -85,7 +88,7 @@ const CardEstimationRebate = () => {
                 <label
                   htmlFor="lotpermonth"
                   className="text-sm md:text-base lg:text-sm font-medium text-[#344054]">
-                  Lot per Bulan
+                  {t("homepage:hero.estimateRebate.lotPerMonth")}
                 </label>
                 <input
                   type="number"
@@ -101,7 +104,7 @@ const CardEstimationRebate = () => {
                 <label
                   htmlFor="pair"
                   className="text-sm md:text-base lg:text-sm font-medium text-[#344054]">
-                  Pair
+                  {t("homepage:hero.estimateRebate.pair")}
                 </label>
                 <div className="w-full relative">
                   <select
@@ -126,17 +129,21 @@ const CardEstimationRebate = () => {
           </div>
           <div className="flex justify-between gap-2">
             <div className="text-base font-medium text-[rgba(16,24,40,0.8)]">
-              <p className="leading-[19px]">Estimasi</p>
-              <p className="leading-[19px]">Perkiraan</p>
+              <p className="leading-[19px]">
+                {t("homepage:hero.estimateRebate.estimation.0")}
+              </p>
+              <p className="leading-[19px]">
+                {t("homepage:hero.estimateRebate.estimation.1")}
+              </p>
             </div>
             <p className="primary-scrollbar max-w-[70%] overflow-auto text-[32px] md:text-[40px] font-semibold text-my-dark-purple leading-12">{estimationRebate}</p>
           </div>
           <div className="w-full flex items-center gap-2 flex-wrap md:flex-nowrap">
-            <Button buttonType="link" urlTo="/broker" variant="primary-light" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
-              Daftar & Dapatkan
+            <Button buttonType="link" urlTo={`${getLocalizedPath("/broker", i18n.language)}`} variant="primary-light" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
+              {t("homepage:hero.estimateRebate.register")}
             </Button>
-            <Button buttonType="link" urlTo="/broker" variant="outline" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
-              Klaim Manual
+            <Button buttonType="link" urlTo={`${getLocalizedPath("/broker", i18n.language)}`} variant="outline" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
+              {t("homepage:hero.estimateRebate.claim")}
             </Button>
           </div>
           <div className="w-full h-[0.5px] bg-black/20"></div>
@@ -145,9 +152,7 @@ const CardEstimationRebate = () => {
               <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />
             </span>
             <p className="w-fit text-[12px] md:text-base lg:text-[12px] font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
-              Kami mengembalikan hingga 90% komisi IB kepada trader. Proses
-              cepat, aman, dan transparan tanpa mengubah spread atau kondisi
-              trading.
+              {t("homepage:hero.estimateRebate.info")}
             </p>
           </div>
         </div>

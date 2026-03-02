@@ -4,26 +4,27 @@ import { validateOnlyNumber } from "../formHelper";
 export const checkValidFormValidation = (vals: FormValidation) => {
   const errors: Partial<Record<keyof FormValidation, string>> = {};
   const emailRegx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!vals.broker) errors.broker = "Broker harus dipilih";
-  if (!vals.identityUsername.trim()) errors.identityUsername = "Nama lengkap tidak boleh kosong";
+  const key = "validationpage:card.validationForm.errors";
+  if (!vals.broker) errors.broker = `${key}.brokerRequired`;
+  if (!vals.identityUsername.trim()) errors.identityUsername = `${key}.usernameRequired`;
   if (vals.email.trim() === "") {
-    errors.email = "Email tidak boleh kosong";
+    errors.email = `${key}.emailRequired`;
   } else if (!emailRegx.test(vals.email)) {
-    errors.email = "Email tidak valid";
+    errors.email = `${key}.emailInvalid`;
   }
   
   if (!vals.accountNumber.trim()) {
-    errors.accountNumber = "Nomor akun tidak boleh kosong";
+    errors.accountNumber = `${key}.accountNumberRequired`;
   } else if (!validateOnlyNumber(vals.accountNumber)) {
-    errors.accountNumber = "Nomor akun tidak valid";
+    errors.accountNumber = `${key}.accountNumberInvalid`;
   }
 
-  if (!vals.platform) errors.platform = "Platform harus dipilih";
+  if (!vals.platform) errors.platform = `${key}.platformRequired`;
 
   if (!vals.handphoneNumber.trim()) {
-    errors.handphoneNumber = "Nomor HP tidak boleh kosong";
+    errors.handphoneNumber = `${key}.handphoneNumberRequired`;
   } else if (!validateOnlyNumber(vals.handphoneNumber)) {
-    errors.handphoneNumber = "Nomor HP tidak valid";
+    errors.handphoneNumber = `${key}.handphoneNumberInvalid`;
   }
 
   return errors;

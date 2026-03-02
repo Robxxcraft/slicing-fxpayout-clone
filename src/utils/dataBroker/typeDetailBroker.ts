@@ -1,3 +1,12 @@
+const brokerDetailPageKey = "brokerdetailpage:data";
+export const titleKey = `${brokerDetailPageKey}.title`;
+export const regulationsKey = `${brokerDetailPageKey}.regulations`;
+export const instrumentsKey = `${brokerDetailPageKey}.instruments`;
+export const levelKey = `${brokerDetailPageKey}.level`;
+export const timeKey = `${brokerDetailPageKey}.time`;
+export const feeKey = `${brokerDetailPageKey}.fee`;
+export const platformsKey = `${brokerDetailPageKey}.platforms`;
+
 export type BrokerRanking = {
   tier: string;
   title: string;
@@ -19,7 +28,7 @@ export type ProfileDetailBroker = {
   group?: string;
   ranking: BrokerRanking;
   yearFounded: string;
-  brokerCategory: string;
+  brokerCategory: string | string[];
   model?: string;
   totalUser?: string;
   totalInstrument?: string;
@@ -82,7 +91,7 @@ export type FaqStructure = {
 export type AccountTypeStruc = {
   name: string;
   level: string;
-  features: string[],
+  features: string,
   notes?: string;
 }
 
@@ -113,15 +122,15 @@ export type BrokerStruc = {
   summary: SummaryBroker;
   accountTypes: AccountTypeStruc[];
   tradingSpreads: SpreadStructure[];
-  keyAdvantages: string[];
+  keyAdvantages: string;
   depositWithdrawal: {
     paymentMethods: PaymentMethod[];
     platforms: Platform[];
   },
   rebateProgram: RebateProgramType,
   rebateRates: RebateRate[];
-  advantages: string[];
-  disadvantages: string[];
+  advantages: string;
+  disadvantages: string;
   communityRating: CommunityRatingStruc;
-  faq: FaqStructure[];
+  faq: string;
 }

@@ -4,6 +4,7 @@ import { FaStar, FaStarHalf  } from "react-icons/fa6";
 import type { OverallScore, BrokerRanking, Specification } from "@/utils/dataBroker/typeDetailBroker";
 import BoundedIcon from "./ui/BoundedIcon";
 import Button from "@/components/ui/Button";
+import { useTranslation } from "react-i18next";
 
 type DetailBio = {
   title: string;
@@ -11,28 +12,32 @@ type DetailBio = {
   icon: string;
 }
 
+type TypeHeader = {
+  brokerId: string;
+  name: string; 
+  ranking: BrokerRanking; 
+  badges: string[]; 
+  profileImage: string; 
+  overallScore: OverallScore; 
+  description: string; 
+  registerUrl: string; 
+  spesification: Specification,
+  websiteUrl: string;
+}
+
 const HeaderBroker = ({
-  name, ranking, badges, 
+  brokerId, name, ranking, badges, 
   profileImage, overallScore, description, 
   registerUrl, spesification, websiteUrl
-}: 
-  {
-    name: string; 
-    ranking: BrokerRanking; 
-    badges: string[]; 
-    profileImage: string; 
-    overallScore: OverallScore; 
-    description: string; 
-    registerUrl: string; 
-    spesification: Specification,
-    websiteUrl: string;
-  }
-) => {
+}: TypeHeader ) => {
+  const { t } = useTranslation([brokerId, "brokerdetailpage"]);
+
+  const finalSpread = Array.isArray(spesification.spread) ? spesification.spread.map((s) => t(s)) : t(spesification.spread);
   const detailBio: DetailBio[] = [
-    {title: "Tahun Berdiri", detail: spesification.yearFounded, icon: "year-founded.svg"},
-    {title: "Min Deposit", detail: spesification.minDeposit, icon: "min-depo.svg"},
-    {title: "Leverage", detail: spesification.leverage, icon: "leverage.svg"},
-    {title: "Spread", detail: spesification.spread, icon: "spread.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.0", detail: spesification.yearFounded, icon: "year-founded.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.1", detail: spesification.minDeposit, icon: "min-depo.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.2", detail: t(spesification.leverage), icon: "leverage.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.3", detail: finalSpread, icon: "spread.svg"},
   ]
 
   return (
@@ -41,7 +46,7 @@ const HeaderBroker = ({
         to="/broker"
         className="flex gap-2 2xl:gap-3 items-center w-fit text-sm lg:text-base 2xl:text-xl text-my-red hover:gap-4 2xl:hover:gap-5 transition-all duration-300 ease-out">
         <IoArrowBackOutline />
-        <span>Kembali ke Daftar Broker</span>
+        <span>{t("brokerdetailpage:back")}</span>
       </Link>
       <div className="mt-6 lg:mt-8 2xl:mt-10 flex flex-col md:flex-row gap-4 justify-between">
         <div className="flex gap-4 lg:gap-6 2xl:gap-8 items-start w-fit">
@@ -62,7 +67,7 @@ const HeaderBroker = ({
         
         <div className="px-6 lg:px-8 2xl:px-10 py-4 lg:py-6 2xl:py-8 flex flex-col items-center bg-my-light-blue rounded-[20px] min-w-[270px] lg:w-fit">
           <p className="text-base lg:text-2xl 2xl:text-[32px] leading-9 font-semibold">
-            Overall Score
+            {t("brokerdetailpage:overallScore")}
           </p>
           <div className="mt-1 lg:mt-5 2xl:mt-10 flex items-end">
             <p className="text-[36px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
@@ -82,7 +87,7 @@ const HeaderBroker = ({
           </div>
           <Link to={overallScore.communityUrl} target="_blank"
             className="mt-4 block text-base font-semibold bg-linear-to-t from-dark-primary to-primary text-transparent bg-clip-text underline! decoration-dark-primary">
-            Lihat Ulasan Komunitas
+            {t("brokerdetailpage:header.viewRating")}
           </Link>
         </div>
       </div>
@@ -92,7 +97,7 @@ const HeaderBroker = ({
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
         <p className="text-base 2xl:text-2xl leading-[180%] text-black/80">
-          {description}
+          {t(description)}
         </p>
       </div>
 
@@ -116,11 +121,13 @@ const HeaderBroker = ({
                 <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="Icon" />
               </div>
               <div className="flex flex-col gap-1 lg:gap-2">
-                <p className="text-base 2xl:text-2xl text-black/80">{item.title}</p>
+                <p className="text-base 2xl:text-2xl text-black/80">
+                  {t(item.title)}
+                </p>
                 <p className="text-xl 2xl:text-[28px] 2xl:leading-8 font-semibold">
                   {Array.isArray(item.detail) ? 
                     item.detail.map((text: string) => (
-                      <span key={text}>{text} <br/></span>
+                      <span key={text}>{text}<br/></span>
                     )):
                     item.detail
                   }
@@ -135,16 +142,17 @@ const HeaderBroker = ({
 };
 
 const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
+  const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <>
       <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap gap-2 w-fit">
-        {badges.map((item) => (
-          <div key={item}
+        {badges.map((item, idx) => (
+          <div key={idx}
             className="bg-linear-to-t from-dark-primary to-primary border border-transparent bg-clip-border rounded-lg overflow-hidden"
           >
             <div className="px-3 lg:px-5 2xl:px-6 py-2 2xl:py-3 w-full bg-my-light-blue">
               <p className="text-[12px] md:text-sm 2xl:text-base bg-linear-to-t from-dark-primary to-primary text-transparent font-semibold bg-clip-text text-nowrap">
-                {item}
+                {t(item)}
               </p>
             </div>
           </div>
@@ -156,13 +164,14 @@ const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registe
 }
 
 const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
+  const { t } = useTranslation(["common"]);
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
       <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" size="md" className="text-nowrap flex-1">
-        Daftar Sekarang
+        {t("button.registerNow")}
       </Button>
       <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" size="md" className="text-nowrap flex-1">
-        Kunjungi Website
+        {t("button.visitWebsite")}
       </Button>
     </div>
   )

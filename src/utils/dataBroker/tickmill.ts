@@ -1,6 +1,7 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import { feeKey, instrumentsKey, levelKey, platformsKey, regulationsKey, timeKey, titleKey, type BrokerRanking, type BrokerStruc } from "./typeDetailBroker";
 
 const brokerName = "Tickmill";
+const brokerId = "tickmill";
 const brokerFounded = "2014";
 const brokerRanking: BrokerRanking = {
   tier: "1",
@@ -14,61 +15,61 @@ export const tickmillDetail: BrokerStruc = {
   profileImage: "tickmill.webp",
   registerUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
   websiteUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
-  detailUrl: "tickmill",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
   ranking: brokerRanking,
-  badges: ["Tier 1", "ECN", "Spread Tipis", "Leverage Fleksibel"],
+  badges: [`${titleKey}.tier_1`, `${titleKey}.ecn_broker`, `${titleKey}.thin_spread`, `${titleKey}.flexible_leverage`],
   overallScore: {
     rate: 4.4,
     communityUrl: "https://www.trustpilot.com/review/www.tickmill.com",
   },
-  detailDescription: "Tickmill adalah broker forex dan CFD global yang berdiri sejak 2014, dikenal karena biaya trading yang rendah (spread tipis & komisi rendah), eksekusi cepat, serta dukungan platform populer seperti MetaTrader 4 dan MetaTrader 5. Tickmill melayani trader di banyak negara dengan fokus pada pengalaman trading profesional dan efisien.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker ECN terkenal dengan komisi rendah dan rebate kompetitif.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$100",
-    leverage: "Hingga 1:1000 (region dependent)",
-    spread: "Mulai 0.0 – 0.3 pips (Pro/VIP)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-Regulated ECN/STP Broker",
-    model: "ECN trading",
+    brokerCategory: [`${titleKey}.multi_regulated`, `${titleKey}.ecn_stp`],
+    model: `${brokerId}:profile.model`,
     regulations: [
-      { name: "FCA", country: "United Kingdom" },
-      { name: "CySEC", country: "Cyprus" },
-      { name: "FSCA", country: "South Africa" },
-      { name: "FSA", country: "Seychelles" },
+      { name: "FCA", country: `${regulationsKey}.fca` },
+      { name: "CySEC", country: `${regulationsKey}.cysec` },
+      { name: "FSCA", country: `${regulationsKey}.fsca` },
+      { name: "FSA", country: `${regulationsKey}.fsa` },
     ]
   },
   summary: {
     minDeposit: "$100",
     types: ["Classic", "Pro", "VIP/Ultra"],
-    spread: "Mulai 0.0 – 0.3 pips (Pro/VIP)",
-    commission: "±$3 per lot per sisi (Pro / Ultra account)",
-    leverage: "Hingga 1:1000 (region dependent)",
-    execution: "Cepat",
-    instruments: ["Forex", "Indeks", "Komoditas", "Energi", "Logam", "Saham CFD"],
-    depositWithdrawal: "Bank transfer, debit/kredit, e-wallet"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:indices`, `${instrumentsKey}:commodity`, `${instrumentsKey}:energy`, `${instrumentsKey}:metal`, `${instrumentsKey}:stocks_cfd`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
         name: "Classic Account",
-        level: "Umum",
-        features: ["Deposit minimum: $100", "Spread mulai ±1.6 pips", "Tanpa komisi"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.0`  
     },
     {
         name: "Pro Account",
-        level: "Pro",
-        features: ["Deposit minimum: $100", "Spread mulai 0.0 – 0.3 pips", "Komisi : $3 per lot per sisi"]
+        level: `${levelKey}:pro`,
+        features: `${brokerId}:accountTypes.1`  
     },
     {
         name: "VIP/Ultra Account",
-        level: "Trader",
-        features: ["Min deposit lebih tinggi", "Spread sangat tipis", "Komisi : ±$2.5 – $3 per lot per sisi"]
+        level: `${levelKey}:trader`,
+        features: `${brokerId}:accountTypes.2`  
     },
   ],
   tradingSpreads: [
@@ -115,39 +116,39 @@ export const tickmillDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: ["Spread sangat rendah (ECN/Raw)", "Komisi kompetitif", "Eksekusi order cepat & stabil", "Regulasi kuat & global", "Opsi akun bebas swap (Islamic)", "Support MT4, MT5, TradingView"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
       paymentMethods: [
       { 
-        method: "Debit/Credit Card", 
-        time: {
-          deposit: "Instan – 1 hari kerja",
-          withdraw: "1 – 3 hari kerja"
+        method: "common:methods.debit_credit_card", 
+        time: { 
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         },
-        fee: "Tergantung metode (umumnya broker tidak mengenakan biaya)"
+        fee: `${feeKey}.zero_broker_depends_method`
       },
       { 
-        method: "Bank Transfer", 
+        method: "common:methods.bank_transfer", 
         time: {
-          deposit: "Instan – 1 hari kerja",
-          withdraw: "1 – 3 hari kerja"
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         }, 
-        fee: "Tergantung metode (umumnya broker tidak mengenakan biaya)"
+        fee: `${feeKey}.zero_broker_depends_method`
       },
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: {
-          deposit: "Instan – 1 hari kerja",
-          withdraw: "1 – 3 hari kerja"
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         },
-        fee: "Tergantung metode (umumnya broker tidak mengenakan biaya)"
+        fee: `${feeKey}.zero_broker_depends_method`
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "WebTrader", icon: "tickmill.webp" },
-      { username: "Mobile App (iOS & Android)", icon: "tickmill.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
+      { username: `${platformsKey}.ios_android`, icon: "tickmill.webp" },
     ]
   },
   rebateProgram: [
@@ -164,37 +165,16 @@ export const tickmillDetail: BrokerStruc = {
     { accountType: "Raw", pair: "EUR/USD", rebatePerLot: 2 },
     { accountType: "Raw", pair: "CRYPTO", rebatePerLot: 0.8 },
   ],
-  advantages: ["Spread ECN sangat rendah", "Komisi kompetitif", "Eksekusi cepat & stabil", "Regulasi kuat di banyak wilayah", "Platform trading lengkap"],
-  disadvantages: ["Min deposit $100 relatif lebih tinggi dibanding broker lain", "Komisi berlaku pada akun Pro/VIP", "Leverage bisa dibatasi oleh regulator"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.4,
     quantityVote: 1.078,
     classifications: [
-      { type: "Execution & Spread", rate: 4.5 },
-      { type: "Customer Support ", rate: 4.4 },
-      { type: "Deposit / Withdrawal", rate: 4.3 },
+      { type: `${brokerId}:classifications.0`, rate: 4.5 },
+      { type: `${brokerId}:classifications.1`, rate: 4.4 },
+      { type: `${brokerId}:classifications.2`, rate: 4.3 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah Tickmill aman?",
-      answer: "Ya — teregulasi FCA, CySEC, FSCA & FSA."
-    },
-    {
-      question: "Berapa minimum deposit?",
-      answer: "Minimum deposit adalah $100."
-    },
-    {
-      question: "Platform apa yang didukung?",
-      answer: "MT4, MT5, Web & Mobile."
-    },
-    {
-      question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:1000 tergantung regulator."
-    },
-    {
-      question: "Apakah ada akun ECN?",
-      answer: "Ya — Pro & VIP dengan spread rendah."
-    }
-  ]
+  faq: `${brokerId}:faqs`
 }

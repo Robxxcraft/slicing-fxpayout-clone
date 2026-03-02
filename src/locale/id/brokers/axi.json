@@ -1,0 +1,51 @@
+{
+  "description": "Axi adalah broker forex dan CFD internasional yang berdiri sejak 2007 dan dikenal sebagai salah satu broker ECN yang ramah trader di berbagai level. Axi menawarkan spread kompetitif, eksekusi cepat, dan platform trading kuat seperti MetaTrader 4 dan MetaTrader 5. Broker ini melayani trader di banyak negara dengan regulasi global dan layanan lengkap.",
+  "specification": {
+    "leverage": "Hingga 1:500 (tergantung regulator)",
+    "spread": "Mulai 0.0 pips (Pro)"
+  },
+  "profile": {
+    "slogan": "Trade Unlocked"
+  },
+  "summary": {
+    "spread": "Mulai 0.0 – 0.2 pips (Pro ECN)",
+    "commission": "Pro ECN: ±$7 per lot (round-turn)",
+    "leverage": "Hingga 1:500 (tergantung regulator)",
+    "execution": "Cepat & stabil",
+    "depositWithdrawal": "Banyak metode"
+  },
+  "accountTypes": [
+    ["Min deposit : $0+ (direkomendasikan $200)", "Spread mulai ±1.0 pips", "Tanpa komisi"],
+    ["Min deposit : ±$200", "Spread : mulai 0.0 – 0.2 pips", "Komisi kompetitif (~$7 per lot)"]
+  ],
+  "keyAdvantages": ["Spread kompetitif & eksekusi cepat", "Regulasi kuat oleh ASIC & FCA", "Ramah scalping & EA", "Platform trading lengkap", "Biaya transparan & rendah"],
+  "advantages": ["Spread rendah & eksekusi cepat", "Regulasi kuat (FCA/ASIC/FSCA)", "Platform trading populer", "Dukungan global"],
+  "disadvantages": ["Minimum efektif untuk ECN agak lebih tinggi", "Komisi per lot di Pro ECN"],
+  "classifications": [
+    "Execution & Spread",
+    "Customer Support",
+    "Deposit/Withdrawal"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah Axi aman?",
+      "answer": "Iya — diawasi oleh regulator besar seperti FCA, ASIC, FSCA (entitas berbeda sesuai wilayah)."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Tidak ada minimum resmi, namun direkomendasikan mulai $200 untuk eksekusi stabil."
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MT4, MT5, Web, Mobile."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:500 tergantung regulator & entitas."
+    },
+    {
+      "question": "Apakah ada akun ECN?",
+      "answer": "Ya — Pro ECN dengan spread sangat rendah."
+    }
+  ]
+}

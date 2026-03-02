@@ -8,16 +8,16 @@ import DefinitionSection from "@/components/pages/rebateForexPage/DefinitionSect
 import HowToRebate from "@/components/pages/rebateForexPage/HowToRebate";
 import PaymentSection from "@/components/pages/rebateForexPage/PaymentSection";
 import AsideSection from "@/components/pages/rebateForexPage/AsideSection";
+import { useTranslation } from "react-i18next";
 
 const RebateForex = () => {
+  const { t } = useTranslation(["claimrebatepage"]);
   const [activeSection, setActiveSection] = useState<string>("definition");
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
   const asideBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Apa itu Rebate Forex? Dapatkan Pengembalian Biaya Trading | FX Payout";
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -46,6 +46,7 @@ const RebateForex = () => {
 
   return (
     <div className="font-inter">
+      <title>{t("claimrebatepage:helmet.title")}</title>
       <Navbar active="Klaim Rebate" />
       <div className="pt-20 lg:pt-[150px] 2xl:pt-[200px] flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 xl:gap-14 2xl:gap-20">
         <AsideSection 

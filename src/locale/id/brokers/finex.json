@@ -1,0 +1,61 @@
+{
+  "description": "Finex (PT Finex Bisnis Solusi Futures) adalah broker forex resmi Indonesia yang berdiri sejak 2012 dan diawasi oleh BAPPEBTI serta OJK melalui kerjasama dengan institusi kliring seperti PT KBI dan Jakarta Futures Exchange (JFX). Broker ini menyediakan akses trading ke berbagai instrumen seperti forex, indeks, logam, saham CFD, dan energi dengan kondisi trading yang kompetitif serta dukungan platform yang intuitif.",
+  "specification": {
+    "leverage": "Hingga 1:500 (Forex & logam; indeks/energi berbeda)",
+    "spread": "Mengambang, mulai sekitar 0.5 pip (typical)"
+  },
+  "profile": {
+    "name": "PT Finex Bisnis Solusi Futures (Finex)",
+    "slogan": "(tidak spesifik, brand lokal)"
+  },
+  "summary": {
+    "spread": "Mulai ±0.5 pips (variabel)",
+    "commission": "±$1 per lot",
+    "leverage": "Hingga 1:500 (Forex & Logam)",
+    "execution": "Cepat",
+    "depositWithdrawal": "Bank lokal & e-wallet"
+  },
+  "accountTypes": [
+    ["Min deposit : $10", "Spread  mulai 0.5 pips", "Komisi : ±$1 per lot", "Leverage : hingga 1:500", "Instrumen trading lengkap"]
+  ],
+  "spread": ["variabel; umumnya lebih tinggi dibanding Forex"],
+  "keyAdvantages": ["Regulasi resmi BAPPEBTI & OJK", "Deposit awal rendah", "Leverage tinggi sampai 1:500", "Eksekusi cepat", "Instrumen trading beragam", "Platform populer (MT5)"],
+  "advantages": ["Broker resmi teregulasi BAPPEBTI", "Deposit rendah ($10)", "Spread & komisi relatif kompetitif", "Akses ke banyak instrumen", "Eksekusi cepat & dukungan bank lokal"],
+  "disadvantages": ["Hanya satu tipe akun live", "Fitur edukasi & riset lebih sederhana dibanding broker global", "MT5 saja (tanpa MT4)"],
+  "reviewHighlights": [
+    "Cepat dalam proses deposit/withdraw",
+    "Biaya trading rendah",
+    "MT5 nyaman dipakai",
+    "Cocok untuk pemula & menengah"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah Finex aman & legal?",
+      "answer": "Ya. Finex terdaftar & berlisensi BAPPEBTI di Indonesia."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Minimum deposit awal $10."
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MetaTrader 5."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:500 untuk forex & logam."
+    },
+    {
+      "question": "Apakah Finex punya akun demo?",
+      "answer": "Ya — tersedia demo untuk latihan."
+    },
+    {
+      "question": "Apa spread terendahnya?",
+      "answer": "Mulai ±0.5 pips untuk EUR/USD."
+    },
+    {
+      "question": "Apakah ada program afiliasi / rebate?",
+      "answer": "Ya — tersedia model partner/afiliasi, detail rebate dibicarakan di portal partner."
+    }
+  ]
+}

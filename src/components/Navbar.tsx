@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { throttle } from "lodash";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { IoClose } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -8,18 +8,24 @@ import { languages, type Language } from "../utils/languageSupport";
 import LanguageSelector from "./LanguageSelector";
 import { listNavigation } from "../utils/listNavigation";
 import { FaChevronDown } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath, navigateChangeLng } from "@/helper/pathHelper";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
 const Navbar = ({ active }: { active: string }) => {
+  const { t, i18n } = useTranslation(["common"]);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
   const [openLanguageSelector, setOpenLanguageSelector] =
     useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(
-    languages[0]
+    languages.find((lng) => lng.code === i18n.language) ?? languages[0]
   );
+
+  const { pathname } = useLocation();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = throttle(() => {
@@ -30,13 +36,18 @@ const Navbar = ({ active }: { active: string }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleChangeLanguage: HandleChangeLanguage = (lang) => {
+  const handleChangeLanguage: HandleChangeLanguage = (lng) => {
     setOpenLanguageSelector(false);
-    setSelectedLanguage(lang);
+    i18n.changeLanguage(lng.code);
+    setSelectedLanguage(lng);
+    navigateChangeLng(lng.code, navigate, pathname)
   };
+
+
+
   const handleOpenSubMenu = (idx: number) => {
     setOpenSubMenu((prev) => prev === idx ? null : idx);
-  }
+  };
 
   return (
     <nav
@@ -50,7 +61,7 @@ const Navbar = ({ active }: { active: string }) => {
               : "rgba(65,96,255,0)"
             : "rgba(65,96,255,1)",
       }}>
-      <div className="flex gap-2 items-center">
+      <Link to={`${getLocalizedPath("/", i18n.language)}`} className="flex gap-2 items-center">
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
@@ -59,38 +70,41 @@ const Navbar = ({ active }: { active: string }) => {
         <span className="text-base md:text-xl 2xl:text-3xl font-semibold text-white">
           FXPAYOUT
         </span>
-      </div>
+      </Link>
       <div className="hidden xl:flex gap-6">
-        {listNavigation.map((item, index) => (
+        {listNavigation.map(({ code, title, url, sublist }, index) => (
           <div
             key={index}
             className={`relative group flex items-center gap-2 px-2 text-light-gray text-base 2xl:text-xl border-white transition-all duration-300 ease-out`}
           >
-            <Link to={item.url} className={`${
-              active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
+            <Link 
+              to={getLocalizedPath(url, i18n.language)} 
+              className={`${
+              active.toLocaleLowerCase() == title.toLocaleLowerCase()
                 ? "font-bold"
                 : "font-normal"
             } relative py-2 group-hover:font-bold transition-all duration-300`}>
-              {item.title}
-              {active.toLocaleLowerCase() == item.title.toLocaleLowerCase() &&
+              {t(`navbar.${code}`)}
+              {active.toLocaleLowerCase() == title.toLocaleLowerCase() &&
                 <div className="absolute top-full left-1/2 -translate-x-1/2 h-1 w-[50%] bg-white rounded-full"></div>
               }
             </Link>
-            {item.sublist !== undefined && 
+            {sublist !== undefined && 
             <>
               <FaChevronDown className="text-[14px] cursor-pointer group-hover:rotate-180 transition-all duration-200" />
               <div className="absolute py-6 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
-                {item.sublist?.map((subNav, idx) => (
+                {sublist?.map((subNav, idx) => (
                   <HashLink 
                     smooth
                     key={idx} 
-                    to={subNav.url} className="px-6 py-3 text-black hover:bg-black/10"
+                    to={`${getLocalizedPath(subNav.url, i18n.language)}`}
+                    className="px-6 py-3 text-black hover:bg-black/10"
                     scroll={(el) => {
                       setTimeout(() => {
                         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }, 200);
                     }}>
-                    {subNav.title}
+                    {t(`navbar.subNav.${subNav.code}`)}
                   </HashLink>
                 ))
                 }
@@ -143,38 +157,38 @@ const Navbar = ({ active }: { active: string }) => {
           }} className="text-3xl text-white cursor-pointer" />
         </div>
         <div className="flex flex-col gap-6">
-          {listNavigation.map((item, index) => {
+          {listNavigation.map(({ code, title, url, sublist }, index) => {
             const isSubOpen = openSubMenu === index;
             return (
             <div
               key={index}
               className={`${
-                active.toLocaleLowerCase() == item.title.toLocaleLowerCase()
+                active.toLocaleLowerCase() == title.toLocaleLowerCase()
                   ? "font-bold text-white"
                   : "font-normal text-[#E9E9E9]"
               }
                `}>
               <div
                 onClick={() => {
-                  if (item.sublist !== undefined) {
+                  if (sublist !== undefined) {
                     handleOpenSubMenu(index);
-                  } else if (active.toLocaleLowerCase() == item.title.toLocaleLowerCase()) {
+                  } else if (active.toLocaleLowerCase() == title.toLocaleLowerCase()) {
                     setOpenMenu(false); 
                     setOpenLanguageSelector(false);
                   }
                 }} 
                 className="relative flex justify-between pb-1 w-full text-base hover:font-bold">
-                <Link to={item.url}>{item.title}</Link>
-                {item.sublist !== undefined && <FaChevronDown className={`
+                <Link to={getLocalizedPath(url, i18n.language)}>{t(`navbar.${code}`)}</Link>
+                {sublist !== undefined && <FaChevronDown className={`
                   ${isSubOpen ? "rotate-180" : "rotate-0"} text-[14px] transition-all duration-300 ease-out`} />}
-                {active.toLocaleLowerCase() == item.title.toLocaleLowerCase() &&
+                {active.toLocaleLowerCase() == title.toLocaleLowerCase() &&
                   <div className="absolute top-full rounded-full h-1 w-[20%] bg-white"></div>
                 }
               </div>
-              {item.sublist !== undefined && isSubOpen && 
+              {sublist !== undefined && isSubOpen && 
                 <>
                   <div className="py-2 flex flex-col h-fit font-normal">
-                    {item.sublist?.map((subNav, idx) => (
+                    {sublist?.map((subNav, idx) => (
                       <HashLink key={idx}
                         to={subNav.url} 
                         scroll={(el) => {
@@ -183,12 +197,12 @@ const Navbar = ({ active }: { active: string }) => {
                           }, 200);
                         }}
                         onClick={() => {
-                          if (active.toLocaleLowerCase() == item.title.toLocaleLowerCase()) {
+                          if (active.toLocaleLowerCase() == title.toLocaleLowerCase()) {
                           setOpenMenu(false); 
                           setOpenLanguageSelector(false);
                         }}}
                         className="px-4 py-2 text-white hover:bg-black/10">
-                        {subNav.title}
+                        {t(`navbar.subNav.${subNav.code}`)}
                       </HashLink>
                     ))
                     }

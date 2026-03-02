@@ -1,0 +1,69 @@
+{
+  "description": "Vantage (also known as Vantage Markets) is an international Forex and CFD broker established in 2009, providing access to a wide range of global financial instruments including Forex, indices, metals, commodities, stock CFDs, ETFs, and bonds. Vantage combines popular trading platforms such as MetaTrader 4, MetaTrader 5, and ProTrader, along with its proprietary app, to deliver a powerful and flexible trading experience.",
+  "specification": {
+    "leverage": "Up to 1:500 (up to 1:2000 for select Premium entities)",
+    "spread": "From 0.0 pips (Raw / Pro)"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 pips (Raw / Pro)",
+    "commission": "Starting from ±$3 per lot per side on Raw ECN",
+    "leverage": "Up to 1:500 (up to 1:2000 for select Premium entities)",
+    "execution": "Fast & stable via ECN/STP",
+    "depositWithdrawal": "Multiple methods, typically with zero broker fees"
+  },
+  "spread": ["from 0.0 pips", "from ±0.3 – 0.5 pips", "from ±0.3 – 0.5 pips"],
+  "accountTypes": [
+    ["Min deposit: $50", "Spread: from ≈ 1.1 – 1.6 pips", "Commission: $0"],
+    ["Min deposit: $50", "Spread: from 0.0 pips", "Commission: ±$3 per lot per side"],
+    ["Min deposit: ±$50 – $10,000 (varies by entity)", "Spread: from 0.0 pips", "Commission: ±$1.50 – $3 per lot per side"],
+    ["Additional account variants", "Tailored features for diverse trading requirements"]
+  ],
+  "keyAdvantages": [
+    "Competitive spreads and execution",
+    "Access to 1,000+ CFD instruments",
+    "Strong global regulatory oversight",
+    "ECN and STP execution models",
+    "Negative balance protection",
+    "Integrated copy trading (ZuluTrade, DupliTrade)",
+    "Modern trading infrastructure"
+  ],
+  "advantages": [
+    "Multi-jurisdictional regulation across global markets",
+    "Low spreads on Raw ECN and Pro ECN accounts",
+    "Flexible account options tailored to various trading strategies",
+    "Comprehensive platforms and advanced trading features",
+    "Zero deposit/withdrawal fees charged by the broker"
+  ],
+  "disadvantages": [
+    "Standard account spreads may be higher than ECN equivalents",
+    "Fixed commission per lot applies to Raw ECN accounts",
+    "Regulatory protections vary depending on the client's region and entity"
+  ],
+  "classifications": [
+    "Platform & Tools",
+    "Cost & Fees",
+    "Support & Service"
+  ],
+  "faqs": [
+    {
+      "question": "Is Vantage safe?",
+      "answer": "Yes — Vantage is regulated by ASIC, FCA, FSCA, CIMA, and VFSC, depending on the specific entity."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "Starting from $50 (varies by account type and entity)."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, ProTrader, Web, and Mobile platforms."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:500 (up to 1:2000 available through select Premium entities)."
+    },
+    {
+      "question": "Does Vantage offer ECN accounts?",
+      "answer": "Yes — Raw ECN and Pro ECN accounts are available, featuring low spreads and competitive commissions."
+    }
+  ]
+}

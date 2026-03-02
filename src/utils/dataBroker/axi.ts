@@ -1,6 +1,7 @@
-import type { BrokerStruc, BrokerRanking } from "./typeDetailBroker"
+import { type BrokerStruc, type BrokerRanking, titleKey, levelKey, timeKey, platformsKey, regulationsKey, instrumentsKey, feeKey } from "./typeDetailBroker"
 
 const brokerName = "Axi";
+const brokerId = "axi";
 const brokerFounded = "2007";
 const brokerRanking: BrokerRanking = {
   tier: "1",
@@ -14,55 +15,55 @@ export const axiDetail: BrokerStruc = {
   profileImage: "axi.webp",
   registerUrl: "https://www.axi.com/int/live-account?promocode=4736053",
   websiteUrl: "https://www.axi.com/int/live-account?promocode=4736053",
-  detailUrl: "axi",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
   ranking: brokerRanking,
-  badges: ["Tier 1", "ECN/STP Broker", "Low Spread", "Leverage Fleksibel"],
+  badges: [`${titleKey}.tier_1`, `${titleKey}.ecn_stp`, `${titleKey}.low_spread`, `${titleKey}.flexible_leverage`],
   overallScore: {
     rate: 4.5,
     communityUrl: "https://www.trustpilot.com/review/axi.com",
   },
-  detailDescription: "Axi adalah broker forex dan CFD internasional yang berdiri sejak 2007 dan dikenal sebagai salah satu broker ECN yang ramah trader di berbagai level. Axi menawarkan spread kompetitif, eksekusi cepat, dan platform trading kuat seperti MetaTrader 4 dan MetaTrader 5. Broker ini melayani trader di banyak negara dengan regulasi global dan layanan lengkap.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$0",
-    leverage: "Hingga 1:500 (tergantung regulator)",
-    spread: "Mulai 0.0 pips (Pro)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
-    slogan: "Trade Unlocked",
+    slogan: `${brokerId}:profile.slogan`,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated Forex & CFD Broker",
+    brokerCategory: [`${titleKey}.multi_regulated`, `${titleKey}.forex_cfd`],
     regulations: [
-      { name: "FCA", country: "United Kingdom" },
-      { name: "ASIC", country: "Australia" },
-      { name: "FSCA", country: "South Africa" },
+      { name: "FCA", country: `${regulationsKey}.fca` },
+      { name: "ASIC", country: `${regulationsKey}.asic` },
+      { name: "FSCA", country: `${regulationsKey}.fsca` },
     ]
   },
   summary: {
     minDeposit: "$0",
     types: ["Standard", "Pro ECN"],
-    spread: "Mulai 0.0 – 0.2 pips (Pro ECN)",
-    commission: "Pro ECN: ±$7 per lot (round-turn)",
-    leverage: "Hingga 1:500 (tergantung regulator)",
-    execution: "Cepat & stabil",
-    instruments: ["Forex", "Indeks", "Komoditas", "Saham CFD", "Crypto CFD"],
-    depositWithdrawal: "Banyak metode"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:indices`, `${instrumentsKey}:commodity`, `${instrumentsKey}:stocks_cfd`, `${instrumentsKey}:crypto_cfd`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
         name: "Standard Account",
-        level: "Umum",
-        features: ["Min deposit : $0+ (direkomendasikan $200)", "Spread mulai ±1.0 pips", "Tanpa komisi"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.0` 
     },
     {
         name: "Pro ECN Account",
-        level: "Advanced",
-        features: ["Min deposit : ±$200", "Spread : mulai 0.0 – 0.2 pips", "Komisi kompetitif (~$7 per lot)"]
+        level: `${levelKey}:advanced`,
+        features: `${brokerId}:accountTypes.1` 
     },
   ],
   tradingSpreads: [
@@ -95,39 +96,39 @@ export const axiDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: ["Spread kompetitif & eksekusi cepat", "Regulasi kuat oleh ASIC & FCA", "Ramah scalping & EA", "Platform trading lengkap", "Biaya transparan & rendah"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
     paymentMethods: [
       { 
-        method: "Bank Transfer", 
-        time: {
-          deposit: "Instan sampai 1 hari kerja",
-          withdraw: "1–3 hari kerja"
+        method: "common:methods.bank_transfer", 
+        time: { 
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         }, 
-        fee: "Umumnya tanpa biaya broker (tergantung metode" 
+        fee: `${feeKey}.zero_broker_depends_method`
       },
       { 
-        method: "Kartu Debit/Kredit", 
+        method: "common:methods.debit_credit_card", 
         time: {
-          deposit: "Instan sampai 1 hari kerja",
-          withdraw: "1–3 hari kerja"
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         }, 
-        fee: "Umumnya tanpa biaya broker (tergantung metode" 
+        fee: `${feeKey}.zero_broker_depends_method`
       },
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: {
-          deposit: "Instan sampai 1 hari kerja",
-          withdraw: "1–3 hari kerja"
+          deposit: `${timeKey}.interval_instant_1d_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         }, 
-        fee: "Umumnya tanpa biaya broker (tergantung metode" 
+        fee: `${feeKey}.zero_broker_depends_method`
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "WebTrader", icon: "axi.webp" },
-      { username: "Mobile App (iOS & Android)", icon: "axi.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "axi.webp" },
+      { username: `${platformsKey}.ios_android`, icon: "axi.webp" },
     ]
   },
   rebateProgram: [
@@ -144,37 +145,16 @@ export const axiDetail: BrokerStruc = {
     { accountType: "Pro", pair: "EUR/USD", rebatePerLot: 0.08 },
     { accountType: "Pro", pair: "CRYPTO", rebatePerLot: 4 },
   ],
-  advantages: ["Spread rendah & eksekusi cepat", "Regulasi kuat (FCA/ASIC/FSCA)", "Platform trading populer", "Dukungan global"],
-  disadvantages: ["Minimum efektif untuk ECN agak lebih tinggi", "Komisi per lot di Pro ECN"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`, 
   communityRating: {
     score: 4.5,
     quantityVote: 5.271,
     classifications: [
-      { type: "Execution & Spread", rate: 4.6 },
-      { type: "Customer Support", rate: 4.4 },
-      { type: "Deposit/Withdrawal", rate: 4.5 },
+      { type: `${brokerId}:classifications.0`, rate: 4.6 },
+      { type: `${brokerId}:classifications.1`, rate: 4.4 },
+      { type: `${brokerId}:classifications.2`, rate: 4.5 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah Axi aman?",
-      answer: "Iya — diawasi oleh regulator besar seperti FCA, ASIC, FSCA (entitas berbeda sesuai wilayah)."
-    },
-    {
-      question: "Berapa minimum deposit?",
-      answer: "Tidak ada minimum resmi, namun direkomendasikan mulai $200 untuk eksekusi stabil."
-    },
-    {
-      question: "Platform apa yang didukung?",
-      answer: "MT4, MT5, Web, Mobile."
-    },
-    {
-      question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:500 tergantung regulator & entitas."
-    },
-    {
-      question: "Apakah ada akun ECN?",
-      answer: "Ya — Pro ECN dengan spread sangat rendah."
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

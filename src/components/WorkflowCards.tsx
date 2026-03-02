@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaArrowRight } from "react-icons/fa6";
 
 type Workflow = {
@@ -5,6 +6,7 @@ type Workflow = {
   subtitle: string;
   description: string;
   image: string;
+  translateKey: string;
 };
 
 const workflows: Workflow[] = [
@@ -14,6 +16,7 @@ const workflows: Workflow[] = [
     description:
       "Buat akun FXPayout dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan.",
     image: "flow-start.png",
+    translateKey: "homepage:howItWorks.workflows.0" 
   },
   {
     title: "trading",
@@ -21,6 +24,7 @@ const workflows: Workflow[] = [
     description:
       "Lanjutkan aktivitas trading tanpa perubahan spread, leverage, atau kondisi lain. Semua tetap mengikuti aturan broker.",
     image: "flow-trade.png",
+    translateKey: "homepage:howItWorks.workflows.1" 
   },
   {
     title: "komisi",
@@ -28,6 +32,7 @@ const workflows: Workflow[] = [
     description:
       "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke FXPayout secara otomatis.",
     image: "flow-commision.png",
+    translateKey: "homepage:howItWorks.workflows.2" 
   },
   {
     title: "rebate",
@@ -35,10 +40,12 @@ const workflows: Workflow[] = [
     description:
       "Kami mengembalikan hingga 90% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet.",
     image: "flow-rebate.png",
+    translateKey: "homepage:howItWorks.workflows.3" 
   },
 ];
 
 const WorkflowCards = () => {
+  const { t } = useTranslation(["homepage"]);
   return (
     <div className="mt-6 2xl:mt-10 flex justify-center gap-2 flex-wrap lg:flex-nowrap">
       {workflows.map((workflow, idx) => (
@@ -51,11 +58,11 @@ const WorkflowCards = () => {
                 </span>
               </div>
               <p className="text-xl md:text-2xl font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-                {workflow.title.toLocaleUpperCase()}
+                {t(`${workflow.translateKey}.title`)}
               </p>
             </div>
             <h2 className="mb-4 text-xl md:text-2xl font-medium leading-[160%]">
-              {workflow.subtitle}
+              {t(`${workflow.translateKey}.subtitle`)}
             </h2>
             <img
               src={`/${workflow.image}`}
@@ -63,7 +70,7 @@ const WorkflowCards = () => {
               className="w-full h-[200px] rounded-2xl object-contain"
             />
             <p className="mt-4 text-base md:text-xl text-[rgba(0,0,0,0.5)] leading-[160%]">
-              {workflow.description}
+              {t(`${workflow.translateKey}.paragraph`)}
             </p>
           </div>
           {idx !== workflows.length - 1 && (

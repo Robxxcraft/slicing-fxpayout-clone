@@ -1,0 +1,71 @@
+{
+  "description": "HFM (HF Markets), formerly known as HotForex, is a global multi-regulated broker established in 2010 with over a decade of operation across more than 180 countries. The broker provides trading services for Forex, metals, commodities, indices, stock CFDs, and cryptocurrencies through various account types and trading platforms, including MT4, MT5, and the HFM App.",
+  "specification": {
+    "leverage": "Up to 1:2000",
+    "spread": "From 0.0 pips (Zero)"
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 pips (Zero)",
+    "commission": "Account-dependent (Zero & Pro accounts incur commissions)",
+    "leverage": "Up to 1:2000 (depending on entity/region)",
+    "execution": "Fast & competitive",
+    "depositWithdrawal": "Bank transfer, cards, e-wallets, crypto"
+  },
+  "spread": ["variable (tends to be larger)"],
+  "accountTypes": [
+    ["Min deposit: $0", "Spread: Variable (from 1.4 pips)", "High leverage"],
+    ["Min deposit: $0", "Spread: 0.0 pips", "Commission applies"],
+    ["Min deposit: ±$100", "Spread: ±0.6 pips"],
+    ["Min deposit: $0", "Spread: ±1.4 pips"],
+    ["Designed for copy trading/social trading"]
+  ],
+  "keyAdvantages": [
+    "Multi-jurisdictional regulation",
+    "Competitive spreads, especially on Zero accounts",
+    "High maximum leverage",
+    "Robust trading platforms (MT4, MT5, HFM App)",
+    "24/5 customer support",
+    "Fast deposit & withdrawal processing"
+  ],
+  "advantages": [
+    "Highly competitive Zero spreads",
+    "Comprehensive regulation across multiple countries",
+    "Multi-platform trading support",
+    "Suitable for everyone from beginners to professionals"
+  ],
+  "disadvantages": [
+    "Regulatory structures vary by entity",
+    "Standard account spreads can be higher",
+    "Bonus/no-deposit promotions may not be available in all regions"
+  ],
+  "classifications": [
+    "Deposit & Withdrawal",
+    "Support",
+    "Platform & Trading"
+  ],
+  "faqs": [
+    {
+      "question": "Is HFM safe?",
+      "answer": "Yes — it is regulated in many major jurisdictions, including the FCA and CySEC."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "Minimum deposit can start from $0, depending on the account type."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, Web, and the HFM App."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:2000 (depending on the entity and region)."
+    },
+    {
+      "question": "Does HFM offer copy trading?",
+      "answer": "Yes — via the HFCopy program."
+    }
+  ]
+}

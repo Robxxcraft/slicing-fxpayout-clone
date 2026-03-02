@@ -1,4 +1,4 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import type { BrokerRanking } from "./typeDetailBroker";
 
 const brokerName = "IC MARKETS";
 const brokerFounded = "2007";
@@ -7,7 +7,7 @@ const brokerRanking: BrokerRanking = {
   title: "Global ECN Broker"
 };
 
-export const icMarketDetail: BrokerStruc = {
+export const icMarketDetail = {
   id_ib: "",
   contactSupport: "",
   name: brokerName,

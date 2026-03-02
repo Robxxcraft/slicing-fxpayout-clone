@@ -1,6 +1,7 @@
-import type { BrokerStruc, BrokerRanking } from "./typeDetailBroker";
+import { type BrokerStruc, type BrokerRanking, titleKey, regulationsKey, instrumentsKey, levelKey, timeKey, platformsKey } from "./typeDetailBroker";
 
 const brokerName = "FBS";
+const brokerId = "fbs";
 const brokerFounded = "2009";
 const brokerRanking: BrokerRanking = {
   tier: "1",
@@ -14,71 +15,71 @@ export const fbsDetail: BrokerStruc = {
   profileImage: "fbs.webp",
   registerUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
   websiteUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
-  detailUrl: "fbs",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
-  statusRebate: "Auto",
+  statusRebate: "Manual",
   ranking: brokerRanking,
-  badges: ["Low Minimum Deposit", "Leverage Tinggi", "Multi-Asset Trading", "Beginner Friendly"],
+  badges: [`${titleKey}.low_deposit`, `${titleKey}.high_leverage`, `${titleKey}.multi_asset`, `${titleKey}.beginner_friendly`],
   overallScore: {
     rate: 4.4,
     communityUrl: "https://www.trustpilot.com/review/fbs.com",
   },
-  detailDescription: "FBS adalah broker internasional yang berdiri sejak 2009, menyediakan layanan trading Forex dan CFD dengan kondisi trading yang kompetitif, berbagai jenis akun sesuai kebutuhan trader, serta eksekusi order yang cepat. FBS populer di kalangan trader pemula hingga profesional dengan program pendidikan, bonus, dan layanan pelanggan yang kuat",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$1",
-    leverage: "Hingga 1:3000",
-    spread: "Mulai 0.0 pips (Zero/ECN)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
-    slogan: "Trade Forex Worldwide",
+    slogan:  `${brokerId}:profile.slogan`,
     ranking: brokerRanking,
     yearFounded: brokerFounded,
-    brokerCategory: "Multi-regulated, ECN/STP Broker",
+    brokerCategory: [`${titleKey}.multi_regulated`, `${titleKey}.ecn_stp`],
     regulations: [
-      { name: "ASIC", country: "Australia" },
-      { name: "CySEC", country: "Eropa" },
-      { name: "IFSC", country: "Belize" },
-      { name: "FSCA", country: "South Africa" },
+      { name: "ASIC", country: `${regulationsKey}.asic` },
+      { name: "CySEC", country: `${regulationsKey}.cysec` },
+      { name: "IFSC", country: `${regulationsKey}.ifsc` },
+      { name: "FSCA", country: `${regulationsKey}.fsca` },
     ]
   },
   summary: {
     minDeposit: "$1",
     types: ["Cent", "Micro", "Standard", "Zero", "ECN"],
-    spread: "Mulai 0.0 pips (Zero/ECN)",
-    commission: "ECN: ±$6–$7 per lot (round-turn)",
-    leverage: "Hingga 1:3000",
-    execution: "Cepat",
-    instruments: ["Forex", "Logam", "Indeks", "Energi", "Saham CFD", "Crypto CFD"],
-    depositWithdrawal: "Cepat & banyak metode"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:metal`, `${instrumentsKey}:indices`, `${instrumentsKey}:energy`, `${instrumentsKey}:stocks_cfd`, `${instrumentsKey}:crypto_cfd`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal`
   },
   accountTypes: [
     {
         name: "Cent Account",
-        level: "Pemula",
-        features: ["Min deposit : $1", "Spread mulai ±1.0 pips", "Cocok pemula & latihan"]
+        level: `${levelKey}:beginner`,
+        features: `${brokerId}:accountTypes.0` 
     },
     {
         name: "Micro Account",
-        level: "News Trader",
-        features: ["Min deposit : $5", "Spread mulai ±1.0 pips", "Tanpa komisi"]
+        level: `${levelKey}:news_trader`,
+        features: `${brokerId}:accountTypes.1` 
     },
     {
         name: "Standard Account",
-        level: "Umum",
-        features: ["Min deposit : $100", "Spread mulai ±0.5 – 1.2", "Tanpa komisi"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.2` 
     },
     {
         name: "Zero Spread Account",
-        level: "Pro & Scalper",
-        features: ["Min deposit : $500", "Spread mulai 0.0 pips", "Komisi sekitar $7 per lot"]
+        level: `${levelKey}:pro_scalper`,
+        features: `${brokerId}:accountTypes.3` 
     },
     {
         name: "ECN Account",
-        level: "Advanced",
-        features: ["Min deposit : $100", "Spread mulai 0.0 pips", "Komisi kompetitif"]
+        level: `${levelKey}:advanced`,
+        features: `${brokerId}:accountTypes.4` 
     },
   ],
   tradingSpreads: [
@@ -119,47 +120,47 @@ export const fbsDetail: BrokerStruc = {
       ]
     }
   ],
-  keyAdvantages: ["Spread rendah terutama di ECN/Zero", "Leverage tinggi hingga 1:3000", "Akun Cent untuk pemula", "Program bonus menarik", "Eksekusi cepat", "Platform lengkap"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
     paymentMethods: [
       { 
-        method: "Bank Transfer", 
+        method: "common:methods.bank_transfer", 
         time: {
-          deposit: "1–3 hari kerja",
-          withdraw: "1–3 hari kerja"
+          deposit: `${timeKey}.days_1_3_work`,
+          withdraw: `${timeKey}.days_1_3_work`
         },
-        fee: "$0 (umumnya)" 
+        fee: "$0" 
       },
       { 
-        method: "Debit/Kredit Card", 
+        method: "common:methods.debit_credit_card", 
         time: {
-          deposit: "Instan – cepat",
-          withdraw: "Instan – cepat"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         },
-        fee: "$0 (umumnya)" 
+        fee: "$0" 
       },
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time: {
-          deposit: "Instan",
-          withdraw: "Instan"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         },
-        fee: "$0 (umumnya)" 
+        fee: "$0" 
       },
       { 
-        method: "Crypto", 
+        method: "common:methods.crypto", 
         time: {
-          deposit: "Instan",
-          withdraw: "Instan"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         },
-        fee: "$0 (umumnya)" 
+        fee: "$0" 
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "WebTrader", icon: "fbs.webp" },
-      { username: "Mobile App (iOS & Android)", icon: "fbs.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "fbs.webp" },
+      { username: `${platformsKey}.ios_android`, icon: "fbs.webp" },
     ]
   },
   rebateProgram: [
@@ -176,41 +177,16 @@ export const fbsDetail: BrokerStruc = {
     { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 3.61 },
     { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 2.36 },
   ],
-  advantages: ["Minimum deposit sangat rendah", "Leverage sangat tinggi", "Spread kompetitif di akun ECN/Zero", "Akun Cent untuk trader pemula"],
-  disadvantages: ["Spread akun non-ECN bisa lebih lebar", "Opsi instrumen non-CFD nyata tidak tersedia"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.4,
     quantityVote: 8.198,
     classifications: [
-      { type: "Kecepatan Withdraw", rate: 4.5 },
-      { type: "Stabilitas Server", rate: 4.4 },
-      { type: "Customer Support", rate: 4.3 },
+      { type: `${brokerId}:classifications.0`, rate: 4.5 },
+      { type: `${brokerId}:classifications.1`, rate: 4.4 },
+      { type: `${brokerId}:classifications.2`, rate: 4.3 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah FBS aman?",
-      answer: "Ya. FBS diregulasi oleh ASIC, CySEC, IFSC, dan FSCA tergantung entitas."
-    },
-    {
-      question: "Berapa minimum deposit?",
-      answer: "Minimum deposit mulai dari $1 (Cent Account)."
-    },
-    {
-      question: "Apakah FBS cocok untuk pemula?",
-      answer: "Ya. Akun Cent & layanan edukasi cocok untuk pemula."
-    },
-    {
-      question: "Apakah ada akun ECN/Zero?",
-      answer: "Ya. Tersedia Zero dan ECN dengan spread 0.0 pips."
-    },
-    {
-      question: "Berapa leverage maksimal?",
-      answer: "Hingga 1:3000 tergantung regulator & wilayah."
-    },
-    {
-      question: "Platform apa yang didukung?",
-      answer: "MT4, MT5, WebTrader & Mobile App."
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

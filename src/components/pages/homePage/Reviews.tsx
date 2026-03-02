@@ -8,8 +8,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { testimonials } from "@/utils/testimonial";
+import { useTranslation } from "react-i18next";
 
 const Reviews = () => {
+  const { t } = useTranslation(["homepage"]);
   return (
     <section className="mb-20 xl:mb-0">
       <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 2xl:pt-28">
@@ -17,15 +19,14 @@ const Reviews = () => {
           <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
             <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
             <span className="text-base md:text-xl font-medium text-white">
-              TESTIMONI
+              {t("homepage:reviews.tag")}
             </span>
           </div>
           <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
-            Apa Kata Trader yang Menggunakan FXPayout?
+            {t("homepage:reviews.title")}
           </h2>
           <p className="text-base md:text-xl leading-[160%]">
-            Pengalaman nyata dari trader yang mendapatkan tambahan
-            profit dari program rebate.
+            {t("homepage:reviews.paragraph")}
           </p>
         </div>
       </div>

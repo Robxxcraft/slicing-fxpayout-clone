@@ -1,0 +1,61 @@
+{
+  "description": "ZFX is a Forex & CFD broker and part of the Zeal Group, providing access to global markets including Forex, indices, commodities, metals, and stocks through a transparent ECN/STP infrastructure. Regulated in the United Kingdom (FCA) and Seychelles (FSA), the company focuses on fast execution, competitive spreads, and multi-asset trading.",
+  "specification": {
+    "leverage": "Up to 1:2000 (depending on account & region)",
+    "spread": "From 0.2 pips (ECN)"
+  },
+  "summary": {
+    "spread": "Starting from 0.2 pips on ECN accounts; wider on Standard/Cent accounts",
+    "commission": "ECN usually incurs a commission (value depends on the instrument)",
+    "leverage": "Up to 1:2000 for certain accounts/entities (temporary regulations may lower leverage during major economic events)",
+    "execution": "Fast (MT4/MT5)",
+    "depositWithdrawal": "Cards, bank transfers, e-wallets; processing time depends on the method"
+  },
+  "accountTypes": [
+    ["Min Deposit ≥ $15", "Spreads starting from ±0.2 pips", "Leverage up to 1:2000", "Average execution ±480 ms", "Slippage: Low (based on testing data)"],
+    ["Min Deposit ≥ $50", "Spreads starting from ±1.3 – 1.5 pips", "Leverage up to 1:2000", "Average execution ±480 ms", "Slippage: Low (based on testing data)"],
+    ["Min Deposit ≥ $500", "Spreads starting from 0.2 pips", "Leverage up to 1:2000", "Average execution ±480 ms", "Slippage: Low (based on testing data)"]
+  ],
+  "spread": ["low variable (but volatile)", "wider, depending on liquidity"],
+  "keyAdvantages": [
+    "Highly competitive spreads on ECN accounts",
+    "Regulated and backed by Zeal Group",
+    "High leverage available (depending on entity)",
+    "Full MT4/MT5 support",
+    "Account options ranging from beginners to pros (Cent to ECN)"
+  ],
+  "advantages": [
+    "Competitive ECN spreads",
+    "High leverage",
+    "MT4 & MT5 available",
+    "Cent accounts available"
+  ],
+  "disadvantages": [
+    "ECN minimum deposit is relatively high",
+    "IB rebates are not publicly transparent",
+    "Existing reports of user complaints (caution advised)"
+  ],
+  "classifications": [
+    "Withdrawal (WD) Speed",
+    "Server Stability",
+    "Customer Support"
+  ],
+  "faqs": [
+    {
+      "question": "Is ZFX safe?",
+      "answer": "ZFX operates under Zeal Group and lists FCA & FSA regulations for group entities; verification of the specific local entity is required."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "Starts at $15 for Cent/Mini; $50 for Standard; ECN is generally $500+ (check account availability in your region)."
+    },
+    {
+      "question": "Is there a demo account?",
+      "answer": "Yes, MT4/MT5 demos are available on the ZFX website."
+    },
+    {
+      "question": "Is there an IB program?",
+      "answer": "Yes, there is a partnership/IB program available; rebate details are subject to negotiation."
+    }
+  ]
+}

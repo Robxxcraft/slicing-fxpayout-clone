@@ -1,0 +1,55 @@
+{
+  "description": "HFM (HF Markets), sebelumnya dikenal sebagai HotForex, adalah broker multi-regulasi global yang berdiri sejak 2010 dan telah beroperasi lebih dari satu dekade di lebih dari 180 negara. Broker ini menyediakan layanan trading Forex, logam, komoditas, indeks, saham CFD, dan cryptocurrency dengan berbagai jenis akun dan platform trading termasuk MT4, MT5, dan aplikasi HFM.",
+  "specification": {
+    "leverage": "Hingga 1:2000",
+    "spread": "Mulai 0.0 pips (Zero)"
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": "Mulai 0.0 pips (Zero)",
+    "commission": "Tergantung akun (Zero & Pro dapat komisi)",
+    "leverage": "Hingga 1:2000 (tergantung entitas/negara)",
+    "execution": "Cepat & kompetitif",
+    "depositWithdrawal": "Bank, kartu, e-wallet, crypto"
+  },
+  "spread": ["variabel (cenderung lebih besar)"],
+  "accountTypes": [
+    ["Min deposit : $0", "Spread : variable (mulai 1.4 pips)", "Leverage tinggi"],
+    ["Min deposit : $0", "Spread : 0.0", "Komisi : iya"],
+    ["Min deposit : ±$100", "Spread : ±0.6 pips"],
+    ["Min deposit : $0", "Spread : ±1.4 pips"],
+    ["Untuk copy trading/social trading"]
+  ],
+  "keyAdvantages": ["Regulasi multi-yurisdiksi", "Spread kompetitif terutama di akun Zero", "Leverage maksimal tinggi", "Platform trading kuat (MT4, MT5, HFM App)", "Layanan support 24/5", "Cepat deposit & withdrawal"],
+  "advantages": ["Spread Zero sangat kompetitif", "Regulasi lengkap di berbagai negara", "Dukungan trading multi-platform", "Cocok untuk pemula hingga profesional"],
+  "disadvantages": ["Struktur regulasi berbeda untuk tiap entitas", "Spread akun standar bisa lebih tinggi", "Tidak semua promosi bonus/nodeposit tersedia"],
+  "classifications": [
+    "Depo & Withdraw",
+    "Support",
+    "Platform & Trade"
+  ],
+  "faqs": [
+    {
+      "question": "Apakah HFM aman?",
+      "answer": "Ya — teregulasi di banyak yurisdiksi besar (termasuk FCA & CySEC)."
+    },
+    {
+      "question": "Berapa minimum deposit?",
+      "answer": "Bisa dimulai dari $0 tergantung akun."
+    },
+    {
+      "question": "Platform apa yang didukung?",
+      "answer": "MT4, MT5, Web & HFM App."
+    },
+    {
+      "question": "Berapa leverage maksimal?",
+      "answer": "Hingga 1:2000 (tergantung entitas dan wilayah)."
+    },
+    {
+      "question": "Apakah ada akun copy trading?",
+      "answer": "Ya — HFCopy"
+    }
+  ]
+}

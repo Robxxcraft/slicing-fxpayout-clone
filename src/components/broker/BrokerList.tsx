@@ -5,8 +5,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { useNavigationToTop } from "@/hooks/useNavigationToTop";
 import { getPagination } from "@/helper/pagination";
+import { getLocalizedPath } from "@/helper/pathHelper";
+import { useTranslation } from "react-i18next";
 
 const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
+  const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage] = useState<number>(6);
@@ -21,7 +24,8 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
     const page = Number(searchParams.get("page"));
     if (!Number.isNaN(page)) {
       if (page <= 0) {
-        navigateToTop("/broker?page=1");
+        const path = getLocalizedPath("/broker?page=1", i18n.language);
+        navigateToTop(path);
       } else {
         setCurrentPage(page);
       }
@@ -29,20 +33,23 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
     setStartIndex((currentPage - 1) * itemsPerPage);
     setEndIndex(currentPage * itemsPerPage);
     setIsLoading(false);
-  }, [currentPage, itemsPerPage, navigateToTop, searchParams]);
+  }, [currentPage, i18n.language, itemsPerPage, navigateToTop, searchParams]);
 
   const handleClickPrevButton = () => {
     if (currentPage > 1) {
-      navigateToTop(`/broker?page=${currentPage - 1}`);
+      const path = getLocalizedPath(`/broker?page=${currentPage - 1}`, i18n.language);
+      navigateToTop(path);
     }
   }
   const handleClickNextButton = () => {
     if (currentPage < TOTAL_PAGES) {
-      navigateToTop(`/broker?page=${currentPage + 1}`);
+      const path = getLocalizedPath(`/broker?page=${currentPage + 1}`, i18n.language);
+      navigateToTop(path);
     }
   }
   const handleClickPagination = (page: number) => {
-    navigateToTop(`/broker?page=${page}`);
+    const path = getLocalizedPath(`/broker?page=${page}`, i18n.language);
+    navigateToTop(path);
   }
 
   if (isLoading) {

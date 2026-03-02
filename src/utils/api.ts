@@ -287,34 +287,37 @@ const postFormValidationData = async ({ item, captchaValue }: { item: Validation
     if (response.status === 201) {
       return { error: false, message: responseJson.message }
     }
+
+    const feedbackErrorTranslate = "validationpage:card.feedbackError";
+    const resMessage = responseJson.message
     if (response.status === 400) {
-      if (responseJson.message === "Required parameter missing or empty") {
-        return { error: true, message: "Formulir tidak boleh kosong." };
+      if (resMessage === "Required parameter missing or empty") {
+        return { error: true, message: `${feedbackErrorTranslate}.requiredFields` };
       }
-      if (responseJson.message === "Invalid email format") {
-        return { error: true, message: "Format email tidak valid." };
+      if (resMessage === "Invalid email format") {
+        return { error: true, message: `${feedbackErrorTranslate}.invalidEmail` };
       }
-      if (responseJson.message === "Invalid value broker") {
-        return { error: true, message: "Pilihan broker tidak ditemukan atau tidak valid." };
+      if (resMessage === "Invalid value broker") {
+        return { error: true, message: `${feedbackErrorTranslate}.invalidBroker` };
       }
-      if (responseJson.message.includes("Invalid value rebate")) {
-        return { error: true, message: "Tipe rebate yang dipilih tidak sesuai." };
+      if (resMessage.includes("Invalid value rebate")) {
+        return { error: true, message: `${feedbackErrorTranslate}.invalidRebate` };
       }
-      if (responseJson.message.includes("Invalid value platform trading")) {
-        return { error: true, message: "Platform trading tidak valid." };
+      if (resMessage.includes("Invalid value platform trading")) {
+        return { error: true, message: `${feedbackErrorTranslate}.invalidPlatform` };
       }
-      if (responseJson.message === "Captcha token is required") {
-        return { error: true, message: "Silahkan selesaikan verifikasi Captcha." };
+      if (resMessage === "Captcha token is required") {
+        return { error: true, message: `${feedbackErrorTranslate}.captchaRequired` };
       }
     }
-    if (response.status === 403 && responseJson.message === "Captcha verification failed") {
+    if (response.status === 403 && resMessage === "Captcha verification failed") {
       console.error(`Error validation captcha: ${responseJson.errors}`)
-      return { error: true, message: "Verifikasi Captcha gagal. Silakan coba lagi." };
+      return { error: true, message: `${feedbackErrorTranslate}.captchaFailed` };
     }
     if (response.status === 500) {
-      return { error: true, message: "Internal Server Error. Coba beberapa saat lagi" };
+      return { error: true, message: `${feedbackErrorTranslate}.serverError` };
     }
-    return { error: true, message: responseJson.message }
+    return { error: true, message: resMessage }
   } catch (error) {
     console.error(`Failed send form validation. Error: ${error}`);
     return {

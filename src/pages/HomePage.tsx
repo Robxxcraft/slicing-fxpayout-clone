@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -8,14 +7,13 @@ import HowItWorks from "@/components/pages/homePage/HowItWorks";
 import Profile from "@/components/pages/homePage/Profile";
 import Reviews from "@/components/pages/homePage/Reviews";
 import Rewards from "@/components/pages/homePage/Rewards";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
-  useEffect(() => {
-    document.title = "Trading Lebih Untung Rebate Hingga 90% | FX Payout";
-  }, []);
-
+  const { t } = useTranslation(["homepage"]);
   return (
     <div className="font-inter">
+      <title>{t("homepage:helmet.title")}</title>
       <Navbar active="home" />
       <main>
         <HeroHome />

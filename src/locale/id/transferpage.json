@@ -1,0 +1,44 @@
+{
+    "helmet": {
+        "title": "Formulir Transfer IB Trading ke FXPayout | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "header": {
+        "title": "Pindahkan Akun Trading Anda ke IB fxpayout",
+        "paragraph": "Lengkapi formulir di bawah ini untuk melakukan Transfer IB dan menghubungkan akun trading Anda ke fxpayout.",
+        "tag": "TRANSFER IB"
+    },
+    "card": {
+        "title": "Transfer Introducing Broker (IB)",
+        "paragraph": "Lengkapi formulir di bawah ini untuk melakukan Transfer IB ke fxpayout.",
+        "steps": ["Lengkapi Formulir", "Salin Template Email", "Kirim Email ke support"],
+        "emailForm": {
+            "title": "Lengkapi Formulir",
+            "brokerLabel": "Pilih Broker",
+            "accountNumberLabel": "Nomor Akun",
+            "accountNumberPlaceholder": "Masukkan Nomor Akun",
+            "usernameLabel": "Nama Pemegang Rekening",
+            "usernamePlaceholder": "Nama Sesuai Pemegang Rekening",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Alamat Email"
+        },
+        "emailTemplate": {
+            "title": "Template Email Transfer IB",
+            "template": {
+                "subject": "Permohonan Pindah IB",
+                "greeting": "Yth. Tim Support", 
+                "intro": "Saya mengajukan permohonan pemindahan akun trading saya ke bawah IB berikut:",
+                "ibId": "ID IB:", 
+                "ibLink": "Link IB:",
+                "accountData": "Data akun saya:",
+                "name": "Nama:",
+                "tradingAccount": "Nomor Akun Trading:",
+                "closing": "Mohon bantuan untuk proses transfer IB tersebut.\nTerima kasih.",
+                "regards": "Hormat saya,"
+
+            },
+            "send": "Kirim ke", 
+            "contactSupport": "Contact Support"
+        }
+    }
+}

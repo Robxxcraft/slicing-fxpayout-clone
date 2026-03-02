@@ -1,0 +1,53 @@
+{
+    "text": {
+        "select": "Pilih",
+        "copy": "Copy",
+        "next": "Selanjutnya",
+        "tableOfContents": "Daftar Isi",
+        "previous": "Sebelum",
+        "advantage": "Kelebihan",
+        "disadvantage": "Kekurangan"
+    },
+    "button": {
+        "registerNow": "Daftar Sekarang",
+        "calculateRebate": "Hitung Rebate",
+        "visitWebsite": "Kunjungi Website"
+    },
+    "cta": {
+        "title": "Siap meningkatkan efisiensi profit trading Anda?",
+        "paragraph": "Daftar sekarang dan mulai dapatkan rebate hingga 90%."
+    },
+    "methods": {
+        "bank_transfer": "Bank Transfer",
+        "bank_transfer_usd_idr": "Bank Transfer (USD/IDR)",
+        "crypto": "Crypto",
+        "debit_credit_card": "Kartu Debit/Kredit",
+        "e_wallet": "E-Wallet",
+        "indonesian_local_va": "Lokal VA (ID)",
+        "indonesian_e_wallet": "E-Wallet Indonesia",
+        "local_bank": "Bank Lokal",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "Home",
+        "broker": "Broker",
+        "calculator": "Kalkulator",
+        "claimRebate": "Klaim Rebate",
+        "service": "Layanan",
+        "subNav": {
+            "definition": "Apa itu Rebate Forex?",
+            "howRebate": "Cara Mendapatkan Rebate Forex", 
+            "howWorks": "Bagaimana Cara Kerjanya?", 
+            "payment": "Sistem Pembayaran Rebate", 
+            "schedule": "Jadwal Rebate",
+            "validation": "Validasi Akun",
+            "transfer": "Transfer Akun"     
+        }
+    },
+    "footer": {
+        "paragraph": "Kami mengembalkan hingga 90% komisi IB kepada trader. Proses cepat, aman, dan transparan tanpa mengubah spread atau kondisi trading.",
+        "quickLink": "Tautan Cepat",
+        "contact": "Kontak Kami"
+    }
+}

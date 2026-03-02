@@ -1,41 +1,42 @@
 import Table from "@/components/TableLayout";
+import { useTranslation } from "react-i18next";
 
 const payments = [
   {
-    method: "Cryptocurrencies", 
+    methodTranslate: "claimrebatepage:payment.tableItems.0.method",
     minimum: "$10.00", 
     currency: "-", 
-    cost: "Up to 3 USDT"
+    costTranslate: "claimrebatepage:payment.tableItems.0.cost"
   },
   {
-    method: "E-Wallet Indonesia", 
+    methodTranslate: "claimrebatepage:payment.tableItems.1.method",
     minimum: "$1.00", 
     currency: "IDR", 
-    cost: "$0",
+    costTranslate: "claimrebatepage:payment.tableItems.1.cost"
   },
   {
-    method: "Bank Indonesia", 
+    methodTranslate: "claimrebatepage:payment.tableItems.2.method",
     minimum: "$1.00", 
     currency: "IDR", 
-    cost: "$0",
+    costTranslate: "claimrebatepage:payment.tableItems.2.cost"
   },
   {
-    method: "Neteller", 
+    methodTranslate: "claimrebatepage:payment.tableItems.3.method",
     minimum: "$5.00", 
     currency: "USD", 
-    cost: "1.45% (Min. $0.59)",
+    costTranslate: "claimrebatepage:payment.tableItems.3.cost"
   },
   {
-    method: "Skrill / Neteller", 
+    methodTranslate: "claimrebatepage:payment.tableItems.4.method",
     minimum: "$5.00", 
     currency: "USD", 
-    cost: "4.4% + 0.3 USD",
+    costTranslate: "claimrebatepage:payment.tableItems.4.cost"
   },
   {
-    method: "PayPal", 
+    methodTranslate: "claimrebatepage:payment.tableItems.5.method",
     minimum: "$5.00", 
     currency: "USD", 
-    cost: "1.45% (Min. $0.59)",
+    costTranslate: "claimrebatepage:payment.tableItems.5.cost"
   },
 ];
 
@@ -44,6 +45,7 @@ const PaymentSection = ({
 }: {
   sectionsRef: React.RefObject<Record<string, HTMLElement | null>>
 }) => {
+  const { t } = useTranslation(["claimrebatepage"])
   return (
     <section
       id="payment"
@@ -52,14 +54,19 @@ const PaymentSection = ({
     >
       <div className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56">
         <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
-          Sistem Pembayaran Rebate
+          {t("claimrebatepage:payment.title")}
         </h2>
         <p className="mt-6 text-xl 2xl:text-2xl leading-[169.2%]">
-          fxpayout menyediakan berbagai metode pembayaran rebate yang fleksibel dan mudah diakses. Anda dapat memilih metode pencairan sesuai preferensi, dengan minimum penarikan yang rendah dan proses yang transparan.
+          {t("claimrebatepage:payment.paragraph")}
         </p>
         <Table>
           <Table.Heading>
-            {["Metode", "Pembayaran Minimum", "Mata Uang", "Biaya"].map((item, idx) => (
+            {[
+              t("claimrebatepage:payment.tableHeaders.0"),
+              t("claimrebatepage:payment.tableHeaders.1"),
+              t("claimrebatepage:payment.tableHeaders.2"),
+              t("claimrebatepage:payment.tableHeaders.3"),
+            ].map((item, idx) => (
               <Table.HeadingItem key={idx}>{item}</Table.HeadingItem>
             ))}
           </Table.Heading>
@@ -69,7 +76,7 @@ const PaymentSection = ({
               <Table.Row key={rowIdx}>
                 {Object.values(row).map((value, collIdx) => (
                   <Table.Cell key={collIdx} rowIndex={rowIdx} className={`${collIdx === 3 && "text-nowrap"}`}>
-                    {value}
+                    {t(value)}
                   </Table.Cell>
                 ))}
               </Table.Row>

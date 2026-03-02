@@ -1,0 +1,73 @@
+{
+  "description": "FBS is an international broker established in 2009, providing Forex and CFD trading services with competitive conditions, a variety of account types tailored to trader needs, and rapid order execution. FBS is popular among both beginners and professional traders due to its robust educational programs, bonuses, and strong customer service.",
+  "specification": {
+    "leverage": "Up to 1:3000",
+    "spread": "From 0.0 pips (Zero/ECN)"
+  },
+  "profile": {
+    "slogan": "Trade Forex Worldwide"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 pips (Zero/ECN)",
+    "commission": "ECN: ±$6–$7 per lot (round-turn)",
+    "leverage": "Up to 1:3000",
+    "execution": "Fast",
+    "depositWithdrawal": "Fast processing with multiple methods"
+  },
+  "accountTypes": [
+    ["Min deposit: $1", "Spreads from ±1.0 pips", "Ideal for beginners & practice"],
+    ["Min deposit: $5", "Spreads from ±1.0 pips", "Zero commission"],
+    ["Min deposit: $100", "Spreads from ±0.5 – 1.2 pips", "Zero commission"],
+    ["Min deposit: $500", "Spreads from 0.0 pips", "Commission approx. $7 per lot"],
+    ["Min deposit: $100", "Spreads from 0.0 pips", "Competitive commission"]
+  ],
+  "keyAdvantages": [
+    "Low spreads, particularly on ECN/Zero accounts",
+    "High leverage up to 1:3000",
+    "Cent accounts available for beginners",
+    "Attractive bonus programs",
+    "Fast execution",
+    "Comprehensive platform support"
+  ],
+  "advantages": [
+    "Ultra-low minimum deposit",
+    "Extremely high leverage",
+    "Competitive spreads on ECN/Zero accounts",
+    "Cent account option for beginner traders"
+  ],
+  "disadvantages": [
+    "Spreads on non-ECN accounts can be wider",
+    "Real non-CFD instrument options are unavailable"
+  ],
+  "classifications": [
+    "Withdrawal Speed",
+    "Server Stability",
+    "Customer Support"
+  ],
+  "faqs": [
+    {
+      "question": "Is FBS safe?",
+      "answer": "Yes. FBS is regulated by ASIC, CySEC, IFSC, and FSCA, depending on the specific entity."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "Minimum deposit starts from $1 (Cent Account)."
+    },
+    {
+      "question": "Is FBS suitable for beginners?",
+      "answer": "Yes. The Cent account and educational services are well suited for beginners."
+    },
+    {
+      "question": "Does FBS offer ECN/Zero accounts?",
+      "answer": "Yes. Zero and ECN accounts are available with spreads starting at 0.0 pips."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:3000, depending on the regulator and region."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, WebTrader, and the Mobile App."
+    }
+  ]
+}

@@ -1,8 +1,11 @@
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "../ui/Button";
 import { TiInfoLarge } from "react-icons/ti";
+import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const BrokerItem = ({ item }: { item: BrokerStruc }) => {
+  const { t, i18n } = useTranslation(["brokerpage"]);
   const rebateProgram = item.rebateProgram;
   const isRebateProgramText = typeof rebateProgram === "string";
   
@@ -32,7 +35,9 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
             {item.statusRebate} Rebate
           </div>
         </div>
-        <p className="mt-2 text-[#222222] leading-[160%]">{item.badges.join(", ")}</p>
+        <p className="mt-2 text-[#222222] leading-[160%] text-ellipsis line-clamp-2">
+          {item.badges.map((badge) => t(badge)).join(", ")}
+        </p>
         <div className="my-3 lg:my-4 h-[0.5px] w-full bg-[rgba(0,0,0,0.2)]"></div>
         {isRebateProgramText ? 
           <div className="flex gap-2 h-fit">
@@ -44,16 +49,16 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
         :
           <div>
             <p className="text-sm font-semibold text-[#222222]">
-              Rebate per Instrumen
+              {t("brokerpage:card.rebatePerInstrument")}
             </p>
             <table className="table-fixed mt-3 border-collapse text-[#222222] w-full">
               <thead>
                 <tr className="text-left">
                   <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    Instrumen
+                    {t("brokerpage:card.instrument")}
                   </th>
                   <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
-                    Rebate
+                    {t("brokerpage:card.rebate")}
                   </th>
                 </tr>
               </thead>
@@ -74,11 +79,24 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
         }
       </div>
       <div className="mt-4 md:mt-7 flex flex-row items-center gap-2 flex-wrap md:flex-nowrap">
-        <Button buttonType="link" urlTo={item.registerUrl} target="_blank" variant="primary-light" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
-          Daftar Broker
+        <Button 
+          buttonType="link" 
+          urlTo={item.registerUrl}
+          target="_blank" 
+          variant="primary-light" 
+          size="md" 
+          className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
+        >
+          {t("brokerpage:card.register")}
         </Button>
-        <Button buttonType="link" urlTo={`/broker/${item.detailUrl}#`} variant="outline" size="md" className="px-0! text-sm! 2xl:text-base! font-medium! w-full!">
-          Selengkapnya
+        <Button 
+          buttonType="link" 
+          urlTo={getLocalizedPath(`/broker/${item.detailUrl}#`, i18n.language)}
+          variant="outline" 
+          size="md" 
+          className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
+        >
+          {t("brokerpage:card.detail")}
         </Button>
       </div>
     </div>

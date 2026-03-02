@@ -1,7 +1,8 @@
-import type { BrokerRanking, BrokerStruc } from "./typeDetailBroker";
+import { titleKey, instrumentsKey, levelKey, platformsKey, regulationsKey, timeKey, type BrokerRanking, type BrokerStruc, feeKey } from "./typeDetailBroker";
 
 const brokerName = "ZFX";
-const brokerFounded = "2017 (bagian dari Zeal Group)";
+const brokerId = "zfx";
+const brokerFounded = "2017";
 const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "Multi-Asset ECN/STP Broker"
@@ -14,22 +15,22 @@ export const zfxDetail: BrokerStruc = {
   profileImage: "zfx.webp",
   registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
   websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
-  detailUrl: "zfx",
+  detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
   ranking: brokerRanking,
-  badges: ["ECN/STP", "Multi-Asset", "High Leverage", "MT4/MT5"],
+  badges: [`${titleKey}.ecn_stp`, `${titleKey}.multi_asset`, `${titleKey}.high_leverage`, `${titleKey}.mt4_mt5`],
   overallScore: {
     rate: 4.2,
     communityUrl: "https://www.trustpilot.com/review/zfx.com",
   },
-  detailDescription: "ZFX adalah broker Forex & CFD yang merupakan bagian dari Zeal Group, menyediakan trading di pasar global termasuk Forex, indeks, komoditas, logam, dan saham melalui infrastruktur ECN / STP yang transparan. Perusahaan ini teregulasi di Inggris (FCA) dan Seychelles (FSA), fokus pada eksekusi cepat, spread kompetitif, dan multi-asset trading.",
+  detailDescription: `${brokerId}:description`,
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
     minDeposit: "$15",
-    leverage: "Hingga 1:2000 (tergantung akun & wilayah)",
-    spread: "Mulai 0.2 pips (ECN)",
+    leverage: `${brokerId}:specification.leverage`,
+    spread: `${brokerId}:specification.spread`,
   },
   profile: {
     name: brokerName,
@@ -37,37 +38,37 @@ export const zfxDetail: BrokerStruc = {
     group: "Zeal Group",
     ranking: brokerRanking,
     yearFounded: "±2017",
-    brokerCategory: "Forex & CFD Broker",
+    brokerCategory: [`${titleKey}.forex_cfd`],
     regulations: [
-      { name: "FCA", country: "United Kingdom" },
-      { name: "FSA", country: "Seychelles" },
+      { name: "FCA", country: `${regulationsKey}.fca` },
+      { name: "FSA", country: `${regulationsKey}.fsa` },
     ]
   },
   summary: {
     minDeposit: "$15",
     types: ["Cent", "Standard STP", "ECN"],
-    spread: "Mulai 0.2 pips pada akun ECN; akun standard/cent lebih lebar",
-    commission: "ECN biasanya ada komisi (nilai tergantung instrumen)",
-    leverage: "Hingga 1:2000 untuk beberapa akun/entitas (tetapi peraturan sementara dapat menurunkan leverage pada saat event ekonomi besar)",
-    execution: "Cepat (MT4/MT5)",
-    instruments: ["Forex", "Indeks", "Komoditas", "Logam", "Saham CFD"],
-    depositWithdrawal: "Kartu, bank transfer, e-wallet; waktu tergantung metode"
+    spread: `${brokerId}:summary.spread`,
+    commission: `${brokerId}:summary.commission`,
+    leverage: `${brokerId}:summary.leverage`,
+    execution: `${brokerId}:summary.execution`,
+    instruments: [`${instrumentsKey}:forex`, `${instrumentsKey}:indices`, `${instrumentsKey}:commodity`, `${instrumentsKey}:metal`, `${instrumentsKey}:stocks_cfd`],
+    depositWithdrawal: `${brokerId}:summary.depositWithdrawal` 
   },
   accountTypes: [
     {
         name: "Cent/Mini",
-        level: "Pemula",
-        features: ["Min Deposit ≥ $15", "Spread Mulai ±0.2 pips", "Leverage Hingga 1:2000", "Eksekusi rata-rata ±480 ms", "Slippage: rendah (data pengujian)"]
+        level: `${levelKey}:general`,
+        features: `${brokerId}:accountTypes.0` 
     },
     {
         name: "Standard STP",
-        level: "Trader retail",
-        features: ["Min Deposit ≥ $50", "Spread Mulai ±1.3 – 1.5 pips", "Leverage Hingga 1:2000", "Eksekusi rata-rata ±480 ms", "Slippage: rendah (data pengujian)"]
+        level: `${levelKey}:trader_retail`,
+        features: `${brokerId}:accountTypes.1` 
     },
     {
         name: "ECN Account",
-        level: "Pro, scalper, EA",
-        features: ["Min Deposit ≥ $500", "Spread Mulai 0.2 pips", "Leverage Hingga 1:2000", "Eksekusi rata-rata ±480 ms", "Slippage: rendah (data pengujian)"]
+        level: `${levelKey}:pro_scalper_ea`,
+        features: `${brokerId}:accountTypes.2` 
     },
   ],
   tradingSpreads: [
@@ -91,48 +92,48 @@ export const zfxDetail: BrokerStruc = {
       spreads: [
         {
           accountType: "ECN",
-          spread: "variabel rendah (but volatile)"
+          spread: `${brokerId}:spread.0`
         },
         {
           accountType: "Standard",
-          spread: "lebih lebar, tergantung likuiditas"
+          spread: `${brokerId}:spread.1`
         },
       ]
     }
   ],
-  keyAdvantages: ["Spread sangat kompetitif di akun ECN", "Regulasi & backing oleh Zeal Group", "Leverage tinggi tersedia (tergantung entitas)", "MT4/MT5 support penuh", "Pilihan akun untuk pemula sampai pro (cent → ECN)"],
+  keyAdvantages: `${brokerId}:keyAdvantages`,
   depositWithdrawal: {
     paymentMethods: [
       { 
-        method: "Bank Transfer", 
+        method: "common:methods.bank_transfer", 
         time:  {
-          deposit: "1–3 hari",
-          withdraw: "1–3 hari"
+          deposit: `${timeKey}.days_1_3`,
+          withdraw: `${timeKey}.days_1_3`
         },
-        fee: "$0 dari ZFX; biaya pihak ketiga bisa berlaku" 
+        fee: `${feeKey}.zero_broker_fees_third_party_may_apply`
       },
       { 
-        method: "Debit/Kredit Card", 
+        method: "common:methods.debit_credit_card", 
         time:  {
-          deposit: "Instan",
-          withdraw: "Instan"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         }, 
-        fee: "$0 dari ZFX; biaya pihak ketiga bisa berlaku" 
+        fee: `${feeKey}.zero_broker_fees_third_party_may_apply`
       },
       { 
-        method: "E-Wallet", 
+        method: "common:methods.e_wallet", 
         time:  {
-          deposit: "Instan",
-          withdraw: "Instan"
+          deposit: `${timeKey}.instant`,
+          withdraw: `${timeKey}.instant`
         }, 
-        fee: "$0 dari ZFX; biaya pihak ketiga bisa berlaku" 
+        fee: `${feeKey}.zero_broker_fees_third_party_may_apply`
       },
     ],
     platforms: [
-      { username: "MetaTrader 4 (MT4)", icon: "meta-trader.webp" },
-      { username: "MetaTrader 5 (MT5)", icon: "meta-trader.webp" },
-      { username: "Web Trading", icon: "zfx.webp" },
-      { username: "iOS & Android", icon: "zfx.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { username: `${platformsKey}.web_trading`, icon: "zfx.webp" },
+      { username: `${platformsKey}.ios_android`, icon: "zfx.webp" },
     ]
   },
   rebateProgram: [
@@ -153,8 +154,8 @@ export const zfxDetail: BrokerStruc = {
     { accountType: "ECN", pair: "EUR/USD", rebatePerLot: 3 },
     { accountType: "ECN", pair: "CRYPTO", rebatePerLot: 3 },
   ],
-  advantages: ["Spread ECN kompetitif", "Leverage tinggi", "MT4 & MT5 tersedia", "Akun cent tersedia"],
-  disadvantages: ["Minimum deposit ECN cukup tinggi", "Rebate IB tidak transparan di publik", "Ada laporan keluhan pengguna (perlu kehati-hatian)"],
+  advantages: `${brokerId}:advantages`,
+  disadvantages: `${brokerId}:disadvantages`,
   communityRating: {
     score: 4.2,
     quantityVote: 70,
@@ -164,22 +165,5 @@ export const zfxDetail: BrokerStruc = {
       { type: "Customer Support", rate: 4.0 },
     ],
   },
-  faq: [
-    {
-      question: "Apakah ZFX aman?",
-      answer: "ZFX beroperasi di bawah Zeal Group dan mencantumkan regulasi FCA & FSA untuk entitas grup; verifikasi entitas lokal diperlukan."
-    },
-    {
-      question: "Berapa minimum deposit?",
-      answer: "Mulai $15 untuk Cent/Mini; $50 untuk Standard; ECN umumnya $500+ (cek akun di region kamu)."
-    },
-    {
-      question: "Apakah ada akun demo?",
-      answer: "Ya, tersedia demo MT4/MT5 di situs ZFX."
-    },
-    {
-      question: "Apakah ada program IB?",
-      answer: "Ya, ada partnership / IB program; rebate detail di-negosiasi."
-    },
-  ]
+  faq: `${brokerId}:faqs`
 }

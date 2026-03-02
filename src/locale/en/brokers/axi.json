@@ -1,0 +1,65 @@
+{
+  "description": "Axi is an international Forex and CFD broker established in 2007, recognized as a trader-friendly ECN broker suitable for all experience levels. Axi offers competitive spreads, rapid execution, and robust trading platforms including MetaTrader 4 and MetaTrader 5. The broker serves clients globally under stringent regulations and comprehensive service standards.",
+  "specification": {
+    "leverage": "Up to 1:500 (depending on regulator)",
+    "spread": "From 0.0 pips (Pro)"
+  },
+  "profile": {
+    "slogan": "Trade Unlocked"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 – 0.2 pips (Pro ECN)",
+    "commission": "Pro ECN: ±$7 per lot (round-turn)",
+    "leverage": "Up to 1:500 (depending on regulator)",
+    "execution": "Fast & stable",
+    "depositWithdrawal": "Multiple methods available"
+  },
+  "accountTypes": [
+    ["Min deposit: $0+ ($200 recommended)", "Spreads from ±1.0 pips", "Zero commission"],
+    ["Min deposit: ±$200", "Spreads: from 0.0 – 0.2 pips", "Competitive commission (~$7 per lot)"]
+  ],
+  "keyAdvantages": [
+    "Competitive spreads & rapid execution",
+    "Strong regulation by ASIC & FCA",
+    "Scalping and EA friendly",
+    "Comprehensive trading platform support",
+    "Transparent and low cost fee structure"
+  ],
+  "advantages": [
+    "Low spreads and fast execution speeds",
+    "Strong regulation oversight (FCA/ASIC/FSCA)",
+    "Popular trading platforms",
+    "Global customer support"
+  ],
+  "disadvantages": [
+    "Effective minimum for ECN is relatively higher",
+    "Fixed commission per lot on Pro ECN accounts"
+  ],
+  "classifications": [
+    "Execution & Spread",
+    "Customer Support",
+    "Deposit/Withdrawal"
+  ],
+  "faqs": [
+    {
+      "question": "Is Axi safe?",
+      "answer": "Yes — Axi is supervised by major regulators including the FCA, ASIC, and FSCA (specific entity depends on your region)."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "There is no official minimum deposit requirement, though a starting balance of $200 is recommended for stable execution."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, Web, and Mobile platforms."
+    },
+    {
+      "question": "What is the maximum leverage?",
+      "answer": "Up to 1:500, depending on the regulatory jurisdiction and entity."
+    },
+    {
+      "question": "Does Axi offer ECN accounts?",
+      "answer": "Yes — the Pro ECN account offers ultra-low spreads for high volume traders."
+    }
+  ]
+}

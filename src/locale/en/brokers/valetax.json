@@ -1,0 +1,67 @@
+{
+  "description": "Valetax is a global forex and CFD broker offering a wide variety of trading accounts with flexible leverage and competitive spreads. The platform supports access to over 60 currency pairs as well as other instruments such as metals, indices, energy, and crypto through the popular MT4 and MT5 platforms, making it suitable for both beginner and experienced traders.",
+  "specification": {
+    "leverage": "Up to 1:2000",
+    "spread": "From 0.0 pips"
+  },
+  "summary": {
+    "spread": "Starting from 0.0 pips",
+    "commission": "ECN: $4 per lot (some accounts are commission-free)",
+    "leverage": "Up to 1:2000",
+    "execution": "Fast & stable market execution",
+    "depositWithdrawal": "Fast-instant process / 4 hours for local/crypto (depending on method)"
+  },
+  "accountTypes": [
+    ["Min deposit: $1", "Spread: ±1.2 pips", "Commission: 0", "Suitable for beginners"],
+    ["Min deposit: ±$8–$10", "Spread: ±1.2 pips", "Commission: 0"],
+    ["Min deposit: $50", "Spread: starting from 0.0 pips", "Commission: ±$4 per lot"],
+    ["Min deposit: ±$8", "Spread: ±2.0 pips", "Commission: 0"],
+    ["Min deposit: ±$8", "Spread: ±2.0 pips", "Commission: 0"],
+    ["Min deposit: $500", "Spread: ±0.6 pips", "Commission: 0"]
+  ],
+  "spread": ["From 0.0"],
+  "keyAdvantages": [
+    "Very low minimum deposit starting from $1",
+    "Competitive spreads as low as 0.0 pips on ECN accounts",
+    "Supports MT4, MT5, Web, and Mobile platforms",
+    "Access to over 60+ forex pairs and several other asset classes",
+    "24/7 customer service support"
+  ],
+  "advantages": [
+    "Competitive Spreads & Execution",
+    "Ultra-Low Minimum Deposit",
+    "High Flexible Leverage",
+    "Comprehensive Platform Support",
+    "Varied Trading Instruments",
+    "Diverse Account Types",
+    "Additional Features like Copy Trading (According to some sources)",
+    "Local Deposit Options & 24/7 Support (Official Website)"
+  ],
+  "disadvantages": [
+    "Headquarters regulated in offshore jurisdictions (Mauritius & St. Vincent & the Grenadines) → higher risk compared to brokers regulated by FCA/ASIC/CySEC.",
+    "Presence of negative reviews regarding limited oversight and the risks of high leverage."
+  ],
+  "classifications": [
+    "Platform & Tools",
+    "Cost & Fees",
+    "Support & Service"
+  ],
+  "faqs": [
+    {
+      "question": "Is Valetax safe?",
+      "answer": "Valetax holds licenses in Mauritius and St. Vincent & the Grenadines, but these are considered offshore regulations and carry a higher risk compared to top tier regulators."
+    },
+    {
+      "question": "What is the minimum deposit?",
+      "answer": "The minimum deposit starts from $1."
+    },
+    {
+      "question": "Which platforms are supported?",
+      "answer": "MT4, MT5, Web, and Mobile."
+    },
+    {
+      "question": "What instruments are available?",
+      "answer": "60+ Forex pairs, metals, indices, energy, and crypto."
+    }
+  ]
+}

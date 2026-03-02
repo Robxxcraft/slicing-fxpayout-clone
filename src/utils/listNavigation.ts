@@ -1,70 +1,82 @@
 export type NavigationLink = {
+  code: string;
   title: string;
   url: string;
   sublist?: SubNavigationList[];
 };
 
 type SubNavigationList = {
+  code: string;
   title: string;
   url: string
 }
 
 type SectionsRebateForex = {
+  code: string;
   id: string;
   name: string
 }
 
+const claimRebateSuNav: SubNavigationList[] = [
+  { code: "definition", title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
+  { code: "howRebate", title: "Cara Mendapatkan Rebate Forex", url: '/rebate-forex#how-to-rebate' },
+  { code: "howWorks", title: "Bagaimana Cara Kerjanya?", url: '/rebate-forex#how-it-works' },
+  { code: "payment", title: "Sistem Pembayaran Rebate", url: '/rebate-forex#payment' },
+  { code: "schedule", title: "Jadwal Rebate", url: '/rebate-forex#schedule' },
+];
+
+const serviceSubNav: SubNavigationList[] = [
+  { code: "validation", title: "Validasi Akun", url: '/validation' },
+  { code: "transfer", title: "Pindah Akun", url: '/transfer' },
+]
+
 export const listNavigation: NavigationLink[] = [
   {
+    code: "home",
     title: "Home",
     url: "/",
   },
   {
+    code: "broker",
     title: "Broker",
     url: "/broker",
   },
   {
+    code: "calculator",
     title: "Kalkulator",
     url: "/calculator",
   },
   {
+    code: "claimRebate",
     title: "Klaim Rebate",
     url: "#",
-    sublist: [
-      { title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
-      { title: "Cara Mendapatkan Rebate Forex", url: '/rebate-forex#how-to-rebate' },
-      { title: "Bagaimana Cara Kerjanya?", url: '/rebate-forex#how-it-works' },
-      { title: "Sistem Pembayaran Rebate", url: '/rebate-forex#payment' },
-      { title: "Jadwal Rebate", url: '/rebate-forex#schedule' },
-    ]
+    sublist: claimRebateSuNav
   },
   {
+    code: "service",
     title: "Layanan",
     url: "#",
-    sublist: [
-      { title: "Validasi Akun", url: '/validation' },
-      { title: "Pindah Akun", url: '/transfer' },
-    ]
+    sublist: serviceSubNav
   },
 ];
 
 export const listNavigationBrokers: NavigationLink[] = [
-  { title: "Profil", url: "#profil" },
-  { title: "Ringkasan", url: "#ringkasan" },
-  { title: "Jenis Akun", url: "#jenis-akun" },
-  { title: "Spread & Komisi", url: "#spread-komisi" },
-  { title: "Keunggulan", url: "#keunggulan" },
-  { title: "Platform", url: "#platform" },
-  { title: "Deposit & Withdraw", url: "#deposit-withdraw" },
-  { title: "Kelebihan & Kekurangan", url: "#kelebihan-kekurangan" },
-  { title: "Rating", url: "#rating" },
-  { title: "FAQ", url: "#faq" },
+  { code: "profil", title: "Profil", url: "#profil" },
+  { code: "summary", title: "Ringkasan", url: "#ringkasan" },
+  { code: "accountType", title: "Jenis Akun", url: "#jenis-akun" },
+  { code: "spreadCommission", title: "Spread & Komisi", url: "#spread-komisi" },
+  { code: "advantage", title: "Keunggulan", url: "#keunggulan" },
+  { code: "platform", title: "Platform", url: "#platform" },
+  { code: "depositWithdraw", title: "Deposit & Withdraw", url: "#deposit-withdraw" },
+  { code: "advantagesDisadvantages", title: "Kelebihan & Kekurangan", url: "#kelebihan-kekurangan" },
+  { code: "rating", title: "Rating", url: "#rating" },
+  { code: "faq", title: "FAQ", url: "#faq" },
 ];
 
 export const listSectionsRebateForex: SectionsRebateForex[] = [
-  { id: "definition", name: "Apa itu Rebate Forex?" },
-  { id: "how-to-rebate", name: "Cara Mendapatkan Rebate Forex" },
-  { id: "how-it-works", name: "Bagaimana Cara Kerjanya?" },
-  { id: "payment", name: "Sistem Pembayaran Rebate" },
-  { id: "schedule", name: "Jadwal Rebate" },
+  { code: "definition", id: "definition", name: "Apa itu Rebate Forex?" },
+  { code: "howRebate", id: "how-to-rebate", name: "Cara Mendapatkan Rebate Forex" },
+  { code: "howWorks", id: "how-it-works", name: "Bagaimana Cara Kerjanya?" },
+  { code: "payment", id: "payment", name: "Sistem Pembayaran Rebate" },
+  { code: "schedule", id: "schedule", name: "Jadwal Rebate" },
 ];
