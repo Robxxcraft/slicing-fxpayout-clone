@@ -10,6 +10,7 @@ export type TransferFormState = {
   broker: string;
   accountNumber: string;
   username: string;
+  email: string;
 }
 
 const TransferForm = () => {
@@ -17,7 +18,8 @@ const TransferForm = () => {
   const form = useForm<TransferFormState>({
     broker: "",
     accountNumber: "",
-    username: ""
+    username: "",
+    email: ""
   });
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const [selectedBroker, setSelectedBroker] = useState<BrokerStruc | null>(null);
@@ -26,6 +28,7 @@ const TransferForm = () => {
   const handleCopyTemplate = async () => {
     const rawUsername = form.values.username.trim().length === 0 ? "xxxxx" : form.values.username.trim();
     const rawAccountNumber = form.values.accountNumber.trim().length === 0 ? "xxxxx" : form.values.accountNumber.trim();
+    const rawEmail = form.values.email.trim().length === 0 ? "xxxxx" : form.values.email.trim();
     const rawBroker = form.values.broker.length === 0 ? "IB ll18ehwbyi" : form.values.broker;
     const rawText = `
 ${t(`${keyTemplateEmail}.greeting`)} ${rawBroker},
@@ -36,6 +39,7 @@ ${t(`${keyTemplateEmail}.ibLink`)} ${selectedBroker === null ? "xxxxxx" : select
 
 ${t(`${keyTemplateEmail}.accountData`)}
 ${t(`${keyTemplateEmail}.name`)} ${rawUsername}
+Email: ${rawEmail}
 ${t(`${keyTemplateEmail}.tradingAccount`)} ${rawAccountNumber}
 
 ${t(`${keyTemplateEmail}.closing`)}
@@ -80,6 +84,7 @@ ${rawUsername}`;
     const rawUsername = form.values.username.trim().length === 0 ? "xxxxx" : form.values.username.trim();
     const rawBroker = form.values.broker.length === 0 ? "IB ll18ehwbyi" : form.values.broker;
     const rawAccountNumber = form.values.accountNumber.trim().length === 0 ? "xxxxx" : form.values.accountNumber.trim();
+    const rawEmail = form.values.email.trim().length === 0 ? "xxxxx" : form.values.email.trim();
     const recipient = selectedBroker.contactSupport;
     const subject = encodeURIComponent(t(`${keyTemplateEmail}.subject`));
 
@@ -92,6 +97,7 @@ ${t(`${keyTemplateEmail}.ibLink`)} ${selectedBroker === null ? "xxxxxx" : select
 
 ${t(`${keyTemplateEmail}.accountData`)}
 ${t(`${keyTemplateEmail}.name`)} ${rawUsername}
+Email: ${rawEmail}
 ${t(`${keyTemplateEmail}.tradingAccount`)} ${rawAccountNumber}
 
 ${t(`${keyTemplateEmail}.closing`)}

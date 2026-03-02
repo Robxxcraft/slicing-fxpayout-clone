@@ -21,6 +21,7 @@ const EmailTemplate = ({
   const { t } = useTranslation(["common", "transferpage"]);
   const rawUsername = values.username.trim().length === 0 ? "xxxxx" : values.username.trim();
   const rawAccountNumber = values.accountNumber.trim().length === 0 ? "xxxxx" : values.accountNumber.trim();
+  const rawEmail = values.email.trim().length === 0 ? "xxxxx" : values.email.trim();
   const rawBroker = values.broker.length === 0 ? "IB ll18ehwbyi" : values.broker;
   const keyTemplateEmail = "transferpage:card.emailTemplate.template";
   
@@ -45,6 +46,7 @@ const EmailTemplate = ({
 
               {t(`${keyTemplateEmail}.accountData`)} <br />
               {t(`${keyTemplateEmail}.name`)} {rawUsername} <br />
+              Email: {rawEmail} <br />
               {t(`${keyTemplateEmail}.tradingAccount`)} {rawAccountNumber} <br /><br />
 
               {t(`${keyTemplateEmail}.closing`)} <br /><br />

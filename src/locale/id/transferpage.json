@@ -18,7 +18,9 @@
             "accountNumberLabel": "Nomor Akun",
             "accountNumberPlaceholder": "Masukkan Nomor Akun",
             "usernameLabel": "Nama Pemegang Rekening",
-            "usernamePlaceholder": "Nama Sesuai Pemegang Rekening"
+            "usernamePlaceholder": "Nama Sesuai Pemegang Rekening",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Alamat Email"
         },
         "emailTemplate": {
             "title": "Template Email Transfer IB",

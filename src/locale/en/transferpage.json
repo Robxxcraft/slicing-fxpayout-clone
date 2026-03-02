@@ -18,7 +18,9 @@
             "accountNumberLabel": "Account Number",
             "accountNumberPlaceholder": "Account Number",
             "usernameLabel": "Account Holder Name",
-            "usernamePlaceholder": "Name as per Account Records"
+            "usernamePlaceholder": "Name as per Account Records",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Email Address"
         },
         "emailTemplate": {
             "title": "IB Transfer Email Template",

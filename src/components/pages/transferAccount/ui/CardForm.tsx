@@ -65,6 +65,17 @@ const CardForm = ({ form, handleChangeForm, setSelectedBroker }:
           autoComplete="cc-name" 
           typeInput={"text"}
           required />
+        <TextInput 
+          id="email"
+          label={t("transferpage:card.emailForm.emailLabel")}
+          icon="/email-icon.svg"
+          altIcon="Icon Email" 
+          placeholder={t("transferpage:card.emailForm.emailPlaceholder")}
+          value={form.email} 
+          onChangeForm={handleChangeForm} 
+          autoComplete="email" 
+          typeInput={"text"}
+          required />
       </div>
     </div>
   )
