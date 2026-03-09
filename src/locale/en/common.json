@@ -32,6 +32,7 @@
     "navbar": {
         "home": "Home",
         "broker": "Broker",
+        "article": "Article",
         "calculator": "Calculator",
         "claimRebate": "Claim Rebate",
         "service": "Service",
@@ -42,7 +43,8 @@
             "payment": "Rebate Payment System", 
             "schedule": "Rebate Schedule",
             "validation": "Account Validation",
-            "transfer": "Account Transfer"    
+            "transfer": "Account Transfer",    
+            "affiliate": "Affiliate Program"    
         }
     },
     "footer": {

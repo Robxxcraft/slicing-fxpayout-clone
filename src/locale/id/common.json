@@ -32,6 +32,7 @@
     "navbar": {
         "home": "Home",
         "broker": "Broker",
+        "article": "Artikel",
         "calculator": "Kalkulator",
         "claimRebate": "Klaim Rebate",
         "service": "Layanan",
@@ -42,7 +43,8 @@
             "payment": "Sistem Pembayaran Rebate", 
             "schedule": "Jadwal Rebate",
             "validation": "Validasi Akun",
-            "transfer": "Transfer Akun"     
+            "transfer": "Transfer Akun",    
+            "affiliate": "Program Affiliate"      
         }
     },
     "footer": {
