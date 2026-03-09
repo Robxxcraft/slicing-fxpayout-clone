@@ -70,7 +70,7 @@ function App() {
         draggable={false}
         theme="light"
         transition={Bounce}
-        style={{ bottom: isDashboard ? "0px" : "90px" }}
+        style={{ bottom: isDashboard ? "0px" : "90px", zIndex: "99999" }}
       />
       {!isDashboard && <TawkChat />}
 
