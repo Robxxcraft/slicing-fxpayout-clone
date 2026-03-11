@@ -10,6 +10,7 @@ import { listNavigation } from "../utils/listNavigation";
 import { FaChevronDown } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { getLocalizedPath, navigateChangeLng } from "@/helper/pathHelper";
+import { toast } from "react-toastify";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
@@ -49,6 +50,10 @@ const Navbar = ({ active }: { active: string }) => {
     setOpenSubMenu((prev) => prev === idx ? null : idx);
   };
 
+  const showInfoCommingSoon = () => {
+    toast.info("Comming Soon!");
+  }
+
   return (
     <nav
       className="z-99999999 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
@@ -79,6 +84,11 @@ const Navbar = ({ active }: { active: string }) => {
           >
             <Link 
               to={getLocalizedPath(url, i18n.language)} 
+              onClick={() => {
+                if (code === "article") {
+                  showInfoCommingSoon()
+                }
+              }}
               className={`${
               active.toLocaleLowerCase() == title.toLocaleLowerCase()
                 ? "font-bold"
@@ -98,6 +108,11 @@ const Navbar = ({ active }: { active: string }) => {
                     smooth
                     key={idx} 
                     to={`${getLocalizedPath(subNav.url, i18n.language)}`}
+                    onClick={() => {
+                      if (subNav.code === "affiliate") {
+                        showInfoCommingSoon()
+                      }
+                    }}
                     className="px-6 py-3 text-black hover:bg-black/10"
                     scroll={(el) => {
                       setTimeout(() => {
@@ -176,6 +191,11 @@ const Navbar = ({ active }: { active: string }) => {
                     setOpenMenu(false); 
                     setOpenLanguageSelector(false);
                   }
+                  if (code === "article") {
+                    setOpenMenu(false); 
+                    setOpenLanguageSelector(false);
+                    showInfoCommingSoon();
+                  }
                 }} 
                 className="relative flex justify-between pb-1 w-full text-base hover:font-bold">
                 <Link to={getLocalizedPath(url, i18n.language)}>{t(`navbar.${code}`)}</Link>
@@ -198,9 +218,15 @@ const Navbar = ({ active }: { active: string }) => {
                         }}
                         onClick={() => {
                           if (active.toLocaleLowerCase() == title.toLocaleLowerCase()) {
-                          setOpenMenu(false); 
-                          setOpenLanguageSelector(false);
-                        }}}
+                            setOpenMenu(false); 
+                            setOpenLanguageSelector(false);
+                          }
+                          if (subNav.code === "affiliate") {
+                            setOpenMenu(false); 
+                            setOpenLanguageSelector(false);
+                            showInfoCommingSoon();
+                          }
+                        }}
                         className="px-4 py-2 text-white hover:bg-black/10">
                         {t(`navbar.subNav.${subNav.code}`)}
                       </HashLink>

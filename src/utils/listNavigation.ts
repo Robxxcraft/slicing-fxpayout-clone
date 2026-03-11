@@ -28,6 +28,7 @@ const claimRebateSuNav: SubNavigationList[] = [
 const serviceSubNav: SubNavigationList[] = [
   { code: "validation", title: "Validasi Akun", url: '/validation' },
   { code: "transfer", title: "Pindah Akun", url: '/transfer' },
+  { code: "affiliate", title: "Affiliate", url: '#' },
 ]
 
 export const listNavigation: NavigationLink[] = [
@@ -40,6 +41,11 @@ export const listNavigation: NavigationLink[] = [
     code: "broker",
     title: "Broker",
     url: "/broker",
+  },
+  {
+    code: "article",
+    title: "Artikel",
+    url: "#",
   },
   {
     code: "calculator",
