@@ -153,7 +153,7 @@ const ModalFormFeedback = ({
               errorMessage={formFeedback.errors.review && t(formFeedback.errors.review)}
               required />
           </div>
-          <div className="my-6 flex justify-start w-full h-fit">
+          <div className="my-6 flex flex-col justify-start w-full h-fit">
             <ReCAPTCHA 
               key={i18n.language}
               ref={recaptchaRef}
