@@ -74,7 +74,33 @@
     "reviews": {
         "title": "What Do Traders Who Use FXPayout Say?",
         "paragraph": "Real experiences from traders earning additional profit from the rebate program.",
-        "tag": "FEEDBACK"
+        "tag": "FEEDBACK",
+        "writeReview": "Write a Review",
+        "successResponse": {
+            "title": "Thank You for Sharing Your Experience",
+            "paragraph": "Your review has been successfully submitted and will help other users learn about the experience of using this rebate service."
+        },
+        "emptyReview": "No reviews yet. Be the first to share your experience with our services!",
+        "modal": {
+            "title": "Write Your Review",
+            "paragraph": "How satisfied are you with our rebate service?",
+            "form": {
+                "usernameLabel": "Full Name",
+                "usernamePlaceholder": "Enter your full name",
+                "locationLabel": "City / Location",
+                "locationPlaceholder": "Enter your city name",
+                "reviewLabel": "Review",
+                "reviewPlaceholder": "Share your experience using fxpayout...",
+                "submit": "Submit Review",
+                "errors": {
+                    "usernameRequired": "Full name is required",
+                    "locationRequired": "Location is required",
+                    "reviewRequired": "Review cannot be empty",
+                    "invalidRangeRating": "Rating must be between 1 and 5"
+                }
+            },
+            "errors": { "captcha": "Please confirm that you are not a robot" }
+        }
     },
     "profile": {
         "title": "FXPayout, the main reference for forex rebates for traders.",

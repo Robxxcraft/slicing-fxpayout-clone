@@ -19,6 +19,7 @@ import ProfileDashboard from "./pages/admin/ProfileDashboard";
 import { Bounce, ToastContainer } from "react-toastify";
 import TawkChat from "./components/TawkChat";
 import MainLayout from "./components/MainLayout";
+import NewsPage from "./pages/NewsPage";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -70,7 +71,7 @@ function App() {
         draggable={false}
         theme="light"
         transition={Bounce}
-        style={{ bottom: isDashboard ? "0px" : "90px", zIndex: "99999" }}
+        style={{ bottom: isDashboard ? "0px" : "90px", zIndex: "1000000001" }}
       />
       {!isDashboard && <TawkChat />}
 
@@ -80,6 +81,7 @@ function App() {
           <Route path="broker" element={<Broker />} />
           <Route path="broker/:brokerId" element={<BrokerDetailPage />} />
           <Route path="calculator" element={<CalculatorPage />} />
+          <Route path="news" element={<NewsPage />} />
           <Route path="transfer" element={<TransferAccount />} />
           <Route path="validation" element={<ValidationPage />} />
           <Route path="schedule/:brokerId" element={<SchedulePage />} />
@@ -91,6 +93,7 @@ function App() {
           <Route path="broker" element={<Broker />} />
           <Route path="broker/:brokerId" element={<BrokerDetailPage />} />
           <Route path="calculator" element={<CalculatorPage />} />
+          <Route path="news" element={<NewsPage />} />
           <Route path="transfer" element={<TransferAccount />} />
           <Route path="validation" element={<ValidationPage />} />
           <Route path="schedule/:brokerId" element={<SchedulePage />} />

@@ -74,7 +74,33 @@
     "reviews": {
         "title": "Apa Kata Trader yang Menggunakan FXPayout?",
         "paragraph": "Pengalaman nyata dari trader yang mendapatkan tambahan profit dari program rebate.",
-        "tag": "FEEDBACK"
+        "tag": "FEEDBACK",
+        "writeReview": "Tulis Review",
+        "successResponse": {
+            "title": "Terima Kasih Sudah Berbagi Pengalaman",
+            "paragraph": "Review kamu telah berhasil dikirim dan akan membantu pengguna lain mengetahui pengalaman menggunakan layanan rebate ini."
+        },
+        "emptyReview": "Belum ada ulasan di sini. Jadilah yang pertama membagikan pengalaman Anda menggunakan layanan kami!",
+        "modal": {
+            "title": "Tulis Review Anda",
+            "paragraph": "Seberapa puas Anda dengan layanan rebate kami?",
+            "form": {
+                "usernameLabel": "Nama Lengkap",
+                "usernamePlaceholder": "Masukkan Nama Lengkap Anda",
+                "locationLabel": "Lokasi Kota",
+                "locationPlaceholder": "Masukkan Nama Kota Anda",
+                "reviewLabel": "Review / Ulasan",
+                "reviewPlaceholder": "Tulis pengalaman Anda menggunakan fxpayout...",
+                "submit": "Kirim Ulasan",
+                "errors": {
+                    "usernameRequired": "Nama lengkap tidak boleh kosong",
+                    "locationRequired": "Lokasi tidak boleh kosong",
+                    "reviewRequired": "Ulasan tidak boleh kosong",
+                    "invalidRangeRating": "Rating harus berada di rentang 1-5"
+                }
+            },
+            "errors": { "captcha": "Mohon konfirmasi bahwa Anda bukan robot" }
+        }
     },
     "profile": {
         "title": "FXPayout, rujukan utama rebate forex bagi trader.",

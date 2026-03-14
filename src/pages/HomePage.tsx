@@ -2,6 +2,7 @@ import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Benefits from "@/components/pages/homePage/Benefits";
+import BrokerListSection from "@/components/pages/homePage/BrokerListSection";
 import HeroHome from "@/components/pages/homePage/HeroHome";
 import HowItWorks from "@/components/pages/homePage/HowItWorks";
 import Profile from "@/components/pages/homePage/Profile";
@@ -20,6 +21,7 @@ const HomePage = () => {
         <Benefits />
         <HowItWorks />
         <Rewards />
+        <BrokerListSection />
         <Reviews />
         <Profile />
         <CtaSection />
