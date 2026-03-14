@@ -35,8 +35,8 @@ const Reviews = () => {
     <>
       <section className="mb-20 xl:mb-0">
         <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 2xl:pt-28">
-          <div className="flex justify-between items-end gap-4">
-            <div className="flex flex-col items-start text-center">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4">
+            <div className="flex flex-col items-start text-left">
               <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
                 <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
                 <span className="text-base md:text-xl font-medium text-white">
