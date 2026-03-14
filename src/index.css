@@ -95,6 +95,46 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
+/* SWIPER START */
+.mySwiper .swiper-pagination {
+  position: absolute;
+  bottom: 40px !important;
+}
+
+.mySwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 1); 
+  opacity: 100%;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease-out;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  width: 150px;
+  height: 10px;
+  border-radius: 99999px;
+  background: linear-gradient(to bottom, #4160FF 14.03%, #213269 123.72%);
+}
+/* SWIPER END */
+
+@media (max-width: 1536px) {
+  /* SWIPER START */
+  .mySwiper .swiper-pagination {
+    bottom: 20px !important;
+  }
+
+  .mySwiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .mySwiper .swiper-pagination-bullet-active {
+    width: 150px;
+    height: 8px;
+  }
+  /* SWIPER END */
+}
+
 @media (max-width: 400px) {
   .g-recaptcha {
     transform: scale(0.9);
