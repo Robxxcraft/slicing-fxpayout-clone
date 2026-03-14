@@ -25,6 +25,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
             <img
               src={`/broker/${item.profileImage}`}
               alt={item.name}
+              loading="lazy"
               className="size-14 md:size-16 rounded-full object-cover object-center"
             />
             <h2 className="text-xl md:text-2xl font-semibold text-[#222222] break-all">

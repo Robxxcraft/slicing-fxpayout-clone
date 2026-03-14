@@ -84,11 +84,6 @@ const Navbar = ({ active }: { active: string }) => {
           >
             <Link 
               to={getLocalizedPath(url, i18n.language)} 
-              onClick={() => {
-                if (code === "article") {
-                  showInfoCommingSoon()
-                }
-              }}
               className={`${
               active.toLocaleLowerCase() == title.toLocaleLowerCase()
                 ? "font-bold"
@@ -190,11 +185,6 @@ const Navbar = ({ active }: { active: string }) => {
                   } else if (active.toLocaleLowerCase() == title.toLocaleLowerCase()) {
                     setOpenMenu(false); 
                     setOpenLanguageSelector(false);
-                  }
-                  if (code === "article") {
-                    setOpenMenu(false); 
-                    setOpenLanguageSelector(false);
-                    showInfoCommingSoon();
                   }
                 }} 
                 className="relative flex justify-between pb-1 w-full text-base hover:font-bold">
