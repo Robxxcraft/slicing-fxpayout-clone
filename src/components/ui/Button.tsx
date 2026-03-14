@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
-type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "light" | "danger" | "no-bg";
+type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "outline-primary" | "light" | "danger" | "no-bg";
 type ButtonSize = "xl" | "lg" | "md";
 type IconPosition = "left" | "right";
 type ButtonType = "link" | "button" | "submit";
@@ -61,6 +61,10 @@ export default function Button({
 
   if (variant === "outline") {
     variantStyles = `bg-transparent text-black border-black hover:bg-primary hover:text-white active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60 disabled:border-black/60`;
+    spinnerCircle = "text-black/20";
+  }
+  if (variant === "outline-primary") {
+    variantStyles = `bg-transparent text-primary border-primary hover:bg-primary hover:text-white active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-primary disabled:active:brightness-80 disabled:text-primary/60 disabled:border-primary/60`;
     spinnerCircle = "text-black/20";
   }
   if (variant === "outline-light") {

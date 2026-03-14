@@ -59,14 +59,16 @@ const TextInput = ({
   return (
     <div className="flex flex-col"
       style={{ gap: gap === undefined ? "12px" : `${gap}px` }}>
-      <label
-        htmlFor={id}
-        className={`${labelClassName} text-base 2xl:text-xl font-medium text-[#344054]`}>
-        {label}
-        {!required &&
-          <span className="ml-1 text-base text-black/50">(opsional)</span>
-        }
-      </label>
+      {label !== "" && 
+        <label
+          htmlFor={id}
+          className={`${labelClassName} text-base 2xl:text-xl font-medium text-[#344054]`}>
+          {label}
+          {!required &&
+            <span className="ml-1 text-base text-black/50">(opsional)</span>
+          }
+        </label>
+      }
       <div className="relative w-full">
         {icon !== undefined && altIcon !== undefined &&
           <img src={icon} alt={altIcon}

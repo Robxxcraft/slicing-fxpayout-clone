@@ -220,6 +220,9 @@ const ValidationForm = () => {
 
       {showModal === "SUCCESS" && 
       <SuccessModal 
+        title={t("validationpage:success.title")}
+        paragraph={t("validationpage:success.paragraph")}
+        closeText={t("validationpage:success.back")}
         isVisible={showModal === "SUCCESS"} 
         toggleModal={() => setShowModal(null)} />}
     </section>
