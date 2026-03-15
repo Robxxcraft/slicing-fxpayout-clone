@@ -89,6 +89,7 @@ const ModalFormFeedback = ({
     !(formFeedback.values.username.trim()) || 
     !(formFeedback.values.location.trim()) || 
     !(formFeedback.values.review.trim()) || 
+    !(captchaValue.trim()) || 
     formFeedback.values.rating === 0;
   return (
     <Modal isOpen={isVisible} onClose={handleClose}>
