@@ -6,7 +6,7 @@ export const checkValidFormFeedback = (vals: FormFeedback) => {
   if (!vals.username.trim()) errors.username = `${key}.usernameRequired`;
   if (!vals.location.trim()) errors.location = `${key}.locationRequired`;
   if (!vals.review.trim()) errors.review = `${key}.reviewRequired`;
-  if (vals.rating > 5 || vals.rating < 0) {
+  if (vals.rating > 5 || vals.rating < 1) {
     errors.rating = `${key}.invalidRangeRating`;
   }
 

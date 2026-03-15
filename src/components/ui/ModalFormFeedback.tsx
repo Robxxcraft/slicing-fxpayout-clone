@@ -85,7 +85,11 @@ const ModalFormFeedback = ({
     }
   }
 
-  const isEmptyField = !(formFeedback.values.username.trim()) || !(formFeedback.values.location.trim()) || !(formFeedback.values.review.trim());
+  const isEmptyField = 
+    !(formFeedback.values.username.trim()) || 
+    !(formFeedback.values.location.trim()) || 
+    !(formFeedback.values.review.trim()) || 
+    formFeedback.values.rating === 0;
   return (
     <Modal isOpen={isVisible} onClose={handleClose}>
       <div className="pr-2 flex flex-col max-h-[calc(100vh-100px)] overflow-auto">
