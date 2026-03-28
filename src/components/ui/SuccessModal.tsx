@@ -1,14 +1,19 @@
-import { useTranslation } from "react-i18next";
 import Button from "./Button";
 import Modal from "./Modal";
 
 const SuccessModal = ({ 
-  isVisible, toggleModal 
+  title,
+  paragraph,
+  closeText,
+  isVisible, 
+  toggleModal 
 }: {
+  title: string;
+  paragraph: string;
+  closeText: string;
   isVisible: boolean;
   toggleModal: () => void
 }) => {
-  const { t } = useTranslation();
   return (
     <Modal isOpen={isVisible} onClose={toggleModal}>
       <div className="flex flex-col items-center text-center">
@@ -20,10 +25,10 @@ const SuccessModal = ({
           />
         </div>
         <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-bold text-gray-900 leading-[180%]">
-          {t("validationPage.success.title")}
+          {title}
         </h3>
         <p className="mb-8 text-base 2xl:text-2xl text-gray-500 leading-[180%]">
-          {t("validationPage.success.paragraph")}
+          {paragraph}
         </p>
         <Button 
           variant="primary-light" 
@@ -31,7 +36,7 @@ const SuccessModal = ({
           onClick={toggleModal}
           className="py-4! w-full! text-lg! md:text-2xl font-medium!"
         >
-          {t("validationPage.success.back")}
+          {closeText}
         </Button>
       </div>
     </Modal>

@@ -6,7 +6,10 @@
         "tableOfContents": "Daftar Isi",
         "previous": "Sebelum",
         "advantage": "Kelebihan",
-        "disadvantage": "Kekurangan"
+        "disadvantage": "Kekurangan",
+        "close": "Tutup",
+        "readMore": "Baca selengkapnya",
+        "seeAll": "Lihat semua"
     },
     "button": {
         "registerNow": "Daftar Sekarang",
@@ -32,7 +35,7 @@
     "navbar": {
         "home": "Home",
         "broker": "Broker",
-        "article": "Artikel",
+        "news": "News",
         "calculator": "Kalkulator",
         "claimRebate": "Klaim Rebate",
         "service": "Layanan",

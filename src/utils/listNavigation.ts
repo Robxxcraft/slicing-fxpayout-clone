@@ -43,9 +43,9 @@ export const listNavigation: NavigationLink[] = [
     url: "/broker",
   },
   {
-    code: "article",
-    title: "Artikel",
-    url: "#",
+    code: "news",
+    title: "News",
+    url: "/news",
   },
   {
     code: "calculator",
@@ -77,6 +77,18 @@ export const listNavigationBrokers: NavigationLink[] = [
   { code: "advantagesDisadvantages", title: "Kelebihan & Kekurangan", url: "#kelebihan-kekurangan" },
   { code: "rating", title: "Rating", url: "#rating" },
   { code: "faq", title: "FAQ", url: "#faq" },
+];
+
+export const listNavigationNews: NavigationLink[] = [
+  { code: "latest", title: "Terbaru", url: "#" },
+  { code: "popular", title: "Populer", url: "#" },
+  { code: "breakingNews", title: "Breaking News", url: "#" },
+  { code: "crypto", title: "Cripto", url: "#" },
+  { code: "stocks", title: "Saham", url: "#" },
+  { code: "commodity", title: "Komoditas", url: "#" },
+  { code: "economy", title: "Ekonomi", url: "#" },
+  { code: "company", title: "Perusahaan", url: "#" },
+  { code: "world", title: "Dunia", url: "#" },
 ];
 
 export const listSectionsRebateForex: SectionsRebateForex[] = [

@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "Forex News & Market Analysis | FXPayout",
+        "description": "Stay updated with the latest forex news, real-time market analysis, crypto trends, and global economic updates from FXPayout."
+    },
+    "time": {
+      "minutesAgo": "{{time}} minutes ago",
+      "hoursAgo": "{{time}} hours ago",
+      "justNow": "Just now",
+      "march": "{{time}} March"
+    },
+    "category": {
+        "latest": "Latest",
+        "popular": "Popular",
+        "breakingNews": "Breaking News",
+        "crypto": "Crypto",
+        "stocks": "Stocks",
+        "commodity": "Commodity",
+        "economy": "Economy",
+        "company": "Company",
+        "world": "World",
+        "others": "Others"
+    },
+    "header": {
+        "searchPlaceholder": "Search news here..."
+    },
+    "main": {
+        "category": "Categories",
+        "totalNews": "Total News"
+    },
+    "subscribe": {
+        "title": "Subscribe to Our Newsletter",
+        "paragraph": "Get the latest news on forex, crypto, stocks, and the economy delivered directly to your inbox.",
+        "emailPlaceholder": "Enter your email"
+    }
+}

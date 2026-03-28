@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "Berita Forex & Analisis Pasar Terkini | FXPayout",
+        "description": "Dapatkan berita forex terbaru, analisis pasar real-time, tren kripto, dan pembaruan ekonomi global langsung dari FXPayout."
+    },
+    "time": {
+      "minutesAgo": "{{time}} menit yang lalu",
+      "hoursAgo": "{{time}} jam yang lalu",
+      "justNow": "Baru saja",
+      "march": "{{time}} Maret"
+    },
+    "category": {
+        "latest": "Terbaru",
+        "popular": "Populer",
+        "breakingNews": "Breaking News",
+        "crypto": "Cripto",
+        "stocks": "Saham",
+        "commodity": "Komoditas",
+        "economy": "Ekonomi",
+        "company": "Perusahaan",
+        "world": "Dunia",
+        "others": "Lainnya"
+    },
+    "header": {
+        "searchPlaceholder": "Cari news disini..."
+    },
+    "main": {
+        "category": "Kategori",
+        "totalNews": "Jumlah News"
+    },
+    "subscribe": {
+        "title": "Langganan Berita Sekarang",
+        "paragraph": "Dapatkan berita terbaru seputar forex, crypto, saham, dan ekonomi langsung ke email Anda.",
+        "emailPlaceholder": "Gunakan email aktif"
+    }
+}

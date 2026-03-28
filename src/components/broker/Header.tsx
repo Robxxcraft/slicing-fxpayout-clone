@@ -6,8 +6,8 @@ const Header = ({
   query, 
   onHandleSearch
 }: {
-  query: string; 
-  onHandleSearch: ChangeEventHandler<HTMLInputElement>
+  query?: string; 
+  onHandleSearch?: ChangeEventHandler<HTMLInputElement>
 }) => {
   const { t } = useTranslation(["brokerpage"]);
   return (
@@ -26,20 +26,22 @@ const Header = ({
         <p className="text-base md:text-xl leading-[160%] max-w-[786px]">
           {t("brokerpage:header.paragraph")}
         </p>
-        <div className="mt-4 py-4 2xl:py-6 px-5 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-full max-w-[786px]">
-          <label htmlFor="search" className="cursor-pointer">
-            <CiSearch className="text-2xl text-[#7E7E7E]" />
-          </label>
-          <input
-            id="search"
-            name="search"
-            placeholder={t("brokerpage:header.searchPlaceholder")}
-            value={query}
-            onChange={onHandleSearch}
-            type="text"
-            className="w-full text-base placeholder:text-[rgba(0,0,0,0.8)] focus:outline-0"
-          />
-        </div>
+        {query !== undefined && onHandleSearch !== undefined &&
+          <div className="mt-4 py-4 2xl:py-6 px-5 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-full max-w-[786px]">
+            <label htmlFor="search" className="cursor-pointer">
+              <CiSearch className="text-2xl text-[#7E7E7E]" />
+            </label>
+            <input
+              id="search"
+              name="search"
+              placeholder={t("brokerpage:header.searchPlaceholder")}
+              value={query}
+              onChange={onHandleSearch}
+              type="text"
+              className="w-full text-base placeholder:text-[rgba(0,0,0,0.8)] focus:outline-0"
+            />
+          </div>
+        }
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import BrokerItem from "./BrokerItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
@@ -8,7 +8,13 @@ import { getPagination } from "@/helper/pagination";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
 
-const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
+const BrokerList = ({
+  brokerPartners,
+  pathUrl
+}: {
+  brokerPartners: BrokerStruc[];
+  pathUrl: string
+}) => {
   const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -17,39 +23,56 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
   const [endIndex, setEndIndex] = useState<number>(6);
   const [searchParams] = useSearchParams();
   const navigateToTop = useNavigationToTop();
+  const navigate = useNavigate();
 
   const TOTAL_PAGES = Math.ceil(brokerPartners.length / itemsPerPage);
 
   useEffect(() => {
-    const page = Number(searchParams.get("page"));
-    if (!Number.isNaN(page)) {
-      if (page <= 0) {
-        const path = getLocalizedPath("/broker?page=1", i18n.language);
-        navigateToTop(path);
-      } else {
-        setCurrentPage(page);
+    if (pathUrl === "broker") {
+      const page = Number(searchParams.get("p"));
+      if (!Number.isNaN(page)) {
+        if (page <= 0) {
+          const path = getLocalizedPath(`/${pathUrl}?p=1`, i18n.language);
+          navigateToTop(path);
+        } else {
+          setCurrentPage(page);
+        }
       }
+      setStartIndex((currentPage - 1) * itemsPerPage);
+      setEndIndex(currentPage * itemsPerPage);
+      setIsLoading(false);
+    } else {
+      setIsLoading(false);
     }
-    setStartIndex((currentPage - 1) * itemsPerPage);
-    setEndIndex(currentPage * itemsPerPage);
-    setIsLoading(false);
-  }, [currentPage, i18n.language, itemsPerPage, navigateToTop, searchParams]);
+  }, [currentPage, i18n.language, itemsPerPage, navigateToTop, pathUrl, searchParams]);
 
   const handleClickPrevButton = () => {
     if (currentPage > 1) {
-      const path = getLocalizedPath(`/broker?page=${currentPage - 1}`, i18n.language);
-      navigateToTop(path);
+      const path = getLocalizedPath(`/${pathUrl}?p=${currentPage - 1}`, i18n.language);
+      if (pathUrl === "") {
+        navigate(path);
+      } else {
+        navigateToTop(path);
+      }
     }
   }
   const handleClickNextButton = () => {
     if (currentPage < TOTAL_PAGES) {
-      const path = getLocalizedPath(`/broker?page=${currentPage + 1}`, i18n.language);
-      navigateToTop(path);
+      const path = getLocalizedPath(`/${pathUrl}?p=${currentPage + 1}`, i18n.language);
+      if (pathUrl === "") {
+        navigate(path);
+      } else {
+        navigateToTop(path);
+      }
     }
   }
   const handleClickPagination = (page: number) => {
-    const path = getLocalizedPath(`/broker?page=${page}`, i18n.language);
-    navigateToTop(path);
+    const path = getLocalizedPath(`/${pathUrl}?p=${page}`, i18n.language);
+    if (pathUrl === "") {
+        navigate(path);
+      } else {
+        navigateToTop(path);
+      }
   }
 
   if (isLoading) {
@@ -63,6 +86,7 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
           <BrokerItem key={idx} item={item} />
         ))}
       </div>
+      {pathUrl === "broker" &&
       <div className="mt-6 md:mt-8 2xl:mt-10 px-5 w-full flex items-center justify-center gap-3 md:gap-4">
         {currentPage > 1 &&
           <button
@@ -107,6 +131,7 @@ const BrokerList = ({brokerPartners}: {brokerPartners: BrokerStruc[]}) => {
           </button>
         }
       </div>
+      }
     </>
   );
 };

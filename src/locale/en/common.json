@@ -6,7 +6,10 @@
         "tableOfContents": "Table of Contents",
         "previous": "Previous",
         "advantage": "Pros",
-        "disadvantage": "Cons"
+        "disadvantage": "Cons",
+        "close": "Close",
+        "readMore": "Read more",
+        "seeAll": "See all"
     },
     "button": {
         "registerNow": "Register Now",
@@ -32,7 +35,7 @@
     "navbar": {
         "home": "Home",
         "broker": "Broker",
-        "article": "Article",
+        "news": "News",
         "calculator": "Calculator",
         "claimRebate": "Claim Rebate",
         "service": "Service",

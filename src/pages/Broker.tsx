@@ -53,7 +53,7 @@ const Broker = () => {
             Broker not found
           </p>
         :
-          <BrokerList brokerPartners={brokerPartners} />
+          <BrokerList brokerPartners={brokerPartners} pathUrl="broker" />
         }
         {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
         <CtaSection />

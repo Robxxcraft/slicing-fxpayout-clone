@@ -14,4 +14,11 @@ export type FormBank = {
   holdingUsername: string;
 }
 
+export type FormFeedback = {
+  rating: number;
+  username: string;
+  location: string;
+  review: string;
+}
+
 export type ModalResponse = "SUCCESS" | "ERROR" | null;
