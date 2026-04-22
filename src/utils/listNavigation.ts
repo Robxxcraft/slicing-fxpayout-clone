@@ -1,21 +1,12 @@
-export type NavigationLink = {
-  code: string;
-  title: string;
-  url: string;
-  sublist?: SubNavigationList[];
-};
-
-type SubNavigationList = {
-  code: string;
-  title: string;
-  url: string
-}
-
-type SectionsRebateForex = {
-  code: string;
-  id: string;
-  name: string
-}
+import { PiClipboardTextFill } from "react-icons/pi";
+import { FaUser } from "react-icons/fa6";
+import type { UserRole } from "@/types/user.type";
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { BsBank2 } from "react-icons/bs";
+import { TbChartHistogram } from "react-icons/tb";
+import { IoWalletOutline } from "react-icons/io5";
+import { RiStockFill } from "react-icons/ri";
+import type { NavigationLink, NavSideDashboardSection, SectionsRebateForex, SubNavigationList } from "@/types/navigationBar.type";
 
 const claimRebateSuNav: SubNavigationList[] = [
   { code: "definition", title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
@@ -29,7 +20,7 @@ const serviceSubNav: SubNavigationList[] = [
   { code: "validation", title: "Validasi Akun", url: '/validation' },
   { code: "transfer", title: "Pindah Akun", url: '/transfer' },
   { code: "affiliate", title: "Affiliate", url: '#' },
-]
+];
 
 export const listNavigation: NavigationLink[] = [
   {
@@ -98,3 +89,60 @@ export const listSectionsRebateForex: SectionsRebateForex[] = [
   { code: "payment", id: "payment", name: "Sistem Pembayaran Rebate" },
   { code: "schedule", id: "schedule", name: "Jadwal Rebate" },
 ];
+
+export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> = {
+  user: [
+    {
+      title: "Content Management",
+      items: [
+        { key: "overview", label: "Overview", path: "/trader/overview", icon: RiDashboardHorizontalFill },
+        { key: "broker", label: "Broker", path: "/trader/broker", icon: BsBank2 },
+        { key: "rebate", label: "History Rebate", path: "/trader/rebate", icon: TbChartHistogram },
+      ],
+    },
+    {
+      title: "Withdrawal",
+      items: [
+        { key: "withdrawal", label: "Withdrawal Funds", path: "/trader/withdrawal", icon: IoWalletOutline },
+        { key: "history", label: "Transaction History", path: "/trader/withdrawal/history", icon: IoWalletOutline },
+      ],
+    },
+    {
+      title: "Settings",
+      items: [
+        { key: "profile", label: "Profil", path: "/trader/profile", icon: FaUser },
+      ],
+    },
+  ],
+  affiliator: [
+    {
+      title: "Content Management",
+      items: [
+        { key: "overview", label: "Overview", path: "/affiliator/overview", icon: RiDashboardHorizontalFill },
+        { key: "traders", label: "Traders", path: "/affiliator/traders", icon: FaUser },
+        { key: "performance", label: "Performance", path: "/affiliator/performance", icon: RiStockFill },
+      ],
+    },
+    {
+      title: "Withdrawal",
+      items: [
+        { key: "withdrawal", label: "Withdrawal Funds", path: "/affiliator/withdrawal", icon: IoWalletOutline },
+        { key: "history", label: "Transaction History", path: "/affiliator/withdrawal/history", icon: IoWalletOutline },
+      ],
+    },
+    {
+      title: "Settings",
+      items: [
+        { key: "profile", label: "Profil", path: "/affiliator/profile", icon: FaUser },
+      ],
+    },
+  ],
+  admin: [
+    {
+      title: "Content Management",
+      items: [
+        { key: "overview", label: "Overview", path: "/dashboard/overview", icon: PiClipboardTextFill },
+      ]
+    }
+  ]
+};

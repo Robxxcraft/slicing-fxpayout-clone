@@ -1,4 +1,4 @@
-import type { UserRole } from "@/models/user";
+import type { UserRole } from "@/types/user.type";
 
 export type InputEditProfil = {
   username: string;

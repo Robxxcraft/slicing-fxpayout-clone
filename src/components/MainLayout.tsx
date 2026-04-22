@@ -1,9 +1,9 @@
 import { navigateChangeLng } from '@/helper/pathHelper';
-import { getLocalStorage } from '@/utils/api';
 import { SUPPORT_LANGUAGE } from '@/utils/languageSupport';
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { getLocalStorage } from '@/services/apiClient';
 
 const MainLayout = () => {
   const { lng } = useParams();

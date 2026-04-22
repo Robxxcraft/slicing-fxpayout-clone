@@ -10,7 +10,7 @@ import PreviewFile from './PreviewFile';
 import FeedbackUploadFile from './FeedbackUploadFile';
 import { HEADER_MAPPING, type StatusImport } from '@/utils/adminUnit';
 import { toast } from 'react-toastify';
-import { bulkPostFormValidationData } from '@/utils/api';
+import { AdminAPI } from '@/api';
 
 type ResponseImport = {
   messages: string[];
@@ -93,7 +93,7 @@ const DrawerImportCsv = ({
     setStatusImport("UPLOAD");
     setIsLoading(true);
     try {
-      const { error, message, errorsDetail } = await bulkPostFormValidationData({ items: data });
+      const { error, message, errorsDetail } = await AdminAPI.bulkPostFormValidationData({ items: data });
       if (error) {
         setStatusImport("ERROR");
         if (errorsDetail) {

@@ -7,14 +7,15 @@ import { Autoplay, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
-import { type Testimonial } from "@/utils/testimonial";
+import { type Testimonial } from "@/types/testimonial.type";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/ui/Button";
 import { useEffect, useState } from "react";
 import ModalFormFeedback from "@/components/ui/ModalFormFeedback";
-import type { ModalResponse } from "@/types/validationForm";
+import type { ModalResponse } from "@/types/validationForm.type";
 import SuccessModal from "@/components/ui/SuccessModal";
 import { getFeedback } from "@/utils/api";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const Reviews = () => {
   const { t } = useTranslation(["common", "homepage"]);
@@ -22,6 +23,7 @@ const Reviews = () => {
   const [showModalForm, setShowModalForm] = useState<boolean>(false);
   const [showFeedbackSubmitForm, setShowFeedbackSubmitForm] = useState<ModalResponse>(null);
 
+  
   useEffect(() => {
     const getData = async () => {
       const { error, result } = await getFeedback();
@@ -31,16 +33,7 @@ const Reviews = () => {
     }
     getData();
   }, []);
-  useEffect(() => {
-    if (showModalForm || showFeedbackSubmitForm) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showModalForm, showFeedbackSubmitForm]);
+  useLockBodyScroll(showModalForm || showFeedbackSubmitForm !== null);
   return (
     <>
       <section className="mb-20 xl:mb-0">

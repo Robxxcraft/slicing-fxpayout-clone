@@ -9,6 +9,7 @@ import HowToRebate from "@/components/pages/rebateForexPage/HowToRebate";
 import PaymentSection from "@/components/pages/rebateForexPage/PaymentSection";
 import AsideSection from "@/components/pages/rebateForexPage/AsideSection";
 import { useTranslation } from "react-i18next";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const RebateForex = () => {
   const { t } = useTranslation(["claimrebatepage"]);
@@ -33,16 +34,7 @@ const RebateForex = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (openSidebar) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [openSidebar]);
+  useLockBodyScroll(openSidebar);
 
   return (
     <div className="font-inter">

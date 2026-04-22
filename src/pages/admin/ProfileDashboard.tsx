@@ -4,7 +4,7 @@ import EditProfile from "@/components/admin/EditProfile";
 import UpdatePassword from "@/components/admin/UpdatePassword";
 import { scrollToErrorInput } from "@/helper/formHelper";
 import { useForm } from "@/hooks/useForm";
-import type { UserProfile } from "@/models/user";
+import type { UserProfile } from "@/types/user.type";
 import type { InputChangePassword, InputEditProfil, LoadingState } from "@/types/profile";
 import { changePasswordUser, updateProfilUser } from "@/utils/api";
 import { validatePassword, validateProfile } from "@/helper/validationForm/profileValidation";

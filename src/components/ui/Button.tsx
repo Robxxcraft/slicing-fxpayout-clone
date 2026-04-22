@@ -114,7 +114,7 @@ export default function Button({
   }
 
   return (
-    <button className={finalClass} {...props} disabled={disabled}>
+    <button type={buttonType} className={finalClass} {...props} disabled={disabled}>
       {loading && 
         <div className="absolute inset-0 flex items-center justify-center">
           <Spinner circle={spinnerCircle} />

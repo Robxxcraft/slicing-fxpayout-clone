@@ -1,15 +1,14 @@
-import type { FormValidation } from "@/types/validationForm";
-import { validateOnlyNumber } from "../formHelper";
+import type { FormValidation } from "@/types/validationForm.type";
+import { validateOnlyNumber, validateValidEmail } from "../formHelper";
 
 export const checkValidFormValidation = (vals: FormValidation) => {
   const errors: Partial<Record<keyof FormValidation, string>> = {};
-  const emailRegx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const key = "validationpage:card.validationForm.errors";
   if (!vals.broker) errors.broker = `${key}.brokerRequired`;
   if (!vals.identityUsername.trim()) errors.identityUsername = `${key}.usernameRequired`;
   if (vals.email.trim() === "") {
     errors.email = `${key}.emailRequired`;
-  } else if (!emailRegx.test(vals.email)) {
+  } else if (!validateValidEmail(vals.email)) {
     errors.email = `${key}.emailInvalid`;
   }
   

@@ -33,6 +33,10 @@ export function useForm<T>(initialState: T) {
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  const setSpecificError = (name: keyof T, value: unknown) => {
+    setErrors((prev) => ({ ...prev, [name]: value }));
+  };
+
   return {
     values,
     errors,
@@ -40,6 +44,7 @@ export function useForm<T>(initialState: T) {
     resetForm,
     validate,
     setSpecificValue,
+    setSpecificError,
     setValues
   };
 };

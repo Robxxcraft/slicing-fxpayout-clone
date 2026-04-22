@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { throttle } from "lodash";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -11,11 +11,15 @@ import { FaChevronDown } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { getLocalizedPath, navigateChangeLng } from "@/helper/pathHelper";
 import { toast } from "react-toastify";
+import Button from "./ui/Button";
+import UserContext from "@/context/UserContext";
+import { useRedirectByRole } from "@/hooks/useRedirectByRole";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
 const Navbar = ({ active }: { active: string }) => {
   const { t, i18n } = useTranslation(["common"]);
+  const [authUser] = useContext(UserContext);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
   const [openLanguageSelector, setOpenLanguageSelector] =
@@ -26,7 +30,8 @@ const Navbar = ({ active }: { active: string }) => {
   );
 
   const { pathname } = useLocation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { redirectUser } = useRedirectByRole();
 
   useEffect(() => {
     const handleScroll = throttle(() => {
@@ -132,10 +137,18 @@ const Navbar = ({ active }: { active: string }) => {
           setOpen={setOpenLanguageSelector}
           onChangeLanguage={handleChangeLanguage}
         />
-        {/* <Button buttonType="link" urlTo="#" variant="outline-light" size="lg" className="py-3! font-medium!">
-          Login
-        </Button>
-        <Button buttonType="link" urlTo="#" variant="light" size="lg" className="py-3! font-medium!">
+        {authUser ? 
+          <img 
+            onClick={() => redirectUser(authUser)}
+            src={`https://ui-avatars.com/api/?name=${authUser.username}&background=fff&color=4160FF&bold=true&font-size=0.4`} 
+            alt="foto profil"
+            className="size-11 rounded-full object-cover border border-white cursor-pointer" />  
+        :
+          <Button buttonType="link" urlTo={getLocalizedPath("login", i18n.language)} variant="outline-light" size="lg" className="py-3! font-medium!">
+            Login
+          </Button>
+        }
+        {/* <Button buttonType="link" urlTo="#" variant="light" size="lg" className="py-3! font-medium!">
           Daftar
         </Button> */}
       </div>
@@ -228,18 +241,26 @@ const Navbar = ({ active }: { active: string }) => {
           </div>
           )})}
         </div>
-        {/* <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">
-          <Link to="#" className="w-fit text-center">
-            <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-              Login
-            </span>
-          </Link>
-          <Link to="#" className="w-fit text-center">
-            <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-              Daftar
-            </span>
-          </Link>
-        </div> */}
+        <div className="px-5 mt-6 flex items-center justify-center w-full gap-2">
+          {authUser ? 
+            <img 
+              onClick={() => redirectUser(authUser)}
+              src={`https://ui-avatars.com/api/?name=${authUser.username}&background=fff&color=4160FF&bold=true&font-size=0.4`} 
+              alt="foto profil"
+              className="size-11 rounded-full object-cover border border-white cursor-pointer" />  
+          :
+            <Link to={getLocalizedPath("login", i18n.language)} className="w-fit text-center">
+              <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
+                Login
+              </span>
+            </Link>
+          // {/* <Link to="#" className="w-fit text-center">
+          //   <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
+          //     Daftar
+          //   </span>
+          // </Link> */}
+          }
+        </div>
         <div className="mx-auto mt-4">
           <LanguageSelector
             selectedLanguage={selectedLanguage}

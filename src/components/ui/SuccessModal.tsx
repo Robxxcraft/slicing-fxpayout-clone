@@ -16,7 +16,7 @@ const SuccessModal = ({
 }) => {
   return (
     <Modal isOpen={isVisible} onClose={toggleModal}>
-      <div className="flex flex-col items-center text-center">
+      <div className="font-inter flex flex-col items-center text-center">
         <div className="relative mb-8">
           <img 
             src="/success-icon.webp" 

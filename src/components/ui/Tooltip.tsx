@@ -16,7 +16,7 @@ const Tooltip = ({
       <button
         disabled={disabled}
         onClick={handleClick}
-        className="p-2 rounded-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait"
+        className="p-2 rounded-md bg-white border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait"
       >
         {icon}
       </button>

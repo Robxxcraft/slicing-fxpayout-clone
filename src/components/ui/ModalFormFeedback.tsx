@@ -8,9 +8,9 @@ import { useTranslation } from "react-i18next";
 import TextArea from "./TextArea";
 import { checkValidFormFeedback } from "@/helper/validationForm/formValFeedback";
 import { scrollToErrorInput } from "@/helper/formHelper";
-import { postFormFeedback } from "@/utils/api";
+import { AdminAPI } from "@/api";
 import { toast } from "react-toastify";
-import type { FormFeedback, ModalResponse } from "@/types/validationForm";
+import type { FormFeedback, ModalResponse } from "@/types/validationForm.type";
 import { IoCloseOutline } from "react-icons/io5";
 
 const ModalFormFeedback = ({ 
@@ -67,7 +67,7 @@ const ModalFormFeedback = ({
         return;
       }
 
-      const { error, message } = await postFormFeedback({ item: formFeedback.values, captchaValue: captchaValue });
+      const { error, message } = await AdminAPI.postFormFeedback({ item: formFeedback.values, captchaValue: captchaValue });
 
       if (error) {
         toast.error(t(message));
