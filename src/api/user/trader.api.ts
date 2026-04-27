@@ -1,5 +1,5 @@
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
-import type { StatusType } from "@/types/status.type";
+import type { OrderStatus, StatusType } from "@/types/status.type";
 
 export const getDashboardData = async () => {
   try {
@@ -91,17 +91,29 @@ export const getBrokerByTrader = async ({
 export const getRebatesByTrader = async ({
   limit,
   page,
-  brokerSearch
+  brokerSearch,
+  sortBy,
+  orderBy,
+  startDate,
+  endDate
 }: {
   limit?: number;
   page?: number;
   brokerSearch?: string;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  startDate?: string;
+  endDate?: string
 }) => {
   try {
     let url = `${BASE_URL}/trader/rebates?`;
     if (brokerSearch) url += `search=${brokerSearch}&`;
     if (page) url += `page=${page}&`;
     if (limit) url += `limit=${limit}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
+    if (startDate) url += `start_date=${startDate}&`;
+    if (endDate) url += `end_date=${endDate}&`;
     
     const response = await _fetchWithAuth(url);
     const responseJson = await response.json();
@@ -122,14 +134,20 @@ export const getWithdrawalByTrader = async ({
   status,
   limit,
   page,
+  sortBy,
+  orderBy
 }: {
   status?: StatusType;
   limit?: number;
   page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
 }) => {
   try {
     let url = `${BASE_URL}/trader/withdrawals?`;
     if (status) url += `status=${status}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
     if (page) url += `page=${page}&`;
     if (limit) url += `limit=${limit}&`;
     

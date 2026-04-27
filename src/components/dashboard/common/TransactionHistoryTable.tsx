@@ -1,20 +1,20 @@
 import Table from '@/components/TableLayout';
-import type { DataRebate } from '@/pages/dashboard/trader/HistoryRebate';
 import { 
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { HiChevronUpDown } from 'react-icons/hi2';
+import type { TransactionHistory } from '@/pages/dashboard/common/TransactionHistoryPage';
 
-const HistoryRebateTable = ({ 
+const TransactionHistoryTable = ({ 
   tableInstance,
   isLoading
 }: { 
-  tableInstance:  ReactTable<DataRebate>;  
+  tableInstance:  ReactTable<TransactionHistory>;  
   isLoading: boolean;
 }) => {
-  const dataRebate = tableInstance.getRowModel().rows;
+  const dataWithdrawal = tableInstance.getRowModel().rows;
   return (
     <Table className="mt-0!">
       <thead>
@@ -23,7 +23,7 @@ const HistoryRebateTable = ({
             {headerEl.headers.map((cellEl) => {
               const isSorted = cellEl.column.getIsSorted();
               const canSorting = cellEl.column.id === "created_at";
-
+    
               return (
                 <Table.HeadingItem key={cellEl.id}
                   className={`
@@ -55,14 +55,14 @@ const HistoryRebateTable = ({
           </tr>
         ))}
       </thead>
-
+      
       <Table.Body>
-        {dataRebate.length > 0 && 
-          dataRebate.map((rowEl, rowIndex) => ( 
+        {dataWithdrawal.length > 0 && 
+          dataWithdrawal.map((rowEl, rowIndex) => ( 
             <Table.Row key={rowEl.id}>
               {rowEl.getVisibleCells().map((cellEl, cellIndex) => {
                 const baseStyle = "py-2! text-nowrap align-middle!";
-
+    
                 return (
                   <Table.Cell
                     key={cellEl.id}
@@ -87,4 +87,4 @@ const HistoryRebateTable = ({
   )
 }
 
-export default HistoryRebateTable;
+export default TransactionHistoryTable;

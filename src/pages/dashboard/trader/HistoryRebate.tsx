@@ -1,8 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { getColumnsDef } from "@/constants/columns/historyRebateColumns";
+import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 
 import { TraderAPI } from "@/api";
-import type { MetaPage } from "@/types/metapage.type";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
@@ -18,13 +20,6 @@ import SelectDropdown from "@/components/ui/SelectDropdown";
 import { LuRefreshCcw } from "react-icons/lu";
 import { brokers } from "@/utils/dataBroker/brokers";
 
-const CONFIG_HEADERS = [
-  {key: "createdAt", header: "Tanggal"},
-  {key: "broker", header: "Broker"}, 
-  {key: "accountNumber", header: "Nomor Akun Trading"}, 
-  {key: "rebate", header: "Rebate"}, 
-];
-
 const supportEntry = [
   { "key": "20", "value": "20" }, 
   { "key": "50", "value": "50" },
@@ -32,9 +27,9 @@ const supportEntry = [
 ];
 
 export type DataRebate = {
-  createdAt: string;
+  created_at: string;
   broker: string;
-  accountNumber: string;
+  account_number: string;
   rebate: number;
 };
 type ResponseRebate = {
@@ -45,83 +40,87 @@ type ResponseRebate = {
 }
 
 const HistoryRebate = () => {
+  const { i18n } = useTranslation();
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [dataRebate, setDataRebate] = useState<DataRebate[]>([]);
   const { brokerParams } = useParams();
   const broker = brokers[brokerParams as keyof typeof brokers];
 
-  const [metaPage, setMetaPage] = useState<MetaPage>({
-    pageIndex: 1,
-    pageTotal: 1,
-    totalData: 0,
-    limit: 20
+  // Table State
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [pagination, setPagination] = useState<PaginationState>({
+    pageIndex: 0,
+    pageSize: 50
   });
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [totalData, setTotalData] = useState<number>(0);
 
   const fetchData = useCallback(async () => {
     setIsLoading(true);
 
     try {
+      const sort = sorting[0];
       const { error, data } = await TraderAPI.getRebatesByTrader({
-        limit: metaPage.limit,
-        page: metaPage.pageIndex,
-        brokerSearch: broker ? brokerParams : undefined
+        limit: pagination.pageSize,
+        page: pagination.pageIndex + 1,
+        brokerSearch: broker ? brokerParams : undefined,
+        sortBy: sort?.id ?? "created_at",
+        orderBy: sort?.desc === undefined ? "desc" :
+          sort?.desc ? "desc" : "asc"
       });
   
       if (!error && data) {
         const temp = data.data.map((item: ResponseRebate) => ({
-          createdAt: item.created_at,
+          created_at: item.created_at,
           broker: item.broker.name,
-          accountNumber: item.account_number,
+          account_number: item.account_number,
           rebate: item.total_rebate,
         }));
         setDataRebate(temp);
-        setMetaPage((prev) => {
-          if (
-            prev.pageIndex === data.meta.page &&
-            prev.pageTotal === data.meta.totalPages &&
-            prev.totalData === data.meta.total &&
-            prev.limit === data.meta.limit
-          ) return prev;
-  
-          return {
-            ...prev,
-            pageIndex: data.meta.page,
-            pageTotal: data.meta.totalPages,
-            totalData: data.meta.total,
-            limit: data.meta.limit
-          };
+        setPagination({
+          pageIndex: data.meta.page - 1,
+          pageSize: data.meta.limit
         });
+        setTotalData(data.meta.total);
+        setTotalPages(data.meta.totalPages);
       }    
     } finally {
       setInitLoad(false);
       setIsLoading(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [brokerParams, metaPage.limit, metaPage.pageIndex]);
+  }, [brokerParams, pagination.pageIndex, pagination.pageSize, sorting]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  const handleNextPage = () => {
+  const columns = useMemo(() => getColumnsDef(i18n.language), [i18n.language]);
+  const tableInstance = useReactTable({
+    columns: columns,
+    data: dataRebate,
+    getCoreRowModel: getCoreRowModel(),
+    manualSorting: true,
+    manualPagination: true,
+    state: {
+      sorting,
+      pagination,
+    },
+    pageCount: totalPages,
+    onSortingChange: setSorting,
+    onPaginationChange: setPagination,
+    enableRowSelection: true
+  });
+
+  const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;
-    if (metaPage.pageIndex < metaPage.pageTotal) {
-      setMetaPage((prev) => ({
-        ...prev,
-        pageIndex: prev.pageIndex + 1
-      }));
-    }
-  };
-  const handlePreviousPage = () => {
-    if (isLoading) return;
-    if (metaPage.pageIndex > 1) {
-      setMetaPage((prev) => ({
-        ...prev,
-        pageIndex: prev.pageIndex - 1
-      }));
-    }
-  };
+    setPagination((prev) => ({
+      ...prev,
+      pageIndex: 0,
+      pageSize: Number(key)
+    }));
+  }  
 
   return (
     <WrapperDashboardComponent>
@@ -144,14 +143,8 @@ const HistoryRebate = () => {
             <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529]">
               <span className="text-base 2xl:text-xl">Tampilkan</span>
               <SelectDropdown 
-                selectedInput={metaPage.limit.toString()} 
-                handleChangeInput={(key) => {
-                  setMetaPage((prev) => ({
-                    ...prev,
-                    limit: Number(key),
-                    pageIndex: 1
-                  }))
-                }} 
+                selectedInput={pagination.pageSize.toString()} 
+                handleChangeInput={handleChangeFilterLimit} 
                 objectInput={supportEntry}     
                 inputCL="w-[72px]!"
                 wrapperCL="w-fit!"         
@@ -164,10 +157,10 @@ const HistoryRebate = () => {
                 handleClick={() => fetchData()} 
                 detail={"Reload Data"} />
               <NextPreviousButton 
-                onNextPage={handleNextPage} 
-                onPreviousPage={handlePreviousPage} 
-                disabledNext={metaPage.pageIndex >= metaPage.pageTotal} 
-                disabledPrev={metaPage.pageIndex <= 1} 
+                onNextPage={tableInstance.nextPage}
+                onPreviousPage={tableInstance.previousPage}
+                disabledNext={isLoading || !tableInstance.getCanNextPage()}
+                disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
               />
             </div>
           </div>
@@ -175,8 +168,8 @@ const HistoryRebate = () => {
 
         {/* TABLE */}
         <HistoryRebateTable 
-          dataRebate={dataRebate} 
-          CONFIG_HEADERS={CONFIG_HEADERS}        
+          tableInstance={tableInstance} 
+          isLoading={isLoading}        
         />
 
         {/* LOADING & 0 DATA TABLE */}
@@ -198,10 +191,10 @@ const HistoryRebate = () => {
         <div className="mt-4">
           <p className="text-base 2xl:text-xl text-black/80">
             {`Menampilkan 
-            ${metaPage.pageIndex === 1 ? (dataRebate.length > 0 ? "1":"0") : metaPage.limit * metaPage.pageIndex} 
+            ${pagination.pageIndex === 0 ? (dataRebate.length > 0 ? "1":"0") : pagination.pageSize * pagination.pageIndex} 
             hingga  
-            ${metaPage.pageIndex === 1 ? dataRebate.length : (metaPage.limit * metaPage.pageIndex) + dataRebate.length} 
-            dari ${metaPage.totalData}
+            ${pagination.pageIndex === 0 ? dataRebate.length : (pagination.pageSize * pagination.pageIndex) + dataRebate.length} 
+            dari ${totalData}
             entri.`}
           </p>
         </div>
