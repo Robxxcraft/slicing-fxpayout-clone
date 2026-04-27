@@ -10,7 +10,7 @@ import Spinner from "@/components/ui/Spinner";
 import TableValData from "@/components/admin/TableValData";
 import DrawerFilterTable from "@/components/admin/DrawerFilterTable";
 import DrawerDetailData from "@/components/admin/DrawerDetailData";
-import ModalDeleteData from "@/components/ui/ModalDeleteData";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
 import DrawerImportCsv from "@/components/admin/DrawerImportCsv";
 import type { ValidationData } from "@/models/validationData";
 import { columnsDef } from "@/helper/columnsValidation";
@@ -238,14 +238,14 @@ const ValidationDataDashboard = () => {
               <button
                 onClick={tableInstance.previousPage}
                 disabled={isLoading || !tableInstance.getCanPreviousPage()}
-                className="p-2 rounded-l-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
+                className="p-2 rounded-l-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
               >
                 <FaChevronLeft />
               </button>
               <button
                 onClick={tableInstance.nextPage}
                 disabled={isLoading || !tableInstance.getCanNextPage()}
-                className="p-2 rounded-r-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
+                className="p-2 rounded-r-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
               >
                 <FaChevronRight />
               </button>
@@ -298,10 +298,11 @@ const ValidationDataDashboard = () => {
         refreshData={fetchData}
       />}
 
-      {showPopupDelete && <ModalDeleteData
+      {showPopupDelete && <ModalConfirmation
         title={`Hapus ${tableInstance.getSelectedRowModel().flatRows.length} data validasi`}
         paragraph="Data yang dipilih akan dihapus permanen dari sistem dan tidak dapat dipulihkan kembali."
-        handleDelete={handleDeleteData} 
+        handleConfirmation={handleDeleteData}
+        btnConfirmation="danger" 
         isVisible={showPopupDelete} 
         handleClose={() => setShowPopupDelete(false)}          
       />}

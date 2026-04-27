@@ -5,7 +5,7 @@ const WrapperDashboardComponent = ({
   children: React.ReactNode 
 }) => {
   return (
-    <main className={`${className} px-4 lg:px-8 py-7 bg-[#4160FF]/5 h-full`}>
+    <main className={`${className} px-4 lg:px-8 py-7 2xl:py-10 bg-[#4160FF]/5 h-full`}>
       {children}
     </main>
   )

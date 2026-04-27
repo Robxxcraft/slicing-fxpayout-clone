@@ -1,5 +1,5 @@
 const ParagraphDashboard = ({ 
-  maxW="760px",
+  maxW="w-[760px]",
   colorCL="text-black", 
   children
 }: { 
@@ -7,11 +7,10 @@ const ParagraphDashboard = ({
   colorCL?: string
   children: React.ReactNode 
 }) => {
+  const maxWCL = maxW === "full" ? "w-full" : maxW; 
   return (
-    <p style={{ 
-      maxWidth: maxW === "full" ? "100%" : maxW
-     }}
-     className={`${colorCL}`}
+    <p
+     className={`${colorCL} ${maxWCL} text-base 2xl:text-xl leading-[169.2%]`}
      >
       {children}
     </p>

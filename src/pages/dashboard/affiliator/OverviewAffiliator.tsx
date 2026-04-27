@@ -146,7 +146,7 @@ const OverviewAffiliator = () => {
               <ParagraphDashboard maxW="full" colorCL="text-black/80">
                 Trader bisa langsung memasukkan kode secara manual ketika mendaftar.
               </ParagraphDashboard>
-              <div className="py-4 flex items-center justify-center w-full rounded-lg bg-black/5 border border-primary border-dashed">
+              <div className="py-4 flex items-center justify-center w-full rounded-lg bg-[#F5F5F5] border border-primary border-dashed">
                 <p className="text-[32px] font-bold">
                   {authUser?.affiliatorCode}
                 </p>

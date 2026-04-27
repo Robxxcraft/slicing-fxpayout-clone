@@ -1,6 +1,6 @@
 const TitleDashboard = ({ children }: { children: React.ReactNode }) => {
   return (
-    <h1 className="text-[26px] font-medium">
+    <h1 className="text-[26px] 2xl:text-[2rem] font-semibold">
       {children}
     </h1>
   )

@@ -11,12 +11,14 @@ import { FaChevronLeft } from "react-icons/fa6";
 import { TiInfoLarge } from "react-icons/ti";
 import { scrollToErrorInput } from "@/helper/formHelper";
 import { checkValidWithdrawalForm } from "@/helper/validationForm/withdrawalFormValidation";
-import { ExchangeAPI } from "@/api";
+import { AuthAPI, ExchangeAPI, WithdrawalAPI } from "@/api";
 import { toast } from "react-toastify";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import WithdrawalForm from "@/components/dashboard/common/WithdrawalForm";
 import type { BankUser } from "@/types/bank.type";
 import BalanceContext from "@/context/BalanceContext";
+import type { ModalResponse } from "@/types/validationForm.type";
+import SuccessModal from "@/components/ui/SuccessModal";
 
 export type FormWithdrawalRequest = {
   method: "bank" | "crypto";
@@ -27,9 +29,10 @@ export type FormWithdrawalRequest = {
 const WithdrawalRequestPage = () => {
   const { redirectUser } = useRedirectByRole();
   const [authUser] = useContext(UserContext);
-  const [balance] = useContext(BalanceContext);
+  const [balance, setBalance] = useContext(BalanceContext);
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<ModalResponse>(null);
   const formWithdrawal = useForm<FormWithdrawalRequest>({
     method: "bank",
     amount: "0",
@@ -44,7 +47,24 @@ const WithdrawalRequestPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!authUser) return;
+
       await fetchBank();
+      const respBalance = await AuthAPI.getBalanceUser();
+      if (!respBalance.error && respBalance.data) {
+        const tempBalance = {
+          userId: authUser.id,
+          balance: respBalance.data.amount,
+          currency: respBalance.data.currency
+        };
+        setBalance(tempBalance);
+      } else {
+        setBalance({
+          userId: authUser.id,
+          balance: 0,
+          currency: "USD"
+        });
+      }
       setInitLoad(false);
     };
     fetchData();
@@ -99,8 +119,7 @@ const WithdrawalRequestPage = () => {
     return () => clearTimeout(timeout);
   }, [balance, formWithdrawal.values.amount, formWithdrawal.values.method]);
 
-  const handleSubmitWithdrawal = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmitWithdrawal = async () => {
     if (isLoading) return;
     setIsLoading(true);
     
@@ -109,6 +128,31 @@ const WithdrawalRequestPage = () => {
       if (!isValidate && errorInput !== null) {
         scrollToErrorInput(errorInput);
         return;
+      }
+      let responseCreateWithdrawal;
+      if (formWithdrawal.values.method === "bank" && bank) {
+        formWithdrawal.setSpecificValue("walletAddress", bank.accountNumber);
+        responseCreateWithdrawal = await WithdrawalAPI.createBankUser({
+          form: formWithdrawal.values,
+          bankId: bank.id,
+          amountIdr: conversionRate.conversionResult.toString(),
+          currency: "IDR"
+        });
+      } else if (formWithdrawal.values.method === "crypto") {
+        responseCreateWithdrawal = await WithdrawalAPI.createBankUser({
+          form: formWithdrawal.values,
+          amountIdr: conversionRate.conversionResult.toString(),
+          currency: "USD"
+        });
+      } else {
+        return;
+      }
+      
+      if (responseCreateWithdrawal.error) {
+        toast.error(responseCreateWithdrawal.message);
+      } else {
+        setShowModal("SUCCESS");
+        formWithdrawal.resetForm();
       }
     } finally {
       setIsLoading(false);
@@ -138,11 +182,13 @@ const WithdrawalRequestPage = () => {
   return (
     <div className="font-inter md:mx-10 xl:mx-[140px] flex justify-center">
       <WrapperDashboardComponent className="w-full! min-h-screen">
+        
+        {/* HEADER */}
         <div className="flex gap-4 md:gap-8 items-center">
           <button onClick={() => redirectUser(authUser, "withdrawal")}
-            className="flex justify-center items-center size-8 rounded-full border border-[#DDDDDD] hover:bg-black/5 transition-all duration-300 cursor-pointer"
+            className="flex justify-center items-center size-8 2xl:size-12 rounded-full border border-[#DDDDDD] hover:bg-[#F5F5F5] transition-all duration-300 cursor-pointer"
           >
-            <FaChevronLeft className="mr-px text-primary" />
+            <FaChevronLeft className="mr-px text-primary text-base 2xl:text-2xl" />
           </button>
           <TitleDashboard>
             Withdrawal Request
@@ -151,6 +197,8 @@ const WithdrawalRequestPage = () => {
         <p className="my-4 md:my-6 text-base md:text-lg 2xl:text-xl text-black/80">
           Silakan lengkapi formulir di bawah ini untuk menarik saldo Anda. Pastikan kembali nominal dan detail tujuan penarikan sebelum menekan tombol lanjutkan.
         </p>
+
+        {/* FORM WITHDRAWAL */}
         <div className="flex flex-col-reverse lg:flex-row items-start justify-between gap-4">
           {balance && 
             <WithdrawalForm 
@@ -162,23 +210,23 @@ const WithdrawalRequestPage = () => {
               availableBalance={balance.balance}
             />
           }
-          <div className="px-4 md:px-8 py-5 max-w-[360px] w-fit bg-[#FAFAFA] border border-dashed border-primary rounded-2xl">
-            <p className="text-lg font-medium">
+          <div className="px-4 md:px-8 py-5 max-w-[360px] 2xl:max-w-[400px] w-fit bg-[#FAFAFA] border border-dashed border-primary rounded-2xl">
+            <p className="text-lg 2xl:text-2xl font-medium">
               Saldo yang akan diterima
             </p>
             {formWithdrawal.values.method === "bank" ? 
               <>
-                <p className="my-2.5 text-4xl font-semibold">
+                <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold">
                   {formattingRp(Number(conversionRate.conversionResult))}
                 </p>
                 {conversionRate.conversionRate !== 0 &&
-                  <p className="text-xs text-black/80">
+                  <p className="text-xs 2xl:text-lg text-black/80">
                     Note: estimasi saldo yang Anda terima dihitung berdasarkan nilai tukar real-time sebesar {formattingRp(Number(conversionRate.conversionRate))} per $1 USD.
                   </p>
                 }
               </>  
               : 
-              <p className="my-2.5 text-4xl font-semibold">
+              <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold">
                 {balance && 
                 formattingUsd(Number(formWithdrawal.values.amount) <= balance.balance 
                   ? Number(formWithdrawal.values.amount) : 0)}
@@ -213,15 +261,28 @@ const WithdrawalRequestPage = () => {
             Kembali
           </Button>
           <Button 
-            buttonType="button"
+            buttonType="submit" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmitWithdrawal();
+            }}
             variant="primary-light"
             className="rounded-lg!"
             disabled={isDisabledButtonSubmit}
+            loading={isLoading}
           >
             Lanjutkan Penarikan
           </Button>
         </div>
       </WrapperDashboardComponent>
+
+      {showModal === "SUCCESS" && 
+        <SuccessModal 
+          title={"Perubahan profil berhasil"}
+          paragraph={"Perubahan profil Anda telah berhasil disimpan. Informasi terbaru Anda kini sudah diperbarui."}
+          closeText={"Tutup"}
+          isVisible={showModal === "SUCCESS"} 
+          toggleModal={() => setShowModal(null)} />}
     </div>
   )
 }
@@ -240,11 +301,11 @@ const BankWithdrawalInformation = ({
   return (
     <>
       {!initLoad && messageWarningBank ? 
-        <div className="mt-4 px-4 py-2 w-full bg-[#FAD4D4] border-b border-[#DF1E1E]">
-          <p className="text-black/80">{messageWarningBank}</p>
+        <div className="mt-4 2xl:mt-6 px-4 py-2 w-full bg-[#FAD4D4] border-b border-[#DF1E1E]">
+          <p className="text-base 2xl:text-xl text-black/80">{messageWarningBank}</p>
         </div> : <></>
       }
-      <div className="mt-7 max-w-[720px]">
+      <div className="mt-7 2xl:mt-10 max-w-[720px]">
         <div className="flex flex-col gap-2">
           <TitleDashboard>
             Informasi Rekening Bank Anda
@@ -253,18 +314,30 @@ const BankWithdrawalInformation = ({
             Rekening tujuan penarikan saldo
           </ParagraphDashboard>
         </div>
-        <div className="mt-4 flex flex-col gap-3 md:gap-2.5">
+        <div className="mt-4 2xl:mt-5 flex flex-col gap-3 md:gap-2.5 2xl:gap-4">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2.5 md:gap-5 w-full">
-            <p className="shrink-0 font-semibold w-full max-w-[200px] text-nowrap">Nama Bank:</p>
-            <p className="w-full p-2.5 bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">{bank?.status ==="approved" ? bank.bank : ""}</p>
+            <p className="shrink-0 font-semibold w-full max-w-[200px] 2xl:max-w-[260px] text-nowrap text-base 2xl:text-xl">
+              Nama Bank:
+            </p>
+            <p className="w-full p-2.5 2xl:p-3 text-base 2xl:text-xl bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">
+              {bank?.status === "approved" ? bank.bank : ""}
+            </p>
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2.5 md:gap-5 w-full">
-            <p className="shrink-0 font-semibold w-full max-w-[200px] text-nowrap">Nomor Rekening:</p>
-            <p className="w-full p-2.5 bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">{bank?.status ==="approved" ? bank.accountNumber : ""}</p>
+            <p className="shrink-0 font-semibold w-full max-w-[200px] 2xl:max-w-[260px] text-nowrap text-base 2xl:text-xl">
+              Nomor Rekening:
+            </p>
+            <p className="w-full p-2.5 2xl:p-3 text-base 2xl:text-xl bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">
+              {bank?.status === "approved" ? bank.accountNumber : ""}
+            </p>
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2.5 md:gap-5 w-full">
-            <p className="shrink-0 font-semibold w-full max-w-[200px] text-nowrap">Nama Pemilik Rekening:</p>
-            <p className="w-full p-2.5 bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">{bank?.status ==="approved" ? bank.username : ""}</p>
+            <p className="shrink-0 font-semibold w-full max-w-[200px] 2xl:max-w-[260px] text-nowrap text-base 2xl:text-xl">
+              Nama Pemilik Rekening:
+            </p>
+            <p className="w-full p-2.5 2xl:p-3 text-base 2xl:text-xl bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">
+              {bank?.status === "approved" ? bank.username : ""}
+            </p>
           </div>
         </div>
       </div>

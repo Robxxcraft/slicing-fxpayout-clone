@@ -22,7 +22,7 @@ const WithdrawalForm = ({
   const errorAmount = errorSyncAmount ? undefined : errors.amount;
   return (
     <form onSubmit={onSubmitWithdrawal} id="withdrawal-request" 
-      className="flex flex-col gap-4 md:gap-5 w-full max-w-[540px]">
+      className="flex flex-col gap-4 md:gap-5 w-full max-w-[540px] 2xl:max-w-[640px]">
       <SelectInput 
         id="method" 
         icon="/bank-icon.svg"
@@ -61,10 +61,11 @@ const WithdrawalForm = ({
           inputMode="numeric"
           typeInput={"text"}
           helperText={helperAmount}
+          helperTextClassName="text-sm! 2xl:text-lg!"
           errorMessage={errorAmount}
           required />
         {errorSyncAmount &&
-          <p className="mt-1 text-sm text-red-500">
+          <p className="mt-1 text-sm 2xl:text-lg text-red-500">
             {errorSyncAmount}
           </p>
         }

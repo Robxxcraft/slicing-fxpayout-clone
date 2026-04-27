@@ -26,14 +26,14 @@ const TinyButton = ({
   loading,
   ...props
 }: ButtonProps) => {
-  const buttonClassName = `${icon ? "px-2 py-1" : "px-2.5 py-1.5"} relative flex items-center rounded-lg bg-primary text-white cursor-pointer hover:brightness-95 active:brightness-80 transition-all duration-300 ease-out disabled:bg-disabled disabled:hover:brightness-100 disabled:active:brightness-100 disabled:cursor-auto`;
+  const buttonClassName = `${icon ? "px-2 2xl:px-3 py-2 lg:py-1 2xl:py-2" : "px-2.5 2xl:px-4 py-3 lg:py-1.5 2xl:py-3"} relative flex items-center rounded-lg bg-primary text-white cursor-pointer hover:brightness-95 active:brightness-80 transition-all duration-300 ease-out disabled:bg-disabled disabled:hover:brightness-100 disabled:active:brightness-100 disabled:cursor-auto`;
   const spinnerCircle = "text-white";
 
   if (buttonType === "link") {
     return (
       <Link to={urlTo || "#"} target={target} className={buttonClassName}>
         {icon && iconPosition === "left" && <span>{icon}</span>}
-        <span className="text-sm">{children}</span>
+        <span className="text-sm 2xl:text-lg">{children}</span>
         {icon && iconPosition === "right" && <span>{icon}</span>}
       </Link>
     )
@@ -47,7 +47,7 @@ const TinyButton = ({
       }
       <div className={`${loading ? "opacity-0" : "opacity-100"} flex items-center`}>
         {icon && iconPosition === "left" && <span>{icon}</span>}
-        <span className="text-sm">{children}</span>
+        <span className="text-sm 2xl:text-lg">{children}</span>
         {icon && iconPosition === "right" && <span>{icon}</span>}
       </div>
     </button>

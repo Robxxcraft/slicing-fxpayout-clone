@@ -18,7 +18,7 @@ const AuthLayoutHeader = ({
           alt="logo fx payout"
           className="mb-2 lg:mb-3 w-5 lg:w-6 2xl:w-8"
         />
-        <span className="text-xl 2xl:text-3xl font-medium text-primary">
+        <span className="text-xl 2xl:text-3xl font-bold text-primary">
           FXPAYOUT
         </span>
       </Link>

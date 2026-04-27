@@ -20,7 +20,6 @@ import ValidationPage from "./pages/ValidationPage";
 import TransferAccount from "./pages/TransferAccount";
 import BrokerDetailPage from "./pages/BrokerDetailPage";
 import LoginPage from "./pages/auth/LoginPage";
-import ProfileDashboard from "./pages/admin/ProfileDashboard";
 import ValidationDataDashboard from "./pages/admin/ValidationDataDashboard";
 import NotFound from "./pages/NotFound";
 import RegisterPage from "./pages/auth/RegisterPage";
@@ -44,6 +43,12 @@ import MainLayout from "./components/MainLayout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import ContainerDashboard from "./components/admin/ContainerDashboard";
 import { BalanceProvider } from "./context/BalanceContext";
+import OverviewAdmin from "./pages/dashboard/admin/OverviewAdmin";
+import AffiliatorsManagement from "./pages/dashboard/admin/AffiliatorsManagement";
+import TradersManagement from "./pages/dashboard/admin/TradersManagement";
+import BankManagement from "./pages/dashboard/admin/BankManagement";
+import BrokersManagement from "./pages/dashboard/admin/BrokersManagement";
+import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalRequestManagement";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -143,8 +148,15 @@ function App() {
             {/* Dashboard Routes (Admin/User/Affiliator) */}
             {authUser?.role === "admin" && (
               <Route path="dashboard" element={<ContainerDashboard />}>
+                <Route path="overview" element={<OverviewAdmin />} />
+                <Route path="affiliators" element={<AffiliatorsManagement />} />
+                <Route path="traders" element={<TradersManagement />} />
+                <Route path="bank" element={<BankManagement />} />
+                <Route path="broker" element={<BrokersManagement />} />
+                <Route path="withdrawal" element={<WithdrawalRequestManagement />} />
                 <Route path="validation-data" element={<ValidationDataDashboard />} />
-                <Route path="profile" element={<ProfileDashboard authUser={authUser} />} />
+                <Route path="profile" element={<ProfilePage />} />
+                <Route path="profile/change-password" element={<ChangePasswordPage />} />
               </Route>
             )}
 
@@ -156,6 +168,7 @@ function App() {
               <Route path="overview" element={<OverviewTrader />} />
               <Route path="broker" element={<ConnectedBrokerPage />} />
               <Route path="rebate" element={<HistoryRebate />} />
+              <Route path="rebate/:brokerParams" element={<HistoryRebate />} />
               <Route path="withdrawal" element={
                 <BankProvider>
                   <WithdrawalFundsPage />

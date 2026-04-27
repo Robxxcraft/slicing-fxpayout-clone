@@ -1,12 +1,12 @@
-import { PiClipboardTextFill } from "react-icons/pi";
-import { FaUser } from "react-icons/fa6";
+import { FaUser, FaUsers } from "react-icons/fa6";
 import type { UserRole } from "@/types/user.type";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { BsBank2 } from "react-icons/bs";
 import { TbChartHistogram } from "react-icons/tb";
-import { IoWalletOutline } from "react-icons/io5";
+import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
 import { RiStockFill } from "react-icons/ri";
 import type { NavigationLink, NavSideDashboardSection, SectionsRebateForex, SubNavigationList } from "@/types/navigationBar.type";
+import { LuDatabase } from "react-icons/lu";
 
 const claimRebateSuNav: SubNavigationList[] = [
   { code: "definition", title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
@@ -103,7 +103,7 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
     {
       title: "Withdrawal",
       items: [
-        { key: "withdrawal", label: "Withdrawal Funds", path: "/trader/withdrawal", icon: IoWalletOutline },
+        { key: "withdrawal", label: "Withdrawal Funds", path: "/trader/withdrawal", icon: IoCardOutline },
         { key: "history", label: "Transaction History", path: "/trader/withdrawal/history", icon: IoWalletOutline },
       ],
     },
@@ -126,7 +126,7 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
     {
       title: "Withdrawal",
       items: [
-        { key: "withdrawal", label: "Withdrawal Funds", path: "/affiliator/withdrawal", icon: IoWalletOutline },
+        { key: "withdrawal", label: "Withdrawal Funds", path: "/affiliator/withdrawal", icon: IoCardOutline },
         { key: "history", label: "Transaction History", path: "/affiliator/withdrawal/history", icon: IoWalletOutline },
       ],
     },
@@ -139,10 +139,28 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
   ],
   admin: [
     {
-      title: "Content Management",
+      title: "Main Content",
       items: [
-        { key: "overview", label: "Overview", path: "/dashboard/overview", icon: PiClipboardTextFill },
+        { key: "overview", label: "Overview", path: "/dashboard/overview", icon: RiDashboardHorizontalFill },
+        { key: "affiliators", label: "Affiliators", path: "/dashboard/affiliators", icon: FaUsers },
+        { key: "traders", label: "Traders", path: "/dashboard/traders", icon: FaUsers },
+        { key: "rebates", label: "Rebates", path: "/dashboard/rebates", icon: RiStockFill },
+        { key: "broker", label: "Broker", path: "/dashboard/broker", icon: BsBank2 },
+        { key: "bank", label: "Bank", path: "/dashboard/bank", icon: IoCardOutline },
       ]
-    }
+    },
+    {
+      title: "Transaction",
+      items: [
+        { key: "withdrawal", label: "Withdrawal", path: "/dashboard/withdrawal", icon: IoWalletOutline },
+        { key: "import", label: "Import Rebate", path: "/dashboard/import", icon: LuDatabase },
+      ]
+    },
+    {
+      title: "Settings",
+      items: [
+        { key: "profile", label: "Profil", path: "/dashboard/profile", icon: FaUser },
+      ],
+    },
   ]
 };

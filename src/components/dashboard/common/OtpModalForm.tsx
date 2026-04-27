@@ -52,7 +52,7 @@ const OtpModalForm = ({
           <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-semibold leading-[180%]">
             Masukkan Kode OTP
           </h3>
-          <p className="mb-8 text-sm md:text-base 2xl:text-2xl text-black/80 leading-[180%]">
+          <p className="mb-8 text-sm md:text-base 2xl:text-xl text-black/80 leading-[180%]">
             Kode verifikasi dikirimkan ke {" "} 
             {emailValue[0]}{"*".repeat(emailValue.split("@")[0].length - 1)}{emailValue.split("@")[1]}. 
             Silahkan periksa kotak masuk atau folder spam Anda. Belum menerima kode? Tunggu atau {" "}

@@ -64,7 +64,7 @@ const SelectInput = ({
           className={`
             ${icon !== undefined && altIcon !== undefined ? "px-[54px]" : "px-4"}
             ${errorMessage === "" ? "border-[#D0D5DD]" : "border-red-500"}
-            _select-no-arrow py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed
+            _select-no-arrow py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed
             ${selectClassName}
           `}>
             <option value="" disabled>

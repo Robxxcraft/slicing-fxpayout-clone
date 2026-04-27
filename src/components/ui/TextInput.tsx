@@ -57,8 +57,8 @@ const TextInput = ({
       : icon !== undefined && altIcon !== undefined ? "pr-4" 
       : id === "amount" ? "pr-[64px]" : "pr-4" }
     ${icon !== undefined && altIcon !== undefined ? "pl-[54px]" 
-      : id === "phoneNumber" ? "pl-[64px]" : "pl-4"}
-    py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed 
+      : id === "phoneNumber" ? "pl-[64px] 2xl:pl-[72px]" : "pl-4"}
+    py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed 
     ${inputClassName}
   `;
   return (
@@ -77,12 +77,12 @@ const TextInput = ({
       <div className="relative w-full">
         {id === "phoneNumber" && icon === undefined && 
           <p
-            className="absolute pl-4 pr-2 top-1/2 -translate-y-1/2 pointer-events-none border-r"
+            className="absolute pl-4 pr-2 top-1/2 -translate-y-1/2 pointer-events-none border-r text-base 2xl:text-xl"
           >+62</p>
         }
         {id === "amount" && icon === undefined && 
           <p
-            className="absolute pr-4 pl-2 right-0 top-1/2 -translate-y-1/2 pointer-events-none border-l"
+            className="absolute pr-4 pl-2 right-0 top-1/2 -translate-y-1/2 pointer-events-none border-l text-base 2xl:text-xl"
           >USD</p>
         }
         {icon !== undefined && altIcon !== undefined &&

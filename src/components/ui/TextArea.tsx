@@ -37,7 +37,7 @@ const TextArea = ({
   const styleInput =`
     ${errorMessage === "" ? "border-[#D0D5DD]" : "border-red-500"} 
     ${icon !== undefined && altIcon !== undefined ? "pl-[54px]" : "pl-4"}
-    py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-black/5 disabled:cursor-not-allowed resize-none
+    py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed resize-none
     ${inputClassName}
   `;
   return (

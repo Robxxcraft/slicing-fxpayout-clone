@@ -13,7 +13,7 @@ export const useRedirectByRole = () => {
     const lang = i18n.language;
     const fixPath = path ? path : "overview";
     if (authUser.role === "admin") {
-      path = getLocalizedPath("/dashboard", lang);
+      path = getLocalizedPath(`/dashboard/${fixPath}`, lang);
     } else if (authUser.role === "affiliator") {
       path = getLocalizedPath(`/affiliator/${fixPath}`, lang);
     } else {

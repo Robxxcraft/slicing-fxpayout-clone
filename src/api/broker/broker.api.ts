@@ -1,4 +1,5 @@
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
+import type { StatusType } from "@/types/status.type";
 
 type ConnectBrokerForm = {
   brokerId: number;
@@ -23,9 +24,27 @@ export const getBrokersList = async () => {
   }
 }
 
-export const getBrokerByUser = async ({ userId }: { userId: number }) => {
-  try{
-    const response = await _fetchWithAuth(`${BASE_URL}/brokers/user/${userId}`);
+export const getBrokerByUser = async ({
+  userId, 
+  status,
+  limit,
+  page,
+  query
+}: {
+  userId: number;
+  status?: StatusType;
+  limit?: number;
+  page?: number;
+  query?: string; 
+}) => {
+  try {
+    let url = `${BASE_URL}/brokers/user/${userId}?`;
+    if (query) url += `search=${query}&`;
+    if (status) url += `status=${status}&`;
+    if (page) url += `page=${page}&`;
+    if (limit) url += `limit=limit}&`;
+    
+    const response = await _fetchWithAuth(url);
     const responseJson = await response.json();
     if(response.status === 200){
       return { error: false, message: responseJson.message, data: responseJson.result }

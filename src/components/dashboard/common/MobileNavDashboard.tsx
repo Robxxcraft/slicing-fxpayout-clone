@@ -21,20 +21,14 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
         <div className="mb-3 flex items-center gap-3">
           <img src={authUser?.profile} alt="foto profil"
             className="size-11 rounded-lg object-cover" />
-          {authUser?.role === "admin" ? (
+          <div className="flex flex-col">
             <span className="text-lg font-medium">
-              {authUser?.username}
+              @{authUser?.username}
             </span>
-          ): (
-            <div className="flex flex-col">
-              <span className="text-lg font-medium">
-                {authUser?.username}
-              </span>
-              <span className="text-base">
-                {authUser?.fullName}
-              </span>
-            </div>
-          )}
+            <span className="text-base">
+              {authUser?.fullName}
+            </span>
+          </div>
         </div>
         <div className="flex items-center justify-between">
           <p className="font-semibold">Balance</p>

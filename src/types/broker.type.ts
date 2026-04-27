@@ -5,9 +5,8 @@ export type BrokerUser = {
   brokerId: number;
   name: string;
   accountNumber: string;
-  platform: string;
   createdAt: string;
-  updatedAt: string;
+  totalRebate: number;
   status: StatusType;
 };
 

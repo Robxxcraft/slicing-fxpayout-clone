@@ -40,7 +40,7 @@ const EmailModalForm = ({
           <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-semibold leading-[180%]">
             Masukkan Email Baru
           </h3>
-          <p className="mb-4 text-sm md:text-base 2xl:text-2xl text-black/80 leading-[180%]">
+          <p className="mb-4 text-sm md:text-base 2xl:text-xl text-black/80 leading-[180%]">
             Kode OTP akan dikirimkan ke email baru Anda untuk melakukan verifikasi
           </p>
         </div>

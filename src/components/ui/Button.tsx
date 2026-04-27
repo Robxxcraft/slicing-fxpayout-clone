@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
-type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "outline-primary" | "light" | "danger" | "no-bg";
+export type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "outline-primary" | "light" | "danger" | "no-bg";
 type ButtonSize = "xl" | "lg" | "md";
 type IconPosition = "left" | "right";
 type ButtonType = "link" | "button" | "submit";

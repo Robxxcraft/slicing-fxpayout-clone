@@ -1,76 +1,5 @@
-import type { UserRole } from "@/types/user.type";
 import type { ValidationData } from "@/models/validationData";
-import { _fetchWithAuth, BASE_URL, putAccessToken } from "@/services/apiClient";
-
-const updateProfilUser = async ({ 
-  userId,
-  username,
-  role
-}: {
-  userId: number;
-  username: string;
-  role: UserRole
-}) =>{
-  try{
-    const response = await _fetchWithAuth(`${BASE_URL}/auth/${userId}`, {
-      method: "PATCH",
-      headers:{
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        role: role
-      })
-    });
-    const responseJson = await response.json();
-    if(response.status === 200){
-      putAccessToken(responseJson.result.accessToken);
-      return { error: false, message: responseJson.message }
-    }
-    return { error: true, message: responseJson.message }
-  } catch(error){
-    return {
-      error: true, 
-      message: `Please try again later. Error: ${error}`,
-    }
-  }
-};
-
-const changePasswordUser = async ({ 
-  userId,
-  oldPassword,
-  newPassword,
-  confirmationPassword
-}: {
-  userId: number;
-  oldPassword: string;
-  newPassword: string;
-  confirmationPassword: string;
-}) =>{
-  try{
-    const response = await _fetchWithAuth(`${BASE_URL}/auth/${userId}/password`, {
-      method: "PATCH",
-      headers:{
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        oldPassword,
-        newPassword,
-        confirmationPassword
-      })
-    });
-    const responseJson = await response.json();
-    if(response.status === 200){
-      return { error: false, message: responseJson.message }
-    }
-    return { error: true, message: responseJson.message }
-  } catch(error){
-    return {
-      error: true, 
-      message: `Please try again later. Error: ${error}`,
-    }
-  }
-};
+import { BASE_URL } from "@/services/apiClient";
 
 const getFeedback = async () => {
   try {
@@ -156,8 +85,6 @@ const postFormValidationData = async ({ item, captchaValue }: { item: Validation
 }
 
 export {
-  updateProfilUser,
-  changePasswordUser,
   getFeedback,
   postFormValidationData
 };
