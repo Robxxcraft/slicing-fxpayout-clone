@@ -1,25 +1,30 @@
+import { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
 import { Route, Routes, useLocation } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import { Bounce, ToastContainer } from "react-toastify";
+
+import type { UserProfile } from "./models/user";
+
 import Broker from "./pages/Broker";
-import BrokerDetailPage from "./pages/BrokerDetailPage";
-import { ScrollToTop } from "./components/ScrollToTop";
-import CalculatorPage from "./pages/CalculatorPage";
-import TransferAccount from "./pages/TransferAccount";
+import NewsPage from "./pages/NewsPage";
+import HomePage from "./pages/HomePage";
+import RebateForex from "./pages/RebateForex";
 import SchedulePage from "./pages/SchedulePage";
 import ValidationPage from "./pages/ValidationPage";
-import RebateForex from "./pages/RebateForex";
-import ValidationDataDashboard from "./pages/admin/ValidationDataDashboard";
-import LoginPage from "./pages/admin/LoginPage";
-import { useEffect, useState } from "react";
-import type { UserProfile } from "./models/user";
-import { getAuthUser } from "./utils/api";
+import CalculatorPage from "./pages/CalculatorPage";
+import TransferAccount from "./pages/TransferAccount";
+import BrokerDetailPage from "./pages/BrokerDetailPage";
 import NotFound from "./pages/NotFound";
-import ContainerDashboard from "./components/admin/ContainerDashboard";
+import LoginPage from "./pages/admin/LoginPage";
 import ProfileDashboard from "./pages/admin/ProfileDashboard";
-import { Bounce, ToastContainer } from "react-toastify";
+import ValidationDataDashboard from "./pages/admin/ValidationDataDashboard";
+
 import TawkChat from "./components/TawkChat";
 import MainLayout from "./components/MainLayout";
-import NewsPage from "./pages/NewsPage";
+import { ScrollToTop } from "./components/ScrollToTop";
+import ContainerDashboard from "./components/admin/ContainerDashboard";
+
+import { getAuthUser } from "./utils/api";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -50,10 +55,19 @@ function App() {
       } finally {
         setInitialization(false);
       }
-    } 
+    }; 
 
     getUser();
   }, [authUser, location.pathname]);
+
+  useEffect(() => {
+    ReactGA.initialize("G-FWNT67K53F");
+    ReactGA.send({ 
+      hitType: "pageview", 
+      page: location.pathname + location.search, 
+      title: document.title
+    });
+  }, [location.pathname, location.search]);
 
   if (initialization) {
     return null;
