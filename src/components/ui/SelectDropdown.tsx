@@ -6,9 +6,9 @@ const SelectDropdown = ({
   objectInput,
   selectedInput,
   handleChangeInput,
-  wrapperCL,
-  inputCL,
-  containerCL,
+  wrapperCL="",
+  inputCL="",
+  containerCL="",
   positionDrop="right",
   positionY="down"
 }: {
@@ -84,7 +84,7 @@ const SelectDropdown = ({
           exit={{ scaleY: 0, opacity: 0 }}
           transition={{ duration: 0.15, ease: "easeOut" }}
           style={{ originY: positionY === "down" ? 0 : 1, willChange: "transform, opacity" }}
-          className={`${positionCL} absolute`}>
+          className={`${positionCL} absolute z-9999`}>
           <div className={`${inputCL} p-2 w-fit h-full border border-[#DDDDDD] bg-white rounded-lg shadow-lg`}>
             {objectInput.map((item) => (
               <p 

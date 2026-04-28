@@ -1,18 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 
+import { TraderAPI } from "@/api";
+import BalanceContext from "@/context/BalanceContext";
+import { formattingUsd } from "@/helper/formattingCurrency";
 import { useBrokerUserContext } from "@/hooks/useBrokerUserContext";
+import { getLocalStorage, setLocalStorage } from "@/services/apiClient";
 
 import CardOverview from "@/components/dashboard/common/CardOverview";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
+import EarningRebate from "@/components/dashboard/trader/overview/EarningRebate";
+import BrokerOverview from "@/components/dashboard/trader/overview/BrokerOverview";
 
 import { BsBank2 } from "react-icons/bs";
 import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
-import BalanceContext from "@/context/BalanceContext";
-import { formattingUsd } from "@/helper/formattingCurrency";
-import EarningRebate from "@/components/dashboard/trader/EarningRebate";
-import BrokerOverview from "@/components/dashboard/trader/BrokerOverview";
-import { TraderAPI } from "@/api";
-import { getLocalStorage, setLocalStorage } from "@/services/apiClient";
 
 type LayoutCard = {
   lifetimeBalance: number;

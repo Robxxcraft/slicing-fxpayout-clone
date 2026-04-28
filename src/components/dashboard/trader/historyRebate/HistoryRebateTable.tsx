@@ -1,20 +1,20 @@
 import Table from '@/components/TableLayout';
+import type { DataRebate } from '@/pages/dashboard/trader/HistoryRebate';
 import { 
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { HiChevronUpDown } from 'react-icons/hi2';
-import type { TransactionHistory } from '@/pages/dashboard/common/TransactionHistoryPage';
 
-const TransactionHistoryTable = ({ 
+const HistoryRebateTable = ({ 
   tableInstance,
   isLoading
 }: { 
-  tableInstance:  ReactTable<TransactionHistory>;  
+  tableInstance:  ReactTable<DataRebate>;  
   isLoading: boolean;
 }) => {
-  const dataWithdrawal = tableInstance.getRowModel().rows;
+  const dataRebate = tableInstance.getRowModel().rows;
   return (
     <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
       <thead>
@@ -23,34 +23,31 @@ const TransactionHistoryTable = ({
             {headerEl.headers.map((cellEl) => {
               const isSorted = cellEl.column.getIsSorted();
               const canSorting = cellEl.column.id === "created_at";
-    
+
               return (
                 <Table.HeadingItem key={cellEl.id}
                   className={`
-                    ${cellEl.index === headerEl.headers.length - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
+                    ${cellEl.index === cellEl.getSize() - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
                     ${cellEl.index === 0 ? "px-0! pl-2! pr-8!":""}
                     ${canSorting ? "cursor-pointer":""}
                     py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg! select-none 
                   `}
                   handleClick={canSorting && !isLoading ? cellEl.column.getToggleSortingHandler() : undefined}
                 >
-                  <div className={`
-                    ${cellEl.index === headerEl.headers.length - 1 ? "justify-end" : "justify-between"}
-                    flex items-center gap-2
-                  `}>
-                    <span className="whitespace-nowrap">
-                      {flexRender(
-                        cellEl.column.columnDef.header,
-                        cellEl.getContext()
-                      )}
-                    </span>
-                    {canSorting && 
-                      <div className="shrink-0">
-                        {isSorted === "asc" ? <IoChevronDown className="text-[12px] text-black/80" />
-                        : isSorted === "desc" ? <IoChevronUp className="text-[12px] text-black/80" />
-                        : <HiChevronUpDown className="text-lg text-black/80" />}
-                      </div>
-                    }
+                  <div className="flex justify-between items-center">
+                   <span className="whitespace-nowrap">
+                       {flexRender(
+                       cellEl.column.columnDef.header,
+                       cellEl.getContext()
+                       )}
+                   </span>
+                   {canSorting && 
+                     <div className="shrink-0">
+                       {isSorted === "asc" ? <IoChevronDown className="text-[12px] text-black/80" />
+                       : isSorted === "desc" ? <IoChevronUp className="text-[12px] text-black/80" />
+                       : <HiChevronUpDown className="text-lg text-black/80" />}
+                     </div>
+                   }
                   </div>
                 </Table.HeadingItem>
               )
@@ -58,21 +55,21 @@ const TransactionHistoryTable = ({
           </tr>
         ))}
       </thead>
-      
+
       <Table.Body>
-        {dataWithdrawal.length > 0 && 
-          dataWithdrawal.map((rowEl, rowIndex) => ( 
+        {dataRebate.length > 0 && 
+          dataRebate.map((rowEl, rowIndex) => ( 
             <Table.Row key={rowEl.id}>
               {rowEl.getVisibleCells().map((cellEl, cellIndex) => {
                 const baseStyle = "py-2! text-nowrap align-middle!";
-    
+
                 return (
                   <Table.Cell
                     key={cellEl.id}
                     rowIndex={rowIndex}
                     className={`${baseStyle}
-                     ${cellIndex === rowEl.getVisibleCells().length - 1 ? "px-2! text-right!" : "text-left!"}
-                     ${cellEl.column.id === "amount" ? "text-red-700":""}
+                     ${cellIndex === cellEl.column.depth - 1 ? "px-2! text-right!" : "text-left!"}
+                     ${cellEl.id === "amount" ? "text-red-700":""}
                      ${cellIndex === 0 ? "px-0! pl-2! pr-8!":""}
                    `}
                   >
@@ -90,4 +87,4 @@ const TransactionHistoryTable = ({
   )
 }
 
-export default TransactionHistoryTable;
+export default HistoryRebateTable;

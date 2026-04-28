@@ -1,18 +1,21 @@
 import StatusTag from "@/components/dashboard/common/StatusTag";
+import { formattingUsd } from "@/helper/formattingCurrency";
 import type { StatusType } from "@/types/status.type";
 
 export const columnsDef = [
   {
-    accessorKey: "user",
-    header: "Trader"
+    accessorKey: "account_number",
+    header: "Nomor Akun Trading"
   },
   {
+    id: "broker_name",
     accessorKey: "broker",
     header: "Broker"
   },
   {
-    accessorKey: "account_number",
-    header: "Nomor Akun Trading"
+    id: "user",
+    accessorKey: "trader",
+    header: "Trader"
   },
   {
     id: "status",
@@ -33,7 +36,8 @@ export const columnsDef = [
     header: "Status"
   },
   {
-    accessorKey: "total_rebate",
-    header: "Total Rebate"
+    accessorKey: "total_rebates",
+    header: "Total Rebate",
+    cell: ({ getValue }: { getValue: () => string }) => formattingUsd(getValue() ? Number(getValue()) : 0)
   },
 ];

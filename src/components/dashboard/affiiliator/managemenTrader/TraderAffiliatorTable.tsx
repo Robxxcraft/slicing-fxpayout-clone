@@ -1,20 +1,20 @@
 import Table from '@/components/TableLayout';
+import type { TraderBroker } from '@/pages/dashboard/affiliator/ManagementTraders';
 import { 
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
-import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { HiChevronUpDown } from 'react-icons/hi2';
-import type { TransactionHistory } from '@/pages/dashboard/common/TransactionHistoryPage';
+import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 
-const TransactionHistoryTable = ({ 
+const TraderAffiliatorTable = ({ 
   tableInstance,
   isLoading
 }: { 
-  tableInstance:  ReactTable<TransactionHistory>;  
+  tableInstance:  ReactTable<TraderBroker>;  
   isLoading: boolean;
 }) => {
-  const dataWithdrawal = tableInstance.getRowModel().rows;
+  const dataTraderBroker = tableInstance.getRowModel().rows;
   return (
     <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
       <thead>
@@ -22,8 +22,8 @@ const TransactionHistoryTable = ({
           <tr key={headerEl.id}>
             {headerEl.headers.map((cellEl) => {
               const isSorted = cellEl.column.getIsSorted();
-              const canSorting = cellEl.column.id === "created_at";
-    
+              const canSorting = ["account_number", "user", "broker_name"].includes(cellEl.column.id);
+
               return (
                 <Table.HeadingItem key={cellEl.id}
                   className={`
@@ -38,19 +38,19 @@ const TransactionHistoryTable = ({
                     ${cellEl.index === headerEl.headers.length - 1 ? "justify-end" : "justify-between"}
                     flex items-center gap-2
                   `}>
-                    <span className="whitespace-nowrap">
-                      {flexRender(
-                        cellEl.column.columnDef.header,
-                        cellEl.getContext()
-                      )}
-                    </span>
-                    {canSorting && 
-                      <div className="shrink-0">
-                        {isSorted === "asc" ? <IoChevronDown className="text-[12px] text-black/80" />
-                        : isSorted === "desc" ? <IoChevronUp className="text-[12px] text-black/80" />
-                        : <HiChevronUpDown className="text-lg text-black/80" />}
-                      </div>
-                    }
+                   <span className="whitespace-nowrap">
+                       {flexRender(
+                       cellEl.column.columnDef.header,
+                       cellEl.getContext()
+                       )}
+                   </span>
+                   {canSorting && 
+                     <div className="shrink-0">
+                       {isSorted === "asc" ? <IoChevronDown className="text-[12px] text-black/80" />
+                       : isSorted === "desc" ? <IoChevronUp className="text-[12px] text-black/80" />
+                       : <HiChevronUpDown className="text-lg text-black/80" />}
+                     </div>
+                   }
                   </div>
                 </Table.HeadingItem>
               )
@@ -58,21 +58,20 @@ const TransactionHistoryTable = ({
           </tr>
         ))}
       </thead>
-      
+
       <Table.Body>
-        {dataWithdrawal.length > 0 && 
-          dataWithdrawal.map((rowEl, rowIndex) => ( 
+        {dataTraderBroker.length > 0 
+          && dataTraderBroker.map((rowEl, rowIndex) => (
             <Table.Row key={rowEl.id}>
               {rowEl.getVisibleCells().map((cellEl, cellIndex) => {
                 const baseStyle = "py-2! text-nowrap align-middle!";
-    
+
                 return (
                   <Table.Cell
                     key={cellEl.id}
                     rowIndex={rowIndex}
                     className={`${baseStyle}
                      ${cellIndex === rowEl.getVisibleCells().length - 1 ? "px-2! text-right!" : "text-left!"}
-                     ${cellEl.column.id === "amount" ? "text-red-700":""}
                      ${cellIndex === 0 ? "px-0! pl-2! pr-8!":""}
                    `}
                   >
@@ -84,10 +83,11 @@ const TransactionHistoryTable = ({
                 )
               })}
             </Table.Row>
-        ))}
+          ))}
       </Table.Body>
     </Table>
+
   )
 }
 
-export default TransactionHistoryTable;
+export default TraderAffiliatorTable;

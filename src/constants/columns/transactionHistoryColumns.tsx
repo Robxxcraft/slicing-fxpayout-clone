@@ -20,7 +20,7 @@ export const columnsDef = [
     id: "status",
     accessorKey: "status",
     cell: ({ getValue }: { getValue: () => string }) => {
-      const value = getValue() as string;
+      const value = getValue();
       // Logika teks status dipindah ke sini
       const textStatus = 
         value === "pending" ? "Verifying" : 
@@ -40,6 +40,7 @@ export const columnsDef = [
   },
   {
     accessorKey: "amount",
-    header: "Amount"
+    header: "Amount",
+    cell: ({ getValue }: { getValue: () => string }) => `-${getValue()}`
   },
 ];

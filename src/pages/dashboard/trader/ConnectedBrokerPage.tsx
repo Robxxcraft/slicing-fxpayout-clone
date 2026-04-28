@@ -168,6 +168,7 @@ const ConnectedBrokerPage = () => {
         </div>
         {/* TABLE */}
         <ConnectedBrokerTable 
+          isLoading={initLoad || isLoading}
           CONFIG_HEADERS={CONFIG_HEADERS}
           onOpenDeleteConfirm={openPopupDeleteConfimation}
           brokersUser={brokersUser}

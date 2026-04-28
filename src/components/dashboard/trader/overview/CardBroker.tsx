@@ -1,6 +1,5 @@
 import { HiOutlineRefresh } from "react-icons/hi";
 import { LuExternalLink } from "react-icons/lu";
-import StatusTag from "../common/StatusTag";
 import type { StatusType } from "@/types/status.type";
 import { useBrokerUserContext } from "@/hooks/useBrokerUserContext";
 import { useState } from "react";
@@ -12,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import { IoMdTime } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 import { AiOutlineWarning } from "react-icons/ai";
+import StatusTag from "../../common/StatusTag";
 
 const CardBroker = ({
   name,

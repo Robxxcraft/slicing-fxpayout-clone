@@ -8,7 +8,7 @@ import { TraderAPI } from "@/api";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
-import HistoryRebateTable from "@/components/dashboard/trader/HistoryRebateTable";
+import HistoryRebateTable from "@/components/dashboard/trader/historyRebate/HistoryRebateTable";
 import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard";
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";

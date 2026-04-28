@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { TiInfoLarge } from "react-icons/ti";
-import RebateChart from "./RebateChart";
 import { getLocalStorage, setLocalStorage } from "@/services/apiClient";
 import { TraderAPI } from "@/api";
 import { aggregateBrokerContribution, aggregateRebateByDate } from "@/helper/aggregateRebateEarning";
 import { formattingUsd } from "@/helper/formattingCurrency";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
+import RebateChart from "./RebateChart";
 
 const EarningRebate = () => {
   const [intervalDays, setIntervalDays] = useState<7 | 30 | 90>(90);
@@ -18,11 +18,12 @@ const EarningRebate = () => {
     try { 
       const startDate = new Date();
       const endDate = new Date();
-      startDate.setDate(endDate.getDate() - intervalDays);
+      startDate.setDate(endDate.getDate() - days);
 
       const { error, data } = await TraderAPI.getRebateChartData({
         limit: 100,
-        startDate: formatDateYYYYMMDD(startDate.toLocaleDateString())
+        startDate: formatDateYYYYMMDD(startDate.toLocaleDateString()),
+        endDate: formatDateYYYYMMDD(endDate.toLocaleDateString())
       });
 
       if (!error && data) {

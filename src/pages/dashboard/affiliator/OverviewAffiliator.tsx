@@ -21,57 +21,6 @@ type DataEarnings = {
   comission: string; 
 };
 
-// const dataEarnings = [
-//   {
-//     date: "8/2/19",
-//     trader: "Ronald Richards",
-//     broker: "Pepperstone",
-//     numberTrading: "28104472",
-//     rebate: "$406.27",
-//     comission: "$40.63"
-//   },
-//   {
-//     date: "7/11/19",
-//     trader: "Annette Black",
-//     broker: "HFM",
-//     numberTrading: "13294857",
-//     rebate: "$928.41",
-//     comission: "$92.84"
-//   },
-//   {
-//     date: "6/21/19",
-//     trader: "Bessie Cooper",
-//     broker: "FP Markets",
-//     numberTrading: "76840125",
-//     rebate: "$450.54",
-//     comission: "$45.05"
-//   },
-//   {
-//     date: "4/4/18",
-//     trader: "Jenny Wilson",
-//     broker: "Finex",
-//     numberTrading: "59321085",
-//     rebate: "$328.85",
-//     comission: "$32.89"
-//   },
-//   {
-//     date: "12/4/17",
-//     trader: "Leslie Alexander",
-//     broker: "Octa FX",
-//     numberTrading: "90638412",
-//     rebate: "$943.65",
-//     comission: "$94.37"
-//   },
-//   {
-//     date: "8/15/17",
-//     trader: "Jacob Jones",
-//     broker: "Exness",
-//     numberTrading: "77394012",
-//     rebate: "$202.87",
-//     comission: "$20.29"
-//   }
-// ];
-
 type LayoutCard = {
   activeTraders: number;
   refferedTraders: number;

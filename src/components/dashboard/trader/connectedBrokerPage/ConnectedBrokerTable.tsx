@@ -8,14 +8,16 @@ import StatusTag from '../../common/StatusTag';
 const ConnectedBrokerTable = ({
   CONFIG_HEADERS,
   brokersUser,
-  onOpenDeleteConfirm
+  onOpenDeleteConfirm,
+  isLoading
 }: {
   CONFIG_HEADERS: Record<string, string>[];
   brokersUser: BrokerUser[];
   onOpenDeleteConfirm: (id: number) => void;
+  isLoading: boolean;
 }) => {
   return (
-    <Table className="mt-0!">
+    <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
       <Table.Heading>
         {CONFIG_HEADERS.map((header, idx) => (
           <Table.HeadingItem key={idx} className={`

@@ -1,10 +1,10 @@
 import { IoIosAdd } from "react-icons/io";
-import TinyButton from "../common/TinyButton";
 import { getLocalizedPath } from "@/helper/pathHelper";
-import CardBroker from "./CardBroker";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { BrokerUser } from "@/types/broker.type";
+import TinyButton from "../../common/TinyButton";
+import CardBroker from "./CardBroker";
 
 const BrokerOverview = ({
   initLoad, brokersUser

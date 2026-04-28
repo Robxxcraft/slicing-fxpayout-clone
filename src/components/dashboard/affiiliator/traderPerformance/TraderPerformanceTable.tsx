@@ -1,40 +1,43 @@
 import Table from '@/components/TableLayout';
-import type { DataRebate } from '@/pages/dashboard/trader/HistoryRebate';
+import type { TraderPerformance } from '@/pages/dashboard/affiliator/TraderPerformancePage';
 import { 
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
-import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { HiChevronUpDown } from 'react-icons/hi2';
+import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 
-const HistoryRebateTable = ({ 
+const TraderPerformanceTable = ({ 
   tableInstance,
   isLoading
 }: { 
-  tableInstance:  ReactTable<DataRebate>;  
+  tableInstance:  ReactTable<TraderPerformance>;  
   isLoading: boolean;
 }) => {
-  const dataRebate = tableInstance.getRowModel().rows;
+  const dataTraderBroker = tableInstance.getRowModel().rows;
   return (
-    <Table className="mt-0!">
+    <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
       <thead>
         {tableInstance.getHeaderGroups().map((headerEl) => (
           <tr key={headerEl.id}>
             {headerEl.headers.map((cellEl) => {
               const isSorted = cellEl.column.getIsSorted();
-              const canSorting = cellEl.column.id === "created_at";
+              const canSorting = ["created_at", "account_number", "user", "broker_name"].includes(cellEl.column.id);
 
               return (
                 <Table.HeadingItem key={cellEl.id}
                   className={`
-                    ${cellEl.index === cellEl.getSize() - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
+                    ${cellEl.index === headerEl.headers.length - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
                     ${cellEl.index === 0 ? "px-0! pl-2! pr-8!":""}
                     ${canSorting ? "cursor-pointer":""}
                     py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg! select-none 
                   `}
                   handleClick={canSorting && !isLoading ? cellEl.column.getToggleSortingHandler() : undefined}
                 >
-                  <div className="flex justify-between items-center">
+                  <div className={`
+                    ${cellEl.index === headerEl.headers.length - 1 ? "justify-end" : "justify-between"}
+                    flex items-center gap-2
+                  `}>
                    <span className="whitespace-nowrap">
                        {flexRender(
                        cellEl.column.columnDef.header,
@@ -57,8 +60,8 @@ const HistoryRebateTable = ({
       </thead>
 
       <Table.Body>
-        {dataRebate.length > 0 && 
-          dataRebate.map((rowEl, rowIndex) => ( 
+        {dataTraderBroker.length > 0 
+          && dataTraderBroker.map((rowEl, rowIndex) => (
             <Table.Row key={rowEl.id}>
               {rowEl.getVisibleCells().map((cellEl, cellIndex) => {
                 const baseStyle = "py-2! text-nowrap align-middle!";
@@ -68,8 +71,7 @@ const HistoryRebateTable = ({
                     key={cellEl.id}
                     rowIndex={rowIndex}
                     className={`${baseStyle}
-                     ${cellIndex === cellEl.column.depth - 1 ? "px-2! text-right!" : "text-left!"}
-                     ${cellEl.id === "amount" ? "text-red-700":""}
+                     ${cellIndex === rowEl.getVisibleCells().length - 1 ? "px-2! text-right!" : "text-left!"}
                      ${cellIndex === 0 ? "px-0! pl-2! pr-8!":""}
                    `}
                   >
@@ -81,10 +83,11 @@ const HistoryRebateTable = ({
                 )
               })}
             </Table.Row>
-        ))}
+          ))}
       </Table.Body>
     </Table>
+
   )
 }
 
-export default HistoryRebateTable;
+export default TraderPerformanceTable;

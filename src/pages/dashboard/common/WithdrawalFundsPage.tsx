@@ -1,7 +1,7 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { TraderAPI } from "@/api";
+import { WithdrawalAPI } from "@/api";
 import type { MetaPage } from "@/types/metapage.type";
 import BalanceContext from "@/context/BalanceContext";
 import { getLocalizedPath } from "@/helper/pathHelper";
@@ -26,6 +26,7 @@ import { BsBank2 } from "react-icons/bs";
 import { IoIosAdd } from "react-icons/io";
 import { LuRefreshCcw } from "react-icons/lu";
 import { IoWalletOutline } from "react-icons/io5";
+import UserContext from "@/context/UserContext";
 
 const CONFIG_HEADERS = [
   {key: "createdAt", header: "Tanggal"},
@@ -59,6 +60,7 @@ type ResponsePendingWithdrawal = {
 
 const WithdrawalFundsPage = () => {
   const { i18n } = useTranslation();
+  const [authUser] = useContext(UserContext);
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [activeBankDrawer, setActiveBankDrawer] = useState<boolean>(false);
@@ -77,43 +79,47 @@ const WithdrawalFundsPage = () => {
     setIsLoading(true);
 
     try {
-      const { error, data } = await TraderAPI.getWithdrawalByTrader({
-        status: "pending",
-        limit: metaPage.limit,
-        page: metaPage.pageIndex
-      });
-      if (!error && data) {
-        const raw = data.data;
-        const temp = raw.data.map((item: ResponsePendingWithdrawal) => ({
-          createdAt: item.created_at,
-          method: !item.bank ? "Crypto" : item.bank.name,
-          walletAddress: !item.bank ? item.wallet_address : item.bank.account_number,
-          currency: item.currency as "USD" | "IDR",
-          amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
-        }));
-        setDataWithdrawal(temp);
-        setMetaPage((prev) => {
-          if (
-            prev.pageIndex === raw.meta.page &&
-            prev.pageTotal === raw.meta.totalPages &&
-            prev.totalData === raw.meta.total &&
-            prev.limit === raw.meta.limit
-          ) return prev;
-  
-          return {
-            ...prev,
-            pageIndex: raw.meta.page,
-            pageTotal: raw.meta.totalPages,
-            totalData: raw.meta.total,
-            limit: raw.meta.limit
-          };
+      if (!authUser) return;
+      if (authUser.role === "user" || authUser.role === "affiliator") {
+        const { error, data } = await WithdrawalAPI.getWithdrawalUser({
+          role: authUser.role === "user" ? "trader" : "affiliate",
+          status: "pending",
+          limit: metaPage.limit,
+          page: metaPage.pageIndex
         });
+        if (!error && data) {
+          const raw = data.data;
+          const temp = raw.data.map((item: ResponsePendingWithdrawal) => ({
+            createdAt: item.created_at,
+            method: !item.bank ? "Crypto" : item.bank.name,
+            walletAddress: !item.bank ? item.wallet_address : item.bank.account_number,
+            currency: item.currency as "USD" | "IDR",
+            amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
+          }));
+          setDataWithdrawal(temp);
+          setMetaPage((prev) => {
+            if (
+              prev.pageIndex === raw.meta.page &&
+              prev.pageTotal === raw.meta.totalPages &&
+              prev.totalData === raw.meta.total &&
+              prev.limit === raw.meta.limit
+            ) return prev;
+    
+            return {
+              ...prev,
+              pageIndex: raw.meta.page,
+              pageTotal: raw.meta.totalPages,
+              totalData: raw.meta.total,
+              limit: raw.meta.limit
+            };
+          });
+        }
       }
     } finally {
       setInitLoad(false);
       setIsLoading(false);
     }
-  }, [metaPage.limit, metaPage.pageIndex]);
+  }, [authUser, metaPage.limit, metaPage.pageIndex]);
 
   useEffect(() => {
     const fetchBankData = async () => {
@@ -284,7 +290,7 @@ const WithdrawalFundsPage = () => {
         </div>
 
         {/* TABLE */}
-        <Table className="mt-0!">
+        <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
           <Table.Heading>
             {CONFIG_HEADERS.map((headerEl, cellIndex) => (
               <Table.HeadingItem key={headerEl.key}

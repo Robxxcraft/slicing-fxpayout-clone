@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { TraderAPI } from "@/api";
+import { WithdrawalAPI } from "@/api";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { statusMap } from "@/utils/dataDropdownDashboard";
 import type { FullStatusType, StatusType } from "@/types/status.type";
@@ -19,6 +19,7 @@ import { LuRefreshCcw } from "react-icons/lu";
 import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 import { columnsDef } from "@/constants/columns/transactionHistoryColumns";
 import TransactionHistoryTable from "@/components/dashboard/common/TransactionHistoryTable";
+import UserContext from "@/context/UserContext";
 
 const supportEntry = [
   { "key": "20", "value": "20"}, 
@@ -46,6 +47,7 @@ type ResponseWithdrawal = {
 
 const TransactionHistoryPage = () => {
   const { i18n } = useTranslation();
+  const [authUser] = useContext(UserContext);
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [dataWithdrawal, setDataWithdrawal] = useState<TransactionHistory[]>([]);
@@ -64,39 +66,43 @@ const TransactionHistoryPage = () => {
     setIsLoading(true);
 
     try {
+      if (!authUser) return;
       const sort = sorting[0];
-      const { error, data } = await TraderAPI.getWithdrawalByTrader({
-        status: filterStatus === "all" ? undefined : filterStatus as StatusType,
-        limit: pagination.pageSize,
-        page: pagination.pageIndex + 1,
-        sortBy: sort?.id ?? "created_at",
-        orderBy: sort?.desc === undefined ? "desc" :
-          sort?.desc ? "desc" : "asc"
-      });
-  
-      if (!error && data) {
-        const raw = data.data;
-        const temp = raw.data.map((item: ResponseWithdrawal) => ({
-          created_at: item.created_at,
-          method: !item.bank ? "Crypto" : item.bank.name,
-          wallet_address: !item.bank ? item.wallet_address : item.bank.account_number,
-          currency: item.currency as "USD" | "IDR",
-          status: item.status as StatusType,
-          amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
-        }));
-        setDataWithdrawal(temp);
-        setPagination({
-          pageIndex: raw.meta.page - 1,
-          pageSize: raw.meta.limit
+      if (authUser.role === "user" || authUser.role === "affiliator") {
+        const { error, data } = await WithdrawalAPI.getWithdrawalUser({
+          role: authUser.role === "user" ? "trader" : "affiliate",
+          status: filterStatus === "all" ? undefined : filterStatus as StatusType,
+          limit: pagination.pageSize,
+          page: pagination.pageIndex + 1,
+          sortBy: sort?.id ?? "created_at",
+          orderBy: sort?.desc === undefined ? "desc" :
+            sort?.desc ? "desc" : "asc"
         });
-        setTotalData(raw.meta.total);
-        setTotalPages(raw.meta.totalPages);
+    
+        if (!error && data) {
+          const raw = data.data;
+          const temp = raw.data.map((item: ResponseWithdrawal) => ({
+            created_at: item.created_at,
+            method: !item.bank ? "Crypto" : item.bank.name,
+            wallet_address: !item.bank ? item.wallet_address : item.bank.account_number,
+            currency: item.currency as "USD" | "IDR",
+            status: item.status as StatusType,
+            amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
+          }));
+          setDataWithdrawal(temp);
+          setPagination({
+            pageIndex: raw.meta.page - 1,
+            pageSize: raw.meta.limit
+          });
+          setTotalData(raw.meta.total);
+          setTotalPages(raw.meta.totalPages);
+        }
       }
     } finally {
       setInitLoad(false);
       setIsLoading(false);
     }
-  }, [filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
+  }, [authUser, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
 
   useEffect(() => {
     fetchData();

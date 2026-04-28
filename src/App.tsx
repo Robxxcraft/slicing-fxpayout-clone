@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import ReactGA from "react-ga4";
 import { Bounce, ToastContainer } from "react-toastify";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import { AuthAPI } from "@/api";
 import { UserProvider } from "./context/UserContext";
@@ -36,7 +37,7 @@ import AddBrokerTrader from "./pages/dashboard/trader/AddBrokerTrader";
 import ConnectedBrokerPage from "./pages/dashboard/trader/ConnectedBrokerPage";
 import ManagementTraders from "./pages/dashboard/affiliator/ManagementTraders";
 import OverviewAffiliator from "./pages/dashboard/affiliator/OverviewAffiliator";
-import PerformanceTradersPage from "./pages/dashboard/affiliator/PerformanceTradersPage";
+import TraderPerformancePage from "./pages/dashboard/affiliator/TraderPerformancePage";
 
 import TawkChat from "./components/TawkChat";
 import MainLayout from "./components/MainLayout";
@@ -49,6 +50,7 @@ import TradersManagement from "./pages/dashboard/admin/TradersManagement";
 import BankManagement from "./pages/dashboard/admin/BankManagement";
 import BrokersManagement from "./pages/dashboard/admin/BrokersManagement";
 import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalRequestManagement";
+import { clearCacheAuthUser } from "./helper/clearCacheAuthUser";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -61,6 +63,7 @@ function App() {
     const getUser = async () => {
       if (!getAccessToken()) {
         setAuthUser(null);
+        clearCacheAuthUser();
         setInitialization(false);
         return;
       }
@@ -87,6 +90,7 @@ function App() {
           setAuthUser(userData);
         } else {
           setAuthUser(null);
+          clearCacheAuthUser();
         }
       } finally {
         setInitialization(false);
@@ -95,6 +99,15 @@ function App() {
 
     getUser();
   }, []);
+
+    useEffect(() => {
+      ReactGA.initialize("G-FWNT67K53F");
+      ReactGA.send({ 
+        hitType: "pageview", 
+        page: location.pathname + location.search, 
+        title: document.title
+      });
+    }, [location.pathname, location.search]);
 
   useEffect(() => {
     const dashboardPaths = ["dashboard", "trader", "affiliator", "login", "register", "verify-email", "profile-register", "withdrawal"];
@@ -183,7 +196,7 @@ function App() {
             <Route path="affiliator" element={<ContainerDashboard />}>
               <Route path="overview" element={<OverviewAffiliator />} />
               <Route path="traders" element={<ManagementTraders />} />
-              <Route path="performance" element={<PerformanceTradersPage />} />
+              <Route path="performance" element={<TraderPerformancePage />} />
               <Route path="withdrawal" element={
                 <BankProvider>
                   <WithdrawalFundsPage />

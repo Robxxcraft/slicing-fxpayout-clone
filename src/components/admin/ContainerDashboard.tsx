@@ -11,6 +11,7 @@ import { UserModel } from "@/models/user.model";
 import MobileNavDashboard from "../dashboard/common/MobileNavDashboard";
 import { putAccessToken } from "@/services/apiClient";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { clearCacheAuthUser } from "@/helper/clearCacheAuthUser";
 
 const ContainerDashboard = () => {
   const { i18n } = useTranslation();
@@ -60,6 +61,7 @@ const ContainerDashboard = () => {
   const handleLogoutUser = () => {
     setIsLogout(true);
     putAccessToken("");
+    clearCacheAuthUser();
     setAuthUser(null);
   }
 

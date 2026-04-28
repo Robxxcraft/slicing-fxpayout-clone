@@ -128,8 +128,19 @@ const RebateChart = ({
   rebateByDate: Record<string, number>
 }) => {
   const chartRef = useRef<ChartJS<"line"> | null>(null);
-  const labels = Object.keys(rebateByDate);
-  const dataRebate = Object.values(rebateByDate);
+
+  const sortedDate = Object.entries(rebateByDate).sort((a, b) => {
+    const dateA = new Date(a[0]);
+    const dateB = new Date(b[0]);
+    
+    return dateA.getTime() - dateB.getTime(); 
+  });
+
+  const readyRebateByDate = Object.fromEntries(sortedDate);
+  const labels = Object.keys(readyRebateByDate);
+  const dataRebate = Object.values(readyRebateByDate);
+  const maxValueChartY = dataRebate.length > 0 ? Math.max(...dataRebate) : 0;
+  const valueChartY = Math.max(20, Math.round(maxValueChartY) + 5);
 
   const data = {
     labels: labels,
@@ -195,7 +206,7 @@ const RebateChart = ({
       },
       y: {
         min: 0,
-        max: 30,
+        max: valueChartY,
         ticks: {
           stepSize: 5,
           callback: (val: any) => `$${val}`,

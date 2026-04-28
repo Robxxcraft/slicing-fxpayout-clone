@@ -182,13 +182,32 @@ export const postFormFeedback = async ({ item, captchaValue }: { item: FormFeedb
   }
 }
 
+// Overview
+export const getDataOverview = async () => {
+  try {
+    const response = await _fetchWithAuth(`${BASE_URL}/admin/dashboard`);
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message, data: responseJson.result }
+    }
+
+    return { error: true, message: responseJson.message, data: null };
+  } catch (error) {
+    console.error(`Failed send form feedback. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
 // Rebates API
 export const getAllRebates = async () => {
   try {
     const response = await _fetchWithAuth(`${BASE_URL}/rebates`);
     const responseJson = await response.json();
-    console.log("responseJson", responseJson);
-    if (responseJson.status === 200) {
+    if (response.status === 200) {
       return { error: false, message: responseJson.message }
     }
 
