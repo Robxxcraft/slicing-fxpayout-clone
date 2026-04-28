@@ -1,5 +1,3 @@
-// TODO: CHART REBATE
-
 import { useContext, useEffect, useState } from "react";
 
 import { useBrokerUserContext } from "@/hooks/useBrokerUserContext";
@@ -32,22 +30,21 @@ const OverviewTrader = () => {
   });
   const [balance] = useContext(BalanceContext);
    
+  const fetchDataDashboard = async () => {
+    await fetchBrokerUser();
+    const responseDashboard = await TraderAPI.getDashboardData();
+    if (!responseDashboard.error && responseDashboard.data) {
+      setCardData((prev) => ({
+        ...prev,
+        lifetimeBalance: responseDashboard.data.lifetimeBalance,
+        balance: balance?.balance || 0
+      }));
+      setLocalStorage("lifetime_balance", responseDashboard.data.lifetimeBalance);
+    } 
+    setInitLoad(false);
+  }
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchBrokerUser();
-      const responseDashboard = await TraderAPI.getDashboardData();
-      if (!responseDashboard.error && responseDashboard.data) {
-        setCardData((prev) => ({
-          ...prev,
-          lifetimeBalance: responseDashboard.data.lifetimeBalance,
-          balance: balance?.balance || 0
-        }));
-        setLocalStorage("lifetime_balance", responseDashboard.data.lifetimeBalance);
-      } 
-      setInitLoad(false);
-    }
-
-    fetchData();
+    fetchDataDashboard();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

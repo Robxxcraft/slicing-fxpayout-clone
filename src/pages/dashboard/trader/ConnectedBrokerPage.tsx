@@ -21,7 +21,7 @@ import ModalConfirmation from "@/components/ui/ModalConfirmation";
 import { LuRefreshCcw } from "react-icons/lu";
 import HeaderConnectedBroker from "@/components/dashboard/trader/connectedBrokerPage/HeaderConnectedBroker";
 import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
-import TableConnectedBroker from "@/components/dashboard/trader/connectedBrokerPage/TableConnectedBroker";
+import ConnectedBrokerTable from "@/components/dashboard/trader/connectedBrokerPage/ConnectedBrokerTable";
 
 const CONFIG_HEADERS = [
   {key: "name", header: "Broker"}, 
@@ -167,7 +167,7 @@ const ConnectedBrokerPage = () => {
           </div>
         </div>
         {/* TABLE */}
-        <TableConnectedBroker 
+        <ConnectedBrokerTable 
           CONFIG_HEADERS={CONFIG_HEADERS}
           onOpenDeleteConfirm={openPopupDeleteConfimation}
           brokersUser={brokersUser}

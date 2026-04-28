@@ -36,14 +36,14 @@ const CardBroker = ({
   return (
     <div className="w-full min-h-[220px] rounded-lg overflow-hidden border border-[#DDDDDD]">
       <div className="px-4 lg:px-6 pt-4 lg:pt-6 pb-3 bg-white">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-3">
           <div className="flex items-center gap-2.5 2xl:gap-4">
             <img src={`/broker/${formatingUrlBroker(name)}.webp`} alt="Icon logo broker" 
               className="size-10 lg:size-12 2xl:size-14 rounded-full object-cover object-center"    
             />
-            <div>
-              <p className="text-base 2xl:text-xl font-medium">{name}</p>
-              <p className="text-sm 2xl:text-lg text-black/60">{accountNumber}</p>
+            <div className="flex-1 min-w-0">
+              <p className="text-base 2xl:text-xl font-medium truncate">{name}</p>
+              <p className="text-sm 2xl:text-lg text-black/60 truncate">{accountNumber}</p>
             </div>
           </div>
           {status === "approved" && 
@@ -65,9 +65,9 @@ const CardBroker = ({
               icon={<IoMdTime />} 
             />}
         </div>
-        <div className="mt-3 lg:mt-4">
+        <div className="min-w-0 mt-3 lg:mt-4">
           <p className="text-sm 2xl:text-lg text-black/60">Total Rebate</p>
-          <p className="text-[32px] 2xl:text-[36px] font-semibold">{formattingUsd(totalRebate)}</p>
+          <p className="text-[32px] 2xl:text-[36px] font-semibold truncate">{formattingUsd(totalRebate)}</p>
         </div>
         <div className="mt-3 lg:mt-4 flex items-center gap-2">
           <div

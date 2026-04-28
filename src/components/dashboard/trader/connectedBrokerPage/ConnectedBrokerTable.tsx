@@ -5,7 +5,7 @@ import type { BrokerUser } from '@/types/broker.type';
 import { FaTrash } from 'react-icons/fa6';
 import StatusTag from '../../common/StatusTag';
 
-const TableConnectedBroker = ({
+const ConnectedBrokerTable = ({
   CONFIG_HEADERS,
   brokersUser,
   onOpenDeleteConfirm
@@ -77,4 +77,4 @@ const TableConnectedBroker = ({
   )
 }
 
-export default TableConnectedBroker;
+export default ConnectedBrokerTable;

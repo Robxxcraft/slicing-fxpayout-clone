@@ -206,12 +206,12 @@ const WithdrawalFundsPage = () => {
                     <div className="flex items-center gap-4 w-full">
                       <BsBank2 className={`${bank.status === "approved" ? "text-primary" : "text-black/60"} shrink-0 text-2xl 2xl:text-3xl`} />
                       <div className="w-full">
-                        <p className="font-medium max-w-[250px] 2xl:max-w-[350px] text-base 2xl:text-xl text-nowrap text-ellipsis line-clamp-1">
+                        <p className="font-medium max-w-[250px] 2xl:max-w-[350px] text-base 2xl:text-xl text-nowrap truncate">
                           {bank.username}
                         </p>
                         <div className="flex gap-1 w-fit">
-                          <span className="text-sm 2xl:text-lg text-black/60 max-w-[100px] text-nowrap text-ellipsis line-clamp-1">{bank.bank}</span>
-                          <span className="text-sm 2xl:text-lg text-black/60 max-w-[150px] text-nowrap text-ellipsis line-clamp-1">{bank.accountNumber}</span>
+                          <span className="text-sm 2xl:text-lg text-black/60 max-w-[100px] text-nowrap truncate">{bank.bank}</span>
+                          <span className="text-sm 2xl:text-lg text-black/60 max-w-[150px] text-nowrap truncate">{bank.accountNumber}</span>
                         </div>
                       </div>
                     </div>
