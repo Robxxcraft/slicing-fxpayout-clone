@@ -77,17 +77,26 @@ const OverviewTrader = () => {
     <WrapperDashboardComponent>
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 2xl:gap-5">
         <CardOverview 
-          status={"active"} title={"Lifetime Rebate"} 
+          status={"active"}
+          title={"Lifetime Rebate"} 
           icon={<IoCardOutline />} sizeIcon="sm"
-          content={`${formattingUsd(cardData.lifetimeBalance)}`} detail={"Lifetime accumulated"} />
+          content={`${formattingUsd(cardData.lifetimeBalance)}`} 
+          detail={"Lifetime accumulated"} 
+        />
         <CardOverview 
-          title={"Active Broker"} icon={<BsBank2 />} 
+          title={"Active Broker"} 
+          icon={<BsBank2 />} 
           content={cardData.connectBrokers.toString()} 
-          detail={"Total active connected broker"} />
+          detail={"Total active connected broker"} 
+        />
         <div className="col-span-1 md:col-span-2 lg:col-span-1">
           <CardOverview 
-            title={"Balance"} icon={<IoWalletOutline />} sizeIcon="sm"
-            content={formattingUsd(cardData.balance)} detail={"Available balance for withdrawal"} />
+            title={"Balance"} 
+            icon={<IoWalletOutline />} 
+            sizeIcon="sm"
+            content={formattingUsd(cardData.balance)} 
+            detail={"Available balance for withdrawal"} 
+          />
         </div>
       </section>
       <EarningRebate />

@@ -311,7 +311,7 @@ const WithdrawalFundsPage = () => {
               <Table.Row key={rowIndex}>
                 {CONFIG_HEADERS.map((header, cellIndex) => {
                   let value;
-                  const baseStyle = "py-2! text-nowrap align-middle!";
+                  const baseStyle = "py-2! text-nowrap align-middle! group-hover:bg-gray-200";
 
                   if (header.key === "createdAt") {
                     value = formattingFullDateTime(data.createdAt);

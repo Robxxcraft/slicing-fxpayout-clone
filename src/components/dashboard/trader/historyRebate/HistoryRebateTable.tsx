@@ -61,7 +61,7 @@ const HistoryRebateTable = ({
           dataRebate.map((rowEl, rowIndex) => ( 
             <Table.Row key={rowEl.id}>
               {rowEl.getVisibleCells().map((cellEl, cellIndex) => {
-                const baseStyle = "py-2! text-nowrap align-middle!";
+                const baseStyle = "py-2! text-nowrap align-middle! group-hover:bg-gray-200";
 
                 return (
                   <Table.Cell

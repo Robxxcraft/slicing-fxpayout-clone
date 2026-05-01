@@ -22,6 +22,7 @@ import { LuRefreshCcw } from "react-icons/lu";
 import HeaderConnectedBroker from "@/components/dashboard/trader/connectedBrokerPage/HeaderConnectedBroker";
 import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
 import ConnectedBrokerTable from "@/components/dashboard/trader/connectedBrokerPage/ConnectedBrokerTable";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const CONFIG_HEADERS = [
   {key: "name", header: "Broker"}, 
@@ -128,6 +129,7 @@ const ConnectedBrokerPage = () => {
     }, 500);
   }
 
+  useLockBodyScroll(showPopupDelete);
   const useFilter = filterStatus !== "all" || querySearch;
   return (
     <WrapperDashboardComponent>
@@ -136,7 +138,7 @@ const ConnectedBrokerPage = () => {
         <HeaderConnectedBroker />
         {/* FILTER TABLE */}
         <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
-          <div className="flex items-center flex-col md:flex-row justify-between gap-2 md:gap-4">
+          <div className="flex items-center flex-col md:flex-row justify-between gap-2 2xl:gap-3">
             <SearchDashboard 
               query={querySearch}
               onQuery={handleQueryBrokerUser}
@@ -194,6 +196,7 @@ const ConnectedBrokerPage = () => {
         }
       </section>
 
+      {/* FLOATIN MODAL */}
       {showPopupDelete && <ModalConfirmation
         title="Hapus koneksi broker"
         paragraph="Tindakan ini akan menghapus koneksi broker secara permanen dan tidak dapat dibatalkan."

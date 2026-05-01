@@ -57,7 +57,7 @@ const TransactionHistoryPage = () => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: 50
+    pageSize: 20
   });
   const [totalPages, setTotalPages] = useState<number>(0);
   const [totalData, setTotalData] = useState<number>(0);
