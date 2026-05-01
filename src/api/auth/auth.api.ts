@@ -279,13 +279,15 @@ export const getBalanceUser = async () => {
       return { 
         error: false, 
         message: "Successfully get balance", 
-        data: { amount: responseJson.balance.amount, currency: responseJson.balance.currency} }
+        data: { amount: responseJson.result.amount, currency: responseJson.result.currency, userId: responseJson.result.user_id } 
+      }
     }
-    return { error: true, message: responseJson.message }
+    return { error: true, message: responseJson.message, data: null }
   } catch (error) {
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
+      data: null
     }
   }
 }

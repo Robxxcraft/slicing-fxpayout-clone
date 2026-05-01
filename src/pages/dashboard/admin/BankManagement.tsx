@@ -1,6 +1,4 @@
-// TODO: FILTER SEARCH & SORTING
-
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState, type ChangeEvent } from "react"
 import { toast } from "react-toastify"
 import { 
   getCoreRowModel, 
@@ -12,52 +10,73 @@ import {
 
 import { AdminAPI } from "@/api"
 import { columnsDef } from "@/constants/columns/bankColumns"
-import type { FullStatusType, StatusType } from "@/types/status.type"
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
 import { statusMap } from "@/utils/dataDropdownDashboard"
+import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type"
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound"
 import CardOverview from "@/components/dashboard/common/CardOverview"
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
 import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
-import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
 import TableDataBank from "@/components/dashboard/admin/bankManagement/TableDataBank"
+import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
+
 import Tooltip from "@/components/ui/Tooltip"
 import Spinner from "@/components/ui/Spinner"
 import SelectDropdown from "@/components/ui/SelectDropdown"
 import ModalConfirmation from "@/components/ui/ModalConfirmation"
 
 import { BsBank2 } from "react-icons/bs"
-import { CiSearch } from "react-icons/ci"
 import { LuRefreshCcw } from "react-icons/lu"
 
 export type DataBank = {
   id: number;
   name: string;
-  accountName: string;
-  accountNumber: string;
+  account_name: string;
+  account_number: string;
   status: StatusType;
-  fullName: string;
-  createdAt: string;
+  full_name: string;
+  created_at: string;
+};
+type ResponseDataBank = {
+  id: number;
+  name: string;
+  account_name: string;
+  account_number: string;
+  status: string;
+  created_at: string;
+  user: {
+    full_name: string;
+  };
 };
 
 const supportEntry = [
-  { key: "10", value: "10" }, 
   { key: "20", value: "20"}, 
   { key: "50", value: "50"},
   { key: "100", value: "100"}
 ];
 
 const BankManagement = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [initLoad, setInitLoad] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showPopupDelete, setShowPopupDelete] = useState<boolean>(false);
   const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
-  const [selectedStatusChange, setSelectedStatusChange] = useState<StatusType | null>(null);
+  const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
+
+    // Data Overview
+    const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
+  
+    // Data Table
   const [dataBank, setDataBank] = useState<DataBank[]>([]);
   
   // Table State
-  const [querySearch, setQuerySearch] = useState<string>("");
+  const [globalFiltering, setGlobalFiltering] = useState<string>("");
+  const [debouncedSearch, setDebouncedSearch] = useState<string>("");
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [sorting, setSorting] = useState<SortingState>([]);
   const [filterStatus, setFilterStatus] = useState<FullStatusType>("all");
@@ -70,39 +89,68 @@ const BankManagement = () => {
 
   const fetchData = useCallback(async () => {
     setIsLoading(true);
-    const {error, message, data} = await AdminAPI.getAllBank({
-      page: pagination.pageIndex + 1,
-      limit: pagination.pageSize.toString(),
-      status: filterStatus === "all" ? undefined : filterStatus
-    });
-    if (!error && data) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const temp = data.data.map((item: any) => ({
-        id: item["id"],
-        name: item["name"],
-        accountName: item["account_name"],
-        accountNumber: item["account_number"],
-        status: item["status"],
-        fullName: item["user"]["full_name"],
-        createdAt: item["created_at"]
-      }));
-      setDataBank(temp);
-      setPagination({
-        pageIndex: data.meta.page - 1,
-        pageSize: data.meta.limit
+
+    try {
+      const sort = sorting[0];
+      const {error, message, data} = await AdminAPI.getAllBank({
+        search: debouncedSearch,
+        status: filterStatus === "all" ? undefined : filterStatus,
+        page: pagination.pageIndex + 1,
+        limit: pagination.pageSize,
+        sortBy: sort?.id ?? "created_at",
+        orderBy: sort?.desc === undefined ? "desc" :
+          sort?.desc ? "desc" : "asc"
       });
-      setTotalData(data.meta.total);
-      setTotalPages(data.meta.totalPages);
-      setRowSelection({});
-    } else {
-      toast.error(message);
+      if (!error && data) {
+        await fetchDataAdminOverview(true);
+
+        const temp = data.data.map((item: ResponseDataBank) => ({
+          id: item.id,
+          name: item.name,
+          account_name: item.account_name,
+          account_number: item.account_number,
+          status: item.status,
+          full_name: item.user.full_name,
+          created_at: item.created_at
+        }));
+        setDataBank(temp);
+        setPagination({
+          pageIndex: data.meta.page - 1,
+          pageSize: data.meta.limit
+        });
+        setTotalData(data.meta.total);
+        setTotalPages(data.meta.totalPages);
+        setRowSelection({});
+      } else {
+        toast.error(message);
+      }
+    } finally {
+      setInitLoad(false);
+      setIsLoading(false);
     }
-    setIsLoading(false);
-  }, [filterStatus, pagination.pageIndex, pagination.pageSize]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
+
+    useEffect(() => {
+      const fetchOverview = async () => {
+        await fetchDataAdminOverview(true);
+      }
+      fetchOverview();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(globalFiltering);
+      setPagination((prev) => ({ ...prev, pageIndex: 0 }));
+    }, 500);
+  
+    return () => clearTimeout(handler);
+  }, [globalFiltering]);
 
   const tableInstance = useReactTable({
     columns: columnsDef,
@@ -114,12 +162,12 @@ const BankManagement = () => {
     state: {
       sorting,
       pagination,
-      globalFilter: querySearch,
+      globalFilter: globalFiltering,
       rowSelection,
     },
     pageCount: totalPages,
     onSortingChange: setSorting,
-    onGlobalFilterChange: setQuerySearch,
+    onGlobalFilterChange: setGlobalFiltering,
     onPaginationChange: setPagination,
     onRowSelectionChange: setRowSelection,
     enableRowSelection: true
@@ -129,13 +177,8 @@ const BankManagement = () => {
     if (isLoading) return;
     setFilterStatus(key as FullStatusType);
   }  
-  const handleChangeFilterLimit = (key: string) => {
-    if (isLoading) return;
-    setPagination({
-      pageIndex: 0,
-      pageSize: Number(key)
-    });;
-  }  
+
+  // Function Helper
   const handleDeleteUserBank = async () => {
     if (isLoading) return;
 
@@ -160,10 +203,9 @@ const BankManagement = () => {
     setShowPopupDelete(false);
     setIsLoading(false);
   }
-
   const openPopUpStatus = (key: string) => {
     setShowPopupStatus(true);
-    setSelectedStatusChange(key as StatusType)
+    setSelectedStatusChange(key as SetStatusType)
   }
   const handleChangeStatusUserBank = async () => {
     if (isLoading || !selectedStatusChange) return;
@@ -189,17 +231,37 @@ const BankManagement = () => {
     setShowPopupStatus(false);
     setIsLoading(false);
   }
+  const handleChangeFilterLimit = (key: string) => {
+    if (isLoading) return;
+    setPagination({
+      pageIndex: 0,
+      pageSize: Number(key)
+    });;
+  }  
+  const handleChangeGlobalFiltering = (e: ChangeEvent<HTMLInputElement>) => {
+    setGlobalFiltering(e.target.value);
+  } 
 
-  const useFilter = filterStatus !== "all";
+  useLockBodyScroll(showPopupDelete || showPopupStatus);
+  const useFilter = filterStatus !== "all" || globalFiltering; 
   return (
     <WrapperDashboardComponent>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <CardOverview 
-          title={"Registered Bank"} icon={<BsBank2 />} content={"100"} 
-          detail={"Total user registered bank"} />
+          title={"Registered Bank"} 
+          icon={<BsBank2 />} 
+          content={dataAdminOverview ? dataAdminOverview.totalBanks.toLocaleString() : "0"} 
+          detail={"Total user registered bank"} 
+          isLoading={dataAdminOverview === null}
+        />
         <CardOverview 
-          title={"Pending Bank Verifications"} icon={<BsBank2 />} content={"8"} 
-          detail={"Requires admin review"} status="warning" />
+          title={"Pending Bank Verifications"} 
+          icon={<BsBank2 />} 
+          content={dataAdminOverview ? dataAdminOverview.pendingBanks.toLocaleString() : "0"} 
+          detail={"Requires admin review"} 
+          status="warning" 
+          isLoading={dataAdminOverview === null}
+        />
       </div>
       <section className="mt-5">
         <TitleDashboard>
@@ -207,34 +269,25 @@ const BankManagement = () => {
         </TitleDashboard>
 
         {/* FILTER TABLE */}
-        <div className="my-4 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
+        <div className="my-4 flex flex-col md:flex-row justify-between items-center gap-2 2xl:gap-3">
           <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
-            <div className="h-9 2xl:h-12 py-2 md:py-0 px-2 2xl:px-4 flex flex-1 items-center gap-2 2xl:gap-4 w-full bg-white border border-[#D2CEE1] rounded-lg max-w-full lg:max-w-[456px] 2xl:max-w-[640px]">
-              <label htmlFor="search" className="cursor-pointer">
-                <CiSearch className="text-2xl 2xl:text-3xl text-[#7E7E7E]" />
-              </label>
-              <input
-                id="search"
-                name="search"
-                placeholder="Cari username atau email"
-                value={querySearch}
-                onChange={(e) => setQuerySearch(e.target.value)}
-                type="text"
-                autoComplete="off"
-                className="w-full h-full text-base 2xl:text-xl placeholder:text-[rgba(0,0,0,0.6)] focus:outline-0 placeholder:text-ellipsis placeholder:line-clamp-1"
-              />
-            </div>
-            <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+            <SearchDashboard 
+              query={globalFiltering} 
+              onQuery={handleChangeGlobalFiltering} 
+              placeholder={"Cari nama pengguna, bank atau nomor rekening"} />
             {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-              <div
-                onClick={() => setShowPopupDelete(true)}
-                className="h-9 2xl:h-12 px-2 2xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
-                <p className="text-nowrap">
-                  Hapus {tableInstance.getSelectedRowModel().flatRows.length} data
-                </p>
+              <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+              {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
+                <div
+                  onClick={() => setShowPopupDelete(true)}
+                  className="h-9 2xl:h-12 px-2 2xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
+                  <p className="text-nowrap">
+                    Hapus {tableInstance.getSelectedRowModel().flatRows.length} data
+                  </p>
+                </div>
+              }
               </div>
             }
-            </div>
           </div>
           <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
             <SelectDropdown 
@@ -262,55 +315,45 @@ const BankManagement = () => {
         {/* TABLE */}
         <TableDataBank 
           tableInstance={tableInstance}
-          isLoading={isLoading}
+          isLoading={initLoad || isLoading}
         />
 
         {/* LOADING & 0 DATA TABLE */}
-        {dataBank.length === 0 && isLoading &&
+        {dataBank.length === 0 && (initLoad || isLoading) &&
             <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
               <Spinner />
             </div>
         }
-        {dataBank.length === 0 && !isLoading &&
+        {dataBank.length === 0 && !initLoad && !isLoading &&
           <NoDataFound useImage>
             {useFilter ?
-              "Tidak ditemukan data trader yang sesuai dengan filter atau pencarian Anda."
+              "Tidak ditemukan data bank yang sesuai dengan filter atau pencarian Anda."
             : 
-              "Belum ada data pengguna trader yang terdaftar di dalam sistem."
+              "Belum ada data bank yang terdaftar di dalam sistem."
             }
           </NoDataFound>
         }
 
-        <div className="mt-4 flex items-center justify-between">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-            <p className="w-fit text-base 2xl:text-xl">
-              Baris per halaman
-            </p>
-            <SelectDropdown 
-              selectedInput={pagination.pageSize.toString()} 
-              handleChangeInput={handleChangeFilterLimit} 
-              objectInput={supportEntry}
-              containerCL="w-fit!"
-              inputCL="w-[80px]! text-center!"
-              positionDrop="center"
-              positionY="up" />
-            <p className="w-fit text-base 2xl:text-xl">
-              menampilkan 1 hingga {totalData} dari {totalData} entri.
-            </p>
-          </div>
-          <div className="hidden md:block">
-            <NextPreviousButton 
-              onNextPage={tableInstance.nextPage}
-              onPreviousPage={tableInstance.previousPage}
-              disabledNext={isLoading || !tableInstance.getCanNextPage()}
-              disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
-            />
-          </div>
-        </div>
+        {/* FOOTER */}
+        <PaginationFooterTable
+          pageIndex={pagination.pageIndex}
+          pageSize={pagination.pageSize}
+          totalData={totalData}
+          onChangePageSize={handleChangeFilterLimit}
+          onNext={tableInstance.nextPage}
+          onPrev={tableInstance.previousPage}
+          disabledNext={isLoading || !tableInstance.getCanNextPage()}
+          disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
+          isLoading={initLoad || isLoading}
+          supportEntry={supportEntry}
+        /> 
       </section>
 
+      {/* FLOATING SECTION */}
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
+        (tableInstance.getSelectedRowModel().flatRows
+          .filter(row => ["approved", "rejected"]
+            .includes(row.getValue("status"))).length === 0 ?
         <ChangeStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
@@ -323,22 +366,26 @@ const BankManagement = () => {
         )
       }
 
+      {/* MODAL FLOATING SECTION */}
       {showPopupStatus && <ModalConfirmation
-        title={`Konfirmasi ${tableInstance.getSelectedRowModel().flatRows.length} status data`}
+        title={`Konfirmasi 
+          ${selectedStatusChange === "approved" ? "Persetujuan":""} 
+          ${selectedStatusChange === "rejected" ? "Penolakan":""}
+          ${tableInstance.getSelectedRowModel().flatRows.length} 
+          Bank`}
         paragraph={`Apakah Anda yakin ingin 
           ${selectedStatusChange === "approved" ? "menyetujui":""}
           ${selectedStatusChange === "rejected" ? "menolak":""}
-          ${selectedStatusChange === "pending" ? "membatalkan":""}
-        status pendaftaran bank untuk data yang dipilih?`}
+        verifikasi bank untuk data yang dipilih? Tindakan tidak dapat dibatalkan.`}
         handleConfirmation={handleChangeStatusUserBank}
-        btnConfirmation="primary-light" 
+        btnConfirmation={selectedStatusChange === "rejected" ? "danger" : "primary-light"}
         isVisible={showPopupStatus} 
         handleClose={() => setShowPopupStatus(false)} 
         cancelText="Batal"
-        confirmText="Lanjutkan"
+        confirmText={selectedStatusChange === "rejected" ? "Reject" : "Approve"}
       />}  
       {showPopupDelete && <ModalConfirmation
-        title={`Hapus ${tableInstance.getSelectedRowModel().flatRows.length} data bank`}
+        title={`Hapus ${tableInstance.getSelectedRowModel().flatRows.length} Data Bank`}
         paragraph="Data yang dipilih akan dihapus permanen dari sistem dan tidak dapat dipulihkan kembali."
         handleConfirmation={handleDeleteUserBank}
         btnConfirmation="danger" 

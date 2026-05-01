@@ -1,3 +1,5 @@
+// TODO: Date Filter
+
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -19,6 +21,7 @@ import SelectDropdown from "@/components/ui/SelectDropdown";
 
 import { LuRefreshCcw } from "react-icons/lu";
 import { brokers } from "@/utils/dataBroker/brokers";
+import RangeDatePicker from "@/components/ui/RangeDatePicker";
 
 const supportEntry = [
   { "key": "20", "value": "20" }, 
@@ -150,6 +153,7 @@ const HistoryRebate = () => {
                 wrapperCL="w-fit!"         
               />
             </div>
+            <RangeDatePicker />
             <div className="flex items-center gap-2 2xl:gap-3">
               <Tooltip 
                 disabled={isLoading}

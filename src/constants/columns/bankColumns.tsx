@@ -29,7 +29,8 @@ export const columnsDef = [
     ),
   },
   {
-    accessorKey: "fullName",
+    id: "user",
+    accessorKey: "full_name",
     header: "Nama Lengkap"
   },
   {
@@ -37,11 +38,11 @@ export const columnsDef = [
     header: "Bank"
   },
   {
-    accessorKey: "accountNumber",
+    accessorKey: "account_number",
     header: "Nomor Rekening"
   },
   {
-    accessorKey: "accountName",
+    accessorKey: "account_name",
     header: "Pemilik Rekening"
   },
   {
@@ -63,7 +64,7 @@ export const columnsDef = [
     header: "Status"
   },
   {
-    accessorKey: "createdAt",
+    accessorKey: "created_at",
     header: "Tanggal Dibuat",
     cell: ({ getValue }: { getValue: () => string }) => formattingFullDate(getValue())
   },

@@ -51,6 +51,8 @@ import BankManagement from "./pages/dashboard/admin/BankManagement";
 import BrokersManagement from "./pages/dashboard/admin/BrokersManagement";
 import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalRequestManagement";
 import { clearCacheAuthUser } from "./helper/clearCacheAuthUser";
+import RebatesManagement from "./pages/dashboard/admin/RebatesManagement";
+import AdminOverviewProvider from "./provider/AdminOverviewProvider";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -160,12 +162,17 @@ function App() {
 
             {/* Dashboard Routes (Admin/User/Affiliator) */}
             {authUser?.role === "admin" && (
-              <Route path="dashboard" element={<ContainerDashboard />}>
+              <Route path="dashboard" element={
+                <AdminOverviewProvider>
+                  <ContainerDashboard />
+                </AdminOverviewProvider>
+              }>
                 <Route path="overview" element={<OverviewAdmin />} />
                 <Route path="affiliators" element={<AffiliatorsManagement />} />
                 <Route path="traders" element={<TradersManagement />} />
                 <Route path="bank" element={<BankManagement />} />
                 <Route path="broker" element={<BrokersManagement />} />
+                <Route path="rebates" element={<RebatesManagement />} />
                 <Route path="withdrawal" element={<WithdrawalRequestManagement />} />
                 <Route path="validation-data" element={<ValidationDataDashboard />} />
                 <Route path="profile" element={<ProfilePage />} />

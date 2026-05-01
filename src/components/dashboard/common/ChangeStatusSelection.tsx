@@ -1,13 +1,8 @@
+import { statusMapNoPendingAll } from "@/utils/dataDropdownDashboard";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
-
-const objectInput = [
-  { key: "approved", value: "Approve" },
-  { key: "rejected", value: "Reject" },
-  { key: "pending", value: "Pending" }
-];
 
 const ChangeStatusSelection = ({
   selectedNumber,
@@ -72,7 +67,7 @@ const ChangeStatusSelection = ({
             transition={{ duration: 0.15 }}
             className={`absolute bottom-[calc(100%+4px)] left-1/2 -translate-x-1/2 origin-bottom`}>
             <div className={`p-2 h-full border border-[#DDDDDD] bg-white w-[200px] 2xl:w-60 rounded-lg shadow-sm`}>
-              {objectInput.map((item) => (
+              {statusMapNoPendingAll.map((item) => (
                 <p 
                   onClick={() => handleChange(item.key)}
                   className="p-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md  cursor-pointer">

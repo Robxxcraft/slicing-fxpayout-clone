@@ -1,6 +1,6 @@
 import type { ValidationData } from "@/models/validationData";
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
-import type { StatusType } from "@/types/status.type";
+import type { OrderStatus, StatusType } from "@/types/status.type";
 import type { FormFeedback } from "@/types/validationForm.type";
 
 export const getValidationData = async ({
@@ -202,18 +202,217 @@ export const getDataOverview = async () => {
   }
 };
 
-// Rebates API
-export const getAllRebates = async () => {
+// User by id
+export const getProfileById = async ({ userId }: { userId: number }) => {
   try {
-    const response = await _fetchWithAuth(`${BASE_URL}/rebates`);
+    const response = await _fetchWithAuth(`${BASE_URL}/auth/${userId}`);
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message, data: responseJson.result }
+    }
+
+    return { error: true, message: responseJson.message, data: null };
+  } catch (error) {
+    console.error(`Failed get profile by id. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
+// Affiliator
+export const getDataAffiliator = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
+  status,
+  search
+}: {
+  limit?: number; 
+  page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  status?: "approved" | "verifying";
+  search?: string;
+}) => {
+  try {
+    let url = `${BASE_URL}/admin/affiliators?`;
+    if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
+    if (status) url += `status=${status}&`;
+    if (search) url += `search=${search}&`;
+
+    const response = await _fetchWithAuth(url);
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message, data: responseJson.result }
+    }
+
+    return { error: true, message: responseJson.message, data: null };
+  } catch (error) {
+    console.error(`Failed send form feedback. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
+// Trader
+export const getDataTrader = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
+  status,
+  search
+}: {
+  limit?: number; 
+  page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  status?: "approved" | "verifying";
+  search?: string;
+}) => {
+  try {
+    let url = `${BASE_URL}/admin/traders?`;
+    if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
+    if (status) url += `status=${status}&`;
+    if (search) url += `search=${search}&`;
+
+    const response = await _fetchWithAuth(url);
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message, data: responseJson.result }
+    }
+
+    return { error: true, message: responseJson.message, data: null };
+  } catch (error) {
+    console.error(`Failed send form feedback. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
+// Rebates API
+export const getAllRebates = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
+  status,
+  search,
+  startDate,
+  endDate
+}: {
+  status?: StatusType
+  limit?: number;
+  page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  search?: string;
+  startDate?: string;
+  endDate?: string;
+}) => {
+  try {
+    let url = `${BASE_URL}/rebates/requests?`;
+    if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
+    if (status) url += `status=${status}&`;
+    if (search) url += `search=${search}&`;
+    if (startDate) url += `start_date=${startDate}&`;
+    if (endDate) url += `end_date=${endDate}&`;
+
+    const response = await _fetchWithAuth(url);
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message, data: responseJson.result }
+    }
+
+    return { error: true, message: responseJson.message, data: null };
+  } catch (error) {
+    console.error(`Failed get data rebates. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
+export const updateRebateById = async ({
+  rebateId,
+  totalRebate
+}: {
+  rebateId: number,
+  totalRebate: string
+}) => {
+  try {
+
+    const response = await _fetchWithAuth(`${BASE_URL}/rebates/requests/${rebateId}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        total_rebate: totalRebate
+      })
+    });
     const responseJson = await response.json();
     if (response.status === 200) {
       return { error: false, message: responseJson.message }
     }
 
+    return { error: true, message: responseJson.errors[0] };
+  } catch (error) {
+    console.error(`Failed update data rebate. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+    }
+  }
+};
+
+export const bulkChangeStatusRebates = async ({ 
+  rebateIds, status 
+}: { 
+  rebateIds: number[]; 
+  status: StatusType; 
+}) => {
+  try {
+    const url = `${BASE_URL}/rebates/requests/status`;
+    const response = await _fetchWithAuth(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        ids: rebateIds,
+        status
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
     return { error: true, message: responseJson.message };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed update status broker. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`
@@ -223,19 +422,28 @@ export const getAllRebates = async () => {
 
 // Bank API
 export const getAllBank = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
   status,
-  limit,
-  page
+  search
 }: {
   status?: StatusType
-  limit?: string;
+  limit?: number;
   page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  search?: string;
 }) => {
   try {
     let url = `${BASE_URL}/banks?`;
-    if (page) url += `page=${page}&`;
     if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
     if (status) url += `status=${status}&`;
+    if (search) url += `search=${search}&`;
 
     const response = await _fetchWithAuth(url);
     const responseJson = await response.json();
@@ -335,21 +543,30 @@ export const bulkChangeStatusUserBanks = async ({
   }
 };
 
-// Bank API
+// Broker API
 export const getAllBrokerUsers = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
   status,
-  limit,
-  page
+  search
 }: {
   status?: StatusType
-  limit?: string;
+  limit?: number;
   page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  search?: string;
 }) => {
   try {
     let url = `${BASE_URL}/brokers?`;
-    if (page) url += `page=${page}&`;
     if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
     if (status) url += `status=${status}&`;
+    if (search) url += `search=${search}&`;
 
     const response = await _fetchWithAuth(url);
     const responseJson = await response.json();
@@ -368,21 +585,117 @@ export const getAllBrokerUsers = async ({
   }
 };
 
+export const deleteBrokerUserById = async ({ brokerId }: { brokerId: number; }) => {
+  try {
+    const url = `${BASE_URL}/brokers/${brokerId}`;
+    const response = await _fetchWithAuth(url, {
+      method: "DELETE"
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed delete broker. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
+    }
+  }
+};
+
+export const bulkDeleteBrokerUsers = async ({ brokerIds }: { brokerIds: number[]; }) => {
+  try {
+    const url = `${BASE_URL}/brokers/bulk`;
+    const response = await _fetchWithAuth(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        ids: brokerIds
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed bulk delete broker. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
+    }
+  }
+};
+
+export const bulkChangeStatusBrokerUsers = async ({ 
+  brokerIds, status 
+}: { 
+  brokerIds: number[]; 
+  status: StatusType; 
+}) => {
+  try {
+    const url = `${BASE_URL}/brokers/status`;
+    const response = await _fetchWithAuth(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        ids: brokerIds,
+        status
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed update status broker. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
+    }
+  }
+};
+
 // WithdrawalRequests API
 export const getAllWithdrawalRequests = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
   status,
-  limit,
-  page
+  search,
+  startDate,
+  endDate
 }: {
   status?: StatusType
-  limit?: string;
+  limit?: number;
   page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  search?: string;
+  startDate?: string;
+  endDate?: string;
 }) => {
   try {
     let url = `${BASE_URL}/withdrawals?`;
-    if (page) url += `page=${page}&`;
     if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
     if (status) url += `status=${status}&`;
+    if (search) url += `search=${search}&`;
+    if (startDate) url += `start_date=${startDate}&`;
+    if (endDate) url += `end_date=${endDate}&`;
 
     const response = await _fetchWithAuth(url);
     const responseJson = await response.json();
@@ -397,6 +710,39 @@ export const getAllWithdrawalRequests = async ({
       error: true, 
       message: `Please try again later. Error: ${error}`,
       data: null
+    }
+  }
+};
+
+export const bulkChangeStatusWithdrawals = async ({ 
+  withdrawalIds, status 
+}: { 
+  withdrawalIds: number[]; 
+  status: StatusType; 
+}) => {
+  try {
+    const url = `${BASE_URL}/withdrawals/status`;
+    const response = await _fetchWithAuth(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        ids: withdrawalIds,
+        status
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed update status broker. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
     }
   }
 };

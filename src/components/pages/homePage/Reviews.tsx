@@ -22,7 +22,6 @@ const Reviews = () => {
   const [dataTestimonial, setDataTestimonial] = useState<Testimonial[]>([]);
   const [showModalForm, setShowModalForm] = useState<boolean>(false);
   const [showFeedbackSubmitForm, setShowFeedbackSubmitForm] = useState<ModalResponse>(null);
-
   
   useEffect(() => {
     const getData = async () => {

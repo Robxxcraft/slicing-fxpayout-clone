@@ -208,7 +208,7 @@ const RebateChart = ({
         min: 0,
         max: valueChartY,
         ticks: {
-          stepSize: 5,
+          stepSize: Math.round(valueChartY / 9),
           callback: (val: any) => `$${val}`,
           color: "#9ca3af",
           font: { size: 11 }

@@ -17,7 +17,7 @@ const TableDataBank = ({
   const dataRows = tableInstance.getRowModel().rows;
 
   return (
-    <Table className="mt-0!">
+    <Table isLoading={isLoading} className={`mt-0!`}>
       <thead>
       {tableInstance.getHeaderGroups().map((headerEl) => {
         const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg!"
@@ -30,7 +30,7 @@ const TableDataBank = ({
                 <Table.HeadingItem
                   key={cellEl.id}
                   className={`${baseStyle} ${isSelectRow ? "px-2!":""}
-                    ${cellEl.index === cellEl.getSize() - 1 ? "text-right!" : "text-left!"}
+                    ${cellEl.index === headerEl.headers.length - 1 ? "px-2! text-right!" : "text-left!"}
                     ${cellEl.index === 1 ? "px-0! pl-2! pr-8!":""}
                     cursor-pointer select-none
                   `}
@@ -64,14 +64,14 @@ const TableDataBank = ({
           (dataRows.map((rowEl, rowIndex) => (
             <Table.Row key={rowEl.id}>
               {rowEl.getVisibleCells().map((cellEl, cellIndex) => {
-                const baseStyle = "py-2! text-nowrap align-middle!";
+                const baseStyle = "py-2! text-nowrap align-middle! group-hover:bg-gray-200";
                 const isSelectRow = cellEl.column.id === "select";
                 return (
                   <Table.Cell
                     key={cellEl.id}
                     rowIndex={rowIndex}
                     className={`${baseStyle} ${isSelectRow ? "px-2!":""}
-                      ${cellIndex === cellEl.column.depth - 1 ? "text-right!" : "text-left!"}
+                      ${cellIndex === rowEl.getVisibleCells().length - 1 ? "px-2! text-right!" : "text-left!"}
                       ${cellIndex === 1 ? "px-0! pl-2! pr-8!" : ""} 2xl:text-xl!
                     `}
                   >

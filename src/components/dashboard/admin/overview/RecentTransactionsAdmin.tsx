@@ -1,121 +1,153 @@
+import { useState } from "react";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import { HiArrowLongRight } from "react-icons/hi2";
-import Table from "@/components/TableLayout";
-import IndeterminateCheckbox from "@/components/ui/IndeterminateCheckbox";
-import StatusTag from "../../common/StatusTag";
-import type { StatusType } from "@/types/status.type";
+import { useTranslation } from "react-i18next";
+import { getCoreRowModel, useReactTable, type RowSelectionState } from "@tanstack/react-table";
+
+import { AdminAPI } from "@/api";
+import { getLocalizedPath } from "@/helper/pathHelper";
+import type { SetStatusType } from "@/types/status.type";
+import { columnsDef } from "@/constants/columns/withdrawalManagementColumns";
+
 import NoDataFound from "../../common/NoDataFound";
+import FloatingSelection from "../../common/FloatingSelection";
+import ChangeStatusSelection from "../../common/ChangeStatusSelection";
+import TableDataWithdrawals from "../withdrawalManagement/TableDataWithdrawals";
 
-const CONFIG_HEADER = ["_", "ID", "Status", "Metode", "Nama Bank", "Pemilik Rekening", "Alamat Penarikan", "Total Withdrawal", "Currency", "Tanggal Dibuat"];
-const dataEarnings = [
-  {
-    empty: "_",
-    id: "#WD-12434",
-    status: "pending",
-    metode: "Bank",
-    bank: "BRI",
-    username: "Adib",
-    walletAddress: "28104472",
-    total: "$406.27",
-    currency: "USD",
-    date: "8 February 2019"
-  },
-  {
-    empty: "_",
-    id: "#WD-12434",
-    status: "pending",
-    metode: "Bank",
-    bank: "BRI",
-    username: "Adib",
-    walletAddress: "28104472",
-    total: "$406.27",
-    currency: "USD",
-    date: "8 February 2019"
-  },
-]
+import type { DataWithdrawalManagement } from "@/pages/dashboard/admin/WithdrawalRequestManagement";
 
-const RecentTransactionsAdmin = () => {
+import Spinner from "@/components/ui/Spinner";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
+
+import { HiArrowLongRight } from "react-icons/hi2";
+
+type RecentTransactionsAdminProps = {
+  dataWithdrawals: DataWithdrawalManagement[];
+  onChangeStatusData: (ids: number[], newStatus: SetStatusType) => void;
+  onChangeLoad: (load: boolean) => void;
+  isLoading: boolean;
+};
+
+const RecentTransactionsAdmin = ({
+  dataWithdrawals,
+  onChangeStatusData,
+  onChangeLoad,
+  isLoading,
+}: RecentTransactionsAdminProps) => {
+  const { i18n } = useTranslation();
+  
+  const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
+  const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+  
+  const tableInstance = useReactTable({
+    columns: columnsDef,
+    data: dataWithdrawals,
+    getCoreRowModel: getCoreRowModel(),
+    state: {
+      rowSelection,
+    },
+    pageCount: 1,
+    onRowSelectionChange: setRowSelection,
+    enableRowSelection: true
+  });
+
+  const openPopUpStatus = (key: string) => {
+    setShowPopupStatus(true);
+    setSelectedStatusChange(key as SetStatusType)
+  }
+
+  const handleChangeStatusWithdrawals = async () => {
+    if (isLoading || !selectedStatusChange) return;
+    
+    onChangeLoad(true);
+    const withdrawalIds = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id));
+    const { error, message } = await AdminAPI.bulkChangeStatusWithdrawals({
+      withdrawalIds, status: selectedStatusChange
+    });
+    if (error) {
+      toast.error(message);
+    } else {
+      onChangeStatusData(withdrawalIds, selectedStatusChange);
+      tableInstance.resetRowSelection();
+      toast.success(message);
+    }
+    setShowPopupStatus(false);
+    onChangeLoad(false);
+  }
+
   return (
-    <section className="mt-8 2xl:mt-10">
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
-        <div>
-          <h2 className="text-2xl 2xl:text-[2rem] font-semibold">
-            Recent Transactions
-          </h2>
-          <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
-            Daftar transaksi penarikan dana terbaru yang diajukan oleh pengguna.
-          </p>
+    <>
+      <section className="mt-8 2xl:mt-10">
+
+        {/* HEADER */}
+        <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
+          <div>
+            <h2 className="text-2xl 2xl:text-[2rem] font-semibold">
+              Recent Transactions
+            </h2>
+            <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
+              Daftar transaksi penarikan dana terbaru yang diajukan oleh pengguna.
+            </p>
+          </div>
+          <Link to={getLocalizedPath("dashboard/withdrawal", i18n.language)} className="flex items-center gap-3 text-primary">
+            <p className="text-base 2xl:text-xl">Lihat Semua</p>
+            <HiArrowLongRight className="text-2xl" />
+          </Link>
         </div>
-        <Link to="#" className="flex items-center gap-3 text-primary">
-          <p className="text-base 2xl:text-xl">Lihat Semua</p>
-          <HiArrowLongRight className="text-2xl" />
-        </Link>
-      </div>
 
-      <Table className="mt-6!">
-        <Table.Heading>
-          {CONFIG_HEADER.map((header, idx) => {
-            const baseStyle = "py-3! text-nowrap font-medium! text-sm! 2xl:text-lg!"
-            if (header === "_") {
-              return (
-              <Table.HeadingItem key={header} className={`${baseStyle} px-2!`}>
-                <IndeterminateCheckbox />
-              </Table.HeadingItem>
-              )
-            }
-            return (
-            <Table.HeadingItem key={header} className={`${idx === CONFIG_HEADER.length - 1 ? "text-right!" : "text-left!"} ${baseStyle}
-              ${idx === 1 ? "px-0! pl-2! pr-8!" : ""} 
-            `}>
-              {header}
-            </Table.HeadingItem>
-          )})}
-        </Table.Heading>
+          {/* TABLE */}
+          <TableDataWithdrawals
+            tableInstance={tableInstance}
+            isLoading={isLoading}
+          />
 
-        <Table.Body>
-          {dataEarnings.length > 0 && dataEarnings.map((item, rowIndex) => (
-            <Table.Row key={rowIndex}>
-              {Object.entries(item).map(([key, value], cellIndex) => {
-                const baseStyle = "py-2! text-nowrap align-middle!"
-                if (cellIndex === 0) {
-                  return (
-                    <Table.Cell rowIndex={rowIndex} key={cellIndex} className={`${baseStyle} px-2!`}>
-                      <IndeterminateCheckbox />
-                    </Table.Cell>
-                  ) 
-                }
-                if (key === "status") {
-                  const textStatus = value === "pending" ? "Verifying" : value === "approved" ? "Approved" : "Rejected";
-                  return (
-                    <Table.Cell rowIndex={rowIndex} key={cellIndex} className={`${baseStyle}`}>
-                      <div className="w-fit">
-                        <StatusTag status={value as StatusType} text={textStatus} />
-                      </div>
-                    </Table.Cell>
-                  )
-                }
-                return (
-                  <Table.Cell rowIndex={rowIndex} key={cellIndex} className={`${cellIndex === CONFIG_HEADER.length - 1 ? "text-right!" : "text-left!"} ${baseStyle} ${cellIndex === 1 ? "px-0! pl-2! pr-8!" : ""} 2xl:text-xl!`}>
-                    {value}
-                  </Table.Cell>
-                )
-              })}
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          {/* LOADING & 0 DATA TABLE */}
+          {dataWithdrawals.length === 0 && isLoading &&
+            <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+              <Spinner />
+            </div>
+          }
+          {dataWithdrawals.length === 0 && !isLoading &&
+            <NoDataFound useImage>
+              Belum ada laporan penarikan dana yang dilakukan oleh pengguna.
+            </NoDataFound>
+          }
+      </section>
 
-      {dataEarnings.length === 0 && 
-        // (initLoad || isLoading) ?
-        //   <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
-        //     <Spinner />
-        //   </div>
-        // : 
-        <NoDataFound useImage>
-          Belum ada laporan penarikan dana yang dilakukan oleh pengguna.
-        </NoDataFound>
+      {/* FLOATING SECTION */}
+      {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
+        (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
+        <ChangeStatusSelection 
+          selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
+          onClose={() => tableInstance.resetRowSelection()} 
+          onChangeStatus={openPopUpStatus} />
+        :
+          <FloatingSelection 
+            selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
+            onClose={() => tableInstance.resetRowSelection()} 
+          />
+        )
       }
-    </section>
+
+      {showPopupStatus && <ModalConfirmation
+        title={`Konfirmasi 
+          ${selectedStatusChange === "approved" ? "Persetujuan":""} 
+          ${selectedStatusChange === "rejected" ? "Penolakan":""}
+          ${tableInstance.getSelectedRowModel().flatRows.length} 
+          Penarikan Dana`}
+        paragraph={`Apakah Anda yakin ingin 
+          ${selectedStatusChange === "approved" ? "menyetujui":""}
+          ${selectedStatusChange === "rejected" ? "menolak":""}
+        status penarikan dana yang dipilih? Tindakan tidak dapat dibatalkan.`}
+        handleConfirmation={handleChangeStatusWithdrawals}
+        btnConfirmation={selectedStatusChange === "rejected" ? "danger" : "primary-light"}
+        isVisible={showPopupStatus} 
+        handleClose={() => setShowPopupStatus(false)} 
+        cancelText="Batal"
+        confirmText={selectedStatusChange === "rejected" ? "Reject" : "Approve"}
+      />}  
+    </>
   )
 }
 

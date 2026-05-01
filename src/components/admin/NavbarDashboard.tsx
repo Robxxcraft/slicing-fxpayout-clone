@@ -85,17 +85,21 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
                         </span>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between text-base 2xl:text-lg">
-                      <p className="font-semibold">Balance</p>
-                      <p>
-                        {formattingUsd(balance?.balance || 0)} USD
-                      </p>
-                    </div>
-                    {(authUser?.referralCode || authUser?.affiliatorCode) &&
+                    {authUser?.role !== "admin" && 
+                    <>
                       <div className="flex items-center justify-between text-base 2xl:text-lg">
-                        <p className="font-semibold">Referral</p>
-                        <p>{authUser.referralCode || authUser.affiliatorCode}</p>
+                        <p className="font-semibold">Balance</p>
+                        <p>
+                          {formattingUsd(balance?.balance || 0)} USD
+                        </p>
                       </div>
+                      {(authUser?.referralCode || authUser?.affiliatorCode) &&
+                        <div className="flex items-center justify-between text-base 2xl:text-lg">
+                          <p className="font-semibold">Referral</p>
+                          <p>{authUser.referralCode || authUser.affiliatorCode}</p>
+                        </div>
+                      }
+                    </>
                     }
                   </div>
                 </div>

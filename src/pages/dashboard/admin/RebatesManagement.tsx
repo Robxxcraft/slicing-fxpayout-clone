@@ -1,0 +1,419 @@
+// TODO: Search broker, filter tanggal, hapus data
+
+import { useCallback, useEffect, useState, type ChangeEvent } from "react"
+import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type"
+import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table"
+
+import { AdminAPI } from "@/api"
+import { statusMap } from "@/utils/dataDropdownDashboard"
+import { columnsDef } from "@/constants/columns/rebatesManagementColumns"
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
+
+import CardOverview from "@/components/dashboard/common/CardOverview"
+import NoDataFound from "@/components/dashboard/common/NoDataFound"
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
+import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
+import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard"
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
+import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
+import DrawerRebateDetail from "@/components/dashboard/admin/rebatesManagement/DrawerRebateDetail"
+import TableRebatesManagement from "@/components/dashboard/admin/rebatesManagement/TableRebatesManagement"
+
+import Spinner from "@/components/ui/Spinner"
+import Tooltip from "@/components/ui/Tooltip"
+import SelectDropdown from "@/components/ui/SelectDropdown"
+import ModalConfirmation from "@/components/ui/ModalConfirmation"
+
+import { toast } from "react-toastify"
+import { CgInfo } from "react-icons/cg"
+import { RiStockFill } from "react-icons/ri"
+import { LuRefreshCcw } from "react-icons/lu"
+
+export type DataRebateManagement = {
+  id: number;
+  created_at: string;
+  date: string;
+  account_number: string;
+  broker_name: string;
+  total_rebate: number;
+  status: StatusType;
+};
+export type ResponseDataRebate = {
+  id: number;
+  created_at: string;
+  date: string;
+  account_number: string;
+  total_rebate: string;
+  status: string;
+  broker: { name: string };
+}
+
+const supportEntry = [
+  { key: "20", value: "20"}, 
+  { key: "50", value: "50"},
+  { key: "100", value: "100"},
+  { key: "200", value: "200"}
+];
+
+const RebatesManagement = () => {
+  const [initLoad, setInitLoad] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
+  // const [showPopupDelete, setShowPopupDelete] = useState<boolean>(false);
+  const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
+
+  // Data Overview
+  const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
+
+  // Data Table
+  const [dataRebates, setDataRebates] = useState<DataRebateManagement[]>([]);
+  const [selectedData, setSelectedData] = useState<DataRebateManagement | null>(null);
+
+  // Table State
+  const [globalFiltering, setGlobalFiltering] = useState<string>("");
+  const [debouncedSearch, setDebouncedSearch] = useState<string>("");
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [filterStatus, setFilterStatus] = useState<FullStatusType>("all");
+  const [pagination, setPagination] = useState<PaginationState>({
+    pageIndex: 0,
+    pageSize: 50
+  });
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [totalData, setTotalData] = useState<number>(0);
+
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+
+    try {
+      const sort = sorting[0];
+      const { error, message, data } = await AdminAPI.getAllRebates({
+        search: debouncedSearch,
+        status: filterStatus === "all" ? undefined : filterStatus,
+        page: pagination.pageIndex + 1,
+        limit: pagination.pageSize,
+        sortBy: sort?.id ?? "created_at",
+        orderBy: sort?.desc === undefined ? "desc" :
+          sort?.desc ? "desc" : "asc"
+      });
+
+      if (!error && data) {
+        await fetchDataAdminOverview(true);
+
+        const temp = data.data.map((item: ResponseDataRebate) => ({
+          id: item.id,
+          created_at: item.created_at,
+          date: item.date,
+          account_number: item.account_number,
+          broker_name: item.broker.name,
+          total_rebate: item.total_rebate,
+          status: item.status
+        }));
+        setDataRebates(temp);
+        setPagination({
+         pageIndex: data.meta.page - 1,
+         pageSize: data.meta.limit
+        });
+        setTotalData(data.meta.total);
+        setTotalPages(data.meta.totalPages);
+        setRowSelection({});
+      } else {
+        toast.error(message);
+      }
+    } finally {
+      setInitLoad(false);
+      setIsLoading(false);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
+
+  useEffect(() => {
+    const fetchOverview = async () => {
+      await fetchDataAdminOverview(true);
+    }
+    fetchOverview();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(globalFiltering);
+      setPagination((prev) => ({ ...prev, pageIndex: 0 }));
+    }, 500);
+  
+    return () => clearTimeout(handler);
+  }, [globalFiltering]);
+
+  const tableInstance = useReactTable({
+    columns: columnsDef,
+    data: dataRebates,
+    getCoreRowModel: getCoreRowModel(),
+    manualFiltering: true,
+    manualSorting: true,
+    manualPagination: true,
+    state: {
+      sorting,
+      pagination,
+      globalFilter: globalFiltering,
+      rowSelection,
+    },
+    pageCount: totalPages,
+    onSortingChange: setSorting,
+    onGlobalFilterChange: setGlobalFiltering,
+    onPaginationChange: setPagination,
+    onRowSelectionChange: setRowSelection,
+    enableRowSelection: true
+  });
+
+  // Function Helper
+  const openPopUpStatus = (key: string) => {
+    setShowPopupStatus(true);
+    setSelectedStatusChange(key as SetStatusType)
+  }
+  const handleChangeStatusRebates = async () => {
+    if (isLoading || !selectedStatusChange) return;
+    
+    setIsLoading(true);
+    const rebateIds = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id));
+    const { error, message } = await AdminAPI.bulkChangeStatusRebates({
+      rebateIds, status: selectedStatusChange
+    });
+    if (error) {
+      toast.error(message);
+    } else {
+      if (selectedData) {
+        setSelectedData((prev) => {
+          if (!prev) return null 
+          
+          return {
+          ...prev,
+          status: selectedStatusChange
+        }});
+      }
+      setDataRebates((prev) => (
+        prev.map((item) => (
+          rebateIds.includes(item.id) ?
+          {...item, status: selectedStatusChange} :
+          item
+        ))
+      ));
+      toast.success(message);
+      fetchData();
+    }
+    setShowPopupStatus(false);
+    setIsLoading(false);
+  }
+  const handleUpdateRebateById = async (rebateId: number, totalRebate: string) => {
+    const { error, message } = await AdminAPI.updateRebateById({
+      rebateId: rebateId,
+      totalRebate: totalRebate
+    });
+    if (!error) {
+      toast.success(message);
+      if (selectedData) {
+        setSelectedData((prev) => {
+          if (!prev) return null 
+          
+          return {
+          ...prev,
+          total_rebate: parseFloat(totalRebate)
+        }});
+      }
+      setDataRebates((prev) => (
+        prev.map((item) => (
+          item.id === rebateId ?
+          {...item, total_rebate: parseFloat(totalRebate)} :
+          item
+        ))
+      ));
+    } else {
+      toast.error(message);
+    }
+
+    return error;
+  }
+  const handleChangeFilterStatus = (key: string) => {
+    if (isLoading) return;
+    setFilterStatus(key as "all" | "pending" | "approved" | "rejected");
+  }  
+  const handleChangeFilterLimit = (key: string) => {
+    if (isLoading) return;
+    setPagination({
+      pageIndex: 0,
+      pageSize: Number(key)
+    });;
+  } 
+  const handleChangeGlobalFiltering = (e: ChangeEvent<HTMLInputElement>) => {
+    setGlobalFiltering(e.target.value);
+  } 
+
+  useLockBodyScroll(selectedData !== null || showPopupStatus);
+  const useFilter = filterStatus !== "all" || globalFiltering;
+  return (
+    <WrapperDashboardComponent>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <CardOverview 
+          title={"Total Rebates"} 
+          icon={<RiStockFill />} 
+          content={dataAdminOverview ? dataAdminOverview.totalRebates.toLocaleString() : "0"} 
+          detail={"Total data from import rebates"} 
+          isLoading={dataAdminOverview === null}  
+        />
+        <CardOverview 
+          title={"Pending Rebates"} 
+          icon={<RiStockFill />} 
+          content={dataAdminOverview ? dataAdminOverview.pendingRebates.toLocaleString() : "0"} 
+          detail={"Requires admin review"} 
+          status="warning" 
+          isLoading={dataAdminOverview === null}  
+        />
+      </div>
+      <section className="mt-5">
+        <div className="space-y-2.5">
+          <TitleDashboard>
+            History Import Rebates
+          </TitleDashboard>
+          <ParagraphDashboard maxW="w-full">
+            Tinjau hasil import rebates yang dilakukan kemudian verifikasi data rebates. Data yang sudah diverifikasi tidak dapat diubah atau pembatalan verifikasi.
+          </ParagraphDashboard>
+        </div>
+
+        {/* FILTER TABLE */}
+        <div className="my-4 flex flex-col md:flex-row justify-between items-center gap-2 2xl:gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+            <SearchDashboard 
+              query={globalFiltering} 
+              onQuery={handleChangeGlobalFiltering} 
+              placeholder={"Cari id akun trading atau broker"} />
+            {tableInstance.getSelectedRowModel().flatRows.length === 1 && 
+              <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+                {tableInstance.getSelectedRowModel().flatRows.length === 1 &&
+                  <Tooltip 
+                    fullMobile
+                    disabled={isLoading}
+                    variant="primary"
+                    icon={<CgInfo className={`text-xl`} />} 
+                    handleClick={() => {
+                      setSelectedData(tableInstance.getSelectedRowModel().flatRows[0].original)
+                    }} 
+                    detail={"Detail Data"} />
+                }
+              </div>
+            }
+          </div>
+          <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+            <SelectDropdown 
+              selectedInput={filterStatus} 
+              handleChangeInput={handleChangeFilterStatus} 
+              objectInput={statusMap}       
+              wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
+              inputCL="w-[200px]! 2xl:w-[240px]!"        
+            />
+            <Tooltip 
+              disabled={isLoading}
+              icon={<LuRefreshCcw className={`${isLoading ? "animate-spin" : ""}`} />} 
+              handleClick={() => fetchData()} 
+              detail={"Reload Data"} />
+              
+            <NextPreviousButton 
+              onNextPage={tableInstance.nextPage}
+              onPreviousPage={tableInstance.previousPage}
+              disabledNext={isLoading || !tableInstance.getCanNextPage()}
+              disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
+            />
+          </div>
+        </div>
+
+        {/* TABLE */}
+        <TableRebatesManagement 
+          tableInstance={tableInstance}
+          isLoading={initLoad || isLoading}
+        />
+
+        {/* LOADING & 0 DATA TABLE */}
+        {dataRebates.length === 0 && (initLoad || isLoading) &&
+            <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+              <Spinner />
+            </div>
+        }
+        {dataRebates.length === 0 && !initLoad && !isLoading &&
+          <NoDataFound useImage>
+            {useFilter ?
+              "Tidak ditemukan data rebate yang sesuai dengan filter atau pencarian Anda."
+            : 
+              "Belum ada data rebate pengguna yang tersimpan di sistem."
+            }
+          </NoDataFound>
+        }
+
+        {/* FOOTER */}
+        <PaginationFooterTable
+          pageIndex={pagination.pageIndex}
+          pageSize={pagination.pageSize}
+          totalData={totalData}
+          onChangePageSize={handleChangeFilterLimit}
+          onNext={tableInstance.nextPage}
+          onPrev={tableInstance.previousPage}
+          disabledNext={isLoading || !tableInstance.getCanNextPage()}
+          disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
+          isLoading={initLoad || isLoading}
+          supportEntry={supportEntry}
+        /> 
+      </section>
+
+      {/* FLOATING SECTION */}
+      {selectedData &&
+        <DrawerRebateDetail 
+          dataRebate={selectedData}
+          onCloseDrawer={() => {
+            setSelectedData(null);
+          }}
+          isOpen={selectedData !== null}
+          openPopUpStatus={openPopUpStatus}
+          onUpdateRebateById={handleUpdateRebateById}
+        />
+      }
+      {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
+        (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
+        <ChangeStatusSelection 
+          selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
+          onClose={() => tableInstance.resetRowSelection()} 
+          onChangeStatus={openPopUpStatus} />
+        :
+          <FloatingSelection 
+            selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
+            onClose={() => tableInstance.resetRowSelection()} 
+          />
+        )
+      }
+
+      {showPopupStatus && <ModalConfirmation
+        title={`Konfirmasi 
+          ${selectedStatusChange === "approved" ? "Persetujuan":""} 
+          ${selectedStatusChange === "rejected" ? "Penolakan":""}
+          ${tableInstance.getSelectedRowModel().flatRows.length} 
+          Data Rebate`}
+        paragraph={`Apakah Anda yakin ingin 
+          ${selectedStatusChange === "approved" ? "menyetujui":""}
+          ${selectedStatusChange === "rejected" ? "menolak":""}
+        status data rebate yang dipilih? Tindakan tidak dapat dibatalkan.`}
+        handleConfirmation={handleChangeStatusRebates}
+        btnConfirmation={selectedStatusChange === "rejected" ? "danger" : "primary-light"}
+        isVisible={showPopupStatus} 
+        handleClose={() => setShowPopupStatus(false)} 
+        cancelText="Batal"
+        confirmText={selectedStatusChange === "rejected" ? "Reject" : "Approve"}
+      />}  
+    </WrapperDashboardComponent>
+  )
+}
+
+export default RebatesManagement

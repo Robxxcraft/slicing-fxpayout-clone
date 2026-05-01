@@ -1,6 +1,7 @@
 import { formattingFullDateTime } from "@/helper/formattingDate";
 import StatusTag from "@/components/dashboard/common/StatusTag";
 import type { StatusType } from "@/types/status.type";
+import { formattingEmptyCurrency } from "@/helper/formattingCurrency";
 
 export const columnsDef = [
   {
@@ -41,6 +42,6 @@ export const columnsDef = [
   {
     accessorKey: "amount",
     header: "Amount",
-    cell: ({ getValue }: { getValue: () => string }) => `-${getValue()}`
+    cell: ({ getValue }: { getValue: () => string }) => `-${formattingEmptyCurrency(Number(getValue()))}`
   },
 ];

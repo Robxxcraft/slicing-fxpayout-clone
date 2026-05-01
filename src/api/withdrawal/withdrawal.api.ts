@@ -2,7 +2,7 @@ import type { FormWithdrawalRequest } from "@/pages/dashboard/common/WithdrawalR
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
 import type { OrderStatus, StatusType } from "@/types/status.type";
 
-export const createBankUser = async ({ 
+export const createWithdrawal = async ({ 
   form,
   bankId,
   amountIdr,
@@ -28,7 +28,7 @@ export const createBankUser = async ({
       })
     });
     const responseJson = await response.json();
-    if(response.status === 201){
+    if(response.status === 200){
       return { error: false, message: responseJson.message }
     }
     return { error: true, message: responseJson.message }

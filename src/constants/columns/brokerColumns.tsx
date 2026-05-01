@@ -29,20 +29,22 @@ export const columnsDef = [
     ),
   },
   {
-    accessorKey: "username",
-    header: "Username"
+    id: "user",
+    accessorKey: "full_name",
+    header: "Nama Lengkap"
   },
   {
-    accessorKey: "broker",
+    accessorKey: "broker_name",
     header: "Broker"
   },
   {
-    accessorKey: "accountNumber",
+    accessorKey: "account_number",
     header: "ID Trading"
   },
   {
     accessorKey: "platform",
-    header: "Platform"
+    header: "Platform",
+    enableSorting: false
   },
   {
     id: "status",
@@ -63,7 +65,7 @@ export const columnsDef = [
     header: "Status"
   },
   {
-    accessorKey: "createdAt",
+    accessorKey: "created_at",
     header: "Tanggal Dibuat",
     cell: ({ getValue }: { getValue: () => string }) => formattingFullDate(getValue())
   },

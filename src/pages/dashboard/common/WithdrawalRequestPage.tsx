@@ -1,24 +1,28 @@
-import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard";
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
-import Button from "@/components/ui/Button";
+import { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
+
+import { AuthAPI, ExchangeAPI, WithdrawalAPI } from "@/api";
+import BalanceContext from "@/context/BalanceContext";
+import type { BankUser } from "@/types/bank.type";
 import UserContext from "@/context/UserContext";
 import { useBankContext } from "@/hooks/useBankContext";
 import { useForm } from "@/hooks/useForm";
-import { useRedirectByRole } from "@/hooks/useRedirectByRole";
-import { useContext, useEffect, useState } from "react";
-import { FaChevronLeft } from "react-icons/fa6";
-import { TiInfoLarge } from "react-icons/ti";
 import { scrollToErrorInput } from "@/helper/formHelper";
-import { checkValidWithdrawalForm } from "@/helper/validationForm/withdrawalFormValidation";
-import { AuthAPI, ExchangeAPI, WithdrawalAPI } from "@/api";
-import { toast } from "react-toastify";
+import { useRedirectByRole } from "@/hooks/useRedirectByRole";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
-import WithdrawalForm from "@/components/dashboard/common/WithdrawalForm";
-import type { BankUser } from "@/types/bank.type";
-import BalanceContext from "@/context/BalanceContext";
+import { checkValidWithdrawalForm } from "@/helper/validationForm/withdrawalFormValidation";
 import type { ModalResponse } from "@/types/validationForm.type";
+
+import WithdrawalForm from "@/components/dashboard/common/WithdrawalForm";
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
+import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard";
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
+
+import Button from "@/components/ui/Button";
 import SuccessModal from "@/components/ui/SuccessModal";
+
+import { TiInfoLarge } from "react-icons/ti";
+import { FaChevronLeft } from "react-icons/fa6";
 
 export type FormWithdrawalRequest = {
   method: "bank" | "crypto";
@@ -45,6 +49,7 @@ const WithdrawalRequestPage = () => {
   });
   const { bank, fetchBank } = useBankContext();
 
+  // ? Inisialisasi fetch data
   useEffect(() => {
     const fetchData = async () => {
       if (!authUser) return;
@@ -71,6 +76,7 @@ const WithdrawalRequestPage = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // ? Setiap perubahan data amount akan di cek apakah dana yang ditarik available
   useEffect(() => {
     const amount = Number(formWithdrawal.values.amount);
     const maxAmount = balance?.balance || 0;
@@ -82,6 +88,7 @@ const WithdrawalRequestPage = () => {
     }
   }, [balance, formWithdrawal.values.amount]);
 
+  // ? Setiap perubahan data amount akan dilakukan konversi untuk metode bank 
   useEffect(() => {
     const amount = Number(formWithdrawal.values.amount);
     const maxAmount = balance?.balance || 0;
@@ -120,7 +127,7 @@ const WithdrawalRequestPage = () => {
   }, [balance, formWithdrawal.values.amount, formWithdrawal.values.method]);
 
   const handleSubmitWithdrawal = async () => {
-    if (isLoading) return;
+    if (isLoading || !authUser) return;
     setIsLoading(true);
     
     try {
@@ -132,14 +139,14 @@ const WithdrawalRequestPage = () => {
       let responseCreateWithdrawal;
       if (formWithdrawal.values.method === "bank" && bank) {
         formWithdrawal.setSpecificValue("walletAddress", bank.accountNumber);
-        responseCreateWithdrawal = await WithdrawalAPI.createBankUser({
+        responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
           form: formWithdrawal.values,
           bankId: bank.id,
           amountIdr: conversionRate.conversionResult.toString(),
           currency: "IDR"
         });
       } else if (formWithdrawal.values.method === "crypto") {
-        responseCreateWithdrawal = await WithdrawalAPI.createBankUser({
+        responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
           form: formWithdrawal.values,
           amountIdr: conversionRate.conversionResult.toString(),
           currency: "USD"
@@ -151,6 +158,30 @@ const WithdrawalRequestPage = () => {
       if (responseCreateWithdrawal.error) {
         toast.error(responseCreateWithdrawal.message);
       } else {
+        const respBalance = await AuthAPI.getBalanceUser();
+        if (!respBalance.error && respBalance.data) {
+          const tempBalance = {
+            userId: respBalance.data.userId,
+            balance: respBalance.data.amount,
+            currency: respBalance.data.currency
+          };
+          setBalance(tempBalance);
+        } else {
+          setBalance((prev) => {
+            if (!prev) {
+              return {
+                userId: authUser.id,
+                balance: 0,
+                currency: "USD"
+              }
+            }
+
+            return {
+              ...prev,
+              balace: prev.balance - parseFloat(formWithdrawal.values.amount)
+            }
+          });
+        }
         setShowModal("SUCCESS");
         formWithdrawal.resetForm();
       }
@@ -177,7 +208,7 @@ const WithdrawalRequestPage = () => {
     (formWithdrawal.values.method === "bank" && messageWarningBank !== "") ||
     errorSyncAmount !== "" ||
     isEmptyForm ||
-    initLoad;
+    initLoad || isLoading;
 
   return (
     <div className="font-inter md:mx-10 xl:mx-[140px] flex justify-center">
@@ -208,6 +239,7 @@ const WithdrawalRequestPage = () => {
               errors={formWithdrawal.errors}
               errorSyncAmount={errorSyncAmount}
               availableBalance={balance.balance}
+              isLoading={initLoad || isLoading}
             />
           }
           <div className="px-4 md:px-8 py-5 max-w-[360px] 2xl:max-w-[400px] w-fit bg-[#FAFAFA] border border-dashed border-primary rounded-2xl">
@@ -234,6 +266,8 @@ const WithdrawalRequestPage = () => {
             }
           </div>
         </div>
+
+        {/* INFORMATiON METHOD BANK / CRYPTO */}
         {formWithdrawal.values.method === "bank" &&
           <BankWithdrawalInformation 
             initLoad={initLoad} messageWarningBank={messageWarningBank} bank={bank}            
@@ -251,11 +285,14 @@ const WithdrawalRequestPage = () => {
             </div>
           </div>
         }
+
+        {/* BUTTON CONFIRM */}
         <div className="mt-6 md:mt-9 flex items-center gap-3 md:gap-4">
           <Button 
             onClick={() => redirectUser(authUser, "withdrawal")}
             buttonType="button"
             variant="outline"
+            disabled={isLoading}
             className="rounded-lg!"
           >
             Kembali
@@ -278,11 +315,15 @@ const WithdrawalRequestPage = () => {
 
       {showModal === "SUCCESS" && 
         <SuccessModal 
-          title={"Perubahan profil berhasil"}
-          paragraph={"Perubahan profil Anda telah berhasil disimpan. Informasi terbaru Anda kini sudah diperbarui."}
+          title={"Permintaan penarikan dana berhasil"}
+          paragraph={"Penarikan dana sedang diproses. Lakukan pengecekan antrean penarikan dana secara berkala."}
           closeText={"Tutup"}
           isVisible={showModal === "SUCCESS"} 
-          toggleModal={() => setShowModal(null)} />}
+          toggleModal={() => {
+            setShowModal(null);
+            redirectUser(authUser, "withdrawal");
+          }} 
+        />}
     </div>
   )
 }

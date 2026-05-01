@@ -290,7 +290,7 @@ const WithdrawalFundsPage = () => {
         </div>
 
         {/* TABLE */}
-        <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
+        <Table isLoading={isLoading} className={`mt-0!`}>
           <Table.Heading>
             {CONFIG_HEADERS.map((headerEl, cellIndex) => (
               <Table.HeadingItem key={headerEl.key}

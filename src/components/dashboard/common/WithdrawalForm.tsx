@@ -9,7 +9,8 @@ const WithdrawalForm = ({
   onSubmitWithdrawal,
   errors,
   errorSyncAmount,
-  availableBalance
+  availableBalance,
+  isLoading
 }: {
   form: FormWithdrawalRequest;
   handleFormChange: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
@@ -17,6 +18,7 @@ const WithdrawalForm = ({
   errors: Partial<Record<keyof FormWithdrawalRequest, string>>;
   errorSyncAmount: string;
   availableBalance: number;
+  isLoading: boolean;
 }) => {
   const helperAmount = errorSyncAmount ? undefined : `Sisa saldo anda: ${formattingUsd(availableBalance)} USD`;
   const errorAmount = errorSyncAmount ? undefined : errors.amount;
@@ -34,6 +36,7 @@ const WithdrawalForm = ({
         optionData={["bank", "crypto"]}
         labelOptions={["Internet Banking", "Crypto"]}
         errorMessage={errors.method}
+        disabled={isLoading}
         required />
       {form.method === "crypto" &&
         <TextInput
@@ -47,6 +50,7 @@ const WithdrawalForm = ({
           typeInput={"text"}
           errorMessage={errors.walletAddress}
           isMobileLabel={false}
+          disabled={isLoading}
           required={form.method === "crypto"} 
         />
       }
@@ -63,6 +67,7 @@ const WithdrawalForm = ({
           helperText={helperAmount}
           helperTextClassName="text-sm! 2xl:text-lg!"
           errorMessage={errorAmount}
+          disabled={isLoading}
           required />
         {errorSyncAmount &&
           <p className="mt-1 text-sm 2xl:text-lg text-red-500">

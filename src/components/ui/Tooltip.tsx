@@ -5,13 +5,15 @@ const Tooltip = ({
   variant="base",
   handleClick,
   detail,
-  disabled
+  disabled,
+  fullMobile
 }: {
   icon: ReactNode;
   variant?: "primary" | "base";
   handleClick: () => void;
   detail: string;
-  disabled?: boolean
+  disabled?: boolean;
+  fullMobile?: boolean;
 }) => {
   let btnClass;
   
@@ -21,13 +23,19 @@ const Tooltip = ({
     btnClass = "bg-linear-to-t from-dark-primary to-primary text-white border border-primary";
   }
   return (
-    <div className="relative group inline-block h-9 2xl:h-12">
+    <div className={`relative group inline-block h-9 2xl:h-12 
+      ${fullMobile ? "w-full md:w-fit":""}`
+    }>
       <button
         disabled={disabled}
         onClick={handleClick}
-        className={`${btnClass} size-9 2xl:size-12 text-base 2xl:text-xl rounded-md place-items-center cursor-pointer transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait`}
+        className={`${btnClass} 
+          ${fullMobile ? "px-2.5 md:px-0 flex md:block items-center gap-2 w-full h-9 md:w-9 2xl:h-12 2xl:w-12":"size-9 2xl:size-12"}
+          text-base 2xl:text-xl rounded-md place-items-center cursor-pointer transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait
+        `}
       >
         {icon}
+        {fullMobile && <span className="inline-block md:hidden">{detail}</span>}
       </button>
 
       <div className="absolute left-1/2 -translate-x-1/2 mt-2

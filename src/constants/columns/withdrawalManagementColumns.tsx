@@ -32,33 +32,38 @@ export const columnsDef = [
   {
     accessorKey: "id",
     accessorFn: (row: DataWithdrawalManagement) => `#WD-F${row.id.toString().padStart(3, "X")}`,
-    header: "ID"
+    header: "ID",
+    enableSorting: false
   },
   {
     accessorKey: "method",
     accessorFn: (row: DataWithdrawalManagement) => row.method === "bank" ? "Bank" : "Crypto",
-    header: "Metode"
+    header: "Metode",
+    enableSorting: false
   },
   {
-    accessorKey: "bank",
+    accessorKey: "bank_name",
     header: "Bank"
   },
   {
-    accessorKey: "accountName",
+    id: "user",
+    accessorKey: "account_name",
     header: "Pemilik Rekening"
   },
   {
-    accessorKey: "walletAddress",
+    accessorKey: "wallet_address",
     header: "Alamat Penarikan"
-  },
-  {
-    accessorKey: "total",
-    accessorFn: (row: DataWithdrawalManagement) => row.currency === "USD" ? formattingUsd(Number(row.total)) : formattingRp(Number(row.total)),
-    header: "Total Penarikan"
   },
   {
     accessorKey: "currency",
     header: "Currency",
+    enableSorting: false
+  },
+  {
+    accessorKey: "total",
+    accessorFn: (row: DataWithdrawalManagement) => row.currency === "USD" ? formattingUsd(Number(row.total)) : formattingRp(Number(row.total)),
+    header: "Total Penarikan",
+    enableSorting: false
   },
   {
     id: "status",
@@ -79,7 +84,7 @@ export const columnsDef = [
     header: "Status"
   },
   {
-    accessorKey: "createdAt",
+    accessorKey: "created_at",
     header: "Tanggal Dibuat",
     cell: ({ getValue }: { getValue: () => string }) => formattingFullDate(getValue())
   },

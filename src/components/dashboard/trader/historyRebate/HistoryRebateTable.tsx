@@ -16,7 +16,7 @@ const HistoryRebateTable = ({
 }) => {
   const dataRebate = tableInstance.getRowModel().rows;
   return (
-    <Table className={`${isLoading ? "opacity-70" : "opacity-100"} mt-0!`}>
+    <Table isLoading={isLoading} className={`mt-0!`}>
       <thead>
         {tableInstance.getHeaderGroups().map((headerEl) => (
           <tr key={headerEl.id}>

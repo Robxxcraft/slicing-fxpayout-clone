@@ -28,7 +28,7 @@ const ContainerDashboard = () => {
   
   useEffect(() => {
     if (isLogout) {
-      navigate("/");
+      navigate(getLocalizedPath("/", i18n.language));
       return;
     }
 

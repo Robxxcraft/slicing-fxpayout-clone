@@ -19,7 +19,8 @@ export const formattingUsd = (amount: number) => {
 export const formattingEmptyCurrency = (amount: number) => {
   return new Intl.NumberFormat("en-US", {
     style: "decimal",
+    useGrouping: true,
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
-  }).format(amount);
+  }).format(amount || 0);
 };

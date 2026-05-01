@@ -16,21 +16,25 @@ import { getLocalizedPath } from "@/helper/pathHelper";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const OverviewAdminHeader = ({
-  withdrawals,
-  banks,
-  rebates,
-  brokers,
-  traders,
-  affiliators
-}: {
+type OverviewAdminHeaderProps = {
   withdrawals: number;
   banks: number;
   rebates: number;
   brokers: number;
   traders: number;
   affiliators: number;
-}) => {
+  isLoading: boolean
+};
+
+const OverviewAdminHeader = ({
+  withdrawals,
+  banks,
+  rebates,
+  brokers,
+  traders,
+  affiliators,
+  isLoading
+}: OverviewAdminHeaderProps) => {
   const { i18n } = useTranslation();
   return (
     <header>
@@ -44,13 +48,19 @@ const OverviewAdminHeader = ({
               <CardOverview 
                 title={"Pending Withdrawals"} 
                 icon={<IoCardOutline />} sizeIcon="sm"
-                content={withdrawals.toLocaleString()} detail={"Total pending user requests"} bottomLine />
+                content={withdrawals.toLocaleString()} detail={"Total pending user requests"} 
+                isLoading={isLoading}
+                bottomLine 
+              />
             </Link>
             <Link to={getLocalizedPath("dashboard/rebates", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
               <CardOverview 
                 title={"Pending Rebates"} 
                 icon={<RiStockFill />} sizeIcon="sm"
-                content={rebates.toLocaleString()} detail={"Total unverified rebates"} bottomLine />
+                content={rebates.toLocaleString()} detail={"Total unverified rebates"} 
+                isLoading={isLoading}
+                bottomLine 
+              />
             </Link>
           </div>
           <div className="flex flex-col md:flex-row gap-4">
@@ -58,13 +68,19 @@ const OverviewAdminHeader = ({
               <CardOverview 
                 title={"Pending Broker Connections"} 
                 icon={<BsBank2 className="text-base! 2xl:text-lg!" />}
-                content={brokers.toLocaleString()} detail={"Total pending trader requests"} bottomLine />
+                content={brokers.toLocaleString()} detail={"Total pending trader requests"} 
+                isLoading={isLoading}
+                bottomLine 
+              />
             </Link>
             <Link to={getLocalizedPath("dashboard/bank", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
               <CardOverview 
                 title={"Pending Bank Verifications"} 
                 icon={<IoWalletOutline />} sizeIcon="sm"
-                content={banks.toLocaleString()} detail={"Total unverified bank"} bottomLine />
+                content={banks.toLocaleString()} detail={"Total unverified bank"} 
+                isLoading={isLoading}
+                bottomLine 
+              />
             </Link>
           </div>
         </div>
@@ -93,7 +109,9 @@ const OverviewAdminHeader = ({
                 }}
               />
               <div className="absolute top-1/2 left-1/2 -translate-1/2">
-                <p className="text-2xl md:text-[32px] lg:text-2xl 2xl:text-[2rem] font-semibold">{traders + affiliators}</p>
+                <p className="text-2xl md:text-[32px] lg:text-2xl 2xl:text-[2rem] font-semibold">
+                  {traders + affiliators}
+                </p>
               </div>
             </div>
           </div>
@@ -103,14 +121,18 @@ const OverviewAdminHeader = ({
                 <div className="size-3 2xl:size-4 rounded-full bg-[#f87171]"></div>
                 <p className="text-sm 2xl:text-lg font-medium">Affiliators</p>
               </div>
-              <span className="text-sm 2xl:text-lg font-medium text-black/70">{affiliators}</span>
+              <span className="text-sm 2xl:text-lg font-medium text-black/70">
+                {affiliators}
+              </span>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <div className="size-3 2xl:size-4 rounded-full bg-[#6366f1]"></div>
                 <p className="text-sm 2xl:text-lg font-medium">Traders</p>
               </div>
-              <span className="text-sm 2xl:text-lg font-medium text-black/70">{traders}</span>
+              <span className="text-sm 2xl:text-lg font-medium text-black/70">
+                {traders}
+              </span>
             </div>
           </div>
         </div>

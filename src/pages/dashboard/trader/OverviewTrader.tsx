@@ -23,22 +23,38 @@ type LayoutCard = {
 const OverviewTrader = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const { brokersUser, fetchBrokerUser } = useBrokerUserContext();
+  const [balance, setBalance] = useContext(BalanceContext);
   const [cardData, setCardData] = useState<LayoutCard>({
     lifetimeBalance: Number(getLocalStorage("lifetime_balance")) || 0,
     connectBrokers: brokersUser.filter((item) => item.status === "approved").length,
-    balance: 0
+    balance: balance?.balance || 0
   });
-  const [balance] = useContext(BalanceContext);
    
   const fetchDataDashboard = async () => {
     await fetchBrokerUser();
     const responseDashboard = await TraderAPI.getDashboardData();
     if (!responseDashboard.error && responseDashboard.data) {
+      const currentAmount = responseDashboard.data.balance ? 
+        responseDashboard.data.balance.amount : (balance ? balance.balance : 0);
       setCardData((prev) => ({
         ...prev,
         lifetimeBalance: responseDashboard.data.lifetimeBalance,
-        balance: balance?.balance || 0
+        balance: currentAmount
       }));
+      if (balance && balance.balance !== currentAmount) {
+        setBalance((prev) => {
+          if (!prev) {
+            return {
+              userId: responseDashboard.data.balance.userId,
+              currency: responseDashboard.data.balance.currency,
+              balance: currentAmount
+            }
+          }
+          return { 
+            ...prev, 
+            balance: currentAmount 
+          }});
+      }
       setLocalStorage("lifetime_balance", responseDashboard.data.lifetimeBalance);
     } 
     setInitLoad(false);
