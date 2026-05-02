@@ -5,7 +5,7 @@ export const aggregateRebateByDate = (data: any[]) => {
   const result: Record<string, number> = {};  
 
   data.forEach((item) => {
-    const date = formattingFullDate(item.date);
+    const date = formattingFullDate(item.created_at);
     const rebate = parseFloat(item.total_rebate);  
 
     if (!result[date]) result[date] = 0;
