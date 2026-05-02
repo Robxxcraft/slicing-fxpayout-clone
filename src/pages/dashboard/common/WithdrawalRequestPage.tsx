@@ -39,7 +39,7 @@ const WithdrawalRequestPage = () => {
   const [showModal, setShowModal] = useState<ModalResponse>(null);
   const formWithdrawal = useForm<FormWithdrawalRequest>({
     method: "bank",
-    amount: "0",
+    amount: balance ? balance.balance.toLocaleString() : "0",
     walletAddress: ""
   });
   const [errorSyncAmount, setErrorSyncAmount] = useState<string>("");
@@ -81,8 +81,10 @@ const WithdrawalRequestPage = () => {
     const amount = Number(formWithdrawal.values.amount);
     const maxAmount = balance?.balance || 0;
 
-    if (amount > maxAmount) {
-      setErrorSyncAmount(`Maksimal dana yang bisa ditarik sebesar $${maxAmount} USD`);
+    if (amount < 1) {
+      setErrorSyncAmount(`Minimal dana yang bisa ditarik sebesar $1.00 USD`);
+    } else if (amount > maxAmount) {
+      setErrorSyncAmount(`Maksimal dana yang bisa ditarik sebesar $${maxAmount}.00 USD`);
     } else {
       setErrorSyncAmount("");
     }
@@ -93,7 +95,7 @@ const WithdrawalRequestPage = () => {
     const amount = Number(formWithdrawal.values.amount);
     const maxAmount = balance?.balance || 0;
 
-    if (formWithdrawal.values.method !== "bank" || amount <= 0 || amount > maxAmount) {
+    if (formWithdrawal.values.method !== "bank" || amount < 1 || amount > maxAmount) {
       setConversionRate((prev) => ({
         ...prev,
         conversionResult: 0
