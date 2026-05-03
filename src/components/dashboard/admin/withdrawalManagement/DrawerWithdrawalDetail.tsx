@@ -129,7 +129,7 @@ const DrawerWithdrawalDetail = ({
             <p className="uppercase text-base font-bold 2xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
               REQUESTED AMOUNTS
             </p>
-            <p className="text-[40px] font-semibold">
+            <p className="text-[32px] md:text-[36px] font-semibold">
               {dataWithdrawal.currency === "USD" ?
                 formattingUsd(Number(dataWithdrawal.total)) : formattingRp(Number(dataWithdrawal.total))
               }

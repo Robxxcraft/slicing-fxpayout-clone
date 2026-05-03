@@ -27,14 +27,17 @@ const HistoryRebateTable = ({
               return (
                 <Table.HeadingItem key={cellEl.id}
                   className={`
-                    ${cellEl.index === cellEl.getSize() - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
+                    ${cellEl.index === headerEl.headers.length - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
                     ${cellEl.index === 0 ? "px-0! pl-2! pr-8!":""}
                     ${canSorting ? "cursor-pointer":""}
                     py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg! select-none 
                   `}
                   handleClick={canSorting && !isLoading ? cellEl.column.getToggleSortingHandler() : undefined}
                 >
-                  <div className="flex justify-between items-center">
+                  <div className={`
+                    ${cellEl.index === headerEl.headers.length - 1 ? "justify-end" : "justify-between"}
+                    flex items-center gap-2
+                  `}>
                    <span className="whitespace-nowrap">
                        {flexRender(
                        cellEl.column.columnDef.header,
@@ -68,7 +71,7 @@ const HistoryRebateTable = ({
                     key={cellEl.id}
                     rowIndex={rowIndex}
                     className={`${baseStyle}
-                     ${cellIndex === cellEl.column.depth - 1 ? "px-2! text-right!" : "text-left!"}
+                     ${cellIndex === rowEl.getVisibleCells().length - 1 ? "px-2! text-right!" : "text-left!"}
                      ${cellEl.id === "amount" ? "text-red-700":""}
                      ${cellIndex === 0 ? "px-0! pl-2! pr-8!":""}
                    `}

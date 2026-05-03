@@ -15,7 +15,7 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
   const [authUser] = useContext(UserContext);
   const [balance] = useContext(BalanceContext);
   return (
-    <div className={`${showMobileNav ? "left-0" : "-left-full"} 
+    <div className={`${showMobileNav ? "translate-x-0" : "-translate-x-full"} 
       z-95 block lg:hidden fixed top-0 mt-16 px-5 py-4 w-full h-screen bg-white transition-all duration-300 ease-out overflow-y-auto`}>
       <div className="pb-3 border-b border-disabled">
         <div className="mb-3 flex items-center gap-3">

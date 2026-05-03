@@ -23,7 +23,9 @@ const ModalConfirmation = ({
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false); 
   return (
-    <Modal isOpen={isVisible} onClose={handleClose}>
+    <Modal isOpen={isVisible} onClose={() => {
+      if (!isLoading) handleClose();
+    }}>
       <div className="flex flex-col">
         <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-bold text-gray-900 leading-[180%]">
           {title}
@@ -35,7 +37,10 @@ const ModalConfirmation = ({
           <Button 
             variant="outline" 
             buttonType="button" 
-            onClick={handleClose}
+            disabled={isLoading}
+            onClick={() => {
+              if (!isLoading) handleClose();
+            }}
             className="py-3! 2xl:py-4! text-lg! md:text-2xl font-medium!"
           > {cancelText}
           </Button>
