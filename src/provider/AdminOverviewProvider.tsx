@@ -22,7 +22,10 @@ const AdminOverviewProvider = ({ children }: { children: React.ReactNode }) => {
           pendingBrokers: data.pending_brokers,
           totalBrokers: data.total_brokers,
           traders: data.total_traders,
-          affiliators: data.total_affiliators
+          pendingTraders: data.pending_traders,
+          pendingAffiliators: data.pending_affiliators,
+          affiliators: data.total_affiliators,
+          totalCommission: data.total_commision_paids
         };
         setDataAdminOverview(payload);
       } else {
@@ -35,8 +38,11 @@ const AdminOverviewProvider = ({ children }: { children: React.ReactNode }) => {
           totalRebates: 0,
           pendingBrokers: 0,
           totalBrokers: 0,
+          pendingTraders: 0,
           traders: 0,
-          affiliators: 0
+          pendingAffiliators: 0,
+          affiliators: 0,
+          totalCommission: 0
         })
       }
       return { error, message };

@@ -2,6 +2,9 @@ import { useCallback, useEffect, useState, type ChangeEvent } from "react";
 import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table";
 
 import { AdminAPI } from "@/api";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { statusMapNoRejected } from "@/utils/dataDropdownDashboard";
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 import { columnsDef } from "@/constants/columns/affiliatorManagementColumns";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
@@ -23,9 +26,6 @@ import { toast } from "react-toastify";
 import { FaUsers } from "react-icons/fa6";
 import { CgInfo } from "react-icons/cg";
 import { LuRefreshCcw } from "react-icons/lu";
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
-import { statusMapNoRejected } from "@/utils/dataDropdownDashboard";
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 
 export type DataAffiliatorAdmin = {
   id: number;
@@ -91,8 +91,6 @@ const AffiliatorsManagement = () => {
       });
 
       if (!error && data) {
-        await fetchDataAdminOverview(true);
-
         const temp = data.data.map((item: ReponseDataAffiliator) => ({
           id: item.id,
           full_name: item.full_name,
@@ -114,17 +112,10 @@ const AffiliatorsManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      await fetchDataAdminOverview(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
-
-  useEffect(() => {
-    const fetchOverview = async () => {
-      await fetchDataAdminOverview(true);
-    }
-    fetchOverview();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     fetchData();
@@ -197,8 +188,8 @@ const AffiliatorsManagement = () => {
         <CardOverview 
           title={"Pending Affiliators"} 
           icon={<FaUsers />} 
-          content={dataAdminOverview ? dataAdminOverview.affiliators.toLocaleString() : "0"} 
-          detail={"Unverified users out of 100 total registrations"} 
+          content={dataAdminOverview ? dataAdminOverview.pendingAffiliators.toLocaleString() : "0"} 
+          detail={`Unverified users out of ${dataAdminOverview ? dataAdminOverview.affiliators.toLocaleString() : "0"} total registrations`} 
           status="warning" 
           isLoading={dataAdminOverview === null}
         />
@@ -268,7 +259,7 @@ const AffiliatorsManagement = () => {
           </div>
         }
         {dataAffiliators.length === 0 && !initLoad && !isLoading &&
-          <NoDataFound>
+          <NoDataFound useImage>
             <p className="text-black/80 text-base 2xl:text-xl">
             {useFilter ?
               "Tidak ditemukan data affiliator yang sesuai dengan filter atau pencarian Anda." :

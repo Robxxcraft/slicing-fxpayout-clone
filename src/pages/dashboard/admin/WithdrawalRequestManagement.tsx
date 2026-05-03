@@ -1,4 +1,4 @@
-// TODO: OVERVIEW && SORT DATE?
+// TODO: SORT DATE?
 
 import { AdminAPI } from "@/api";
 import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
@@ -17,6 +17,7 @@ import SelectDropdown from "@/components/ui/SelectDropdown";
 import Spinner from "@/components/ui/Spinner";
 import Tooltip from "@/components/ui/Tooltip";
 import { columnsDef } from "@/constants/columns/withdrawalManagementColumns";
+import { formattingUsd } from "@/helper/formattingCurrency";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type";
@@ -107,9 +108,7 @@ const WithdrawalRequestManagement = () => {
       });
   
       if (!error && data) {
-        await fetchDataAdminOverview(true);
-
-         const temp = data.data.map((item: ResponseDataWithdrawal) => {
+        const temp = data.data.map((item: ResponseDataWithdrawal) => {
           const useUsd = item.currency === "USD";
           return ({
             id: item.id,
@@ -139,20 +138,10 @@ const WithdrawalRequestManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
-    }
-
-    setIsLoading(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
-  
-
-  useEffect(() => {
-    const fetchOverview = async () => {
       await fetchDataAdminOverview(true);
     }
-    fetchOverview();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
 
   useEffect(() => {
     fetchData();
@@ -256,7 +245,7 @@ const WithdrawalRequestManagement = () => {
         <CardOverview 
           title={"Commission Paid"} 
           icon={<IoCardOutline />} 
-          content={"$20.00"} 
+          content={dataAdminOverview ? formattingUsd(dataAdminOverview.totalCommission).toString() : "0.00"} 
           detail={"Total commission successfully disbursed"} />
         <CardOverview 
           title={"Pending Request"} 

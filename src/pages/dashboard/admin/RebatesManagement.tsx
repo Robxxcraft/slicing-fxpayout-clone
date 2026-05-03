@@ -1,4 +1,4 @@
-// TODO: Search broker, filter tanggal, hapus data
+// TODO: filter tanggal
 
 import { useCallback, useEffect, useState, type ChangeEvent } from "react"
 import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type"
@@ -63,7 +63,7 @@ const RebatesManagement = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
-  // const [showPopupDelete, setShowPopupDelete] = useState<boolean>(false);
+  const [showPopupDelete, setShowPopupDelete] = useState<boolean>(false);
   const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
 
   // Data Overview
@@ -102,8 +102,6 @@ const RebatesManagement = () => {
       });
 
       if (!error && data) {
-        await fetchDataAdminOverview(true);
-
         const temp = data.data.map((item: ResponseDataRebate) => ({
           id: item.id,
           created_at: item.created_at,
@@ -127,17 +125,10 @@ const RebatesManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      await fetchDataAdminOverview(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
-
-  useEffect(() => {
-    const fetchOverview = async () => {
-      await fetchDataAdminOverview(true);
-    }
-    fetchOverview();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     fetchData();
@@ -174,6 +165,22 @@ const RebatesManagement = () => {
   });
 
   // Function Helper
+  const handleDeleteRebates = async () => {
+    if (isLoading) return;
+    setIsLoading(true);
+
+    const rebateIds = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id));
+    const { error, message } = await AdminAPI.bulkDeleteRebates({ rebateIds });
+
+    if (error) {
+      toast.error(message);
+    } else {
+      await fetchData();
+      toast.success(message);
+    }
+    setShowPopupDelete(false);
+    setIsLoading(false);
+  }
   const openPopUpStatus = (key: string) => {
     setShowPopupStatus(true);
     setSelectedStatusChange(key as SetStatusType)
@@ -255,7 +262,7 @@ const RebatesManagement = () => {
     setGlobalFiltering(e.target.value);
   } 
 
-  useLockBodyScroll(selectedData !== null || showPopupStatus);
+  useLockBodyScroll(selectedData !== null || showPopupStatus || showPopupDelete);
   const useFilter = filterStatus !== "all" || globalFiltering;
   return (
     <WrapperDashboardComponent>
@@ -293,7 +300,7 @@ const RebatesManagement = () => {
               query={globalFiltering} 
               onQuery={handleChangeGlobalFiltering} 
               placeholder={"Cari id akun trading atau broker"} />
-            {tableInstance.getSelectedRowModel().flatRows.length === 1 && 
+            {tableInstance.getSelectedRowModel().flatRows.length > 0 && 
               <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
                 {tableInstance.getSelectedRowModel().flatRows.length === 1 &&
                   <Tooltip 
@@ -305,6 +312,16 @@ const RebatesManagement = () => {
                       setSelectedData(tableInstance.getSelectedRowModel().flatRows[0].original)
                     }} 
                     detail={"Detail Data"} />
+                }
+                {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
+                  (tableInstance.getSelectedRowModel().flatRows.filter((row) => ["approved", "rejected"].includes(row.getValue("status"))).length === 0) && 
+                  <div
+                    onClick={() => setShowPopupDelete(true)}
+                    className="h-9 2xl:h-12 px-2 2xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
+                    <p className="text-nowrap">
+                      Hapus {tableInstance.getSelectedRowModel().flatRows.length} data
+                    </p>
+                  </div>
                 }
               </div>
             }
@@ -411,6 +428,16 @@ const RebatesManagement = () => {
         handleClose={() => setShowPopupStatus(false)} 
         cancelText="Batal"
         confirmText={selectedStatusChange === "rejected" ? "Reject" : "Approve"}
+      />}  
+      {showPopupDelete && <ModalConfirmation
+        title={`Hapus ${tableInstance.getSelectedRowModel().flatRows.length} Data Rebate`}
+        paragraph="Data yang dipilih akan dihapus permanen dari sistem dan tidak dapat dipulihkan kembali."
+        handleConfirmation={handleDeleteRebates}
+        btnConfirmation="danger" 
+        isVisible={showPopupDelete} 
+        handleClose={() => setShowPopupDelete(false)}
+        cancelText="Batal"
+        confirmText="Hapus" 
       />}  
     </WrapperDashboardComponent>
   )

@@ -20,7 +20,6 @@ import CardOverview from "@/components/dashboard/common/CardOverview"
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
 import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
 import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
-import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
 import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
@@ -101,8 +100,6 @@ const BrokersManagement = () => {
           sort?.desc ? "desc" : "asc"
       });
       if (!error && data) {
-        await fetchDataAdminOverview(true);
-
         const temp = data.data.map((item: ResponseDataBroker) => ({
           connection_id: item.id,
           broker_name: item.broker.name,
@@ -126,18 +123,10 @@ const BrokersManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
-    }
-    setIsLoading(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
-
-  useEffect(() => {
-    const fetchOverview = async () => {
       await fetchDataAdminOverview(true);
     }
-    fetchOverview();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
 
   useEffect(() => {
     fetchData();
@@ -350,17 +339,10 @@ const BrokersManagement = () => {
         
       {/* FLOATING SECTION */}
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
         <ChangeStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
           onChangeStatus={openPopUpStatus} />
-        :
-          <FloatingSelection 
-            selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
-            onClose={() => tableInstance.resetRowSelection()} 
-          />
-        )
       }
 
       {/* MODAL FLOATING SECTION */}

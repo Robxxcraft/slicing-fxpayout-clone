@@ -9,8 +9,11 @@ export type DataAdminOverview = {
   totalRebates: number;
   pendingBrokers: number;
   totalBrokers: number;
+  pendingTraders: number;
   traders: number;
+  pendingAffiliators: number;
   affiliators: number;
+  totalCommission: number;
 };
 
 type AdminOverviewContext = {

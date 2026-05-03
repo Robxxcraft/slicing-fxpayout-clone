@@ -1,27 +1,31 @@
+import { useCallback, useEffect, useState, type ChangeEvent } from "react"
+import { toast } from "react-toastify"
+import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table"
+
 import { AdminAPI } from "@/api"
-import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
-import DrawerTraderDetail from "@/components/dashboard/admin/traderManagement/DrawerTraderDetail"
-import TableTraderAdmin from "@/components/dashboard/admin/traderManagement/TableTraderAdmin"
-import CardOverview from "@/components/dashboard/common/CardOverview"
-import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
-import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
-import NoDataFound from "@/components/dashboard/common/NoDataFound"
-import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
-import SelectDropdown from "@/components/ui/SelectDropdown"
-import Spinner from "@/components/ui/Spinner"
-import Tooltip from "@/components/ui/Tooltip"
-import { columnsDef } from "@/constants/columns/traderManagementColumns"
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
 import { statusMapNoRejected } from "@/utils/dataDropdownDashboard"
-import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table"
-import { useCallback, useEffect, useState, type ChangeEvent } from "react"
+import { columnsDef } from "@/constants/columns/traderManagementColumns"
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
+
+import NoDataFound from "@/components/dashboard/common/NoDataFound"
+import CardOverview from "@/components/dashboard/common/CardOverview"
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
+import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
+import TableTraderAdmin from "@/components/dashboard/admin/traderManagement/TableTraderAdmin"
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
+import DrawerTraderDetail from "@/components/dashboard/admin/traderManagement/DrawerTraderDetail"
+
+import Spinner from "@/components/ui/Spinner"
+import Tooltip from "@/components/ui/Tooltip"
+import SelectDropdown from "@/components/ui/SelectDropdown"
+
 import { CgInfo } from "react-icons/cg"
 import { FaUsers } from "react-icons/fa6"
 import { LuRefreshCcw } from "react-icons/lu"
-import { toast } from "react-toastify"
 
 export type DataTradersAdmin = {
   id: number;
@@ -87,8 +91,6 @@ const TradersManagement = () => {
       });
 
       if (!error && data) {
-        await fetchDataAdminOverview(true);
-
         const temp = data.data.map((item: ResponseDataTrader) => ({
           id: item.id,
           full_name: item.full_name,
@@ -110,17 +112,10 @@ const TradersManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      await fetchDataAdminOverview(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
-
-  useEffect(() => {
-    const fetchOverview = async () => {
-      await fetchDataAdminOverview(true);
-    }
-    fetchOverview();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     fetchData();
@@ -191,8 +186,8 @@ const TradersManagement = () => {
         <CardOverview 
           title={"Pending Traders"} 
           icon={<FaUsers />} 
-          content={dataAdminOverview ? dataAdminOverview.traders.toLocaleString() : "0"} 
-          detail={"Unverified users out of 100 total registrations"} 
+          content={dataAdminOverview ? dataAdminOverview.pendingTraders.toLocaleString() : "0"} 
+          detail={`Unverified users out of ${dataAdminOverview ? dataAdminOverview.traders.toLocaleString() : "0"} total registrations`} 
           status="warning" 
           isLoading={dataAdminOverview === null}  
         />
@@ -260,7 +255,7 @@ const TradersManagement = () => {
           </div>
         }
         {dataTraders.length === 0 && !initLoad && !isLoading &&
-          <NoDataFound>
+          <NoDataFound useImage>
             <p className="text-black/80 text-base 2xl:text-xl">
             {useFilter ?
               "Tidak ditemukan data trader yang sesuai dengan filter atau pencarian Anda." :

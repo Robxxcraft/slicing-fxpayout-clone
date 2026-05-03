@@ -19,7 +19,6 @@ import NoDataFound from "@/components/dashboard/common/NoDataFound"
 import CardOverview from "@/components/dashboard/common/CardOverview"
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
 import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
-import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
 import TableDataBank from "@/components/dashboard/admin/bankManagement/TableDataBank"
 import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
@@ -68,10 +67,10 @@ const BankManagement = () => {
   const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
   const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
 
-    // Data Overview
-    const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
-  
-    // Data Table
+  // Data Overview
+  const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
+
+  // Data Table
   const [dataBank, setDataBank] = useState<DataBank[]>([]);
   
   // Table State
@@ -102,8 +101,6 @@ const BankManagement = () => {
           sort?.desc ? "desc" : "asc"
       });
       if (!error && data) {
-        await fetchDataAdminOverview(true);
-
         const temp = data.data.map((item: ResponseDataBank) => ({
           id: item.id,
           name: item.name,
@@ -127,17 +124,10 @@ const BankManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      await fetchDataAdminOverview(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
-
-    useEffect(() => {
-      const fetchOverview = async () => {
-        await fetchDataAdminOverview(true);
-      }
-      fetchOverview();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
   useEffect(() => {
     fetchData();
@@ -351,19 +341,10 @@ const BankManagement = () => {
 
       {/* FLOATING SECTION */}
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        (tableInstance.getSelectedRowModel().flatRows
-          .filter(row => ["approved", "rejected"]
-            .includes(row.getValue("status"))).length === 0 ?
         <ChangeStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
           onChangeStatus={openPopUpStatus} />
-        :
-          <FloatingSelection 
-            selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
-            onClose={() => tableInstance.resetRowSelection()} 
-          />
-        )
       }
 
       {/* MODAL FLOATING SECTION */}
