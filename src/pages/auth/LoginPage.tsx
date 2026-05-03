@@ -15,6 +15,7 @@ import LoginGoogle from "@/components/auth/LoginGoogle";
 import AuthLayoutHeader from "@/components/auth/AuthLayoutHeader";
 import LoginEmailForm from "@/components/auth/LoginEmailForm";
 import { UserModel } from "@/models/user.model";
+import BalanceContext from "@/context/BalanceContext";
 
 const LoginPage = () => {
   const { i18n } = useTranslation();
@@ -25,6 +26,7 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
   const [authUser, setAuthUser] = useContext(UserContext);
+  const [, setBalance] = useContext(BalanceContext);
   const { redirectUser } = useRedirectByRole();
 
   useEffect(() => {
@@ -49,6 +51,21 @@ const LoginPage = () => {
         const responseAuth = await AuthAPI.getAuthUser();
         if (!responseAuth.error) {
           const userData = UserModel.mapAuthUser(responseAuth.data);
+          const respBalance = await AuthAPI.getBalanceUser();
+          if (!respBalance.error && respBalance.data) {
+            const tempBalance = {
+              userId: userData.id,
+              balance: respBalance.data.amount,
+              currency: respBalance.data.currency
+            };
+            setBalance(tempBalance);
+          } else {
+            setBalance({
+              userId: userData.id,
+              balance: 0,
+              currency: "USD"
+            });
+          }
           setAuthUser(userData);
           
           const searchParams = new URLSearchParams(window.location.search);
