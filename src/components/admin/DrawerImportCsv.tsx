@@ -4,7 +4,7 @@ import { IoCloseOutline } from 'react-icons/io5';
 import Papa from "papaparse";
 import { brokers } from '@/utils/dataBroker/brokers';
 import Button from '../ui/Button';
-import DropzoneFile from './DropzoneFile';
+import DropzoneFile from '../dashboard/common/DropzoneFile';
 import PreviewValDataTable from './PreviewValDataTable';
 import PreviewFile from './PreviewFile';
 import FeedbackUploadFile from './FeedbackUploadFile';

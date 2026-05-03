@@ -60,7 +60,7 @@ export default function Button({
   }
 
   if (variant === "outline") {
-    variantStyles = `bg-transparent text-black border-black hover:bg-primary hover:text-white active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60 disabled:border-black/60`;
+    variantStyles = `bg-transparent text-black border-black hover:bg-[#F5F5F5] active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60 disabled:border-black/60`;
     spinnerCircle = "text-black/20";
   }
   if (variant === "outline-primary") {

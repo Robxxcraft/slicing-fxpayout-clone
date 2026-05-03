@@ -1,4 +1,4 @@
-import DropzoneFile from "@/components/admin/DropzoneFile";
+import DropzoneFile from "@/components/dashboard/common/DropzoneFile";
 import { brokers } from "@/utils/dataBroker/brokers";
 import { LuDownload } from "react-icons/lu";
 import PreviewFileXlsx from "../common/PreviewFileXlsx";

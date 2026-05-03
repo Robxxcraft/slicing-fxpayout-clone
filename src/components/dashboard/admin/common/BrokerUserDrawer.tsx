@@ -30,7 +30,7 @@ const BrokerUserDrawer = ({
         </p>
       }
       {!isLoading && (totalUnverified > 0 || brokers.length === 0) &&
-        <div className="my-4 px-4 py-2 2xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
+        <div className="mt-4 px-4 py-2 2xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
           <span className="flex shrink-0 items-center justify-center size-5 2xl:size-7 border border-[#BE5409] rounded-full">
             <TiInfoLarge className="text-sm 2xl:text-lg text-[#BE5409]" />
           </span>
@@ -40,7 +40,7 @@ const BrokerUserDrawer = ({
           </p>
         </div>
       }
-      <div className="space-y-4">
+      <div className="mt-4 space-y-4">
         {isLoading ? 
         Array.from({ length: 8 }).map((_, index) => (
           <div 

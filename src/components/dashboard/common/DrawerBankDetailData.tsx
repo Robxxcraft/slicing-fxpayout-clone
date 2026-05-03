@@ -93,13 +93,16 @@ const DrawerBankDetailData = ({
   }
   return (
     <div className="z-100 fixed py-5 top-16 2xl:top-[90px] right-0 max-w-[460px] w-full h-[calc(100vh-64px)] 2xl:h-[calc(100vh-90px)] border-t border-l border-[#D2CEE1] bg-white">
-      <div className="px-5 pb-2 2xl:pb-4 relative pr-5 flex items-center justify-between border-b border-[#D2CEE1]">
+      <div className="px-5 2xl:pb-2 relative pr-5 flex items-center justify-between border-b border-[#D2CEE1]">
         <h2 className="text-xl 2xl:text-2xl font-medium">
           Akun Bank
         </h2>
-        <IoCloseOutline 
-          onClick={closeDrawer}
-          className="text-2xl 2xl:text-3xl cursor-pointer" />
+        <div
+          onClick={closeDrawer} 
+          className="p-2 aspect-square hover:bg-[#F5F5F5] rounded-xl transition-all duration-300 cursor-pointer">
+          <IoCloseOutline 
+            className="text-2xl 2xl:text-3xl" />
+        </div>
       </div>
       <form onSubmit={handleSubmitData} className="h-full">
         <div className="pt-2 2xl:pt-4 pb-4 px-5 flex flex-col gap-4 w-full h-[calc(100%-80px)] 2xl:h-[calc(100%-100px)] overflow-y-auto overflow-x-hidden">

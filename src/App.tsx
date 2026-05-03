@@ -4,37 +4,53 @@ import { Bounce, ToastContainer } from "react-toastify";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import { AuthAPI } from "@/api";
-import { UserProvider } from "./context/UserContext";
-import { BankProvider } from "./provider/BankProvider";
-import { BrokerUserProvider } from "./provider/BrokerUserProvider";
 import { UserModel } from "./models/user.model";
-import type { UserProfile, UserBalance } from "./types/user.type";
+import { UserProvider } from "./context/UserContext";
 import { getAccessToken } from "./services/apiClient";
+import { BankProvider } from "./provider/BankProvider";
+import { BalanceProvider } from "./context/BalanceContext";
+import { clearCacheAuthUser } from "./helper/clearCacheAuthUser";
+import { BrokerUserProvider } from "./provider/BrokerUserProvider";
+import AdminOverviewProvider from "./provider/AdminOverviewProvider";
+import type { UserProfile, UserBalance } from "./types/user.type";
 
 import Broker from "./pages/Broker";
 import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
+import NotFound from "./pages/NotFound";
 import RebateForex from "./pages/RebateForex";
 import SchedulePage from "./pages/SchedulePage";
 import CalculatorPage from "./pages/CalculatorPage";
 import ValidationPage from "./pages/ValidationPage";
 import TransferAccount from "./pages/TransferAccount";
 import BrokerDetailPage from "./pages/BrokerDetailPage";
+
 import LoginPage from "./pages/auth/LoginPage";
-import ValidationDataDashboard from "./pages/admin/ValidationDataDashboard";
-import NotFound from "./pages/NotFound";
 import RegisterPage from "./pages/auth/RegisterPage";
 import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
 import ProfileRegisterPage from "./pages/auth/ProfileRegisterPage";
+
 import ProfilePage from "./pages/dashboard/common/ProfilePage";
 import ChangePasswordPage from "./pages/dashboard/common/ChangePasswordPage";
 import WithdrawalFundsPage from "./pages/dashboard/common/WithdrawalFundsPage";
 import WithdrawalRequestPage from "./pages/dashboard/common/WithdrawalRequestPage";
 import TransactionHistoryPage from "./pages/dashboard/common/TransactionHistoryPage";
+
+import OverviewAdmin from "./pages/dashboard/admin/OverviewAdmin";
+import BankManagement from "./pages/dashboard/admin/BankManagement";
+import ImportRebatePage from "./pages/dashboard/admin/ImportRebatePage";
+import BrokersManagement from "./pages/dashboard/admin/BrokersManagement";
+import TradersManagement from "./pages/dashboard/admin/TradersManagement";
+import RebatesManagement from "./pages/dashboard/admin/RebatesManagement";
+import ValidationDataDashboard from "./pages/admin/ValidationDataDashboard";
+import AffiliatorsManagement from "./pages/dashboard/admin/AffiliatorsManagement";
+import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalRequestManagement";
+
 import HistoryRebate from "./pages/dashboard/trader/HistoryRebate";
 import OverviewTrader from "./pages/dashboard/trader/OverviewTrader";
 import AddBrokerTrader from "./pages/dashboard/trader/AddBrokerTrader";
 import ConnectedBrokerPage from "./pages/dashboard/trader/ConnectedBrokerPage";
+
 import ManagementTraders from "./pages/dashboard/affiliator/ManagementTraders";
 import OverviewAffiliator from "./pages/dashboard/affiliator/OverviewAffiliator";
 import TraderPerformancePage from "./pages/dashboard/affiliator/TraderPerformancePage";
@@ -42,18 +58,7 @@ import TraderPerformancePage from "./pages/dashboard/affiliator/TraderPerformanc
 import TawkChat from "./components/TawkChat";
 import MainLayout from "./components/MainLayout";
 import { ScrollToTop } from "./components/ScrollToTop";
-import ContainerDashboard from "./components/admin/ContainerDashboard";
-import { BalanceProvider } from "./context/BalanceContext";
-import OverviewAdmin from "./pages/dashboard/admin/OverviewAdmin";
-import AffiliatorsManagement from "./pages/dashboard/admin/AffiliatorsManagement";
-import TradersManagement from "./pages/dashboard/admin/TradersManagement";
-import BankManagement from "./pages/dashboard/admin/BankManagement";
-import BrokersManagement from "./pages/dashboard/admin/BrokersManagement";
-import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalRequestManagement";
-import { clearCacheAuthUser } from "./helper/clearCacheAuthUser";
-import RebatesManagement from "./pages/dashboard/admin/RebatesManagement";
-import AdminOverviewProvider from "./provider/AdminOverviewProvider";
-import ImportRebatePage from "./pages/dashboard/admin/ImportRebatePage";
+import ContainerDashboard from "./components/dashboard/common/ContainerDashboard";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);

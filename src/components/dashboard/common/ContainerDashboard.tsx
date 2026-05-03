@@ -1,17 +1,20 @@
-import AsideDashboard from "./AsideDashboard";
-import NavbarDashboard from "./NavbarDashboard";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+
+import { UserModel } from "@/models/user.model";
 import UserContext from "@/context/UserContext";
+import { putAccessToken } from "@/services/apiClient";
+import { getLocalizedPath } from "@/helper/pathHelper";
 import { useRedirectGuest } from "@/hooks/useRedirectGuest";
 import { useRedirectByRole } from "@/hooks/useRedirectByRole";
-import { UserModel } from "@/models/user.model";
-import MobileNavDashboard from "../dashboard/common/MobileNavDashboard";
-import { putAccessToken } from "@/services/apiClient";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { clearCacheAuthUser } from "@/helper/clearCacheAuthUser";
+
+import NavbarDashboard from "@/components/admin/NavbarDashboard";
+
+import AsideDashboard from "./AsideDashboard";
+import MobileNavDashboard from "./MobileNavDashboard";
 
 const ContainerDashboard = () => {
   const { i18n } = useTranslation();

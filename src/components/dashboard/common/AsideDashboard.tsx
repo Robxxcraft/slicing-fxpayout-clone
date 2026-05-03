@@ -26,6 +26,8 @@ const AsideDashboard = ({ onLogout }: { onLogout: () => void }) => {
         setActiveNav("history");
       } else if (path[2] === "import") {
         setActiveNav("import-rebate");
+      } else if (path[1] === "rebate") {
+        setActiveNav("rebate");
       }
     } else {
       setActiveNav(path[1]);
