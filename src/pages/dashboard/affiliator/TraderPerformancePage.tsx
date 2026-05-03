@@ -76,7 +76,7 @@ const TraderPerformancePage = () => {
           broker: item.broker.name,
           trader: item.user.full_name,
           total_rebate: item.total_rebate,
-          commission: (item.total_rebate * 10) / 100
+          commission: (item.total_rebate / 0.6) * 0.1
         }));
         setDataTraderPerformance(temp);
         setPagination({
