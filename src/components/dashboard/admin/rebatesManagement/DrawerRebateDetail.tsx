@@ -119,6 +119,7 @@ const DrawerRebateDetail = ({
                   labelClassName="text-sm! text-black/60!"
                   inputClassName="py-2.5! px-2! w-full"
                   gap={8}
+                  isMobileLabel={false}
                   required
                   disabled
                 />
@@ -134,6 +135,7 @@ const DrawerRebateDetail = ({
                   labelClassName="text-sm! text-black/60!"
                   inputClassName="py-2.5! px-2! w-full"
                   gap={8}
+                  isMobileLabel={false}
                   required
                   disabled
                 />
@@ -152,6 +154,7 @@ const DrawerRebateDetail = ({
                   gap={8}
                   errorMessage={formRebate.errors.rebate}
                   disabled={dataRebate.status !== "pending" || isLoading}
+                  isMobileLabel={false}
                   required
                 />
               </div>
