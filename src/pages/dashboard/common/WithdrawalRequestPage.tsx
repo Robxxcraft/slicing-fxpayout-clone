@@ -23,6 +23,7 @@ import SuccessModal from "@/components/ui/SuccessModal";
 
 import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronLeft } from "react-icons/fa6";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 export type FormWithdrawalRequest = {
   method: "bank" | "crypto";
@@ -39,7 +40,7 @@ const WithdrawalRequestPage = () => {
   const [showModal, setShowModal] = useState<ModalResponse>(null);
   const formWithdrawal = useForm<FormWithdrawalRequest>({
     method: "bank",
-    amount: balance ? balance.balance.toLocaleString() : "0",
+    amount: "0",
     walletAddress: ""
   });
   const [errorSyncAmount, setErrorSyncAmount] = useState<string>("");
@@ -191,6 +192,8 @@ const WithdrawalRequestPage = () => {
       setIsLoading(false);
     }
   }
+
+  useLockBodyScroll(showModal === "SUCCESS");
 
   const bankStatusMessage = {
     empty: "Anda belum menambahkan data bank. Silakan tambahkan terlebih dahulu untuk dapat melakukan penarikan melalui bank.",
