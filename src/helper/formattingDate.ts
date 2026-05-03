@@ -1,3 +1,18 @@
+export const MONTH_MAP: Record<string, number> = {
+  Jan: 0,
+  Feb: 1,
+  Mar: 2,
+  Apr: 3,
+  Mei: 4,
+  Jun: 5,
+  Jul: 6,
+  Agu: 7,
+  Sep: 8,
+  Okt: 9,
+  Nov: 10,
+  Des: 11
+};
+
 export const formatDateYYYYMMDD = (date: Date | string) => {
   const d = new Date(date);
   return `${d.getFullYear()}-${(d.getMonth()+1)

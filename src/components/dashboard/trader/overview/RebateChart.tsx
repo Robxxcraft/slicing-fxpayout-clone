@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { formattingUsd } from "@/helper/formattingCurrency";
+import { MONTH_MAP } from "@/helper/formattingDate";
 import {
   Chart as ChartJS,
   LineElement,
@@ -7,7 +8,8 @@ import {
   LinearScale,
   PointElement,
   Tooltip,
-  Filler 
+  Filler, 
+  type ChartOptions
 } from "chart.js";
 import { useRef } from "react";
 import { Line } from "react-chartjs-2";
@@ -129,12 +131,26 @@ const RebateChart = ({
 }) => {
   const chartRef = useRef<ChartJS<"line"> | null>(null);
 
-  const sortedDate = Object.entries(rebateByDate).sort((a, b) => {
-    const dateA = new Date(a[0]);
-    const dateB = new Date(b[0]);
-    
-    return dateA.getTime() - dateB.getTime(); 
-  });
+  const sortedDate = Object.entries(rebateByDate).sort(
+    (a, b) => {
+      const [dayA, monthA, yearA] = a[0].split(" ");
+      const [dayB, monthB, yearB] = b[0].split(" ");
+
+      const dateA = new Date(
+        Number(yearA),
+        MONTH_MAP[monthA],
+        Number(dayA)
+      );
+
+      const dateB = new Date(
+        Number(yearB),
+        MONTH_MAP[monthB],
+        Number(dayB)
+      );
+
+      return dateA.getTime() - dateB.getTime();
+    }
+  );
 
   const readyRebateByDate = Object.fromEntries(sortedDate);
   const labels = Object.keys(readyRebateByDate);
@@ -175,7 +191,7 @@ const RebateChart = ({
     ]
   };
 
-  const options = {
+  const options:ChartOptions<"line"> = {
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
@@ -215,7 +231,6 @@ const RebateChart = ({
         },
         grid: {
           color: "#e5e7eb",
-          drawBorder: false
         },
         border: { display: false }
       }
