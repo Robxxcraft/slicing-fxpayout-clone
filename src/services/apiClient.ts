@@ -25,7 +25,7 @@ type fetchType = (
   options?: {
     headers?: Record<string, string>, 
     method?: string, 
-    body?: string 
+    body?: string | FormData; 
 }) => Promise<Response>;
 
 export const _fetchWithAuth: fetchType = async (url, options = {}) =>{

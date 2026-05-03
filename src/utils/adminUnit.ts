@@ -13,4 +13,11 @@ export const HEADER_MAPPING: Record<string, string> = {
   "Status": "status"
 };
 
+export const HEADER_REBATE_IMPORT: Record<string, string> = {
+  "Broker": "broker",	
+  "Nomor Akun": "account_number",
+  "Total Rebate": "total_rebates",
+  "Tanggal": "created_at"
+};
+
 export type StatusImport = "UPLOAD" | "ERROR" | "SUCCESS" | null;

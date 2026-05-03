@@ -11,6 +11,7 @@ import FeedbackUploadFile from './FeedbackUploadFile';
 import { HEADER_MAPPING, type StatusImport } from '@/utils/adminUnit';
 import { toast } from 'react-toastify';
 import { AdminAPI } from '@/api';
+import { getSizeFileFormat } from '@/helper/fileHelper';
 
 type ResponseImport = {
   messages: string[];
@@ -75,18 +76,6 @@ const DrawerImportCsv = ({
       });
     }
   }, []);
-
-  const getSizeFileFormat = (sizeInBytes: number): string => {
-    if (sizeInBytes < 1024) {
-      return `${sizeInBytes} Bytes`;
-    } else if (sizeInBytes < 1024 * 1024) {
-      const sizeInKB = (sizeInBytes / 1024).toFixed(2);
-      return `${sizeInKB} KB`;
-    } else {
-      const sizeInMB = (sizeInBytes / (1024 * 1024)).toFixed(2);
-      return `${sizeInMB} MB`;
-    }
-  };
 
   const handleImportData = async () => {
     if (data.length === 0) return;

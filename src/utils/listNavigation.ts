@@ -153,7 +153,7 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
       title: "Transaction",
       items: [
         { key: "withdrawal", label: "Withdrawal", path: "/dashboard/withdrawal", icon: IoWalletOutline },
-        { key: "import", label: "Import Rebate", path: "/dashboard/import", icon: LuDatabase },
+        { key: "import-rebate", label: "Import Rebate", path: "/dashboard/rebates/import", icon: LuDatabase },
       ]
     },
     {

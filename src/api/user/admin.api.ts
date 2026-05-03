@@ -420,6 +420,58 @@ export const bulkChangeStatusRebates = async ({
   }
 };
 
+export const bulkDeleteRebates = async ({ rebateIds }: { rebateIds: number[]; }) => {
+  try {
+    const url = `${BASE_URL}/rebates/requests/bulk`;
+    const response = await _fetchWithAuth(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        ids: rebateIds
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed bulk delete rebates. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
+    }
+  }
+};
+
+export const importExcelRebates = async ({ file }: { file: File; }) => {
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const url = `${BASE_URL}/rebates/requests/import`;
+    const response = await _fetchWithAuth(url, {
+      method: "POST",
+      body: formData
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
+    return { error: true, message: responseJson.message, detailErrors: responseJson.errors };
+  } catch (error) {
+    console.error(`Failed import data rebates. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+    }
+  }
+};
+
 // Bank API
 export const getAllBank = async ({
   limit, 

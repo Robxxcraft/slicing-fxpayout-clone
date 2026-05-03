@@ -16,9 +16,8 @@ import { clearCacheAuthUser } from "@/helper/clearCacheAuthUser";
 const ContainerDashboard = () => {
   const { i18n } = useTranslation();
   const [initialization, setInitialization] = useState<boolean>(true);
-  const [isLogout, setIsLogout] = useState<boolean>(false);
   const navigate = useNavigate();
-  const [authUser, setAuthUser] = useContext(UserContext);
+  const [authUser] = useContext(UserContext);
   const { redirectLogin } = useRedirectGuest();
   const { redirectUser } = useRedirectByRole(); 
   const { pathname } = useLocation(); 
@@ -27,11 +26,6 @@ const ContainerDashboard = () => {
   useLockBodyScroll(showMobileNav);
   
   useEffect(() => {
-    if (isLogout) {
-      navigate(getLocalizedPath("/", i18n.language));
-      return;
-    }
-
     if (!authUser) {
       redirectLogin();
       return;
@@ -51,7 +45,7 @@ const ContainerDashboard = () => {
     }
 
     setInitialization(false);
-  }, [authUser, i18n.language, navigate, pathname, redirectUser, redirectLogin, isLogout]);
+  }, [authUser, i18n.language, navigate, pathname, redirectUser, redirectLogin]);
 
 
   if (initialization) {
@@ -59,10 +53,9 @@ const ContainerDashboard = () => {
   }
 
   const handleLogoutUser = () => {
-    setIsLogout(true);
     putAccessToken("");
     clearCacheAuthUser();
-    setAuthUser(null);
+    window.location.href = getLocalizedPath("/", i18n.language);
   }
 
   return (

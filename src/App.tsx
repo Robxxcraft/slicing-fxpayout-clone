@@ -53,6 +53,7 @@ import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalReque
 import { clearCacheAuthUser } from "./helper/clearCacheAuthUser";
 import RebatesManagement from "./pages/dashboard/admin/RebatesManagement";
 import AdminOverviewProvider from "./provider/AdminOverviewProvider";
+import ImportRebatePage from "./pages/dashboard/admin/ImportRebatePage";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -174,6 +175,7 @@ function App() {
                 <Route path="broker" element={<BrokersManagement />} />
                 <Route path="rebates" element={<RebatesManagement />} />
                 <Route path="withdrawal" element={<WithdrawalRequestManagement />} />
+                <Route path="rebates/import" element={<ImportRebatePage />} />
                 <Route path="validation-data" element={<ValidationDataDashboard />} />
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="profile/change-password" element={<ChangePasswordPage />} />
