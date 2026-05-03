@@ -19,7 +19,6 @@ const EarningRebate = () => {
       const startDate = new Date();
       const endDate = new Date();
       startDate.setDate(endDate.getDate() - days);
-      endDate.setDate(endDate.getDate());
 
       const { error, data } = await TraderAPI.getRebateChartData({
         limit: 100,

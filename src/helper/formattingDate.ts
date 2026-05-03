@@ -1,5 +1,10 @@
-export const formatDateYYYYMMDD = (date: string) => {
-  return new Date(date).toISOString().split("T")[0];
+export const formatDateYYYYMMDD = (date: Date | string) => {
+  const d = new Date(date);
+  return `${d.getFullYear()}-${(d.getMonth()+1)
+    .toString()
+    .padStart(2,"0")}-${d.getDate()
+    .toString()
+    .padStart(2,"0")}`;
 };
 
 export const formattingFullDate = (value: string | undefined) => {
