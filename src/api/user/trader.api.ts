@@ -67,7 +67,7 @@ export const getBrokerByTrader = async ({
   query?: string; 
 }) => {
   try {
-    let url = `${BASE_URL}/trader/brokers?`;
+    let url = `${BASE_URL}/trader/brokers?sort_by=created_at&sort_order=desc&`;
     if (query) url += `search=${query}&`;
     if (status) url += `status=${status}&`;
     if (page) url += `page=${page}&`;
