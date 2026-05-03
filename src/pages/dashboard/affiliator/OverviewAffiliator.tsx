@@ -29,7 +29,7 @@ type LayoutCard = {
 
 const OverviewAffiliator = () => {
   const [authUser] = useContext(UserContext);
-  const [balance] = useContext(BalanceContext);
+  const [balance, setBalance] = useContext(BalanceContext);
   const [isLoading, setIsLoading] = useState<{ card: boolean, earnings: boolean }>({
     card: true,
     earnings: true
@@ -50,7 +50,7 @@ const OverviewAffiliator = () => {
     return {
       activeTraders: active || 0,
       refferedTraders: reffered || 0,
-      balance: 0
+      balance: balance?.balance || 0
     }
   });
 
@@ -62,12 +62,28 @@ const OverviewAffiliator = () => {
 
     const responseDashboard = await AffilitorAPI.getDashboardData();
     if (!responseDashboard.error && responseDashboard.data) {
+      const currentAmount = responseDashboard.data.balance ? 
+        responseDashboard.data.balance.amount : (balance ? balance.balance : 0)
       setCardData((prev) => ({
         ...prev,
         refferedTraders: responseDashboard.data.total_traders,
         activeTraders: responseDashboard.data.active_traders,
-        balance: balance?.balance || 0
+        balance: currentAmount
       }));
+      if (balance && balance.balance !== currentAmount) {
+        setBalance((prev) => {
+          if (!prev) {
+            return {
+              userId: responseDashboard.data.balance.userId,
+              currency: responseDashboard.data.balance.currency,
+              balance: currentAmount
+            }
+          }
+          return { 
+            ...prev, 
+            balance: currentAmount 
+          }});
+      }
       const payload = {
         reffered: responseDashboard.data.total_traders,
         active: responseDashboard.data.active_traders
@@ -101,7 +117,7 @@ const OverviewAffiliator = () => {
         broker: item.broker.name,
         account_number: item.account_number,
         rebate: item.total_rebate,
-        comission: (item.total_rebate * 10)/100,
+        comission: (item.total_rebate / 0.6) * 0.1,
       }));
       setDataEarnings(temp);
     } 
@@ -142,20 +158,28 @@ const OverviewAffiliator = () => {
       }, 2000);
     }
   };
+
+  const overviewLoading = isLoading.card && (cardData.activeTraders === 0 || cardData.refferedTraders === 0 || cardData.balance === 0);
   return (
     <WrapperDashboardComponent>
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 2xl:gap-5">
         <CardOverview 
           status={"active"} title={"Reffered Traders"} 
           icon={<LuUsers />} content={cardData.refferedTraders.toLocaleString()} 
-          detail={"Total traders joined using your link"} />
+          detail={"Total traders joined using your link"} 
+          isLoading={overviewLoading}  
+        />
         <CardOverview 
           title={"Active Traders"} icon={<LuUsers />} 
-          content={cardData.activeTraders.toLocaleString()} detail={"Active traders in your network"} />
+          content={cardData.activeTraders.toLocaleString()} detail={"Active traders in your network"} 
+          isLoading={overviewLoading}    
+        />
         <CardOverview 
           title={"Balance"} icon={<IoWalletOutline />} 
           content={formattingUsd(cardData.balance)} 
-          detail={"Available balance for withdrawal"} />
+          detail={"Available balance for withdrawal"} 
+          isLoading={overviewLoading}    
+        />
       </section>
       <PreviewRefferal 
         onCopy={handleCopy}
