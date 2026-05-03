@@ -276,14 +276,23 @@ export const getBalanceUser = async () => {
     const responseJson = await response.json();
 
     if (response.status === 200) {
-      return { 
-        error: false, 
-        message: "Successfully get balance", 
-        data: { amount: responseJson.result.amount, currency: responseJson.result.currency, userId: responseJson.result.user_id } 
+      if (responseJson.result) {
+        return { 
+          error: false, 
+          message: "Successfully get balance", 
+          data: { amount: responseJson.result.amount, currency: responseJson.result.currency, userId: responseJson.result.user_id } 
+        }
+      } else {
+        return {
+          error: true,
+          message: "Receive empty balance",
+          data: null
+        }
       }
     }
     return { error: true, message: responseJson.message, data: null }
   } catch (error) {
+    console.error(error);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,

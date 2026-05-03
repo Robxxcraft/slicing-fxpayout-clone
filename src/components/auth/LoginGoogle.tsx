@@ -10,10 +10,12 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Spinner from '../ui/Spinner';
+import BalanceContext from '@/context/BalanceContext';
 
 const LoginGoogle = ({ role, status }: { role?: string, status: "signin" | "signup" }) => {
   const { i18n } = useTranslation();
   const [, setAuthUser] = useContext(UserContext);
+  const [, setBalance] = useContext(BalanceContext);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { redirectUser } = useRedirectByRole();
   const navigate = useNavigate();
@@ -46,10 +48,25 @@ const LoginGoogle = ({ role, status }: { role?: string, status: "signin" | "sign
             if (!responseAuth.error) {
               const userData = UserModel.mapAuthUser(responseAuth.data);
               setAuthUser(userData);
-  
+              
               if (UserModel.isIncompleteProfile(userData)) {
                 navigate(getLocalizedPath("profile-register", i18n.language));
               } else {
+                const respBalance = await AuthAPI.getBalanceUser();
+                if (!respBalance.error && respBalance.data) {
+                  const tempBalance = {
+                    userId: userData.id,
+                    balance: respBalance.data.amount,
+                    currency: respBalance.data.currency
+                  };
+                  setBalance(tempBalance);
+                } else {
+                  setBalance({
+                    userId: userData.id,
+                    balance: 0,
+                    currency: "USD"
+                  });
+                }
                 redirectUser(userData);
               }
             } else {
