@@ -91,6 +91,10 @@ const LoginPage = () => {
     }
   };
 
+  const handleChangeLoading = (status: boolean) => {
+    setIsLoading(status);
+  }
+
   return (
     <div className="font-inter flex justify-center w-full max-h-screen h-screen">
       <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[450px] 2xl:max-w-[560px] bg-white rounded-4xl">
@@ -112,7 +116,10 @@ const LoginPage = () => {
             </span>
           </div>
         </div>
-        <LoginGoogle status="signin" />
+        <LoginGoogle 
+          status="signin"
+          handleChangeLoading={handleChangeLoading} 
+        />
         <p className="mt-8 text-sm 2xl:text-base text-black/80">
           Belum memiliki akun? {" "} 
           <Link to={getLocalizedPath("register", i18n.language)} className="font-medium text-primary cursor-pointer hover:underline">

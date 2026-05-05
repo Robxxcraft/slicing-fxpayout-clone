@@ -76,6 +76,10 @@ const RegisterPage = () => {
     }
   };
 
+  const handleChangeLoading = (status: boolean) => {
+    setIsLoading(status);
+  }
+
   return (
     <div className="font-inter flex justify-center w-full max-h-screen h-screen">
       <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[560px] 2xl:max-w-[560px] bg-white rounded-4xl">
@@ -103,7 +107,11 @@ const RegisterPage = () => {
             </span>
           </div>
         </div>
-        <LoginGoogle role={selectedRole} status="signup" />
+        <LoginGoogle 
+          role={selectedRole} 
+          status="signup" 
+          handleChangeLoading={handleChangeLoading}
+        />
         <p className="mt-8 text-sm 2xl:text-base text-black/80">
           Sudah memiliki akun? {" "} 
           <Link to={getLocalizedPath("login", i18n.language)} className="font-medium text-primary cursor-pointer hover:underline">

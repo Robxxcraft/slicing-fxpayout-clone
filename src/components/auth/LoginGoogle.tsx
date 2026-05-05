@@ -5,27 +5,34 @@ import { useRedirectByRole } from '@/hooks/useRedirectByRole';
 import { UserModel } from '@/models/user.model';
 import { BASE_URL, putAccessToken } from '@/services/apiClient';
 import { GoogleLogin } from '@react-oauth/google';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Spinner from '../ui/Spinner';
 import BalanceContext from '@/context/BalanceContext';
 
-const LoginGoogle = ({ role, status }: { role?: string, status: "signin" | "signup" }) => {
+const LoginGoogle = ({ 
+  role, 
+  status,
+  handleChangeLoading
+}: { 
+  role?: string, 
+  status: "signin" | "signup";
+  handleChangeLoading: (status: boolean) => void;
+}) => {
   const { i18n } = useTranslation();
   const [, setAuthUser] = useContext(UserContext);
   const [, setBalance] = useContext(BalanceContext);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { redirectUser } = useRedirectByRole();
   const navigate = useNavigate();
   return (
     <div 
-      className="relative mt-8 py-2 flex justify-center gap-4 w-full border border-black/60 rounded-lg cursor-pointer hover:bg-[#F5F5F5] active:bg-black/10 transition-all duration-300"
+      className="mt-8 w-full"
     >
       <GoogleLogin 
         onSuccess={async (credentialResponse) => {
-          setIsLoading(true);
+
+          handleChangeLoading(true);
           try {
             const response = await fetch(`${BASE_URL}/auth/login/google`, {
               method: "POST",
@@ -73,42 +80,28 @@ const LoginGoogle = ({ role, status }: { role?: string, status: "signin" | "sign
               toast.error(responseAuth.message);
             }
           } finally {
-            setIsLoading(false);
+            handleChangeLoading(false);
           }
         }}
 
         onError={() => {
-          toast.error("Error menghubungkan ke Google. Silahkan coba beberapa saat lagi.");
+          toast.error("Unable to connect to Google. Please try again in a few moments.");
         }}
         text={status === "signin" ? "signin_with" : "signup_with"}
+        theme="outline"
+        shape="pill"
+        width="100%"
         containerProps={{ 
           style: {
             width: "100%",
-            position: "absolute",
+            position: "relative",
             top: "0px",
-            opacity: 0,
+            opacity: 100,
             zIndex: 99,
             inset: 0
           }
         }}
       />
-      {isLoading ?
-        <div className="flex items-center gap-2">
-          <Spinner w="w-7" />
-          <p className="text-base text-black/60">Processing...</p>
-        </div>
-        :
-        <>
-          <img src="/google-icon.svg" alt="Icon google" 
-          />
-          <p className="text-base font-semibold text-black/60">
-            {status === "signin" ? "Login dengan Google" 
-            :
-              "Daftar dengan Google"
-            }
-          </p>
-        </>
-      }
     </div>
   )
 }
