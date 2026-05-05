@@ -87,16 +87,16 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.95, opacity: 0, y: 6 }}
                 className="absolute top-full right-0 pt-4 2xl:pt-6">
-                <div className="p-5 2xl:p-6 w-[260px] 2xl:w-[320px] bg-white rounded-sm shadow-xl">
+                <div className="p-5 2xl:p-6 w-[320px] 2xl:w-[400px] bg-white rounded-sm shadow-xl">
                   <div className="pb-3 border-b border-disabled">
                     <div className="mb-3 flex items-center gap-3">
                       <img src={authUser?.profile} alt="foto profil"
                         className="size-11 rounded-lg object-cover" />
-                      <div className="flex flex-col">
-                        <span className="text-lg 2xl:text-xl font-medium">
+                      <div className="flex flex-col w-fit">
+                        <span className="text-lg 2xl:text-xl font-medium line-clamp-1 text-ellipsis break-all w-fit">
                           @{authUser?.username}
                         </span>
-                        <span className="text-base 2xl:text-lg">
+                        <span className="text-base 2xl:text-lg line-clamp-1 text-ellipsis break-all w-fit">
                           {authUser?.fullName}
                         </span>
                       </div>
