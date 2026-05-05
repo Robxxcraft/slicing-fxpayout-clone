@@ -3,7 +3,7 @@ import UserContext from '@/context/UserContext';
 import { getLocalizedPath } from '@/helper/pathHelper';
 import { useRedirectByRole } from '@/hooks/useRedirectByRole';
 import { UserModel } from '@/models/user.model';
-import { putAccessToken } from '@/services/apiClient';
+import { BASE_URL, putAccessToken } from '@/services/apiClient';
 import { GoogleLogin } from '@react-oauth/google';
 import { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -27,7 +27,7 @@ const LoginGoogle = ({ role, status }: { role?: string, status: "signin" | "sign
         onSuccess={async (credentialResponse) => {
           setIsLoading(true);
           try {
-            const response = await fetch("http://localhost:3000/api/v1/auth/login/google", {
+            const response = await fetch(`${BASE_URL}/auth/login/google`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
