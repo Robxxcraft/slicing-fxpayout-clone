@@ -21,7 +21,7 @@ const LoginGoogle = ({ role, status }: { role?: string, status: "signin" | "sign
   const navigate = useNavigate();
   return (
     <div 
-      className="relative mt-8 py-2 flex justify-center gap-4 w-full border border-black/60 rounded-lg cursor-pointer hover:bg-[#F5F5F5] active:bg-black/10 transition-all duration-300 overflow-hidden"
+      className="relative mt-8 py-2 flex justify-center gap-4 w-full border border-black/60 rounded-lg cursor-pointer hover:bg-[#F5F5F5] active:bg-black/10 transition-all duration-300"
     >
       <GoogleLogin 
         onSuccess={async (credentialResponse) => {
