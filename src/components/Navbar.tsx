@@ -49,8 +49,6 @@ const Navbar = ({ active }: { active: string }) => {
     navigateChangeLng(lng.code, navigate, pathname)
   };
 
-
-
   const handleOpenSubMenu = (idx: number) => {
     setOpenSubMenu((prev) => prev === idx ? null : idx);
   };
@@ -113,7 +111,7 @@ const Navbar = ({ active }: { active: string }) => {
                         showInfoCommingSoon()
                       }
                     }}
-                    className="px-6 py-3 text-black hover:bg-black/10"
+                    className="px-6 py-3 text-black hover:bg-light-gray"
                     scroll={(el) => {
                       setTimeout(() => {
                         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -230,7 +228,7 @@ const Navbar = ({ active }: { active: string }) => {
                             showInfoCommingSoon();
                           }
                         }}
-                        className="px-4 py-2 text-white hover:bg-black/10">
+                        className="px-4 py-2 text-white hover:bg-light-gray">
                         {t(`navbar.subNav.${subNav.code}`)}
                       </HashLink>
                     ))

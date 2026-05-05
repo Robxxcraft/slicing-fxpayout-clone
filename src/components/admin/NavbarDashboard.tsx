@@ -4,6 +4,7 @@ import { formattingUsd } from "@/helper/formattingCurrency";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useContext, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TbWorld } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
@@ -17,6 +18,7 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
   return (
     <nav className="fixed w-full font-inter px-4 md:px-10 bg-white border-b border-[#D2CEE1] z-99">
       <div className="flex justify-between items-center h-16 2xl:h-[90px]">
+        {/* LOGO */}
         <Link to="/" className="flex gap-2 items-center">
           <img
             src="/fxpayout-blue.svg"
@@ -27,6 +29,8 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
             FXPAYOUT
           </span>
         </Link>
+
+        {/* INFO USER */}
         <div className="hidden lg:flex items-center gap-3">
           {(authUser?.referralCode || authUser?.affiliatorCode) &&
             <div className="px-3 2xl:px-4 py-1 2xl:py-2 bg-[#F5F5F5] border border-primary border-dashed rounded-sm">
@@ -64,6 +68,8 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
                 </div>
               )}
             </div>
+
+            {/* DROPDOWN INFO USER */}
             <AnimatePresence>
               {isOpen &&
               <motion.div 
@@ -102,12 +108,21 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
                     </>
                     }
                   </div>
+
+                  <div className="mt-3">
+                    <div className="p-2 flex items-center gap-2 w-full rounded-lg hover:bg-[#F5F5F5] transition-all ease-out">
+                      <TbWorld className="text-xl" />
+                      <p>Bahasa</p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
               }
             </AnimatePresence>
           </div>
         </div>
+
+        {/* HAMBURGER MOBILE */}
         <div className={`${showMobileNav ? "bg-linear-to-t" : "bg-transparent"}
           flex lg:hidden justify-center items-center size-8 from-dark-primary to-primary rounded-sm cursor-pointer`}>
           <RxHamburgerMenu

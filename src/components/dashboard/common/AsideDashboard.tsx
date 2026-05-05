@@ -12,9 +12,9 @@ import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
 const AsideDashboard = ({ onLogout }: { onLogout: () => void }) => {
   const { i18n } = useTranslation();
   const [isCollapse, setIsCollapse] = useState<boolean>(true);
+  const [authUser] = useContext(UserContext);
   const [activeNav, setActiveNav] = useState<string>("");
   const { pathname } = useLocation();
-  const [authUser] = useContext(UserContext);
 
   useEffect(() => {
     const path = pathname.split("/").filter(Boolean); 

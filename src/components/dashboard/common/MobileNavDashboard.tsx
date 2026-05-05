@@ -2,9 +2,9 @@ import BalanceContext from "@/context/BalanceContext";
 import UserContext from "@/context/UserContext";
 import { formattingUsd } from "@/helper/formattingCurrency";
 import { NAV_DASHBOARD_CONFIG } from "@/utils/listNavigation";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MdLogout } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
 }: { 
@@ -14,6 +14,26 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
 }) => {
   const [authUser] = useContext(UserContext);
   const [balance] = useContext(BalanceContext);
+  const [activeNav, setActiveNav] = useState<string>("");
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const path = pathname.split("/").filter(Boolean); 
+    if (path[0] && path[0].length === 2) {
+      path.shift();
+    }
+    if (path.length === 3) {
+      if (path[2] === "history") {
+        setActiveNav("history");
+      } else if (path[2] === "import") {
+        setActiveNav("import-rebate");
+      } else if (path[1] === "rebate") {
+        setActiveNav("rebate");
+      }
+    } else {
+      setActiveNav(path[1]);
+    }
+  }, [pathname]);
   return (
     <div className={`${showMobileNav ? "translate-x-0" : "-translate-x-full"} 
       z-95 block lg:hidden fixed top-0 mt-16 px-5 py-4 w-full h-screen bg-white transition-all duration-300 ease-out overflow-y-auto`}>
@@ -54,8 +74,9 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
              <Link
                key={idx}
                to={navItems.path} 
-               className={`bg-transparent text-black/90 cursor-pointer py-3 flex items-center gap-3`}
-             >
+               className={`bg-transparent cursor-pointer py-3 flex items-center gap-3
+                ${activeNav === navItems.key ? "text-primary" : "text-black/80"}
+              `}>
               <p className="text-[22px]">
                 <navItems.icon />
               </p>

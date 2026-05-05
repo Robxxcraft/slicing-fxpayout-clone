@@ -302,9 +302,11 @@ const ValidationDataDashboard = () => {
         title={`Hapus ${tableInstance.getSelectedRowModel().flatRows.length} data validasi`}
         paragraph="Data yang dipilih akan dihapus permanen dari sistem dan tidak dapat dipulihkan kembali."
         handleConfirmation={handleDeleteData}
-        btnConfirmation="danger" 
-        isVisible={showPopupDelete} 
-        handleClose={() => setShowPopupDelete(false)}          
+        btnConfirmation="danger"
+        isVisible={showPopupDelete}
+        handleClose={() => setShowPopupDelete(false)} 
+        confirmText={"Hapus"} 
+        cancelText={"Batal"}      
       />}
     </>
   )

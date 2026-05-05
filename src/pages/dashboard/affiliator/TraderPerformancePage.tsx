@@ -1,9 +1,9 @@
-// TODO: Date Filter
-
 import { useCallback, useEffect, useState } from "react";
+import { isEqual, subDays } from "date-fns";
 import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 
 import { AffilitorAPI } from "@/api";
+import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 import { columnsDef } from "@/constants/columns/traderPerformanceColumns";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
@@ -16,8 +16,13 @@ import TraderPerformanceTable from "@/components/dashboard/affiiliator/traderPer
 import Spinner from "@/components/ui/Spinner";
 import Tooltip from "@/components/ui/Tooltip";
 import SelectDropdown from "@/components/ui/SelectDropdown";
+import RangeDataPicker from "@/components/ui/RangeDataPicker";
+
+import DateRangeButton from "../common/DateRangeButton";
 
 import { LuRefreshCcw } from "react-icons/lu";
+import type { DateRange } from "react-day-picker";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 export type TraderPerformance = {
   created_at: string;
@@ -40,13 +45,20 @@ const supportEntry = [
   { "key": "50", "value": "50"},
   { "key": "100", "value": "100"}
 ];
+const defaultFrom = subDays(new Date(), 30);
+const defaultTo = new Date();
 
 const TraderPerformancePage = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showPopupRange, setShowPopupRange] = useState<boolean>(false); 
   const [dataTraderPerformance, setDataTraderPerformance] = useState<TraderPerformance[]>([]);
 
   // Table State
+  const [range, setRange] = useState<DateRange>({
+    from: defaultFrom,
+    to: defaultTo
+  });
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -60,12 +72,16 @@ const TraderPerformancePage = () => {
 
     try {
       const sort = sorting[0];
+      const initRange = range.from ? formatDateYYYYMMDD(range.from) : formatDateYYYYMMDD(new Date());
+      const endRange = range.to ? formatDateYYYYMMDD(range.to) : initRange;
       const { error, data } = await AffilitorAPI.getTraderPerformance({
         page: pagination.pageIndex + 1,
         limit: pagination.pageSize,
         sortBy: sort?.id ?? "created_at",
         orderBy: sort?.desc === undefined ? "desc" :
-          sort?.desc ? "desc" : "asc"
+          sort?.desc ? "desc" : "asc",
+        startDate: initRange, 
+        endDate: endRange,
       });
 
       if (!error && data) {
@@ -89,8 +105,9 @@ const TraderPerformancePage = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      setShowPopupRange(false);
     }
-  }, [pagination.pageIndex, pagination.pageSize, sorting]);
+  }, [pagination.pageIndex, pagination.pageSize, range, sorting]);
 
   useEffect(() => {
     fetchData();
@@ -121,7 +138,19 @@ const TraderPerformancePage = () => {
       pageSize: Number(key)
     }));
   }   
+  const applyChangeRangeDate = (dateRange: DateRange) => {
+    if (isLoading) return;
+    setRange(dateRange);
+  } 
 
+  useLockBodyScroll(showPopupRange);
+  const useFilter =
+    !!range?.from &&
+    !!range?.to &&
+    (
+      !isEqual(range.from, defaultFrom) ||
+      !isEqual(range.to, defaultTo)
+    );
   return (
     <WrapperDashboardComponent>
       {/* HEADER */}
@@ -134,7 +163,7 @@ const TraderPerformancePage = () => {
 
       {/* FILTER TABLE */}
       <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529] w-fit">
             <span className="text-base 2xl:text-xl">Tampilkan</span>
             <SelectDropdown 
@@ -146,7 +175,14 @@ const TraderPerformancePage = () => {
             />
           </div>
 
-          <div className="flex items-center gap-2 w-full md:w-fit">
+          <div className="flex items-center gap-2 w-fit">
+            <div className="hidden md:block">
+              <DateRangeButton 
+                openPopup={() => setShowPopupRange(true)} 
+                isLoading={isLoading} 
+                range={range} 
+              />
+            </div>
             <Tooltip 
               disabled={isLoading}
               icon={<LuRefreshCcw className={`${isLoading ? "animate-spin" : ""}`} />} 
@@ -159,6 +195,15 @@ const TraderPerformancePage = () => {
               disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
             />
           </div>
+        </div>
+        <div className="mt-2 block md:hidden">
+          <DateRangeButton 
+            openPopup={() => setShowPopupRange(true)} 
+            isLoading={isLoading} 
+            range={range} 
+            containerCL="w-full!"
+            buttonCL="w-full!"
+          />
         </div>
       </div>
 
@@ -177,7 +222,11 @@ const TraderPerformancePage = () => {
       {dataTraderPerformance.length === 0 && !initLoad && !isLoading &&
         <NoDataFound>
           <p className="text-black/80 text-base 2xl:text-xl">
-            Saat ini, belum ada pendapatan terkini dari trader Anda. Mulai undang trader untuk mendapatkan komisi rebate.
+            {useFilter ? 
+              "Tidak ada pendapatan terkini dari trader yang sesuai dengan filter Anda." 
+            :
+              "Saat ini, belum ada pendapatan terkini dari trader Anda. Mulai undang trader untuk mendapatkan komisi rebate."
+            }
           </p>
         </NoDataFound>
       }
@@ -192,6 +241,17 @@ const TraderPerformancePage = () => {
           entri.`}
         </p>
       </div>
+
+      {/* FLOATING */}
+      <RangeDataPicker 
+        isOpen={showPopupRange} 
+        onClose={() => {
+          if (!isLoading) setShowPopupRange(false);
+        }} 
+        currentRange={range} 
+        applyRange={applyChangeRangeDate}
+        isLoading={isLoading}
+      />
     </WrapperDashboardComponent>
   )
 }

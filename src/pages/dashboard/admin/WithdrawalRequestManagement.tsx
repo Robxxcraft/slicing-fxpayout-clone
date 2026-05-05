@@ -1,5 +1,3 @@
-// TODO: SORT DATE?
-
 import { AdminAPI } from "@/api";
 import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
 import DrawerWithdrawalDetail from "@/components/dashboard/admin/withdrawalManagement/DrawerWithdrawalDetail";
@@ -18,16 +16,21 @@ import Spinner from "@/components/ui/Spinner";
 import Tooltip from "@/components/ui/Tooltip";
 import { columnsDef } from "@/constants/columns/withdrawalManagementColumns";
 import { formattingUsd } from "@/helper/formattingCurrency";
+import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type";
 import { statusMap } from "@/utils/dataDropdownDashboard";
 import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table";
+import { isEqual, subDays } from "date-fns";
 import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import type { DateRange } from "react-day-picker";
 import { CgInfo } from "react-icons/cg";
 import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
 import { LuRefreshCcw } from "react-icons/lu";
 import { toast } from "react-toastify";
+import DateRangeButton from "../common/DateRangeButton";
+import RangeDataPicker from "@/components/ui/RangeDataPicker";
 
 export type DataWithdrawalManagement = {
   id: number;
@@ -66,9 +69,13 @@ const supportEntry = [
   { key: "100", value: "100"}
 ];
 
+const defaultFrom = subDays(new Date(), 30);
+const defaultTo = new Date();
+
 const WithdrawalRequestManagement = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [showPopupRange, setShowPopupRange] = useState<boolean>(false);
   const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
   const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
 
@@ -80,6 +87,10 @@ const WithdrawalRequestManagement = () => {
   const [selectedData, setSelectedData] = useState<DataWithdrawalManagement | null>(null);
 
   // Table State
+  const [range, setRange] = useState<DateRange>({
+    from: defaultFrom,
+    to: defaultTo
+  });
   const [globalFiltering, setGlobalFiltering] = useState<string>("");
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
@@ -97,6 +108,8 @@ const WithdrawalRequestManagement = () => {
 
     try {
       const sort = sorting[0];
+      const initRange = range.from ? formatDateYYYYMMDD(range.from) : formatDateYYYYMMDD(new Date());
+      const endRange = range.to ? formatDateYYYYMMDD(range.to) : initRange;
       const { error, message, data } = await AdminAPI.getAllWithdrawalRequests({
         search: debouncedSearch,
         status: filterStatus === "all" ? undefined : filterStatus,
@@ -104,7 +117,9 @@ const WithdrawalRequestManagement = () => {
         limit: pagination.pageSize,
         sortBy: sort?.id ?? "created_at",
         orderBy: sort?.desc === undefined ? "desc" :
-          sort?.desc ? "desc" : "asc"
+          sort?.desc ? "desc" : "asc",
+        startDate: initRange, 
+        endDate: endRange, 
       });
   
       if (!error && data) {
@@ -138,10 +153,11 @@ const WithdrawalRequestManagement = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      setShowPopupRange(false);
       await fetchDataAdminOverview(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting]);
+  }, [debouncedSearch, filterStatus, pagination.pageIndex, pagination.pageSize, sorting, range]);
 
   useEffect(() => {
     fetchData();
@@ -229,9 +245,20 @@ const WithdrawalRequestManagement = () => {
   const handleChangeGlobalFiltering = (e: ChangeEvent<HTMLInputElement>) => {
     setGlobalFiltering(e.target.value);
   } 
+  const applyChangeRangeDate = (dateRange: DateRange) => {
+    if (isLoading) return;
+    setRange(dateRange);
+  } 
 
-  useLockBodyScroll(selectedData !== null || showPopupStatus);
-  const useFilter = filterStatus !== "all" || globalFiltering; 
+  useLockBodyScroll(selectedData !== null || showPopupStatus || showPopupRange);
+  const dateFilter =
+    !!range?.from &&
+    !!range?.to &&
+    (
+      !isEqual(range.from, defaultFrom) ||
+      !isEqual(range.to, defaultTo)
+    );
+  const useFilter = filterStatus !== "all" || globalFiltering || dateFilter; 
   return (
     <WrapperDashboardComponent>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -262,7 +289,7 @@ const WithdrawalRequestManagement = () => {
         </TitleDashboard>
 
         {/* FILTER TABLE */}
-        <div className="my-4 flex flex-col md:flex-row justify-between items-center gap-2 2xl:gap-3">
+        <div className="my-4 flex flex-col justify-between items-center gap-2 2xl:gap-3">
           <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
             <SearchDashboard 
               query={globalFiltering} 
@@ -284,26 +311,35 @@ const WithdrawalRequestManagement = () => {
               </div>
             }
           </div>
-          <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
-            <SelectDropdown 
-              selectedInput={filterStatus} 
-              handleChangeInput={handleChangeFilterStatus} 
-              objectInput={statusMap}       
-              wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-              inputCL="w-[200px]! 2xl:w-[240px]!"        
+          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+            <DateRangeButton 
+              openPopup={() => setShowPopupRange(true)} 
+              isLoading={isLoading} 
+              range={range} 
+              containerCL="w-full!"
+              buttonCL="w-full!"
             />
-            <Tooltip 
-              disabled={isLoading}
-              icon={<LuRefreshCcw className={`${isLoading ? "animate-spin" : ""}`} />} 
-              handleClick={() => fetchData()} 
-              detail={"Reload Data"} />
-              
-            <NextPreviousButton 
-              onNextPage={tableInstance.nextPage}
-              onPreviousPage={tableInstance.previousPage}
-              disabledNext={isLoading || !tableInstance.getCanNextPage()}
-              disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
-            />
+            <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+              <SelectDropdown 
+                selectedInput={filterStatus} 
+                handleChangeInput={handleChangeFilterStatus} 
+                objectInput={statusMap}       
+                wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
+                inputCL="w-[200px]! 2xl:w-[240px]!"        
+              />
+              <Tooltip 
+                disabled={isLoading}
+                icon={<LuRefreshCcw className={`${isLoading ? "animate-spin" : ""}`} />} 
+                handleClick={() => fetchData()} 
+                detail={"Reload Data"} />
+                
+              <NextPreviousButton 
+                onNextPage={tableInstance.nextPage}
+                onPreviousPage={tableInstance.previousPage}
+                disabledNext={isLoading || !tableInstance.getCanNextPage()}
+                disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
+              />
+            </div>
           </div>
         </div>
 
@@ -386,6 +422,15 @@ const WithdrawalRequestManagement = () => {
         cancelText="Batal"
         confirmText={selectedStatusChange === "rejected" ? "Reject" : "Approve"}
       />}  
+      <RangeDataPicker 
+        isOpen={showPopupRange} 
+        onClose={() => {
+          if (!isLoading) setShowPopupRange(false);
+        }} 
+        currentRange={range} 
+        applyRange={applyChangeRangeDate}
+        isLoading={isLoading}
+      />
     </WrapperDashboardComponent>
   )
 }

@@ -1,12 +1,14 @@
-// TODO: Date Filter
-
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { isEqual, subDays } from "date-fns";
+import { type DateRange } from "react-day-picker";
 import { getColumnsDef } from "@/constants/columns/historyRebateColumns";
 import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 
 import { TraderAPI } from "@/api";
+import { brokers } from "@/utils/dataBroker/brokers";
+import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
@@ -15,13 +17,15 @@ import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
 
+import DateRangeButton from "../common/DateRangeButton";
+
 import Tooltip from "@/components/ui/Tooltip";
 import Spinner from "@/components/ui/Spinner";
 import SelectDropdown from "@/components/ui/SelectDropdown";
+import RangeDataPicker from "@/components/ui/RangeDataPicker";
 
 import { LuRefreshCcw } from "react-icons/lu";
-import { brokers } from "@/utils/dataBroker/brokers";
-import RangeDatePicker from "@/components/ui/RangeDatePicker";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const supportEntry = [
   { "key": "20", "value": "20" }, 
@@ -42,15 +46,23 @@ type ResponseRebate = {
   total_rebate: number;
 }
 
+const defaultFrom = subDays(new Date(), 30);
+const defaultTo = new Date();
+
 const HistoryRebate = () => {
   const { i18n } = useTranslation();
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showPopupRange, setShowPopupRange] = useState<boolean>(false); 
   const [dataRebate, setDataRebate] = useState<DataRebate[]>([]);
   const { brokerParams } = useParams();
   const broker = brokers[brokerParams as keyof typeof brokers];
 
   // Table State
+  const [range, setRange] = useState<DateRange>({
+    from: defaultFrom,
+    to: defaultTo
+  });
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -64,13 +76,17 @@ const HistoryRebate = () => {
 
     try {
       const sort = sorting[0];
+      const initRange = range.from ? formatDateYYYYMMDD(range.from) : formatDateYYYYMMDD(new Date());
+      const endRange = range.to ? formatDateYYYYMMDD(range.to) : initRange;
       const { error, data } = await TraderAPI.getRebatesByTrader({
         limit: pagination.pageSize,
         page: pagination.pageIndex + 1,
         brokerSearch: broker ? brokerParams : undefined,
         sortBy: sort?.id ?? "created_at",
         orderBy: sort?.desc === undefined ? "desc" :
-          sort?.desc ? "desc" : "asc"
+          sort?.desc ? "desc" : "asc",
+        startDate: initRange, 
+        endDate: endRange, 
       });
   
       if (!error && data) {
@@ -91,9 +107,10 @@ const HistoryRebate = () => {
     } finally {
       setInitLoad(false);
       setIsLoading(false);
+      setShowPopupRange(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [brokerParams, pagination.pageIndex, pagination.pageSize, sorting]);
+  }, [brokerParams, pagination.pageIndex, pagination.pageSize, sorting, range]);
 
   useEffect(() => {
     fetchData();
@@ -123,8 +140,20 @@ const HistoryRebate = () => {
       pageIndex: 0,
       pageSize: Number(key)
     }));
-  }  
+  } 
+  const applyChangeRangeDate = (dateRange: DateRange) => {
+    if (isLoading) return;
+    setRange(dateRange);
+  } 
 
+  useLockBodyScroll(showPopupRange);
+  const useFilter =
+    !!range?.from &&
+    !!range?.to &&
+    (
+      !isEqual(range.from, defaultFrom) ||
+      !isEqual(range.to, defaultTo)
+    );
   return (
     <WrapperDashboardComponent>
       <section>
@@ -153,8 +182,14 @@ const HistoryRebate = () => {
                 wrapperCL="w-fit!"         
               />
             </div>
-            <RangeDatePicker />
             <div className="flex items-center gap-2 2xl:gap-3">
+              <div className="hidden md:block">
+                <DateRangeButton 
+                  openPopup={() => setShowPopupRange(true)} 
+                  isLoading={isLoading} 
+                  range={range} 
+                />
+              </div>
               <Tooltip 
                 disabled={isLoading}
                 icon={<LuRefreshCcw className={`${isLoading ? "animate-spin" : ""}`} />} 
@@ -167,6 +202,15 @@ const HistoryRebate = () => {
                 disabledPrev={isLoading || !tableInstance.getCanPreviousPage()}
               />
             </div>
+          </div>
+          <div className="mt-2 block md:hidden">
+            <DateRangeButton 
+              openPopup={() => setShowPopupRange(true)} 
+              isLoading={isLoading} 
+              range={range} 
+              containerCL="w-full!"
+              buttonCL="w-full!"
+            />
           </div>
         </div>
 
@@ -185,7 +229,9 @@ const HistoryRebate = () => {
         {dataRebate.length === 0 && !initLoad && !isLoading &&
           <NoDataFound>
             <p className="text-black/80 text-base 2xl:text-xl">
-              {brokerParams && broker?.name ? 
+              {useFilter ? 
+                "Tidak ada riwayat perolehan rebate sesuai filter Anda."
+              : brokerParams && broker?.name ? 
                 `Saat ini, Anda tidak memiliki riwayat perolehan rebate pada broker ${broker.name}.`
               : "Saat ini, Anda tidak memiliki riwayat perolehan rebate."}
               
@@ -203,6 +249,17 @@ const HistoryRebate = () => {
           </p>
         </div>
       </section>
+
+      {/* FLOATING */}
+      <RangeDataPicker 
+        isOpen={showPopupRange} 
+        onClose={() => {
+          if (!isLoading) setShowPopupRange(false);
+        }} 
+        currentRange={range} 
+        applyRange={applyChangeRangeDate}
+        isLoading={isLoading}
+      />
     </WrapperDashboardComponent>
   )
 }

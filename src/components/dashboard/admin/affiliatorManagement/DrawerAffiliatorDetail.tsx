@@ -193,7 +193,7 @@ const DrawerAffiliatorDetail = ({
         <div className="flex items-center gap-2.5">
           <div className={`${menu === "profile" ? 
             "bg-linear-to-t from-dark-primary to-primary border border-primary text-white" : 
-            "bg-transparent border border-black/80 text-black/80 hover:bg-black/5"}
+            "bg-transparent border border-black/80 text-black/80 hover:bg-light-gray"}
             py-2 w-1/2 h-11 md:h-fit rounded-lg text-center flex items-center justify-center cursor-pointer`}
             onClick={() => setMenu("profile")}  
           >
@@ -204,7 +204,7 @@ const DrawerAffiliatorDetail = ({
           </div>
           <div className={`${menu === "bank" ? 
           "bg-linear-to-t from-dark-primary to-primary border border-primary text-white" : 
-          "bg-transparent border border-black/80 text-black/80 hover:bg-black/5"}
+          "bg-transparent border border-black/80 text-black/80 hover:bg-light-gray"}
             py-2 w-1/2 h-11 md:h-fit rounded-lg text-center flex items-center justify-center cursor-pointer`}
             onClick={() => setMenu("bank")}  
           >
