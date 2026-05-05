@@ -1,20 +1,30 @@
 import BalanceContext from "@/context/BalanceContext";
 import UserContext from "@/context/UserContext";
 import { formattingUsd } from "@/helper/formattingCurrency";
+import { navigateChangeLng } from "@/helper/pathHelper";
+import { languages, type Language } from "@/utils/languageSupport";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbWorld } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
   showMobileNav: boolean;
   setShowMobileNav: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
+  const { i18n } = useTranslation();
   const [authUser] = useContext(UserContext);
   const [balance] = useContext(BalanceContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
+  const handleChangeLang = (lng: Language) => {
+    i18n.changeLanguage(lng.code);
+    navigateChangeLng(lng.code, navigate, pathname)
+  }
   return (
     <nav className="fixed w-full font-inter px-4 md:px-10 bg-white border-b border-[#D2CEE1] z-99">
       <div className="flex justify-between items-center h-16 2xl:h-[90px]">
@@ -109,10 +119,39 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
                     }
                   </div>
 
-                  <div className="mt-3">
-                    <div className="p-2 flex items-center gap-2 w-full rounded-lg hover:bg-[#F5F5F5] transition-all ease-out">
-                      <TbWorld className="text-xl" />
-                      <p>Bahasa</p>
+                  <div className="mt-2">
+                    <div className="group relative">
+                      <div className="p-2 flex items-center justify-between gap-2 w-full rounded-lg group-hover:bg-[#F5F5F5] transition-all ease-out cursor-pointer">
+                        <div className="flex items-center gap-2">
+                          <TbWorld className="text-xl" />
+                          <p>Bahasa</p>
+                        </div>
+                        <div className="p-2 rounded-lg border border-[#DDDDDD] bg-light-gray">
+                          <img 
+                            src={`/flags/flag-${i18n.language}.png`} 
+                            alt="Flag" 
+                            className="w-8"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="p-2 group-hover:block hidden absolute top-0 right-[calc(100%-8px)] w-[200px] bg-white border border-[#DDDDDD] rounded-xl">
+                        {languages.map((lang, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleChangeLang(lang)}
+                            className="py-2 px-4 flex gap-2 items-center w-full cursor-pointer hover:bg-light-gray rounded-lg">
+                            <img
+                              src={`/flags/${lang.flag}`}
+                              alt={`flag-${lang.label}`}
+                              className="w-8"
+                            />
+                            <span className="text-black text-base">
+                              {lang.label}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
