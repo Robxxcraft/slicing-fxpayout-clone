@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import ReactGA from "react-ga4";
 import { Bounce, ToastContainer } from "react-toastify";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -30,35 +30,36 @@ import RegisterPage from "./pages/auth/RegisterPage";
 import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
 import ProfileRegisterPage from "./pages/auth/ProfileRegisterPage";
 
-import ProfilePage from "./pages/dashboard/common/ProfilePage";
-import ChangePasswordPage from "./pages/dashboard/common/ChangePasswordPage";
-import WithdrawalFundsPage from "./pages/dashboard/common/WithdrawalFundsPage";
-import WithdrawalRequestPage from "./pages/dashboard/common/WithdrawalRequestPage";
-import TransactionHistoryPage from "./pages/dashboard/common/TransactionHistoryPage";
+const ProfilePage = lazy(() => import("./pages/dashboard/common/ProfilePage"));
+const ChangePasswordPage = lazy(() => import("./pages/dashboard/common/ChangePasswordPage"));
+const WithdrawalFundsPage = lazy(() => import("./pages/dashboard/common/WithdrawalFundsPage"));
+const WithdrawalRequestPage = lazy(() => import("./pages/dashboard/common/WithdrawalRequestPage"));
+const TransactionHistoryPage = lazy(() => import("./pages/dashboard/common/TransactionHistoryPage"));
 
-import OverviewAdmin from "./pages/dashboard/admin/OverviewAdmin";
-import BankManagement from "./pages/dashboard/admin/BankManagement";
-import ImportRebatePage from "./pages/dashboard/admin/ImportRebatePage";
-import BrokersManagement from "./pages/dashboard/admin/BrokersManagement";
-import TradersManagement from "./pages/dashboard/admin/TradersManagement";
-import RebatesManagement from "./pages/dashboard/admin/RebatesManagement";
-import ValidationDataDashboard from "./pages/admin/ValidationDataDashboard";
-import AffiliatorsManagement from "./pages/dashboard/admin/AffiliatorsManagement";
-import WithdrawalRequestManagement from "./pages/dashboard/admin/WithdrawalRequestManagement";
+const OverviewAdmin = lazy(() => import("./pages/dashboard/admin/OverviewAdmin"));
+const BankManagement = lazy(() => import("./pages/dashboard/admin/BankManagement"));
+const ImportRebatePage = lazy(() => import("./pages/dashboard/admin/ImportRebatePage"));
+const BrokersManagement = lazy(() => import("./pages/dashboard/admin/BrokersManagement"));
+const TradersManagement = lazy(() => import("./pages/dashboard/admin/TradersManagement"));
+const RebatesManagement = lazy(() => import("./pages/dashboard/admin/RebatesManagement"));
+const ValidationDataDashboard = lazy(() => import("./pages/admin/ValidationDataDashboard"));
+const AffiliatorsManagement = lazy(() => import("./pages/dashboard/admin/AffiliatorsManagement"));
+const WithdrawalRequestManagement = lazy(() => import("./pages/dashboard/admin/WithdrawalRequestManagement"));
 
-import HistoryRebate from "./pages/dashboard/trader/HistoryRebate";
-import OverviewTrader from "./pages/dashboard/trader/OverviewTrader";
-import AddBrokerTrader from "./pages/dashboard/trader/AddBrokerTrader";
-import ConnectedBrokerPage from "./pages/dashboard/trader/ConnectedBrokerPage";
+const HistoryRebate = lazy(() => import("./pages/dashboard/trader/HistoryRebate"));
+const OverviewTrader = lazy(() => import("./pages/dashboard/trader/OverviewTrader"));
+const AddBrokerTrader = lazy(() => import("./pages/dashboard/trader/AddBrokerTrader"));
+const ConnectedBrokerPage = lazy(() => import("./pages/dashboard/trader/ConnectedBrokerPage"));
 
-import ManagementTraders from "./pages/dashboard/affiliator/ManagementTraders";
-import OverviewAffiliator from "./pages/dashboard/affiliator/OverviewAffiliator";
-import TraderPerformancePage from "./pages/dashboard/affiliator/TraderPerformancePage";
+const ManagementTraders = lazy(() => import("./pages/dashboard/affiliator/ManagementTraders"));
+const OverviewAffiliator = lazy(() => import("./pages/dashboard/affiliator/OverviewAffiliator"));
+const TraderPerformancePage = lazy(() => import("./pages/dashboard/affiliator/TraderPerformancePage"));
 
 import TawkChat from "./components/TawkChat";
 import MainLayout from "./components/MainLayout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import ContainerDashboard from "./components/dashboard/common/ContainerDashboard";
+import SEO from "./components/common/SEO";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -108,14 +109,14 @@ function App() {
     getUser();
   }, []);
 
-    useEffect(() => {
-      ReactGA.initialize("G-FWNT67K53F");
-      ReactGA.send({ 
-        hitType: "pageview", 
-        page: location.pathname + location.search, 
-        title: document.title
-      });
-    }, [location.pathname, location.search]);
+  useEffect(() => {
+    ReactGA.initialize("G-FWNT67K53F");
+    ReactGA.send({ 
+      hitType: "pageview", 
+      page: location.pathname + location.search, 
+      title: document.title
+    });
+  }, [location.pathname, location.search]);
 
   useEffect(() => {
     const dashboardPaths = ["dashboard", "trader", "affiliator", "login", "register", "verify-email", "profile-register", "withdrawal"];
@@ -130,6 +131,7 @@ function App() {
   return (
     <UserProvider value={[authUser, setAuthUser]}>
       <BalanceProvider value={[balance, setBalance]}>
+        <SEO />
         <ScrollToTop />
         <ToastContainer 
           position="bottom-right"
@@ -169,9 +171,11 @@ function App() {
             {/* Dashboard Routes (Admin/User/Affiliator) */}
             {authUser?.role === "admin" && (
               <Route path="dashboard" element={
-                <AdminOverviewProvider>
-                  <ContainerDashboard />
-                </AdminOverviewProvider>
+                <Suspense>
+                  <AdminOverviewProvider>
+                    <ContainerDashboard />
+                  </AdminOverviewProvider>
+                </Suspense>
               }>
                 <Route path="overview" element={<OverviewAdmin />} />
                 <Route path="affiliators" element={<AffiliatorsManagement />} />
@@ -188,9 +192,11 @@ function App() {
             )}
 
             <Route path="trader" element={
-              <BrokerUserProvider>
-                <ContainerDashboard />
-              </BrokerUserProvider>
+              <Suspense>
+                <BrokerUserProvider>
+                  <ContainerDashboard />
+                </BrokerUserProvider>
+              </Suspense>
             }>
               <Route path="overview" element={<OverviewTrader />} />
               <Route path="broker" element={<ConnectedBrokerPage />} />
@@ -205,9 +211,17 @@ function App() {
               <Route path="profile" element={<ProfilePage />} />
               <Route path="profile/change-password" element={<ChangePasswordPage />} />
             </Route>
-            <Route path="trader/broker/connect" element={<AddBrokerTrader />} />
+            <Route path="trader/broker/connect" element={
+              <Suspense>
+                <AddBrokerTrader />
+              </Suspense>
+            }/>
 
-            <Route path="affiliator" element={<ContainerDashboard />}>
+            <Route path="affiliator" element={
+              <Suspense>
+                <ContainerDashboard />
+              </Suspense>
+            }>
               <Route path="overview" element={<OverviewAffiliator />} />
               <Route path="traders" element={<ManagementTraders />} />
               <Route path="performance" element={<TraderPerformancePage />} />
@@ -221,9 +235,11 @@ function App() {
               <Route path="profile/change-password" element={<ChangePasswordPage />} />
             </Route>
             <Route path="withdrawal/request" element={
-              <BankProvider>
-                <WithdrawalRequestPage />
-              </BankProvider>
+              <Suspense>
+                <BankProvider>
+                  <WithdrawalRequestPage />
+                </BankProvider>
+              </Suspense>
             } />
 
           </Route>

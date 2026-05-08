@@ -81,10 +81,9 @@
   background-image: none !important;
 }
 
-._select-no-arrow::ms-expand {
+._select-no-arrow::-ms-expand {
   display: none;
 }
-
 .next-btn {
   background: #000;
 }
