@@ -142,13 +142,15 @@ const Navbar = ({ active }: { active: string }) => {
             alt="foto profil"
             className="size-11 rounded-full object-cover border border-white cursor-pointer" />  
         :
+        <>
           <Button buttonType="link" urlTo={getLocalizedPath("login", i18n.language)} variant="outline-light" size="lg" className="py-3! font-medium!">
             Login
           </Button>
+          <Button buttonType="link" urlTo={getLocalizedPath("register", i18n.language)} variant="light" size="lg" className="py-3! font-medium!">
+            Daftar
+          </Button>
+        </>
         }
-        <Button buttonType="link" urlTo={getLocalizedPath("register", i18n.language)} variant="light" size="lg" className="py-3! font-medium!">
-          Daftar
-        </Button>
       </div>
       <RxHamburgerMenu
         onClick={() => setOpenMenu(true)}
