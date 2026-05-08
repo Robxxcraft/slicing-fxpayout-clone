@@ -28,6 +28,8 @@ const ProfileRegisterForm = ({
         isMobileLabel={false}
         errorMessage={errors.username}
         disabled={isLoading}
+        inputClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required
       />
       <TextInput 
@@ -40,6 +42,8 @@ const ProfileRegisterForm = ({
         isMobileLabel={false}
         errorMessage={errors.fullname}
         disabled={isLoading}
+        inputClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required
       />
       <SelectInput 
@@ -52,6 +56,8 @@ const ProfileRegisterForm = ({
         labelOptions={["Laki-laki", "Perempuan"]}
         errorMessage={errors.gender}
         disabled={isLoading}
+        selectClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required />
       <TextInput 
         id="phoneNumber" 
@@ -64,6 +70,8 @@ const ProfileRegisterForm = ({
         isMobileLabel={false}
         errorMessage={errors.phoneNumber}
         disabled={isLoading}
+        inputClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required
       />
       {form.referral !== null &&
@@ -77,6 +85,8 @@ const ProfileRegisterForm = ({
           isMobileLabel={false}
           helperText="Kode referral hanya dapat diisi saat ini"
           disabled={isLoading}
+          inputClassName="py-3! text-base!"
+          labelClassName="text-base!"
           errorMessage={errors.referral}
         />
       }
@@ -85,7 +95,7 @@ const ProfileRegisterForm = ({
         loading={isLoading} 
         variant="primary-light" 
         buttonType="submit" 
-        className="mt-2 w-full! py-4! 2xl:py-5!">
+        className="mt-2 w-full! py-3! text-base!">
         Simpan Data
       </Button>
     </form>

@@ -20,8 +20,8 @@ const LoginEmailForm = ({
       <TextInput 
         id="email" 
         label="Email" 
-        icon="/email-icon.svg" 
-        altIcon="Icon email" 
+        // icon="/email-icon.svg" 
+        // altIcon="Icon email" 
         placeholder="Masukkan email" 
         value={form.email} 
         onChangeForm={handleChangeForm} 
@@ -30,13 +30,15 @@ const LoginEmailForm = ({
         isMobileLabel={false}
         errorMessage={errors.email}
         disabled={isLoading}
+        inputClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required
       />
       <TextInput 
         id="password" 
         label="Password" 
-        icon="/lock-icon.svg"
-        altIcon="Icon lock" 
+        // icon="/lock-icon.svg"
+        // altIcon="Icon lock" 
         placeholder="Masukkan password" 
         value={form.password} 
         onChangeForm={handleChangeForm} 
@@ -45,6 +47,8 @@ const LoginEmailForm = ({
         isMobileLabel={false}
         errorMessage={errors.password}
         disabled={isLoading}
+        inputClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required
       />
       <Button 
@@ -52,7 +56,7 @@ const LoginEmailForm = ({
         loading={isLoading} 
         variant="primary-light" 
         buttonType="submit" 
-        className="mt-2 w-full! py-4! 2xl:py-5!">
+        className="mt-2 w-full! py-3! text-base!">
         Masuk
       </Button>
     </form>

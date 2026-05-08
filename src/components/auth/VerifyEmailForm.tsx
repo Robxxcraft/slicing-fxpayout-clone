@@ -27,6 +27,8 @@ const VerifyEmailForm = ({
         isMobileLabel={false}
         errorMessage={errors.otp}
         disabled={isLoading}
+        inputClassName="py-3! text-base!"
+        labelClassName="text-base!"
         required
       />
       <Button 
@@ -34,7 +36,7 @@ const VerifyEmailForm = ({
         loading={isLoading} 
         variant="primary-light" 
         buttonType="submit" 
-        className="mt-2 w-full! py-4! 2xl:py-5!">
+        className="mt-2 w-full! py-3! text-base!">
         Verifikasi
       </Button>
     </form>

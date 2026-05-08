@@ -5,7 +5,7 @@ import { useRedirectByRole } from '@/hooks/useRedirectByRole';
 import { UserModel } from '@/models/user.model';
 import { BASE_URL, putAccessToken } from '@/services/apiClient';
 import { GoogleLogin } from '@react-oauth/google';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -25,10 +25,31 @@ const LoginGoogle = ({
   const [, setBalance] = useContext(BalanceContext);
   const { redirectUser } = useRedirectByRole();
   const navigate = useNavigate();
+  const [buttonWidth, setButtonWidth] = useState(360);
+
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (window.innerWidth < 480) {
+        setButtonWidth(window.innerWidth - 32);
+      } else {
+        setButtonWidth(360);
+      }
+    };
+
+    updateWidth();
+
+    window.addEventListener("resize", updateWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, []);
   return (
     <div 
-      className="mt-8 w-full"
+      className="relative mt-8 w-full h-10"
     >
+      <div className="absolute top-0 left-0 w-full h-10 bg-gray-200 rounded-full animate-pulse"></div>
       <GoogleLogin 
         onSuccess={async (credentialResponse) => {
 
@@ -90,10 +111,10 @@ const LoginGoogle = ({
         text={status === "signin" ? "signin_with" : "signup_with"}
         theme="outline"
         shape="pill"
-        width="100%"
+        width={buttonWidth}
+        size="large"
         containerProps={{ 
           style: {
-            width: "100%",
             position: "relative",
             top: "0px",
             opacity: 100,

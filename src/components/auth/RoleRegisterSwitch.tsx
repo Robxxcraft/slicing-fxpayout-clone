@@ -15,7 +15,7 @@ const RoleRegisterSwitch = ({
         py-2 w-1/2 rounded-lg text-center cursor-pointer`}
         onClick={() => changeRole("user")}  
       >
-        <p className="font-medium text-lg">
+        <p className="font-medium text-base">
           Trader
         </p>
       </div>
@@ -25,7 +25,7 @@ const RoleRegisterSwitch = ({
         py-2 w-1/2 rounded-lg text-center cursor-pointer`}
         onClick={() => changeRole("affiliator")}  
       >
-        <p className="font-medium text-lg">
+        <p className="font-medium text-base">
           Affiliator
         </p>
       </div>
