@@ -37,7 +37,7 @@ const AsideDashboard = ({ onLogout }: { onLogout: () => void }) => {
   return (
     <aside
       className={`${isCollapse ? "max-w-60 2xl:max-w-[360px] w-60 2xl:w-[360px]" : "max-w-[72px] w-[72px]"}
-        hidden lg:flex z-99 overflow-hidden fixed md:sticky left-0 top-16 2xl:top-[90px] md:mt-16 flex-col justify-between bg-white border-t border-r border-[#D2CEE1] transition-all duration-300 ease-out h-[calc(100vh-64px)] 2xl:h-[calc(100vh-90px)]`}
+        hidden lg:flex z-99 overflow-hidden fixed md:sticky left-0 top-16 2xl:top-[90px] md:mt-16 flex-col justify-between bg-white border-t border-r border-[#D2CEE1] transition-all duration-300 ease-out h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)]`}
     >
       <div className="overflow-y-auto overflow-x-hidden">
         <div

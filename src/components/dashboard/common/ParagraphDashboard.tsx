@@ -1,5 +1,5 @@
 const ParagraphDashboard = ({ 
-  maxW="w-[760px]",
+  maxW="w-fit md:w-[760px]",
   colorCL="text-black", 
   children
 }: { 

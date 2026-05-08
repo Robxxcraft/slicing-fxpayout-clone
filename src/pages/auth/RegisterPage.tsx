@@ -82,7 +82,7 @@ const RegisterPage = () => {
 
   return (
     <div className="font-inter flex justify-center w-full max-h-screen h-screen">
-      <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[560px] 2xl:max-w-[560px] bg-white rounded-4xl">
+      <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[400px] bg-white rounded-4xl">
         <AuthLayoutHeader 
           title="Buat akun baru FXPayout"
           paragraph="Pilih role yang diingikan terlebih dahulu, kemudian daftar akun menggunakan email atau google."
@@ -91,6 +91,19 @@ const RegisterPage = () => {
           role={selectedRole}
           changeRole={setSelectedRole}
         />
+        <LoginGoogle 
+          role={selectedRole} 
+          status="signup" 
+          handleChangeLoading={handleChangeLoading}
+        />
+        <div className="mt-8 relative text-center w-full">
+          <div className="h-px w-full border border-light-gray"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-1/2 px-3 bg-white">
+            <span className="text-sm 2xl:text-base font-medium text-black/60">
+              Atau
+            </span>
+          </div>
+        </div>
         <RegisterEmailForm
           onRegisterUser={handleRegisterUser}
           form={formRegister.values}
@@ -99,19 +112,7 @@ const RegisterPage = () => {
           isLoading={isLoading}
           role={selectedRole}
         />
-        <div className="mt-8 relative text-center w-full">
-          <div className="h-px w-full border border-black/40"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-1/2 px-3 bg-white">
-            <span className="text-sm 2xl:text-base font-medium text-black/60">
-              Atau
-            </span>
-          </div>
-        </div>
-        <LoginGoogle 
-          role={selectedRole} 
-          status="signup" 
-          handleChangeLoading={handleChangeLoading}
-        />
+        
         <p className="mt-8 text-sm 2xl:text-base text-black/80">
           Sudah memiliki akun? {" "} 
           <Link to={getLocalizedPath("login", i18n.language)} className="font-medium text-primary cursor-pointer hover:underline">

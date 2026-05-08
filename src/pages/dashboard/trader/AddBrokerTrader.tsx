@@ -60,7 +60,6 @@ const AddBrokerTrader = () => {
     setResLoadBrokers((prev) => ({...prev, loading: true}));
     const { error, data } = await BrokerAPI.getBrokersList();
     if (!error && data) {
-      console.log(data);
       const temp = data.map((item: {
         id: number; name: string; created_at: string
       }) => ({

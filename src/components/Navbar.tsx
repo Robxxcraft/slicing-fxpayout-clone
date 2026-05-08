@@ -146,9 +146,9 @@ const Navbar = ({ active }: { active: string }) => {
             Login
           </Button>
         }
-        {/* <Button buttonType="link" urlTo="#" variant="light" size="lg" className="py-3! font-medium!">
+        <Button buttonType="link" urlTo={getLocalizedPath("register", i18n.language)} variant="light" size="lg" className="py-3! font-medium!">
           Daftar
-        </Button> */}
+        </Button>
       </div>
       <RxHamburgerMenu
         onClick={() => setOpenMenu(true)}
@@ -247,16 +247,18 @@ const Navbar = ({ active }: { active: string }) => {
               alt="foto profil"
               className="size-11 rounded-full object-cover border border-white cursor-pointer" />  
           :
+          <>
             <Link to={getLocalizedPath("login", i18n.language)} className="w-fit text-center">
               <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
                 Login
               </span>
             </Link>
-          // {/* <Link to="#" className="w-fit text-center">
-          //   <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-          //     Daftar
-          //   </span>
-          // </Link> */}
+            <Link to={getLocalizedPath("register", i18n.language)} className="w-fit text-center">
+              <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
+                Daftar
+              </span>
+            </Link>
+          </>
           }
         </div>
         <div className="mx-auto mt-4">

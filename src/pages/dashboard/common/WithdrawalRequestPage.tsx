@@ -356,7 +356,7 @@ const BankWithdrawalInformation = ({
           <TitleDashboard>
             Informasi Rekening Bank Anda
           </TitleDashboard>
-          <ParagraphDashboard colorCL="text-black/80">
+          <ParagraphDashboard maxW="w-fit" colorCL="text-black/80">
             Rekening tujuan penarikan saldo
           </ParagraphDashboard>
         </div>

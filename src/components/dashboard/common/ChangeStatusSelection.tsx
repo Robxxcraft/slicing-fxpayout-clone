@@ -53,9 +53,9 @@ const ChangeStatusSelection = ({
           tabIndex={0}
           onClick={handleOpen}
           className="px-1 py-1 border border-[#DDDDDD] rounded-r-2xl cursor-pointer">
-          <div className="px-3 py-1 rounded-xl hover:bg-[#F5F5F5] flex items-center gap-3 transition-all duration-300">
+          <div className="px-3 py-1.5 md:py-1 rounded-xl hover:bg-[#F5F5F5] flex items-center gap-3 transition-all duration-300">
             <p className="text-nowrap text-sm md:text-base font-medium text-primary">Ubah status</p>
-            <FaChevronDown className={`${open ? "rotate-180" : "rotate-0"} text-base md:text-sm text-primary transition-all duration-150`} />
+            <FaChevronDown className={`${open ? "rotate-180" : "rotate-0"} text-sm text-primary transition-all duration-150`} />
           </div>
         </div>
         <AnimatePresence>

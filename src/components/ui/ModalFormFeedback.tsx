@@ -93,7 +93,7 @@ const ModalFormFeedback = ({
     formFeedback.values.rating === 0;
   return (
     <Modal isOpen={isVisible} onClose={handleClose}>
-      <div className="pr-2 flex flex-col max-h-[calc(100vh-100px)] overflow-auto">
+      <div className="pr-2 flex flex-col max-h-[calc(100dvh-100px)] overflow-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/review-primary-icon.svg" alt="Review Primary Icon" />

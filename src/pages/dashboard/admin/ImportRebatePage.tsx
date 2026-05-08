@@ -118,7 +118,6 @@ const ImportRebatePage = () => {
         }
 
         setFile(file);
-        console.log(transformedData);
         setData(transformedData as ImportRebateData[]);
       } catch (error) {
         console.error(error);

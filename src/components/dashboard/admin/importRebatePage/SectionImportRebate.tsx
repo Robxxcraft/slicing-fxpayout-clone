@@ -47,7 +47,7 @@ const SectionImportRebate = ({
             Gunakan template untuk menghindari kesalahan format.
           </p>
           <a 
-            download="Template_Data_Rebate.csv"
+            download="Template_Data_Rebate.xlsx"
             href="/file/template-rebate.xlsx" 
             className="shrink-0 px-4 py-3 flex items-center gap-2 border border-primary rounded-full hover:bg-[#F5F5F5] cursor-pointer transition-all duration-300"
           >

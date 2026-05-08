@@ -102,7 +102,7 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
 
         {/* MOBILE NAV */}
         {openMenu &&
-          <div className="_no-scrollbar pt-4 pb-18 absolute top-18 left-0 bg-white w-full h-[calc(100vh-70px)] md:h-[calc(100vh-260px)] overflow-auto">
+          <div className="_no-scrollbar pt-4 pb-18 absolute top-18 left-0 bg-white w-full h-[calc(100dvh-70px)] md:h-[calc(100dvh-260px)] overflow-auto">
             <div className="flex flex-col">
               {listNavigationBrokers.map(({ title, url, code }) => (
                 <a

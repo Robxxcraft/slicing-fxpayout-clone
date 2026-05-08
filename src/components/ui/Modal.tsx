@@ -19,17 +19,25 @@ const Modal = ({ isOpen, onClose, isOverlayClose=true, maxWCL, children }:
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ 
+              duration: 0.15,
+              ease: "easeOut"
+            }}
             onClick={isOverlayClose ? onClose : undefined}
-            className="fixed inset-0 bg-black/60 z-999999999 backdrop-blur-[5px]"
+            className="fixed inset-0 bg-black/60 z-999999 backdrop-blur-[2px] transform-gpu will-change-transform"
           />
 
-          <div className="px-5 fixed inset-0 z-1000000000 flex items-center justify-center pointer-events-none">
+          <div className="px-5 fixed inset-0 z-1000000 flex items-center justify-center pointer-events-none">
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ 
+                duration: 0.15,
+                ease: "easeOut"
+              }}
               className={`${maxWCL ? maxWCL : "max-w-md"}
-                bg-white w-full 2xl:max-w-[720px] rounded-3xl p-6 md:p-8 shadow-2xl pointer-events-auto relative overflow-hidden`}
+                bg-white w-full 2xl:max-w-[720px] rounded-3xl p-6 md:p-8 shadow-lg pointer-events-auto relative overflow-hidden transform-gpu will-change-transform`}
             >
               {children}
             </motion.div>

@@ -27,6 +27,7 @@ import { IoIosAdd } from "react-icons/io";
 import { LuRefreshCcw } from "react-icons/lu";
 import { IoWalletOutline } from "react-icons/io5";
 import UserContext from "@/context/UserContext";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const CONFIG_HEADERS = [
   {key: "createdAt", header: "Tanggal"},
@@ -149,6 +150,7 @@ const WithdrawalFundsPage = () => {
     }
   };
 
+  useLockBodyScroll(activeBankDrawer);
   return (
     <WrapperDashboardComponent>
       <section>
@@ -364,7 +366,8 @@ const WithdrawalFundsPage = () => {
       {activeBankDrawer &&
         <DrawerBankDetailData 
           bankData={bank}
-          closeDrawer={() => setActiveBankDrawer(false)} 
+          onCloseDrawer={() => setActiveBankDrawer(false)} 
+          isOpen={activeBankDrawer}
         />
       }
     </WrapperDashboardComponent>

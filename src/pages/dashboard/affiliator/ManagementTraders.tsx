@@ -222,7 +222,7 @@ const ManagementTraders = () => {
             <p className="text-black/80 text-base 2xl:text-xl">
             {useFilter ?
               "Tidak ditemukan data trader yang sesuai dengan filter atau pencarian Anda." :
-              "Saat ini, belum ada trader yang terhubung. Mulai undang trader untuk mendapatkan komisi rebate."}
+              "Saat ini, belum ada trader aktif dengan akun broker yang terhubung. Mulai undang trader untuk mendapatkan komisi rebate."}
             </p>
           </NoDataFound>
         }

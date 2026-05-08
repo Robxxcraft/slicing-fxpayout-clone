@@ -60,8 +60,6 @@ const EarningRebate = () => {
     const parsed = JSON.parse(cacheRebate);
     const date = new Date().toLocaleDateString();;
     const today = formatDateYYYYMMDD(date)
-    console.log('parsed', parsed.date)
-    console.log('today', today)
     if (parsed.date === today) {
       // ? Jika hari masih sama => langsung gunakan data
       setRebateByDate(parsed.data.byDate);

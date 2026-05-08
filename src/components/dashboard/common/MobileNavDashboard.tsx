@@ -36,7 +36,7 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
   }, [pathname]);
   return (
     <div className={`${showMobileNav ? "translate-x-0" : "-translate-x-full"} 
-      z-95 block lg:hidden fixed top-0 mt-16 px-5 py-4 w-full h-[calc(100vh-64px)] bg-white transition-all duration-300 ease-out overflow-y-auto`}>
+      z-95 block lg:hidden fixed top-0 mt-16 px-5 py-4 w-full h-[calc(100dvh-64px)] bg-white transition-all duration-300 ease-out overflow-y-auto`}>
       <div className="pb-3 border-b border-disabled">
         <div className="mb-3 flex items-center gap-3">
           <img src={authUser?.profile} alt="foto profil"
@@ -50,17 +50,21 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
             </span>
           </div>
         </div>
-        <div className="flex items-center justify-between">
-          <p className="font-semibold">Balance</p>
-          <p>
-            {formattingUsd(balance?.balance || 0)} USD
-          </p>
-        </div>
-        {(authUser?.referralCode || authUser?.affiliatorCode) &&
+        {authUser?.role !== "admin" &&
+        <>
           <div className="flex items-center justify-between">
-            <p className="font-semibold">Referral</p>
-            <p>{authUser.referralCode || authUser.affiliatorCode}</p>
+            <p className="font-semibold">Balance</p>
+            <p>
+              {formattingUsd(balance?.balance || 0)} USD
+            </p>
           </div>
+          {(authUser?.referralCode || authUser?.affiliatorCode) &&
+            <div className="flex items-center justify-between">
+              <p className="font-semibold">Referral</p>
+              <p>{authUser.referralCode || authUser.affiliatorCode}</p>
+            </div>
+          }
+        </>
         }
       </div>
       <div className="pt-3">
