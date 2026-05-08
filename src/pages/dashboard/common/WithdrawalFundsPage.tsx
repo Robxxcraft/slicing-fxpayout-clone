@@ -346,9 +346,7 @@ const WithdrawalFundsPage = () => {
         }
         {dataWithdrawal.length === 0 && !initLoad && !isLoading &&
           <NoDataFound>
-            <p className="text-black/80 text-base 2xl:text-xl">
-              Saat ini, Anda tidak memiliki antrean penarikan dana.
-            </p>
+            Saat ini, Anda tidak memiliki antrean penarikan dana.
           </NoDataFound>
         }
         <div className="mt-4">

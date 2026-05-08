@@ -83,7 +83,7 @@ const EarningRebate = () => {
             Earnings Rebate Overview
           </h2>
           <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
-            Track your generated rebates and commissions over time.
+            Pantau komisi rebate yang Anda hasilkan dari waktu ke waktu.
           </p>
         </div>
         <div className="p-2 flex gap-2 bg-white border border-[#DDDDDD] rounded-lg w-full md:w-fit">
