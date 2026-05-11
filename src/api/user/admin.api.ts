@@ -798,3 +798,37 @@ export const bulkChangeStatusWithdrawals = async ({
     }
   }
 };
+
+export const connectWhatsApp = async () => {
+  try {
+      const response = await _fetchWithAuth(
+          `${BASE_URL}/whatsapp/connect`,
+          {
+              method: "POST",
+              headers: {
+                  "content-type": "application/json"
+              }
+          }
+      );
+      const responseJson = await response.json();
+      if (response.status === 200) {
+          return {
+              error: false,
+              message: responseJson.message,
+              data: responseJson.result
+          };
+      }
+      return {
+          error: true,
+          message: responseJson.message,
+          data: null
+      };
+  } catch (error) {
+      console.error(`Failed connect WhatsApp. Error: ${error}`);
+      return {
+          error: true,
+          message: `Please try again later. Error: ${error}`,
+          data: null
+      };
+  }
+};

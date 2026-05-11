@@ -42,6 +42,7 @@ const ImportRebatePage = lazy(() => import("./pages/dashboard/admin/ImportRebate
 const BrokersManagement = lazy(() => import("./pages/dashboard/admin/BrokersManagement"));
 const TradersManagement = lazy(() => import("./pages/dashboard/admin/TradersManagement"));
 const RebatesManagement = lazy(() => import("./pages/dashboard/admin/RebatesManagement"));
+const WhatsAppPage = lazy(() => import("./pages/dashboard/admin/WhatsAppPage"));
 const ValidationDataDashboard = lazy(() => import("./pages/admin/ValidationDataDashboard"));
 const AffiliatorsManagement = lazy(() => import("./pages/dashboard/admin/AffiliatorsManagement"));
 const WithdrawalRequestManagement = lazy(() => import("./pages/dashboard/admin/WithdrawalRequestManagement"));
@@ -186,6 +187,7 @@ function App() {
                 <Route path="withdrawal" element={<WithdrawalRequestManagement />} />
                 <Route path="rebates/import" element={<ImportRebatePage />} />
                 <Route path="validation-data" element={<ValidationDataDashboard />} />
+                <Route path="whatsapp" element={<WhatsAppPage />} />
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="profile/change-password" element={<ChangePasswordPage />} />
               </Route>
