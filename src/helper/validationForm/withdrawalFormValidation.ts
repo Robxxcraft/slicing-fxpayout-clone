@@ -1,5 +1,5 @@
 import type { FormWithdrawalRequest } from "@/pages/dashboard/common/WithdrawalRequestPage";
-import { validateOnlyNumber } from "../formHelper";
+import { validateFloatFlexible } from "../formHelper";
 
 export const checkValidWithdrawalForm = (vals: FormWithdrawalRequest) => {
   const errors: Partial<Record<keyof FormWithdrawalRequest, string>> = {};
@@ -11,7 +11,7 @@ export const checkValidWithdrawalForm = (vals: FormWithdrawalRequest) => {
   } 
   if (vals.amount.trim() === "") {
     errors.amount = "Jumlah penarikan tidak boleh kosong";
-  } else if (!validateOnlyNumber(vals.amount)) {
+  } else if (!validateFloatFlexible(vals.amount)) {
     errors.amount = "Jumlah penarikan tidak valid";
   }
 

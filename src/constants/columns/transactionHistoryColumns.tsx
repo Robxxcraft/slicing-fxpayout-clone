@@ -2,8 +2,16 @@ import { formattingFullDateTime } from "@/helper/formattingDate";
 import StatusTag from "@/components/dashboard/common/StatusTag";
 import type { StatusType } from "@/types/status.type";
 import { formattingEmptyCurrency } from "@/helper/formattingCurrency";
+import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
+import type { TransactionHistory } from "@/pages/dashboard/common/TransactionHistoryPage";
 
 export const columnsDef = [
+  {
+    accessorKey: "id",
+    accessorFn: (row: TransactionHistory) => formattingWithdrawalId(row.withdrawal_id),
+    header: "ID",
+    enableSorting: false
+  },
   {
     accessorKey: "created_at",
     header: "Tanggal Dibuat",

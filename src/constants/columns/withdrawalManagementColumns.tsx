@@ -5,6 +5,7 @@ import { formattingFullDate } from "@/helper/formattingDate";
 import type { DataWithdrawalManagement } from "@/pages/dashboard/admin/WithdrawalRequestManagement";
 import type { StatusType } from "@/types/status.type";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
+import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
 
 export const columnsDef = [
   {
@@ -31,7 +32,7 @@ export const columnsDef = [
   },
   {
     accessorKey: "id",
-    accessorFn: (row: DataWithdrawalManagement) => `#WD-F${row.id.toString().padStart(3, "X")}`,
+    accessorFn: (row: DataWithdrawalManagement) => formattingWithdrawalId(row.id),
     header: "ID",
     enableSorting: false
   },

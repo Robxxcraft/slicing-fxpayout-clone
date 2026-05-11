@@ -11,6 +11,7 @@ import type { UserGender } from "@/types/user.type";
 import DetailPaymentDrawer from "../common/DetailPaymentDrawer";
 import { AdminAPI } from "@/api";
 import { toast } from "react-toastify";
+import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
 
 type DataProfile = {
   full_name: string;
@@ -116,7 +117,7 @@ const DrawerWithdrawalDetail = ({
             </div>
           </div>
           <p className="mt-1 text-black/60 text-base 2xl:text-xl leading-[160%]">
-            ID: #WD-F{dataWithdrawal.id.toString().padStart(3, "X")} • {" "}
+            ID: {formattingWithdrawalId(dataWithdrawal.id)} • {" "}
             Dibuat pada {formattingFullDate(dataWithdrawal.created_at)} 
           </p>
         </div>

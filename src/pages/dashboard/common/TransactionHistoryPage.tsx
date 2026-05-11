@@ -28,6 +28,7 @@ const supportEntry = [
 ];
 
 export type TransactionHistory = {
+  withdrawal_id: number;
   created_at: string;
   method: string;
   wallet_address: string;
@@ -36,6 +37,7 @@ export type TransactionHistory = {
   amount: number;
 };
 type ResponseWithdrawal = {
+  id: number;
   created_at: string;
   bank: { name: string, account_number: string } | null;
   wallet_address: string;
@@ -82,6 +84,7 @@ const TransactionHistoryPage = () => {
         if (!error && data) {
           const raw = data.data;
           const temp = raw.data.map((item: ResponseWithdrawal) => ({
+            withdrawal_id: item.id,
             created_at: item.created_at,
             method: !item.bank ? "Crypto" : item.bank.name,
             wallet_address: !item.bank ? item.wallet_address : item.bank.account_number,
