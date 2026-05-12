@@ -1,5 +1,7 @@
 export const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
+export const SOCKET_URL = import.meta.env.VITE_APP_SOCKET_URL;
+
 export const getLocalStorage = (key: string): string | null => {
   return localStorage.getItem(key);
 }

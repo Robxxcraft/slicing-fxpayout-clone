@@ -2,6 +2,7 @@ import { FaUser, FaUsers } from "react-icons/fa6";
 import type { UserRole } from "@/types/user.type";
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { BsBank2 } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
 import { TbChartHistogram } from "react-icons/tb";
 import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
 import { RiStockFill } from "react-icons/ri";
@@ -160,6 +161,7 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
       title: "Settings",
       items: [
         { key: "profile", label: "Profil", path: "/dashboard/profile", icon: FaUser },
+        { key: "whatsapp", label: "WhatsApp", path: "/dashboard/whatsapp", icon: FaWhatsapp },
       ],
     },
   ]
