@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { io } from "socket.io-client";
+import { useEffect, useState } from "react";
 
-import { SOCKET_URL } from "@/services/apiClient";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
 import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard";
@@ -12,221 +10,114 @@ import { toast } from "react-toastify";
 
 import { AdminAPI } from "@/api";
 
-type MessageType = {
-    jid: string;
-    text: string;
-    fromMe: boolean;
-};
+// type MessageType = {
+//     jid: string;
+//     text: string;
+//     fromMe: boolean;
+// };
 
 const WhatsAppPage = () => {
 
     const [qr, setQr] = useState<string>("");
     const [status, setStatus] = useState<string>("disconnected");
-    const [messages, setMessages] = useState<MessageType[]>([]);
+    // const [messages] = useState<MessageType[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const socketRef = useRef<any>(null);
-    
+
+    // =========================
+    // 🔥 POLLING STATUS REST
+    // =========================
     useEffect(() => {
 
-        if (socketRef.current) return;
+        const fetchStatus = async () => {
 
-        const token = localStorage.getItem("token");
+            try {
+                const res = await AdminAPI.statusWhatsApp();
 
-        const socketInstance = io(SOCKET_URL, {
-            auth: {
-                token
-            },
-            transports: ["websocket"]
-        });
+                if (!res.error && res.data) {
 
-        // SOCKET CONNECT
-        socketInstance.on("connect", () => {
+                    const { status, qr } = res.data;
 
-            console.log("SOCKET CONNECTED");
-            // console.log(socketInstance.id);
-            socketInstance.emit("wa_status:get");
-        });
+                    setStatus(status || "disconnected");
+                    
+                    if (qr) {
+                        setQr(qr);
+                    }
 
-        // SOCKET ERROR
-        socketInstance.on("connect_error", (err) => {
+                    if (status === "connected") {
+                        setQr("");
+                    }
+                }
 
-            // console.log("SOCKET ERROR");
-            // console.log(err.message);
-
-            toast.error(err.message);
-
-        });
-
-        // SOCKET DISCONNECT
-        socketInstance.on("disconnect", () => {
-
-            console.log("SOCKET DISCONNECTED");
-
-        });
-
-        // QR EVENT
-        socketInstance.on("wa_qr", (data) => {
-
-            // console.log("QR EVENT");
-            // console.log(data);
-
-            if (data?.qr) {
-                setQr(data.qr);
+            } catch (err) {
+                console.log("STATUS ERROR:", err);
             }
-
-        });
-
-        // STATUS EVENT
-        socketInstance.on("wa_status", (data) => {
-
-            // console.log("STATUS EVENT");
-            // console.log(data);
-
-            setStatus(data.status);
-
-            if (data.status === "connected") {
-
-                setQr("");
-
-                toast.success("WhatsApp Connected");
-
-            }
-
-            // kalau disconnected kosongkan qr
-            if (data.status === "disconnected") {
-
-                setQr("");
-
-                toast.error("WhatsApp Disconnected");
-
-            }
-
-        });
-
-        // MESSAGE EVENT
-        socketInstance.on("wa_message", (data) => {
-
-            // console.log("MESSAGE EVENT");
-            // console.log(data);
-
-            // skip pesan kosong
-            if (!data.text) {
-                return;
-            }
-
-            setMessages((prev) => [
-                data,
-                ...prev
-            ]);
-
-        });
-
-        return () => {
-
-            socketInstance.disconnect();
 
         };
 
+        fetchStatus(); // initial call
+
+        const interval = setInterval(fetchStatus, 3000); // polling tiap 3 detik
+
+        return () => clearInterval(interval);
+
     }, []);
 
+    // =========================
     // CONNECT WHATSAPP
+    // =========================
     const connectWA = async () => {
 
         try {
 
             setIsLoading(true);
 
-            const {
-                error,
-                message
-            } = await AdminAPI.connectWhatsApp();
+            const res = await AdminAPI.connectWhatsApp();
 
-            if (error) {
-
-                toast.error(message);
-
+            if (res.error) {
+                toast.error(res.message);
             } else {
-
-                toast.success(message);
-
+                toast.success(res.message);
             }
 
         } catch (error) {
-
             console.log(error);
-
             toast.error("Failed connect WhatsApp");
-
         } finally {
-
             setIsLoading(false);
-
         }
-
     };
 
+    // =========================
     // FORMAT JID
-    const formatJid = (jid: string) => {
+    // =========================
+    // const formatJid = (jid: string) => {
 
-        if (!jid) {
-            return "-";
-        }
+    //     if (!jid) return "-";
 
-        // GROUP
-        if (jid.includes("@g.us")) {
-            return "GROUP";
-        }
+    //     if (jid.includes("@g.us")) return "GROUP";
+    //     if (jid.includes("status@broadcast")) return "STATUS";
 
-        // STATUS
-        if (jid.includes("status@broadcast")) {
-            return "STATUS";
-        }
+    //     const id = jid.split("@")[0];
 
-        const id = jid.split("@")[0];
+    //     if (id.length <= 6) return "******";
 
-        // sensor id
-        if (id.length <= 6) {
-            return "******";
-        }
+    //     return `${id.slice(0, 4)}*****${id.slice(-3)}`;
+    // };
 
-        const first = id.slice(0, 4);
-        const last = id.slice(-3);
-
-        return `${first}*****${last}`;
-    };
-
-    // STATUS COLOR
+    // =========================
+    // STATUS UI
+    // =========================
     const getStatusColor = () => {
-
-        if (status === "connected") {
-            return "active";
-        }
-
-        if (status === "scan_qr") {
-            return "warning";
-        }
-
+        if (status === "connected") return "active";
+        if (status === "scan_qr") return "warning";
         return "warning";
-
     };
 
-    // STATUS TEXT
     const getStatusText = () => {
-
-        if (status === "connected") {
-            return "Connected";
-        }
-
-        if (status === "scan_qr") {
-            return "Scan QR";
-        }
-
-        if (status === "connecting") {
-            return "Connecting";
-        }
-
+        if (status === "connected") return "Connected";
+        if (status === "scan_qr") return "Scan QR";
+        if (status === "connecting") return "Connecting";
         return "Disconnected";
-
     };
 
     return (
@@ -236,7 +127,6 @@ const WhatsAppPage = () => {
 
                 {/* HEADER */}
                 <div>
-
                     <TitleDashboard>
                         WhatsApp Management
                     </TitleDashboard>
@@ -244,7 +134,6 @@ const WhatsAppPage = () => {
                     <ParagraphDashboard maxW="w-full">
                         Monitoring realtime WhatsApp connection and incoming messages.
                     </ParagraphDashboard>
-
                 </div>
 
                 {/* STATUS */}
@@ -253,7 +142,7 @@ const WhatsAppPage = () => {
                     <CardOverview
                         title="Connection Status"
                         content={getStatusText()}
-                        detail="Realtime WhatsApp"
+                        detail="REST API Mode"
                         icon={<FaWhatsapp />}
                         status={getStatusColor()}
                     />
@@ -266,7 +155,6 @@ const WhatsAppPage = () => {
                     <div className="flex items-center justify-between">
 
                         <div>
-
                             <h2 className="text-lg font-semibold">
                                 WhatsApp Connection
                             </h2>
@@ -274,25 +162,12 @@ const WhatsAppPage = () => {
                             <p className="text-sm text-gray-500">
                                 Connect WhatsApp account menggunakan QR code
                             </p>
-
                         </div>
 
                         <button
                             onClick={connectWA}
-                            disabled={
-                                isLoading ||
-                                status === "connected"
-                            }
-                            className="
-                                bg-green-500
-                                hover:bg-green-600
-                                transition-all
-                                text-white
-                                px-4
-                                py-2
-                                rounded-lg
-                                disabled:opacity-50
-                            "
+                            disabled={isLoading || status === "connected"}
+                            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg disabled:opacity-50"
                         >
                             {
                                 isLoading
@@ -309,121 +184,47 @@ const WhatsAppPage = () => {
                     {
                         qr && (
                             <div className="mt-5 flex justify-center">
-
                                 <div className="border rounded-xl p-4 bg-white">
-
-                                    <img
-                                        src={qr}
-                                        alt="QR Code"
-                                        className="w-72"
-                                    />
-
+                                    <img src={qr} alt="QR Code" className="w-72" />
                                 </div>
-
                             </div>
                         )
                     }
 
-                    {/* CONNECTED INFO */}
+                    {/* CONNECTED */}
                     {
                         status === "connected" && (
-                            <div className="mt-5">
-
-                                <div
-                                    className="
-                                        bg-green-50
-                                        border
-                                        border-green-200
-                                        rounded-xl
-                                        p-4
-                                        text-center
-                                    "
-                                >
-                                    <p className="text-green-700 font-medium">
-                                        WhatsApp Connected Successfully
-                                    </p>
-                                </div>
-
+                            <div className="mt-5 bg-green-50 border border-green-200 rounded-xl p-4 text-center">
+                                <p className="text-green-700 font-medium">
+                                    WhatsApp Connected Successfully
+                                </p>
                             </div>
                         )
                     }
 
                 </div>
 
-                {/* MESSAGE */}
-                <div className="bg-white rounded-xl border p-5">
+                {/* MESSAGES (OPTIONAL MOCK / EXTEND LATER) */}
+                {/* <div className="bg-white rounded-xl border p-5">
 
                     <div className="mb-4">
-
                         <h2 className="text-lg font-semibold">
                             Incoming Messages
                         </h2>
-
                         <p className="text-sm text-gray-500">
-                            Realtime WhatsApp messages
+                            (REST mode tidak realtime — butuh polling tambahan endpoint messages)
                         </p>
-
                     </div>
 
-                    <div className="space-y-3 max-h-[500px] overflow-auto">
+                    {
+                        messages.length === 0 && (
+                            <div className="text-center text-gray-400 py-10">
+                                No messages (REST mode)
+                            </div>
+                        )
+                    }
 
-                        {
-                            messages.length === 0 && (
-                                <div className="text-center text-gray-400 py-10">
-                                    No messages
-                                </div>
-                            )
-                        }
-
-                        {
-                            messages.map((msg, index) => (
-
-                                <div
-                                    key={index}
-                                    className="
-                                        border
-                                        rounded-xl
-                                        p-4
-                                        bg-gray-50
-                                    "
-                                >
-
-                                    <div className="flex items-center justify-between">
-
-                                        <p className="font-medium">
-                                            {formatJid(msg.jid)}
-                                        </p>
-
-                                        <span
-                                            className="
-                                                text-xs
-                                                px-2
-                                                py-1
-                                                rounded-full
-                                                bg-gray-200
-                                            "
-                                        >
-                                            {
-                                                msg.fromMe
-                                                    ? "From Me"
-                                                    : "Incoming"
-                                            }
-                                        </span>
-
-                                    </div>
-
-                                    <p className="mt-2 text-sm text-gray-700 break-all">
-                                        {msg.text}
-                                    </p>
-
-                                </div>
-
-                            ))
-                        }
-
-                    </div>
-
-                </div>
+                </div> */}
 
             </div>
 
