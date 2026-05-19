@@ -3,15 +3,15 @@ import {
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
-import type { DataBroker } from "@/pages/dashboard/admin/BrokersManagement";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { HiChevronUpDown } from "react-icons/hi2";
+import type { BrokerAdminManagement } from "@/types/broker.type";
 
 const TableBrokerManagement = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<DataBroker>;  
+  tableInstance: ReactTable<BrokerAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataBrokerUsers = tableInstance.getRowModel().rows;

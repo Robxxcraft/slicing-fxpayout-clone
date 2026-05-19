@@ -8,7 +8,9 @@ import { getCoreRowModel, useReactTable, type PaginationState, type SortingState
 
 import { TraderAPI } from "@/api";
 import { brokers } from "@/utils/dataBroker/brokers";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
+import type { ResponseRebateAPI, TypeRebateTrader } from "@/types/rebate.type";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
@@ -25,26 +27,12 @@ import SelectDropdown from "@/components/ui/SelectDropdown";
 import RangeDataPicker from "@/components/ui/RangeDataPicker";
 
 import { LuRefreshCcw } from "react-icons/lu";
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const supportEntry = [
   { "key": "20", "value": "20" }, 
   { "key": "50", "value": "50" },
   { "key": "100", "value": "100" }
 ];
-
-export type DataRebate = {
-  created_at: string;
-  broker: string;
-  account_number: string;
-  rebate: number;
-};
-type ResponseRebate = {
-  created_at: string;
-  broker: { name: string };
-  account_number: string;
-  total_rebate: number;
-}
 
 const defaultFrom = subDays(new Date(), 30);
 const defaultTo = new Date();
@@ -54,7 +42,7 @@ const HistoryRebate = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showPopupRange, setShowPopupRange] = useState<boolean>(false); 
-  const [dataRebate, setDataRebate] = useState<DataRebate[]>([]);
+  const [dataRebate, setDataRebate] = useState<TypeRebateTrader[]>([]);
   const { brokerParams } = useParams();
   const broker = brokers[brokerParams as keyof typeof brokers];
 
@@ -90,7 +78,7 @@ const HistoryRebate = () => {
       });
   
       if (!error && data) {
-        const temp = data.data.map((item: ResponseRebate) => ({
+        const temp = data.data.map((item: ResponseRebateAPI) => ({
           created_at: item.created_at,
           broker: item.broker.name,
           account_number: item.account_number,

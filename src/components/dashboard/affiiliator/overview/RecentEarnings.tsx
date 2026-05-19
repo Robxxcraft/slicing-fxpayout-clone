@@ -26,7 +26,7 @@ const RecentEarnings = ({
 }) => {
   return (
     <section className="mt-7 2xl:mt-10">
-      <div className="flex flex-col md:fle-row items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
           <h2 className="text-xl 2xl:text-[2rem] font-semibold">
             Recent Earnings

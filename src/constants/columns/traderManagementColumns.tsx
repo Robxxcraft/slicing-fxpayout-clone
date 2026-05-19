@@ -4,12 +4,14 @@ import IndeterminateCheckbox from "@/components/ui/IndeterminateCheckbox";
 import { formattingFullDate } from "@/helper/formattingDate";
 import type { StatusType } from "@/types/status.type";
 import { formattingUsd } from "@/helper/formattingCurrency";
-import type { DataTradersAdmin } from "@/pages/dashboard/admin/TradersManagement";
+import type { TradersAdminManagement } from "@/types/trader.type";
+import { templateTier } from "../templateTier";
+import type { UserTier } from "@/types/user.type";
 
 export const columnsDef = [
   {
     id: "select",
-    header: ({ table }: { table: Table<DataTradersAdmin> }) => (
+    header: ({ table }: { table: Table<TradersAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: table.getIsAllRowsSelected(),
@@ -18,7 +20,7 @@ export const columnsDef = [
         }}
       />
     ),
-    cell: ({ row }: { row: Row<DataTradersAdmin> }) => (
+    cell: ({ row }: { row: Row<TradersAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: row.getIsSelected(),
@@ -41,6 +43,12 @@ export const columnsDef = [
     accessorKey: "total_balance",
     header: "Balance",
     cell: ({ getValue }: { getValue: () => string }) => formattingUsd(Number(getValue()) || 0),
+    enableSorting: false
+  },
+  {
+    accessorKey: "tier",
+    header: "Tier",
+    cell: ({ getValue }: { getValue: () => UserTier }) => templateTier["user"][getValue()].title,
     enableSorting: false
   },
   {

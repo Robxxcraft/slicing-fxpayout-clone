@@ -4,7 +4,7 @@ import TextInput from "@/components/ui/TextInput";
 import { formattingFullDate } from "@/helper/formattingDate";
 import { validateFloatFlexible } from "@/helper/formHelper";
 import { useForm } from "@/hooks/useForm";
-import type { DataRebateManagement } from "@/pages/dashboard/admin/RebatesManagement";
+import type { RebateAdminManagement } from "@/types/rebate.type";
 import { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
@@ -17,7 +17,7 @@ const DrawerRebateDetail = ({
   openPopUpStatus,
   onUpdateRebateById
 }: { 
-  dataRebate: DataRebateManagement;
+  dataRebate: RebateAdminManagement;
   onUpdateRebateById: (rebateId: number, totalRebate: string) => Promise<boolean>;
   onCloseDrawer: () => void;
   isOpen: boolean;

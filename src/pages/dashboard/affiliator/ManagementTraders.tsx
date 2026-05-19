@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState, type ChangeEvent } from "react";
 import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 
 import type { FullStatusType, StatusType } from "@/types/status.type";
-import { statusMap } from "@/utils/dataDropdownDashboard";
+import { statusMap } from "@/constants/statusDropdown";
 import { AffilitorAPI } from "@/api";
 import { columnsDef } from "@/constants/columns/traderAffiliatorColumns";
 

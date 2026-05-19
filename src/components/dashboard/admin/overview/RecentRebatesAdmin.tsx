@@ -6,9 +6,9 @@ import type { StatusType } from '@/types/status.type';
 import { getLocalizedPath } from '@/helper/pathHelper';
 import { useTranslation } from 'react-i18next';
 import NoDataFound from '../../common/NoDataFound';
-import type { DataRebateManagement } from '@/pages/dashboard/admin/RebatesManagement';
 import Spinner from '@/components/ui/Spinner';
 import { formattingFullDate } from '@/helper/formattingDate';
+import type { RebateAdminManagement } from '@/types/rebate.type';
 
 const CONFIG_HEADER = ["ID Akun Trading", "Broker", "Total Rebate", "Status", "Tanggal Dibuat"];
 
@@ -16,7 +16,7 @@ const RecentRebatesAdmin = ({
   dataRebates,
   isLoading
 }: {
-  dataRebates: DataRebateManagement[];
+  dataRebates: RebateAdminManagement[];
   isLoading: boolean;
 }) => {
   const { i18n } = useTranslation();

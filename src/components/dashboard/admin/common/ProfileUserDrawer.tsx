@@ -1,4 +1,5 @@
-import type { UserGender } from "@/types/user.type";
+import { templateTier } from "@/constants/templateTier";
+import type { UserGender, UserRole, UserTier } from "@/types/user.type";
 import { TiInfoLarge } from "react-icons/ti";
 
 type ProfileUserProps = {
@@ -9,6 +10,8 @@ type ProfileUserProps = {
   gender: UserGender;
   isLoading: boolean;
   status: "pending" | "approved";
+  tier: UserTier;
+  role: UserRole;
 }
 
 const ProfileUserDrawer = ({
@@ -18,7 +21,9 @@ const ProfileUserDrawer = ({
   phone_number,
   gender,
   isLoading,
-  status
+  status,
+  tier,
+  role
 }: ProfileUserProps) => {
   const layoutProfile = [
     { 
@@ -45,6 +50,11 @@ const ProfileUserDrawer = ({
       key: "gender", 
       header: "Jenis Kelamin",
       value: gender 
+    },
+    { 
+      key: "tier", 
+      header: "Tier",
+      value: templateTier[role][tier].title
     },
   ];
 

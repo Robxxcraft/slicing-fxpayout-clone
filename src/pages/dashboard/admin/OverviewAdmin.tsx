@@ -4,14 +4,13 @@ import { toast } from "react-toastify";
 import { AdminAPI } from "@/api";
 import type { SetStatusType } from "@/types/status.type";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
-import type { DataRebateManagement, ResponseDataRebate } from "./RebatesManagement";
+import type { ResponseWithdrawalAPI, WithdrawalAdminManagement } from "@/types/withdrawal.type";
+import type { RebateAdminManagement, ResponseRebateAPI } from "@/types/rebate.type";
 
 import RecentRebatesAdmin from "@/components/dashboard/admin/overview/RecentRebatesAdmin";
 import OverviewAdminHeader from "@/components/dashboard/admin/overview/OverviewAdminHeader";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
 import RecentTransactionsAdmin from "@/components/dashboard/admin/overview/RecentTransactionsAdmin";
-import type { DataWithdrawalManagement, ResponseDataWithdrawal } from "./WithdrawalRequestManagement";
-
 
 type LoadingState = {
   overview: boolean;
@@ -26,8 +25,8 @@ const OverviewAdmin = () => {
     rebate: false
   });
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
-  const [dataWithdrawals, setDataWithdrawals] = useState<DataWithdrawalManagement[]>([]); 
-  const [dataRebates, setDataRebates] = useState<DataRebateManagement[]>([]);
+  const [dataWithdrawals, setDataWithdrawals] = useState<WithdrawalAdminManagement[]>([]); 
+  const [dataRebates, setDataRebates] = useState<RebateAdminManagement[]>([]);
 
   const fetchDataOverview = async (init?: boolean) => {
     setIsLoading((prev) => ({
@@ -53,16 +52,17 @@ const OverviewAdmin = () => {
       limit: 5
     });
     if (!error && data) {
-      const temp = data.data.map((item: ResponseDataWithdrawal) => {
+      const temp = data.data.map((item: ResponseWithdrawalAPI) => {
         const useUsd = item.currency === "USD";
+        const useCrypto = item.bank_name === null && item.bank_account_name === null && item.bank_account_number === null;
         return ({
           id: item.id,
           user_id: item.user_id,
           bank_id: item.bank_id,
-          method: item.bank !== null ? "bank" : "crypto",
-          bank_name: item.bank !== null ? item.bank.name : "Crypto",
-          account_name: item.bank !== null ? item.bank.account_name : item.user.full_name,
-          wallet_address: item.bank !== null ? item.bank.account_number : item.wallet_address,
+          method: useCrypto ? "crypto" : "bank",
+          bank_name: useCrypto ? "Crypto" : item.bank_name || "-",
+          account_name: useCrypto ? item.user.full_name : item.bank_account_name || "-",
+          wallet_address: useCrypto ? item.wallet_address : item.bank_account_number || "-",
           total: useUsd ? item.amount_usd : item.amount_idr,
           currency: item.currency,
           status: item.status,
@@ -89,7 +89,7 @@ const OverviewAdmin = () => {
       limit: 5
     });
     if (!error && data) {
-      const temp = data.data.map((item: ResponseDataRebate) => ({
+      const temp = data.data.map((item: ResponseRebateAPI) => ({
         id: item.id,
         created_at: item.created_at,
         date: item.date,

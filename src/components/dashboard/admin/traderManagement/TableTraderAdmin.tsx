@@ -5,13 +5,13 @@ import {
 } from "@tanstack/react-table";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { HiChevronUpDown } from "react-icons/hi2";
-import type { DataTradersAdmin } from "@/pages/dashboard/admin/TradersManagement";
+import type { TradersAdminManagement } from "@/types/trader.type";
 
 const TableTraderAdmin = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<DataTradersAdmin>;  
+  tableInstance: ReactTable<TradersAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataTraders = tableInstance.getRowModel().rows;

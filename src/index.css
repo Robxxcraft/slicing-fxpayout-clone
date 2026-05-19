@@ -41,6 +41,10 @@
   scrollbar-color: #4160ff transparent; /* thumb | track */
 }
 
+.scrollbar-thin {
+  scrollbar-width: thin !important;
+}
+
 .primary-scrollbar::-webkit-scrollbar-thumb {
   background-color: #4160ff;
   border-radius: 999px;

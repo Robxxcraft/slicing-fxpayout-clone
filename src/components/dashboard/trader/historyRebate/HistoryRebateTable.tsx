@@ -1,17 +1,17 @@
 import Table from '@/components/TableLayout';
-import type { DataRebate } from '@/pages/dashboard/trader/HistoryRebate';
 import { 
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { HiChevronUpDown } from 'react-icons/hi2';
+import type { TypeRebateTrader } from '@/types/rebate.type';
 
 const HistoryRebateTable = ({ 
   tableInstance,
   isLoading
 }: { 
-  tableInstance:  ReactTable<DataRebate>;  
+  tableInstance:  ReactTable<TypeRebateTrader>;  
   isLoading: boolean;
 }) => {
   const dataRebate = tableInstance.getRowModel().rows;

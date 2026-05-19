@@ -1,6 +1,6 @@
-import type { FormWithdrawalRequest } from "@/pages/dashboard/common/WithdrawalRequestPage";
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
 import type { OrderStatus, StatusType } from "@/types/status.type";
+import type { FormWithdrawalRequest } from "@/types/withdrawal.type";
 
 export const createWithdrawal = async ({ 
   form,

@@ -1,60 +1,50 @@
-import { useCallback, useEffect, useState, type ChangeEvent } from "react"
-import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type"
-import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table"
+import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import { subDays } from "date-fns";
+import { isEqual } from "lodash";
+import type { DateRange } from "react-day-picker";
+import { toast } from "react-toastify";
+import { 
+  getCoreRowModel, 
+  useReactTable, 
+  type PaginationState, 
+  type RowSelectionState, 
+  type SortingState 
+} from "@tanstack/react-table";
 
-import { AdminAPI } from "@/api"
-import { statusMap } from "@/utils/dataDropdownDashboard"
-import { columnsDef } from "@/constants/columns/rebatesManagementColumns"
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
+import { AdminAPI } from "@/api";
+import { statusMap, statusMapNoPendingAll } from "@/constants/statusDropdown";
+import { columnsDef } from "@/constants/columns/rebatesManagementColumns";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
+import type { FullStatusType, SetStatusType } from "@/types/status.type";
+import type { RebateAdminManagement, ResponseRebateAPI } from "@/types/rebate.type";
+import { formattingUsd } from "@/helper/formattingCurrency";
+import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 
-import CardOverview from "@/components/dashboard/common/CardOverview"
-import NoDataFound from "@/components/dashboard/common/NoDataFound"
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
-import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
-import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
-import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard"
-import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
-import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
-import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
-import DrawerRebateDetail from "@/components/dashboard/admin/rebatesManagement/DrawerRebateDetail"
-import TableRebatesManagement from "@/components/dashboard/admin/rebatesManagement/TableRebatesManagement"
+import CardOverview from "@/components/dashboard/common/CardOverview";
+import NoDataFound from "@/components/dashboard/common/NoDataFound";
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
+import FloatingSelection from "@/components/dashboard/common/FloatingSelection";
+import ParagraphDashboard from "@/components/dashboard/common/ParagraphDashboard";
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
+import FloatingStatusSelection from "@/components/dashboard/common/FloatingStatusSelection";
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
+import DrawerRebateDetail from "@/components/dashboard/admin/rebatesManagement/DrawerRebateDetail";
+import TableRebatesManagement from "@/components/dashboard/admin/rebatesManagement/TableRebatesManagement";
 
-import Spinner from "@/components/ui/Spinner"
-import Tooltip from "@/components/ui/Tooltip"
-import SelectDropdown from "@/components/ui/SelectDropdown"
-import ModalConfirmation from "@/components/ui/ModalConfirmation"
+import Spinner from "@/components/ui/Spinner";
+import Tooltip from "@/components/ui/Tooltip";
+import SelectDropdown from "@/components/ui/SelectDropdown";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
+import RangeDataPicker from "@/components/ui/RangeDataPicker";
+import DateRangeButton from "../common/DateRangeButton";
 
-import { toast } from "react-toastify"
-import { CgInfo } from "react-icons/cg"
-import { RiStockFill } from "react-icons/ri"
-import { LuRefreshCcw } from "react-icons/lu"
-import type { DateRange } from "react-day-picker"
-import { isEqual } from "lodash"
-import DateRangeButton from "../common/DateRangeButton"
-import RangeDataPicker from "@/components/ui/RangeDataPicker"
-import { subDays } from "date-fns"
-import { formatDateYYYYMMDD } from "@/helper/formattingDate"
-
-export type DataRebateManagement = {
-  id: number;
-  created_at: string;
-  date: string;
-  account_number: string;
-  broker_name: string;
-  total_rebate: number;
-  status: StatusType;
-};
-export type ResponseDataRebate = {
-  id: number;
-  created_at: string;
-  date: string;
-  account_number: string;
-  total_rebate: string;
-  status: string;
-  broker: { name: string };
-}
+import { CgInfo } from "react-icons/cg";
+import { RiStockFill } from "react-icons/ri";
+import { LuRefreshCcw } from "react-icons/lu";
+import { IoCardOutline } from "react-icons/io5";
 
 const supportEntry = [
   { key: "20", value: "20"}, 
@@ -78,8 +68,8 @@ const RebatesManagement = () => {
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
 
   // Data Table
-  const [dataRebates, setDataRebates] = useState<DataRebateManagement[]>([]);
-  const [selectedData, setSelectedData] = useState<DataRebateManagement | null>(null);
+  const [dataRebates, setDataRebates] = useState<RebateAdminManagement[]>([]);
+  const [selectedData, setSelectedData] = useState<RebateAdminManagement | null>(null);
 
   // Table State
   const [range, setRange] = useState<DateRange>({
@@ -118,7 +108,7 @@ const RebatesManagement = () => {
       });
 
       if (!error && data) {
-        const temp = data.data.map((item: ResponseDataRebate) => ({
+        const temp = data.data.map((item: ResponseRebateAPI) => ({
           id: item.id,
           created_at: item.created_at,
           date: item.date,
@@ -264,9 +254,12 @@ const RebatesManagement = () => {
 
     return error;
   }
+
+  // Function Filter
   const handleChangeFilterStatus = (key: string) => {
     if (isLoading) return;
-    setFilterStatus(key as "all" | "pending" | "approved" | "rejected");
+    setFilterStatus(key as FullStatusType);
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   }  
   const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;
@@ -281,6 +274,7 @@ const RebatesManagement = () => {
   const applyChangeRangeDate = (dateRange: DateRange) => {
     if (isLoading) return;
     setRange(dateRange);
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   } 
 
   useLockBodyScroll(selectedData !== null || showPopupStatus || showPopupDelete || showPopupRange);
@@ -294,12 +288,19 @@ const RebatesManagement = () => {
   const useFilter = filterStatus !== "all" || globalFiltering || dateFilter;
   return (
     <WrapperDashboardComponent>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <CardOverview 
           title={"Total Rebates"} 
           icon={<RiStockFill />} 
           content={dataAdminOverview ? dataAdminOverview.totalRebates.toLocaleString() : "0"} 
           detail={"Total data from import rebates"} 
+          isLoading={dataAdminOverview === null}  
+        />
+        <CardOverview 
+          title={"Internal Earning"} 
+          icon={<IoCardOutline />} 
+          content={dataAdminOverview ? formattingUsd(dataAdminOverview.totalInternalCommisions).toString() : "$0.00"} 
+          detail={"Total earning rebate for FXPayout"} 
           isLoading={dataAdminOverview === null}  
         />
         <CardOverview 
@@ -437,10 +438,13 @@ const RebatesManagement = () => {
       }
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
         (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
-        <ChangeStatusSelection 
+        <FloatingStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
-          onChangeStatus={openPopUpStatus} />
+          onChangeStatus={openPopUpStatus}
+          command="Ubah Status"
+          objectsInput={statusMapNoPendingAll} 
+        />
         :
           <FloatingSelection 
             selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 

@@ -5,16 +5,16 @@ import { useTranslation } from "react-i18next";
 import { getCoreRowModel, useReactTable, type RowSelectionState } from "@tanstack/react-table";
 
 import { AdminAPI } from "@/api";
+import { statusMapNoPendingAll } from "@/constants/statusDropdown";
+import type { WithdrawalAdminManagement } from "@/types/withdrawal.type";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import type { SetStatusType } from "@/types/status.type";
 import { columnsDef } from "@/constants/columns/withdrawalManagementColumns";
 
 import NoDataFound from "../../common/NoDataFound";
 import FloatingSelection from "../../common/FloatingSelection";
-import ChangeStatusSelection from "../../common/ChangeStatusSelection";
+import FloatingStatusSelection from "../../common/FloatingStatusSelection";
 import TableDataWithdrawals from "../withdrawalManagement/TableDataWithdrawals";
-
-import type { DataWithdrawalManagement } from "@/pages/dashboard/admin/WithdrawalRequestManagement";
 
 import Spinner from "@/components/ui/Spinner";
 import ModalConfirmation from "@/components/ui/ModalConfirmation";
@@ -22,7 +22,7 @@ import ModalConfirmation from "@/components/ui/ModalConfirmation";
 import { HiArrowLongRight } from "react-icons/hi2";
 
 type RecentTransactionsAdminProps = {
-  dataWithdrawals: DataWithdrawalManagement[];
+  dataWithdrawals: WithdrawalAdminManagement[];
   onChangeStatusData: (ids: number[], newStatus: SetStatusType) => void;
   onChangeLoad: (load: boolean) => void;
   isLoading: boolean;
@@ -118,10 +118,13 @@ const RecentTransactionsAdmin = ({
       {/* FLOATING SECTION */}
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
         (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
-        <ChangeStatusSelection 
+        <FloatingStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
-          onChangeStatus={openPopUpStatus} />
+          onChangeStatus={openPopUpStatus} 
+          command="Ubah Status"
+          objectsInput={statusMapNoPendingAll}
+        />
         :
           <FloatingSelection 
             selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 

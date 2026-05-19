@@ -1,67 +1,47 @@
+import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import { toast } from "react-toastify";
+import { isEqual, subDays } from "date-fns";
+import type { DateRange } from "react-day-picker";
+import { 
+  getCoreRowModel, 
+  useReactTable, 
+  type PaginationState, 
+  type RowSelectionState, 
+  type SortingState 
+} from "@tanstack/react-table";
+
 import { AdminAPI } from "@/api";
-import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
-import DrawerWithdrawalDetail from "@/components/dashboard/admin/withdrawalManagement/DrawerWithdrawalDetail";
-import TableDataWithdrawals from "@/components/dashboard/admin/withdrawalManagement/TableDataWithdrawals";
-import CardOverview from "@/components/dashboard/common/CardOverview";
-import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection";
-import FloatingSelection from "@/components/dashboard/common/FloatingSelection";
-import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
-import NoDataFound from "@/components/dashboard/common/NoDataFound";
-import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
-import ModalConfirmation from "@/components/ui/ModalConfirmation";
-import SelectDropdown from "@/components/ui/SelectDropdown";
-import Spinner from "@/components/ui/Spinner";
-import Tooltip from "@/components/ui/Tooltip";
-import { columnsDef } from "@/constants/columns/withdrawalManagementColumns";
+import { statusMap, statusMapNoPendingAll } from "@/constants/statusDropdown";
 import { formattingUsd } from "@/helper/formattingCurrency";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
+import { columnsDef } from "@/constants/columns/withdrawalManagementColumns";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
-import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type";
-import { statusMap } from "@/utils/dataDropdownDashboard";
-import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table";
-import { isEqual, subDays } from "date-fns";
-import { useCallback, useEffect, useState, type ChangeEvent } from "react";
-import type { DateRange } from "react-day-picker";
-import { CgInfo } from "react-icons/cg";
-import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
-import { LuRefreshCcw } from "react-icons/lu";
-import { toast } from "react-toastify";
-import DateRangeButton from "../common/DateRangeButton";
-import RangeDataPicker from "@/components/ui/RangeDataPicker";
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
+import type { FullStatusType, SetStatusType } from "@/types/status.type";
+import type { ResponseWithdrawalAPI, WithdrawalAdminManagement } from "@/types/withdrawal.type";
 
-export type DataWithdrawalManagement = {
-  id: number;
-  user_id: number;
-  bank_id: number | null;
-  method: "bank" | "crypto";
-  bank_name: string;
-  account_name: string;
-  wallet_address: string;
-  total: string;
-  currency: "USD" | "IDR";
-  status: StatusType;
-  created_at: string;
-};
-export type ResponseDataWithdrawal = {
- id: number;
- user_id: number;
- bank_id: number;
- wallet_address: string;
- amount_usd: string;
- amount_idr: string;
- currency: string;
- created_at: string;
- status: string;
- user: { full_name: string };
- bank: {
-   name: string;
-   account_name: string;
-   account_number: string;
- } | null
-}
+import RangeDataPicker from "@/components/ui/RangeDataPicker";
+import NoDataFound from "@/components/dashboard/common/NoDataFound";
+import CardOverview from "@/components/dashboard/common/CardOverview";
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
+import FloatingSelection from "@/components/dashboard/common/FloatingSelection";
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
+import DrawerWithdrawalDetail from "@/components/dashboard/admin/withdrawalManagement/DrawerWithdrawalDetail";
+import FloatingStatusSelection from "@/components/dashboard/common/FloatingStatusSelection";
+import TableDataWithdrawals from "@/components/dashboard/admin/withdrawalManagement/TableDataWithdrawals";
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
+
+import Spinner from "@/components/ui/Spinner";
+import Tooltip from "@/components/ui/Tooltip";
+import SelectDropdown from "@/components/ui/SelectDropdown";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
+import DateRangeButton from "../common/DateRangeButton";
+
+import { CgInfo } from "react-icons/cg";
+import { LuRefreshCcw } from "react-icons/lu";
+import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
 
 const supportEntry = [
   { key: "20", value: "20"}, 
@@ -83,8 +63,8 @@ const WithdrawalRequestManagement = () => {
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
 
   // Data Table
-  const [dataWithdrawals, setDataWithdrawals] = useState<DataWithdrawalManagement[]>([]);
-  const [selectedData, setSelectedData] = useState<DataWithdrawalManagement | null>(null);
+  const [dataWithdrawals, setDataWithdrawals] = useState<WithdrawalAdminManagement[]>([]);
+  const [selectedData, setSelectedData] = useState<WithdrawalAdminManagement | null>(null);
 
   // Table State
   const [range, setRange] = useState<DateRange>({
@@ -123,16 +103,17 @@ const WithdrawalRequestManagement = () => {
       });
   
       if (!error && data) {
-        const temp = data.data.map((item: ResponseDataWithdrawal) => {
+        const temp = data.data.map((item: ResponseWithdrawalAPI) => {
           const useUsd = item.currency === "USD";
+          const useCrypto = item.bank_name === null && item.bank_account_name === null && item.bank_account_number === null;
           return ({
             id: item.id,
             user_id: item.user_id,
             bank_id: item.bank_id,
-            method: item.bank !== null ? "bank" : "crypto",
-            bank_name: item.bank !== null ? item.bank.name : "Crypto",
-            account_name: item.bank !== null ? item.bank.account_name : item.user.full_name,
-            wallet_address: item.bank !== null ? item.bank.account_number : item.wallet_address,
+            method: useCrypto ? "crypto" : "bank",
+            bank_name: useCrypto ? "Crypto" : item.bank_name || "-",
+            account_name: useCrypto ? item.user.full_name : item.bank_account_name || "-",
+            wallet_address: useCrypto ? item.wallet_address : item.bank_account_number || "-",
             total: useUsd ? item.amount_usd : item.amount_idr,
             currency: item.currency,
             status: item.status,
@@ -231,16 +212,19 @@ const WithdrawalRequestManagement = () => {
     setShowPopupStatus(false);
     setIsLoading(false);
   }
+
+  // Function Filter Table
   const handleChangeFilterStatus = (key: string) => {
     if (isLoading) return;
-    setFilterStatus(key as "all" | "pending" | "approved" | "rejected");
+    setFilterStatus(key as FullStatusType);
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   }  
   const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;
     setPagination({
       pageIndex: 0,
       pageSize: Number(key)
-    });;
+    });
   } 
   const handleChangeGlobalFiltering = (e: ChangeEvent<HTMLInputElement>) => {
     setGlobalFiltering(e.target.value);
@@ -248,6 +232,7 @@ const WithdrawalRequestManagement = () => {
   const applyChangeRangeDate = (dateRange: DateRange) => {
     if (isLoading) return;
     setRange(dateRange);
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   } 
 
   useLockBodyScroll(selectedData !== null || showPopupStatus || showPopupRange);
@@ -272,8 +257,10 @@ const WithdrawalRequestManagement = () => {
         <CardOverview 
           title={"Commission Paid"} 
           icon={<IoCardOutline />} 
-          content={dataAdminOverview ? formattingUsd(dataAdminOverview.totalCommission).toString() : "0.00"} 
-          detail={"Total commission successfully disbursed"} />
+          content={dataAdminOverview ? formattingUsd(dataAdminOverview.totalCommission).toString() : "$0.00"} 
+          detail={"Total commission successfully disbursed"} 
+          isLoading={dataAdminOverview === null}  
+        />
         <CardOverview 
           title={"Pending Request"} 
           icon={<IoWalletOutline />} 
@@ -394,10 +381,13 @@ const WithdrawalRequestManagement = () => {
 
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
         (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
-        <ChangeStatusSelection 
+        <FloatingStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
-          onChangeStatus={openPopUpStatus} />
+          onChangeStatus={openPopUpStatus} 
+          command="Ubah Status"
+          objectsInput={statusMapNoPendingAll}
+        />
         :
           <FloatingSelection 
             selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 

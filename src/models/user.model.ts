@@ -31,6 +31,7 @@ export const UserModel = {
       profile: respData.profile,
       isGoogle: respData.is_google,
       isVerified: respData.is_email_verified,
+      tier: respData.tier ? respData.tier : "standard",
       hasPassword: isHasPassword,
 
       affiliatorCode: this.isAffiliator(respData.role) ? respData.referral_code : undefined,

@@ -1,18 +1,26 @@
-import { statusMapNoPendingAll } from "@/utils/dataDropdownDashboard";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 
-const ChangeStatusSelection = ({
-  selectedNumber,
-  onClose,
-  onChangeStatus
-}: {
+type FloatingStatusSelectionProps = {
   selectedNumber: number;
   onClose: () => void;
   onChangeStatus: (key: string) => void;
-}) => {
+  command: string;
+  objectsInput: {
+    key: string;
+    value: string;
+  }[]
+};
+
+const FloatingStatusSelection = ({
+  selectedNumber,
+  onClose,
+  onChangeStatus,
+  command,
+  objectsInput
+}: FloatingStatusSelectionProps) => {
   const [open, setOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -54,7 +62,9 @@ const ChangeStatusSelection = ({
           onClick={handleOpen}
           className="px-1 py-1 border border-[#DDDDDD] rounded-r-2xl cursor-pointer">
           <div className="px-3 py-1.5 md:py-1 rounded-xl hover:bg-[#F5F5F5] flex items-center gap-3 transition-all duration-300">
-            <p className="text-nowrap text-sm md:text-base font-medium text-primary">Ubah status</p>
+            <p className="text-nowrap text-sm md:text-base font-medium text-primary">
+              {command}
+            </p>
             <FaChevronDown className={`${open ? "rotate-180" : "rotate-0"} text-sm text-primary transition-all duration-150`} />
           </div>
         </div>
@@ -67,7 +77,7 @@ const ChangeStatusSelection = ({
             transition={{ duration: 0.15 }}
             className={`absolute bottom-[calc(100%+4px)] left-1/2 -translate-x-1/2 origin-bottom`}>
             <div className={`p-2 h-full border border-[#DDDDDD] bg-white w-[200px] 2xl:w-60 rounded-lg shadow-sm`}>
-              {statusMapNoPendingAll.map((item) => (
+              {objectsInput.map((item) => (
                 <p 
                   onClick={() => handleChange(item.key)}
                   className="p-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md  cursor-pointer">
@@ -83,4 +93,4 @@ const ChangeStatusSelection = ({
   )
 }
 
-export default ChangeStatusSelection;
+export default FloatingStatusSelection;

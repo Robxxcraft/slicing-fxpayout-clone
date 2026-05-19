@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-table";
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { HiChevronUpDown } from 'react-icons/hi2';
-import type { TransactionHistory } from '@/pages/dashboard/common/TransactionHistoryPage';
+import type { TransactionHistory } from '@/types/withdrawal.type';
 
 const TransactionHistoryTable = ({ 
   tableInstance,

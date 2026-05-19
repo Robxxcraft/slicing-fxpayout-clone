@@ -33,13 +33,14 @@ export const createBankUser = async ({ form }: { form: BankFormDetail }) => {
     });
     const responseJson = await response.json();
     if(response.status === 201){
-      return { error: false, message: responseJson.message }
+      return { error: false, message: responseJson.message, data: responseJson.data }
     }
-    return { error: true, message: responseJson.message }
+    return { error: true, message: responseJson.message, data: null }
   } catch(error){
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
+      data: null
     }
   }
 };
@@ -59,13 +60,35 @@ export const updateBankUser = async ({ form, bankId }: { form: BankFormDetail; b
     });
     const responseJson = await response.json();
     if(response.status === 200){
-      return { error: false, message: responseJson.message }
+      return { error: false, message: responseJson.message, data: responseJson.data }
     }
-    return { error: true, message: responseJson.message }
+    return { error: true, message: responseJson.message, data: null }
   } catch(error){
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
+export const deleteUserBank = async ({ bankId }: { bankId: number; }) => {
+  try {
+    const url = `${BASE_URL}/banks/${bankId}`;
+    const response = await _fetchWithAuth(url, {
+      method: "DELETE"
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed delete bank. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
     }
   }
 };

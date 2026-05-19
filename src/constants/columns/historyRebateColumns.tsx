@@ -1,9 +1,9 @@
 import { formattingFullDateTime } from "@/helper/formattingDate";
 import { formattingUsd } from "@/helper/formattingCurrency";
-import type { DataRebate } from "@/pages/dashboard/trader/HistoryRebate";
 import { Link } from "react-router-dom";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { formatingUrlBroker } from "@/helper/formattingUrlBroker";
+import type { TypeRebateTrader } from "@/types/rebate.type";
 
 export const getColumnsDef = (lang: string) => [
   {
@@ -32,7 +32,7 @@ export const getColumnsDef = (lang: string) => [
   },
   {
     accessorKey: "rebate",
-    accessorFn: (row: DataRebate) => formattingUsd(Number(row.rebate)),
+    accessorFn: (row: TypeRebateTrader) => formattingUsd(Number(row.rebate)),
     header: "Rebate"
   }
 ];

@@ -4,12 +4,12 @@ import { formattingFullDateTime } from "@/helper/formattingDate";
 import StatusTag from "@/components/dashboard/common/StatusTag";
 import type { StatusType } from "@/types/status.type";
 import { formattingUsd } from "@/helper/formattingCurrency";
-import type { DataRebateManagement } from "@/pages/dashboard/admin/RebatesManagement";
+import type { RebateAdminManagement } from "@/types/rebate.type";
 
 export const columnsDef = [
   {
     id: "select",
-    header: ({ table }: { table: Table<DataRebateManagement> }) => (
+    header: ({ table }: { table: Table<RebateAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: table.getIsAllRowsSelected(),
@@ -18,7 +18,7 @@ export const columnsDef = [
         }}
       />
     ),
-    cell: ({ row }: { row: Row<DataRebateManagement> }) => (
+    cell: ({ row }: { row: Row<RebateAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: row.getIsSelected(),

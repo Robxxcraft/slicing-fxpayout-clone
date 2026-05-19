@@ -1,48 +1,39 @@
-import { useCallback, useEffect, useState, type ChangeEvent } from "react"
-import { toast } from "react-toastify"
-import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table"
+// TODO: TIER DISPLAY
 
-import { AdminAPI } from "@/api"
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
-import { statusMapNoRejected } from "@/utils/dataDropdownDashboard"
-import { columnsDef } from "@/constants/columns/traderManagementColumns"
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
+import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import { toast } from "react-toastify";
+import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table";
 
-import NoDataFound from "@/components/dashboard/common/NoDataFound"
-import CardOverview from "@/components/dashboard/common/CardOverview"
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
-import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
-import FloatingSelection from "@/components/dashboard/common/FloatingSelection"
-import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
-import TableTraderAdmin from "@/components/dashboard/admin/traderManagement/TableTraderAdmin"
-import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
-import DrawerTraderDetail from "@/components/dashboard/admin/traderManagement/DrawerTraderDetail"
+import { AdminAPI } from "@/api";
+import type { UserTier } from "@/types/user.type";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import type { ResponseTradersAdminManagement, TradersAdminManagement } from "@/types/trader.type";
+import { statusMapNoRejected } from "@/constants/statusDropdown";
+import { tierMapTrader } from "@/constants/tierDropdown";
+import { columnsDef } from "@/constants/columns/traderManagementColumns";
+import { templateTier } from "@/constants/templateTier";
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 
-import Spinner from "@/components/ui/Spinner"
-import Tooltip from "@/components/ui/Tooltip"
-import SelectDropdown from "@/components/ui/SelectDropdown"
+import NoDataFound from "@/components/dashboard/common/NoDataFound";
+import CardOverview from "@/components/dashboard/common/CardOverview";
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
+import TableTraderAdmin from "@/components/dashboard/admin/traderManagement/TableTraderAdmin";
+import FloatingStatusSelection from "@/components/dashboard/common/FloatingStatusSelection";
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
+import FloatingSelection from "@/components/dashboard/common/FloatingSelection";
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
+import DrawerTraderDetail from "@/components/dashboard/admin/traderManagement/DrawerTraderDetail";
 
-import { CgInfo } from "react-icons/cg"
-import { FaUsers } from "react-icons/fa6"
-import { LuRefreshCcw } from "react-icons/lu"
+import Spinner from "@/components/ui/Spinner";
+import Tooltip from "@/components/ui/Tooltip";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
+import SelectDropdown from "@/components/ui/SelectDropdown";
 
-export type DataTradersAdmin = {
-  id: number;
-  full_name: string;
-  email: string;
-  status: "pending" | "approved";
-  created_at: string;
-  total_balance: number;
-};
-type ResponseDataTrader = {
-  id: number;
-  full_name: string;
-  email: string;
-  is_email_verified: boolean;
-  created_at: string;
-  total_balance: number;
-};
+import { CgInfo } from "react-icons/cg";
+import { FaUsers } from "react-icons/fa6";
+import { LuRefreshCcw } from "react-icons/lu";
 
 const supportEntry = [
   { key: "20", value: "20"}, 
@@ -53,13 +44,15 @@ const supportEntry = [
 const TradersManagement = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showPopupTier, setShowPopupTier] = useState<boolean>(false);
+  const [selectedTierChange, setSelectedTierChange] = useState<UserTier | null>(null);
 
   // Data Overview
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
 
   // Data Table
-  const [dataTraders, setDataTraders] = useState<DataTradersAdmin[]>([]);
-  const [selectedData, setSelectedData] = useState<DataTradersAdmin | null>(null);
+  const [dataTraders, setDataTraders] = useState<TradersAdminManagement[]>([]);
+  const [selectedData, setSelectedData] = useState<TradersAdminManagement | null>(null);
 
   // Table State
   const [globalFiltering, setGlobalFiltering] = useState<string>("");
@@ -91,13 +84,14 @@ const TradersManagement = () => {
       });
 
       if (!error && data) {
-        const temp = data.data.map((item: ResponseDataTrader) => ({
+        const temp = data.data.map((item: ResponseTradersAdminManagement) => ({
           id: item.id,
           full_name: item.full_name,
           email: item.email,
           status: item.is_email_verified ? "approved" : "pending",
           created_at: item.created_at,
           total_balance: item.total_balance,
+          tier: item.tier || "standard"
         }));
         setDataTraders(temp);
         setPagination({
@@ -152,12 +146,39 @@ const TradersManagement = () => {
   });
 
   // Function Helper
+  const handleChangeTierUser = async () => {
+    if (isLoading || !selectedTierChange) return;
+        
+    setIsLoading(true);
+    const userId = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id))[0];
+    const { error, message } = await AdminAPI.changeTierUser({
+      userId: userId, tier: selectedTierChange
+    });
+    if (error) {
+      toast.error(message);
+    } else {
+      setDataTraders((prev) => (
+        prev.map((item) => {
+          if (item.id === userId) {
+            return {
+              ...item,
+              tier: selectedTierChange
+            }
+          }
+          return item;
+        })
+      ));
+      toast.success(message);
+      fetchData();
+    }
+    setShowPopupTier(false);
+    setIsLoading(false);
+  }
+
+  // Function Filter
   const handleChangeStatus = (key: string) => {
     setFilterStatus(key as "all" | "approved" | "pending");
-    setPagination((prev) => ({
-      ...prev,
-      pageIndex: 0,
-    }));
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   }
   const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;
@@ -170,6 +191,10 @@ const TradersManagement = () => {
   const handleChangeGlobalFiltering = (e: ChangeEvent<HTMLInputElement>) => {
     setGlobalFiltering(e.target.value);
   }  
+  const openPopUpTier = (key: string) => {
+    setShowPopupTier(true);
+    setSelectedTierChange(key as UserTier);
+  }
 
   useLockBodyScroll(selectedData !== null);
   const useFilter = filterStatus !== "all" || globalFiltering; 
@@ -280,8 +305,15 @@ const TradersManagement = () => {
       </section>
 
       {/* FLOATING SECTION */}
-      {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        <FloatingSelection 
+      {tableInstance.getSelectedRowModel().flatRows.length === 1 ?
+        <FloatingStatusSelection 
+          selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
+          onClose={() => tableInstance.resetRowSelection()} 
+          onChangeStatus={openPopUpTier}
+          command="Ubah Tier"
+          objectsInput={tierMapTrader}
+        /> : tableInstance.getSelectedRowModel().flatRows.length > 1 && 
+        <FloatingSelection
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
         />
@@ -291,6 +323,20 @@ const TradersManagement = () => {
           isOpen={selectedData !== null}
           dataTrader={selectedData} 
           onCloseDrawer={() => setSelectedData(null)}
+        />
+      }
+      {showPopupTier &&
+        <ModalConfirmation 
+          title={`Konfirmasi Perubahan Tier`} 
+          paragraph={`Apakah anda yakin ingin mengubah tier pengguna menjadi
+            ${selectedTierChange ? templateTier["user"][selectedTierChange].title : "(Eror: tier tidak terdeteksi)"}?  
+          `} 
+          isVisible={showPopupTier} 
+          handleClose={() => setShowPopupTier(false)} 
+          handleConfirmation={handleChangeTierUser} 
+          btnConfirmation={"primary"} 
+          confirmText={"Konfirmasi"} 
+          cancelText={"Batal"}        
         />
       }
     </WrapperDashboardComponent>

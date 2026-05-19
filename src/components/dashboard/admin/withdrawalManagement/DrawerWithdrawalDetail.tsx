@@ -2,7 +2,6 @@ import DrawerContainer from "@/components/ui/DrawerContainer";
 import { copyToClipboard } from "@/helper/copyToClipboard";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import { formattingFullDate } from "@/helper/formattingDate";
-import type { DataWithdrawalManagement } from "@/pages/dashboard/admin/WithdrawalRequestManagement";
 import { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
@@ -11,7 +10,8 @@ import type { UserGender } from "@/types/user.type";
 import DetailPaymentDrawer from "../common/DetailPaymentDrawer";
 import { AdminAPI } from "@/api";
 import { toast } from "react-toastify";
-import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
+import { formattingWithdrawalId, showLastFourWalletAddress } from "@/helper/formattingWithdrawal";
+import type { WithdrawalAdminManagement } from "@/types/withdrawal.type";
 
 type DataProfile = {
   full_name: string;
@@ -31,7 +31,7 @@ const DrawerWithdrawalDetail = ({
   isOpen,
   openPopUpStatus
 }: { 
-  dataWithdrawal: DataWithdrawalManagement;
+  dataWithdrawal: WithdrawalAdminManagement;
   onCloseDrawer: () => void;
   isOpen: boolean;
   openPopUpStatus: (key: string) => void;
@@ -91,8 +91,6 @@ const DrawerWithdrawalDetail = ({
     }
   }
 
-  const lengthWalletAddress = dataWithdrawal.wallet_address.length;
-  const secureWalletAddress = dataWithdrawal.wallet_address.slice(-5, -1).padStart(lengthWalletAddress, "*"); 
   return (
     <DrawerContainer 
       isOpen={isOpen} 
@@ -142,7 +140,7 @@ const DrawerWithdrawalDetail = ({
             method={dataWithdrawal.method} 
             onCopy={handleCopy} 
             isCopied={isCopied} 
-            secureWalletAddress={secureWalletAddress} 
+            secureWalletAddress={`•••• ${showLastFourWalletAddress(dataWithdrawal.wallet_address)}`} 
             account_name={dataWithdrawal.account_name} 
             bank={dataWithdrawal.bank_name} 
           />

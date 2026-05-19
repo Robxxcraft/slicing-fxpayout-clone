@@ -1,57 +1,38 @@
-import { useCallback, useEffect, useState, type ChangeEvent } from "react"
-import { toast } from "react-toastify"
+import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import { toast } from "react-toastify";
 import { 
   getCoreRowModel, 
   useReactTable, 
   type PaginationState, 
   type RowSelectionState, 
   type SortingState 
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 
-import { AdminAPI } from "@/api"
-import { columnsDef } from "@/constants/columns/brokerColumns"
-import type { SetStatusType, StatusType } from "@/types/status.type"
-import { statusMap } from "@/utils/dataDropdownDashboard"
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
+import { AdminAPI } from "@/api";
+import { columnsDef } from "@/constants/columns/brokerColumns";
+import type { FullStatusType, SetStatusType } from "@/types/status.type";
+import { statusMap, statusMapNoPendingAll } from "@/constants/statusDropdown";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
+import type { BrokerAdminManagement, ResponseBrokerAdminManagement } from "@/types/broker.type";
 
-import NoDataFound from "@/components/dashboard/common/NoDataFound"
-import CardOverview from "@/components/dashboard/common/CardOverview"
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
-import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
-import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
-import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
-import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
-import TableBrokerManagement from "@/components/dashboard/admin/brokerManagement/TableBrokerManagement"
+import NoDataFound from "@/components/dashboard/common/NoDataFound";
+import CardOverview from "@/components/dashboard/common/CardOverview";
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
+import FloatingStatusSelection from "@/components/dashboard/common/FloatingStatusSelection";
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
+import TableBrokerManagement from "@/components/dashboard/admin/brokerManagement/TableBrokerManagement";
 
-import Tooltip from "@/components/ui/Tooltip"
-import Spinner from "@/components/ui/Spinner"
-import SelectDropdown from "@/components/ui/SelectDropdown"
-import ModalConfirmation from "@/components/ui/ModalConfirmation"
+import Tooltip from "@/components/ui/Tooltip";
+import Spinner from "@/components/ui/Spinner";
+import SelectDropdown from "@/components/ui/SelectDropdown";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
 
-import { BsBank2 } from "react-icons/bs"
-import { LuRefreshCcw } from "react-icons/lu"
-
-export type DataBroker = {
-  connection_id: number;
-  full_name: string;
-  broker_name: string;
-  account_number: string;
-  platform: string;
-  status: StatusType;
-  created_at: string;
-};
-type ResponseDataBroker = {
-  id: number;
-  broker: { name: string };
-  account_name: string;
-  account_number: string;
-  platform: string;
-  status: string;
-  created_at: string;
-  user: { full_name: string }
-}
+import { BsBank2 } from "react-icons/bs";
+import { LuRefreshCcw } from "react-icons/lu";
 
 const supportEntry = [
   { key: "20", value: "20"}, 
@@ -70,14 +51,14 @@ const BrokersManagement = () => {
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
 
   // Data Table
-  const [dataBroker, setDataBroker] = useState<DataBroker[]>([]);
+  const [dataBroker, setDataBroker] = useState<BrokerAdminManagement[]>([]);
   
   // Table State
   const [globalFiltering, setGlobalFiltering] = useState<string>("");
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [filterStatus, setFilterStatus] = useState<"all" | "pending" | "approved" | "rejected">("all");
+  const [filterStatus, setFilterStatus] = useState<FullStatusType>("all");
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 50
@@ -100,7 +81,7 @@ const BrokersManagement = () => {
           sort?.desc ? "desc" : "asc"
       });
       if (!error && data) {
-        const temp = data.data.map((item: ResponseDataBroker) => ({
+        const temp = data.data.map((item: ResponseBrokerAdminManagement) => ({
           connection_id: item.id,
           broker_name: item.broker.name,
           account_number: item.account_number,
@@ -215,9 +196,12 @@ const BrokersManagement = () => {
     setShowPopupStatus(false);
     setIsLoading(false);
   }
+
+  // Function Filter
   const handleChangeFilterStatus = (key: string) => {
     if (isLoading) return;
-    setFilterStatus(key as "all" | "pending" | "approved" | "rejected");
+    setFilterStatus(key as FullStatusType);
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   }  
   const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;
@@ -339,10 +323,13 @@ const BrokersManagement = () => {
         
       {/* FLOATING SECTION */}
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        <ChangeStatusSelection 
+        <FloatingStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
-          onChangeStatus={openPopUpStatus} />
+          onChangeStatus={openPopUpStatus} 
+          command="Ubah Status"
+          objectsInput={statusMapNoPendingAll}
+        />
       }
 
       {/* MODAL FLOATING SECTION */}

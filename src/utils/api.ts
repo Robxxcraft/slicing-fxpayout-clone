@@ -1,24 +1,6 @@
 import type { ValidationData } from "@/models/validationData";
 import { BASE_URL } from "@/services/apiClient";
 
-const getFeedback = async () => {
-  try {
-    const response = await fetch(`${BASE_URL}/testimonials`);
-    const responseJson = await response.json();
-    if (response.status === 200) {
-      return { error: false, message: responseJson.message, result: responseJson.result }
-    }  
-    return { error: true, message: responseJson.errors, result: [] }
-  } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
-    return {
-      error: true, 
-      message: `Please try again later. Error: ${error}`,
-      result: []
-    }
-  }
-}
-
 const postFormValidationData = async ({ item, captchaValue }: { item: ValidationData; captchaValue: string }) => {
   try {
     const response = await fetch(`${BASE_URL}/validation-data`, {
@@ -85,6 +67,5 @@ const postFormValidationData = async ({ item, captchaValue }: { item: Validation
 }
 
 export {
-  getFeedback,
   postFormValidationData
 };

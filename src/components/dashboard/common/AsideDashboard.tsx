@@ -39,7 +39,7 @@ const AsideDashboard = ({ onLogout }: { onLogout: () => void }) => {
       className={`${isCollapse ? "max-w-60 2xl:max-w-[360px] w-60 2xl:w-[360px]" : "max-w-[72px] w-[72px]"}
         hidden lg:flex z-99 overflow-hidden fixed md:sticky left-0 top-16 2xl:top-[90px] md:mt-16 flex-col justify-between bg-white border-t border-r border-[#D2CEE1] transition-all duration-300 ease-out h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)]`}
     >
-      <div className="overflow-y-auto overflow-x-hidden">
+      <div className="scrollbar-thin overflow-y-auto overflow-x-hidden">
         <div
           onClick={() => setIsCollapse(!isCollapse)} 
           className="px-7 py-3 2xl:py-4 flex gap-2 items-center text-black/60 border-b border-[#D2CEE1] cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out"
@@ -72,6 +72,7 @@ const AsideDashboard = ({ onLogout }: { onLogout: () => void }) => {
                   key={index}
                   to={getLocalizedPath(navItems.path, i18n.language)} 
                   className={`${activeNav === navItems.key ? "bg-primary text-white" : "bg-transparent text-black/60 cursor-pointer hover:bg-[#F5F5F5] transition-all"}
+                    ${isCollapse ? "justify-start": "justify-center"}
                     mb-1 px-3 py-2 flex items-center gap-2 rounded-md`}
                 >
                   <span className={`

@@ -6,6 +6,7 @@ import * as XLSX from "xlsx";
 import { AdminAPI } from "@/api";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { HEADER_REBATE_IMPORT, type StatusImport } from "@/utils/adminUnit";
+import type { ErrorImport, ImportRebateData } from "@/types/importRebate.type";
 
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
 import Stepper from "@/components/dashboard/admin/importRebatePage/Stepper";
@@ -18,21 +19,6 @@ import SectionImportRebate from "@/components/dashboard/admin/importRebatePage/S
 import Button from "@/components/ui/Button";
 
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-
-export type ImportRebateData = {
-  broker: string;
-  account_number: string;
-  total_rebates: string;
-  created_at: string;
-};
-type ErrorImport = {
-  message: string;
-  count: number;
-  detail: {
-    row: number;
-    message: string;
-  }[];
-};
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 

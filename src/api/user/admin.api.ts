@@ -1,8 +1,9 @@
 import type { ValidationData } from "@/models/validationData";
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
 import type { OrderStatus, StatusType } from "@/types/status.type";
-import type { FormFeedback } from "@/types/validationForm.type";
+import type { UserTier } from "@/types/user.type";
 
+//! ==== NOT USED ====
 export const getValidationData = async ({
   page=1,
   limit=50,
@@ -151,36 +152,7 @@ export const deleteValidationData = async ({ validationId }: { validationId: num
     }
   }
 }
-
-export const postFormFeedback = async ({ item, captchaValue }: { item: FormFeedback; captchaValue: string }) => {
-  try {
-    const response = await fetch(`${BASE_URL}/testimonials`, {
-      method: "POST",
-      headers:{
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ 
-        name: item.username, 
-        location: item.location,  
-        review: item.review, 
-        rating: item.rating,  
-        captchaValue: captchaValue
-      })
-    });
-    const responseJson = await response.json();
-    if (response.status === 201) {
-      return { error: false, message: responseJson.message }
-    }
-
-    return { error: true, message: responseJson.errors }
-  } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
-    return {
-      error: true, 
-      message: `Please try again later. Error: ${error}`
-    }
-  }
-}
+//! ===== NOT USED ====
 
 // Overview
 export const getDataOverview = async () => {
@@ -193,7 +165,7 @@ export const getDataOverview = async () => {
 
     return { error: true, message: responseJson.message, data: null };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed get data overview. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
@@ -218,6 +190,39 @@ export const getProfileById = async ({ userId }: { userId: number }) => {
       error: true, 
       message: `Please try again later. Error: ${error}`,
       data: null
+    }
+  }
+};
+
+// Tier User
+export const changeTierUser = async ({ 
+  userId, tier 
+}: { 
+  userId: number; 
+  tier: UserTier 
+}) => {
+ try {
+    const url = `${BASE_URL}/auth/${userId}/tier`;
+    const response = await _fetchWithAuth(url, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        tier: tier
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message }
+    }
+
+    return { error: true, message: responseJson.error || responseJson.message };
+  } catch (error) {
+    console.error(`Failed update tier user. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
     }
   }
 };
@@ -255,7 +260,7 @@ export const getDataAffiliator = async ({
 
     return { error: true, message: responseJson.message, data: null };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed get data affiliator. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
@@ -297,7 +302,7 @@ export const getDataTrader = async ({
 
     return { error: true, message: responseJson.message, data: null };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed get data trader. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
@@ -410,7 +415,7 @@ export const bulkChangeStatusRebates = async ({
       return { error: false, message: responseJson.result.message }
     }
 
-    return { error: true, message: responseJson.message };
+    return { error: true, message: responseJson.error || responseJson.message };
   } catch (error) {
     console.error(`Failed update status broker. Error: ${error}`);
     return {
@@ -505,32 +510,11 @@ export const getAllBank = async ({
 
     return { error: true, message: responseJson.message, data: null };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed get data bank. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
       data: null
-    }
-  }
-};
-
-export const deleteUserBank = async ({ bankId }: { bankId: number; }) => {
-  try {
-    const url = `${BASE_URL}/banks/${bankId}`;
-    const response = await _fetchWithAuth(url, {
-      method: "DELETE"
-    });
-    const responseJson = await response.json();
-    if (response.status === 200) {
-      return { error: false, message: responseJson.message }
-    }
-
-    return { error: true, message: responseJson.message };
-  } catch (error) {
-    console.error(`Failed delete bank. Error: ${error}`);
-    return {
-      error: true, 
-      message: `Please try again later. Error: ${error}`
     }
   }
 };
@@ -628,7 +612,7 @@ export const getAllBrokerUsers = async ({
 
     return { error: true, message: responseJson.message, data: null };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed get data broker. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
@@ -757,7 +741,7 @@ export const getAllWithdrawalRequests = async ({
 
     return { error: true, message: responseJson.message, data: null };
   } catch (error) {
-    console.error(`Failed send form feedback. Error: ${error}`);
+    console.error(`Failed get data withdrawal. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`,
@@ -791,7 +775,7 @@ export const bulkChangeStatusWithdrawals = async ({
 
     return { error: true, message: responseJson.message };
   } catch (error) {
-    console.error(`Failed update status broker. Error: ${error}`);
+    console.error(`Failed update status withdrawal. Error: ${error}`);
     return {
       error: true, 
       message: `Please try again later. Error: ${error}`
@@ -829,6 +813,37 @@ export const connectWhatsApp = async () => {
           error: true,
           message: `Please try again later. Error: ${error}`,
           data: null
+      };
+  }
+};
+
+export const disconnectWhatsApp = async () => {
+  try {
+      const response = await _fetchWithAuth(
+          `${BASE_URL}/whatsapp/disconnect`,
+          {
+              method: "POST",
+              headers: {
+                  "content-type": "application/json"
+              }
+          }
+      );
+      const responseJson = await response.json();
+      if (response.status === 200) {
+          return {
+              error: false,
+              message: responseJson.message,
+          };
+      }
+      return {
+          error: true,
+          message: responseJson.message,
+      };
+  } catch (error) {
+      console.error(`Failed disconnect WhatsApp. Error: ${error}`);
+      return {
+          error: true,
+          message: `Please try again later. Error: ${error}`,
       };
   }
 };

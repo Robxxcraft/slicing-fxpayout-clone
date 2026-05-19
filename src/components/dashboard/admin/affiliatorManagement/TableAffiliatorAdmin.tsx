@@ -3,15 +3,15 @@ import {
   flexRender, 
   type Table as ReactTable
 } from "@tanstack/react-table";
-import type { DataAffiliatorAdmin } from "@/pages/dashboard/admin/AffiliatorsManagement";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { HiChevronUpDown } from "react-icons/hi2";
+import type { AffiliatorAdminManagement } from "@/types/affiliator.type";
 
 const TableAffiliatorAdmin = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<DataAffiliatorAdmin>;  
+  tableInstance: ReactTable<AffiliatorAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataAffiliators = tableInstance.getRowModel().rows;

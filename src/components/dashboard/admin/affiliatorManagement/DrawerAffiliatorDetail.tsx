@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { IoCardOutline, IoCloseOutline } from "react-icons/io5";
 import ProfileUserDrawer from "../common/ProfileUserDrawer";
 import BankUserDrawer from "../common/BankUserDrawer";
-import type { DataAffiliatorAdmin } from "@/pages/dashboard/admin/AffiliatorsManagement";
 import { AdminAPI, BankAPI } from "@/api";
-import type { SetStatusType, StatusType } from "@/types/status.type";
 import { toast } from "react-toastify";
-import ModalConfirmation from "@/components/ui/ModalConfirmation";
 import type { UserGender } from "@/types/user.type";
 import { formattingFullDate } from "@/helper/formattingDate";
 import { FaUser } from "react-icons/fa6";
 import DrawerContainer from "@/components/ui/DrawerContainer";
+import type { BankUser, ResponseBankUser } from "@/types/bank.type";
+import type { AffiliatorAdminManagement } from "@/types/affiliator.type";
+import type { FlagState, LoadingState } from "@/types/drawerUserAdmin.type";
 
 type DataProfile = {
   id: number;
@@ -20,38 +20,28 @@ type DataProfile = {
   phone_number: string;
   gender: UserGender;
 }
-type DataBank = {
-  id: number;
-  name: string;
-  account_name: string;
-  account_number: string;
-  status: StatusType
-};
-type LoadingState = {
-  profile: boolean;
-  bank: boolean;
-  general: boolean;
-};
 
 const DrawerAffiliatorDetail = ({
   dataAffiliator,
   onCloseDrawer,
   isOpen
 }: {
-  dataAffiliator: DataAffiliatorAdmin;
+  dataAffiliator: AffiliatorAdminManagement;
   onCloseDrawer: () => void;
   isOpen: boolean;
 }) => {
   const [menu, setMenu] = useState<"profile" | "bank">("profile");
+  const [flags, setFlags] = useState<FlagState>({
+    profile: false,
+    bank: false,
+  });
   const [isLoading, setIsLoading] = useState<LoadingState>({
     profile: false,
     bank: false,
     general: true,
   });
-  const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
-  const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
 
-  const [dataBank, setDataBank] = useState<DataBank | null>(null);
+  const [dataBank, setDataBank] = useState<BankUser[]>([]);
   const [dataProfile, setDataProfile] = useState<DataProfile | null>(null)
 
   const fetchProfileUser = async () => {
@@ -83,6 +73,10 @@ const DrawerAffiliatorDetail = ({
         profile: false,
         general: false
       }));
+      setFlags((prev) => ({
+        ...prev,
+        profile: true
+      }));
     }
   };
   const fetchBankUser = async () => {
@@ -97,24 +91,19 @@ const DrawerAffiliatorDetail = ({
       });
     
       if (!error && data) {
-        setDataBank({
-          id: data.id,
-          name: data.name,
-          account_name: data.account_name,
-          account_number: data.account_number,
-          status: data.status
-        });
+        const temp = data.map((item: ResponseBankUser) => ({
+          id: item.id,
+          bank: item.name,
+          username: item.account_name,
+          accountNumber: item.account_number,
+          status: item.status
+        }))
+        setDataBank(temp);
       } else {
         let errorMessage = message;
         if (message === "Bank users not found for the given user ID") {
           errorMessage = "Pengguna belum menambahkan data rekening bank";
-          setDataBank({
-            id: 0,
-            name: "",
-            account_name: "",
-            account_number: "",
-            status: "pending"
-          });
+          setDataBank([]);
         }
         toast.error(errorMessage)
       }
@@ -124,47 +113,22 @@ const DrawerAffiliatorDetail = ({
         general: false,
         bank: false
       }));
+      setFlags((prev) => ({
+        ...prev,
+        bank: true
+      }));
     }
   };
 
   useEffect(() => {
-    if (menu === "bank" && !dataBank) {
+    if (menu === "bank" && !flags.bank) {
       fetchBankUser();
     }
-    if (menu === "profile" && !dataProfile) {
+    if (menu === "profile" && (!dataProfile || !flags.profile)) {
       fetchProfileUser();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menu]);
-
-  const handleChangeStatusBank = async () => {
-    if (!dataBank || !selectedStatusChange || isLoading.general || isLoading.profile || isLoading.bank) return;
-
-    setIsLoading((prev) => ({
-      ...prev,
-      general: true
-    }));
-
-    try {
-      const { error, message } = await AdminAPI.bulkChangeStatusUserBanks({
-        bankIds: [dataBank.id],
-        status: selectedStatusChange
-      });
-
-      if (!error) {
-        toast.success(message);
-        await fetchBankUser();
-      } else {
-        toast.error(message);
-      }
-    } finally {
-      setIsLoading((prev) => ({
-        ...prev,
-        general: false
-      }));
-      setShowPopupStatus(false)
-    }
-  }
 
   return (
     <DrawerContainer 
@@ -223,7 +187,9 @@ const DrawerAffiliatorDetail = ({
             email={dataProfile?.email ?? ""} 
             phone_number={dataProfile?.phone_number ?? ""} 
             gender={dataProfile?.gender ?? "male"}
-            status={dataAffiliator.status}        
+            status={dataAffiliator.status}   
+            tier={dataAffiliator.tier}
+            role="affiliator"     
             isLoading={isLoading.profile}
           />
         }
@@ -231,40 +197,13 @@ const DrawerAffiliatorDetail = ({
         {/* BANK */}
         {menu === "bank" &&
           <BankUserDrawer 
-            bank={dataBank?.name ?? ""} 
-            account_name={dataBank?.account_name ?? ""} 
-            account_number={dataBank?.account_number ?? ""} 
-            status={dataBank?.status ?? "pending"}
+            banks={dataBank} 
             isLoading={isLoading.bank}
-            onApproveBankUser={() => {
-              setSelectedStatusChange("approved")
-              setShowPopupStatus(true);
-            }}
-            onRejectBankUser={() => {
-              setSelectedStatusChange("rejected")
-              setShowPopupStatus(true);
-            }}
           />
         }
       </div>
     </div>
 
-    {showPopupStatus && <ModalConfirmation
-      title={`Konfirmasi
-        ${selectedStatusChange === "approved" ? "Persetujuan":""} 
-        ${selectedStatusChange === "rejected" ? "Penolakan":""}
-      Bank`}
-      paragraph={`Apakah Anda yakin ingin 
-        ${selectedStatusChange === "approved" ? "menyetujui":""}
-        ${selectedStatusChange === "rejected" ? "menolak":""}
-      verifikasi bank untuk pengguna ini?`}
-      handleConfirmation={handleChangeStatusBank}
-      btnConfirmation={selectedStatusChange === "rejected" ? "danger" : "primary-light"} 
-      isVisible={showPopupStatus} 
-      handleClose={() => setShowPopupStatus(false)} 
-      cancelText="Batal"
-      confirmText={selectedStatusChange === "rejected" ? "Reject" : "Approve"}
-    />}  
     </DrawerContainer>
   )
 }

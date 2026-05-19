@@ -1,14 +1,20 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 
 import { WithdrawalAPI } from "@/api";
+import UserContext from "@/context/UserContext";
 import { getLocalizedPath } from "@/helper/pathHelper";
-import { statusMap } from "@/utils/dataDropdownDashboard";
+import { statusMap } from "@/constants/statusDropdown";
 import type { FullStatusType, StatusType } from "@/types/status.type";
+import { columnsDef } from "@/constants/columns/transactionHistoryColumns";
+import type { ResponseWithdrawalAPI, TransactionHistory } from "@/types/withdrawal.type";
+
 import TinyButton from "@/components/dashboard/common/TinyButton";
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
+import TransactionHistoryTable from "@/components/dashboard/common/TransactionHistoryTable";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
 
 import Spinner from "@/components/ui/Spinner";
@@ -16,36 +22,12 @@ import Tooltip from "@/components/ui/Tooltip";
 import SelectDropdown from "@/components/ui/SelectDropdown";
 
 import { LuRefreshCcw } from "react-icons/lu";
-import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
-import { columnsDef } from "@/constants/columns/transactionHistoryColumns";
-import TransactionHistoryTable from "@/components/dashboard/common/TransactionHistoryTable";
-import UserContext from "@/context/UserContext";
 
 const supportEntry = [
   { "key": "20", "value": "20"}, 
   { "key": "50", "value": "50"},
   { "key": "100", "value": "100"}
 ];
-
-export type TransactionHistory = {
-  withdrawal_id: number;
-  created_at: string;
-  method: string;
-  wallet_address: string;
-  currency: "USD" | "IDR";
-  status: StatusType;
-  amount: number;
-};
-type ResponseWithdrawal = {
-  id: number;
-  created_at: string;
-  bank: { name: string, account_number: string } | null;
-  wallet_address: string;
-  currency: string;
-  amount_idr: number;
-  amount_usd: number;
-  status: string;
-}
 
 const TransactionHistoryPage = () => {
   const { i18n } = useTranslation();
@@ -83,15 +65,18 @@ const TransactionHistoryPage = () => {
     
         if (!error && data) {
           const raw = data.data;
-          const temp = raw.data.map((item: ResponseWithdrawal) => ({
-            withdrawal_id: item.id,
-            created_at: item.created_at,
-            method: !item.bank ? "Crypto" : item.bank.name,
-            wallet_address: !item.bank ? item.wallet_address : item.bank.account_number,
-            currency: item.currency as "USD" | "IDR",
-            status: item.status as StatusType,
-            amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
-          }));
+          const temp = raw.data.map((item: ResponseWithdrawalAPI) => {
+            const useCrypto = item.bank_name === null && item.bank_account_name === null && item.bank_account_number === null;
+            return  {
+              withdrawal_id: item.id,
+              created_at: item.created_at,
+              method: useCrypto ? "Crypto" : item.bank_name || "-",
+              wallet_address: useCrypto ? item.wallet_address : item.bank_account_number || "-",
+              currency: item.currency as "USD" | "IDR",
+              status: item.status as StatusType,
+              amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
+            }
+          });
           setDataWithdrawal(temp);
           setPagination({
             pageIndex: raw.meta.page - 1,

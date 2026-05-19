@@ -3,7 +3,7 @@ import StatusTag from "@/components/dashboard/common/StatusTag";
 import type { StatusType } from "@/types/status.type";
 import { formattingEmptyCurrency } from "@/helper/formattingCurrency";
 import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
-import type { TransactionHistory } from "@/pages/dashboard/common/TransactionHistoryPage";
+import type { TransactionHistory } from "@/types/withdrawal.type";
 
 export const columnsDef = [
   {

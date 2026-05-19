@@ -1,5 +1,5 @@
 import Table from "@/components/TableLayout";
-import type { DataWithdrawalManagement } from "@/pages/dashboard/admin/WithdrawalRequestManagement";
+import type { WithdrawalAdminManagement } from "@/types/withdrawal.type";
 import { 
   flexRender, 
   type Table as ReactTable
@@ -11,7 +11,7 @@ const TableDataWithdrawals = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<DataWithdrawalManagement>;  
+  tableInstance: ReactTable<WithdrawalAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataRows = tableInstance.getRowModel().rows;

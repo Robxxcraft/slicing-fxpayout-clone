@@ -1,4 +1,4 @@
-import type { ImportRebateData } from "@/pages/dashboard/admin/ImportRebatePage";
+import type { ImportRebateData } from "@/types/importRebate.type";
 import PreviewFileXlsx from "../common/PreviewFileXlsx";
 import TablePreviewDataImport from "./TablePreviewDataImport";
 

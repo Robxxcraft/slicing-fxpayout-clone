@@ -1,14 +1,14 @@
 import type { Table, Row } from "@tanstack/react-table";
 import IndeterminateCheckbox from "@/components/ui/IndeterminateCheckbox";
-import type { DataBank } from "@/pages/dashboard/admin/BankManagement";
 import { formattingFullDate } from "@/helper/formattingDate";
 import StatusTag from "@/components/dashboard/common/StatusTag";
 import type { StatusType } from "@/types/status.type";
+import type { BankAdminManagement } from "@/types/bank.type";
 
 export const columnsDef = [
   {
     id: "select",
-    header: ({ table }: { table: Table<DataBank> }) => (
+    header: ({ table }: { table: Table<BankAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: table.getIsAllRowsSelected(),
@@ -17,7 +17,7 @@ export const columnsDef = [
         }}
       />
     ),
-    cell: ({ row }: { row: Row<DataBank> }) => (
+    cell: ({ row }: { row: Row<BankAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: row.getIsSelected(),

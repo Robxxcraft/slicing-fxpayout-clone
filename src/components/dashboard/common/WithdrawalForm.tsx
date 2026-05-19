@@ -1,44 +1,46 @@
-import SelectInput from "@/components/ui/SelectInput";
+import BankSelectWithdrawal from "@/components/ui/BankSelectWithdrawal";
 import TextInput from "@/components/ui/TextInput";
 import { formattingUsd } from "@/helper/formattingCurrency";
-import type { FormWithdrawalRequest } from "@/pages/dashboard/common/WithdrawalRequestPage";
+import type { BankUser } from "@/types/bank.type";
+import type { FormWithdrawalRequest } from "@/types/withdrawal.type";
 
-const WithdrawalForm = ({
-  form,
-  handleFormChange,
-  onSubmitWithdrawal,
-  errors,
-  errorSyncAmount,
-  availableBalance,
-  isLoading
-}: {
+type WithdrawalFormProps = {
   form: FormWithdrawalRequest;
+  methodsInput: BankUser[];
+  selectedMethod: BankUser;
+  setSelectedMethod: React.Dispatch<React.SetStateAction<BankUser>>;
   handleFormChange: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
   onSubmitWithdrawal: (e: React.FormEvent<HTMLFormElement>) => Promise<void>
   errors: Partial<Record<keyof FormWithdrawalRequest, string>>;
   errorSyncAmount: string;
   availableBalance: number;
   isLoading: boolean;
-}) => {
+};
+
+const WithdrawalForm = ({
+  form,
+  methodsInput,
+  selectedMethod,
+  setSelectedMethod,
+  handleFormChange,
+  onSubmitWithdrawal,
+  errors,
+  errorSyncAmount,
+  availableBalance,
+  isLoading
+}: WithdrawalFormProps) => {
   const helperAmount = errorSyncAmount ? undefined : `Sisa saldo anda: ${formattingUsd(availableBalance)} USD`;
   const errorAmount = errorSyncAmount ? undefined : errors.amount;
   return (
     <form onSubmit={onSubmitWithdrawal} id="withdrawal-request" 
       className="flex flex-col gap-4 md:gap-5 w-full max-w-[540px] 2xl:max-w-[640px]">
-      <SelectInput 
-        id="method" 
-        icon="/bank-icon.svg"
-        altIcon="Icon method"
-        label={"Metode Penarikan"}
-        defaultValue={`<Pilih Metode>`} 
-        value={form.method} 
-        onChangeForm={handleFormChange} 
-        optionData={["bank", "crypto"]}
-        labelOptions={["Internet Banking", "Crypto"]}
-        errorMessage={errors.method}
-        disabled={isLoading}
-        required />
-      {form.method === "crypto" &&
+      <BankSelectWithdrawal 
+        objectsInput={methodsInput}
+        selectedMethod={selectedMethod} 
+        setSelectedMethod={setSelectedMethod} 
+        isLoading={isLoading}
+      />
+      {selectedMethod.bank.toLowerCase() === "crypto" &&
         <TextInput
           id="walletAddress"
           label={"Alamat Wallet"}
@@ -51,7 +53,7 @@ const WithdrawalForm = ({
           errorMessage={errors.walletAddress}
           isMobileLabel={false}
           disabled={isLoading}
-          required={form.method === "crypto"} 
+          required={selectedMethod.bank.toLowerCase() === "crypto"} 
         />
       }
       <div>

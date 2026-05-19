@@ -3,12 +3,14 @@ import StatusTag from "@/components/dashboard/common/StatusTag";
 import IndeterminateCheckbox from "@/components/ui/IndeterminateCheckbox";
 import { formattingFullDate } from "@/helper/formattingDate";
 import type { StatusType } from "@/types/status.type";
-import type { DataAffiliatorAdmin } from "@/pages/dashboard/admin/AffiliatorsManagement";
+import type { UserTier } from "@/types/user.type";
+import { templateTier } from "../templateTier";
+import type { AffiliatorAdminManagement } from "@/types/affiliator.type";
 
 export const columnsDef = [
   {
     id: "select",
-    header: ({ table }: { table: Table<DataAffiliatorAdmin> }) => (
+    header: ({ table }: { table: Table<AffiliatorAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: table.getIsAllRowsSelected(),
@@ -17,7 +19,7 @@ export const columnsDef = [
         }}
       />
     ),
-    cell: ({ row }: { row: Row<DataAffiliatorAdmin> }) => (
+    cell: ({ row }: { row: Row<AffiliatorAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: row.getIsSelected(),
@@ -39,6 +41,12 @@ export const columnsDef = [
   {
     accessorKey: "total_referred",
     header: "Total Referral",
+    enableSorting: false
+  },
+  {
+    accessorKey: "tier",
+    header: "Tier",
+    cell: ({ getValue }: { getValue: () => UserTier }) => templateTier["affiliator"][getValue()].title,
     enableSorting: false
   },
   {

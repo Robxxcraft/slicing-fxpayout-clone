@@ -25,7 +25,8 @@ const AdminOverviewProvider = ({ children }: { children: React.ReactNode }) => {
           pendingTraders: data.pending_traders,
           pendingAffiliators: data.pending_affiliators,
           affiliators: data.total_affiliators,
-          totalCommission: data.total_commision_paids
+          totalCommission: data.total_commision_paids,
+          totalInternalCommisions: data.total_internal_rebate_commisions
         };
         setDataAdminOverview(payload);
       } else {
@@ -42,7 +43,8 @@ const AdminOverviewProvider = ({ children }: { children: React.ReactNode }) => {
           traders: 0,
           pendingAffiliators: 0,
           affiliators: 0,
-          totalCommission: 0
+          totalCommission: 0,
+          totalInternalCommisions: 0
         })
       }
       return { error, message };

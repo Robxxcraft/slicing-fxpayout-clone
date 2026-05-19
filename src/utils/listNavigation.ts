@@ -146,14 +146,14 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
         { key: "affiliators", label: "Affiliators", path: "/dashboard/affiliators", icon: FaUsers },
         { key: "traders", label: "Traders", path: "/dashboard/traders", icon: FaUsers },
         { key: "rebates", label: "Rebates", path: "/dashboard/rebates", icon: RiStockFill },
-        { key: "broker", label: "Broker", path: "/dashboard/broker", icon: BsBank2 },
-        { key: "bank", label: "Bank", path: "/dashboard/bank", icon: IoCardOutline },
+        { key: "brokers", label: "Brokers", path: "/dashboard/brokers", icon: BsBank2 },
+        { key: "banks", label: "Banks", path: "/dashboard/banks", icon: IoCardOutline },
       ]
     },
     {
       title: "Transaction",
       items: [
-        { key: "withdrawal", label: "Withdrawal", path: "/dashboard/withdrawal", icon: IoWalletOutline },
+        { key: "withdrawals", label: "Withdrawals", path: "/dashboard/withdrawals", icon: IoWalletOutline },
         { key: "import-rebate", label: "Import Rebate", path: "/dashboard/rebates/import", icon: LuDatabase },
       ]
     },

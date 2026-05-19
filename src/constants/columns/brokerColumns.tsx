@@ -3,12 +3,12 @@ import IndeterminateCheckbox from "@/components/ui/IndeterminateCheckbox";
 import { formattingFullDate } from "@/helper/formattingDate";
 import StatusTag from "@/components/dashboard/common/StatusTag";
 import type { StatusType } from "@/types/status.type";
-import type { DataBroker } from "@/pages/dashboard/admin/BrokersManagement";
+import type { BrokerAdminManagement } from "@/types/broker.type";
 
 export const columnsDef = [
   {
     id: "select",
-    header: ({ table }: { table: Table<DataBroker> }) => (
+    header: ({ table }: { table: Table<BrokerAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: table.getIsAllRowsSelected(),
@@ -17,7 +17,7 @@ export const columnsDef = [
         }}
       />
     ),
-    cell: ({ row }: { row: Row<DataBroker> }) => (
+    cell: ({ row }: { row: Row<BrokerAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: row.getIsSelected(),

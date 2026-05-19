@@ -1,5 +1,5 @@
 import Table from "@/components/TableLayout";
-import type { DataRebateManagement } from "@/pages/dashboard/admin/RebatesManagement";
+import type { RebateAdminManagement } from "@/types/rebate.type";
 import { 
   flexRender, 
   type Table as ReactTable
@@ -11,7 +11,7 @@ const TableRebatesManagement = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<DataRebateManagement>;  
+  tableInstance: ReactTable<RebateAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataRebates = tableInstance.getRowModel().rows;

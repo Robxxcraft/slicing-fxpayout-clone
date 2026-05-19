@@ -1,58 +1,38 @@
-import { useCallback, useEffect, useState, type ChangeEvent } from "react"
-import { toast } from "react-toastify"
+import { useCallback, useEffect, useState, type ChangeEvent } from "react";
+import { toast } from "react-toastify";
 import { 
   getCoreRowModel, 
   useReactTable, 
   type PaginationState, 
   type RowSelectionState, 
   type SortingState 
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 
-import { AdminAPI } from "@/api"
-import { columnsDef } from "@/constants/columns/bankColumns"
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll"
-import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext"
-import { statusMap } from "@/utils/dataDropdownDashboard"
-import type { FullStatusType, SetStatusType, StatusType } from "@/types/status.type"
+import { AdminAPI, BankAPI } from "@/api";
+import { columnsDef } from "@/constants/columns/bankColumns";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
+import { statusMap, statusMapNoPendingAll } from "@/constants/statusDropdown";
+import type { FullStatusType, SetStatusType } from "@/types/status.type";
+import type { BankAdminManagement, ResponseBankAdminManagement } from "@/types/bank.type";;
 
-import NoDataFound from "@/components/dashboard/common/NoDataFound"
-import CardOverview from "@/components/dashboard/common/CardOverview"
-import TitleDashboard from "@/components/dashboard/common/TitleDashboard"
-import SearchDashboard from "@/components/dashboard/common/SearchDashboard"
-import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton"
-import TableDataBank from "@/components/dashboard/admin/bankManagement/TableDataBank"
-import ChangeStatusSelection from "@/components/dashboard/common/ChangeStatusSelection"
-import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable"
-import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent"
+import NoDataFound from "@/components/dashboard/common/NoDataFound";
+import CardOverview from "@/components/dashboard/common/CardOverview";
+import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
+import SearchDashboard from "@/components/dashboard/common/SearchDashboard";
+import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";
+import TableDataBank from "@/components/dashboard/admin/bankManagement/TableDataBank";
+import PaginationFooterTable from "@/components/dashboard/admin/common/PaginationFooterTable";
+import FloatingStatusSelection from "@/components/dashboard/common/FloatingStatusSelection";
+import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
 
-import Tooltip from "@/components/ui/Tooltip"
-import Spinner from "@/components/ui/Spinner"
-import SelectDropdown from "@/components/ui/SelectDropdown"
-import ModalConfirmation from "@/components/ui/ModalConfirmation"
+import Tooltip from "@/components/ui/Tooltip";
+import Spinner from "@/components/ui/Spinner";
+import SelectDropdown from "@/components/ui/SelectDropdown";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
 
-import { BsBank2 } from "react-icons/bs"
-import { LuRefreshCcw } from "react-icons/lu"
-
-export type DataBank = {
-  id: number;
-  name: string;
-  account_name: string;
-  account_number: string;
-  status: StatusType;
-  full_name: string;
-  created_at: string;
-};
-type ResponseDataBank = {
-  id: number;
-  name: string;
-  account_name: string;
-  account_number: string;
-  status: string;
-  created_at: string;
-  user: {
-    full_name: string;
-  };
-};
+import { BsBank2 } from "react-icons/bs";
+import { LuRefreshCcw } from "react-icons/lu";
 
 const supportEntry = [
   { key: "20", value: "20"}, 
@@ -71,7 +51,7 @@ const BankManagement = () => {
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
 
   // Data Table
-  const [dataBank, setDataBank] = useState<DataBank[]>([]);
+  const [dataBank, setDataBank] = useState<BankAdminManagement[]>([]);
   
   // Table State
   const [globalFiltering, setGlobalFiltering] = useState<string>("");
@@ -101,7 +81,7 @@ const BankManagement = () => {
           sort?.desc ? "desc" : "asc"
       });
       if (!error && data) {
-        const temp = data.data.map((item: ResponseDataBank) => ({
+        const temp = data.data.map((item: ResponseBankAdminManagement) => ({
           id: item.id,
           name: item.name,
           account_name: item.account_name,
@@ -163,11 +143,6 @@ const BankManagement = () => {
     enableRowSelection: true
   });
 
-  const handleChangeFilterStatus = (key: string) => {
-    if (isLoading) return;
-    setFilterStatus(key as FullStatusType);
-  }  
-
   // Function Helper
   const handleDeleteUserBank = async () => {
     if (isLoading) return;
@@ -177,7 +152,7 @@ const BankManagement = () => {
     setIsLoading(true);
     if (totalSelectedData === 1) {  
       const bankId = tableInstance.getSelectedRowModel().flatRows[0].original.id;
-      responseDelete = await AdminAPI.deleteUserBank({ bankId });
+      responseDelete = await BankAPI.deleteUserBank({ bankId });
     } else if (totalSelectedData > 1) {
       const bankIds = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id));
       responseDelete = await AdminAPI.bulkDeleteUserBanks({ bankIds });
@@ -221,6 +196,13 @@ const BankManagement = () => {
     setShowPopupStatus(false);
     setIsLoading(false);
   }
+
+  // Function Filter
+  const handleChangeFilterStatus = (key: string) => {
+    if (isLoading) return;
+    setFilterStatus(key as FullStatusType);
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
+  }  
   const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;
     setPagination({
@@ -341,10 +323,13 @@ const BankManagement = () => {
 
       {/* FLOATING SECTION */}
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        <ChangeStatusSelection 
+        <FloatingStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 
-          onChangeStatus={openPopUpStatus} />
+          onChangeStatus={openPopUpStatus} 
+          command="Ubah Status"
+          objectsInput={statusMapNoPendingAll}
+        />
       }
 
       {/* MODAL FLOATING SECTION */}

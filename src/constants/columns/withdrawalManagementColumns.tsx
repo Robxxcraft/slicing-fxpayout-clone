@@ -2,15 +2,15 @@ import type { Table, Row } from "@tanstack/react-table";
 import StatusTag from "@/components/dashboard/common/StatusTag";
 import IndeterminateCheckbox from "@/components/ui/IndeterminateCheckbox";
 import { formattingFullDate } from "@/helper/formattingDate";
-import type { DataWithdrawalManagement } from "@/pages/dashboard/admin/WithdrawalRequestManagement";
 import type { StatusType } from "@/types/status.type";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
+import type { WithdrawalAdminManagement } from "@/types/withdrawal.type";
 
 export const columnsDef = [
   {
     id: "select",
-    header: ({ table }: { table: Table<DataWithdrawalManagement> }) => (
+    header: ({ table }: { table: Table<WithdrawalAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: table.getIsAllRowsSelected(),
@@ -19,7 +19,7 @@ export const columnsDef = [
         }}
       />
     ),
-    cell: ({ row }: { row: Row<DataWithdrawalManagement> }) => (
+    cell: ({ row }: { row: Row<WithdrawalAdminManagement> }) => (
       <IndeterminateCheckbox
         {...{
           checked: row.getIsSelected(),
@@ -32,13 +32,13 @@ export const columnsDef = [
   },
   {
     accessorKey: "id",
-    accessorFn: (row: DataWithdrawalManagement) => formattingWithdrawalId(row.id),
+    accessorFn: (row: WithdrawalAdminManagement) => formattingWithdrawalId(row.id),
     header: "ID",
     enableSorting: false
   },
   {
     accessorKey: "method",
-    accessorFn: (row: DataWithdrawalManagement) => row.method === "bank" ? "Bank" : "Crypto",
+    accessorFn: (row: WithdrawalAdminManagement) => row.method === "bank" ? "Bank" : "Crypto",
     header: "Metode",
     enableSorting: false
   },
@@ -62,7 +62,7 @@ export const columnsDef = [
   },
   {
     accessorKey: "total",
-    accessorFn: (row: DataWithdrawalManagement) => row.currency === "USD" ? formattingUsd(Number(row.total)) : formattingRp(Number(row.total)),
+    accessorFn: (row: WithdrawalAdminManagement) => row.currency === "USD" ? formattingUsd(Number(row.total)) : formattingRp(Number(row.total)),
     header: "Total Penarikan",
     enableSorting: false
   },

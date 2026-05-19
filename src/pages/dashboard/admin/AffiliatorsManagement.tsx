@@ -1,9 +1,12 @@
+// TODO: TIER DISPLAY
+
 import { useCallback, useEffect, useState, type ChangeEvent } from "react";
 import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table";
 
 import { AdminAPI } from "@/api";
+import type { AffiliatorAdminManagement, ResponseAffiliatorManagement } from "@/types/affiliator.type";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
-import { statusMapNoRejected } from "@/utils/dataDropdownDashboard";
+import { statusMapNoRejected } from "@/constants/statusDropdown";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 import { columnsDef } from "@/constants/columns/affiliatorManagementColumns";
 
@@ -27,23 +30,6 @@ import { FaUsers } from "react-icons/fa6";
 import { CgInfo } from "react-icons/cg";
 import { LuRefreshCcw } from "react-icons/lu";
 
-export type DataAffiliatorAdmin = {
-  id: number;
-  full_name: string;
-  email: string;
-  status: "pending" | "approved";
-  created_at: string;
-  total_referred: number;
-}
-type ReponseDataAffiliator = {
-  id: number;
-  full_name: string;
-  email: string;
-  is_email_verified: boolean;
-  created_at: string;
-  total_referred: number;
-}
-
 const supportEntry = [
   { key: "20", value: "20"}, 
   { key: "50", value: "50"},
@@ -58,8 +44,8 @@ const AffiliatorsManagement = () => {
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
 
   // Data Table
-  const [dataAffiliators, setDataAffiliators] = useState<DataAffiliatorAdmin[]>([]);
-  const [selectedData, setSelectedData] = useState<DataAffiliatorAdmin | null>(null);
+  const [dataAffiliators, setDataAffiliators] = useState<AffiliatorAdminManagement[]>([]);
+  const [selectedData, setSelectedData] = useState<AffiliatorAdminManagement | null>(null);
  
   // Table State
   const [globalFiltering, setGlobalFiltering] = useState<string>("");
@@ -91,13 +77,14 @@ const AffiliatorsManagement = () => {
       });
 
       if (!error && data) {
-        const temp = data.data.map((item: ReponseDataAffiliator) => ({
+        const temp = data.data.map((item: ResponseAffiliatorManagement) => ({
           id: item.id,
           full_name: item.full_name,
           email: item.email,
           status: item.is_email_verified ? "approved" : "pending",
           created_at: item.created_at,
-          total_referred: item.total_referred
+          total_referred: item.total_referred,
+          tier: item.tier || "standard"
         }));
         setDataAffiliators(temp);
         setPagination({
@@ -152,13 +139,10 @@ const AffiliatorsManagement = () => {
     enableRowSelection: true
   });
 
-  // Function Helper
+  // Function Filter
   const handleChangeStatus = (key: string) => {
     setFilterStatus(key as "all" | "approved" | "pending");
-    setPagination((prev) => ({
-      ...prev,
-      pageIndex: 0,
-    }));
+    setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   }
   const handleChangeFilterLimit = (key: string) => {
     if (isLoading) return;

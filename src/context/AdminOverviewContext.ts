@@ -14,6 +14,7 @@ export type DataAdminOverview = {
   pendingAffiliators: number;
   affiliators: number;
   totalCommission: number;
+  totalInternalCommisions: number;
 };
 
 type AdminOverviewContext = {

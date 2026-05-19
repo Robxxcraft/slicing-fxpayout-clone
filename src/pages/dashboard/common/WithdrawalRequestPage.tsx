@@ -11,6 +11,7 @@ import { scrollToErrorInput } from "@/helper/formHelper";
 import { useRedirectByRole } from "@/hooks/useRedirectByRole";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import { checkValidWithdrawalForm } from "@/helper/validationForm/withdrawalFormValidation";
+import type { FormWithdrawalRequest } from "@/types/withdrawal.type";
 import type { ModalResponse } from "@/types/validationForm.type";
 
 import WithdrawalForm from "@/components/dashboard/common/WithdrawalForm";
@@ -23,12 +24,8 @@ import SuccessModal from "@/components/ui/SuccessModal";
 
 import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronLeft } from "react-icons/fa6";
-
-export type FormWithdrawalRequest = {
-  method: "bank" | "crypto";
-  amount: string;
-  walletAddress: string;
-}
+import type { BankUser } from "@/types/bank.type";
+import { cryptoMethod } from "@/constants/cryptoMethod";
 
 const EXCHANGE_RATE = 16150;
 
@@ -40,19 +37,35 @@ const WithdrawalRequestPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<ModalResponse>(null);
   const formWithdrawal = useForm<FormWithdrawalRequest>({
-    method: "bank",
     amount: "0",
     walletAddress: ""
   });
   const [errorSyncAmount, setErrorSyncAmount] = useState<string>("");
-  const { bank, fetchBank } = useBankContext();
+  const { banks, fetchBank } = useBankContext();
+  const [selectedMethod, setSelectedMethod] = useState<BankUser>(() => {
+    const availableBank = banks.find((bank) => bank.status === "approved");
+    if (banks.length > 0 && availableBank) {
+      return availableBank;
+    } 
+    return cryptoMethod;
+  });
+
+  const statusMethodsOrder = ["approved", "pending", "rejected"];
+  const sortedBanks = banks.sort((a,b) => statusMethodsOrder.indexOf(a.status) - statusMethodsOrder.indexOf(b.status))
+  const methodsInput = [
+    ...sortedBanks,
+    cryptoMethod
+  ];
 
   // ? Inisialisasi fetch data
   useEffect(() => {
     const fetchData = async () => {
       if (!authUser) return;
 
-      await fetchBank();
+      const responseBank = await fetchBank();
+      const availableBank = responseBank.find((bank) => bank.status === "approved");
+      setSelectedMethod((responseBank.length > 0 && availableBank) ? availableBank : cryptoMethod);
+
       const respBalance = await AuthAPI.getBalanceUser();
       if (!respBalance.error && respBalance.data) {
         const tempBalance = {
@@ -93,28 +106,29 @@ const WithdrawalRequestPage = () => {
     setIsLoading(true);
     
     try {
-      const { isValidate, errorInput } = formWithdrawal.validate(checkValidWithdrawalForm);
+      const { isValidate, errorInput } = checkValidWithdrawalForm({
+        validation: formWithdrawal.validate,
+        bank: selectedMethod.bank.toLowerCase()
+      });
       if (!isValidate && errorInput !== null) {
         scrollToErrorInput(errorInput);
         return;
       }
       let responseCreateWithdrawal;
-      if (formWithdrawal.values.method === "bank" && bank) {
-        formWithdrawal.setSpecificValue("walletAddress", bank.accountNumber);
-        responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
-          form: formWithdrawal.values,
-          bankId: bank.id,
-          amountIdr: ((Number(formWithdrawal.values.amount) || 0) * EXCHANGE_RATE).toString(),
-          currency: "IDR"
-        });
-      } else if (formWithdrawal.values.method === "crypto") {
+      if (selectedMethod.bank.toLowerCase() === "crypto") {
         responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
           form: formWithdrawal.values,
           amountIdr: ((Number(formWithdrawal.values.amount) || 0) * EXCHANGE_RATE).toString(),
           currency: "USD"
         });
       } else {
-        return;
+        formWithdrawal.setSpecificValue("walletAddress", selectedMethod.accountNumber);
+        responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
+          form: formWithdrawal.values,
+          bankId: selectedMethod.id,
+          amountIdr: ((Number(formWithdrawal.values.amount) || 0) * EXCHANGE_RATE).toString(),
+          currency: "IDR"
+        });
       }
       
       if (responseCreateWithdrawal.error) {
@@ -159,17 +173,16 @@ const WithdrawalRequestPage = () => {
     pending: "Data bank Anda sedang dalam proses verifikasi. Silakan tunggu hingga proses selesai sebelum melakukan penarikan melalui bank.",
     rejected: "Verifikasi data bank Anda gagal. Silakan periksa kembali data yang Anda masukkan dan lakukan pengajuan ulang.",
   };
-  const messageWarningBank = !bank
+  const messageWarningBank = banks.length === 0
     ? bankStatusMessage.empty
-    : bankStatusMessage[bank.status as "pending" | "rejected"] || "";
+    : selectedMethod && bankStatusMessage[selectedMethod.status as "pending" | "rejected"] || "";
 
   const isEmptyForm =
-    !formWithdrawal.values.method ||
     Number(formWithdrawal.values.amount) === 0 ||
-    (formWithdrawal.values.method === "crypto" && !formWithdrawal.values.walletAddress);
+    (selectedMethod.bank.toLowerCase() === "crypto" && !formWithdrawal.values.walletAddress);
 
   const isDisabledButtonSubmit =
-    (formWithdrawal.values.method === "bank" && messageWarningBank !== "") ||
+    (selectedMethod.bank.toLowerCase() !== "crypto" && messageWarningBank !== "") ||
     errorSyncAmount !== "" ||
     isEmptyForm ||
     initLoad || isLoading;
@@ -198,6 +211,9 @@ const WithdrawalRequestPage = () => {
           {balance && 
             <WithdrawalForm 
               form={formWithdrawal.values}
+              methodsInput={methodsInput}
+              selectedMethod={selectedMethod}
+              setSelectedMethod={setSelectedMethod}
               handleFormChange={formWithdrawal.handleChange}
               onSubmitWithdrawal={handleSubmitWithdrawal}
               errors={formWithdrawal.errors}
@@ -210,17 +226,20 @@ const WithdrawalRequestPage = () => {
             <p className="text-lg 2xl:text-2xl font-medium">
               Saldo yang akan diterima
             </p>
-            {formWithdrawal.values.method === "bank" ? 
+            {selectedMethod.bank.toLowerCase() !== "crypto" ? 
               <>
-                <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold">
-                  {formattingRp(Number(formWithdrawal.values.amount) * EXCHANGE_RATE || 0)}
+                <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold wrap-break-word">
+                  {balance && 
+                    formattingRp(Number(formWithdrawal.values.amount) <= balance.balance 
+                    ? Number(formWithdrawal.values.amount) * EXCHANGE_RATE || 0 : 0)
+                  }
                 </p>
                 <p className="text-xs 2xl:text-lg text-black/80 leading-[160%]">
                   Note: Estimasi saldo diterima dihitung berdasarkan kurs real-time dari pihak payment provider/broker saat proses withdraw berlangsung. Nilai akhir yang diterima dapat berbeda mengikuti kurs masing-masing broker. Apabila broker menggunakan sistem fixed rate, maka nominal akan otomatis disesuaikan berdasarkan kurs tersebut.
                 </p>
               </>  
               : 
-              <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold">
+              <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold wrap-break-word">
                 {balance && 
                 formattingUsd(Number(formWithdrawal.values.amount) <= balance.balance 
                   ? Number(formWithdrawal.values.amount) : 0)}
@@ -230,12 +249,7 @@ const WithdrawalRequestPage = () => {
         </div>
 
         {/* INFORMATiON METHOD BANK / CRYPTO */}
-        {formWithdrawal.values.method === "bank" &&
-          <BankWithdrawalInformation 
-            initLoad={initLoad} messageWarningBank={messageWarningBank} bank={bank}            
-          />
-        }
-        {formWithdrawal.values.method === "crypto" &&
+        {selectedMethod.bank.toLowerCase() === "crypto" ?
           <div className="mt-7 max-w-[640px]">
             <div className="p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
               <span className="flex shrink-0 items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
@@ -246,6 +260,10 @@ const WithdrawalRequestPage = () => {
               </p>
             </div>
           </div>
+        :
+          <BankWithdrawalInformation 
+            initLoad={initLoad} messageWarningBank={messageWarningBank} bank={selectedMethod}            
+          />
         }
 
         {/* BUTTON CONFIRM */}

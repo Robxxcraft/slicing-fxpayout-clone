@@ -14,15 +14,17 @@ import { toast } from "react-toastify";
 const DrawerBankDetailData = ({
   bankData,
   onCloseDrawer,
-  isOpen
+  isOpen,
+  onShowPopupDeleteBank
 }: {
   bankData: BankUser | null;
   onCloseDrawer: () => void;
   isOpen: boolean;
+  onShowPopupDeleteBank: () => void;
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isEdited, setIsEdited] = useState<boolean>(false);
-  const { setBank } = useBankContext();
+  const { setBanks, fetchBank } = useBankContext();
   const formBank = useForm<BankFormDetail>({
     bank: bankData?.bank || "",
     accountNumber: bankData?.accountNumber || "",
@@ -64,25 +66,33 @@ const DrawerBankDetailData = ({
       } else {
         responseApi = await BankAPI.createBankUser({ form: formBank.values });
       }
-      if (!responseApi.error) {
+      if (!responseApi.error && responseApi.data) {
         if (bankData) {
-          setBank((prev) => {
-            if (!prev) return prev; 
-            return {
-              ...prev,
-              bank: formBank.values.bank,
-              accountNumber: formBank.values.accountNumber,
-              username: formBank.values.username,
-              status: "pending"
-          }});
+          setBanks((prev) => 
+            prev.map((item) => {
+              if (item.id === bankData.id) {
+                return {
+                  ...item,
+                  bank: formBank.values.bank,
+                  accountNumber: formBank.values.accountNumber,
+                  username: formBank.values.username,
+                  status: "pending"
+                }
+              }
+              return item;
+            }
+          ));
         } else {
-          setBank({
-            id: 0,
+          const newBank = {
+            id: responseApi.data.id,
             bank: formBank.values.bank,
             accountNumber: formBank.values.accountNumber,
             username: formBank.values.username,
-            status: "pending"
-          });
+            status: "pending" as const
+          };
+          setBanks((prev) => [...prev, newBank]);
+          
+          await fetchBank();
         }
         toast.success("Berhasil memperbarui data bank");
         onCloseDrawer();
@@ -113,7 +123,9 @@ const DrawerBankDetailData = ({
           </div>
         </div>
         <form onSubmit={handleSubmitData} className="h-full">
-          <div className="pt-2 2xl:pt-4 pb-4 px-5 flex flex-col gap-4 w-full h-[calc(100%-80px)] 2xl:h-[calc(100%-100px)] overflow-y-auto overflow-x-hidden">
+          <div className={`pt-2 2xl:pt-4 pb-4 px-5 flex flex-col gap-4 w-full overflow-y-auto overflow-x-hidden
+            ${bankData !== null ? "h-[calc(100%-140px)] 2xl:h-[calc(100%-180px)]" : "h-[calc(100%-80px)] 2xl:h-[calc(100%-100px)]"}    
+          `}>
             <div className="flex flex-wrap gap-2.5 2xl:gap-4">
               <div className="w-full">
                 <TextInput 
@@ -169,7 +181,7 @@ const DrawerBankDetailData = ({
               </div>
             </div>
           </div>
-          <div className="absolute px-5 py-2 left-0 bottom-0 w-full bg-white border-t border-[#D2CEE1]">
+          <div className="absolute px-5 py-2 left-0 bottom-0 space-y-1 w-full bg-white border-t border-[#D2CEE1]">
             <Button 
               buttonType="submit"
               disabled={!isEdited || isLoading}
@@ -178,6 +190,16 @@ const DrawerBankDetailData = ({
               className="py-3! w-full! rounded-lg!"
             > Simpan Rekening
             </Button>
+            {bankData &&
+              <Button 
+                buttonType="button"
+                disabled={isLoading}
+                variant="no-bg" 
+                onClick={onShowPopupDeleteBank}
+                className="py-3! w-full! rounded-lg! text-my-red! font-medium! hover:bg-[#F5F5F5]"
+              > Hapus Akun
+              </Button>
+            }
           </div>
         </form>
       </div>

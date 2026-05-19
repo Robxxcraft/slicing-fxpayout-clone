@@ -1,36 +1,38 @@
 import React, { useContext, useState } from "react";
-import type { BankUser } from "@/types/bank.type";
+import type { BankUser, ResponseBankUser } from "@/types/bank.type";
 import { BankAPI } from "@/api";
 import UserContext from "@/context/UserContext";
 import { BankContext } from "@/context/BankContext";
 
 export const BankProvider = ({ children }: { children: React.ReactNode }) => {
   const [authUser] = useContext(UserContext);
-  const [bank, setBank] = useState<BankUser | null>(null);
+  const [banks, setBanks] = useState<BankUser[]>([]);
   const [isFetched, setIsFetched] = useState<boolean>(false);
  
   const fetchBank = async () => {
-    if (!authUser) return;
-    if (isFetched) return;
+    if (!authUser) return [];
+    if (isFetched) return [];
 
     const { error, data } = await BankAPI.getBankByUser({ userId: authUser.id });
     if (!error && data) {
-      const tempBank = {
-        id: data.id,
-        accountNumber: data.account_number,
-        username: data.account_name,
-        bank: data.name,
-        status: data.status
-      };
-      setBank(tempBank);
+      const tempBank: BankUser[] = data.map((item: ResponseBankUser) => ({
+        id: item.id,
+        accountNumber: item.account_number,
+        username: item.account_name,
+        bank: item.name,
+        status: item.status
+      }));
+      setBanks(tempBank);
       setIsFetched(true);
+      return tempBank;
     } else {
-      setBank(null);
+      setBanks([]);
+      return [];
     }
   }
   
   return (
-    <BankContext.Provider value={{ bank, setBank, fetchBank }}>
+    <BankContext.Provider value={{ banks, setBanks, fetchBank }}>
       {children}
     </BankContext.Provider>
   )

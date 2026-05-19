@@ -64,7 +64,7 @@ const OverviewAdminHeader = ({
             </Link>
           </div>
           <div className="flex flex-col md:flex-row gap-4">
-            <Link to={getLocalizedPath("dashboard/broker", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
+            <Link to={getLocalizedPath("dashboard/brokers", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
               <CardOverview 
                 title={"Pending Broker Connections"} 
                 icon={<BsBank2 className="text-base! 2xl:text-lg!" />}
@@ -73,7 +73,7 @@ const OverviewAdminHeader = ({
                 bottomLine 
               />
             </Link>
-            <Link to={getLocalizedPath("dashboard/bank", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
+            <Link to={getLocalizedPath("dashboard/banks", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
               <CardOverview 
                 title={"Pending Bank Verifications"} 
                 icon={<IoWalletOutline />} sizeIcon="sm"

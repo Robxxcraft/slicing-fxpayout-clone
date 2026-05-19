@@ -7,7 +7,7 @@ import { BrokerAPI } from "@/api";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { useBrokerUserContext } from "@/hooks/useBrokerUserContext";
 import type { FullStatusType } from "@/types/status.type";
-import { statusMap } from "@/utils/dataDropdownDashboard";
+import { statusMap } from "@/constants/statusDropdown";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import NextPreviousButton from "@/components/dashboard/common/NextPreviousButton";

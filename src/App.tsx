@@ -181,10 +181,10 @@ function App() {
                 <Route path="overview" element={<OverviewAdmin />} />
                 <Route path="affiliators" element={<AffiliatorsManagement />} />
                 <Route path="traders" element={<TradersManagement />} />
-                <Route path="bank" element={<BankManagement />} />
-                <Route path="broker" element={<BrokersManagement />} />
+                <Route path="banks" element={<BankManagement />} />
+                <Route path="brokers" element={<BrokersManagement />} />
                 <Route path="rebates" element={<RebatesManagement />} />
-                <Route path="withdrawal" element={<WithdrawalRequestManagement />} />
+                <Route path="withdrawals" element={<WithdrawalRequestManagement />} />
                 <Route path="rebates/import" element={<ImportRebatePage />} />
                 <Route path="validation-data" element={<ValidationDataDashboard />} />
                 <Route path="whatsapp" element={<WhatsAppPage />} />

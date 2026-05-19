@@ -59,7 +59,7 @@ const Navbar = ({ active }: { active: string }) => {
 
   return (
     <nav
-      className="z-99999999 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
+      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:

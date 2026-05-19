@@ -2,11 +2,11 @@ import Table from "@/components/TableLayout";
 import { formattingEmptyCurrency } from "@/helper/formattingCurrency";
 import { formattingFullDateTime } from "@/helper/formattingDate";
 import { formattingWithdrawalId } from "@/helper/formattingWithdrawal";
-import type { PendingWithdrawal } from "@/pages/dashboard/common/WithdrawalFundsPage";
+import type { PendingWithdrawal } from "@/types/withdrawal.type";
 
 const CONFIG_HEADERS = [
   {key: "withdrawalId", header: "ID"},
-  {key: "createdAt", header: "Tanggal"},
+  {key: "createdAt", header: "Tanggal Dibuat"},
   {key: "method", header: "Metode"}, 
   {key: "walletAddress", header: "Alamat Wallet"}, 
   {key: "currency", header: "Currency"}, 

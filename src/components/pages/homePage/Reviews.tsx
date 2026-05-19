@@ -14,8 +14,8 @@ import { useEffect, useState } from "react";
 import ModalFormFeedback from "@/components/ui/ModalFormFeedback";
 import type { ModalResponse } from "@/types/validationForm.type";
 import SuccessModal from "@/components/ui/SuccessModal";
-import { getFeedback } from "@/utils/api";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { GuestAPI } from "@/api";
 
 const Reviews = () => {
   const { t } = useTranslation(["common", "homepage"]);
@@ -25,7 +25,7 @@ const Reviews = () => {
   
   useEffect(() => {
     const getData = async () => {
-      const { error, result } = await getFeedback();
+      const { error, result } = await GuestAPI.getFeedback();
       if (!error) {
         setDataTestimonial(result);
       }

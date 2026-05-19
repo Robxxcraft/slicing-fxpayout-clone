@@ -1,8 +1,8 @@
-import Table from '@/components/TableLayout';
-import { formattingUsd } from '@/helper/formattingCurrency';
-import { formattingFullDate } from '@/helper/formattingDate';
-import type { ImportRebateData } from '@/pages/dashboard/admin/ImportRebatePage';
-import { HEADER_REBATE_IMPORT } from '@/utils/adminUnit';
+import Table from "@/components/TableLayout";
+import { formattingUsd } from "@/helper/formattingCurrency";
+import { formattingFullDate } from "@/helper/formattingDate";
+import type { ImportRebateData } from "@/types/importRebate.type";
+import { HEADER_REBATE_IMPORT } from "@/utils/adminUnit";
 
 const TablePreviewDataImport = ({ data }: { data: ImportRebateData[]; }) => {
   return (

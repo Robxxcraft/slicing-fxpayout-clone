@@ -1,5 +1,5 @@
 import Table from "@/components/TableLayout";
-import type { DataBank } from "@/pages/dashboard/admin/BankManagement";
+import type { BankAdminManagement } from "@/types/bank.type";
 import { 
   flexRender, 
   type Table as ReactTable
@@ -11,7 +11,7 @@ const TableDataBank = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<DataBank>;  
+  tableInstance: ReactTable<BankAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataRows = tableInstance.getRowModel().rows;
