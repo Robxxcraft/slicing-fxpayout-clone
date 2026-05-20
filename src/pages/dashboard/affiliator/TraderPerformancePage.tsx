@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { isEqual, subDays } from "date-fns";
 import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
+import type { DateRange } from "react-day-picker";
 
 import { AffilitorAPI } from "@/api";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 import { columnsDef } from "@/constants/columns/traderPerformanceColumns";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 import NoDataFound from "@/components/dashboard/common/NoDataFound";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
@@ -21,8 +23,6 @@ import RangeDataPicker from "@/components/ui/RangeDataPicker";
 import DateRangeButton from "../common/DateRangeButton";
 
 import { LuRefreshCcw } from "react-icons/lu";
-import type { DateRange } from "react-day-picker";
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 export type TraderPerformance = {
   created_at: string;
@@ -38,6 +38,7 @@ type ResponseTraderPerformance = {
   broker: { name: string };
   user: { full_name: string };
   total_rebate: number;
+  total_earning: number;
 };
 
 const supportEntry = [
@@ -85,22 +86,21 @@ const TraderPerformancePage = () => {
       });
 
       if (!error && data) {
-        const raw = data.data;
-        const temp = raw.data.map((item: ResponseTraderPerformance) => ({
+        const temp = data.data.map((item: ResponseTraderPerformance) => ({
           created_at: item.created_at,
           account_number: item.account_number,
           broker: item.broker.name,
           trader: item.user.full_name,
           total_rebate: item.total_rebate,
-          commission: (item.total_rebate / 0.6) * 0.1
+          commission: item.total_earning
         }));
         setDataTraderPerformance(temp);
         setPagination({
-          pageIndex: raw.meta.page - 1,
-          pageSize: raw.meta.limit
+          pageIndex: data.meta.page - 1,
+          pageSize: data.meta.limit
         });
-        setTotalData(raw.meta.total);
-        setTotalPages(raw.meta.totalPages);
+        setTotalData(data.meta.total);
+        setTotalPages(data.meta.totalPages);
       }
     } finally {
       setInitLoad(false);

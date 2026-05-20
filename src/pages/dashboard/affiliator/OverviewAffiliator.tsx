@@ -110,14 +110,15 @@ const OverviewAffiliator = () => {
         user: { full_name: string };
         broker: { name: string };
         account_number: string;
-        total_rebate: number,
+        total_rebate: number;
+        total_earning: number;
       }) => ({
         created_at: item.created_at,
         account_name: item.user.full_name,
         broker: item.broker.name,
         account_number: item.account_number,
         rebate: item.total_rebate,
-        comission: (item.total_rebate / 0.6) * 0.1,
+        comission: item.total_earning,
       }));
       setDataEarnings(temp);
     } 

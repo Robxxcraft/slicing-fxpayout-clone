@@ -100,6 +100,7 @@ const TradersManagement = () => {
         });
         setTotalData(data.meta.total);
         setTotalPages(data.meta.totalPages);
+        setRowSelection({});
       } else {
         toast.error(message);
       }
