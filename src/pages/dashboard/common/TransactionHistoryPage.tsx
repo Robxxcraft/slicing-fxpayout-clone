@@ -71,7 +71,7 @@ const TransactionHistoryPage = () => {
               withdrawal_id: item.id,
               created_at: item.created_at,
               method: useCrypto ? "Crypto" : item.bank_name || "-",
-              wallet_address: useCrypto ? item.wallet_address : item.bank_account_number || "-",
+              wallet_address: useCrypto ? item.crypto_wallet_address || "-" : item.bank_account_number || "-",
               currency: item.currency as "USD" | "IDR",
               status: item.status as StatusType,
               amount: item.currency === "USD" ? item.amount_usd : item.amount_idr
@@ -196,11 +196,9 @@ const TransactionHistoryPage = () => {
         }
         {dataWithdrawal.length === 0 && !initLoad && !isLoading &&
           <NoDataFound>
-            <p className="text-black/80 text-base 2xl:text-xl">
             {useFilter ?
               "Tidak ditemukan riwayat penarikan dana yang sesuai dengan filter atau pencarian Anda." :
               "Saat ini, Anda tidak memiliki riwayat penarikan dana."}
-            </p>
           </NoDataFound>
         }
         <div className="mt-4">

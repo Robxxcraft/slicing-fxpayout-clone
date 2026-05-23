@@ -7,7 +7,7 @@ import { AuthAPI } from "@/api";
 import { UserModel } from "./models/user.model";
 import { UserProvider } from "./context/UserContext";
 import { getAccessToken } from "./services/apiClient";
-import { BankProvider } from "./provider/BankProvider";
+import { WalletProvider } from "./provider/WalletProvider";
 import { BalanceProvider } from "./context/BalanceContext";
 import { clearCacheAuthUser } from "./helper/clearCacheAuthUser";
 import { BrokerUserProvider } from "./provider/BrokerUserProvider";
@@ -205,9 +205,9 @@ function App() {
               <Route path="rebate" element={<HistoryRebate />} />
               <Route path="rebate/:brokerParams" element={<HistoryRebate />} />
               <Route path="withdrawal" element={
-                <BankProvider>
+                <WalletProvider>
                   <WithdrawalFundsPage />
-                </BankProvider>
+                </WalletProvider>
               } />
               <Route path="withdrawal/history" element={<TransactionHistoryPage />} />
               <Route path="profile" element={<ProfilePage />} />
@@ -228,9 +228,9 @@ function App() {
               <Route path="traders" element={<ManagementTraders />} />
               <Route path="performance" element={<TraderPerformancePage />} />
               <Route path="withdrawal" element={
-                <BankProvider>
+                <WalletProvider>
                   <WithdrawalFundsPage />
-                </BankProvider>
+                </WalletProvider>
               } />
               <Route path="withdrawal/history" element={<TransactionHistoryPage />} />
               <Route path="profile" element={<ProfilePage />} />
@@ -238,9 +238,9 @@ function App() {
             </Route>
             <Route path="withdrawal/request" element={
               <Suspense>
-                <BankProvider>
+                <WalletProvider>
                   <WithdrawalRequestPage />
-                </BankProvider>
+                </WalletProvider>
               </Suspense>
             } />
 

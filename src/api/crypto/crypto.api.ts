@@ -1,9 +1,9 @@
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
-import type { BankFormDetail } from "@/types/wallet.type";
+import type { CryptoFormDetail } from "@/types/wallet.type";
 
-export const getBankByUser = async ({ userId }: { userId: number }) => {
+export const getCryptoByUser = async ({ userId }: { userId: number }) => {
   try{
-    const response = await _fetchWithAuth(`${BASE_URL}/banks/user/${userId}`);
+    const response = await _fetchWithAuth(`${BASE_URL}/cryptos/user/${userId}`);
     const responseJson = await response.json();
     if(response.status === 200){
       return { error: false, message: responseJson.message, data: responseJson.result }
@@ -18,17 +18,17 @@ export const getBankByUser = async ({ userId }: { userId: number }) => {
   }
 };
 
-export const createBankUser = async ({ form }: { form: BankFormDetail }) => {
+export const createCryptoUser = async ({ form }: { form: CryptoFormDetail }) => {
   try{
-    const response = await _fetchWithAuth(`${BASE_URL}/banks/user`, {
+    const response = await _fetchWithAuth(`${BASE_URL}/cryptos/user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: form.bank,
-        account_name: form.username,
-        account_number: form.accountNumber
+        network: form.network,
+        token: form.token,
+        wallet_address: form.accountNumber
       })
     });
     const responseJson = await response.json();
@@ -45,17 +45,17 @@ export const createBankUser = async ({ form }: { form: BankFormDetail }) => {
   }
 };
 
-export const updateBankUser = async ({ form, bankId }: { form: BankFormDetail; bankId: number }) => {
+export const updateCryptoUser = async ({ form, cryptoId }: { form: CryptoFormDetail; cryptoId: number }) => {
   try{
-    const response = await _fetchWithAuth(`${BASE_URL}/banks/${bankId}`, {
+    const response = await _fetchWithAuth(`${BASE_URL}/cryptos/${cryptoId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: form.bank,
-        account_name: form.username,
-        account_number: form.accountNumber
+        network: form.network,
+        token: form.token,
+        wallet_address: form.accountNumber
       })
     });
     const responseJson = await response.json();
@@ -72,9 +72,9 @@ export const updateBankUser = async ({ form, bankId }: { form: BankFormDetail; b
   }
 };
 
-export const deleteUserBank = async ({ bankId }: { bankId: number; }) => {
+export const deleteUserCrypto = async ({ cryptoId }: { cryptoId: number; }) => {
   try {
-    const url = `${BASE_URL}/banks/${bankId}`;
+    const url = `${BASE_URL}/cryptos/${cryptoId}`;
     const response = await _fetchWithAuth(url, {
       method: "DELETE"
     });

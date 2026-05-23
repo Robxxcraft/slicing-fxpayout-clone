@@ -1,4 +1,4 @@
-import type { BankUser } from "@/types/bank.type";
+import type { BankUser } from "@/types/wallet.type";
 
 export const cryptoMethod: BankUser = {
   id: -1,

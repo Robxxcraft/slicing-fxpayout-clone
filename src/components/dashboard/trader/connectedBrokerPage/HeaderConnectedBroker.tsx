@@ -10,11 +10,11 @@ const HeaderConnectedBroker = () => {
   const { i18n } = useTranslation();
   return (
     <div className="flex flex-col md:flex-row justify-between items-start gap-2 2xl:gap-6">
-      <div>
+      <div className="space-x-4">
         <TitleDashboard>
           Connected Brokers
         </TitleDashboard>
-        <ParagraphDashboard maxW="w-fit lg:w-[760px] 2xl:w-full">
+        <ParagraphDashboard maxW="w-fit">
           Daftar seluruh broker yang terkoneksi dengan akun Anda dan pantau status koneksi dan perolehan komisi rebate Anda. {" "}
           <Link to={getLocalizedPath("broker", i18n.language)}
             className="text-primary underline"

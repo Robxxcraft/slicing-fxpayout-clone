@@ -4,10 +4,13 @@ export type ResponseWithdrawalAPI = {
   id: number;
   user_id: number;
   bank_id: number | null;
+  crypto_id: number | null;
   bank_name: string | null;
   bank_account_name: string | null;
   bank_account_number: string | null;
-  wallet_address: string;
+  crypto_network: string | null;
+  crypto_token: string | null;
+  crypto_wallet_address: string | null;
   amount_idr: number;
   amount_usd: number;
   currency: string;
@@ -18,6 +21,11 @@ export type ResponseWithdrawalAPI = {
     name: string, 
     account_name: string 
     account_number: string;
+  } | null;
+  crypto: {
+    network: string;
+    token: string;
+    wallet_address: string;
   } | null;
 };
 
@@ -45,7 +53,6 @@ export type TransactionHistory = {
 // FORM REQUEST WITHDRAWAL
 export type FormWithdrawalRequest = {
   amount: string;
-  walletAddress: string;
 };
 
 // ADMIN MANAGEMENT

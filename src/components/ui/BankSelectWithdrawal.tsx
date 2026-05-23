@@ -1,16 +1,17 @@
 import { showLastFourWalletAddress } from "@/helper/formattingWithdrawal";
-import type { BankUser } from "@/types/bank.type";
+import type { WalletUser } from "@/types/wallet.type";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react"
 import { FaChevronDown } from "react-icons/fa6";
 
 type BankSelectWithdrawalProps = {
-  objectsInput: BankUser[];
-  selectedMethod: BankUser;
-  setSelectedMethod: React.Dispatch<React.SetStateAction<BankUser>>;
+  objectsInput: WalletUser[];
+  selectedMethod: WalletUser | null;
+  setSelectedMethod: React.Dispatch<React.SetStateAction<WalletUser | null>>;
   positionDrop?: "left" | "center" | "right";
   positionY?: "down" | "up";
   isLoading: boolean;
+  loadData: boolean;
 };
 
 const BankSelectWithdrawal = ({
@@ -19,6 +20,7 @@ const BankSelectWithdrawal = ({
   setSelectedMethod,
   positionDrop="right",
   positionY="down",
+  loadData,
   isLoading
 }: BankSelectWithdrawalProps) => {
   let positionCL; 
@@ -39,7 +41,7 @@ const BankSelectWithdrawal = ({
     setOpen(!open);
   };
 
-  const handleChange = (bank: BankUser) => {
+  const handleChange = (bank: WalletUser) => {
     setSelectedMethod(bank);
     setOpen(false);
   };
@@ -71,22 +73,62 @@ const BankSelectWithdrawal = ({
           }
         }}
         className={` ${isLoading ? "bg-[#F5F5F5] cursor-not-allowed" : "bg-white cursor-pointer"}
-        py-4 2xl:py-6 px-4 flex items-center justify-between gap-2 w-full border border-[#CED4DA] rounded-md focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] hover:bg-[#F5F5F5] transition-[background] duration-300`}>
-        <div className="flex gap-4 items-center">
-          <img src="/bank-icon.svg" alt="Bank Icon" />
-          <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
-            {isLoading ? "<Pilih Metode>"
-            : selectedMethod.bank.toLowerCase() === "crypto" ?
-                "Crypto" :
-                `${selectedMethod.bank} •••• ${showLastFourWalletAddress(selectedMethod.accountNumber)}`
-            }
-          </p>
-        </div>
-        <FaChevronDown 
-          className="text-base text-black/60"
-        />
+        py-4 2xl:py-6 px-4 flex items-center justify-between gap-2 w-full border border-[#CED4DA] rounded-md focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] hover:bg-[#F5F5F5] transition-[background] duration-300
+      `}>
+        {loadData ?
+          <>
+            <div className="flex gap-4 items-center">
+              <img src="/bank-icon.svg"
+                alt="Method Icon" 
+                className="scale-90"
+              />
+              <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+                {"<Mengambil data wallet>"}
+              </p>
+            </div>
+            <FaChevronDown 
+              className="text-base text-black/60"
+            />
+          </>
+        :
+        selectedMethod ?
+          <>
+            <div className="flex gap-4 items-center">
+              <img src={
+                `${selectedMethod.method === "bank" ? "/bank-icon.svg" : "/bnb-icon.svg"}`
+              } alt="Method Icon" 
+                className={`${selectedMethod.method === "bank" ? "scale-90" : "size-8"}`}
+              />
+              <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+                {loadData ? "<Pilih Metode>"
+                : selectedMethod.method === "crypto" ?
+                    `Crypto •••• ${showLastFourWalletAddress(selectedMethod.data.accountNumber)}` :
+                    `${selectedMethod.data.bank} •••• ${showLastFourWalletAddress(selectedMethod.data.accountNumber)}`
+                }
+              </p>
+            </div>
+            <FaChevronDown 
+              className="text-base text-black/60"
+            />
+          </> 
+          :
+          <>
+            <div className="flex gap-4 items-center">
+              <img src="/bank-icon.svg"
+                alt="Method Icon" 
+                className="scale-90"
+              />
+              <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+                {"<Tidak ditemukan data wallet>"}
+              </p>
+            </div>
+            <FaChevronDown 
+              className="text-base text-black/60"
+            />
+          </>
+        }
       </div>
-      {isLoading && 
+      {loadData && 
         <p className="mt-2 text-sm 2xl:text-lg text-black/60">Sedang memuat data bank...</p>
       }
       <AnimatePresence>
@@ -100,17 +142,17 @@ const BankSelectWithdrawal = ({
           className={`${positionCL} absolute z-9999 left-0 right-0`}>
           <div className={`scrollbar-thin primary-scrollbar p-2 w-full h-fit space-y-1 border border-[#DDDDDD] bg-white rounded-lg shadow-lg overflow-y-auto`}>
             {objectsInput.map((item) => {
-              if (item.bank.toLowerCase() === "crypto") {
+              if (item.method === "crypto") {
                 return (
                   <div 
                     key={item.id}
                     onClick={() => handleChange(item)}
-                    className="group px-2 py-1 flex gap-4 w-full hover:bg-[#F5F5F5] rounded-md cursor-pointer">
-                    <img src="/bank-icon.svg" alt="Bank Icon" 
-                      className="scale-90" />
+                    className="group px-2 py-1 flex items-center gap-4 w-full hover:bg-[#F5F5F5] rounded-md cursor-pointer">
+                    <img src="/bnb-icon.svg" alt="BNB Icon" 
+                      className="size-8" />
                     <div>
                       <p className="text-base 2xl:text-xl text-black/80 group-hover:text-primary font-medium">
-                        Crypto
+                        •••• {showLastFourWalletAddress(item.data.accountNumber)}
                       </p>
                       <p className="text-sm 2xl:text-lg text-black/60 font-medium">
                         Crypto Method
@@ -124,13 +166,13 @@ const BankSelectWithdrawal = ({
               <div 
                 key={item.id}
                 onClick={() => handleChange(item)}
-                className="group px-2 py-1 flex gap-4 w-full hover:bg-[#F5F5F5] rounded-md cursor-pointer">
+                className="group px-2 py-1 flex items-center gap-4 w-full hover:bg-[#F5F5F5] rounded-md cursor-pointer">
                 <img src="/bank-icon.svg" alt="Bank Icon" 
                   className="scale-90" />
                 <div>
                   <p className="text-base 2xl:text-xl text-black/80 group-hover:text-primary font-medium">
-                    {item.bank} •••• {" "}
-                    {showLastFourWalletAddress(item.accountNumber)}
+                    {item.data.bank} •••• {" "}
+                    {showLastFourWalletAddress(item.data.accountNumber)}
                   </p>
                   <p className="text-sm 2xl:text-lg text-black/60 font-medium">
                     Bank Method

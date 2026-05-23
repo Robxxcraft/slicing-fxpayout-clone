@@ -10,7 +10,8 @@ const SelectDropdown = ({
   inputCL="",
   containerCL="",
   positionDrop="right",
-  positionY="down"
+  positionY="down",
+  disabled
 }: {
   selectedInput: string;
   handleChangeInput: (key: string) => void;
@@ -22,7 +23,8 @@ const SelectDropdown = ({
   objectInput: {
     key: string,
     value: string
-  }[]
+  }[];
+  disabled?: boolean;
 }) => {
   let positionCL; 
   const [open, setOpen] = useState<boolean>(false);
@@ -39,6 +41,7 @@ const SelectDropdown = ({
   }, []);
 
   const handleOpen = () => {
+    if (disabled) return;
     setOpen(!open);
   };
 
@@ -68,7 +71,8 @@ const SelectDropdown = ({
         tabIndex={0} 
         onClick={handleOpen}
         className={`${wrapperCL}
-        px-2 h-9 2xl:h-12 flex items-center justify-between gap-2 w-fit bg-white border border-[#CED4DA] rounded-md focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] cursor-pointer hover:bg-[#F5F5F5] transition-[background] duration-300`}>
+        ${disabled ? "opacity-70 cursor-not-allowed" : "opacity-100 cursor-pointer"}
+        px-2 h-9 2xl:h-12 flex items-center justify-between gap-2 w-fit bg-white border border-[#CED4DA] rounded-md focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] hover:bg-[#F5F5F5] transition-[background] duration-300`}>
         <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
           {objectInput.find(item => item.key === selectedInput)?.value}
         </p>

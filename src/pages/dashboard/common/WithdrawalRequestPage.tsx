@@ -4,30 +4,27 @@ import { toast } from "react-toastify";
 import { AuthAPI, WithdrawalAPI } from "@/api";
 import BalanceContext from "@/context/BalanceContext";
 import UserContext from "@/context/UserContext";
-import { useBankContext } from "@/hooks/useBankContext";
+import { useWalletContext } from "@/hooks/useWalletContext";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { EXCHANGE_RATE } from "@/constants/exchangeRate";
 import { useForm } from "@/hooks/useForm";
 import { scrollToErrorInput } from "@/helper/formHelper";
 import { useRedirectByRole } from "@/hooks/useRedirectByRole";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import { checkValidWithdrawalForm } from "@/helper/validationForm/withdrawalFormValidation";
+import type { WalletUser } from "@/types/wallet.type";
 import type { FormWithdrawalRequest } from "@/types/withdrawal.type";
 import type { ModalResponse } from "@/types/validationForm.type";
 
 import WithdrawalForm from "@/components/dashboard/common/WithdrawalForm";
 import TitleDashboard from "@/components/dashboard/common/TitleDashboard";
 import WrapperDashboardComponent from "@/components/dashboard/common/WrapperDashboardComponent";
-import BankWithdrawalInformation from "@/components/dashboard/withdrawalRequest/BankWithdrawalInformation";
+import WalletWithdrawalInformation from "@/components/dashboard/withdrawalRequest/WalletWithdrawalInformation";
 
 import Button from "@/components/ui/Button";
 import SuccessModal from "@/components/ui/SuccessModal";
 
-import { TiInfoLarge } from "react-icons/ti";
 import { FaChevronLeft } from "react-icons/fa6";
-import type { BankUser } from "@/types/bank.type";
-import { cryptoMethod } from "@/constants/cryptoMethod";
-
-const EXCHANGE_RATE = 16150;
 
 const WithdrawalRequestPage = () => {
   const { redirectUser } = useRedirectByRole();
@@ -38,33 +35,28 @@ const WithdrawalRequestPage = () => {
   const [showModal, setShowModal] = useState<ModalResponse>(null);
   const formWithdrawal = useForm<FormWithdrawalRequest>({
     amount: "0",
-    walletAddress: ""
   });
   const [errorSyncAmount, setErrorSyncAmount] = useState<string>("");
-  const { banks, fetchBank } = useBankContext();
-  const [selectedMethod, setSelectedMethod] = useState<BankUser>(() => {
-    const availableBank = banks.find((bank) => bank.status === "approved");
-    if (banks.length > 0 && availableBank) {
-      return availableBank;
-    } 
-    return cryptoMethod;
+  const { wallets, fetchWallet } = useWalletContext();
+  const [selectedMethod, setSelectedMethod] = useState<WalletUser | null>(() => {
+    // Default nilai adalah bank yang approve
+    const availableWallet = wallets.find((wallet) => wallet.status === "approved");
+    if (availableWallet) return availableWallet;
+    if (wallets.length > 0) return wallets[0];
+    return null;
   });
 
   const statusMethodsOrder = ["approved", "pending", "rejected"];
-  const sortedBanks = banks.sort((a,b) => statusMethodsOrder.indexOf(a.status) - statusMethodsOrder.indexOf(b.status))
-  const methodsInput = [
-    ...sortedBanks,
-    cryptoMethod
-  ];
+  const sortedWallets = wallets.sort((a,b) => statusMethodsOrder.indexOf(a.status) - statusMethodsOrder.indexOf(b.status))
 
   // ? Inisialisasi fetch data
   useEffect(() => {
     const fetchData = async () => {
       if (!authUser) return;
 
-      const responseBank = await fetchBank();
-      const availableBank = responseBank.find((bank) => bank.status === "approved");
-      setSelectedMethod((responseBank.length > 0 && availableBank) ? availableBank : cryptoMethod);
+      const responseWallet = await fetchWallet();
+      const availableWallet = responseWallet.find((wallet) => wallet.status === "approved");
+      setSelectedMethod((responseWallet.length > 0) ? availableWallet ? availableWallet : responseWallet[0] : null);
 
       const respBalance = await AuthAPI.getBalanceUser();
       if (!respBalance.error && respBalance.data) {
@@ -102,32 +94,29 @@ const WithdrawalRequestPage = () => {
   }, [balance, formWithdrawal.values.amount]);
 
   const handleSubmitWithdrawal = async () => {
-    if (isLoading || !authUser) return;
+    if (isLoading || !authUser || !selectedMethod) return;
     setIsLoading(true);
     
     try {
-      const { isValidate, errorInput } = checkValidWithdrawalForm({
-        validation: formWithdrawal.validate,
-        bank: selectedMethod.bank.toLowerCase()
-      });
+      const { isValidate, errorInput } = formWithdrawal.validate(checkValidWithdrawalForm);
       if (!isValidate && errorInput !== null) {
         scrollToErrorInput(errorInput);
         return;
       }
       let responseCreateWithdrawal;
-      if (selectedMethod.bank.toLowerCase() === "crypto") {
-        responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
-          form: formWithdrawal.values,
-          amountIdr: ((Number(formWithdrawal.values.amount) || 0) * EXCHANGE_RATE).toString(),
-          currency: "USD"
-        });
-      } else {
-        formWithdrawal.setSpecificValue("walletAddress", selectedMethod.accountNumber);
+      if (selectedMethod.method === "bank") {
         responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
           form: formWithdrawal.values,
           bankId: selectedMethod.id,
           amountIdr: ((Number(formWithdrawal.values.amount) || 0) * EXCHANGE_RATE).toString(),
           currency: "IDR"
+        });
+      } else {
+        responseCreateWithdrawal = await WithdrawalAPI.createWithdrawal({
+          form: formWithdrawal.values,
+          cryptoId: selectedMethod.id,
+          amountIdr: ((Number(formWithdrawal.values.amount) || 0) * EXCHANGE_RATE).toString(),
+          currency: "USD"
         });
       }
       
@@ -168,21 +157,19 @@ const WithdrawalRequestPage = () => {
 
   useLockBodyScroll(showModal === "SUCCESS");
 
-  const bankStatusMessage = {
-    empty: "Anda belum menambahkan data bank. Silakan tambahkan terlebih dahulu untuk dapat melakukan penarikan melalui bank.",
+  const walletStatusMessage = {
+    empty: "Anda belum menambahkan data wallet. Silakan tambahkan terlebih dahulu untuk dapat melakukan penarikan.",
     pending: "Data bank Anda sedang dalam proses verifikasi. Silakan tunggu hingga proses selesai sebelum melakukan penarikan melalui bank.",
     rejected: "Verifikasi data bank Anda gagal. Silakan periksa kembali data yang Anda masukkan dan lakukan pengajuan ulang.",
   };
-  const messageWarningBank = banks.length === 0
-    ? bankStatusMessage.empty
-    : selectedMethod && bankStatusMessage[selectedMethod.status as "pending" | "rejected"] || "";
+  const messageWarningWallet = wallets.length === 0
+    ? walletStatusMessage.empty
+    : selectedMethod && walletStatusMessage[selectedMethod.status as "pending" | "rejected"] || "";
 
-  const isEmptyForm =
-    Number(formWithdrawal.values.amount) === 0 ||
-    (selectedMethod.bank.toLowerCase() === "crypto" && !formWithdrawal.values.walletAddress);
+  const isEmptyForm = Number(formWithdrawal.values.amount) === 0;
 
   const isDisabledButtonSubmit =
-    (selectedMethod.bank.toLowerCase() !== "crypto" && messageWarningBank !== "") ||
+    messageWarningWallet !== "" ||
     errorSyncAmount !== "" ||
     isEmptyForm ||
     initLoad || isLoading;
@@ -211,7 +198,7 @@ const WithdrawalRequestPage = () => {
           {balance && 
             <WithdrawalForm 
               form={formWithdrawal.values}
-              methodsInput={methodsInput}
+              methodsInput={sortedWallets}
               selectedMethod={selectedMethod}
               setSelectedMethod={setSelectedMethod}
               handleFormChange={formWithdrawal.handleChange}
@@ -220,13 +207,16 @@ const WithdrawalRequestPage = () => {
               errorSyncAmount={errorSyncAmount}
               availableBalance={balance.balance}
               isLoading={initLoad || isLoading}
+              loadData={initLoad}
             />
           }
+
+          {/* INFORMATION BALANCE WITHDRAWAL */}
           <div className="px-4 md:px-8 py-5 max-w-[360px] 2xl:max-w-[400px] w-fit bg-[#FAFAFA] border border-dashed border-primary rounded-2xl">
             <p className="text-lg 2xl:text-2xl font-medium">
-              Saldo yang akan diterima
+              Saldo yang akan ditarik
             </p>
-            {selectedMethod.bank.toLowerCase() !== "crypto" ? 
+            {selectedMethod && selectedMethod.method === "bank" ? 
               <>
                 <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold wrap-break-word">
                   {balance && 
@@ -248,23 +238,10 @@ const WithdrawalRequestPage = () => {
           </div>
         </div>
 
-        {/* INFORMATiON METHOD BANK / CRYPTO */}
-        {selectedMethod.bank.toLowerCase() === "crypto" ?
-          <div className="mt-7 max-w-[640px]">
-            <div className="p-3 flex gap-3 border border-primary border-dashed rounded-[10px]">
-              <span className="flex shrink-0 items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
-                <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />
-              </span>
-              <p className="w-fit text-base md:text-sm font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
-                Penarikan dana melalui Crypto hanya tersedia dalam mata uang USDT dengan menggunakan jaringan BNB. Pastikan alamat wallet tujuan Anda mendukung jaringan yang sama.
-              </p>
-            </div>
-          </div>
-        :
-          <BankWithdrawalInformation 
-            initLoad={initLoad} messageWarningBank={messageWarningBank} bank={selectedMethod}            
-          />
-        }
+        {/* INFORMATION METHOD BANK / CRYPTO */}
+        <WalletWithdrawalInformation 
+          initLoad={initLoad} messageWarningWallet={messageWarningWallet} wallet={selectedMethod}            
+        />
 
         {/* BUTTON CONFIRM */}
         <div className="mt-6 md:mt-9 flex items-center gap-3 md:gap-4">

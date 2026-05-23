@@ -18,7 +18,8 @@ import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 import type { FullStatusType, SetStatusType } from "@/types/status.type";
 import type { RebateAdminManagement, ResponseRebateAPI } from "@/types/rebate.type";
-import { formattingUsd } from "@/helper/formattingCurrency";
+import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
+import { EXCHANGE_RATE } from "@/constants/exchangeRate";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 
 import CardOverview from "@/components/dashboard/common/CardOverview";
@@ -300,7 +301,7 @@ const RebatesManagement = () => {
           title={"Internal Earning"} 
           icon={<IoCardOutline />} 
           content={dataAdminOverview ? formattingUsd(dataAdminOverview.totalInternalCommisions).toString() : "$0.00"} 
-          detail={"Total earning rebate for FXPayout"} 
+          detail={dataAdminOverview ? formattingRp(dataAdminOverview.totalInternalCommisions * EXCHANGE_RATE).toString() : "Rp0.00"} 
           isLoading={dataAdminOverview === null}  
         />
         <CardOverview 

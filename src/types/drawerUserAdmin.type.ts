@@ -1,6 +1,6 @@
 export interface FlagState {
   profile: boolean;
-  bank: boolean;
+  wallet: boolean;
 };
 
 export interface FlagExtendBrokerState extends FlagState {

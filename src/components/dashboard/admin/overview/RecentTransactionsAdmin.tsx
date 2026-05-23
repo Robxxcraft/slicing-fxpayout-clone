@@ -90,7 +90,7 @@ const RecentTransactionsAdmin = ({
               Daftar transaksi penarikan dana terbaru yang diajukan oleh pengguna.
             </p>
           </div>
-          <Link to={getLocalizedPath("dashboard/withdrawal", i18n.language)} className="flex items-center gap-3 text-primary">
+          <Link to={getLocalizedPath("dashboard/withdrawals", i18n.language)} className="flex items-center gap-3 text-primary">
             <p className="text-base 2xl:text-xl">Lihat Semua</p>
             <HiArrowLongRight className="text-2xl" />
           </Link>

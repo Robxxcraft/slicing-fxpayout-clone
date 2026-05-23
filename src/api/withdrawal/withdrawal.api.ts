@@ -5,11 +5,13 @@ import type { FormWithdrawalRequest } from "@/types/withdrawal.type";
 export const createWithdrawal = async ({ 
   form,
   bankId,
+  cryptoId,
   amountIdr,
   currency
 }: { 
   form: FormWithdrawalRequest;
   bankId?: number;
+  cryptoId?: number;
   amountIdr: string;
   currency: "USD" | "IDR";
 }) => {
@@ -21,7 +23,7 @@ export const createWithdrawal = async ({
       },
       body: JSON.stringify({
         bank_id: bankId,
-        wallet_address: form.walletAddress,
+        crypto_id: cryptoId,
         amount_idr: amountIdr,
         amount_usd: form.amount,
         currency: currency

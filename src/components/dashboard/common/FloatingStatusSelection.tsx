@@ -79,6 +79,7 @@ const FloatingStatusSelection = ({
             <div className={`p-2 h-full border border-[#DDDDDD] bg-white w-[200px] 2xl:w-60 rounded-lg shadow-sm`}>
               {objectsInput.map((item) => (
                 <p 
+                  key={item.key}
                   onClick={() => handleChange(item.key)}
                   className="p-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md  cursor-pointer">
                   {item.value}

@@ -1,19 +1,20 @@
-import { AdminAPI, BankAPI, BrokerAPI } from "@/api";
+import { AdminAPI, BankAPI, BrokerAPI, CryptoAPI } from "@/api";
 import { formattingFullDate } from "@/helper/formattingDate";
 import type { UserGender } from "@/types/user.type";
 import { useEffect, useState } from "react";
 import { IoCardOutline, IoCloseOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
 import ProfileUserDrawer from "../common/ProfileUserDrawer";
-import BankUserDrawer from "../common/BankUserDrawer";
+import WalletUserDrawer from "../common/WalletUserDrawer";
 import type { DataBrokerDrawer } from "../common/BrokerUserDrawer";
 import BrokerUserDrawer from "../common/BrokerUserDrawer";
 import { FaUser } from "react-icons/fa6";
 import { BsBank2 } from "react-icons/bs";
 import DrawerContainer from "@/components/ui/DrawerContainer";
 import type { TradersAdminManagement } from "@/types/trader.type";
-import type { BankUser, ResponseBankUser } from "@/types/bank.type";
+import type { WalletUser, ResponseBankUser, ResponseCryptoUser } from "@/types/wallet.type";
 import type { FlagExtendBrokerState, LoadingExtendBrokerState } from "@/types/drawerUserAdmin.type";
+import type { StatusType } from "@/types/status.type";
 
 type DataProfile = {
   id: number;
@@ -33,20 +34,20 @@ const DrawerTraderDetail = ({
   onCloseDrawer: () => void;
   isOpen: boolean;
 }) => {
-  const [menu, setMenu] = useState<"profile" | "broker" | "bank">("profile");
+  const [menu, setMenu] = useState<"profile" | "broker" | "wallet">("profile");
   const [flags, setFlags] = useState<FlagExtendBrokerState>({
     profile: false,
-    bank: false,
+    wallet: false,
     broker: false,
   })
   const [isLoading, setIsLoading] = useState<LoadingExtendBrokerState>({
     profile: false,
-    bank: false,
+    wallet: false,
     broker: false,
     general: true,
   });
 
-  const [dataBank, setDataBank] = useState<BankUser[]>([]);
+  const [dataWallets, setDataWallets] = useState<WalletUser[]>([]);
   const [dataProfile, setDataProfile] = useState<DataProfile | null>(null);
   const [dataBrokers, setDataBrokers] = useState<DataBrokerDrawer[]>([]);
 
@@ -86,43 +87,69 @@ const DrawerTraderDetail = ({
     }
   };
   
-  const fetchBankUser = async () => {
+  const getBankUser = async (): Promise<WalletUser[]> => {
+    const { error, data } = await BankAPI.getBankByUser({
+      userId: dataTrader.id
+    });
+  
+    if (!error && data) {
+      const temp = data.map((item: ResponseBankUser): WalletUser => ({
+        id: item.id,
+        method: "bank",
+        data: {
+          bank: item.name,
+          username: item.account_name,
+          accountNumber: item.account_number
+        },
+        status: item.status as StatusType
+      }))
+      return temp;
+    } 
+
+    return [];
+  }
+  const getCryptoUser = async (): Promise<WalletUser[]> => {
+    const { error, data } = await CryptoAPI.getCryptoByUser({
+      userId: dataTrader.id
+    });
+  
+    if (!error && data) {
+      const temp = data.map((item: ResponseCryptoUser): WalletUser => ({
+        id: item.id,
+        method: "crypto",
+        data: {
+          token: item.token as "USDT",
+          network: item.network as "BNB",
+          accountNumber: item.wallet_address
+        },
+        status: "approved"
+      }))
+      return temp;
+    } 
+
+    return [];
+  }
+  const fetchWalletUser = async () => {
     setIsLoading((prev) => ({
       ...prev,
       general: true,
-      bank: true
+      wallet: true
     }));
     try {
-      const { error, message, data } = await BankAPI.getBankByUser({
-        userId: dataTrader.id
-      });
-    
-      if (!error && data) {
-        const temp = data.map((item: ResponseBankUser) => ({
-          id: item.id,
-          bank: item.name,
-          username: item.account_name,
-          accountNumber: item.account_number,
-          status: item.status
-        }))
-        setDataBank(temp);
-      } else {
-        let errorMessage = message;
-        if (message === "Bank users not found for the given user ID") {
-          errorMessage = "Pengguna belum menambahkan data rekening bank";
-          setDataBank([]);
-        }
-        toast.error(errorMessage)
-      }
+      const respBank = await getBankUser();
+      const respCrypto = await getCryptoUser();
+
+      const concatWallet = respBank.concat(respCrypto);
+      setDataWallets(concatWallet);
     } finally {
       setIsLoading((prev) => ({
         ...prev,
         general: false,
-        bank: false
+        wallet: false
       }));
       setFlags((prev) => ({
         ...prev,
-        bank: true
+        wallet: true
       }));
     }
   };
@@ -170,8 +197,8 @@ const DrawerTraderDetail = ({
   };
 
   useEffect(() => {
-    if (menu === "bank" && !flags.bank) {
-      fetchBankUser();
+    if (menu === "wallet" && !flags.wallet) {
+      fetchWalletUser();
     }
     if (menu === "profile" && (!dataProfile || !flags.profile)) {
       fetchProfileUser();
@@ -229,14 +256,14 @@ const DrawerTraderDetail = ({
             </p>
             <BsBank2 className="block md:hidden text-xl" />
           </div>          
-          <div className={`${menu === "bank" ? 
+          <div className={`${menu === "wallet" ? 
           "bg-linear-to-t from-dark-primary to-primary border border-primary text-white" : 
           "bg-transparent border border-black/80 text-black/80 hover:bg-light-gray"}
             py-2 w-1/2 h-11 md:h-fit rounded-lg text-center flex items-center justify-center cursor-pointer`}
-            onClick={() => setMenu("bank")}  
+            onClick={() => setMenu("wallet")}  
           >
             <p className="hidden md:block font-medium text-base uppercase">
-              Bank
+              Wallet
             </p>
             <IoCardOutline className="block md:hidden text-xl" />
           </div>
@@ -266,11 +293,11 @@ const DrawerTraderDetail = ({
           />
         }
 
-        {/* BANK */}
-        {menu === "bank" &&
-          <BankUserDrawer 
-            banks={dataBank}
-            isLoading={isLoading.bank}
+        {/* WALLET */}
+        {menu === "wallet" &&
+          <WalletUserDrawer 
+            wallets={dataWallets}
+            isLoading={isLoading.wallet}
           />
         }
       </div>

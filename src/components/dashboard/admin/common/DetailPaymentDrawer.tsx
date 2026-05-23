@@ -83,6 +83,14 @@ const DetailPaymentDrawer = ({
                 </div>
               </div>
             </div>
+            <div className="space-y-2">
+              <p className="text-sm 2xl:text-lg font-medium text-black/60">Token</p>
+              <p className="text-sm 2xl:text-xl font-medium text-black">USDT</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm 2xl:text-lg font-medium text-black/60">Network</p>
+              <p className="text-sm 2xl:text-xl font-medium text-black">BNB</p>
+            </div>
           </>
         }
       </div>

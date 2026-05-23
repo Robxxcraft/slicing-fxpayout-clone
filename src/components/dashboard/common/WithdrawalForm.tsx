@@ -1,20 +1,21 @@
 import BankSelectWithdrawal from "@/components/ui/BankSelectWithdrawal";
 import TextInput from "@/components/ui/TextInput";
 import { formattingUsd } from "@/helper/formattingCurrency";
-import type { BankUser } from "@/types/bank.type";
+import type { WalletUser } from "@/types/wallet.type";
 import type { FormWithdrawalRequest } from "@/types/withdrawal.type";
 
 type WithdrawalFormProps = {
   form: FormWithdrawalRequest;
-  methodsInput: BankUser[];
-  selectedMethod: BankUser;
-  setSelectedMethod: React.Dispatch<React.SetStateAction<BankUser>>;
+  methodsInput: WalletUser[];
+  selectedMethod: WalletUser | null;
+  setSelectedMethod: React.Dispatch<React.SetStateAction<WalletUser | null>>;
   handleFormChange: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
   onSubmitWithdrawal: (e: React.FormEvent<HTMLFormElement>) => Promise<void>
   errors: Partial<Record<keyof FormWithdrawalRequest, string>>;
   errorSyncAmount: string;
   availableBalance: number;
   isLoading: boolean;
+  loadData: boolean;
 };
 
 const WithdrawalForm = ({
@@ -27,7 +28,8 @@ const WithdrawalForm = ({
   errors,
   errorSyncAmount,
   availableBalance,
-  isLoading
+  isLoading,
+  loadData
 }: WithdrawalFormProps) => {
   const helperAmount = errorSyncAmount ? undefined : `Sisa saldo anda: ${formattingUsd(availableBalance)} USD`;
   const errorAmount = errorSyncAmount ? undefined : errors.amount;
@@ -39,23 +41,8 @@ const WithdrawalForm = ({
         selectedMethod={selectedMethod} 
         setSelectedMethod={setSelectedMethod} 
         isLoading={isLoading}
+        loadData={loadData}
       />
-      {selectedMethod.bank.toLowerCase() === "crypto" &&
-        <TextInput
-          id="walletAddress"
-          label={"Alamat Wallet"}
-          value={form.walletAddress}
-          onChangeForm={handleFormChange} 
-          placeholder={"Masukkan alamat wallet"}
-          autoComplete="off"
-          inputMode="text"
-          typeInput={"text"}
-          errorMessage={errors.walletAddress}
-          isMobileLabel={false}
-          disabled={isLoading}
-          required={selectedMethod.bank.toLowerCase() === "crypto"} 
-        />
-      }
       <div>
         <TextInput
           id="amount"

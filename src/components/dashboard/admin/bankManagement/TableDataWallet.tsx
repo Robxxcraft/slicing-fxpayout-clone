@@ -1,5 +1,5 @@
 import Table from "@/components/TableLayout";
-import type { BankAdminManagement } from "@/types/bank.type";
+import type { WalletAdminManagement } from "@/types/wallet.type";
 import { 
   flexRender, 
   type Table as ReactTable
@@ -7,11 +7,11 @@ import {
 import { HiChevronUpDown } from "react-icons/hi2";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
-const TableDataBank = ({
+const TableDataWallet = ({
   tableInstance,
   isLoading
 }: {
-  tableInstance: ReactTable<BankAdminManagement>;  
+  tableInstance: ReactTable<WalletAdminManagement>;  
   isLoading: boolean;
 }) => {
   const dataRows = tableInstance.getRowModel().rows;
@@ -90,4 +90,4 @@ const TableDataBank = ({
   )
 }
 
-export default TableDataBank;
+export default TableDataWallet;

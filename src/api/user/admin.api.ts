@@ -579,6 +579,73 @@ export const bulkChangeStatusUserBanks = async ({
   }
 };
 
+// Crypto API
+export const getAllCrypto = async ({
+  limit, 
+  page,
+  sortBy,
+  orderBy,
+  search
+}: {
+  status?: StatusType
+  limit?: number;
+  page?: number;
+  sortBy?: string;
+  orderBy?: OrderStatus;
+  search?: string;
+}) => {
+  try {
+    let url = `${BASE_URL}/cryptos?`;
+    if (limit) url += `limit=${limit}&`;
+    if (page) url += `page=${page}&`;
+    if (sortBy) url += `sort_by=${sortBy}&`;
+    if (orderBy) url += `sort_order=${orderBy}&`;
+    if (search) url += `search=${search}&`;
+
+    const response = await _fetchWithAuth(url);
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.message, data: responseJson.result }
+    }
+
+    return { error: true, message: responseJson.message, data: null };
+  } catch (error) {
+    console.error(`Failed get data bank. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`,
+      data: null
+    }
+  }
+};
+
+export const bulkDeleteUserCrypto = async ({ cryptoIds }: { cryptoIds: number[]; }) => {
+  try {
+    const url = `${BASE_URL}/cryptos/bulk`;
+    const response = await _fetchWithAuth(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        ids: cryptoIds
+      })
+    });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      return { error: false, message: responseJson.result.message }
+    }
+
+    return { error: true, message: responseJson.message };
+  } catch (error) {
+    console.error(`Failed delete bulk crypto. Error: ${error}`);
+    return {
+      error: true, 
+      message: `Please try again later. Error: ${error}`
+    }
+  }
+};
+
 // Broker API
 export const getAllBrokerUsers = async ({
   limit, 
