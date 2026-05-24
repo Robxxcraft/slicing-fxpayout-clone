@@ -1,7 +1,7 @@
 import DropzoneFile from "@/components/dashboard/common/DropzoneFile";
-import { brokers } from "@/utils/dataBroker/brokers";
 import { LuDownload } from "react-icons/lu";
 import PreviewFileXlsx from "../common/PreviewFileXlsx";
+import { brokersName } from "@/constants/brokersName";
 
 const SectionImportRebate = ({
   onDrop, 
@@ -14,9 +14,8 @@ const SectionImportRebate = ({
   onDeleteFile: () => void;
   file: File | null;
 }) => {
-  const allBrokers = Object.values(brokers).map((broker) => broker.name);
   const clauses = [
-    `Kolom Broker wajib berisi ${allBrokers.join(", ")}. `,
+    `Kolom Broker wajib berisi ${brokersName.join(", ")}. `,
     "Format total rebate dalam USD 2 digit dibelakang koma.",
     "Tanggal ditulis dalam format YYYY-MM-DD.",
     "Pastikan tidak ada data yang duplikat."

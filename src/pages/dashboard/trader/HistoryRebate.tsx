@@ -7,7 +7,7 @@ import { getColumnsDef } from "@/constants/columns/historyRebateColumns";
 import { getCoreRowModel, useReactTable, type PaginationState, type SortingState } from "@tanstack/react-table";
 
 import { TraderAPI } from "@/api";
-import { brokers } from "@/utils/dataBroker/brokers";
+import { brokersName } from "@/constants/brokersName";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
 import type { ResponseRebateAPI, TypeRebateTrader } from "@/types/rebate.type";
@@ -44,7 +44,10 @@ const HistoryRebate = () => {
   const [showPopupRange, setShowPopupRange] = useState<boolean>(false); 
   const [dataRebate, setDataRebate] = useState<TypeRebateTrader[]>([]);
   const { brokerParams } = useParams();
-  const broker = brokers[brokerParams as keyof typeof brokers];
+  const brokerName = brokersName.find(
+    (item) =>
+      item.toLowerCase().replace(/\s+/g, "-") === brokerParams
+  );
 
   // Table State
   const [range, setRange] = useState<DateRange>({
@@ -69,7 +72,7 @@ const HistoryRebate = () => {
       const { error, data } = await TraderAPI.getRebatesByTrader({
         limit: pagination.pageSize,
         page: pagination.pageIndex + 1,
-        brokerSearch: broker ? brokerParams : undefined,
+        brokerSearch: brokerName ? brokerName : undefined,
         sortBy: sort?.id ?? "created_at",
         orderBy: sort?.desc === undefined ? "desc" :
           sort?.desc ? "desc" : "asc",
@@ -147,9 +150,9 @@ const HistoryRebate = () => {
       <section>
         <TitleDashboard>
           History Rebate 
-          {brokerParams && broker?.name &&
+          {brokerParams && brokerName &&
             <span className="ml-2 bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
-              {broker.name}
+              {brokerName}
             </span>
           }
         </TitleDashboard>
@@ -219,8 +222,8 @@ const HistoryRebate = () => {
             <p className="text-black/80 text-base 2xl:text-xl">
               {useFilter ? 
                 "Tidak ada riwayat perolehan rebate sesuai filter Anda."
-              : brokerParams && broker?.name ? 
-                `Saat ini, Anda tidak memiliki riwayat perolehan rebate pada broker ${broker.name}.`
+              : brokerParams && brokerName ? 
+                `Saat ini, Anda tidak memiliki riwayat perolehan rebate pada broker ${brokerName}.`
               : "Saat ini, Anda tidak memiliki riwayat perolehan rebate."}
               
             </p>

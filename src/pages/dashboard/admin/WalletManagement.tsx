@@ -54,7 +54,7 @@ const supportEntry = [
   { key: "100", value: "100"}
 ];
 
-const BankManagement = () => {
+const WalletManagement = () => {
   const [initLoad, setInitLoad] = useState<InitialLoadState>({
     bank: true,
     crypto: true
@@ -379,7 +379,7 @@ const BankManagement = () => {
       </div>
       <section className="mt-5">
         <TitleDashboard>
-          Wallet Management
+          Wallets Management
         </TitleDashboard>
 
         {/* FILTER TABLE */}
@@ -587,4 +587,4 @@ const BankManagement = () => {
   )
 }
 
-export default BankManagement;
+export default WalletManagement;

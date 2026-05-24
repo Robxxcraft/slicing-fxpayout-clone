@@ -194,6 +194,17 @@ const ConnectedBrokerPage = () => {
             }
           </NoDataFound>
         }
+
+        <div className="mt-4">
+          <p className="text-base 2xl:text-xl text-black/80">
+            {`Menampilkan 
+            ${metaPage.pageIndex === 1 ? (brokersUser.length > 0 ? "1":"0") : metaPage.limit * (metaPage.pageIndex - 1)} 
+            hingga  
+            ${metaPage.pageIndex === 1 ? brokersUser.length : (metaPage.limit * (metaPage.pageIndex - 1)) + brokersUser.length} 
+            dari ${metaPage.totalData}
+            entri.`}
+          </p>
+        </div>
       </section>
 
       {/* FLOATIN MODAL */}

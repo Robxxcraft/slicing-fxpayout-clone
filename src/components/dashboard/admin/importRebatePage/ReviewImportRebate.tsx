@@ -7,7 +7,7 @@ import type { StatusImport } from "@/utils/adminUnit";
 type ReviewImportRebateProps = {
   file: File;
   statusImport: StatusImport;
-  totalData: number;ch
+  totalData: number;
   countError: number;
   detailError: {
     row: number;

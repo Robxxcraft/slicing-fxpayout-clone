@@ -1,0 +1,1 @@
+export const brokersName = ["Exness", "Valetax", "TMGM", "PUPrime", "ZFX", "XM", "HFM", "FBS", "OctaFX", "Tickmill", "Pepperstone", "FP Markets", "Vantage", "IC Markets", "AXI", "Finex", "Deriv", "VT Markets", "EC Markets", "Headway", "OANDA", "JustMarkets", "FxPro", "AvaTrade", "Ultima Markets", "CXM", "MIFX", "HSB"];

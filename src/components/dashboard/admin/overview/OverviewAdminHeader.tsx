@@ -73,7 +73,7 @@ const OverviewAdminHeader = ({
                 bottomLine 
               />
             </Link>
-            <Link to={getLocalizedPath("dashboard/banks", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
+            <Link to={getLocalizedPath("dashboard/wallets", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
               <CardOverview 
                 title={"Pending Bank Verifications"} 
                 icon={<IoWalletOutline />} sizeIcon="sm"

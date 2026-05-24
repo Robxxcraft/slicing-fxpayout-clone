@@ -147,7 +147,7 @@ export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> =
         { key: "traders", label: "Traders", path: "/dashboard/traders", icon: FaUsers },
         { key: "rebates", label: "Rebates", path: "/dashboard/rebates", icon: RiStockFill },
         { key: "brokers", label: "Brokers", path: "/dashboard/brokers", icon: BsBank2 },
-        { key: "banks", label: "Banks", path: "/dashboard/banks", icon: IoCardOutline },
+        { key: "wallets", label: "Wallets", path: "/dashboard/wallets", icon: IoCardOutline },
       ]
     },
     {
