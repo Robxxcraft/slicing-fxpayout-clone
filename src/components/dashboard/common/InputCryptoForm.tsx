@@ -49,7 +49,6 @@ const InputCryptoForm = ({ values, handleChange, errors }: {
           value={values.accountNumber} 
           onChangeForm={handleChange} 
           typeInput="text"
-          inputMode="numeric"
           labelClassName="text-sm! 2xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}

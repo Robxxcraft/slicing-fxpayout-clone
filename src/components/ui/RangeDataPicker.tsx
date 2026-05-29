@@ -103,14 +103,14 @@ const RangeDataPicker = ({
            <div className="mx-4 mt-4 px-4 py-2 flex justify-between items-center gap-2 border border-light-gray rounded-lg cursor-default">
               <p>
                 {range.from &&
-                  formattingFullDate(range.from.toLocaleDateString())
+                  formattingFullDate(range.from.toISOString())
                 }
               </p>
               <HiOutlineArrowLongRight />
               <p>
                 {range.from && (range.to 
-                  ? formattingFullDate(range.to.toLocaleDateString()) : 
-                  formattingFullDate(range.from.toLocaleDateString()))}
+                  ? formattingFullDate(range.to.toISOString()) : 
+                  formattingFullDate(range.from.toISOString()))}
               </p>
             </div> 
             <DayPicker 

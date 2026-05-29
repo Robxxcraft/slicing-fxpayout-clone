@@ -22,8 +22,8 @@ const EarningRebate = () => {
 
       const { error, data } = await TraderAPI.getRebateChartData({
         limit: 100,
-        startDate: formatDateYYYYMMDD(startDate.toLocaleDateString()),
-        endDate: formatDateYYYYMMDD(endDate.toLocaleDateString())
+        startDate: formatDateYYYYMMDD(startDate.toISOString()),
+        endDate: formatDateYYYYMMDD(endDate.toISOString())
       });
 
       if (!error && data) {
@@ -33,7 +33,7 @@ const EarningRebate = () => {
         setRebateByDate(byDate);
         setRebateByBroker(byBroker);
 
-        const today = formatDateYYYYMMDD(endDate.toLocaleDateString());
+        const today = formatDateYYYYMMDD(endDate.toISOString());
         const payload = {
           date: today,
           data: {
@@ -58,7 +58,7 @@ const EarningRebate = () => {
     }
 
     const parsed = JSON.parse(cacheRebate);
-    const date = new Date().toLocaleDateString();;
+    const date = new Date().toISOString();;
     const today = formatDateYYYYMMDD(date)
     if (parsed.date === today) {
       // ? Jika hari masih sama => langsung gunakan data

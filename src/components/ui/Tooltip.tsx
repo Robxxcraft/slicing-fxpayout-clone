@@ -30,7 +30,7 @@ const Tooltip = ({
         disabled={disabled}
         onClick={handleClick}
         className={`${btnClass} 
-          ${fullMobile ? "px-2.5 md:px-0 flex md:block items-center gap-2 w-full h-9 md:w-9 2xl:h-12 2xl:w-12":"size-9 2xl:size-12"}
+          ${fullMobile ? "px-2.5 md:px-0 flex md:block items-center justify-center gap-2 w-full h-9 md:w-9 2xl:h-12 2xl:w-12":"size-9 2xl:size-12"}
           text-base 2xl:text-xl rounded-md place-items-center cursor-pointer transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait
         `}
       >

@@ -253,7 +253,7 @@ const ProfilePage = () => {
         {(!isEditing && authUser.role !== "admin") && <TierProfile />}
         
         {/* PROFILE USER */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap md:flex-nowrap gap-x-4 gap-y-2 justify-between items-center">
           <TitleDashboard>
             Informasi Profil
           </TitleDashboard>

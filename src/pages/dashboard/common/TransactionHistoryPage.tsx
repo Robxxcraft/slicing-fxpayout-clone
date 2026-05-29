@@ -149,13 +149,15 @@ const TransactionHistoryPage = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529] w-full md:w-fit">
               <span className="text-base 2xl:text-xl">Tampilkan</span>
-              <SelectDropdown 
-                selectedInput={pagination.pageSize.toString()} 
-                handleChangeInput={handleChangeFilterLimit} 
-                objectInput={supportEntry}     
-                inputCL="w-[72px]!"
-                wrapperCL="w-fit!"         
-              />
+              <div>
+                <SelectDropdown 
+                  selectedInput={pagination.pageSize.toString()} 
+                  handleChangeInput={handleChangeFilterLimit} 
+                  objectInput={supportEntry}     
+                  inputCL="w-[72px]!"
+                  wrapperCL="w-fit!"         
+                />
+              </div>
             </div>
 
             <div className="flex items-center gap-2 w-full md:w-fit">

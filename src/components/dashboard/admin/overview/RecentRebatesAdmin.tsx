@@ -75,7 +75,7 @@ const RecentRebatesAdmin = ({
                 return (
                   <Table.Cell rowIndex={rowIndex} key={cellIndex} className={`${cellIndex === CONFIG_HEADER.length - 1 ? "px-2! text-right!" : "text-left!"}
                   ${cellIndex === 0 ? "px-2!":""}
-                    py-2! 2xl:text-xl! group-hover:bg-gray-200`}>
+                    py-2! 2xl:text-xl! group-hover:bg-gray-200 text-nowrap`}>
                     {key === "date" ? formattingFullDate(value.toLocaleString()) : value}
                   </Table.Cell>
                 )

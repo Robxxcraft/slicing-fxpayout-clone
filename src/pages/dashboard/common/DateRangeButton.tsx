@@ -28,14 +28,14 @@ const DateRangeButton = ({
         <FaRegCalendarAlt className="mr-1 text-lg text-black/60" />
         <p className="whitespace-nowrap">
           {range.from &&
-            formattingFullDate(range.from.toLocaleDateString())
+            formattingFullDate(range.from.toISOString())
           }
         </p>
         <HiOutlineArrowLongRight />
         <p className="whitespace-nowrap">
           {range.from && (range.to 
-            ? formattingFullDate(range.to.toLocaleDateString()) : 
-            formattingFullDate(range.from.toLocaleDateString()))}
+            ? formattingFullDate(range.to.toISOString()) : 
+            formattingFullDate(range.from.toISOString()))}
         </p>
       </button>
     </div>
