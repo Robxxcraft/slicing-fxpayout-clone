@@ -1,4 +1,4 @@
-import type { StatusType } from "./status.type";
+import type { RebateStatusType } from "./status.type";
 
 export interface ResponseRebateAPI {
   id: number;
@@ -8,6 +8,9 @@ export interface ResponseRebateAPI {
   total_rebate: string;
   status: string;
   broker: { name: string }; 
+  trader_earning: string;
+  affiliate_earning: string;
+  internal_earning: string;
 }
 
 // TRADER
@@ -16,6 +19,7 @@ export type TypeRebateTrader = {
   broker: string;
   account_number: string;
   rebate: number;
+  status: RebateStatusType;
 };
 
 // ADMIN MANAGEMENT
@@ -26,5 +30,8 @@ export type RebateAdminManagement = {
   account_number: string;
   broker_name: string;
   total_rebate: number;
-  status: StatusType;
+  status: RebateStatusType;
+  trader_earning: number;
+  affiliate_earning: number;
+  internal_earning: number;
 };

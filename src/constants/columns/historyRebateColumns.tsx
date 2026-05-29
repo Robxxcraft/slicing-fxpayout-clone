@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { formatingUrlBroker } from "@/helper/formattingUrlBroker";
 import type { TypeRebateTrader } from "@/types/rebate.type";
+import StatusTag from "@/components/dashboard/common/StatusTag";
+import type { RebateStatusType } from "@/types/status.type";
 
 export const getColumnsDef = (lang: string) => [
   {
@@ -29,6 +31,25 @@ export const getColumnsDef = (lang: string) => [
   {
     accessorKey: "account_number",
     header: "Nomor Akun Trading"
+  },
+  {
+    id: "status",
+    accessorKey: "status",
+    cell: ({ getValue }: { getValue: () => string }) => {
+      const value = getValue() as string;
+      // Logika teks status dipindah ke sini
+      const textStatus = 
+        value === "pending" ? "Verifying" : 
+        value === "approved" ? "Manual Credited" :
+        value === "auto_credited" ? "Auto Credited" : "Rejected";
+
+      return (
+        <div className="w-fit">
+          <StatusTag status={value as RebateStatusType} text={textStatus} />
+        </div>
+      );
+    },
+    header: "Status"
   },
   {
     accessorKey: "rebate",

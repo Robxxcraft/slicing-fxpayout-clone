@@ -86,6 +86,7 @@ const HistoryRebate = () => {
           broker: item.broker.name,
           account_number: item.account_number,
           rebate: item.total_rebate,
+          status: item.status
         }));
         setDataRebate(temp);
         setPagination({
@@ -219,14 +220,11 @@ const HistoryRebate = () => {
         }
         {dataRebate.length === 0 && !initLoad && !isLoading &&
           <NoDataFound>
-            <p className="text-black/80 text-base 2xl:text-xl">
-              {useFilter ? 
-                "Tidak ada riwayat perolehan rebate sesuai filter Anda."
-              : brokerParams && brokerName ? 
-                `Saat ini, Anda tidak memiliki riwayat perolehan rebate pada broker ${brokerName}.`
-              : "Saat ini, Anda tidak memiliki riwayat perolehan rebate."}
-              
-            </p>
+            {useFilter ? 
+              "Tidak ada riwayat perolehan rebate sesuai filter Anda."
+            : brokerParams && brokerName ? 
+              `Saat ini, Anda tidak memiliki riwayat perolehan rebate pada broker ${brokerName}.`
+            : "Saat ini, Anda tidak memiliki riwayat perolehan rebate."}
           </NoDataFound>
         }
         <div className="mt-4">

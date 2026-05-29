@@ -1,4 +1,4 @@
-type statusEnum = "pending" | "approved" | "rejected";
+type statusEnum = "pending" | "approved" | "rejected" | "auto_credited";
 
 const STATUS_CONFIG: Record<statusEnum, {
   background: string;
@@ -15,6 +15,10 @@ const STATUS_CONFIG: Record<statusEnum, {
   rejected: {
     background: "FAD4D4",
     text: "DF1E1E"
+  },
+  auto_credited: {
+    background: "E3FFE8",
+    text: "18BD36"
   },
 }
 

@@ -12,11 +12,11 @@ import {
 } from "@tanstack/react-table";
 
 import { AdminAPI } from "@/api";
-import { statusMap, statusMapNoPendingAll } from "@/constants/statusDropdown";
+import { rebateStatusMap, statusMapNoPendingAll } from "@/constants/statusDropdown";
 import { columnsDef } from "@/constants/columns/rebatesManagementColumns";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
-import type { FullStatusType, SetStatusType } from "@/types/status.type";
+import type { FullRebateStatusType, SetStatusType } from "@/types/status.type";
 import type { RebateAdminManagement, ResponseRebateAPI } from "@/types/rebate.type";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import { EXCHANGE_RATE } from "@/constants/exchangeRate";
@@ -81,7 +81,7 @@ const RebatesManagement = () => {
   const [debouncedSearch, setDebouncedSearch] = useState<string>("");
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [filterStatus, setFilterStatus] = useState<FullStatusType>("all");
+  const [filterStatus, setFilterStatus] = useState<FullRebateStatusType>("all");
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 50
@@ -117,6 +117,9 @@ const RebatesManagement = () => {
           broker_name: item.broker.name,
           total_rebate: item.total_rebate,
           status: item.status,
+          trader_earning: item.trader_earning,
+          affiliate_earning: item.affiliate_earning,
+          internal_earning: item.internal_earning,
         }));
         setDataRebates(temp);
         setPagination({
@@ -259,7 +262,7 @@ const RebatesManagement = () => {
   // Function Filter
   const handleChangeFilterStatus = (key: string) => {
     if (isLoading) return;
-    setFilterStatus(key as FullStatusType);
+    setFilterStatus(key as FullRebateStatusType);
     setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   }  
   const handleChangeFilterLimit = (key: string) => {
@@ -368,7 +371,7 @@ const RebatesManagement = () => {
               <SelectDropdown 
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeFilterStatus} 
-                objectInput={statusMap}       
+                objectInput={rebateStatusMap}       
                 wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
                 inputCL="w-[200px]! 2xl:w-[240px]!"        
               />

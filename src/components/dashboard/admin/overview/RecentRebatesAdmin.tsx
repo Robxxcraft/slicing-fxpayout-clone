@@ -2,7 +2,7 @@ import Table from '@/components/TableLayout';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import StatusTag from '../../common/StatusTag';
-import type { StatusType } from '@/types/status.type';
+import type { RebateStatusType } from '@/types/status.type';
 import { getLocalizedPath } from '@/helper/pathHelper';
 import { useTranslation } from 'react-i18next';
 import NoDataFound from '../../common/NoDataFound';
@@ -63,11 +63,13 @@ const RecentRebatesAdmin = ({
             <Table.Row key={rowIndex}>
               {Object.entries(item).map(([key, value], cellIndex) => {
                 if (key === "status") {
-                  const textStatus = value === "pending" ? "Verifying" : value === "approved" ? "Approved" : "Rejected";
+                  const textStatus = value === "pending" ? "Verifying" 
+                    : value === "approved" ? "Approved" 
+                    : value === "auto_credited" ? "Auto Credited" : "Rejected";
                   return (
                     <Table.Cell rowIndex={rowIndex} key={cellIndex} className="py-2! align-middle! group-hover:bg-gray-200">
                       <div className="w-fit">
-                        <StatusTag status={value as StatusType} text={textStatus} />
+                        <StatusTag status={value as RebateStatusType} text={textStatus} />
                       </div>
                     </Table.Cell>
                   )
