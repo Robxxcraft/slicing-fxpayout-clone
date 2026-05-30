@@ -48,10 +48,9 @@ import { LuRefreshCcw } from "react-icons/lu";
 import { IoCardOutline } from "react-icons/io5";
 
 const supportEntry = [
+  { key: "10", value: "10"}, 
   { key: "20", value: "20"}, 
-  { key: "50", value: "50"},
-  { key: "100", value: "100"},
-  { key: "200", value: "200"}
+  { key: "50", value: "50"}
 ];
 
 const defaultFrom = subDays(new Date(), 30);
@@ -371,7 +370,8 @@ const RebatesManagement = () => {
               <SelectDropdown 
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeFilterStatus} 
-                objectInput={rebateStatusMap}       
+                objectInput={rebateStatusMap}     
+                disabled={isLoading}  
                 wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
                 inputCL="w-[200px]! 2xl:w-[240px]!"        
               />

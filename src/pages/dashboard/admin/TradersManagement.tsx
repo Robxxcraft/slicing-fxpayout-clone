@@ -250,7 +250,8 @@ const TradersManagement = () => {
             <SelectDropdown 
               selectedInput={filterStatus} 
               handleChangeInput={handleChangeStatus} 
-              objectInput={statusMapNoRejected}       
+              objectInput={statusMapNoRejected}  
+              disabled={isLoading}     
               wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
               inputCL="w-[200px]! 2xl:w-[240px]!"        
             />

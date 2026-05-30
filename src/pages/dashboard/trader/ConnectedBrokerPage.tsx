@@ -149,6 +149,7 @@ const ConnectedBrokerPage = () => {
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeStatus} 
                 objectInput={statusMap}       
+                disabled={isLoading}
                 wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
                 inputCL="w-[200px]! 2xl:w-[240px]!"        
               />

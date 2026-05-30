@@ -175,7 +175,7 @@ const ManagementTraders = () => {
                 <SelectDropdown 
                   selectedInput={pagination.pageSize.toString()} 
                   handleChangeInput={handleChangeFilterLimit} 
-                  objectInput={supportEntry}     
+                  objectInput={supportEntry}   
                   inputCL="w-[72px]!"
                   wrapperCL="w-fit!"         
                 />
@@ -186,6 +186,7 @@ const ManagementTraders = () => {
                   selectedInput={filterStatus} 
                   handleChangeInput={handleChangeStatus} 
                   objectInput={statusMap} 
+                  disabled={isLoading}  
                   wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
                   inputCL="w-[200px]! 2xl:w-[240px]!"             
                 />

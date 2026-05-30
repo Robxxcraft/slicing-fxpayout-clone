@@ -1,6 +1,6 @@
 import type { ValidationData } from "@/models/validationData";
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
-import type { OrderStatus, StatusType } from "@/types/status.type";
+import type { OrderStatus, RebateStatusType, StatusType } from "@/types/status.type";
 import type { UserTier } from "@/types/user.type";
 
 //! ==== NOT USED ====
@@ -322,7 +322,7 @@ export const getAllRebates = async ({
   startDate,
   endDate
 }: {
-  status?: StatusType
+  status?: RebateStatusType
   limit?: number;
   page?: number;
   sortBy?: string;
