@@ -4,9 +4,10 @@ import Navbar from "@/components/Navbar";
 import HeaderSection from "@/components/HeaderSection";
 import TransferForm from "@/components/pages/transferAccount/TransferForm";
 import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const TransferAccount = () => {
-  const { t } = useTranslation(["transferpage"]);
+  const { t, i18n } = useTranslation(["common", "transferpage"]);
 
   return (
     <div className="font-inter">
@@ -22,7 +23,12 @@ const TransferAccount = () => {
             paragraph={t("transferpage:header.paragraph")} />
           <TransferForm />
         </div>
-        <CtaSection />
+        <CtaSection 
+          title={t("cta.title")}
+          paragraph={t("cta.paragraph")}
+          button={t("button.registerNow")}
+          urlButton={getLocalizedPath("register", i18n.language)}
+        />
       </main>
       <Footer />
     </div>

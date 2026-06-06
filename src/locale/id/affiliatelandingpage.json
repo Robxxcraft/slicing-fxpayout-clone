@@ -1,0 +1,193 @@
+{
+    "helmet": {
+        "title": "Kalkulator Rebate: Hitung Estimasi Cashback Trading | FXPayout",
+        "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
+    },
+    "herosection": {
+        "title": "Hasilkan Komisi dari Trading Referral Anda",
+        "paragraph": "Dapatkan penghasilan berulang setiap kali referral Anda melakukan trading melalui FXPayout.",
+        "badge": "Program Afiliasi",
+        "benefits": ["Tanpa Trading", "Tanpa Kelola Dana"],
+        "button": "Daftar Sekarang & Mulai Hasilkan",
+        "features": [
+            {
+                "title": "Broker Tersedia"
+            },
+            {
+                "title": "Trader Telah Bergabung"
+            },
+            {
+                "title": "Ribuan Dollar Dibayarkan"
+            }
+        ],
+        "small_card": {
+            "title": "Total Komisi"
+        }
+    },
+    "commissionsection": {
+        "title": "Lihat Berapa Banyak yang Bisa Anda Hasilkan",
+        "paragraph": "Bayangkan potensi penghasilan Anda dari setiap referral yang aktif trading.",
+        "badge": "POTENSI KOMISI",
+        "subtitle": "Kalkulator Komisi Affiliate",
+        "subparagraph": "Sesuaikan jumlah referral untuk melihat estimasi penghasilan bulanan Anda.",
+        "total_refferal": "Jumlah Referral Traders :",
+        "benefits": ["Tanpa Trading", "Penghasilan Berulang Setiap Bulan", "Tanpa Kelola Dana"],
+        "potential_commission": "Potensi Komisi Anda",
+        "info": "*Potensi penghasilan berdasarkan aktivitas trading referral."
+    },
+    "benefitaffiliatesection": {
+        "title": "Hasilkan Komisi dari Aktivitas Trading Referral Anda",
+        "paragraphs": [
+            "FXPayout memungkinkan Anda mendapatkan komisi dari aktivitas trading referral Anda.",
+            "Cukup bagikan link affiliate Anda, dan setiap transaksi trading dari referral akan menghasilkan komisi untuk Anda — tanpa perlu trading atau mengelola dana."
+        ],
+        "badge": "PROGRAM AFFILIASI",
+        "small_card": {
+            "title": "Total Afiliasi Trader"
+        },
+        "preview_chart": {
+            "title": "Total Komisi Harian"
+        }
+    },
+    "revenuesection": {
+        "title": "Setiap referral yang Anda ajak akan terhubung secara permanen dengan akun Anda. ",
+        "paragraph": "Selama mereka aktif trading, Anda akan terus mendapatkan komisi — bukan hanya sekali, tetapi berulang setiap bulan. Satu referral bisa menjadi sumber penghasilan jangka panjang.",
+        "badge": "PENDAPATAN BERULANG",
+        "revenues": [
+            {
+                "title": "Penghasilan Jangka Panjang",
+                "paragraph": "Selama referral Anda aktif melakukan trading, Anda akan terus mendapatkan bagian komisi. Tidak ada batas waktu kadaluarsa untuk referral Anda."
+            },
+            {
+                "title": "Komisi Berulang Setiap Bulan",
+                "paragraph": "Setiap transaksi oleh jaringan Anda dikonversi menjadi komisi yang bisa Anda tarik kapan saja. Komisi ini akan berjalan setiap bulan selama afiliasi Anda tetap aktif."
+            }
+        ]
+    },
+    "avilablebrokersection": {
+        "title": "Referral Anda bebas memilih broker yang tersedia di FXPayout",
+        "paragraph": "Apapun broker yang mereka gunakan, setiap aktivitas trading tetap menghasilkan komisi untuk Anda."
+    },
+    "commissionsystemsection": {
+        "title": "Mulai Menghasilkan Komisi dalam 5 Langkah Mudah",
+        "paragraph": "Setiap kali referral Anda melakukan trading, Anda akan mendapatkan bagian komisi dari FXPayout. Komisi ini berasal dari sistem rebate dan tidak mengurangi keuntungan trader. Semua berjalan otomatis tanpa perlu pengelolaan tambahan.",
+        "badge": "COMMISSION SYSTEM",
+        "commission_broker": "Komisi Broker",
+        "example_calculation": "Contoh Perhitungan Pembagian Komisi",
+        "transfer_rebate": "TRANSFER REBATE",
+        "fxpayout_distribute_rebate": "FXPAYOUT DISTRIBUSI REBATE",
+        "rebate_trader": "REBATE UNTUK TRADER",
+        "internal_earn": "BAGIAN FXPAYOUT",
+        "fxpayout_distribute": "FXPayout Distribusi",
+        "distribution_commission": "PEMBAGIAN KOMISI",
+        "commission_50_percent": "Jika komisi affiliate 50%",
+        "affiliate_commission": "Komisi Affiliate",
+        "card_simulation": {
+            "title": "Simulasi Potensi Komisi dari 10 Referral",
+            "paragraph": "Hanya dengan 10 referral aktif yang melakukan trading secara rutin, Anda bisa mencapai kebebasan finansial.",
+            "benefits": [
+                "Rata-rata rebate per user: $100 / bulan",
+                "Total rebate dari 10 referral: $1,000 / bulan",
+                "Komisi Anda (50%)"
+            ],
+            "info": "*Anda hanya butuh 10 orang trader aktif untuk mencapai target ini."
+        }
+    },
+    "whocanjoinsection": {
+        "title": "Siapa Yang Bisa Bergabung Program Affiliate FXPayout?",
+        "paragraph": "Siapa pun yang memiliki jaringan atau audiens di dunia trading dapat memanfaatkan program affiliate ini.",
+        "badge": "PROGRAM INI UNTUK SIAPA ?",
+        "users": [
+            {
+                "title": "Trader",
+                "description": "Trader aktif yang memiliki relasi atau jaringan sesama trader."
+            },
+            {
+                "title": "Content Creator",
+                "description": "Pembuat konten yang membahas trading, forex, atau finansial."
+            },
+            {
+                "title": "Komunitas Trading",
+                "description": "Pemilik atau pengelola komunitas trader, baik online maupun offline."
+            },
+            {
+                "title": "Affiliate Marketer",
+                "description": "Individu yang terbiasa mempromosikan produk melalui digital marketing."
+            }
+        ],
+        "info": "*dan siapapun kamu yang ingin punya penghasilan lebih"
+    },
+    "howaffiliateworks": {
+        "title": "Mulai Menghasilkan Komisi dalam 5 Langkah Mudah",
+        "paragraph": "Daftar, bagikan link referral, dan dapatkan komisi dari setiap aktivitas trading trader yang Anda referensikan.",
+        "badge": "Cara Kerja AFFILIATE PROGRAM",
+        "workflows": [
+            {
+                "title": "daftar",
+                "subtitle": "Daftar sebagai affiliate",
+                "paragraph":
+                "Buat akun dan mulai bergabung program affiliate FXPayout."
+            },
+            {
+                "title": "hasilkan link",
+                "subtitle": "Dapatkan link referral Anda",
+                "paragraph":
+                "Dapatkan link unik Anda untuk mulai mengajak trader bergabung."
+            },
+            {
+                "title": "bagikan",
+                "subtitle": "Bagikan Link ke trader",
+                "paragraph":
+                "Sebarkan link Anda kepada trader untuk mendaftar"
+            },
+            {
+                "title": "ref trading",
+                "subtitle": "Referral mulai trading",
+                "paragraph":
+                "Trader yang Anda referensikan mulai melakukan transaksi"
+            },
+            {
+                "title": "dapat komisi",
+                "subtitle": "Anda mendapatkan komisi",
+                "paragraph":
+                "Anda memperoleh komisi dari setiap pendaftaran referral Anda."
+            }
+        ]
+    },
+    "securitysection": {
+        "info": "Semua aktivitas trading dilakukan langsung melalui broker resmi."
+    },
+    "faqsection": {
+        "title": "Pertanyaan Umum Affiliate FXPayout",
+        "paragraph": "Temukan jawaban untuk pertanyaan umum seputar program Affiliate FX Payout",
+        "faqs": [
+            {
+                "question": "Apakah saya harus trading?",
+                "answer": "Tidak. Anda tidak perlu melakukan trading. Anda hanya perlu membagikan link referral, dan komisi akan dihasilkan dari aktivitas trading referral Anda."
+            },
+            {
+                "question": "Apakah saya perlu mengelola dana?",
+                "answer": "Tidak. Anda tidak perlu mengelola dana apa pun. Semua aktivitas trading dilakukan langsung oleh trader di broker."
+            },
+            {
+                "question": "Apakah ada potongan dari rebate trader?",
+                "answer": "Tidak ada potongan tambahan dari sisi Anda. Komisi yang Anda terima berasal dari pembagian komisi broker (Introducing Broker), tanpa mempengaruhi hasil trading trader."
+            },
+            {
+                "question": "Apakah bisa menggunakan lebih dari satu broker?",
+                "answer": "Ya, Anda dapat menggunakan dan mempromosikan lebih dari satu broker yang tersedia di FXPayout untuk menjangkau lebih banyak trader."
+            }
+        ]
+    },
+    "ctasection": {
+        "title": "Mulai Hasilkan Komisi dari Referral Anda Hari Ini",
+        "paragraph": "Daftar sekarang dan mulai bangun penghasilan jangka panjang dari FXPayout."
+    },
+    "component": {
+        "big_card": {
+            "username": "John Doe",
+            "commission": "Total Komisi Dihasilkan",
+            "info": "Komisi dari aktivitas trading trader yang Anda referensikan."
+        }
+    }
+}

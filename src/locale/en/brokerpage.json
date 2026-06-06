@@ -7,7 +7,10 @@
         "title": "Broker Partners and Details",
         "paragraph": "Selected brokers with top tier execution and rebate schemes of up to 90%. Compare instrument details and choose the broker that best fits your trading strategy.",
         "tag": "BROKER LIST",
-        "searchPlaceholder": "Search for a broker"
+        "searchPlaceholder": "Search for a broker",
+        "total_brokers": "Total Brokers",
+        "filter_brokers": "Filter Brokers",
+        "sort_by": "Sort By"
     },
     "card": {
         "rebatePerInstrument": "Rebate per Instrument",

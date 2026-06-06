@@ -18,9 +18,11 @@ const claimRebateSuNav: SubNavigationList[] = [
 ];
 
 const serviceSubNav: SubNavigationList[] = [
-  { code: "validation", title: "Validasi Akun", url: '/validation' },
+  // { code: "validation", title: "Validasi Akun", url: '/validation' },
   { code: "transfer", title: "Pindah Akun", url: '/transfer' },
-  { code: "affiliate", title: "Affiliate", url: '#' },
+  { code: "forex", title: "Forex", url: '/forex' },
+  { code: "vipRebate", title: "VIP Rebate", url: '/vip-rebate' },
+  { code: "affiliate", title: "Affiliate", url: '/affiliate' },
 ];
 
 export const listNavigation: NavigationLink[] = [

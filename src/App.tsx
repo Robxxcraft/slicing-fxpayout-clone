@@ -21,14 +21,14 @@ import NotFound from "./pages/NotFound";
 import RebateForex from "./pages/RebateForex";
 import SchedulePage from "./pages/SchedulePage";
 import CalculatorPage from "./pages/CalculatorPage";
-import ValidationPage from "./pages/ValidationPage";
+// import ValidationPage from "./pages/ValidationPage";
 import TransferAccount from "./pages/TransferAccount";
 import BrokerDetailPage from "./pages/BrokerDetailPage";
 
-import LoginPage from "./pages/auth/LoginPage";
-import RegisterPage from "./pages/auth/RegisterPage";
-import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
-import ProfileRegisterPage from "./pages/auth/ProfileRegisterPage";
+const LoginPage =   lazy(() => import("./pages/auth/LoginPage"));
+const RegisterPage =   lazy(() => import("./pages/auth/RegisterPage"));
+const VerifyEmailPage =   lazy(() => import("./pages/auth/VerifyEmailPage"));
+const ProfileRegisterPage =   lazy(() => import("./pages/auth/ProfileRegisterPage"));
 
 const ProfilePage = lazy(() => import("./pages/dashboard/common/ProfilePage"));
 const ChangePasswordPage = lazy(() => import("./pages/dashboard/common/ChangePasswordPage"));
@@ -61,6 +61,9 @@ import MainLayout from "./components/MainLayout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import ContainerDashboard from "./components/dashboard/common/ContainerDashboard";
 import SEO from "./components/common/SEO";
+import ForexRebatePage from "./pages/ForexRebatePage";
+import VipRebatePage from "./pages/VipRebatePage";
+import AffiliateLandingPage from "./pages/AffiliateLandingPage";
 
 function App() {
   const [authUser, setAuthUser] = useState<UserProfile | null>(null);
@@ -158,16 +161,19 @@ function App() {
               <Route path="calculator" element={<CalculatorPage />} />
               <Route path="news" element={<NewsPage />} />
               <Route path="transfer" element={<TransferAccount />} />
-              <Route path="validation" element={<ValidationPage />} />
+              {/* <Route path="validation" element={<ValidationPage />} /> */}
               <Route path="schedule/:brokerId" element={<SchedulePage />} />
               <Route path="rebate-forex" element={<RebateForex />} />
+              <Route path="forex" element={<ForexRebatePage />} />
+              <Route path="vip-rebate" element={<VipRebatePage />} />
+              <Route path="affiliate" element={<AffiliateLandingPage />} />
             </Route>
 
             {/* Auth Routes */}
-            <Route path="login" element={<LoginPage />} />
-            <Route path="register" element={<RegisterPage />} />
-            <Route path="verify-email" element={<VerifyEmailPage />} />
-            <Route path="profile-register" element={<ProfileRegisterPage />} />
+            <Route path="login" element={<Suspense><LoginPage /></Suspense>} />
+            <Route path="register" element={<Suspense><RegisterPage /></Suspense>} />
+            <Route path="verify-email" element={<Suspense><VerifyEmailPage /></Suspense>} />
+            <Route path="profile-register" element={<Suspense><ProfileRegisterPage /></Suspense>} />
 
             {/* Dashboard Routes (Admin/User/Affiliator) */}
             {authUser?.role === "admin" && (

@@ -9,16 +9,39 @@
         "disadvantage": "Kekurangan",
         "close": "Tutup",
         "readMore": "Baca selengkapnya",
-        "seeAll": "Lihat semua"
+        "seeAll": "Lihat semua",
+        "month": "bulan",
+        "title_month": "Bulan",
+        "from_weeks_ago": "dari minggu lalu",
+        "title_traders": "Traders",
+        "title_others": "Lainnya",
+        "title_all": "Semua",
+        "title_local": "Lokal",
+        "title_international": "Internasional",
+        "title_newest": "Terbaru",
+        "title_recommendation": "Recommendation",
+        "title_name": "Nama",
+        "highest_rebate": "Rebate Tertinggi",
+        "lowest_rebate": "Rebate Terendah",
+        "title_low": "Rendah",
+        "title_medium": "Sedang",
+        "title_high": "Tinggi",
+        "title_apply": "Terapkan"
     },
     "button": {
         "registerNow": "Daftar Sekarang",
         "calculateRebate": "Hitung Rebate",
-        "visitWebsite": "Kunjungi Website"
+        "visitWebsite": "Kunjungi Website",
+        "join_now": "Bergabung Sekarang",
+        "see_list_broker": "Lihat Daftar Broker"
     },
     "cta": {
         "title": "Siap meningkatkan efisiensi profit trading Anda?",
         "paragraph": "Daftar sekarang dan mulai dapatkan rebate hingga 90%."
+    },
+    "cta_trader": {
+        "title": "Mulai Trading Lebih Efisien Hari Ini",
+        "paragraph": "Daftar sekarang dan dapatkan rebate dari setiap transaksi trading Anda. Tanpa biaya tambahan. Tanpa risiko tambahan."
     },
     "methods": {
         "bank_transfer": "Bank Transfer",
@@ -47,7 +70,9 @@
             "schedule": "Jadwal Rebate",
             "validation": "Validasi Akun",
             "transfer": "Transfer Akun",    
-            "affiliate": "Program Affiliate"      
+            "affiliate": "Program Affiliate",
+            "forex": "Forex",
+            "vipRebate": "VIP Rebate"      
         }
     },
     "footer": {

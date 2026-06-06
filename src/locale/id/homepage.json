@@ -4,9 +4,19 @@
         "description": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader."
     },
     "hero": {
-        "title": "Trading Lebih Untung Rebate Hingga 90% untuk Trader.",
-        "subtitle": "FXPayout adalah platform rebate forex terpercaya yang memberikan cashback hingga 90% dari komisi broker langsung kepada trader.",
-        "badge": "Dapatkan Rebate 90% Untuk Trader",
+        "title": "Dapatkan Cashback Dari Setiap Transaksi Trading & <underline>Tanpa Biaya Tambahan.</underline>",
+        "subtitles": [
+            "FXPayout Bukan Broker",
+            "Tidak Menerima Deposit",
+            "Tidak Mengakses Akun Trading Kamu"
+        ],
+        "badge": "Trading Hemat dengan Rebate Forex",
+        "runningTexts": [
+            "100% Tanpa Biaya Tambahan",
+            "Dana Langsung ke Broker",
+            "Tanpa Akses Akun",
+            "Transparan & Aman"
+        ],
         "estimateRebate": {
             "title": "Estimasi Rebate",
             "subtitle": "Pilih broker dan masukkan lot per bulan untuk estimasi cepat",
@@ -19,23 +29,38 @@
             "info": "Kami mengembalikan hingga 90% komisi IB kepada trader. Proses cepat, aman, dan transparan tanpa mengubah spread atau kondisi trading." 
         }
     },
-    "benefit": {
-        "items": [
+    "problemSection": {
+        "title": "Tanpa Disadari, Biaya Trading Mengurangi Profit Anda",
+        "paragraph": "Setiap transaksi trading memiliki biaya seperti spread dan komisi. Tanpa rebate, biaya tersebut akan terus mengurangi hasil trading Anda.",
+        "badge": "Masalah Umum Trader",
+        "problems": [
+            "Biaya trading bisa mengurangi profit Anda secara signifikan.",
+            "Spread, komisi, dan biaya lainnya seringkali tidak disadari oleh trader."
+        ],
+        "then": "Lalu solusinya?",
+        "solutions": [
+            "Gunakan Rebate.",
+            "Dengan rebate, Anda bisa mendapatkan kembali sebagian biaya tersebut."
+        ]
+    },
+    "profile": {
+        "title": "FXPayout membantu Anda mengurangi biaya trading melalui sistem rebate (cashback).",
+        "paragraph": "Kami bekerja sebagai Introducing Broker (IB) dan membagikan sebagian komisi broker kepada Anda. Tanpa biaya tambahan. Tanpa risiko tambahan.",
+        "badge": "HADIR SEBAGAI SOLUSI",
+        "searchPlaceholder": "rebate forex, cashback trading, IB forex terpercaya...",
+        "badges": ["Rebate Forex", "Cashback Trading", "Rebate FBS", "Rebate Exness", "Rebate XM", "IB Forex Terpercaya"],
+        "features": [
             {
-                "title": "Rebate 90% untuk trader",
-                "description": "Dapatkan Cashback terbesar setiap lot"
+                "title": "Rebate Hingga 90%",
+                "paragraph": "Dapatkan cashback hingga 90% dari komisi broker langsung ke akun Anda."
             },
             {
-                "title": "Pembayaran mingguan atau on-demand",
-                "description": "Nikmati Cair cepat via bank lokal/e-wallet."
+                "title": "Fokus ke trader",
+                "paragraph": "Cashback langsung tanpa mengubah kondisi trading."
             },
             {
-                "title": "Dashboard monitoring real-time",
-                "description": "Pantau Riwayat rebate secara lengkap."
-            },
-            {
-                "title": "Support lokal WhatsApp & Telegram",
-                "description": "Dilengkapi Support dengan respon cepat"
+                "title": "Local Support",
+                "paragraph": "Support berbagai bahasa & jam operasional ramah trader."
             }
         ]
     },
@@ -71,6 +96,51 @@
         "paragraph": "Nikmati promo periode terbatas khusus untuk trader yang baru bergabung di FXPayout.",
         "tag": "Periode Terbatas"
     },
+    "securitySection": {
+        "title": "Keamanan Dana Anda adalah Prioritas Kami",
+        "badge": "KAMU HARUS TAHU",
+        "contents": [
+            {
+                "title": "FXPayout Bukan Broker",
+                "paragraph": "Kami tidak mengelola dana Anda. Semua transaksi tetap dilakukan langsung di broker resmi."
+            },
+            {
+                "title": "Tidak Menerima Deposit",
+                "paragraph": "Kami tidak pernah meminta Anda untuk transfer dana. Semua aktivitas trading tetap di akun broker Anda."
+            },
+            {
+                "title": "Tidak Memiliki Akses Akun",
+                "paragraph": "Kami tidak memiliki akses ke akun trading dan tidak menyimpan data login Anda."
+            }
+        ]
+    },
+    "benefit": {
+        "title": "Maksimalkan Profit Trading Tanpa Biaya Tambahan",
+        "paragraph": "Dapatkan cashback dari setiap transaksi trading Anda tanpa mengubah kondisi broker. Sistem transparan, aman, dan dirancang untuk meningkatkan efisiensi profit Anda.",
+        "badge": "MENGAPA FX PAYOUT",
+        "items": [
+            {
+                "title": "💰 Mengurangi Biaya Trading",
+                "description": "Sebagian biaya trading kembali ke Anda sebagai cashback."
+            },
+            {
+                "title": "🔄 Rebate Langsung dari Broker",
+                "description": "Sebagian biaya trading kembali ke Anda sebagai cashback."
+            },
+            {
+                "title": "🚫 Tanpa Biaya Tambahan",
+                "description": "Tanpa biaya tersembunyi atau potongan apa pun. Semuanya Transparan."
+            },
+            {
+                "title": "🔒 Sistem Aman & Transparan",
+                "description": "Semua transaksi tetap dilakukan langsung di broker. Kami tidak mengakses akun trading atau menyimpan data login Anda."
+            },
+            {
+                "title": "⚡ Dukungan Responsif",
+                "description": "Tim support lokal siap membantu Anda melalui WhatsApp dan Telegram dengan respon cepat dan solusi yang jelas."
+            }
+        ]
+    },
     "reviews": {
         "title": "Apa Kata Trader yang Menggunakan FXPayout?",
         "paragraph": "Pengalaman nyata dari trader yang mendapatkan tambahan profit dari program rebate.",
@@ -102,25 +172,9 @@
             "errors": { "captcha": "Mohon konfirmasi bahwa Anda bukan robot" }
         }
     },
-    "profile": {
-        "title": "FXPayout, rujukan utama rebate forex bagi trader.",
-        "paragraph": "FXPayout dikenal sebagai platform rebate forex yang mengembalikan hingga 90% komisi broker, memprioritaskan pembayaran cepat dan layanan support lokal untuk para trader.",
-        "tag": "Dipercaya komunitas trader",
-        "searchPlaceholder": "rebate forex, cashback trading, IB forex terpercaya...",
-        "badges": ["Rebate Forex", "Cashback Trading", "Rebate FBS", "Rebate Exness", "Rebate XM", "IB Forex Terpercaya"],
-        "features": [
-            {
-                "title": "Rebate Hingga 90%",
-                "paragraph": "Dapatkan cashback hingga 90% dari komisi broker langsung ke akun Anda."
-            },
-            {
-                "title": "Fokus ke trader",
-                "paragraph": "Cashback langsung tanpa mengubah kondisi trading."
-            },
-            {
-                "title": "Local Support",
-                "paragraph": "Support berbagai bahasa & jam operasional ramah trader."
-            }
-        ]
+    "riskSection": {
+        "title": "Risiko Trading Tetap Ada, Biaya Bisa Dikurangi",
+        "paragraph": "Trading forex memiliki risiko tinggi. Namun dengan FXPayout, Anda dapat mengurangi biaya trading tanpa menambah risiko, karena semua dana tetap berada di broker Anda.",
+        "cta": "Dana Tetap Aman di Broker"
     }
 }

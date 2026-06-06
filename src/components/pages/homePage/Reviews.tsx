@@ -16,13 +16,14 @@ import type { ModalResponse } from "@/types/validationForm.type";
 import SuccessModal from "@/components/ui/SuccessModal";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { GuestAPI } from "@/api";
+import BadgeSection from "@/components/ui/BadgeSection";
 
 const Reviews = () => {
   const { t } = useTranslation(["common", "homepage"]);
   const [dataTestimonial, setDataTestimonial] = useState<Testimonial[]>([]);
   const [showModalForm, setShowModalForm] = useState<boolean>(false);
   const [showFeedbackSubmitForm, setShowFeedbackSubmitForm] = useState<ModalResponse>(null);
-  
+
   useEffect(() => {
     const getData = async () => {
       const { error, result } = await GuestAPI.getFeedback();
@@ -35,16 +36,16 @@ const Reviews = () => {
   useLockBodyScroll(showModalForm || showFeedbackSubmitForm !== null);
   return (
     <>
-      <section className="mb-20 xl:mb-0">
-        <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 2xl:pt-28">
+      <section className="mt-14 xl:mt-[120px] py-14 xl:py-[120px] bg-[#F9F9F9]">
+        <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4">
             <div className="flex flex-col items-start text-left">
-              <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
-                <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
-                <span className="text-base md:text-xl font-medium text-white">
-                  {t("homepage:reviews.tag")}
-                </span>
-              </div>
+              <BadgeSection
+                icon={
+                  <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
+              }>
+                {t("homepage:reviews.tag")}
+              </BadgeSection>
               <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
                 {t("homepage:reviews.title")}
               </h2>

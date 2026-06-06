@@ -8,9 +8,10 @@ import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const Broker = () => {
-  const { t } = useTranslation(["brokerpage"]);
+  const { t, i18n } = useTranslation(["common", "brokerpage"]);
   const [showNotify, setShowNotify] = useState<boolean>(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState<string>(() => searchParams.get("search") || "");
@@ -47,7 +48,12 @@ const Broker = () => {
       <title>{t("brokerpage:helmet.title")}</title>
       <Navbar active="broker" />
       <main>
-        <Header query={query} onHandleSearch={handleSearch} />
+        <Header 
+          query={query} 
+          onHandleSearch={handleSearch} 
+          totalBrokers={brokerPartners.length}
+          useFilter
+        />
         {brokerPartners.length === 0 ? 
           <p className="mt-6 lg:mt-8 2xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 text-center text-black/80">
             Broker not found
@@ -56,7 +62,12 @@ const Broker = () => {
           <BrokerList brokerPartners={brokerPartners} pathUrl="broker" />
         }
         {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
-        <CtaSection />
+        <CtaSection 
+          title={t("cta_trader.title")}
+          paragraph={t("cta_trader.paragraph")}
+          button={t("button.registerNow")}
+          urlButton={getLocalizedPath("register", i18n.language)}
+        />
       </main>
       <Footer />
     </div>

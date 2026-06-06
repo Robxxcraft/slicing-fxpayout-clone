@@ -1,0 +1,100 @@
+{
+    "helmet": {
+        "title": "VIP Rebate Forex Hingga 95% | Cashback Trading FXPayout",
+        "description": ""
+    },
+    "homepage": {
+        "title": "VIP Rebate Forex Hingga 95% | Cashback Trading FXPayout",
+        "paragraph": "FXPayout adalah platform rebate forex (Introducing Broker) yang membantu trader mendapatkan cashback dari setiap transaksi trading.",
+        "badge": "FXPayout Rebate Platform"
+    },
+    "whatrebateforex": {
+        "title": "Apa Itu Rebate Forex?",
+        "paragraphs": [
+            "Rebate forex adalah cashback dari komisi broker yang dibagikan kembali kepada trader. Setiap kali Anda melakukan trading, broker mengenakan biaya tertentu seperti spread atau komisi.",
+            "Sebagian dari biaya tersebut dapat dikembalikan kepada Anda dalam bentuk rebate. Dengan menggunakan rebate, Anda dapat meningkatkan efisiensi trading karena biaya transaksi menjadi lebih rendah."
+        ],
+        "badge": "REBATE FOREX",
+        "subtitle": "Bagaimana Rebate Forex Bekerja",
+        "flows": [
+            {
+                "title": "Trader Melakukan Trading",
+                "paragraph": "Setiap transaksi yang Anda lakukan akan dikenakan biaya seperti spread atau komisi oleh broker."
+            },
+            {
+                "title": "Broker Menghasilkan Komisi",
+                "paragraph": "Dari aktivitas trading tersebut, broker membagikan sebagian komisi melalui sistem Introducing Broker (IB)."
+            },
+            {
+                "title": "Rebate Dibagikan",
+                "paragraph": "Sebagian komisi tersebut dikembalikan kepada Anda sebagai cashback (rebate) secara otomatis."
+            }
+        ]
+    },
+    "leveltradersection": {
+        "title": "Tingkatkan Rebate Anda Seiring Aktivitas Trading",
+        "paragraph": "Semakin aktif Anda trading, semakin besar cashback yang bisa Anda dapatkan.",
+        "badge": "JANGAN SALAH PILIH",
+        "rebate_until": "Rebate Hingga",
+        "detail_levels": [
+            {
+                "tier": "Standar Rebate",
+                "paragraph": "Program ini memberikan fleksibilitas bagi trader untuk memulai tanpa komitmen besar.",
+                "terms": [
+                    "Tanpa Minimum Deposit",
+                    "Langsung Aktif Setelah Registrasi",
+                    "Cocok Untuk Semua Tipe Trader"
+                ]
+            },
+            {
+                "tier": "Active Rebate",
+                "paragraph": "Bagi trader yang aktif, rebate dapat meningkat hingga 85% berdasarkan aktivitas trading.",
+                "terms": [
+                    "Aktivitas trading konsisten selama <b>1 bulan</b>",
+                    "Semakin aktif Anda trading, semakin besar rebate yang didapat."
+                ]
+            },
+            {
+                "tier": "VIP Rebate",
+                "paragraph": "Program VIP dirancang untuk trader dengan komitmen dan aktivitas trading yang lebih tinggi.",
+                "terms": [
+                    "Total deposit mulai dari <b>$2000</b>",
+                    "Menjaga equity akun minimal <b>$1000</b> selama periode 1 bulan"
+                ]
+            }
+        ],
+        "how_to_improve": "Bagaimana Cara Meningkatkan Level Saya?",
+        "answer_to_improve": "FXPayout cocok untuk trader yang ingin mengurangi biaya trading tanpa menambah risiko tambahan."
+    },
+    "faqsection": {
+        "title": "Pertanyaan yang Sering Diajukan",
+        "paragraph": "Temukan jawaban untuk pertanyaan umum seputar rebate forex dan layanan FXPayout.",
+        "faqs": [
+            {
+                "question": "Apa itu forex rebate?",
+                "answer": "Forex rebate adalah cashback dari sebagian komisi atau spread yang dibayarkan setiap kali Anda melakukan trading. Dengan rebate, Anda bisa mengurangi biaya trading dan meningkatkan profit."
+            },
+            {
+                "question": "Apakah forex rebate aman?",
+                "answer": "Ya, rebate aman karena berasal dari komisi broker resmi (Introducing Broker). Tidak ada perubahan pada akun trading atau kondisi trading Anda."
+            },
+            {
+                "question": "Apakah FXPayout broker?",
+                "answer": "Tidak. FXPayout bukan broker dan tidak mengelola dana trading Anda. Kami hanya sebagai perantara (Introducing Broker) yang mengembalikan sebagian komisi kepada trader."
+            },
+            {
+                "question": "Apakah saya perlu transfer dana ke FXPayout?",
+                "answer": "Tidak. Anda tidak perlu melakukan deposit ke FXPayout. Semua dana tetap berada di akun broker Anda."
+            },
+            {
+                "question": "Apakah FXPayout memiliki akses ke akun trading saya?",
+                "answer": "Tidak. Kami tidak memiliki akses ke akun trading Anda dan tidak menyimpan data login atau password."
+            }
+        ]
+    },
+    "warningforexsection": {
+        "title": "Trading Forex Berisiko Tinggi, Namun Biaya Bisa Dikurangi dengan Rebate",
+        "paragraph": "Trading forex memiliki risiko tinggi dan dapat menyebabkan kerugian hingga seluruh modal Anda. Rebate membantu mengurangi biaya trading, namun tidak menghilangkan risiko trading.",
+        "badge": "Peringatan Risiko"
+    }
+}

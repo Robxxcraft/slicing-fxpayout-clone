@@ -7,7 +7,10 @@
         "title": "Broker Partner dan Detail",
         "paragraph": "Broker pilihan dengan eksekusi terbaik dan skema rebate hingga 90%. bandingkan detail instrumen dan pilih broker yang paling cocok untuk strategi trading Anda.",
         "tag": "DAFTAR BROKER",
-        "searchPlaceholder": "Cari broker disini"
+        "searchPlaceholder": "Cari broker disini",
+        "total_brokers": "Jumlah Broker",
+        "filter_brokers": "Filter Broker",
+        "sort_by": "Urutkan Berdasarkan"
     },
     "card": {
         "rebatePerInstrument": "Rebate per Instrumen",

@@ -8,6 +8,7 @@ const SelectDropdown = ({
   handleChangeInput,
   wrapperCL="",
   inputCL="",
+  textInputCL="",
   containerCL="",
   positionDrop="right",
   positionY="down",
@@ -18,6 +19,7 @@ const SelectDropdown = ({
   containerCL?: string;
   wrapperCL?: string;
   inputCL?: string;
+  textInputCL?: string;
   positionDrop?: "left" | "center" | "right";
   positionY?: "down" | "up";
   objectInput: {
@@ -94,7 +96,7 @@ const SelectDropdown = ({
               <p 
                 key={item.key}
                 onClick={() => handleChange(item.key)}
-                className="p-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md cursor-pointer">
+                className={`${textInputCL} px-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md cursor-pointer`}>
                 {item.value}
               </p>
             ))}

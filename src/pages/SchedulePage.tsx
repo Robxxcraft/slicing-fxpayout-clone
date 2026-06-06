@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { brokers } from "@/utils/dataBroker/brokers";
 import NotFound from "./NotFound";
 import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 type Schedule = {
   keyTranslation: string;
@@ -20,7 +21,7 @@ const scheduleItems: Schedule[] = [
 ]
 
 const SchedulePage = () => {
-  const { t, i18n } = useTranslation(["schedulepage"])
+  const { t, i18n } = useTranslation(["common", "schedulepage"])
   const { brokerId } = useParams();
   const broker = brokers[brokerId as keyof typeof brokers];
   
@@ -66,7 +67,12 @@ const SchedulePage = () => {
             </Table.Body>
           </Table>
         </section>
-        <CtaSection />
+        <CtaSection 
+          title={t("cta.title")}
+          paragraph={t("cta.paragraph")}
+          button={t("button.registerNow")}
+          urlButton={getLocalizedPath("register", i18n.language)}
+        />
       </main>
       <Footer />
     </div>

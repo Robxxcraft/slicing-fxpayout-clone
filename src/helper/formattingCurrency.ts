@@ -18,11 +18,11 @@ export const formattingUsd = (amount: number) => {
   }).format(amount);
 };
 
-export const formattingEmptyCurrency = (amount: number) => {
+export const formattingEmptyCurrency = (amount: number, fractionDigits: number | undefined = 2) => {
   return new Intl.NumberFormat("en-US", {
     style: "decimal",
     useGrouping: true,
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
   }).format(amount || 0);
 };

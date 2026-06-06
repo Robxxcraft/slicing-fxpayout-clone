@@ -1,7 +1,7 @@
+import BadgeSection from "@/components/ui/BadgeSection";
 import { useState, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { CiSearch } from "react-icons/ci";
-import { PiStarFill } from "react-icons/pi";
 
 type FeatureProfile = {
   title: string;
@@ -37,7 +37,7 @@ const Profile = () => {
   };
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-14 xl:pt-[120px] 2xl:pt-56">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-14 xl:pt-[60px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
         <div className="order-2 lg:order-1 px-4 py-6 md:px-6 2xl:px-[42px] md:py-6 2xl:py-[42px] w-full bg-[#F9F8F4] rounded-[20px] md:rounded-[40px]">
           <div className="py-3 md:py-4 2xl:py-6 px-3 md:px-4 2xl:px-5 flex items-center gap-2 md:gap-4 w-full bg-white border border-[#D0D5DD] rounded-full">
@@ -89,23 +89,15 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="order-1 lg:order-2">
-          <div className="flex lg:block justify-center">
-            <div className="px-6 py-2 md:py-4 flex flex-row items-center gap-x-2 bg-primary rounded-full w-fit">
-              <div className="flex gap-0.5 lg:gap-1">
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <PiStarFill
-                    key={idx}
-                    className="text-base md:text-xl text-[#FFC250]"
-                  />
-                ))}
-              </div>
-              <p className="text-sm md:text-base 2xl:text-xl font-medium text-[#E9E9E9] text-center">
-                {t("homepage:profile.tag")}
-              </p>
-            </div>
-          </div>
-          <h2 className="font-wix-madefor-display my-6 2xl:my-8 text-center lg:text-left text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[64px] font-bold leading-[120%]">
+        <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start">
+          <BadgeSection
+            icon={
+              <img src="/fxpayout-white.svg" alt="Logo Fxpayout" 
+                className="h-8"/>
+          }>
+            {t("homepage:profile.badge")}
+          </BadgeSection>
+          <h2 className="my-6 2xl:my-8 text-center lg:text-left text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[48px] font-bold leading-[120%]">
             {t("homepage:profile.title")}
           </h2>
           <p className="text-center lg:text-left text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">

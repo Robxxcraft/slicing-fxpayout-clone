@@ -10,9 +10,10 @@ import PaymentSection from "@/components/pages/rebateForexPage/PaymentSection";
 import AsideSection from "@/components/pages/rebateForexPage/AsideSection";
 import { useTranslation } from "react-i18next";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const RebateForex = () => {
-  const { t } = useTranslation(["claimrebatepage"]);
+  const { t, i18n } = useTranslation(["common", "claimrebatepage"]);
   const [activeSection, setActiveSection] = useState<string>("definition");
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
@@ -55,7 +56,12 @@ const RebateForex = () => {
           <ScheduleSection sectionsRef={sectionsRef} />
         </div>
       </div>
-      <CtaSection />
+      <CtaSection 
+        title={t("cta.title")}
+        paragraph={t("cta.paragraph")}
+        button={t("button.registerNow")}
+        urlButton={getLocalizedPath("register", i18n.language)}
+      />
       <Footer />
     </div>
   );

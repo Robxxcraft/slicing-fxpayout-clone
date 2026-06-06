@@ -10,7 +10,6 @@ import { listNavigation } from "../utils/listNavigation";
 import { FaChevronDown } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { getLocalizedPath, navigateChangeLng } from "@/helper/pathHelper";
-import { toast } from "react-toastify";
 import Button from "./ui/Button";
 import UserContext from "@/context/UserContext";
 import { useRedirectByRole } from "@/hooks/useRedirectByRole";
@@ -53,17 +52,13 @@ const Navbar = ({ active }: { active: string }) => {
     setOpenSubMenu((prev) => prev === idx ? null : idx);
   };
 
-  const showInfoCommingSoon = () => {
-    toast.info("Comming Soon!");
-  }
-
   return (
     <nav
       className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:
-          active === "home"
+          ["home", "forex"].includes(active)
             ? scrollY > 5
               ? "rgba(65,96,255,1)"
               : "rgba(65,96,255,0)"
@@ -106,11 +101,6 @@ const Navbar = ({ active }: { active: string }) => {
                     smooth
                     key={idx} 
                     to={`${getLocalizedPath(subNav.url, i18n.language)}`}
-                    onClick={() => {
-                      if (subNav.code === "affiliate") {
-                        showInfoCommingSoon()
-                      }
-                    }}
                     className="px-6 py-3 text-black hover:bg-light-gray"
                     scroll={(el) => {
                       setTimeout(() => {
@@ -223,11 +213,6 @@ const Navbar = ({ active }: { active: string }) => {
                           if (active.toLocaleLowerCase() == title.toLocaleLowerCase()) {
                             setOpenMenu(false); 
                             setOpenLanguageSelector(false);
-                          }
-                          if (subNav.code === "affiliate") {
-                            setOpenMenu(false); 
-                            setOpenLanguageSelector(false);
-                            showInfoCommingSoon();
                           }
                         }}
                         className="px-4 py-2 text-white hover:bg-light-gray">
