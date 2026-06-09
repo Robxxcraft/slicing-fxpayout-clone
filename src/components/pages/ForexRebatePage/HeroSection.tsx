@@ -5,7 +5,9 @@ import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common", "forexrebatepage"]);
+  const key = "forexrebatepage:herosection";
+
   return (
     <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-10 lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen lg:min-h-fit">
       {/* BACKGROUND ORNAMENT */}
@@ -27,13 +29,13 @@ const HeroSection = () => {
             <img src="/badgeCirclePercent.svg" alt="badge percent" />
           }
         >
-          FXPayout Rebate Platform
+          {t(`${key}.badge`)}
         </BadgeHero>
         <h1 className="max-w-5xl font-wix-madefor-display font-bold text-[36px] md:text-[40px] lg:text-[48px] 2xl:text-[52px] leading-[148%]">
-          Best Forex Rebate Platforms - Cashback Forex Terbaik untuk Trader
+          {t(`${key}.title`)}
         </h1>
         <p className="max-w-5xl text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
-          Maksimalkan setiap perdagangan Anda. Dapatkan pengembalian tunai otomatis dari setiap lot yang ditransaksikan, tanpa mengubah spread atau komisi broker Anda.
+          {t(`${key}.paragraph`)}
         </p>
         <div className="flex flex-row gap-4 flex-wrap md:flex-nowrap">
           <Button 
@@ -43,7 +45,7 @@ const HeroSection = () => {
             size="xl" 
             className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
           >
-            Daftar Sekarang
+            {t("button.registerNow")}
           </Button>
           <Button 
             buttonType="link"
@@ -52,7 +54,7 @@ const HeroSection = () => {
             size="xl" 
             className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
           >
-            Lihat Daftar Broker
+            {t("button.see_list_broker")}
           </Button>
         </div>
       </div>

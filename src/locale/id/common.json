@@ -19,21 +19,23 @@
         "title_local": "Lokal",
         "title_international": "Internasional",
         "title_newest": "Terbaru",
-        "title_recommendation": "Recommendation",
+        "title_recommendation": "Rekomendasi",
         "title_name": "Nama",
         "highest_rebate": "Rebate Tertinggi",
         "lowest_rebate": "Rebate Terendah",
         "title_low": "Rendah",
         "title_medium": "Sedang",
         "title_high": "Tinggi",
-        "title_apply": "Terapkan"
+        "title_apply": "Terapkan",
+        "rebate_until": "Rebate Hingga"
     },
     "button": {
         "registerNow": "Daftar Sekarang",
         "calculateRebate": "Hitung Rebate",
         "visitWebsite": "Kunjungi Website",
         "join_now": "Bergabung Sekarang",
-        "see_list_broker": "Lihat Daftar Broker"
+        "see_list_broker": "Lihat Daftar Broker",
+        "try_now": "Coba Sekarang"
     },
     "cta": {
         "title": "Siap meningkatkan efisiensi profit trading Anda?",

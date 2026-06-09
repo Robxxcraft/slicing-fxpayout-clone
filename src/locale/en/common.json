@@ -26,14 +26,16 @@
         "title_low": "Low",
         "title_medium": "Medium",
         "title_high": "High",
-        "title_apply": "Apply"
+        "title_apply": "Apply",
+        "rebate_until": "Rebate Untill"
     },
     "button": {
         "registerNow": "Register Now",
         "calculateRebate": "Calculate Rebate",
         "visitWebsite": "Visit Website",
         "join_now": "Join Now",
-        "see_list_broker": "View Broker List"
+        "see_list_broker": "View Broker List",
+        "try_now": "Try Now"
     },
     "cta": {
         "title": "Ready to increase your trading profit efficiency?",

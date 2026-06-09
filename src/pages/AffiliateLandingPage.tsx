@@ -19,7 +19,7 @@ const AffiliateLandingPage = () => {
   const { t, i18n } = useTranslation(["common", "affiliatelandingpage"]);
   return (
     <div className="font-inter">
-      {/* <title>VIP Rebate Forex Hingga 95% | Cashback Trading FXPayout</title> */}
+      <title>{t("affiliatelandingpage:helmet.title")}</title>
       <Navbar active="layanan" />
       <main>
         <HeroSection />

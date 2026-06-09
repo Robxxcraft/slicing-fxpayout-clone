@@ -1,0 +1,91 @@
+{
+    "helmet": {
+        "title": "Best Forex Rebate Platforms – Cashback Forex Terbaik untuk Trader",
+        "description": "Bandingkan platform rebate forex dan temukan mengapa FXPayout dipercaya oleh para trader yang mencari program cashback transparan dan tingkat rebate yang kompetitif."
+    },
+    "herosection": {
+        "title": "Best Forex Rebate Platforms - Cashback Forex Terbaik untuk Trader",
+        "paragraph": "Maksimalkan setiap perdagangan Anda. Dapatkan pengembalian tunai otomatis dari setiap lot yang ditransaksikan, tanpa mengubah spread atau komisi broker Anda.",
+        "badge": "FXPayout Rebate Platform"
+    },
+    "whatrebateforex": {
+        "title": "Apa Itu Rebate Forex?",
+        "paragraph": "Rebate Forex adalah sistem cashback yang memungkinkan trader mendapatkan kembali sebagian biaya trading dari komisi broker. Saat ini, terdapat berbagai platform rebate forex dengan sistem dan tingkat transparansi yang berbeda.",
+        "badge": "REBATE FOREX",
+        "content": "FXPayout adalah salah satu platform rebate forex yang beroperasi sebagai <bi>Introducing Broker (IB)</bi> bukan broker, dan <bi>tidak menerima deposit</bi> atau mengelola dana pengguna."
+    },
+    "benefitsection": {
+        "title": "Pilihan Utama Trader Profesional",
+        "paragraph": "Kami merekomendasikan platform dengan rekam jejak terbaik untuk keamanan dana dan kecepatan eksekusi.",
+        "badge": "JANGAN SALAH PILIH",
+        "card_benefit": {
+            "badge": "Recommended",
+            "paragraph": "FXPayout adalah solusi all-in-one untuk trader yang mengutamakan transparansi. Kami bekerja sama langsung dengan penyedia likuiditas untuk memastikan Anda mendapatkan rate tertinggi.",
+            "benefits": [
+                "Tidak Menerima Deposit",
+                "Tidak Memiliki Akses ke Akun Trading",
+                "Rebate Hingga 80%",
+                "Tidak Menampung Dana",
+                "Dukungan Bantuan Responsif",
+                "Sistem Transparan dan Konsisten"
+            ],
+            "info": "FXPayout cocok untuk trader yang ingin mengurangi biaya trading tanpa menambah risiko tambahan."
+        },
+        "card_rebate": {
+            "title": "Dapatkan Rebate Tertinggi",
+            "paragraph": "FXPayout adalah platform rebate forex yang menawarkan rebate hingga 95%"
+        }
+    },
+    "whychoosesection": {
+        "title": "Platform Rebate Forex Lainnya",
+        "paragraph": "Selain FXPayout, terdapat berbagai platform rebate forex lainnya yang menawarkan cashback dengan persentase yang berbeda. Namun, penting untuk memperhatikan beberapa hal sebelum memilih platform:",
+        "badge": "CEK SEBELUM MEMILIH",
+        "features": [
+            {
+                "title": "Apakah Platform menampung dana?",
+                "paragraph": "Tidak. Platform tidak menampung dana pengguna. Tidak ada sistem deposit melalui platform seperti FXPayout. Semua transaksi tetap langsung dilakukan melalui broker."
+            },
+            {
+                "title": "Apakah Meminta Akses Akun Trading?",
+                "paragraph": "Tidak. Platform tidak meminta email maupun password untuk login ke akun broker. Keamanan akun tetap sepenuhnya di tangan pengguna."
+            },
+            {
+                "title": "Apakah Sistem Rebate Transparan?",
+                "paragraph": "Ya. Seluruh proses rebate bersifat transparan, tanpa biaya tersembunyi atau potongan tambahan."
+            }
+        ],
+        "info": "Memilih platform yang aman dan transparan jauh lebih penting dibanding hanya melihat persentase rebate."
+    },
+    "comparisonsection": {
+        "title": "Kenapa FXPayout Lebih Menguntungkan?",
+        "paragraph": "Bandingkan langsung keuntungan dan transparansi antara FXPayout dan platform lainnya.",
+        "badge": "Perbandingan",
+        "other_platforms": "Platform Lainnya",
+        "data": [
+            {
+                "title": "Persentase Cashback",
+                "description": "Cashback dari komisi broker yang Anda terima",
+                "other": "50% - 70%"
+            },
+            {
+                "title": "Rebate Bervariasi",
+                "description": "Nilai rebate tinggi di berbagai instrumen trading"
+            },
+            {
+                "title": "Tanpa Deposit",
+                "description": "Tidak perlu transfer dana untuk mulai menggunakan layanan",
+                "other": "Umumnya memerlukan deposit"
+            },
+            {
+                "title": "Tidak akses akun",
+                "description": "Keamanan akun tetap terjaga sepenuhnya di broker",
+                "other": "Beberapa layanan memiliki akses"
+            },
+            {
+                "title": "Transparan",
+                "description": "Semua proses rebate jelas dan dapat dipantau",
+                "other": "Transparansi terbatas"
+            }
+        ]
+    }
+}

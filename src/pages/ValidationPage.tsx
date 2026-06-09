@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CtaSection from "@/components/CtaSection";
+// import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeaderSection from "@/components/HeaderSection";
@@ -26,7 +26,7 @@ const ValidationPage = () => {
           <ValidationForm />
         </div>
         {showNotify && <TermValidation setShowNotify={setShowNotify}/> }
-        <CtaSection />
+        {/* <CtaSection /> */}
       </main>
       <Footer />
     </div>

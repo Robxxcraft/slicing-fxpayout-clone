@@ -4,17 +4,14 @@ import BoundedIcon from "../brokerDetail/ui/BoundedIcon";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
 
-const benefits = [
-  "Tidak Menerima Deposit",
-  "Tidak Memiliki Akses ke Akun Trading",
-  "Rebate Hingga 80%",
-  "Tidak Menampung Dana",
-  "Dukungan Bantuan Responsif",
-  "Sistem Transparan dan Konsisten"
-];
-
 const BenefitSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common", "forexrebatepage"]);
+  const key = "forexrebatepage:benefitsection";
+
+  const benefits = t(`${key}.card_benefit.benefits`, {
+    returnObjects: true
+  }) as string[];
+
   return (
     <section className="mt-10 md:mt-15 2xl:mt-20 px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-10 md:py-15 xl:py-[120px] bg-[#F9F9F9]">
       <div className="flex flex-col items-center justify-center gap-4">
@@ -23,13 +20,13 @@ const BenefitSection = () => {
             <img src="/people_money.svg" alt="Reg broker" 
               className="scale-90 md:scale-100" />
         }>
-          JANGAN SALAH PILIH
+          {t(`${key}.badge`)}
         </BadgeSection>
         <h2 className="text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%] text-center">
-          Pilihan Utama Trader Profesional
+          {t(`${key}.title`)}
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-5xl text-center">
-          Kami merekomendasikan platform dengan rekam jejak terbaik untuk keamanan dana dan kecepatan eksekusi.
+          {t(`${key}.paragraph`)}
         </p>
       </div>
 
@@ -50,12 +47,12 @@ const BenefitSection = () => {
             <div className="px-4 md:px-6 py-2 flex items-center gap-2 w-fit h-fit bg-primary rounded-full">
               <img src="/star-splash.svg" alt="Star" />
               <p className="text-sm text-white font-semibold leading-[200%]">
-                Recommended
+                {t(`${key}.card_benefit.badge`)}
               </p>
             </div>
           </div>
           <p className="mt-6 text-base md:text-lg leading-[180%]">
-            FXPayout adalah solusi all-in-one untuk trader yang mengutamakan transparansi. Kami bekerja sama langsung dengan penyedia likuiditas untuk memastikan Anda mendapatkan rate tertinggi.
+            {t(`${key}.card_benefit.paragraph`)}
           </p>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
             {benefits.map((benefit, index) => (
@@ -71,7 +68,7 @@ const BenefitSection = () => {
           </div>
           <div className="mt-6 py-4 px-5 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary">
             <p className="text-base font-medium text-black/70 leading-[192%]">
-              FXPayout cocok untuk trader yang ingin mengurangi biaya trading tanpa menambah risiko tambahan.
+              {t(`${key}.card_benefit.info`)}
             </p>
           </div>
         </div>
@@ -86,16 +83,16 @@ const BenefitSection = () => {
             />
             <div className="mt-4 space-y-2">
               <p className="text-xl md:text-2xl text-white font-semibold leading-[180%]">
-                Dapatkan Rebate Tertinggi
+                {t(`${key}.card_rebate.title`)}
               </p>
               <p className="text-lg text-white leading-[180%]">
-                FXPayout adalah platform rebate forex yang menawarkan rebate hingga 95%
+                {t(`${key}.card_rebate.paragraph`)}
               </p>
             </div>
             <div className="mt-2 lg:mt-5">
               <div className="mb-2 flex justify-between items-end">
                 <p className="text-base text-white leading-[180%]">
-                  Rebate Hingga
+                  {t("text.rebate_till")}
                 </p>
                 <p className="text-[40px] md:text-[48px] text-white italic font-semibold">
                   95%
@@ -112,7 +109,7 @@ const BenefitSection = () => {
             urlTo={getLocalizedPath("register", i18n.language)}
             className="mt-6"
           >
-            Coba Sekarang
+            {t("button.try_now")}
           </Button>
         </div>
       </div>

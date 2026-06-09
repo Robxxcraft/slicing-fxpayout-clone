@@ -19,12 +19,12 @@ const categories = [
 const Header = ({
   query, 
   onHandleSearch,
-  totalBrokers,
+  totalBrokers = 0,
   useFilter
 }: {
   query?: string; 
   onHandleSearch?: ChangeEventHandler<HTMLInputElement>;
-  totalBrokers: number;
+  totalBrokers?: number;
   useFilter?: boolean;
 }) => {
   const { t } = useTranslation(["common", "brokerpage"]);
@@ -135,7 +135,7 @@ const Header = ({
                   {totalBrokers}
                 </span>
               </p>
-              <div className="flex items-center gap-3 w-full md:w-fit">
+              <div className="flex flex-wrap md:flex-nowrap items-center gap-3 w-full md:w-fit">
                 <div className="shrink-0 flex items-center gap-2">
                   <BsSortDown className="text-lg 2xl:text-2xl" />
                   <p className="text-base 2xl:text-xl leading-6 text-black/80">
