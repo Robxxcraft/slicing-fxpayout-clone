@@ -16,7 +16,13 @@ import { useRedirectByRole } from "@/hooks/useRedirectByRole";
 
 export type HandleChangeLanguage = (lang: Language) => void;
 
-const Navbar = ({ active }: { active: string }) => {
+const Navbar = ({ 
+  active,
+  transparentBgTop, 
+}: { 
+  active: string;
+  transparentBgTop?: boolean
+}) => {
   const { t, i18n } = useTranslation(["common"]);
   const [authUser] = useContext(UserContext);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -58,7 +64,7 @@ const Navbar = ({ active }: { active: string }) => {
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:
-          ["home", "forex"].includes(active)
+          transparentBgTop
             ? scrollY > 5
               ? "rgba(65,96,255,1)"
               : "rgba(65,96,255,0)"
@@ -68,17 +74,17 @@ const Navbar = ({ active }: { active: string }) => {
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
-          className="mb-2 lg:mb-3 w-4 md:w-5 lg:w-6 2xl:w-8"
+          className="w-4 md:w-5 lg:w-5 2xl:w-5"
         />
-        <span className="text-base md:text-xl 2xl:text-3xl font-semibold text-white">
+        <span className="text-base md:text-lg 2xl:text-lg font-semibold text-white">
           FXPAYOUT
         </span>
       </Link>
-      <div className="hidden xl:flex gap-6">
+      <div className="hidden xl:flex gap-4">
         {listNavigation.map(({ code, title, url, sublist }, index) => (
           <div
             key={index}
-            className={`relative group flex items-center gap-2 px-2 text-light-gray text-base 2xl:text-xl border-white transition-all duration-300 ease-out`}
+            className={`relative group flex items-center gap-2 px-2 text-light-gray text-sm 2xl:text-base border-white transition-all duration-300 ease-out`}
           >
             <Link 
               to={getLocalizedPath(url, i18n.language)} 
@@ -95,7 +101,7 @@ const Navbar = ({ active }: { active: string }) => {
             {sublist !== undefined && 
             <>
               <FaChevronDown className="text-[14px] cursor-pointer group-hover:rotate-180 transition-all duration-200" />
-              <div className="absolute py-6 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
+              <div className="absolute py-4 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
                 {sublist?.map((subNav, idx) => (
                   <HashLink 
                     smooth
@@ -133,10 +139,22 @@ const Navbar = ({ active }: { active: string }) => {
             className="size-11 rounded-full object-cover border border-white cursor-pointer" />  
         :
         <>
-          <Button buttonType="link" urlTo={getLocalizedPath("login", i18n.language)} variant="outline-light" size="lg" className="py-3! font-medium!">
+          <Button 
+            buttonType="link" 
+            urlTo={getLocalizedPath("login", i18n.language)} 
+            variant="outline-light" 
+            size="lg" 
+            className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
+          >
             Login
           </Button>
-          <Button buttonType="link" urlTo={getLocalizedPath("register", i18n.language)} variant="light" size="lg" className="py-3! font-medium!">
+          <Button 
+            buttonType="link" 
+            urlTo={getLocalizedPath("register", i18n.language)} 
+            variant="light" 
+            size="lg" 
+            className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
+          >
             Daftar
           </Button>
         </>
@@ -158,7 +176,7 @@ const Navbar = ({ active }: { active: string }) => {
             <img
               src="/fxpayout-white.svg"
               alt="logo fx payout"
-              className="mb-2 w-4 md:w-5"
+              className="w-4 md:w-5"
             />
             <span className="text-base md:text-2xl font-semibold text-white">
               FXPAYOUT

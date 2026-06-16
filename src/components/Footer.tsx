@@ -23,7 +23,7 @@ const Footer = () => {
             <img
               src="/fxpayout-blue.svg"
               alt="logo fx payout"
-              className="mb-2 lg:mb-3 w-5 lg:w-6 2xl:w-8"
+              className="w-5 lg:w-6 2xl:w-8"
             />
             <span className="text-2xl 2xl:text-3xl font-semibold text-primary">
               FXPAYOUT
@@ -103,9 +103,6 @@ const Footer = () => {
               <div className="flex flex-col">
                 <a href="https://wa.me/6282125597634" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
                   +62 821-2559-7634
-                </a>
-                <a href="https://wa.me/628984785573" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
-                  +62 898-4785-573
                 </a>
               </div>
             </div>

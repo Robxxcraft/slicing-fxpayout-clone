@@ -33,7 +33,7 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
           <img
             src="/fxpayout-blue.svg"
             alt="logo fx payout"
-            className="mb-2 w-4 lg:w-5 2xl:w-7"
+            className="w-5 2xl:w-7"
           />
           <span className="text-base md:text-xl 2xl:text-2xl font-semibold text-primary">
             FXPAYOUT

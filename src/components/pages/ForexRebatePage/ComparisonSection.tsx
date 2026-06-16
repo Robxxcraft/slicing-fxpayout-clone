@@ -90,7 +90,7 @@ const ComparisonSection = () => {
             <img
               src="/fxpayout-blue.svg"
               alt="logo fx payout"
-              className="mb-0 md:mb-3 w-3 md:w-6 2xl:w-8"
+              className="w-3 md:w-6 2xl:w-8"
             />
             <span className="text-xs md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-primary">
               FXPAYOUT
