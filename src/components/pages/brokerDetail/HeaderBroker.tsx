@@ -35,7 +35,7 @@ const HeaderBroker = ({
   const finalSpread = Array.isArray(spesification.spread) ? spesification.spread.map((s) => t(s)) : t(spesification.spread);
   const detailBio: DetailBio[] = [
     {title: "brokerdetailpage:header.detailHeaders.0", detail: spesification.yearFounded, icon: "year-founded.svg"},
-    {title: "brokerdetailpage:header.detailHeaders.1", detail: spesification.minDeposit, icon: "min-depo.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.1", detail: `$${spesification.minDeposit}`, icon: "min-depo.svg"},
     {title: "brokerdetailpage:header.detailHeaders.2", detail: t(spesification.leverage), icon: "leverage.svg"},
     {title: "brokerdetailpage:header.detailHeaders.3", detail: finalSpread, icon: "spread.svg"},
   ]

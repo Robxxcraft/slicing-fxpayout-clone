@@ -7,6 +7,7 @@ const brokerRanking: BrokerRanking = {
   tier: "Offshore/High-Leverage Broker",
   title: "Forex & CFD Global"
 };
+const minDeposit = 1;
 
 export const valetaxDetail: BrokerStruc = {
   id_ib: "5808172",
@@ -28,7 +29,7 @@ export const valetaxDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$1",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -43,7 +44,7 @@ export const valetaxDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$1",
+    minDeposit: minDeposit,
     types: ["Cent", "Standard", "ECN", "Booster", "Bonus", "PRO"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -143,9 +144,9 @@ export const valetaxDetail: BrokerStruc = {
       }
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_mobile`, icon: "valetax.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "other", username: `${platformsKey}.web_mobile`, icon: "valetax.webp" },
     ]
   },
   rebateProgram: [

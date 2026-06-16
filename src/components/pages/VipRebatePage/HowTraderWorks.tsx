@@ -9,7 +9,7 @@ const workflows: TypeWorkflowComponent[] = [
     subtitle: "Daftar lewat link resmi FXPAYOUT",
     description:
       "Buat akun dan hubungkan ke broker partner melalui link yang kami sediakan.",
-    image: "flow-start.png",
+    image: "flow-start.webp",
     translateKey: "homepage:howItWorks.workflows.0" 
   },
   {
@@ -17,7 +17,7 @@ const workflows: TypeWorkflowComponent[] = [
     subtitle: "Buka Akun di Broker Partner Kami",
     description:
       "Gunakan akun baru atau hubungkan akun existing sesuai instruksi.",
-    image: "flow-open-account.png",
+    image: "flow-open-account.webp",
     translateKey: "homepage:howItWorks.workflows.1" 
   },
   {
@@ -25,7 +25,7 @@ const workflows: TypeWorkflowComponent[] = [
     subtitle: "Lakukan Trading Seperti Biasa",
     description:
       "Lanjutkan trading tanpa perubahan pada spread, leverage, atau kondisi lainnya.",
-    image: "flow-trade.png",
+    image: "flow-trade.webp",
     translateKey: "homepage:howItWorks.workflows.2" 
   },
   {
@@ -33,7 +33,7 @@ const workflows: TypeWorkflowComponent[] = [
     subtitle: "Terima Rebate Sesuai Level Anda Secara Otomatis",
     description:
       "Dapatkan cashback dari komisi trading Anda secara berkala atau sesuai permintaan.",
-    image: "flow-commision.png",
+    image: "flow-commision.webp",
     translateKey: "homepage:howItWorks.workflows.3" 
   },
 ]

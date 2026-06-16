@@ -7,6 +7,7 @@ const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "Forex & CFD Broker Multi-Platform & ECN/STP"
 };
+const minDeposit = 100;
 
 export const fpMarketsDetail: BrokerStruc = {
   id_ib: "64952",
@@ -28,7 +29,7 @@ export const fpMarketsDetail: BrokerStruc = {
   cardDescription: "Broker ECN Australia dengan eksekusi cepat & kondisi pro-trader.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: [`${brokerId}:specification.spread.0`, `${brokerId}:specification.spread.1`],
   },
@@ -47,7 +48,7 @@ export const fpMarketsDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     types: ["Standard", "Raw"],
     spread: [`${brokerId}:summary.spread.0`, `${brokerId}:summary.spread.1`],
     commission: `${brokerId}:summary.commission`,
@@ -141,11 +142,11 @@ export const fpMarketsDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.c_trader`, icon: "c-trader.webp" },
-      { username: `${platformsKey}.trading_view`, icon: "trading-view.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "fp-markets.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "c_trader", username: `${platformsKey}.c_trader`, icon: "c-trader.webp" },
+      { key: "trading_view", username: `${platformsKey}.trading_view`, icon: "trading-view.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "fp-markets.webp" },
     ]
   },
   rebateProgram: [

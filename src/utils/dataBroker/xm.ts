@@ -7,6 +7,7 @@ const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "Multi-Regulated Forex & CFD Broker"
 };
+const minDeposit = 5;
 
 export const xmDetail: BrokerStruc = {
   id_ib: "FDP7K",
@@ -28,7 +29,7 @@ export const xmDetail: BrokerStruc = {
   cardDescription: "Broker global dengan akun XM Zero berkomisi tinggi sehingga rebate besar.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$5",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -49,7 +50,7 @@ export const xmDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$5",
+    minDeposit: minDeposit,
     types: ["Micro", "Standard", "Ultra Low"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -140,10 +141,10 @@ export const xmDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "xm.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "xm.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "xm.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "xm.webp" },
     ]
   },
   rebateProgram: [

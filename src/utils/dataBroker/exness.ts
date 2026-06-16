@@ -7,6 +7,7 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Premium ECN Broker"
 };
+const minDeposit = 50;
 
 export const exnessDetail: BrokerStruc = {
   id_ib: "8cegzmlbpk",
@@ -28,7 +29,7 @@ export const exnessDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$50",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -48,7 +49,7 @@ export const exnessDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$50",
+    minDeposit: minDeposit,
     types: ["Standard Cent", "Standard", "Raw Spread", "Zero", "Pro"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -161,11 +162,11 @@ export const exnessDetail: BrokerStruc = {
       }
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.exness_terminal`, icon: "exness.webp" },
-      { username: `${platformsKey}.copy_trading`, icon: "copy-trading.webp" },
-      { username: `${platformsKey}.exness_mobile`, icon: "exness-mobile.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "other", username: `${platformsKey}.exness_terminal`, icon: "exness.webp" },
+      { key: "other", username: `${platformsKey}.copy_trading`, icon: "copy-trading.webp" },
+      { key: "other", username: `${platformsKey}.exness_mobile`, icon: "exness-mobile.webp" },
     ]
   },
   rebateProgram: [

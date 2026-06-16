@@ -1,3 +1,5 @@
+import type { EnumBrokerCategory, EnumPlatformBroker } from "@/types/databroker.type";
+
 const brokerDetailPageKey = "brokerdetailpage:data";
 export const titleKey = `${brokerDetailPageKey}.title`;
 export const regulationsKey = `${brokerDetailPageKey}.regulations`;
@@ -17,7 +19,7 @@ export type OverallScore = {
 }
 export type Specification = {
   yearFounded: string;
-  minDeposit: string;
+  minDeposit: number;
   leverage: string | string[];
   spread: string | string[];
 }
@@ -39,7 +41,7 @@ export type RegulationBroker = {
   country: string;
 }
 export type SummaryBroker = {
-  minDeposit: string | string[];
+  minDeposit: number;
   types: string[];
   spread: string | string[];
   commission: string;
@@ -65,6 +67,7 @@ export type PaymentMethod = {
   fee: string;
 }
 export type Platform = {
+  key: EnumPlatformBroker;
   username: string;
   icon: string;
 }
@@ -104,6 +107,7 @@ export type RebateRate = {
 // BROKER STRUC
 export type BrokerStruc = { 
   id_ib: string;
+  category?: EnumBrokerCategory;
   name: string;
   profileImage: string;
   contactSupport: string;

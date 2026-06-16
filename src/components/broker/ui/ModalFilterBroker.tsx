@@ -1,5 +1,8 @@
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
+import { DEFAULT_MIN_DEPOSIT, DEFAULT_PLATFORMS, DEFAULT_REBATE } from "@/constants/defaultFilterBrokerData";
+import { removeLocalStorage } from "@/services/apiClient";
+import type { EnumPlatformBroker, RebateRange } from "@/types/databroker.type";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaFilter } from "react-icons/fa6";
@@ -8,12 +11,19 @@ import { getTrackBackground, Range } from "react-range";
 interface ModalFilterBrokerProps {
   isVisible: boolean;
   handleClose: () => void;
+  selectedRebate: RebateRange;
+  selectedMinDeposit: number;
+  selectedPlatforms: EnumPlatformBroker[];
+  onApplyChanges: ({ 
+    rebate,
+    minDeposit,
+    platforms
+  }: { 
+    rebate: RebateRange;
+    minDeposit: number; 
+    platforms: EnumPlatformBroker[];
+  }) => void;
 };
-
-type RebateRange = {
-  start: number;
-  end: number;
-}
 
 const rebateMarks = [0, 10, 20, 30, 40, 50];
 const minDepositMarks = [0, 50, 100, 150, 200];
@@ -23,26 +33,28 @@ const levelSpread = [
   { key: "medium", keyTranslate: "text.title_medium", text: "Sedang" },
   { key: "high", keyTranslate: "text.title_high", text: "Tinggi" },
 ];
-const platforms = [
+const availablePlatforms = [
   { key: "mt4", text: "MetaTrader 4 (MT4)" },
   { key: "mt5", text: "MetaTrader 5 (MT5)" },
-  { key: "ctrader", text: "cTrader" },
-  { key: "tradingview", text: "Trading View" },
-  { key: "webtrader", text: "WebTrader" },
-  { key: "protrader", text: "ProTrader" },
+  { key: "c_trader", text: "cTrader" },
+  { key: "trading_view", text: "Trading View" },
+  { key: "web_trader", text: "WebTrader" },
+  { key: "pro_trader", text: "ProTrader" },
 ];
 
 const ModalFilterBroker = ({
   isVisible,
-  handleClose
+  handleClose,
+  selectedRebate,
+  selectedMinDeposit,
+  selectedPlatforms,
+  onApplyChanges,
 }: ModalFilterBrokerProps) => {
   const { t } = useTranslation(["common"]);
-  const [rebate, setRebate] = useState<RebateRange>({
-    start: 0,
-    end: 50
-  });
-  const [minDeposit, setMinDeposit] = useState<number[]>([100]);
+  const [rebate, setRebate] = useState<RebateRange>(selectedRebate);
+  const [minDeposit, setMinDeposit] = useState<number[]>([selectedMinDeposit]);
   const [selectedSpread, setSelectedSpread] = useState<string>("low");
+  const [platforms, setPlatforms] = useState<EnumPlatformBroker[]>(selectedPlatforms);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -55,14 +67,54 @@ const ModalFilterBroker = ({
     }
   }, [isVisible]);
 
+  const handleCheckedPlatforms = (
+    platform: EnumPlatformBroker,
+    checked: boolean,
+  ) => {
+    if (checked) {
+      setPlatforms([...platforms, platform]);
+    } else {
+      setPlatforms((prev) => {
+        return prev.filter((item) => item !== platform);
+      });
+    }
+  };
+
+  const handleApplyFilter = () => {
+    onApplyChanges({
+      rebate, 
+      minDeposit: minDeposit[0],
+      platforms
+    });
+    handleClose();
+  }
+
+  const handleResetFilter = () => {
+    setRebate(DEFAULT_REBATE);
+    setMinDeposit([DEFAULT_MIN_DEPOSIT]);
+    setPlatforms(DEFAULT_PLATFORMS);
+    removeLocalStorage("broker-filters");
+    handleApplyFilter();
+  }
+
   return (
     <Modal isOpen={isVisible} onClose={handleClose} maxWCL="max-w-[820px] px-2! lg:px-4!">
       <div className="scrollbar-thin px-4 space-y-4 2xl:space-y-6 max-h-[calc(100dvh-100px)] overflow-y-auto">
-        <div className="pb-2 flex items-center justify-center gap-2 border-b border-primary/20">
-          <FaFilter className="scale-x-[-1] text-3xl 2xl:text-4xl text-primary" />
-          <h2 className="text-2xl 2xl:text-[32px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-            Filter Broker
-          </h2>
+        <div className="pb-2 relative flex flex-col border-b border-primary/20">
+          <div className="flex items-center justify-center gap-2">
+            <FaFilter className="scale-x-[-1] text-3xl 2xl:text-4xl text-primary" />
+            <h2 className="text-2xl 2xl:text-[32px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+              Filter Broker
+            </h2>
+          </div>
+          
+          <button
+            type="button"
+            className="ml-auto md:absolute right-0 top-1/2 md:-translate-y-1/2 text-base 2xl:text-xl text-primary underline cursor-pointer"
+            onClick={handleResetFilter}
+          >
+            Reset Filter
+          </button>
         </div>
         <h3 className="pb-2 font-medium text-lg 2xl:text-2xl leading-[160%] border-b border-primary/20">
           Trading
@@ -268,19 +320,26 @@ const ModalFilterBroker = ({
           </p>
 
           <div className="mt-4 2xl:mt-6 flex items-center gap-4 2xl:gap-6 flex-wrap">
-            {platforms.map((platform) => (
-              <div key={platform.key} className="flex items-center cursor-pointer">
+            {availablePlatforms.map((data) => (
+              <div key={data.key} className="flex items-center cursor-pointer">
                 <input 
-                  id={`platform-checkbox-${platform.key}`}
-                  name={`platform-checkbox-${platform.key}`}
+                  id={`platform-checkbox-${data.key}`}
+                  name={`platform-checkbox-${data.key}`}
                   type="checkbox" 
+                  onChange={(e) => {
+                    handleCheckedPlatforms(
+                      data.key as EnumPlatformBroker, 
+                      e.target.checked
+                    )
+                  }}
+                  checked={platforms.includes(data.key as EnumPlatformBroker)}
                   className="size-4 2xl:size-6 checked:accent-primary rounded-sm cursor-pointer"
                 />
                 <label 
-                    htmlFor={`platform-checkbox-${platform.key}`} 
+                    htmlFor={`platform-checkbox-${data.key}`} 
                     className="pl-2 text-base font-medium leading-6 cursor-pointer select-none"
                 >
-                  {platform.text}
+                  {data.text}
                 </label>
               </div>
             ))}
@@ -291,7 +350,7 @@ const ModalFilterBroker = ({
           variant="primary-light"
           buttonType="button"
           className="py-4! md:py-6! lg:py-4! 2xl:py-6! w-full!"
-          onClick={handleClose}
+          onClick={handleApplyFilter}
         >
           {t("text.title_apply")}
         </Button>

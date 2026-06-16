@@ -7,11 +7,13 @@ const brokerRanking: BrokerRanking = {
   tier: "Local/Regional",
   title: "Broker (Indonesia-Centric)"
 };
+const minDeposit = 10;
 
 export const finexDetail: BrokerStruc = {
   id_ib: "5759",
   contactSupport: "support@finex.com",
   name: brokerName,
+  category: "local",
   profileImage: "finex.webp",
   registerUrl: "https://track.finex.co.id/click?pid=5759&offer_id=12",
   websiteUrl: "https://track.finex.co.id/click?pid=5759&offer_id=12",
@@ -28,7 +30,7 @@ export const finexDetail: BrokerStruc = {
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$10",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -43,7 +45,7 @@ export const finexDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$10",
+    minDeposit: minDeposit,
     types: ["Single Live Account"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -120,9 +122,9 @@ export const finexDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "finex.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "finex.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "finex.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "finex.webp" },
     ]
   },
   rebateProgram: [

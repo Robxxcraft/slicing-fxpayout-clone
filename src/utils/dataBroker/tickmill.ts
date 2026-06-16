@@ -7,6 +7,7 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Forex & CFD ECN Broker"
 };
+const minDeposit = 100;
 
 export const tickmillDetail: BrokerStruc = {
   id_ib: "IB89045395",
@@ -28,7 +29,7 @@ export const tickmillDetail: BrokerStruc = {
   cardDescription: "Broker ECN terkenal dengan komisi rendah dan rebate kompetitif.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -46,7 +47,7 @@ export const tickmillDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     types: ["Classic", "Pro", "VIP/Ultra"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -145,10 +146,10 @@ export const tickmillDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "tickmill.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "tickmill.webp" },
     ]
   },
   rebateProgram: [
