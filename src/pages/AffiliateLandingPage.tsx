@@ -20,7 +20,7 @@ const AffiliateLandingPage = () => {
   return (
     <div className="font-inter">
       <title>{t("affiliatelandingpage:helmet.title")}</title>
-      <Navbar active="layanan" />
+      <Navbar active="affiliate" transparentBgTop />
       <main>
         <HeroSection />
         <CommissionSection />

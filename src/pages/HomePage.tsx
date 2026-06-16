@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <div className="font-inter">
       <title>{t("homepage:helmet.title")}</title>
-      <Navbar active="home" />
+      <Navbar active="home" transparentBgTop />
       <main>
         <HeroHome />
         <ProblemSection />

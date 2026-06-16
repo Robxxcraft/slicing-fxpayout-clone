@@ -64,6 +64,7 @@
         "calculator": "Kalkulator",
         "claimRebate": "Klaim Rebate",
         "service": "Layanan",
+        "affiliate": "Affiliate",
         "subNav": {
             "definition": "Apa itu Rebate Forex?",
             "howRebate": "Cara Mendapatkan Rebate Forex", 
@@ -71,8 +72,7 @@
             "payment": "Sistem Pembayaran Rebate", 
             "schedule": "Jadwal Rebate",
             "validation": "Validasi Akun",
-            "transfer": "Transfer Akun",    
-            "affiliate": "Program Affiliate",
+            "transfer": "Transfer Akun",   
             "forex": "Forex",
             "vipRebate": "VIP Rebate"      
         }

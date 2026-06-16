@@ -64,6 +64,7 @@
         "calculator": "Calculator",
         "claimRebate": "Claim Rebate",
         "service": "Service",
+        "affiliate": "Affiliate",
         "subNav": {
             "definition": "What is Forex Rebate?",
             "howRebate": "How to Get Forex Rebates", 
@@ -72,7 +73,6 @@
             "schedule": "Rebate Schedule",
             "validation": "Account Validation",
             "transfer": "Account Transfer",    
-            "affiliate": "Affiliate Program",
             "forex": "Forex",
             "vipRebate": "VIP Rebate"
         }

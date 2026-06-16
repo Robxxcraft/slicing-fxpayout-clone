@@ -17,7 +17,7 @@ const ForexRebatePage = () => {
   return (
     <div className="font-inter">
       <title>{t("forexrebatepage:helmet.title")}</title>
-      <Navbar active="layanan" />
+      <Navbar active="layanan" transparentBgTop />
       <main>
         <HeroSection />
         <WhatRebateForex />

@@ -17,7 +17,7 @@ const VipRebatePage = () => {
   return (
     <div className="font-inter">
       <title>{t("viprebatepage:helmet.title")}</title>
-      <Navbar active="layanan" />
+      <Navbar active="layanan" transparentBgTop />
       <main>
         <HeroSection />
         <WhatRebateForex />

@@ -22,7 +22,6 @@ const serviceSubNav: SubNavigationList[] = [
   { code: "transfer", title: "Pindah Akun", url: '/transfer' },
   { code: "forex", title: "Forex", url: '/forex' },
   { code: "vipRebate", title: "VIP Rebate", url: '/vip-rebate' },
-  { code: "affiliate", title: "Affiliate", url: '/affiliate' },
 ];
 
 export const listNavigation: NavigationLink[] = [
@@ -57,6 +56,11 @@ export const listNavigation: NavigationLink[] = [
     title: "Layanan",
     url: "#",
     sublist: serviceSubNav
+  },
+  { 
+    code: "affiliate", 
+    title: "Affiliate", 
+    url: '/affiliate'
   },
 ];
 
