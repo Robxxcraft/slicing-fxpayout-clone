@@ -96,6 +96,9 @@
         "paragraph": "Enjoy a limited-time promo specifically for traders who just joined FXPayout.",
         "tag": "Limited Time"
     },
+    "brokerlistsection": {
+        "view_all_brokers": "View All Brokers"
+    },
     "securitySection": {
         "title": "Your Fund Security Is Our Priority",
         "badge": "YOU SHOULD KNOW",

@@ -8,6 +8,9 @@ const brokerRanking: BrokerRanking = {
   title: "Broker (Indonesia-Centric)"
 };
 const minDeposit = 10;
+const regionsWebsite = [
+  { region: "Indonesia", url: "https://track.finex.co.id/click?pid=5759&offer_id=12" },
+];
 
 export const finexDetail: BrokerStruc = {
   id_ib: "5759",
@@ -15,8 +18,8 @@ export const finexDetail: BrokerStruc = {
   name: brokerName,
   category: "local",
   profileImage: "finex.webp",
-  registerUrl: "https://track.finex.co.id/click?pid=5759&offer_id=12",
-  websiteUrl: "https://track.finex.co.id/click?pid=5759&offer_id=12",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

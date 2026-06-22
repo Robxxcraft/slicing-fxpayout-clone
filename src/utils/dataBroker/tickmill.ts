@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Forex & CFD ECN Broker"
 };
 const minDeposit = 100;
+const regionsWebsite = [
+  { region: "Global", url: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F" },
+];
 
 export const tickmillDetail: BrokerStruc = {
   id_ib: "IB89045395",
   contactSupport: "support@tickmill.com",
   name: brokerName,
   profileImage: "tickmill.webp",
-  registerUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
-  websiteUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",

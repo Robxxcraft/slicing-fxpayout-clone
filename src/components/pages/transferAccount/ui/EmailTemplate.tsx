@@ -42,7 +42,7 @@ const EmailTemplate = ({
 
               {t(`${keyTemplateEmail}.intro`)} <br />
               {t(`${keyTemplateEmail}.ibId`)} {selectedBroker ? selectedBroker.id_ib : "xxxxxx"} <br />
-              {t(`${keyTemplateEmail}.ibLink`)} {selectedBroker ? selectedBroker.websiteUrl : "xxxxxx"} <br /><br />
+              {t(`${keyTemplateEmail}.ibLink`)} {selectedBroker ? selectedBroker.websiteUrl[0].url : "xxxxxx"} <br /><br />
 
               {t(`${keyTemplateEmail}.accountData`)} <br />
               {t(`${keyTemplateEmail}.name`)} {rawUsername} <br />

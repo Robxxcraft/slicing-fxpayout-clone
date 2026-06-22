@@ -8,14 +8,19 @@ const brokerRanking: BrokerRanking = {
   title: "Multi-Regulated Forex & CFD Broker"
 };
 const minDeposit = 5;
+const regionsWebsite = [
+  { region: "Global", url: "https://affs.click/4gFt7" },
+];
+
+// website = https://affs.click/pcNLG
 
 export const xmDetail: BrokerStruc = {
   id_ib: "FDP7K",
   contactSupport: "support@xm.com",
   name: brokerName,
   profileImage: "xm.webp",
-  registerUrl: "https://affs.click/4gFt7",
-  websiteUrl: "https://affs.click/pcNLG",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",

@@ -18,7 +18,7 @@ const CardEstimationRebate = () => {
   const [selectedBroker, setSelectedBroker] = useState<string>(
     Object.values(brokers)[0].name
   );
-  const allBrokers = Object.values(brokers);
+  const allBrokers = Object.values(brokers).sort((a, b) => a.name.localeCompare(b.name));
 
   const handleChangeLotperMonth = (e: ChangeEvent<HTMLInputElement>) => {
     const num = e.target.value;

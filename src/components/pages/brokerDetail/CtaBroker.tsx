@@ -3,7 +3,13 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
 
-const CtaBroker = ({ name, websiteUrl }: { name: string; websiteUrl: string }) => {
+const CtaBroker = ({ 
+  name, 
+  openWebsiteModal
+}: { 
+  name: string; 
+  openWebsiteModal: () => void; 
+}) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-20">
@@ -19,7 +25,14 @@ const CtaBroker = ({ name, websiteUrl }: { name: string; websiteUrl: string }) =
             <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
               {t("brokerdetailpage:cta.registerFxpayout")}
             </Button>
-            <Button variant="outline-light" buttonType="link" urlTo={websiteUrl} target="_blank" size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
+            <Button 
+              buttonType="button"
+              onClick={() => openWebsiteModal()}
+              variant="outline-light" 
+              size="xl" 
+              icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} 
+              iconPosition="right"
+            >
               {t("brokerdetailpage:cta.visitWebsite")}
             </Button>
           </div>

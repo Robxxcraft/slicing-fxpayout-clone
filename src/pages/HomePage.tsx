@@ -15,6 +15,7 @@ import SecuritySection from "@/components/pages/homePage/SecuritySection";
 import RunningText from "@/components/ui/RunningText";
 import RiskSection from "@/components/pages/homePage/RiskSection";
 import { getLocalizedPath } from "@/helper/pathHelper";
+import CtaRegisterBroker from "@/components/broker/CtaRegisterBroker";
 
 const HomePage = () => {
   const { t, i18n } = useTranslation(["common", "homepage"]);
@@ -29,6 +30,9 @@ const HomePage = () => {
         <HowItWorks />
         <Rewards />
         <BrokerListSection />
+        <CtaRegisterBroker 
+          horizontal
+        />
         <SecuritySection />
         <Benefits />
         <Reviews />

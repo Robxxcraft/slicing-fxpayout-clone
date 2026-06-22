@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Multi-Asset ECN/STP Broker"
 };
 const minDeposit = 15;
+const regionsWebsite = [
+  { region: "Global", url: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4" },
+];
 
 export const zfxDetail: BrokerStruc = {
   id_ib: "Z940752S4",
   contactSupport: "6287887786538",
   name: brokerName,
   profileImage: "zfx.webp",
-  registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
-  websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

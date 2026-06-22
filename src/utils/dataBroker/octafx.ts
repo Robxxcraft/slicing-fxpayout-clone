@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Forex & CFD Broker"
 };
 const minDeposit = 50;
+const regionsWebsite = [
+  { region: "Global", url: "https://octa.click/bJLCLmX8zDZ?ib=47807098" },
+];
  
 export const octaFxDetail: BrokerStruc = {
   id_ib: "47807098",
   contactSupport: "support@octafx.com",
   name: brokerName,
   profileImage: "octafx.webp",
-  registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
-  websiteUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

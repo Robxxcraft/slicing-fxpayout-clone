@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "CFD & Forex Broker"
 };
 const minDeposit = 50;
+const regionsWebsite = [
+  { region: "Global", url: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=" },
+];
 
 export const vantageDetail: BrokerStruc = {
   id_ib: "EJSu0LiT",
   contactSupport: "support@vantagemarkets.com",
   name: brokerName,
   profileImage: "vantage.webp",
-  registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
-  websiteUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

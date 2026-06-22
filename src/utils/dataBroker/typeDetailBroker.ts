@@ -104,6 +104,11 @@ export type RebateRate = {
   rebatePerLot: number; 
 };
 
+export type RegionWebsite = {
+  region: string,
+  url: string
+}
+
 // BROKER STRUC
 export type BrokerStruc = { 
   id_ib: string;
@@ -111,8 +116,8 @@ export type BrokerStruc = {
   name: string;
   profileImage: string;
   contactSupport: string;
-  registerUrl: string;
-  websiteUrl: string;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
   scheduleUrl?: string;
   statusRebate: "Auto" | "Manual";
   detailUrl: string;

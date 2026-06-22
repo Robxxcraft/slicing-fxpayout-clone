@@ -22,5 +22,10 @@
     "notify": {
         "title": "Rebate Transparency",
         "paragraph": "We store commission and rebate history that can be audited by users. (Demo: data is stored in the browser.)"
+    },
+    "ctaregisterbroker": {
+        "title": "Partner With Us",
+        "paragraph": "Is your broker not listed yet? Showcase your broker profile and reach more traders through our ecosystem.",
+        "button": "Register Your Broker"
     }
 }

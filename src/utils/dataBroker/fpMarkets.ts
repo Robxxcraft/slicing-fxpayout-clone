@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Forex & CFD Broker Multi-Platform & ECN/STP"
 };
 const minDeposit = 100;
+const regionsWebsite = [
+  { region: "Global", url: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952" },
+];
 
 export const fpMarketsDetail: BrokerStruc = {
   id_ib: "64952",
   contactSupport: "partners@fpmarkets.com",
   name: brokerName,
   profileImage: "fp-markets.webp",
-  registerUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
-  websiteUrl: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",

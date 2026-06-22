@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Global ECN/STP Forex & CFD Broker"
 };
 const minDeposit = 0;
+const regionsWebsite = [
+  { region: "Global", url: "https://www.axi.com/int/live-account?promocode=4736053" },
+];
 
 export const axiDetail: BrokerStruc = {
   id_ib: "4736053",
   contactSupport: "service@axi.com",
   name: brokerName,
   profileImage: "axi.webp",
-  registerUrl: "https://www.axi.com/int/live-account?promocode=4736053",
-  websiteUrl: "https://www.axi.com/int/live-account?promocode=4736053",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",

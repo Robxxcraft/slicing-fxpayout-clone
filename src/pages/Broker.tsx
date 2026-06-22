@@ -15,6 +15,8 @@ import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import ModalFilterBroker from "@/components/broker/ui/ModalFilterBroker";
 import { DEFAULT_MIN_DEPOSIT, DEFAULT_PLATFORMS, DEFAULT_REBATE } from "@/constants/defaultFilterBrokerData";
 import { getLocalStorage, setLocalStorage } from "@/services/apiClient";
+import { filterBrokerByCategory } from "@/helper/filterBroker";
+import CtaRegisterBroker from "@/components/broker/CtaRegisterBroker";
 
 const Broker = () => {
   const { t, i18n } = useTranslation(["common", "brokerpage"]);
@@ -67,11 +69,7 @@ const Broker = () => {
     let brokers = [...allBrokers];
 
     // Filter Kategori
-    if (selectedCategory === "local") {
-      brokers = brokers.filter(
-        (broker) => broker.category === "local"
-      );
-    }
+    brokers = filterBrokerByCategory(brokers, selectedCategory);
 
     // Filter sorting
     switch(selectedSort) {
@@ -186,6 +184,7 @@ const Broker = () => {
           <BrokerList brokerPartners={brokerPartners} pathUrl="broker" />
         }
         {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
+        <CtaRegisterBroker />
         <CtaSection 
           title={t("cta_trader.title")}
           paragraph={t("cta_trader.paragraph")}

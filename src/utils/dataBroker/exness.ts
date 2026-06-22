@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Premium ECN Broker"
 };
 const minDeposit = 50;
+const regionsWebsite = [
+  { region: "Global", url: "https://one.exnessonelink.com/boarding/sign-up/a/fxpayout?lng=id" },
+];
 
 export const exnessDetail: BrokerStruc = {
   id_ib: "8cegzmlbpk",
   contactSupport: "support@exness.com",
   name: brokerName,
   profileImage: "exness.webp",
-  registerUrl: "https://one.exnessonelink.com/boarding/sign-up/a/fxpayout?lng=id",
-  websiteUrl: "https://one.exnessonelink.com/boarding/sign-up/a/fxpayout?lng=id",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",

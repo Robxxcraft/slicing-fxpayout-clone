@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { listNavigationBrokers } from "@/utils/listNavigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
@@ -8,22 +7,22 @@ import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
 
-const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }: 
+const NavigationBar = ({ name, ranking, profileImage, openWebsiteModal }: 
   {
     name: string; 
     ranking: BrokerRanking; 
     profileImage: string; 
-    registerUrl: string; 
-    websiteUrl: string;
+    openWebsiteModal: () => void;
   }
 ) => {
   const { t } = useTranslation(["common", "brokerdetailpage"]);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
-  const btnHamburgerRef = useRef<HTMLSpanElement>(null);
   const [isOverflowing, setIsOverflowing] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const btnHamburgerRef = useRef<HTMLSpanElement>(null);
   const fullRankingText = `Tier ${ranking.tier} ${ranking.title}`;
 
   useEffect(() => {
@@ -84,7 +83,7 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
             : <IoClose onClick={() => setOpenMenu(false)} className="text-3xl cursor-pointer" />
             }
           </div>
-          <ButtonCta scrollY={scrollY} registerUrl={registerUrl} websiteUrl={websiteUrl} />
+          <ButtonCta scrollY={scrollY} openModal={openWebsiteModal} />
         </div>
 
         {/* ROW 2 */}
@@ -115,16 +114,16 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
               ))}
             </div>
             <div className="px-5 mt-4 flex items-center justify-center w-full gap-2 flex-wrap">
-              <Link to={registerUrl} target="_blank" className="w-fit text-center">
+              <div onClick={openWebsiteModal} className="w-fit text-center">
                 <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
                   {t("button.registerNow")}
                 </span>
-              </Link>
-              <Link to={websiteUrl} target="_blank" className="w-fit text-center">
+              </div>
+              <div onClick={openWebsiteModal} className="w-fit text-center">
                 <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
                   {t("button.visitWebsite")}
                 </span>
-              </Link>
+              </div>
             </div>
           </div>
         }
@@ -133,17 +132,33 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl }:
   );
 };
 
-const ButtonCta = ({ scrollY, registerUrl, websiteUrl }:{scrollY: number; registerUrl: string; websiteUrl: string}) => {
+const ButtonCta = ({ 
+  scrollY, 
+  openModal
+}:{
+  scrollY: number; 
+  openModal: () => void;
+}) => {
   const { t } = useTranslation(["common"])
   return (
     <div className={`
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
-      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" className="w-full! lg:w-auto text-nowrap">
+      <Button 
+        buttonType="button" 
+        variant="primary" 
+        onClick={() => openModal()} 
+        className="w-full! lg:w-auto text-nowrap"
+      >
         {t("button.registerNow")}
       </Button>
-      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" className="w-full! lg:w-auto text-nowrap">
+      <Button 
+        buttonType="button" 
+        variant="outline" 
+        onClick={() => openModal()} 
+        className="w-full! lg:w-auto text-nowrap"
+      >
         {t("button.visitWebsite")}
       </Button>
     </div>

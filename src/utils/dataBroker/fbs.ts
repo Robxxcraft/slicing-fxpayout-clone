@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Global Forex & CFD Broker"
 };
 const minDeposit = 1;
+const regionsWebsite = [
+  { region: "Global", url: "https://fbs.partners/?ibl=569605&ibp=17852638" },
+];
 
 export const fbsDetail: BrokerStruc = {
   id_ib: "569605",
   contactSupport: "support@fbs.com",
   name: brokerName,
   profileImage: "fbs.webp",
-  registerUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
-  websiteUrl: "https://fbs.partners/?ibl=569605&ibp=17852638",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

@@ -9,6 +9,7 @@ import { hfmDetail } from "./hfm";
 import { octaFxDetail } from "./octafx";
 import { pepperstoneDetail } from "./perpperstone";
 import { tickmillDetail } from "./tickmill";
+import { tmgmDetail } from "./tmgm";
 import { valetaxDetail } from "./valetax";
 import { vantageDetail } from "./vantage";
 import { xmDetail } from "./xm";
@@ -17,9 +18,10 @@ import { zfxDetail } from "./zfx";
 export const brokers = {
   "exness": exnessDetail,
   "valetax": valetaxDetail,
-  "zfx": zfxDetail,
+  "tmgm": tmgmDetail,
   "xm": xmDetail,
   "hfm": hfmDetail,
+  "zfx": zfxDetail,
   "fbs": fbsDetail,
   "octafx": octaFxDetail,
   "tickmill": tickmillDetail,

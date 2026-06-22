@@ -16,11 +16,18 @@ import { brokers } from "@/utils/dataBroker/brokers";
 import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 import { useTranslation } from "react-i18next";
+import ModalRegionsWebsite from "@/components/broker/ui/ModalRegionsWebsite";
+import { useState } from "react";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const BrokerDetailPage = () => {
   const { t } = useTranslation(["brokerdetailpage"]);
+  const [showModal, setShowModal] = useState<boolean>(false);
   const { brokerId } = useParams();
   const broker = brokers[brokerId as keyof typeof brokers];
+  
+  useLockBodyScroll(showModal);
+
 
   if (!broker) {
     return <NotFound />
@@ -34,10 +41,10 @@ const BrokerDetailPage = () => {
         </title>
       }
 
-      <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} />
+      <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} openWebsiteModal={() => setShowModal(true)} />
       
       <main>
-        <HeaderBroker brokerId={broker.detailUrl} name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} spesification={broker.specification} />
+        <HeaderBroker brokerId={broker.detailUrl} name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} spesification={broker.specification} openWebsiteModal={() => setShowModal(true)} />
         
         <ProfileBroker brokerId={broker.detailUrl} profile={broker.profile}/>
 
@@ -59,10 +66,20 @@ const BrokerDetailPage = () => {
 
         <FaqBroker brokerId={broker.detailUrl} faq={broker.faq} />
 
-        <CtaBroker name={broker.name} websiteUrl={broker.websiteUrl} />
+        <CtaBroker name={broker.name} openWebsiteModal={() => setShowModal(true)} />
       </main>
 
       <Footer />
+
+      {showModal && 
+        <ModalRegionsWebsite 
+          isVisible={showModal} 
+          handleClose={() => setShowModal(false)} 
+          brokerName={broker.name}
+          imageBroker={broker.profileImage}
+          websiteItems={broker.registerUrl}        
+        />
+      }
     </div>
   );
 };

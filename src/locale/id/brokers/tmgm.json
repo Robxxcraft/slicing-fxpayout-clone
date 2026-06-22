@@ -1,0 +1,76 @@
+{
+    "description": "TMGM adalah broker multi-aset global yang menyediakan perdagangan Forex, Logam Mulia, Indeks, Komoditas, Saham CFD, dan Cryptocurrency dengan spread kompetitif, eksekusi ECN, serta likuiditas tingkat institusional.",
+    "specification": {
+        "leverage": "Hingga 1:1000",
+        "spread": "Mulai dari 0.0 pip"
+    },
+    "profile": {
+        "slogan": "Broker Multi-Aset Global dengan Eksekusi ECN untuk Forex, CFD, dan Trading Institusional"
+    },
+    "summary": {
+        "spread": "Mulai dari 0.0 pip",
+        "commission": "Akun Edge: $7 per lot round turn; Akun Classic: Tanpa komisi",
+        "leverage": "Hingga 1:1000",
+        "execution": "Eksekusi pasar ECN berkecepatan tinggi",
+        "depositWithdrawal": "Instan hingga 1 hari kerja (tergantung metode pembayaran)"
+    },
+    "accountTypes": [
+        [
+            "Deposit minimum: $100",
+            "Spread mulai dari 1.0 pip",
+            "Tanpa komisi",
+            "Cocok untuk sebagian besar trader"
+        ],
+        [
+            "Deposit minimum: $100",
+            "Spread mulai dari 0.0 pip",
+            "Komisi sekitar $7 per lot round turn",
+            "Cocok untuk scalping dan penggunaan EA"
+        ]
+    ],
+    "keyAdvantages": [
+        "Likuiditas tingkat institusional",
+        "Mendukung platform MT4 dan MT5",
+        "Spread ECN yang kompetitif",
+        "Mendukung EA dan strategi scalping",
+        "Tersedia entitas yang diregulasi ASIC",
+        "Menyediakan berbagai instrumen trading",
+        "Mendukung fitur Copy Trading"
+    ],
+    "advantages": [
+        "Memiliki entitas yang diregulasi ASIC",
+        "Spread rendah tersedia pada akun tertentu",
+        "Cocok untuk EA dan scalping",
+        "Mendukung platform MT4 dan MT5",
+        "Pilihan instrumen trading yang beragam",
+        "Kecepatan eksekusi yang baik"
+    ],
+    "disadvantages": [
+        "Besaran leverage bergantung pada entitas yang digunakan",
+        "Leverage tinggi umumnya tersedia pada entitas offshore",
+        "Akun Edge dikenakan biaya komisi"
+    ],
+    "classifications": [
+        "Customer Support",
+        "Execution & Platforms",
+        "Fees & Costs"
+    ],
+    "faqs": [
+        {
+            "question": "Apakah TMGM aman digunakan?",
+            "answer": "Ya. TMGM beroperasi melalui beberapa entitas, termasuk entitas yang diregulasi oleh ASIC, sehingga memberikan tingkat keamanan dan kredibilitas yang baik bagi trader."
+        },
+        {
+            "question": "Berapa deposit minimum di TMGM?",
+            "answer": "Deposit minimum umumnya mulai dari $100, tergantung pada jenis akun yang dipilih."
+        },
+        {
+            "question": "Platform trading apa saja yang didukung TMGM?",
+            "answer": "TMGM mendukung MetaTrader 4 (MT4), MetaTrader 5 (MT5), platform web, dan aplikasi mobile."
+        },
+        {
+            "question": "Instrumen apa saja yang tersedia di TMGM?",
+            "answer": "TMGM menyediakan perdagangan Forex, Logam Mulia, Indeks, Saham CFD, Komoditas, dan Cryptocurrency."
+        }
+    ]
+}

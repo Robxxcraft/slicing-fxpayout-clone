@@ -27,7 +27,7 @@ const CalculatorSection = () => {
     rebatesPerLot: 0.0
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const allBrokers = Object.values(brokers);
+  const allBrokers = Object.values(brokers).sort((a, b) => a.name.localeCompare(b.name));
 
   const handleBrokerChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;

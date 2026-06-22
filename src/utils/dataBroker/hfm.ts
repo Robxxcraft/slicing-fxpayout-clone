@@ -8,14 +8,17 @@ const brokerRanking: BrokerRanking = {
   title: "Multi-Asset Forex & CFD Broker"
 };
 const minDeposit = 0;
+const regionsWebsite = [
+  { region: "Indonesia", url: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425" },
+];
 
 export const hfmDetail: BrokerStruc = {
   id_ib: "30494425",
   contactSupport: "supportind@hfm.com",
   name: brokerName,
   profileImage: "hfm.webp",
-  registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
-  websiteUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",

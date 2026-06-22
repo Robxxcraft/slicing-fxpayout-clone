@@ -8,14 +8,19 @@ const brokerRanking: BrokerRanking = {
   title: "Forex & CFD Global"
 };
 const minDeposit = 1;
+const regionsWebsite = [
+  { region: "Global", url: "https://ma.valetax.com/p/5808172" },
+  { region: "Indonesia", url: "https://ma.valetax-indonesia.com/p/5808172" },
+  { region: "Vietnam", url: "https://ma.valetaxvn.com/p/5808172" }
+];
 
 export const valetaxDetail: BrokerStruc = {
   id_ib: "5808172",
   contactSupport: "contact@valetax.com",
   name: brokerName,
   profileImage: "valetax.webp",
-  registerUrl: "https://ma.valetax-indonesia.com/p/5808172",
-  websiteUrl: "https://ma.valetax-indonesia.com/p/5808172",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

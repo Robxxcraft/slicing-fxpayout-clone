@@ -22,5 +22,10 @@
     "notify": {
         "title": "Transparansi Rebate",
         "paragraph": "Kami menyimpan riwayat komisi & rebate yang dapat diaudit oleh pengguna. (Demo: data disimpan di browser)."
+    },
+    "ctaregisterbroker": {
+        "title": "Bergabung dengan Platform Kami",
+        "paragraph": "Broker Anda belum tersedia? Tampilkan  profil broker dan jangkau lebih banyak trader melalui ekosistem kami.",
+        "button": "Daftarkan Broker"
     }
 }

@@ -8,14 +8,18 @@ const brokerRanking: BrokerRanking = {
   title: "Global ECN Broker"
 };
 const minDeposit = 0;
+const regionsWebsite = [
+  { region: "Global", url: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191" },
+];
+
 
 export const pepperstoneDetail: BrokerStruc = {
   id_ib: "42191",
   contactSupport: "support@pepperstone.com",
   name: brokerName,
   profileImage: "pepperstone.webp",
-  registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
-  websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",

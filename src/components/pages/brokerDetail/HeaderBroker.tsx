@@ -20,15 +20,14 @@ type TypeHeader = {
   profileImage: string; 
   overallScore: OverallScore; 
   description: string; 
-  registerUrl: string; 
-  spesification: Specification,
-  websiteUrl: string;
+  spesification: Specification;
+  openWebsiteModal: () => void;
 }
 
 const HeaderBroker = ({
   brokerId, name, ranking, badges, 
   profileImage, overallScore, description, 
-  registerUrl, spesification, websiteUrl
+  spesification, openWebsiteModal
 }: TypeHeader ) => {
   const { t } = useTranslation([brokerId, "brokerdetailpage"]);
 
@@ -60,7 +59,7 @@ const HeaderBroker = ({
             <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
               Tier {ranking.tier} {ranking.title}
             </p>
-            <BioBroker websiteUrl={websiteUrl} badges={badges} registerUrl={registerUrl} />
+            <BioBroker badges={badges} openModal={openWebsiteModal} />
           </div>
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
@@ -92,7 +91,7 @@ const HeaderBroker = ({
         </div>
       </div>
 
-      <div className="block lg:hidden"><ButtonCta websiteUrl={websiteUrl} registerUrl={registerUrl} /></div>
+      <div className="block lg:hidden"><ButtonCta openModal={openWebsiteModal} /></div>
 
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
@@ -141,7 +140,7 @@ const HeaderBroker = ({
   );
 };
 
-const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
+const BioBroker = ({badges, openModal}: {badges: string[]; openModal: () => void;}) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <>
@@ -158,19 +157,31 @@ const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registe
           </div>
         ))}
       </div>
-      <div className="hidden lg:block"><ButtonCta websiteUrl={websiteUrl} registerUrl={registerUrl} /></div>
+      <div className="hidden lg:block"><ButtonCta openModal={openModal} /></div>
     </>
   )
 }
 
-const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
+const ButtonCta = ({openModal}: {openModal: () => void}) => {
   const { t } = useTranslation(["common"]);
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
-      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" size="md" className="text-nowrap flex-1">
+      <Button 
+        buttonType="button"
+        onClick={openModal} 
+        variant="primary" 
+        size="md" 
+        className="text-nowrap flex-1"
+      >
         {t("button.registerNow")}
       </Button>
-      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" size="md" className="text-nowrap flex-1">
+      <Button 
+        buttonType="button"
+        onClick={openModal} 
+        variant="outline" 
+        size="md" 
+        className="text-nowrap flex-1"
+      >
         {t("button.visitWebsite")}
       </Button>
     </div>
