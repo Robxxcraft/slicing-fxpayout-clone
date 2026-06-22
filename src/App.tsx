@@ -108,7 +108,7 @@ function App() {
       } finally {
         setInitialization(false);
       }
-    } 
+    }; 
 
     getUser();
   }, []);
@@ -127,6 +127,15 @@ function App() {
     const isMatch = dashboardPaths.some(p => location.pathname.includes(p));
     setIsDashboard(isMatch);
   }, [location.pathname]);
+
+  useEffect(() => {
+    ReactGA.initialize("G-FWNT67K53F");
+    ReactGA.send({ 
+      hitType: "pageview", 
+      page: location.pathname + location.search, 
+      title: document.title
+    });
+  }, [location.pathname, location.search]);
 
   if (initialization) {
     return null;
