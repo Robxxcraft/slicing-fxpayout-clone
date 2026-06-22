@@ -58,7 +58,7 @@ const ChangePasswordPage = () => {
       });
       
       if (!error) {
-        if (!authUser.hasPassword) {
+        if (authUser.hasPassword) {
           setAuthUser({
             ...authUser,
             hasPassword: true,
