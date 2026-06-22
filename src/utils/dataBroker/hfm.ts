@@ -9,7 +9,8 @@ const brokerRanking: BrokerRanking = {
 };
 const minDeposit = 0;
 const regionsWebsite = [
-  { region: "Indonesia", url: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425" },
+  { region: "Global", url: "https://register.hfm.com/sv/id/new-live-account/?refid=30494425" },
+  { region: "Indonesia", url: "https://register.hfmtrade-ind.com/sv/id/new-live-account/?refid=30494425" },
 ];
 
 export const hfmDetail: BrokerStruc = {

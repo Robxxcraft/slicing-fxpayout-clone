@@ -10,9 +10,8 @@ const brokerRanking: BrokerRanking = {
 const minDeposit = 5;
 const regionsWebsite = [
   { region: "Global", url: "https://affs.click/4gFt7" },
+  { region: "Indonesia", url: "https://affs.click/VHNQb" },
 ];
-
-// website = https://affs.click/pcNLG
 
 export const xmDetail: BrokerStruc = {
   id_ib: "FDP7K",

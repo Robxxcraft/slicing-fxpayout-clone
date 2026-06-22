@@ -9,7 +9,8 @@ const brokerRanking: BrokerRanking = {
 };
 const minDeposit = 100;
 const regionsWebsite = [
-  { region: "Global", url: "https://portal.fpmarkets.com/register?redir=stv&fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952" },
+  { region: "Global", url: "https://portal.fpmarkets.com/int-EN/register?fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952" },
+  { region: "Indonesia", url: "https://portal.fpmarkets.com/ms/register?fpm-affiliate-utm-source=IB&fpm-affiliate-agt=64952" },
 ];
 
 export const fpMarketsDetail: BrokerStruc = {
