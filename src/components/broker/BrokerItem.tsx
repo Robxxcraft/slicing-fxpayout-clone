@@ -90,8 +90,10 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
         <div className="mt-4 md:mt-7 flex flex-row items-center gap-2 flex-wrap md:flex-nowrap">
           {item.registerUrl.length > 0 &&
             <Button 
-              buttonType="button"
-              onClick={() => setShowModal(true)} 
+              buttonType={item.registerUrl.length === 1 ? "link" : "button"}
+              onClick={item.registerUrl.length === 1 ? () => {} : () => setShowModal(true)}
+              urlTo={item.registerUrl.length === 1 ? item.registerUrl[0].url : undefined}
+              target={item.registerUrl.length === 1 ? "_blank" : undefined} 
               variant="primary-light" 
               size="md" 
               className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"

@@ -3,15 +3,17 @@ import { listNavigationBrokers } from "@/utils/listNavigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { throttle } from "lodash";
-import type { BrokerRanking } from "@/utils/dataBroker/typeDetailBroker";
+import type { BrokerRanking, RegionWebsite } from "@/utils/dataBroker/typeDetailBroker";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
 
-const NavigationBar = ({ name, ranking, profileImage, openWebsiteModal }: 
+const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl, openWebsiteModal }: 
   {
     name: string; 
     ranking: BrokerRanking; 
     profileImage: string; 
+    registerUrl: RegionWebsite[];
+    websiteUrl: RegionWebsite[];
     openWebsiteModal: () => void;
   }
 ) => {
@@ -83,7 +85,7 @@ const NavigationBar = ({ name, ranking, profileImage, openWebsiteModal }:
             : <IoClose onClick={() => setOpenMenu(false)} className="text-3xl cursor-pointer" />
             }
           </div>
-          <ButtonCta scrollY={scrollY} openModal={openWebsiteModal} />
+          <ButtonCta scrollY={scrollY} openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} />
         </div>
 
         {/* ROW 2 */}
@@ -114,16 +116,34 @@ const NavigationBar = ({ name, ranking, profileImage, openWebsiteModal }:
               ))}
             </div>
             <div className="px-5 mt-4 flex items-center justify-center w-full gap-2 flex-wrap">
-              <div onClick={openWebsiteModal} className="w-fit text-center">
-                <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-                  {t("button.registerNow")}
-                </span>
-              </div>
-              <div onClick={openWebsiteModal} className="w-fit text-center">
-                <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-                  {t("button.visitWebsite")}
-                </span>
-              </div>
+              {registerUrl.length > 0 && (
+                registerUrl.length === 1 ?
+                <a href={registerUrl[0].url} target="_blank" className="w-fit text-center">
+                  <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
+                    {t("button.registerNow")}
+                  </span>
+                </a>
+                :
+                <div onClick={openWebsiteModal} className="w-fit text-center">
+                  <span className="block w-fit px-3 py-3 text-sm font-semibold bg-linear-to-t from-dark-primary to-primary text-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
+                    {t("button.registerNow")}
+                  </span>
+                </div>
+              )}
+              {websiteUrl.length > 0 && (
+                websiteUrl.length === 1 ? 
+                <a href={registerUrl[0].url} target="_blank" className="w-fit text-center">
+                  <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
+                    {t("button.visitWebsite")}
+                  </span>
+                </a>
+                :
+                <div onClick={openWebsiteModal} className="w-fit text-center">
+                  <span className="block w-fit px-3 py-3 text-sm font-semibold text-black bg-white border border-black rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
+                    {t("button.visitWebsite")}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         }
@@ -134,10 +154,14 @@ const NavigationBar = ({ name, ranking, profileImage, openWebsiteModal }:
 
 const ButtonCta = ({ 
   scrollY, 
-  openModal
+  openModal,
+  registerUrl,
+  websiteUrl
 }:{
   scrollY: number; 
   openModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[]
 }) => {
   const { t } = useTranslation(["common"])
   return (
@@ -146,17 +170,21 @@ const ButtonCta = ({
        hidden gap-3 2xl:gap-4 w-full lg:w-fit
     `}>
       <Button 
-        buttonType="button" 
+        buttonType={registerUrl.length === 1 ? "link" : "button"}
+        onClick={registerUrl.length === 1 ? () => {} : () => openModal()}
+        urlTo={registerUrl.length === 1 ? registerUrl[0].url : undefined}
+        target={registerUrl.length === 1 ? "_blank" : undefined} 
         variant="primary" 
-        onClick={() => openModal()} 
         className="w-full! lg:w-auto text-nowrap"
       >
         {t("button.registerNow")}
       </Button>
       <Button 
-        buttonType="button" 
+        buttonType={websiteUrl.length === 1 ? "link" : "button"}
+        onClick={websiteUrl.length === 1 ? () => {} : () => openModal()}
+        urlTo={websiteUrl.length === 1 ? websiteUrl[0].url : undefined}
+        target={websiteUrl.length === 1 ? "_blank" : undefined} 
         variant="outline" 
-        onClick={() => openModal()} 
         className="w-full! lg:w-auto text-nowrap"
       >
         {t("button.visitWebsite")}

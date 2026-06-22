@@ -2,13 +2,16 @@ import { IoArrowForward } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
+import type { RegionWebsite } from "@/utils/dataBroker/typeDetailBroker";
 
 const CtaBroker = ({ 
   name, 
-  openWebsiteModal
+  openWebsiteModal,
+  websiteUrl
 }: { 
   name: string; 
   openWebsiteModal: () => void; 
+  websiteUrl: RegionWebsite[];
 }) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
@@ -26,8 +29,10 @@ const CtaBroker = ({
               {t("brokerdetailpage:cta.registerFxpayout")}
             </Button>
             <Button 
-              buttonType="button"
-              onClick={() => openWebsiteModal()}
+              buttonType={websiteUrl.length === 1 ? "link" : "button"}
+              onClick={websiteUrl.length === 1 ? () => {} : () => openWebsiteModal()}
+              urlTo={websiteUrl.length === 1 ? websiteUrl[0].url : undefined}
+              target={websiteUrl.length === 1 ? "_blank" : undefined} 
               variant="outline-light" 
               size="xl" 
               icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} 

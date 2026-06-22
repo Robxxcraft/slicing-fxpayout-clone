@@ -41,10 +41,18 @@ const BrokerDetailPage = () => {
         </title>
       }
 
-      <NavigationBar name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} openWebsiteModal={() => setShowModal(true)} />
+      <NavigationBar 
+        name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} 
+        openWebsiteModal={() => setShowModal(true)} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl}
+      />
       
       <main>
-        <HeaderBroker brokerId={broker.detailUrl} name={broker.name} ranking={broker.ranking} badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} description={broker.detailDescription} spesification={broker.specification} openWebsiteModal={() => setShowModal(true)} />
+        <HeaderBroker 
+          brokerId={broker.detailUrl} name={broker.name} ranking={broker.ranking} 
+          badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} 
+          description={broker.detailDescription} spesification={broker.specification} openWebsiteModal={() => setShowModal(true)} 
+          registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} 
+        />
         
         <ProfileBroker brokerId={broker.detailUrl} profile={broker.profile}/>
 
@@ -66,7 +74,7 @@ const BrokerDetailPage = () => {
 
         <FaqBroker brokerId={broker.detailUrl} faq={broker.faq} />
 
-        <CtaBroker name={broker.name} openWebsiteModal={() => setShowModal(true)} />
+        <CtaBroker name={broker.name} openWebsiteModal={() => setShowModal(true)} websiteUrl={broker.websiteUrl} />
       </main>
 
       <Footer />

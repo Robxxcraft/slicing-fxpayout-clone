@@ -1,7 +1,7 @@
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaStar, FaStarHalf  } from "react-icons/fa6";
-import type { OverallScore, BrokerRanking, Specification } from "@/utils/dataBroker/typeDetailBroker";
+import type { OverallScore, BrokerRanking, Specification, RegionWebsite } from "@/utils/dataBroker/typeDetailBroker";
 import BoundedIcon from "./ui/BoundedIcon";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
@@ -22,12 +22,15 @@ type TypeHeader = {
   description: string; 
   spesification: Specification;
   openWebsiteModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
 }
 
 const HeaderBroker = ({
   brokerId, name, ranking, badges, 
   profileImage, overallScore, description, 
-  spesification, openWebsiteModal
+  spesification, openWebsiteModal,
+  registerUrl, websiteUrl
 }: TypeHeader ) => {
   const { t } = useTranslation([brokerId, "brokerdetailpage"]);
 
@@ -59,7 +62,7 @@ const HeaderBroker = ({
             <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
               Tier {ranking.tier} {ranking.title}
             </p>
-            <BioBroker badges={badges} openModal={openWebsiteModal} />
+            <BioBroker badges={badges} openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} />
           </div>
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
@@ -91,7 +94,7 @@ const HeaderBroker = ({
         </div>
       </div>
 
-      <div className="block lg:hidden"><ButtonCta openModal={openWebsiteModal} /></div>
+      <div className="block lg:hidden"><ButtonCta openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
 
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
@@ -140,7 +143,17 @@ const HeaderBroker = ({
   );
 };
 
-const BioBroker = ({badges, openModal}: {badges: string[]; openModal: () => void;}) => {
+const BioBroker = ({
+  badges, 
+  openModal,
+  registerUrl,
+  websiteUrl
+}: {
+  badges: string[]; 
+  openModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
+}) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <>
@@ -157,18 +170,28 @@ const BioBroker = ({badges, openModal}: {badges: string[]; openModal: () => void
           </div>
         ))}
       </div>
-      <div className="hidden lg:block"><ButtonCta openModal={openModal} /></div>
+      <div className="hidden lg:block"><ButtonCta openModal={openModal} registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
     </>
   )
 }
 
-const ButtonCta = ({openModal}: {openModal: () => void}) => {
+const ButtonCta = ({
+  openModal,
+  registerUrl,
+  websiteUrl
+}: {
+  openModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
+}) => {
   const { t } = useTranslation(["common"]);
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
       <Button 
-        buttonType="button"
-        onClick={openModal} 
+        buttonType={registerUrl.length === 1 ? "link" : "button"}
+        onClick={registerUrl.length === 1 ? () => {} : () => openModal()}
+        urlTo={registerUrl.length === 1 ? registerUrl[0].url : undefined}
+        target={registerUrl.length === 1 ? "_blank" : undefined}  
         variant="primary" 
         size="md" 
         className="text-nowrap flex-1"
@@ -176,8 +199,10 @@ const ButtonCta = ({openModal}: {openModal: () => void}) => {
         {t("button.registerNow")}
       </Button>
       <Button 
-        buttonType="button"
-        onClick={openModal} 
+        buttonType={websiteUrl.length === 1 ? "link" : "button"}
+        onClick={websiteUrl.length === 1 ? () => {} : () => openModal()}
+        urlTo={websiteUrl.length === 1 ? websiteUrl[0].url : undefined}
+        target={websiteUrl.length === 1 ? "_blank" : undefined} 
         variant="outline" 
         size="md" 
         className="text-nowrap flex-1"
