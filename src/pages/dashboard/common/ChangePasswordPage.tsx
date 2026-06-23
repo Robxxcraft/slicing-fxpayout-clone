@@ -56,8 +56,9 @@ const ChangePasswordPage = () => {
         newPassword: formChangePassword.values.newPassword,    
         confirmationPassword: formChangePassword.values.confirmationPassword 
       });
+      
       if (!error) {
-        if (authUser.hasPassword) {
+        if (!authUser.hasPassword) {
           setAuthUser({
             ...authUser,
             hasPassword: true,
