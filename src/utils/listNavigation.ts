@@ -1,21 +1,13 @@
-export type NavigationLink = {
-  code: string;
-  title: string;
-  url: string;
-  sublist?: SubNavigationList[];
-};
-
-type SubNavigationList = {
-  code: string;
-  title: string;
-  url: string
-}
-
-type SectionsRebateForex = {
-  code: string;
-  id: string;
-  name: string
-}
+import { FaUser, FaUsers } from "react-icons/fa6";
+import type { UserRole } from "@/types/user.type";
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { BsBank2 } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
+import { TbChartHistogram } from "react-icons/tb";
+import { IoCardOutline, IoWalletOutline } from "react-icons/io5";
+import { RiStockFill } from "react-icons/ri";
+import type { NavigationLink, NavSideDashboardSection, SectionsRebateForex, SubNavigationList } from "@/types/navigationBar.type";
+import { LuDatabase } from "react-icons/lu";
 
 const claimRebateSuNav: SubNavigationList[] = [
   { code: "definition", title: "Apa itu Rebate Forex?", url: '/rebate-forex#' },
@@ -26,10 +18,11 @@ const claimRebateSuNav: SubNavigationList[] = [
 ];
 
 const serviceSubNav: SubNavigationList[] = [
-  { code: "validation", title: "Validasi Akun", url: '/validation' },
+  // { code: "validation", title: "Validasi Akun", url: '/validation' },
   { code: "transfer", title: "Pindah Akun", url: '/transfer' },
-  { code: "affiliate", title: "Affiliate", url: '#' },
-]
+  { code: "forex", title: "Forex", url: '/forex' },
+  { code: "vipRebate", title: "VIP Rebate", url: '/vip-rebate' },
+];
 
 export const listNavigation: NavigationLink[] = [
   {
@@ -63,6 +56,11 @@ export const listNavigation: NavigationLink[] = [
     title: "Layanan",
     url: "#",
     sublist: serviceSubNav
+  },
+  { 
+    code: "affiliate", 
+    title: "Affiliate", 
+    url: '/affiliate'
   },
 ];
 
@@ -98,3 +96,79 @@ export const listSectionsRebateForex: SectionsRebateForex[] = [
   { code: "payment", id: "payment", name: "Sistem Pembayaran Rebate" },
   { code: "schedule", id: "schedule", name: "Jadwal Rebate" },
 ];
+
+export const NAV_DASHBOARD_CONFIG: Record<UserRole, NavSideDashboardSection[]> = {
+  user: [
+    {
+      title: "Content Management",
+      items: [
+        { key: "overview", label: "Overview", path: "/trader/overview", icon: RiDashboardHorizontalFill },
+        { key: "broker", label: "Broker", path: "/trader/broker", icon: BsBank2 },
+        { key: "rebate", label: "History Rebate", path: "/trader/rebate", icon: TbChartHistogram },
+      ],
+    },
+    {
+      title: "Withdrawal",
+      items: [
+        { key: "withdrawal", label: "Withdrawal Funds", path: "/trader/withdrawal", icon: IoCardOutline },
+        { key: "history", label: "Transaction History", path: "/trader/withdrawal/history", icon: IoWalletOutline },
+      ],
+    },
+    {
+      title: "Settings",
+      items: [
+        { key: "profile", label: "Profil", path: "/trader/profile", icon: FaUser },
+      ],
+    },
+  ],
+  affiliator: [
+    {
+      title: "Content Management",
+      items: [
+        { key: "overview", label: "Overview", path: "/affiliator/overview", icon: RiDashboardHorizontalFill },
+        { key: "traders", label: "Traders", path: "/affiliator/traders", icon: FaUser },
+        { key: "performance", label: "Performance", path: "/affiliator/performance", icon: RiStockFill },
+      ],
+    },
+    {
+      title: "Withdrawal",
+      items: [
+        { key: "withdrawal", label: "Withdrawal Funds", path: "/affiliator/withdrawal", icon: IoCardOutline },
+        { key: "history", label: "Transaction History", path: "/affiliator/withdrawal/history", icon: IoWalletOutline },
+      ],
+    },
+    {
+      title: "Settings",
+      items: [
+        { key: "profile", label: "Profil", path: "/affiliator/profile", icon: FaUser },
+      ],
+    },
+  ],
+  admin: [
+    {
+      title: "Main Content",
+      items: [
+        { key: "overview", label: "Overview", path: "/dashboard/overview", icon: RiDashboardHorizontalFill },
+        { key: "affiliators", label: "Affiliators", path: "/dashboard/affiliators", icon: FaUsers },
+        { key: "traders", label: "Traders", path: "/dashboard/traders", icon: FaUsers },
+        { key: "rebates", label: "Rebates", path: "/dashboard/rebates", icon: RiStockFill },
+        { key: "brokers", label: "Brokers", path: "/dashboard/brokers", icon: BsBank2 },
+        { key: "wallets", label: "Wallets", path: "/dashboard/wallets", icon: IoCardOutline },
+      ]
+    },
+    {
+      title: "Transaction",
+      items: [
+        { key: "withdrawals", label: "Withdrawals", path: "/dashboard/withdrawals", icon: IoWalletOutline },
+        { key: "import-rebate", label: "Import Rebate", path: "/dashboard/rebates/import", icon: LuDatabase },
+      ]
+    },
+    {
+      title: "Settings",
+      items: [
+        { key: "profile", label: "Profil", path: "/dashboard/profile", icon: FaUser },
+        { key: "whatsapp", label: "WhatsApp", path: "/dashboard/whatsapp", icon: FaWhatsapp },
+      ],
+    },
+  ]
+};

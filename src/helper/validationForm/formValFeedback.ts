@@ -1,4 +1,4 @@
-import type { FormFeedback } from "@/types/validationForm";
+import type { FormFeedback } from "@/types/validationForm.type";
 
 export const checkValidFormFeedback = (vals: FormFeedback) => {
   const errors: Partial<Record<keyof FormFeedback, string>> = {};

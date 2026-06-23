@@ -4,9 +4,19 @@
         "description": "FXPayout is a trusted forex rebate platform providing up to 90% cashback on broker commissions, paid directly to traders."
     },
     "hero": {
-        "title": "Trade More Profitably with Up to 90% Rebates for Traders.",
-        "subtitle": "FXPayout is a trusted forex rebate platform providing up to 90% cashback from broker commissions directly to traders.",
-        "badge": "Get 90% Rebate For Traders",
+        "title": "Get Cashback From Every Trading Transaction & <underline>No Additional Fees.</underline>",
+        "subtitles": [
+            "FXPayout Is Not a Broker",
+            "Does Not Accept Deposits",
+            "Does Not Access Your Trading Account"
+        ],
+        "badge": "Save More with Forex Rebates",
+        "runningTexts": [
+            "100% No Additional Fees",
+            "Funds Go Directly to the Broker",
+            "No Account Access",
+            "Transparent & Secure"
+        ],
         "estimateRebate": {
             "title": "Rebate Estimation",
             "subtitle": "Select a broker and enter lots per month for a quick estimation",
@@ -19,23 +29,38 @@
             "info": "We return up to 90% of the IB commission to traders. The process is fast, secure, and transparent without changing spreads or trading conditions."
         }
     },
-    "benefit": {
-        "items": [
+    "problemSection": {
+        "title": "Without Realizing It, Trading Fees Reduce Your Profits",
+        "paragraph": "Every trading transaction comes with costs such as spreads and commissions. Without rebates, these fees will continuously reduce your trading returns.",
+        "badge": "Common Trader Problems",
+        "problems": [
+            "Trading fees can significantly reduce your profits.",
+            "Spreads, commissions, and other fees are often overlooked by traders."
+        ],
+        "then": "So the solution?",
+        "solutions": [
+            "Use Rebates.",
+            "With rebates, you can recover part of those trading costs."
+        ]
+    },
+    "profile": {
+        "title": "FXPayout Helps You Reduce Trading Costs Through a Rebate (Cashback) System.",
+        "paragraph": "We work as an Introducing Broker (IB) and share a portion of the broker’s commission with you. No additional fees. No extra risk.",
+        "badge": "HERE AS A SOLUTION",
+        "searchPlaceholder": "rebate forex, trading cashback, trusted forex IB...",
+        "badges": ["Forex Rebate", "Trading Cashback", "FBS Rebate", "Exness Rebate", "XM Rebate", "Trusted Forex IB"],
+        "features": [
             {
-                "title": "90% rebate for traders",
-                "description": "Get the largest cashback every lot"
+                "title": "Up to 90% Rebate",
+                "paragraph": "Get up to 90% cashback from broker commissions directly to your account."
             },
             {
-                "title": "Weekly or on-demand payments",
-                "description": "Enjoy fast withdrawals via local banks/e-wallets."
+                "title": "Focus on traders",
+                "paragraph": "Instant cashback without changing trading conditions."
             },
             {
-                "title": "Real-time monitoring dashboard",
-                "description": "Monitor rebate history completely."
-            },
-            {
-                "title": "Local support WhatsApp & Telegram",
-                "description": "Equipped with Support with fast response"
+                "title": "Local Support",
+                "paragraph": "Multi-language support & trader-friendly operating hours."
             }
         ]
     },
@@ -71,6 +96,54 @@
         "paragraph": "Enjoy a limited-time promo specifically for traders who just joined FXPayout.",
         "tag": "Limited Time"
     },
+    "brokerlistsection": {
+        "view_all_brokers": "View All Brokers"
+    },
+    "securitySection": {
+        "title": "Your Fund Security Is Our Priority",
+        "badge": "YOU SHOULD KNOW",
+        "contents": [
+        {
+            "title": "FXPayout Is Not a Broker",
+            "paragraph": "We do not manage your funds. All transactions are carried out directly through the official broker."
+        },
+        {
+            "title": "Does Not Accept Deposits",
+            "paragraph": "We never ask you to transfer funds. All trading activities remain within your broker account."
+        },
+        {
+            "title": "No Account Access",
+            "paragraph": "We do not have access to your trading account and do not store your login information."
+        }
+        ]
+    },
+    "benefit": {
+        "title": "Maximize Your Trading Profits Without Additional Fees",
+        "paragraph": "Get cashback from every trading transaction without changing your broker conditions. A transparent, secure system designed to improve your profit efficiency.",
+        "badge": "WHY FX PAYOUT",
+        "items": [
+            {
+                "title": "💰 Reduce Trading Costs",
+                "description": "A portion of your trading fees is returned to you as cashback."
+            },
+            {
+                "title": "🔄 Rebates Directly from the Broker",
+                "description": "A portion of your trading fees is returned to you as cashback."
+            },
+            {
+                "title": "🚫 No Additional Fees",
+                "description": "No hidden fees or deductions. Everything is fully transparent."
+            },
+            {
+                "title": "🔒 Secure & Transparent System",
+                "description": "All transactions are carried out directly through the broker. We do not access your trading account or store your login information."
+            },
+            {
+                "title": "⚡ Responsive Support",
+                "description": "Our local support team is ready to assist you via WhatsApp and Telegram with fast responses and clear solutions."
+            }
+        ]
+    },
     "reviews": {
         "title": "What Do Traders Who Use FXPayout Say?",
         "paragraph": "Real experiences from traders earning additional profit from the rebate program.",
@@ -102,25 +175,9 @@
             "errors": { "captcha": "Please confirm that you are not a robot" }
         }
     },
-    "profile": {
-        "title": "FXPayout, the main reference for forex rebates for traders.",
-        "paragraph": "FXPayout is known as a forex rebate platform that returns up to 90% of broker commissions, prioritizing fast payments and local support services for traders.",
-        "tag": "Trusted by the trading community",
-        "searchPlaceholder": "rebate forex, trading cashback, trusted forex IB...",
-        "badges": ["Forex Rebate", "Trading Cashback", "FBS Rebate", "Exness Rebate", "XM Rebate", "Trusted Forex IB"],
-        "features": [
-            {
-                "title": "Up to 90% Rebate",
-                "paragraph": "Get up to 90% cashback from broker commissions directly to your account."
-            },
-            {
-                "title": "Focus on traders",
-                "paragraph": "Instant cashback without changing trading conditions."
-            },
-            {
-                "title": "Local Support",
-                "paragraph": "Multi-language support & trader-friendly operating hours."
-            }
-        ]
+    "riskSection": {
+        "title": "Trading Risks Still Exist, But Costs Can Be Reduced",
+        "paragraph": "Forex trading carries high risks. However, with FXPayout, you can reduce your trading costs without adding extra risk, since all funds remain safely with your broker.",
+        "cta": "Your Funds Stay Safe with the Broker"
     }
 }

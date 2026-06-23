@@ -5,6 +5,7 @@ import TripleBadgeFlow from "@/components/ui/TripleBadgeFlow";
 import { useForm } from "@/hooks/useForm";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { useTranslation } from "react-i18next";
+import { copyToClipboard } from "@/helper/copyToClipboard";
 
 export type TransferFormState = {
   broker: string;
@@ -46,35 +47,13 @@ ${t(`${keyTemplateEmail}.closing`)}
 
 ${t(`${keyTemplateEmail}.regards`)}
 ${rawUsername}`;
-    
-    const fallbackCopy = (text: string) => {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
-      try {
-        document.execCommand('copy');
-        setIsCopied(true);
-      } catch (err) {
-        console.error(err);
-      }
-      document.body.removeChild(textArea);
-    };
 
-    try {
-      if (navigator.clipboard && window.isSecureContext) { 
-        await navigator.clipboard.writeText(rawText);
-        setIsCopied(true);
-      } else {
-        fallbackCopy(rawText);
-      }
-
+    const isCopySuccess = await copyToClipboard(rawText);
+    if (isCopySuccess) {
+      setIsCopied(true);
       setTimeout(() => {
         setIsCopied(false);
       }, 2000);
-    } catch (error) {
-      alert(error);
-      console.error(error);
     }
   }
 

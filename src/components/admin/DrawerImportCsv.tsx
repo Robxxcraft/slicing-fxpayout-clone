@@ -4,13 +4,14 @@ import { IoCloseOutline } from 'react-icons/io5';
 import Papa from "papaparse";
 import { brokers } from '@/utils/dataBroker/brokers';
 import Button from '../ui/Button';
-import DropzoneFile from './DropzoneFile';
+import DropzoneFile from '../dashboard/common/DropzoneFile';
 import PreviewValDataTable from './PreviewValDataTable';
 import PreviewFile from './PreviewFile';
 import FeedbackUploadFile from './FeedbackUploadFile';
 import { HEADER_MAPPING, type StatusImport } from '@/utils/adminUnit';
 import { toast } from 'react-toastify';
-import { bulkPostFormValidationData } from '@/utils/api';
+import { AdminAPI } from '@/api';
+import { getSizeFileFormat } from '@/helper/fileHelper';
 
 type ResponseImport = {
   messages: string[];
@@ -76,24 +77,12 @@ const DrawerImportCsv = ({
     }
   }, []);
 
-  const getSizeFileFormat = (sizeInBytes: number): string => {
-    if (sizeInBytes < 1024) {
-      return `${sizeInBytes} Bytes`;
-    } else if (sizeInBytes < 1024 * 1024) {
-      const sizeInKB = (sizeInBytes / 1024).toFixed(2);
-      return `${sizeInKB} KB`;
-    } else {
-      const sizeInMB = (sizeInBytes / (1024 * 1024)).toFixed(2);
-      return `${sizeInMB} MB`;
-    }
-  };
-
   const handleImportData = async () => {
     if (data.length === 0) return;
     setStatusImport("UPLOAD");
     setIsLoading(true);
     try {
-      const { error, message, errorsDetail } = await bulkPostFormValidationData({ items: data });
+      const { error, message, errorsDetail } = await AdminAPI.bulkPostFormValidationData({ items: data });
       if (error) {
         setStatusImport("ERROR");
         if (errorsDetail) {

@@ -5,7 +5,7 @@ import TextInput from "@/components/ui/TextInput";
 import { formattedUsd, scrollToErrorInput } from "@/helper/formHelper";
 import { checkValidCalculator } from "@/helper/validationForm/calculatorValidation";
 import { useForm } from "@/hooks/useForm";
-import type { FormState, RebateResult } from "@/types/calculator";
+import type { FormState, RebateResult } from "@/types/calculator.type";
 import { brokers } from "@/utils/dataBroker/brokers";
 import type { BrokerStruc } from "@/utils/dataBroker/typeDetailBroker";
 import { supportPairs } from "@/utils/pairs";
@@ -27,7 +27,7 @@ const CalculatorSection = () => {
     rebatesPerLot: 0.0
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const allBrokers = Object.values(brokers);
+  const allBrokers = Object.values(brokers).sort((a, b) => a.name.localeCompare(b.name));
 
   const handleBrokerChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;

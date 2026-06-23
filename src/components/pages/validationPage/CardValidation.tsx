@@ -2,7 +2,7 @@ import SelectInput from '@/components/ui/SelectInput';
 import BoundedIcon from '../brokerDetail/ui/BoundedIcon';
 import TextInput from '@/components/ui/TextInput';
 import { brokers } from '@/utils/dataBroker/brokers';
-import type { FormValidation } from '@/types/validationForm';
+import type { FormValidation } from '@/types/validationForm.type';
 import { useTranslation } from 'react-i18next';
 
 const CardValidation = ({ form, handleChangeForm, errors }: 

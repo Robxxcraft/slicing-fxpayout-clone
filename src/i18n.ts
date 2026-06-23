@@ -9,6 +9,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    supportedLngs: ["en", "id"],
+    load: "languageOnly",
     detection: {
       order: ["localStorage", "navigator", "htmlTag", "path", "cookie"],
       lookupFromPathIndex: 0,

@@ -17,7 +17,7 @@ const AsideSection = ({
 }) => {
   const { t } = useTranslation(["common"]);
   return (
-    <aside ref={asideBarRef} className="px-6 md:px-11 xl:px-0 xl:pl-24 2xl:pl-56 relative w-full lg:w-[25%] z-9999999">
+    <aside ref={asideBarRef} className="px-6 md:px-11 xl:px-0 xl:pl-24 2xl:pl-56 relative w-full lg:w-[25%] z-999990">
       <div className="sticky top-20 lg:top-[120px] 2xl:top-[148px] left-0 h-14 lg:h-fit w-full">
         <div className="py-6 md:py-8 lg:py-0 flex items-center justify-between w-full bg-white">
           <h2 className="font-medium text-xl md:text-3xl lg:text-2xl 2xl:text-4xl">

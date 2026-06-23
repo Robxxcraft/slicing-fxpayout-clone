@@ -4,9 +4,10 @@ import HeaderSection from "@/components/HeaderSection";
 import CtaSection from "@/components/CtaSection";
 import CalculatorSection from "@/components/pages/calculatorPage/CalculatorSection";
 import { useTranslation } from "react-i18next";
+import { getLocalizedPath } from "@/helper/pathHelper";
 
 const CalculatorPage = () => {
-  const { t } = useTranslation(["calculatorpage"]);
+  const { t, i18n } = useTranslation(["common", "calculatorpage"]);
 
   return (
     <div className="font-inter">
@@ -19,7 +20,12 @@ const CalculatorPage = () => {
           title={t("calculatorpage:header.title")} 
           paragraph={t("calculatorpage:header.paragraph")} />
         <CalculatorSection />
-        <CtaSection />
+        <CtaSection 
+          title={t("cta.title")}
+          paragraph={t("cta.paragraph")}
+          button={t("button.registerNow")}
+          urlButton={getLocalizedPath("register", i18n.language)}
+        />
       </main>
       <Footer />
     </div>

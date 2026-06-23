@@ -7,14 +7,18 @@ const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "Multi-Asset ECN/STP Broker"
 };
+const minDeposit = 15;
+const regionsWebsite = [
+  { region: "Global", url: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4" },
+];
 
 export const zfxDetail: BrokerStruc = {
   id_ib: "Z940752S4",
   contactSupport: "6287887786538",
   name: brokerName,
   profileImage: "zfx.webp",
-  registerUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
-  websiteUrl: "https://my.zm-area.com/reg/truely?agentnumber=Z940752S4",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
@@ -28,7 +32,7 @@ export const zfxDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$15",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -45,7 +49,7 @@ export const zfxDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$15",
+    minDeposit: minDeposit,
     types: ["Cent", "Standard STP", "ECN"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -130,10 +134,10 @@ export const zfxDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "zfx.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "zfx.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "zfx.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "zfx.webp" },
     ]
   },
   rebateProgram: [

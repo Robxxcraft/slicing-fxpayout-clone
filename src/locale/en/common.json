@@ -9,16 +9,41 @@
         "disadvantage": "Cons",
         "close": "Close",
         "readMore": "Read more",
-        "seeAll": "See all"
+        "seeAll": "See all",
+        "month": "month",
+        "title_month": "Month",
+        "from_weeks_ago": "from a weeks ago",
+        "title_traders": "Traders",
+        "title_others": "Others",
+        "title_all": "All",
+        "title_local": "Local",
+        "title_international": "International",
+        "title_newest": "New",
+        "title_recommendation": "Recommendation",
+        "title_name": "Name",
+        "highest_rebate": "Highest Rebate",
+        "lowest_rebate": "Lowest Rebate",
+        "title_low": "Low",
+        "title_medium": "Medium",
+        "title_high": "High",
+        "title_apply": "Apply",
+        "rebate_until": "Rebate Untill"
     },
     "button": {
         "registerNow": "Register Now",
         "calculateRebate": "Calculate Rebate",
-        "visitWebsite": "Visit Website"
+        "visitWebsite": "Visit Website",
+        "join_now": "Join Now",
+        "see_list_broker": "View Broker List",
+        "try_now": "Try Now"
     },
     "cta": {
         "title": "Ready to increase your trading profit efficiency?",
         "paragraph": "Register now and start getting up to 90% rebates."
+    },
+    "cta_trader": {
+        "title": "Start Trading More Efficiently Today",
+        "paragraph": "Sign up today and earn rebates on every eligible trade. No additional fees. No extra risk."
     },
     "methods": {
         "bank_transfer": "Bank Transfer",
@@ -29,6 +54,7 @@
         "indonesian_local_va": "Local VA (ID)",
         "indonesian_e_wallet": "Indonesian E-Wallet",
         "local_bank": "Local Bank",
+        "local_transfer": "Local Transfer",
         "perfect_money": "Perfect Money",
         "skrill_neteller": "Skrill/Neteller"
     },
@@ -39,6 +65,7 @@
         "calculator": "Calculator",
         "claimRebate": "Claim Rebate",
         "service": "Service",
+        "affiliate": "Affiliate",
         "subNav": {
             "definition": "What is Forex Rebate?",
             "howRebate": "How to Get Forex Rebates", 
@@ -47,7 +74,8 @@
             "schedule": "Rebate Schedule",
             "validation": "Account Validation",
             "transfer": "Account Transfer",    
-            "affiliate": "Affiliate Program"    
+            "forex": "Forex",
+            "vipRebate": "VIP Rebate"
         }
     },
     "footer": {

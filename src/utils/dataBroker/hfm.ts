@@ -7,14 +7,19 @@ const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "Multi-Asset Forex & CFD Broker"
 };
+const minDeposit = 0;
+const regionsWebsite = [
+  { region: "Global", url: "https://register.hfm.com/sv/id/new-live-account/?refid=30494425" },
+  { region: "Indonesia", url: "https://register.hfmtrade-ind.com/sv/id/new-live-account/?refid=30494425" },
+];
 
 export const hfmDetail: BrokerStruc = {
   id_ib: "30494425",
   contactSupport: "supportind@hfm.com",
   name: brokerName,
   profileImage: "hfm.webp",
-  registerUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
-  websiteUrl: "https://register.hfmtrade-ind.com/sv/en/new-live-account/?refid=30494425",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
@@ -28,7 +33,7 @@ export const hfmDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$0",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -48,7 +53,7 @@ export const hfmDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$0",
+    minDeposit: minDeposit,
     types: ["Cent", "Zero Spread", "Pro", "Premium", "HFCopy"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -151,10 +156,10 @@ export const hfmDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.hfm_mobile`, icon: "hfm.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "hfm.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "other", username: `${platformsKey}.hfm_mobile`, icon: "hfm.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "hfm.webp" },
     ]
   },
   rebateProgram: [

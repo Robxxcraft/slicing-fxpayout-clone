@@ -22,7 +22,7 @@ const Summary = ({
   const summaryItems: SumaryStructure[] = [
     { 
       title: "brokerdetailpage:summary.cardHeaders.minDeposit", 
-      detail: summaryBroker.minDeposit, 
+      detail: `$${summaryBroker.minDeposit}`, 
       icon: "min-depo.svg" 
     },    { 
       title: "brokerdetailpage:summary.cardHeaders.accountType", 

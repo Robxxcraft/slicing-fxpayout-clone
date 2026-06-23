@@ -6,7 +6,7 @@ import type { ValidationData } from "@/models/validationData";
 import { useForm } from "@/hooks/useForm";
 import { brokers } from "@/utils/dataBroker/brokers";
 import { scrollToErrorInput } from "@/helper/formHelper";
-import { updateValidationData } from "@/utils/api";
+import { AdminAPI } from "@/api";
 import { checkValidForm } from "@/helper/validationForm/editValData";
 import SelectInput from "../ui/SelectInput";
 import Button from "../ui/Button";
@@ -68,7 +68,7 @@ const DrawerDetailData = ({
         return;
       }
 
-      const { error, message } = await updateValidationData({ item: formDetail.values });
+      const { error, message } = await AdminAPI.updateValidationData({ item: formDetail.values });
       if (error) {
         toast.error(message);
       } else {

@@ -6,9 +6,14 @@
 
   --color-primary: #4160ff;
   --color-dark-primary: #213269;
+  --color-disabled: #9E9E9E;
   --color-light-gray: #e9e9e9;
   --color-my-light-blue: #E3EBFF;
   --color-my-red: #ff1500;
+  --color-my-red-100: #FAF4F4;
+  --color-my-red-200: #FFE3E3;
+  --color-my-red-700: #FF4141;
+  --color-my-green: #00AA63;
   --color-my-pink: #FC685B;
   --color-my-dark-purple: #101828;
   --color-my-purple: #170F49;
@@ -38,6 +43,10 @@
 .primary-scrollbar {
   scrollbar-width: normal;              /* Firefox */
   scrollbar-color: #4160ff transparent; /* thumb | track */
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin !important;
 }
 
 .primary-scrollbar::-webkit-scrollbar-thumb {
@@ -80,10 +89,9 @@
   background-image: none !important;
 }
 
-._select-no-arrow::ms-expand {
+._select-no-arrow::-ms-expand {
   display: none;
 }
-
 .next-btn {
   background: #000;
 }

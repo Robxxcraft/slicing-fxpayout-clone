@@ -1,9 +1,10 @@
 import Button from "@/components/ui/Button";
+import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
 import { IoMegaphone } from "react-icons/io5";
 
 const Rewards = () => {
-  const { t } = useTranslation(["common", "homepage"]);
+  const { t, i18n } = useTranslation(["common", "homepage"]);
   return (
     <div className="relative mt-10 lg:mt-18 2xl:mt-28 px-6 xl:px-[120px] 2xl:px-[166px] py-8 2xl:py-10 bg-primary overflow-hidden">
       <img
@@ -33,7 +34,7 @@ const Rewards = () => {
             </p>
           </div>
         </div>
-        <Button buttonType="link" urlTo="https://wa.me/6282125597634" target="_blank" variant="light" size="xl" className="py-4! 2xl:py-6! font-medium! w-full! xl:w-fit!">
+        <Button buttonType="link" urlTo={getLocalizedPath("/register", i18n.language)} target="_blank" variant="light" size="xl" className="py-4! 2xl:py-6! font-medium! w-full! xl:w-fit!">
           {t("button.registerNow")}
         </Button>
       </div>

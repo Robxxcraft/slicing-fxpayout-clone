@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
-type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "outline-primary" | "light" | "danger" | "no-bg";
+export type ButtonVariant = "primary" | "primary-light" | "outline" | "outline-light" | "outline-primary" | "light" | "danger" | "no-bg";
 type ButtonSize = "xl" | "lg" | "md";
 type IconPosition = "left" | "right";
 type ButtonType = "link" | "button" | "submit";
@@ -60,7 +60,7 @@ export default function Button({
   }
 
   if (variant === "outline") {
-    variantStyles = `bg-transparent text-black border-black hover:bg-primary hover:text-white active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60 disabled:border-black/60`;
+    variantStyles = `bg-transparent text-black border-black hover:bg-light-gray active:brightness-80 disabled:hover:bg-transparent disabled:hover:text-black disabled:active:brightness-80 disabled:text-black/60 disabled:border-black/60`;
     spinnerCircle = "text-black/20";
   }
   if (variant === "outline-primary") {
@@ -114,7 +114,7 @@ export default function Button({
   }
 
   return (
-    <button className={finalClass} {...props} disabled={disabled}>
+    <button type={buttonType} className={finalClass} {...props} disabled={disabled}>
       {loading && 
         <div className="absolute inset-0 flex items-center justify-center">
           <Spinner circle={spinnerCircle} />

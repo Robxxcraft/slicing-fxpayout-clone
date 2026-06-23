@@ -13,5 +13,19 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom"],
+          router: ["react-router-dom"],
+          charts: ["chart.js", "react-chartjs-2"],
+          toast: ["react-toastify"],
+          table: ["@tanstack/react-table"],
+          icons: ["react-icons"]
+        }
+      }
+    }
   }
 })

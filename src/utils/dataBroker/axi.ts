@@ -7,14 +7,18 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Global ECN/STP Forex & CFD Broker"
 };
+const minDeposit = 0;
+const regionsWebsite = [
+  { region: "Global", url: "https://www.axi.com/int/live-account?promocode=4736053" },
+];
 
 export const axiDetail: BrokerStruc = {
   id_ib: "4736053",
   contactSupport: "service@axi.com",
   name: brokerName,
   profileImage: "axi.webp",
-  registerUrl: "https://www.axi.com/int/live-account?promocode=4736053",
-  websiteUrl: "https://www.axi.com/int/live-account?promocode=4736053",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
@@ -28,7 +32,7 @@ export const axiDetail: BrokerStruc = {
   cardDescription: "Broker global dengan fokus pada keamanan & eksekusi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$0",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -45,7 +49,7 @@ export const axiDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$0",
+    minDeposit: minDeposit,
     types: ["Standard", "Pro ECN"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -125,10 +129,10 @@ export const axiDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "axi.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "axi.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "axi.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "axi.webp" },
     ]
   },
   rebateProgram: [

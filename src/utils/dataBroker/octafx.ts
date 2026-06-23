@@ -7,14 +7,18 @@ const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "Forex & CFD Broker"
 };
+const minDeposit = 50;
+const regionsWebsite = [
+  { region: "Global", url: "https://octa.click/bJLCLmX8zDZ?ib=47807098" },
+];
  
 export const octaFxDetail: BrokerStruc = {
   id_ib: "47807098",
   contactSupport: "support@octafx.com",
   name: brokerName,
   profileImage: "octafx.webp",
-  registerUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
-  websiteUrl: "https://octa.click/bJLCLmX8zDZ?ib=47807098",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
@@ -28,7 +32,7 @@ export const octaFxDetail: BrokerStruc = {
   cardDescription: "Broker ECN premium untuk scalper & EA. Likuiditas dalam & komisi stabil.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$50",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -45,7 +49,7 @@ export const octaFxDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: " $50",
+    minDeposit: minDeposit,
     types: ["MT4", "MT5", "OctaTrader"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -132,11 +136,11 @@ export const octaFxDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.octa_trader`, icon: "octafx.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "octafx.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "octafx.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "other", username: `${platformsKey}.octa_trader`, icon: "octafx.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "octafx.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "octafx.webp" },
     ]
   },
   rebateProgram: [

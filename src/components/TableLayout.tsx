@@ -2,10 +2,13 @@ type TableProps = {
   children: React.ReactNode;
   className?: string;
   tableClass?: string;
+  isLoading?: boolean;
 };
 
-const Table = ({ children, className, tableClass }: TableProps) => {
-  const baseStyle = `mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl ${className}`;
+const Table = ({ children, className, tableClass, isLoading }: TableProps) => {
+  const baseStyle = `primary-scrollbar mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl ${className}
+    ${isLoading ? "opacity-70 select-none" : "opacity-100"}
+  `;
   const tableStyle = `table-auto w-full text-[#1D2433] text-base 2xl:text-xl ${tableClass}`;
   return (
     <div className={baseStyle}>

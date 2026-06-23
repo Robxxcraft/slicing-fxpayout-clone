@@ -6,7 +6,7 @@ const MaskSvg = ({
 }: {
     icon: string;
     label: string;
-    className: string;
+    className?: string;
     color: string;
 }) => {
   return (

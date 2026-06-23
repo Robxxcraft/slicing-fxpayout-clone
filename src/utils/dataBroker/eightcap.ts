@@ -6,6 +6,7 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Global ECN Broker"
 };
+const minDeposit = 100;
 
 export const eightcapDetail = {
   id_ib: "",
@@ -26,7 +27,7 @@ export const eightcapDetail = {
   cardDescription: "Broker ECN cepat, terintegrasi TradingView & kompatibel EA.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     leverage: "Hingga 1:500",
     spread: "Mulai 0.0 pips (Razor)",
   },
@@ -44,7 +45,7 @@ export const eightcapDetail = {
     ]
   },
   summary: {
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     types: ["Standard", "Razor"],
     spread: "Mulai 0.0 pips (Razor)",
     commission: "Razor: $3.50 per lot per side",

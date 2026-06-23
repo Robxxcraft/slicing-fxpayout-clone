@@ -10,13 +10,15 @@ import Spinner from "@/components/ui/Spinner";
 import TableValData from "@/components/admin/TableValData";
 import DrawerFilterTable from "@/components/admin/DrawerFilterTable";
 import DrawerDetailData from "@/components/admin/DrawerDetailData";
-import ModalDeleteValidationData from "@/components/ui/ModalDeleteValidationData";
+import ModalConfirmation from "@/components/ui/ModalConfirmation";
 import DrawerImportCsv from "@/components/admin/DrawerImportCsv";
 import type { ValidationData } from "@/models/validationData";
 import { columnsDef } from "@/helper/columnsValidation";
-import { bulkDeleteValidationData, deleteValidationData, exportCsvValidationData, getLocalStorage, getValidationData, setLocalStorage } from "@/utils/api";
+import { AdminAPI } from "@/api";
 import { TbTableExport } from "react-icons/tb";
 import Tooltip from "@/components/ui/Tooltip";
+import { getLocalStorage, setLocalStorage } from "@/services/apiClient";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 type DrawerType = "FILTER" | "DETAIL" | "IMPORT" | null;
 
@@ -30,16 +32,7 @@ const ValidationDataDashboard = () => {
   const openDetail = () => setActiveDrawer("DETAIL");
   const openImport = () => setActiveDrawer("IMPORT");
 
-  useEffect(() => {
-    if (showPopupDelete) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showPopupDelete]);
+  useLockBodyScroll(showPopupDelete);
   
   // Table data state
   const [data, setData] = useState<ValidationData[]>([]);
@@ -89,7 +82,7 @@ const ValidationDataDashboard = () => {
     setIsLoading(true);
     try {
       const sort = sorting[0];
-      const { error, result, message } = await getValidationData({
+      const { error, result, message } = await AdminAPI.getValidationData({
         sort: sort?.desc === undefined ? "desc" 
         : sort?.desc ? "desc" : "asc",
         sortBy: sort?.id ?? "created_at",
@@ -156,7 +149,7 @@ const ValidationDataDashboard = () => {
     const totalSelectedData = tableInstance.getSelectedRowModel().flatRows.length;
     if (totalSelectedData === 1) {
       const dataId = tableInstance.getSelectedRowModel().flatRows[0].original.id;
-      const { error, message } = await deleteValidationData({ 
+      const { error, message } = await AdminAPI.deleteValidationData({ 
         validationId: Number(dataId)
       });
       if (error) {
@@ -168,7 +161,7 @@ const ValidationDataDashboard = () => {
       setShowPopupDelete(false);
     } else if (totalSelectedData > 1) {
       const dataIds = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id));
-      const { error, message } = await bulkDeleteValidationData({
+      const { error, message } = await AdminAPI.bulkDeleteValidationData({
         validationIds: dataIds
       });
       if (error) {
@@ -183,7 +176,7 @@ const ValidationDataDashboard = () => {
 
   const handleExportData = async () => {
     setIsLoading(true);
-    const { error, message } = await exportCsvValidationData();
+    const { error, message } = await AdminAPI.exportCsvValidationData();
     if (error) {
       toast.error(message);
     } else {
@@ -245,14 +238,14 @@ const ValidationDataDashboard = () => {
               <button
                 onClick={tableInstance.previousPage}
                 disabled={isLoading || !tableInstance.getCanPreviousPage()}
-                className="p-2 rounded-l-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
+                className="p-2 rounded-l-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
               >
                 <FaChevronLeft />
               </button>
               <button
                 onClick={tableInstance.nextPage}
                 disabled={isLoading || !tableInstance.getCanNextPage()}
-                className="p-2 rounded-r-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-black/5 transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
+                className="p-2 rounded-r-md border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
               >
                 <FaChevronRight />
               </button>
@@ -305,11 +298,15 @@ const ValidationDataDashboard = () => {
         refreshData={fetchData}
       />}
 
-      {showPopupDelete && <ModalDeleteValidationData
+      {showPopupDelete && <ModalConfirmation
         title={`Hapus ${tableInstance.getSelectedRowModel().flatRows.length} data validasi`}
-        handleDelete={handleDeleteData} 
-        isVisible={showPopupDelete} 
-        handleClose={() => setShowPopupDelete(false)}          
+        paragraph="Data yang dipilih akan dihapus permanen dari sistem dan tidak dapat dipulihkan kembali."
+        handleConfirmation={handleDeleteData}
+        btnConfirmation="danger"
+        isVisible={showPopupDelete}
+        handleClose={() => setShowPopupDelete(false)} 
+        confirmText={"Hapus"} 
+        cancelText={"Batal"}      
       />}
     </>
   )

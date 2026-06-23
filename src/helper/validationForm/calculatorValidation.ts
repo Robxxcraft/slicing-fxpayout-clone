@@ -1,4 +1,4 @@
-import type { FormState } from "@/types/calculator";
+import type { FormState } from "@/types/calculator.type";
 
 export const checkValidCalculator = (vals: FormState) => {
   const errors: Partial<Record<keyof FormState, string>> = {};

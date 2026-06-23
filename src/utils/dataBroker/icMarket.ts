@@ -6,6 +6,7 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Global ECN Broker"
 };
+const minDeposit = 200;
 
 export const icMarketDetail = {
   id_ib: "",
@@ -26,7 +27,7 @@ export const icMarketDetail = {
   cardDescription: "Broker global dengan eksekusi cepat & spread rendah. Akun Raw/Zero populer untuk rebate tinggi.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$200",
+    minDeposit: minDeposit,
     leverage: "Hingga 1:500",
     spread: "Mulai 0.0 pips (Raw)",
   },
@@ -44,7 +45,7 @@ export const icMarketDetail = {
     ]
   },
   summary: {
-    minDeposit: "$200",
+    minDeposit: minDeposit,
     types: ["Standard", "Raw Spread", "cTrader Raw"],
     spread: "Mulai 0.0 pips (Raw)",
     commission: "$6–$7 per lot (round-turn)",

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import TripleBadgeFlow from "@/components/ui/TripleBadgeFlow";
 import Button from "@/components/ui/Button";
@@ -9,10 +9,11 @@ import SuccessModal from "@/components/ui/SuccessModal";
 import { scrollToErrorInput, validateOnlyNumber } from "@/helper/formHelper";
 import { postFormValidationData } from "@/utils/api";
 import type { ValidationData } from "@/models/validationData";
-import type { FormBank, FormValidation, ModalResponse } from "@/types/validationForm";
+import type { FormBank, FormValidation, ModalResponse } from "@/types/validationForm.type";
 import { checkValidFormValidation } from "@/helper/validationForm/formValAccount";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 
 const ValidationForm = () => {
   const { t, i18n } = useTranslation(["validationpage"]);
@@ -38,16 +39,7 @@ const ValidationForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const otherBank = t("validationpage:card.bankForm.otherBank");
 
-  useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showModal]);
+  useLockBodyScroll(showModal !== null);
   
   const handleTempBankChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;

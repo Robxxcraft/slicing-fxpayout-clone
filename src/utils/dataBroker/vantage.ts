@@ -7,14 +7,18 @@ const brokerRanking: BrokerRanking = {
   tier: "Global",
   title: "CFD & Forex Broker"
 };
+const minDeposit = 50;
+const regionsWebsite = [
+  { region: "Global", url: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=" },
+];
 
 export const vantageDetail: BrokerStruc = {
   id_ib: "EJSu0LiT",
   contactSupport: "support@vantagemarkets.com",
   name: brokerName,
   profileImage: "vantage.webp",
-  registerUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
-  websiteUrl: "https://www.vantagemarketsea.com/id/open-live-account/?affid=MjA3OTY2Mzk=",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
@@ -28,7 +32,7 @@ export const vantageDetail: BrokerStruc = {
   cardDescription: "Broker ECN memiliki spread rendah, populer di Asia & Australia.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$50",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -46,7 +50,7 @@ export const vantageDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$50",
+    minDeposit: minDeposit,
     types:["Standard STP", "Raw ECN", "Pro ECN", "Premium", "Cent", "Swap-Free"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -150,11 +154,11 @@ export const vantageDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.pro_trader`, icon: "pro-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "vantage.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "vantage.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "pro_trader", username: `${platformsKey}.pro_trader`, icon: "pro-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "vantage.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "vantage.webp" },
     ]
   },
   rebateProgram: [

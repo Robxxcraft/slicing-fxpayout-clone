@@ -9,16 +9,41 @@
         "disadvantage": "Kekurangan",
         "close": "Tutup",
         "readMore": "Baca selengkapnya",
-        "seeAll": "Lihat semua"
+        "seeAll": "Lihat semua",
+        "month": "bulan",
+        "title_month": "Bulan",
+        "from_weeks_ago": "dari minggu lalu",
+        "title_traders": "Traders",
+        "title_others": "Lainnya",
+        "title_all": "Semua",
+        "title_local": "Lokal",
+        "title_international": "Internasional",
+        "title_newest": "Terbaru",
+        "title_recommendation": "Rekomendasi",
+        "title_name": "Nama",
+        "highest_rebate": "Rebate Tertinggi",
+        "lowest_rebate": "Rebate Terendah",
+        "title_low": "Rendah",
+        "title_medium": "Sedang",
+        "title_high": "Tinggi",
+        "title_apply": "Terapkan",
+        "rebate_until": "Rebate Hingga"
     },
     "button": {
         "registerNow": "Daftar Sekarang",
         "calculateRebate": "Hitung Rebate",
-        "visitWebsite": "Kunjungi Website"
+        "visitWebsite": "Kunjungi Website",
+        "join_now": "Bergabung Sekarang",
+        "see_list_broker": "Lihat Daftar Broker",
+        "try_now": "Coba Sekarang"
     },
     "cta": {
         "title": "Siap meningkatkan efisiensi profit trading Anda?",
         "paragraph": "Daftar sekarang dan mulai dapatkan rebate hingga 90%."
+    },
+    "cta_trader": {
+        "title": "Mulai Trading Lebih Efisien Hari Ini",
+        "paragraph": "Daftar sekarang dan dapatkan rebate dari setiap transaksi trading Anda. Tanpa biaya tambahan. Tanpa risiko tambahan."
     },
     "methods": {
         "bank_transfer": "Bank Transfer",
@@ -29,6 +54,7 @@
         "indonesian_local_va": "Lokal VA (ID)",
         "indonesian_e_wallet": "E-Wallet Indonesia",
         "local_bank": "Bank Lokal",
+        "local_transfer": "Transfer Lokal",
         "perfect_money": "Perfect Money",
         "skrill_neteller": "Skrill/Neteller"
     },
@@ -39,6 +65,7 @@
         "calculator": "Kalkulator",
         "claimRebate": "Klaim Rebate",
         "service": "Layanan",
+        "affiliate": "Affiliate",
         "subNav": {
             "definition": "Apa itu Rebate Forex?",
             "howRebate": "Cara Mendapatkan Rebate Forex", 
@@ -46,12 +73,13 @@
             "payment": "Sistem Pembayaran Rebate", 
             "schedule": "Jadwal Rebate",
             "validation": "Validasi Akun",
-            "transfer": "Transfer Akun",    
-            "affiliate": "Program Affiliate"      
+            "transfer": "Transfer Akun",   
+            "forex": "Forex",
+            "vipRebate": "VIP Rebate"      
         }
     },
     "footer": {
-        "paragraph": "Kami mengembalkan hingga 90% komisi IB kepada trader. Proses cepat, aman, dan transparan tanpa mengubah spread atau kondisi trading.",
+        "paragraph": "Kami mengembalikan hingga 90% komisi IB kepada trader. Proses cepat, aman, dan transparan tanpa mengubah spread atau kondisi trading.",
         "quickLink": "Tautan Cepat",
         "contact": "Kontak Kami"
     }

@@ -8,9 +8,9 @@ import { useTranslation } from "react-i18next";
 import TextArea from "./TextArea";
 import { checkValidFormFeedback } from "@/helper/validationForm/formValFeedback";
 import { scrollToErrorInput } from "@/helper/formHelper";
-import { postFormFeedback } from "@/utils/api";
+import { GuestAPI } from "@/api";
 import { toast } from "react-toastify";
-import type { FormFeedback, ModalResponse } from "@/types/validationForm";
+import type { FormFeedback, ModalResponse } from "@/types/validationForm.type";
 import { IoCloseOutline } from "react-icons/io5";
 
 const ModalFormFeedback = ({ 
@@ -67,7 +67,7 @@ const ModalFormFeedback = ({
         return;
       }
 
-      const { error, message } = await postFormFeedback({ item: formFeedback.values, captchaValue: captchaValue });
+      const { error, message } = await GuestAPI.postFormFeedback({ item: formFeedback.values, captchaValue: captchaValue });
 
       if (error) {
         toast.error(t(message));
@@ -93,7 +93,7 @@ const ModalFormFeedback = ({
     formFeedback.values.rating === 0;
   return (
     <Modal isOpen={isVisible} onClose={handleClose}>
-      <div className="pr-2 flex flex-col max-h-[calc(100vh-100px)] overflow-auto">
+      <div className="pr-2 flex flex-col max-h-[calc(100dvh-100px)] overflow-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/review-primary-icon.svg" alt="Review Primary Icon" />

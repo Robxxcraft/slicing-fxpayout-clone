@@ -7,14 +7,19 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Global ECN Broker"
 };
+const minDeposit = 0;
+const regionsWebsite = [
+  { region: "Global", url: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191" },
+];
+
 
 export const pepperstoneDetail: BrokerStruc = {
   id_ib: "42191",
   contactSupport: "support@pepperstone.com",
   name: brokerName,
   profileImage: "pepperstone.webp",
-  registerUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
-  websiteUrl: "https://trk.pepperstonepartners.com/aff_c?offer_id=367&aff_id=42191",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Manual",
@@ -28,7 +33,7 @@ export const pepperstoneDetail: BrokerStruc = {
   cardDescription: "Broker regulasi top dengan eksekusi sangat cepat dan kondisi raw spread.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$0",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -48,7 +53,7 @@ export const pepperstoneDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$0",
+    minDeposit: minDeposit,
     types: ["Standard", "Razor", "Pro"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -133,12 +138,12 @@ export const pepperstoneDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username:`${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.c_trader`, icon: "c-trader.webp" },
-      { username: `${platformsKey}.trading_view`, icon: "trading-view.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "pepperstone.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "pepperstone.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username:`${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "c_trader", username: `${platformsKey}.c_trader`, icon: "c-trader.webp" },
+      { key: "trading_view", username: `${platformsKey}.trading_view`, icon: "trading-view.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "pepperstone.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "pepperstone.webp" },
     ]
   },
   rebateProgram: [

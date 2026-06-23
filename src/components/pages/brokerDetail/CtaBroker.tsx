@@ -2,8 +2,17 @@ import { IoArrowForward } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
+import type { RegionWebsite } from "@/utils/dataBroker/typeDetailBroker";
 
-const CtaBroker = ({ name, websiteUrl }: { name: string; websiteUrl: string }) => {
+const CtaBroker = ({ 
+  name, 
+  openWebsiteModal,
+  websiteUrl
+}: { 
+  name: string; 
+  openWebsiteModal: () => void; 
+  websiteUrl: RegionWebsite[];
+}) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-20">
@@ -19,7 +28,16 @@ const CtaBroker = ({ name, websiteUrl }: { name: string; websiteUrl: string }) =
             <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
               {t("brokerdetailpage:cta.registerFxpayout")}
             </Button>
-            <Button variant="outline-light" buttonType="link" urlTo={websiteUrl} target="_blank" size="xl" icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} iconPosition="right">
+            <Button 
+              buttonType={websiteUrl.length === 1 ? "link" : "button"}
+              onClick={websiteUrl.length === 1 ? () => {} : () => openWebsiteModal()}
+              urlTo={websiteUrl.length === 1 ? websiteUrl[0].url : undefined}
+              target={websiteUrl.length === 1 ? "_blank" : undefined} 
+              variant="outline-light" 
+              size="xl" 
+              icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} 
+              iconPosition="right"
+            >
               {t("brokerdetailpage:cta.visitWebsite")}
             </Button>
           </div>

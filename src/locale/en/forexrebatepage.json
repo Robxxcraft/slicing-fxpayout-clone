@@ -1,0 +1,91 @@
+{
+    "helmet": {
+        "title": "Best Forex Rebate Platforms – The Best Forex Cashback for Traders",
+        "description": "Compare forex rebate platforms and discover why FXPayout is trusted by traders looking for transparent cashback programs and competitive rebate rates."
+    },
+    "herosection": {
+        "title": "Best Forex Rebate Platforms – The Best Forex Cashback for Traders",
+        "paragraph": "Maximize every trade you make. Earn automatic cashback on every traded lot without changing your broker's spreads or commissions.",
+        "badge": "FXPayout Rebate Platform"
+    },
+    "whatrebateforex": {
+        "title": "What Is Forex Rebate?",
+        "paragraph": "Forex rebate is a cashback system that allows traders to receive a portion of their trading costs back from broker commissions. Today, various forex rebate platforms offer different systems, rebate rates, and levels of transparency.",
+        "badge": "FOREX REBATES",
+        "content": "FXPayout is a forex rebate platform that operates as an <bi>Introducing Broker (IB)</bi>, not a broker, and <bi>does not accept deposits</bi> or manage client funds."
+    },
+    "benefitsection": {
+        "title": "A Preferred Choice Among Professional Traders",
+        "paragraph": "We recommend platforms with a strong track record of transparency, reliability, and competitive rebate rates.",
+        "badge": "CHOOSE WISELY",
+        "card_benefit": {
+            "badge": "Recommended",
+            "paragraph": "FXPayout is an all-in-one rebate solution for traders who value transparency. We work directly with broker partners to help traders access some of the highest rebate rates available.",
+            "benefits": [
+                "Does Not Accept Deposits",
+                "No Access to Trading Accounts",
+                "Rebates Up to 80%",
+                "Does Not Hold Client Funds",
+                "Responsive Customer Support",
+                "Transparent and Consistent Rebate System"
+            ],
+            "info": "FXPayout is ideal for traders who want to reduce trading costs without taking on additional risk."
+        },
+        "card_rebate": {
+            "title": "Earn Higher Rebates",
+            "paragraph": "FXPayout is a forex rebate platform offering rebates of up to 95%."
+        }
+    },
+    "whychoosesection": {
+        "title": "Other Forex Rebate Platforms",
+        "paragraph": "In addition to FXPayout, there are many forex rebate platforms offering different cashback percentages. However, it is important to evaluate several key factors before choosing a platform:",
+        "badge": "CHECK BEFORE YOU CHOOSE",
+        "features": [
+            {
+                "title": "Does the Platform Hold Client Funds?",
+                "paragraph": "No. A trustworthy rebate platform should not hold client funds. There should be no deposit system through the platform itself. All transactions should be conducted directly with the broker."
+            },
+            {
+                "title": "Does It Request Access to Your Trading Account?",
+                "paragraph": "No. A legitimate rebate platform should never ask for your broker account email, password, or login credentials. Your account security should remain entirely under your control."
+            },
+            {
+                "title": "Is the Rebate System Transparent?",
+                "paragraph": "Yes. The rebate process should be transparent, with no hidden fees, unexpected deductions, or unclear calculations."
+            }
+        ],
+        "info": "Choosing a secure and transparent platform is far more important than focusing solely on the highest rebate percentage."
+    },
+    "comparisonsection": {
+        "title": "Why Is FXPayout More Advantageous?",
+        "paragraph": "Compare the benefits and transparency of FXPayout with other rebate platforms.",
+        "badge": "Comparison",
+        "other_platforms": "Other Platforms",
+        "data": [
+            {
+                "title": "Cashback Percentage",
+                "description": "The portion of broker commissions returned to you as cashback.",
+                "other": "50% - 70%"
+            },
+            {
+                "title": "Competitive Rebate Rates",
+                "description": "Higher rebate opportunities across a wide range of trading instruments."
+            },
+            {
+                "title": "No Deposit Required",
+                "description": "No fund transfers are required to start using the service.",
+                "other": "Typically requires a deposit"
+            },
+            {
+                "title": "No Account Access",
+                "description": "Your trading account remains fully secured with your broker.",
+                "other": "Some services may require account access"
+            },
+            {
+                "title": "Transparent System",
+                "description": "All rebate calculations and payments are clear and trackable.",
+                "other": "Limited transparency"
+            }
+        ]
+    }
+}

@@ -16,7 +16,7 @@ const SuccessModal = ({
 }) => {
   return (
     <Modal isOpen={isVisible} onClose={toggleModal}>
-      <div className="flex flex-col items-center text-center">
+      <div className="font-inter flex flex-col items-center text-center">
         <div className="relative mb-8">
           <img 
             src="/success-icon.webp" 
@@ -27,7 +27,7 @@ const SuccessModal = ({
         <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-bold text-gray-900 leading-[180%]">
           {title}
         </h3>
-        <p className="mb-8 text-base 2xl:text-2xl text-gray-500 leading-[180%]">
+        <p className="mb-8 text-base 2xl:text-xl text-gray-500 leading-[180%]">
           {paragraph}
         </p>
         <Button 

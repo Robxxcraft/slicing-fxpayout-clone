@@ -1,7 +1,7 @@
 import BoundedIcon from '../brokerDetail/ui/BoundedIcon';
 import SelectInput from '@/components/ui/SelectInput';
 import TextInput from '@/components/ui/TextInput';
-import type { FormBank } from '@/types/validationForm';
+import type { FormBank } from '@/types/validationForm.type';
 import { useTranslation } from 'react-i18next';
 
 const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors, handleTempBankChange }: 

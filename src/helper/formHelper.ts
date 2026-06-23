@@ -8,6 +8,15 @@ export function validateOnlyNumber(input: string) {
   return /^\d+$/.test(input);
 }
 
+export function validateFloatFlexible(input: string): boolean {
+  return /^\d*\.?\d+$/.test(input);
+}
+
+export function validateValidEmail(text: string) {
+  const emailRegx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegx.test(text); 
+}
+
 export const formattedUsd = (value: number) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',

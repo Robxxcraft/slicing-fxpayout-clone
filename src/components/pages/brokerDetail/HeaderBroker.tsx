@@ -1,7 +1,7 @@
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaStar, FaStarHalf  } from "react-icons/fa6";
-import type { OverallScore, BrokerRanking, Specification } from "@/utils/dataBroker/typeDetailBroker";
+import type { OverallScore, BrokerRanking, Specification, RegionWebsite } from "@/utils/dataBroker/typeDetailBroker";
 import BoundedIcon from "./ui/BoundedIcon";
 import Button from "@/components/ui/Button";
 import { useTranslation } from "react-i18next";
@@ -20,22 +20,24 @@ type TypeHeader = {
   profileImage: string; 
   overallScore: OverallScore; 
   description: string; 
-  registerUrl: string; 
-  spesification: Specification,
-  websiteUrl: string;
+  spesification: Specification;
+  openWebsiteModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
 }
 
 const HeaderBroker = ({
   brokerId, name, ranking, badges, 
   profileImage, overallScore, description, 
-  registerUrl, spesification, websiteUrl
+  spesification, openWebsiteModal,
+  registerUrl, websiteUrl
 }: TypeHeader ) => {
   const { t } = useTranslation([brokerId, "brokerdetailpage"]);
 
   const finalSpread = Array.isArray(spesification.spread) ? spesification.spread.map((s) => t(s)) : t(spesification.spread);
   const detailBio: DetailBio[] = [
     {title: "brokerdetailpage:header.detailHeaders.0", detail: spesification.yearFounded, icon: "year-founded.svg"},
-    {title: "brokerdetailpage:header.detailHeaders.1", detail: spesification.minDeposit, icon: "min-depo.svg"},
+    {title: "brokerdetailpage:header.detailHeaders.1", detail: `$${spesification.minDeposit}`, icon: "min-depo.svg"},
     {title: "brokerdetailpage:header.detailHeaders.2", detail: t(spesification.leverage), icon: "leverage.svg"},
     {title: "brokerdetailpage:header.detailHeaders.3", detail: finalSpread, icon: "spread.svg"},
   ]
@@ -60,7 +62,7 @@ const HeaderBroker = ({
             <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
               Tier {ranking.tier} {ranking.title}
             </p>
-            <BioBroker websiteUrl={websiteUrl} badges={badges} registerUrl={registerUrl} />
+            <BioBroker badges={badges} openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} />
           </div>
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
@@ -92,7 +94,7 @@ const HeaderBroker = ({
         </div>
       </div>
 
-      <div className="block lg:hidden"><ButtonCta websiteUrl={websiteUrl} registerUrl={registerUrl} /></div>
+      <div className="block lg:hidden"><ButtonCta openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
 
       {/* DESCRIPTION */}
       <div className="mt-6 2xl:mt-10">
@@ -141,7 +143,17 @@ const HeaderBroker = ({
   );
 };
 
-const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registerUrl: string; websiteUrl: string}) => {
+const BioBroker = ({
+  badges, 
+  openModal,
+  registerUrl,
+  websiteUrl
+}: {
+  badges: string[]; 
+  openModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
+}) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <>
@@ -158,19 +170,43 @@ const BioBroker = ({badges, registerUrl, websiteUrl}: {badges: string[]; registe
           </div>
         ))}
       </div>
-      <div className="hidden lg:block"><ButtonCta websiteUrl={websiteUrl} registerUrl={registerUrl} /></div>
+      <div className="hidden lg:block"><ButtonCta openModal={openModal} registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
     </>
   )
 }
 
-const ButtonCta = ({registerUrl, websiteUrl}: {registerUrl: string; websiteUrl: string}) => {
+const ButtonCta = ({
+  openModal,
+  registerUrl,
+  websiteUrl
+}: {
+  openModal: () => void;
+  registerUrl: RegionWebsite[];
+  websiteUrl: RegionWebsite[];
+}) => {
   const { t } = useTranslation(["common"]);
   return (
     <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
-      <Button buttonType="link" urlTo={registerUrl} target="_blank" variant="primary" size="md" className="text-nowrap flex-1">
+      <Button 
+        buttonType={registerUrl.length === 1 ? "link" : "button"}
+        onClick={registerUrl.length === 1 ? () => {} : () => openModal()}
+        urlTo={registerUrl.length === 1 ? registerUrl[0].url : undefined}
+        target={registerUrl.length === 1 ? "_blank" : undefined}  
+        variant="primary" 
+        size="md" 
+        className="text-nowrap flex-1"
+      >
         {t("button.registerNow")}
       </Button>
-      <Button buttonType="link" urlTo={websiteUrl} target="_blank" variant="outline" size="md" className="text-nowrap flex-1">
+      <Button 
+        buttonType={websiteUrl.length === 1 ? "link" : "button"}
+        onClick={websiteUrl.length === 1 ? () => {} : () => openModal()}
+        urlTo={websiteUrl.length === 1 ? websiteUrl[0].url : undefined}
+        target={websiteUrl.length === 1 ? "_blank" : undefined} 
+        variant="outline" 
+        size="md" 
+        className="text-nowrap flex-1"
+      >
         {t("button.visitWebsite")}
       </Button>
     </div>

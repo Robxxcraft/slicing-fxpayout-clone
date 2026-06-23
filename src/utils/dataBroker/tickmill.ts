@@ -7,14 +7,18 @@ const brokerRanking: BrokerRanking = {
   tier: "1",
   title: "Forex & CFD ECN Broker"
 };
+const minDeposit = 100;
+const regionsWebsite = [
+  { region: "Global", url: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F" },
+];
 
 export const tickmillDetail: BrokerStruc = {
   id_ib: "IB89045395",
   contactSupport: "support@tickmill.com",
   name: brokerName,
   profileImage: "tickmill.webp",
-  registerUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
-  websiteUrl: "https://secure.itr-tickmill.com/?utm_campaign=ib_link&utm_content=IB89045395&utm_medium=Open+Account&utm_source=link&lp=https%3A%2F%2Fsecure.itr-tickmill.com%2Fid%2Fsign-up%2F",
+  registerUrl: regionsWebsite,
+  websiteUrl: regionsWebsite,
   detailUrl: brokerId,
   scheduleUrl: "/schedule",
   statusRebate: "Auto",
@@ -28,7 +32,7 @@ export const tickmillDetail: BrokerStruc = {
   cardDescription: "Broker ECN terkenal dengan komisi rendah dan rebate kompetitif.",
   specification: {
     yearFounded: brokerFounded,
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     leverage: `${brokerId}:specification.leverage`,
     spread: `${brokerId}:specification.spread`,
   },
@@ -46,7 +50,7 @@ export const tickmillDetail: BrokerStruc = {
     ]
   },
   summary: {
-    minDeposit: "$100",
+    minDeposit: minDeposit,
     types: ["Classic", "Pro", "VIP/Ultra"],
     spread: `${brokerId}:summary.spread`,
     commission: `${brokerId}:summary.commission`,
@@ -145,10 +149,10 @@ export const tickmillDetail: BrokerStruc = {
       },
     ],
     platforms: [
-      { username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
-      { username: `${platformsKey}.ios_android`, icon: "tickmill.webp" },
+      { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
+      { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
+      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
+      { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "tickmill.webp" },
     ]
   },
   rebateProgram: [
