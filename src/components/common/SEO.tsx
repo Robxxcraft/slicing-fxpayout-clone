@@ -6,6 +6,8 @@ const SEO = () => {
   const location = useLocation();
   const { i18n } = useTranslation();
 
+  const pathWithoutLang = location.pathname.replace(/^\/id(?=\/|$)/, "");
+
   useEffect(() => {
     const lang = i18n.resolvedLanguage?.split("-")[0] || "en";
 
@@ -29,9 +31,9 @@ const SEO = () => {
 
   return (
     <>
-      <link rel="alternate" href={`https://www.fxpayout.com/id${location.pathname}`} hrefLang="id" />
-      <link rel="alternate" href={`https://www.fxpayout.com${location.pathname}`} hrefLang="en" />
-      <link rel="alternate" href={`https://www.fxpayout.com${location.pathname}`} hrefLang="x-default" />
+      <link rel="alternate" href={`https://www.fxpayout.com/id${pathWithoutLang}`} hrefLang="id" />
+      <link rel="alternate" href={`https://www.fxpayout.com${pathWithoutLang}`} hrefLang="en" />
+      <link rel="alternate" href={`https://www.fxpayout.com${pathWithoutLang}`} hrefLang="x-default" />
     </>
   );
 };
