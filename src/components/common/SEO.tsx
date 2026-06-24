@@ -27,7 +27,13 @@ const SEO = () => {
     document.documentElement.lang = lang;
   }, [location.pathname, i18n.resolvedLanguage]);
 
-  return null;
+  return (
+    <>
+      <link rel="alternate" href={`https://www.fxpayout.com/id${location.pathname}`} hrefLang="id" />
+      <link rel="alternate" href={`https://www.fxpayout.com${location.pathname}`} hrefLang="en" />
+      <link rel="alternate" href={`https://www.fxpayout.com${location.pathname}`} hrefLang="x-default" />
+    </>
+  );
 };
 
 export default SEO;

@@ -9,7 +9,7 @@ import MainNews from "@/components/pages/newsPage/MainNews";
 const NewsPage = () => {
   return (
     <div className="font-inter">
-      {/* <title>{t("homepage:helmet.title")}</title> */}
+      <title>News</title>
       <Navbar active="news" />
       <main>
         <HeaderNews />

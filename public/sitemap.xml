@@ -20,28 +20,56 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/broker" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/broker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/broker" />
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.fxpayout.com/id/broker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/broker" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/broker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/broker" />
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fxpayout.com/validation</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/validation" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/validation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/validation" />
-    <priority>0.8</priority>
+    <loc>https://www.fxpayout.com/forex</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/forex" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/forex" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/forex" />
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.fxpayout.com/id/validation</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/validation" />
-    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/validation" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/validation" />
-    <priority>0.8</priority>
+    <loc>https://www.fxpayout.com/id/forex</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/forex" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/forex" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/forex" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fxpayout.com/vip-rebate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/vip-rebate" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/vip-rebate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/vip-rebate" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fxpayout.com/id/vip-rebate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/vip-rebate" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/vip-rebate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/vip-rebate" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fxpayout.com/affiliate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/affiliate" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/affiliate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/affiliate" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fxpayout.com/id/affiliate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/affiliate" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/affiliate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/affiliate" />
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.fxpayout.com/transfer</loc>
@@ -69,6 +97,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/rebate-forex" />
     <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/rebate-forex" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/rebate-forex" />
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fxpayout.com/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/news" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/news" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/news" />
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fxpayout.com/id/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fxpayout.com/news" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.fxpayout.com/id/news" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fxpayout.com/news" />
     <priority>0.7</priority>
   </url>
   <url>
