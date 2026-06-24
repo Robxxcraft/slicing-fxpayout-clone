@@ -19,9 +19,11 @@ export const navigateChangeLng = (newLng: string, navigate: NavigateFunction, pa
   if (SUPPORT_LANGUAGE.includes(segments[0])) {
     segments.shift()
   }
+
   if (newLng === DEFAULT_LANGUAGE) {
     navigate(`/${segments.join("/")}`);
   } else {
-    navigate(`/${newLng}/${segments.join("/")}`);
+    const finalSegments = segments.length > 0 ? `/${newLng}/${segments.join("/")}` : `/${newLng}${segments.join("/")}`
+    navigate(finalSegments);
   }
 };
