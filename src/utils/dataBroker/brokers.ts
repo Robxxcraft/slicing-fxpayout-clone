@@ -16,9 +16,9 @@ import { xmDetail } from "./xm";
 import { zfxDetail } from "./zfx";
 
 export const brokers = {
+  "tmgm": tmgmDetail,
   "exness": exnessDetail,
   "valetax": valetaxDetail,
-  "tmgm": tmgmDetail,
   "xm": xmDetail,
   "hfm": hfmDetail,
   "zfx": zfxDetail,
