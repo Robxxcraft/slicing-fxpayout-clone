@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 const Spread = ({ tradingSpread }: { tradingSpread: SpreadStructure[] }) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
-    <section id="spread-komisi" className="scroll-mt-26 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
+    <section id="spread-commission" className="scroll-mt-26 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>{t("brokerdetailpage:spread.title")}</HeadingSection>
       <SubHeadingSection>{t("brokerdetailpage:spread.subtitle")}</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 flex flex-col md:flex-row gap-3 lg:gap-5 2xl:gap-6">

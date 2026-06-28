@@ -17,7 +17,7 @@ const ProsCons = ({
   const objAdvantages = t(advantages, { returnObjects: true });
   const objDisadvantages = t(disadvantages, { returnObjects: true });
   return (
-    <section id="kelebihan-kekurangan" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
+    <section id="pros-cons" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>{t("brokerdetailpage:advantagesDisadvantages.title")}</HeadingSection>
       <SubHeadingSection>{t("brokerdetailpage:advantagesDisadvantages.subtitle")}</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 grid grid-cols-1 xl:grid-cols-2 gap-6 lg:gap-10 2xl:gap-14">
