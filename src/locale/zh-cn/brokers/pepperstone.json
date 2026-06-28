@@ -1,0 +1,56 @@
+{
+  "description": "全球性经纪商,执行快速、点差低、交易条件专业。Pepperstone 以剥头皮、EA 及活跃交易者的首选经纪商著称,提供外汇、黄金、指数、能源、股票差价合约及加密货币差价合约的交易。配合现代化交易平台,以及快速透明的出入金流程。",
+  "specification": {
+    "leverage": "最高 1:500",
+    "spread": "低至 0.0 点(Razor 账户)"
+  },
+  "profile": {
+    "slogan": "Award-Winning Global Forex Broker"
+  },
+  "summary": {
+    "spread": "低至 0.0 点(Razor 账户)",
+    "commission": "Razor 账户:每手 $6–$7(双边)",
+    "leverage": "最高 1:500",
+    "execution": "快速",
+    "depositWithdrawal": "快速且方式众多"
+  },
+  "accountTypes": [
+    ["点差低至约 1.0 点", "免佣金"],
+    ["点差低至 0.0 点", "佣金每边 $3.50(双边约 $7)"],
+    ["专业交易条件", "灵活杠杆"]
+  ],
+  "keyAdvantages": ["ECN 点差极低", "订单执行快速", "顶级监管(FCA、ASIC)", "支持 MT4、MT5、cTrader、TradingView", "适合剥头皮与 EA", "无账户不活跃费/账户管理费"],
+  "advantages": ["低点差、执行稳定", "监管严格且国际化", "平台齐全(MT4、MT5、cTrader、TradingView)"],
+  "disadvantages": ["真实非差价合约类品种有限", "并非所有地区都提供 7×24 小时客服", "杠杆可能因所在地区受限"],
+  "classifications": [
+    "出金速度",
+    "服务器稳定性",
+    "客户支持"
+  ],
+  "faqs": [
+    {
+      "question": "Pepperstone 安全吗?",
+      "answer": "安全。受 FCA、ASIC、DFSA、BaFin、CySEC、SCB 监管。"
+    },
+    {
+      "question": "是否有最低入金要求?",
+      "answer": "没有官方最低入金要求,但建议初始入金约 $200。"
+    },
+    {
+      "question": "适合剥头皮与 EA 吗?",
+      "answer": "适合,尤其是 Razor 账户,非常合适。"
+    },
+    {
+      "question": "最低点差是多少?",
+      "answer": "Razor 账户低至 0.0 点。"
+    },
+    {
+      "question": "最高杠杆是多少?",
+      "answer": "最高 1:500,视监管机构及地区而定。"
+    },
+    {
+      "question": "出入金费用是多少?",
+      "answer": "大部分方式:$0。"
+    }
+  ]
+}

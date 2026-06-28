@@ -5,6 +5,7 @@ export type Language = {
 };
 
 export const languages: Language[] = [
+  { code: "zh-cn", label: "China (Simplified)", flag: "flag-zh.png" },
   { code: "en", label: "English", flag: "flag-en.png" },
   { code: "id", label: "Indonesia", flag: "flag-id.png" },
 ];

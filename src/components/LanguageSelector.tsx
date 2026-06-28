@@ -3,6 +3,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { languages, type Language } from "../utils/languageSupport";
 import type { HandleChangeLanguage } from "./Navbar";
 import { IoArrowBackOutline } from "react-icons/io5";
+import { TbWorld } from "react-icons/tb";
 
 const LanguageSelector = ({
   selectedLanguage,
@@ -41,11 +42,7 @@ const LanguageSelector = ({
           e.stopPropagation();
           setOpen(!open)
         }}>
-        <img
-          src={`/flags/${selectedLanguage.flag}`}
-          alt={`flag-${selectedLanguage.label}`}
-          className="w-8"
-        />
+        <TbWorld className="text-xl text-white" />
         <span className="text-white text-sm 2xl:text-base">
           {selectedLanguage.code.toLocaleUpperCase()}
         </span>

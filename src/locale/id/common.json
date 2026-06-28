@@ -21,13 +21,15 @@
         "title_newest": "Terbaru",
         "title_recommendation": "Rekomendasi",
         "title_name": "Nama",
+        "title_login": "Masuk",
+        "title_register": "Daftar",
         "highest_rebate": "Rebate Tertinggi",
         "lowest_rebate": "Rebate Terendah",
         "title_low": "Rendah",
         "title_medium": "Sedang",
         "title_high": "Tinggi",
         "title_apply": "Terapkan",
-        "rebate_until": "Rebate Hingga"
+        "rebate_till": "Rebate Hingga"
     },
     "button": {
         "registerNow": "Daftar Sekarang",

@@ -1,0 +1,188 @@
+{
+    "helmet": {
+        "title": "外汇联盟代理计划:从推荐交易者中赚取佣金 | FXPayout",
+        "description": "通过 FXPayout 联盟代理计划,从您推荐的交易者的交易活动中赚取佣金。无需交易、无需管理资金,还有望获得持续收入。"
+    },
+    "herosection": {
+        "title": "从您推荐的交易者中赚取佣金",
+        "paragraph": "只要您推荐的交易者通过 FXPayout 进行交易,您即可持续获得收入。",
+        "badge": "联盟代理计划",
+        "benefits": ["无需亲自交易", "无需管理资金"],
+        "button": "立即加入,开始赚取",
+        "features": [
+            {
+                "title": "支持的经纪商"
+            },
+            {
+                "title": "已注册交易者"
+            },
+            {
+                "title": "已发放佣金"
+            }
+        ],
+        "small_card": {
+            "title": "佣金总额"
+        }
+    },
+    "commissionsection": {
+        "title": "看看您能赚多少",
+        "paragraph": "估算您每推荐一位活跃交易者的潜在收益。",
+        "badge": "佣金潜力",
+        "subtitle": "联盟代理佣金计算器",
+        "subparagraph": "调整推荐人数,即可计算您的预估月佣金。",
+        "total_refferal": "推荐交易者人数:",
+        "benefits": ["无需亲自交易", "每月持续收入", "无需管理资金"],
+        "potential_commission": "您的潜在佣金",
+        "info": "*预估收益基于您推荐交易者的交易活动。"
+    },
+    "benefitaffiliatesection": {
+        "title": "从推荐交易者的交易活动中赚取佣金",
+        "paragraphs": [
+            "只要您推荐的交易者活跃交易,FXPayout 就能让您赚取佣金。",
+            "只需分享您的专属代理链接,您推荐的交易者每完成一笔符合条件的交易,都能为您带来佣金——无需亲自交易,也无需管理客户资金。"
+        ],
+        "badge": "联盟代理计划",
+        "small_card": {
+            "title": "推荐交易者总数"
+        },
+        "preview_chart": {
+            "title": "每日佣金收益"
+        }
+    },
+    "revenuesection": {
+        "title": "每位推荐用户永久绑定至您的账户",
+        "paragraph": "只要您推荐的交易者持续交易,您就能持续赚取佣金。一位活跃的推荐用户,即可成为长期的持续收入来源。",
+        "badge": "持续收入",
+        "revenues": [
+            {
+                "title": "长期收益潜力",
+                "paragraph": "只要您推荐的交易者保持活跃,您便可持续赚取佣金。推荐关系永不过期。"
+            },
+            {
+                "title": "每月持续佣金",
+                "paragraph": "您旗下网络产生的每一笔符合条件的交易都会带来佣金,并可按平台的发放周期提现。"
+            }
+        ]
+    },
+    "avilablebrokersection": {
+        "title": "您推荐的交易者可任选 FXPayout 支持的任意经纪商",
+        "paragraph": "无论他们在哪家经纪商交易,其交易活动都能为您带来佣金。"
+    },
+    "commissionsystemsection": {
+        "title": "5个简单步骤,开始赚取佣金",
+        "paragraph": "您推荐的交易者每次交易,您都能从中分得通过 FXPayout 产生的部分佣金。整个流程全自动,无需额外管理。",
+        "badge": "佣金结构",
+        "example_calculation": "佣金分成计算示例",
+        "commission_broker": "经纪商佣金",
+        "transfer_rebate": "返佣转入",
+        "fxpayout_distribute_rebate": "FXPAYOUT 返佣分配",
+        "rebate_trader": "交易者返佣",
+        "internal_earn": "FXPAYOUT 分成",
+        "fxpayout_distribute": "FXPayout 分配",
+        "distribution_commission": "佣金分成",
+        "commission_50_percent": "若代理佣金为50%",
+        "affiliate_commission": "代理佣金",
+        "card_simulation": {
+            "title": "10位活跃推荐用户的佣金潜力",
+            "paragraph": "仅需10位活跃交易者持续交易,您就能构建一笔可观的持续收入。",
+            "benefits": [
+                "每位交易者平均返佣:$100/月",
+                "10位推荐用户总返佣:$1,000/月",
+                "您的佣金分成(50%)"
+            ],
+            "info": "*仅需10位活跃交易者,即可创造可观的月收入潜力。"
+        }
+    },
+    "whocanjoinsection": {
+        "title": "谁可以加入 FXPayout 联盟代理计划?",
+        "paragraph": "任何拥有受众、人脉或对交易感兴趣的社群的人,都能从这一代理机会中获益。",
+        "badge": "本计划适合谁?",
+        "users": [
+            {
+                "title": "交易者",
+                "description": "与其他交易者有人脉往来的活跃交易者。"
+            },
+            {
+                "title": "内容创作者",
+                "description": "制作交易、外汇或金融市场相关内容的创作者。"
+            },
+            {
+                "title": "交易社群",
+                "description": "线上线下交易社群的群主或管理者。"
+            },
+            {
+                "title": "联盟营销者",
+                "description": "擅长通过数字营销推广产品和服务的人士。"
+            }
+        ],
+        "info": "*以及任何希望在线赚取额外收入的人。"
+    },
+    "howaffiliateworks": {
+        "title": "5个简单步骤,开始赚取佣金",
+        "paragraph": "注册、分享您的推荐链接,只要您推荐的交易者活跃交易,您即可赚取佣金。",
+        "badge": "联盟代理计划如何运作",
+        "workflows": [
+            {
+                "title": "注册",
+                "subtitle": "注册成为代理",
+                "paragraph": "创建您的账户,加入 FXPayout 联盟代理计划。"
+            },
+            {
+                "title": "获取链接",
+                "subtitle": "获取您的推荐链接",
+                "paragraph": "获取您的专属推荐链接,开始邀请交易者。"
+            },
+            {
+                "title": "分享",
+                "subtitle": "分享给交易者",
+                "paragraph": "向有意开户的交易者推广您的推荐链接。"
+            },
+            {
+                "title": "交易",
+                "subtitle": "推荐用户开始交易",
+                "paragraph": "您推荐的交易者开始在支持的经纪商处交易。"
+            },
+            {
+                "title": "赚取",
+                "subtitle": "获得佣金",
+                "paragraph": "从您推荐交易者的交易活动中赚取佣金。"
+            }
+        ]
+    },
+    "securitysection": {
+        "info": "所有交易活动均直接通过受监管的合作经纪商进行。"
+    },
+    "faqsection": {
+        "title": "常见问题",
+        "paragraph": "在这里找到关于 FXPayout 联盟代理计划的常见问题解答。",
+        "faqs": [
+            {
+                "question": "我需要亲自交易吗?",
+                "answer": "不需要。您无需亲自交易,只需分享您的推荐链接,即可从所推荐交易者的交易活动中赚取佣金。"
+            },
+            {
+                "question": "我需要管理客户资金吗?",
+                "answer": "不需要。您无需负责管理任何客户资金,所有交易活动均由交易者通过各自的经纪商直接完成。"
+            },
+            {
+                "question": "我的佣金会减少交易者的返佣吗?",
+                "answer": "不会。您的佣金来自代理佣金结构,不会对交易者的交易收益产生任何负面影响。"
+            },
+            {
+                "question": "我可以推广多家经纪商吗?",
+                "answer": "可以。您可以将交易者推荐至 FXPayout 支持的多家经纪商,以最大化您的收益机会。"
+            }
+        ]
+    },
+    "ctasection": {
+        "title": "今天就开始从您的推荐中赚取佣金",
+        "paragraph": "立即加入 FXPayout,开始构建长期的持续佣金收入。"
+    },
+    "component": {
+        "big_card": {
+            "username": "John Doe",
+            "commission": "已赚取佣金总额",
+            "info": "来自您推荐交易者交易活动所产生的佣金。"
+        }
+    }
+}

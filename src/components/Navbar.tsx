@@ -146,7 +146,7 @@ const Navbar = ({
             size="lg" 
             className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
           >
-            Login
+            {t("text.title_login")}
           </Button>
           <Button 
             buttonType="link" 
@@ -155,7 +155,7 @@ const Navbar = ({
             size="lg" 
             className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
           >
-            Daftar
+            {t("text.title_register")}
           </Button>
         </>
         }
@@ -255,12 +255,12 @@ const Navbar = ({
           <>
             <Link to={getLocalizedPath("login", i18n.language)} className="w-fit text-center">
               <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-                Login
+                {t("text.title_login")}
               </span>
             </Link>
             <Link to={getLocalizedPath("register", i18n.language)} className="w-fit text-center">
               <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-                Daftar
+                {t("text.title_register")}
               </span>
             </Link>
           </>

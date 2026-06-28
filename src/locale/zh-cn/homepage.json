@@ -1,0 +1,183 @@
+{
+    "helmet": {
+        "title": "交易更划算,返佣高达90% | FXPayout",
+        "description": "FXPayout 是值得信赖的外汇返佣平台,将经纪商佣金的最高90%以现金返还方式直接返给交易者。"
+    },
+    "hero": {
+        "title": "每笔交易都能拿返现,<underline>零额外费用。</underline>",
+        "subtitles": [
+            "FXPayout 不是经纪商",
+            "不接受入金",
+            "不接触您的交易账户"
+        ],
+        "badge": "外汇返佣,交易更省钱",
+        "runningTexts": [
+            "100% 零额外费用",
+            "资金直达经纪商",
+            "不接触账户",
+            "透明且安全"
+        ],
+        "estimateRebate": {
+            "title": "返佣估算",
+            "subtitle": "选择经纪商并输入每月交易手数,快速估算返佣",
+            "broker": "经纪商",
+            "lotPerMonth": "每月手数",
+            "pair": "货币对",
+            "register": "立即注册领取",
+            "estimation": ["估算", "预估"],
+            "claim": "手动申领",
+            "info": "我们将最高90%的IB佣金返还给交易者。流程快捷、安全、透明,不改变点差或任何交易条件。"
+        }
+    },
+    "problemSection": {
+        "title": "不知不觉中,交易成本正在侵蚀您的利润",
+        "paragraph": "每笔交易都伴随点差和佣金等成本。没有返佣,这些成本会持续蚕食您的交易收益。",
+        "badge": "交易者常见困扰",
+        "problems": [
+            "交易成本可能大幅削减您的利润。",
+            "点差、佣金及其他费用,往往被交易者忽视。"
+        ],
+        "then": "那么解决办法是?",
+        "solutions": [
+            "使用返佣。",
+            "通过返佣,您可以拿回其中一部分成本。"
+        ]
+    },
+    "profile": {
+        "title": "FXPayout 通过返佣(现金返还)机制,帮您降低交易成本。",
+        "paragraph": "我们以介绍经纪商(IB)身份运作,将经纪商佣金的一部分返还给您。零额外费用,零额外风险。",
+        "badge": "为您提供解决方案",
+        "searchPlaceholder": "外汇返佣、交易返现、靠谱IB...",
+        "badges": ["外汇返佣", "交易返现", "FBS 返佣", "Exness 返佣", "XM 返佣", "靠谱外汇IB"],
+        "features": [
+            {
+                "title": "返佣高达90%",
+                "paragraph": "将经纪商佣金的最高90%以现金返还方式直接返入您的账户。"
+            },
+            {
+                "title": "以交易者为本",
+                "paragraph": "直接返现,不改变任何交易条件。"
+            },
+            {
+                "title": "本地化客服",
+                "paragraph": "支持多语言服务,服务时间贴合交易者需求。"
+            }
+        ]
+    },
+    "howItWorks": {
+        "title": "FXPayout 运作方式,四步轻松搞定",
+        "paragraph": "无需改变策略,您只管照常交易。佣金转化为返现的整个流程,交给 FXPayout 处理。",
+        "tag": "运作方式",
+        "workflows": [
+            {
+                "title": "开始",
+                "subtitle": "通过 FXPayout 官方链接注册",
+                "paragraph": "创建 FXPayout 账户,并通过我们为您所选经纪商提供的官方链接,绑定您的交易账户。"
+            },
+            {
+                "title": "交易",
+                "subtitle": "在您的经纪商照常交易",
+                "paragraph": "继续您的交易活动,点差、杠杆等条件均不受影响,一切仍遵循经纪商规则。"
+            },
+            {
+                "title": "佣金",
+                "subtitle": "经纪商将IB佣金发送至 FXPayout",
+                "paragraph": "根据您的交易手数,经纪商会自动将IB佣金发送至 FXPayout。"
+            },
+            {
+                "title": "返佣",
+                "subtitle": "最高90%返佣返入您的账户",
+                "paragraph": "我们将最高90%的佣金作为返现返还给您,可通过本地银行或电子钱包快速提现。"
+            }
+        ]
+    },
+    "rewards": {
+        "title": "新账户额外 +10% 返佣",
+        "paragraph": "限时优惠,专为新加入 FXPayout 的交易者准备。",
+        "tag": "限时活动"
+    },
+    "brokerlistsection": {
+        "view_all_brokers": "查看所有经纪商"
+    },
+    "securitySection": {
+        "title": "资金安全,是我们的首要任务",
+        "badge": "您必须了解",
+        "contents": [
+            {
+                "title": "FXPayout 不是经纪商",
+                "paragraph": "我们不管理您的资金。所有交易仍直接在正规经纪商处进行。"
+            },
+            {
+                "title": "不接受入金",
+                "paragraph": "我们绝不会要求您转账资金。所有交易活动均保留在您的经纪商账户中。"
+            },
+            {
+                "title": "不接触账户权限",
+                "paragraph": "我们无法接触您的交易账户,也不会保存您的登录信息。"
+            }
+        ]
+    },
+    "benefit": {
+        "title": "零额外费用,让交易利润最大化",
+        "paragraph": "在不改变经纪商交易条件的前提下,让每笔交易都能获得返现。系统透明、安全,专为提升您的利润效率而设计。",
+        "badge": "为何选择 FXPayout",
+        "items": [
+            {
+                "title": "💰 降低交易成本",
+                "description": "部分交易成本将以返现形式回到您手中。"
+            },
+            {
+                "title": "🔄 经纪商直接返佣",
+                "description": "部分交易成本将以返现形式回到您手中。"
+            },
+            {
+                "title": "🚫 零额外费用",
+                "description": "没有任何隐藏费用或扣减,一切透明。"
+            },
+            {
+                "title": "🔒 系统安全透明",
+                "description": "所有交易仍直接在经纪商处进行。我们不接触您的交易账户,也不保存您的登录信息。"
+            },
+            {
+                "title": "⚡ 响应迅速的支持",
+                "description": "本地客服团队随时通过 WhatsApp 和 Telegram 为您提供快速响应和清晰的解决方案。"
+            }
+        ]
+    },
+    "reviews": {
+        "title": "使用过 FXPayout 的交易者怎么说?",
+        "paragraph": "来自交易者的真实体验,他们通过返佣计划获得了额外利润。",
+        "tag": "用户反馈",
+        "writeReview": "撰写评价",
+        "successResponse": {
+            "title": "感谢您分享使用体验",
+            "paragraph": "您的评价已成功提交,将帮助其他用户了解使用这项返佣服务的真实体验。"
+        },
+        "emptyReview": "这里还没有评价。成为第一个分享使用体验的人吧!",
+        "modal": {
+            "title": "撰写您的评价",
+            "paragraph": "您对我们的返佣服务有多满意?",
+            "form": {
+                "usernameLabel": "全名",
+                "usernamePlaceholder": "请输入您的全名",
+                "locationLabel": "所在城市",
+                "locationPlaceholder": "请输入您所在的城市",
+                "reviewLabel": "评价 / 评论",
+                "reviewPlaceholder": "写下您使用 FXPayout 的体验...",
+                "submit": "提交评价",
+                "errors": {
+                    "usernameRequired": "全名不能为空",
+                    "locationRequired": "所在城市不能为空",
+                    "reviewRequired": "评价不能为空",
+                    "invalidRangeRating": "评分必须在 1-5 之间"
+                }
+            },
+            "errors": { "captcha": "请确认您不是机器人" }
+        }
+    },
+    "riskSection": {
+        "title": "交易风险依然存在,但成本可以降低",
+        "paragraph": "外汇交易具有高风险。但通过 FXPayout,您可以在不增加风险的前提下降低交易成本,因为所有资金始终保留在您的经纪商处。",
+        "cta": "资金安全保留在经纪商处"
+    }
+}
