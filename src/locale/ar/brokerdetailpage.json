@@ -1,0 +1,230 @@
+{
+    "helmet": {
+        "title": "ريبيت {{brokerName}} حتى {{brokerEstimate}} لكل لوت | FXPayout",
+        "description": "FXPayout منصة ريبيت فوركس موثوقة تمنح المتداولين كاش باك يصل إلى 90% من عمولة الوسيط مباشرة."
+    },
+    "navbar": {
+        "profil": "الملف التعريفي",
+        "summary": "ملخص",
+        "accountType": "أنواع الحسابات",
+        "spreadCommission": "السبريد والعمولة",
+        "advantage": "المزايا",
+        "platform": "المنصات",
+        "depositWithdraw": "الإيداع والسحب",
+        "advantagesDisadvantages": "المزايا والعيوب",
+        "rating": "التقييم",
+        "faq": "الأسئلة الشائعة"
+    },
+    "back": "العودة إلى قائمة الوسطاء",
+    "overallScore": "التقييم الإجمالي",
+    "header": {
+        "viewRating": "عرض تقييمات المجتمع",
+        "detailHeaders": ["سنة التأسيس", "الحد الأدنى للإيداع", "الرافعة المالية", "السبريد"]
+    },
+    "profile": {
+        "title": "الملف التعريفي للوسيط",
+        "subtitle": "معلومات رسمية حول هوية الوسيط والجهات المنظِّمة له.",
+        "cards": [
+            {
+                "title": "المعلومات الأساسية",
+                "headers": {
+                    "brokerName": "اسم الوسيط",
+                    "slogan": "الشعار",
+                    "entity": "الكيان",
+                    "group": "المجموعة",
+                    "ranking": "الفئة",
+                    "yearFounded": "سنة التأسيس",
+                    "brokerCategory": "نوع الوسيط",
+                    "totalUser": "إجمالي المستخدمين",
+                    "model": "النموذج",
+                    "totalInstrument": "عدد الأدوات المالية"
+                }
+            },
+            {
+                "title": "الجهات التنظيمية الرئيسية"
+            }
+        ]
+    },
+    "summary": {
+        "title": "ملخص سريع (Quick Facts)",
+        "subtitle": "المعلومات الأساسية عن الوسيط لنظرة سريعة",
+        "cardHeaders": {
+            "minDeposit": "الحد الأدنى للإيداع",
+            "accountType": "نوع الحساب",
+            "spread": "السبريد",
+            "commission": "العمولة",
+            "leverage": "الرافعة المالية",
+            "execution": "تنفيذ الأوامر",
+            "instrument": "الأدوات المالية",
+            "depositWithdrawal": "الإيداع والسحب"
+        }
+    },
+    "accountType": {
+        "title": "أنواع الحسابات",
+        "subtitle": "خيارات حسابات تناسب مختلف الاحتياجات وأساليب التداول.",
+        "profit": "الربح"
+    },
+    "spread": {
+        "title": "السبريد",
+        "subtitle": "مقارنة السبريد على الأدوات الرئيسية لدى الوسيط.",
+        "accountType": "نوع الحساب"
+    },
+    "advantage": {
+        "title": "أبرز المزايا",
+        "subtitle": "الميزات المتميزة التي تشكّل قيمة مضافة للوسيط."
+    },
+    "platform": {
+        "title": "منصات التداول المدعومة",
+        "subtitle": "قائمة المنصات التي يمكن استخدامها للتداول."
+    },
+    "depositWithdraw": {
+        "title": "الإيداع والسحب",
+        "subtitle": "معلومات حول طرق المعاملات وأوقات معالجتها.",
+        "tableHeaders": ["الطريقة", "وقت الإيداع", "وقت السحب", "الرسوم"]
+    },
+    "rebateProgram": {
+        "title": "برنامج الريبيت (تقديري)",
+        "subtitle": "تقدير للريبيت الذي يمكن للمتداول الحصول عليه من خلال برنامج الريبيت الخاص بك.",
+        "button": "حاسبة الريبيت",
+        "info": "قد يكون الريبيت أعلى لحسابات ECN وأحجام التداول الكبيرة. القيم أعلاه تقديرية وقابلة للتعديل."
+    },
+    "advantagesDisadvantages": {
+        "title": "المزايا والعيوب",
+        "subtitle": "ملخص للنقاط الإيجابية والأمور التي ينبغي الانتباه إليها."
+    },
+    "rating": {
+        "title": "تقييم المجتمع",
+        "subtitle": "تقييمات وآراء مستخدمي الوسيط.",
+        "summaryReview": "بناءً على <0>{{totalReview}}</0> تقييماً من المجتمع"
+    },
+    "faq": {
+        "title": "الأسئلة الشائعة",
+        "subtitle": "أكثر الأسئلة طرحاً من قبل المستخدمين."
+    },
+    "cta": {
+        "title": "هل أنت مستعد للتداول مع {{brokerName}}؟",
+        "paragraph": "استخدم رابطك الخاص للحصول على أفضل ريبيت وظروف تداول احترافية مع {{brokerName}}.",
+        "registerFxpayout": "سجّل عبر FXPayout",
+        "visitWebsite": "زيارة موقع الوسيط"
+    },
+    "data": {
+        "title": {
+            "asic_regulated": "مرخّص من ASIC",
+            "beginner_friendly": "مناسب للمبتدئين",
+            "beginner_advanced_friendly": "مناسب للمبتدئين والمحترفين",
+            "cent_account": "حساب سنت",
+            "copy_trading_supported": "يدعم نسخ التداول",
+            "competitive_spread": "سبريد تنافسي",
+            "ecn_account": "حساب ECN متاح",
+            "ecn_broker": "وسيط ECN",
+            "ecn_market_execution": "تنفيذ ECN/Market",
+            "ecn_ndd": "وسيط ECN/NDD",
+            "ecn_stp": "وسيط ECN/STP",
+            "ecn_stp_forex_cfd": "وسيط ECN/STP للفوركس والعقود مقابل الفروقات",
+            "forex_cfd": "وسيط فوركس وعقود مقابل الفروقات",
+            "flexible_leverage": "رافعة مالية مرنة",
+            "global_forex_cfd": "وسيط فوركس وعقود مقابل الفروقات عالمي",
+            "high_leverage": "رافعة مالية عالية",
+            "human_centered_broker": "وسيط يركّز على العميل",
+            "indonesian_regulation": "مرخّص في إندونيسيا",
+            "low_deposit": "حد أدنى منخفض للإيداع",
+            "low_spread": "سبريد منخفض",
+            "mt4_mt5": "يدعم MT4 وMT5",
+            "multi_regulated": "متعدد التراخيص",
+            "multi_asset": "متعدد الأصول",
+            "multi_asset_trading": "تداول متعدد الأصول",
+            "multi_platform": "تداول متعدد المنصات",
+            "no_commission": "بدون عمولة إيداع/سحب",
+            "regulated_broker": "وسيط مرخّص",
+            "raw_spread": "سبريد خام (Raw Spread)",
+            "strong_regulation": "تنظيم قوي",
+            "thin_spread": "سبريد ضيق",
+            "tier_1": "الفئة الأولى",
+            "tier_local": "فئة محلية",
+            "ultra_fast_execution": "تنفيذ فائق السرعة"
+        },
+        "regulations": {
+            "asic": "أستراليا",
+            "bafin": "ألمانيا",
+            "cysec": "قبرص",
+            "cima": "جزر كايمان",
+            "cma": "كينيا",
+            "cbcs": "كوراساو",
+            "dfsa": "دبي",
+            "vfsc": "فانواتو",
+            "ifsc": "بليز",
+            "fsa": "سيشل",
+            "fsc": "موريشيوس",
+            "fsca": "جنوب أفريقيا",
+            "fca": "المملكة المتحدة",
+            "finex_bappebti": "ترخيص فوركس للأفراد (47/BAPPEBTI/SI/04/2013)",
+            "scb": "الباهاما",
+            "st_vincent_grenadines": "سانت فنسنت والغرينادين"
+        },
+        "instruments": {
+            "crypto": "العملات الرقمية",
+            "crypto_cfd": "عقود العملات الرقمية مقابل الفروقات",
+            "commodity": "السلع",
+            "energy": "الطاقة",
+            "etf": "صناديق المؤشرات المتداولة",
+            "forex": "الفوركس",
+            "forex_60": "أكثر من 60 زوج فوركس",
+            "gold": "الذهب",
+            "indices": "المؤشرات",
+            "metal": "المعادن",
+            "obligation": "السندات",
+            "stocks": "الأسهم",
+            "stocks_cfd": "عقود الأسهم مقابل الفروقات",
+            "shares_cfd": "عقود الأسهم مقابل الفروقات",
+            "turbo_instrument": "أدوات التيربو"
+        },
+        "level": {
+            "advanced": "متقدم",
+            "beginner": "مبتدئ",
+            "copy_trading": "نسخ التداول",
+            "general": "عام",
+            "general_retail": "أفراد عام",
+            "news_trader": "متداول الأخبار",
+            "pro": "محترف",
+            "pro_scalper": "محترف ومضارب سريع",
+            "pro_scalper_ea": "محترف، مضارب سريع، روبوت تداول",
+            "trader": "متداول",
+            "trader_retail": "متداول أفراد",
+            "scalper_ea": "مضارب سريع، روبوت تداول"
+        },
+        "time": {
+            "around_20m_2h_80percent": "حوالي 20 دقيقة – ساعتان (80% من الحالات)",
+            "days_1_3": "1–3 أيام",
+            "days_1_3_work": "1–3 أيام عمل",
+            "depends": "يعتمد على الحالة",
+            "instant": "فوري",
+            "instant_1m": "<1 دقيقة (فوري)",
+            "interval_5_30": "5–30 دقيقة",
+            "interval_instant_1d_work": "فوري - يوم عمل واحد",
+            "interval_instant_2d": "فوري – يوما عمل",
+            "interval_instant_3d_work": "فوري – 3 أيام عمل",
+            "one_day": "يوم واحد"
+        },
+        "fee": {
+            "zero_broker": "بدون رسوم من الوسيط عادةً",
+            "zero_broker_depends_method": "يعتمد على الطريقة (الوسيط لا يفرض رسوماً عادةً)",
+            "zero_broker_fees_third_party_may_apply": "بدون رسوم من الوسيط عادةً (قد تُطبَّق رسوم طرف ثالث)"
+        },
+        "platforms": {
+            "copy_trading": "تطبيق نسخ التداول",
+            "c_trader": "cTrader",
+            "exness_terminal": "Exness Terminal (عبر الويب)",
+            "exness_mobile": "تطبيق Exness للجوال",
+            "hfm_mobile": "تطبيق HFM للجوال",
+            "ios_android": "تطبيق الجوال (Android وiOS)",
+            "mobile_trading": "التداول عبر الجوال",
+            "mt4": "MetaTrader 4 (MT4)",
+            "mt5": "MetaTrader 5 (MT5)",
+            "pro_trader": "ProTrader",
+            "octa_trader": "OctaTrader (منصة حصرية)",
+            "trading_view": "Trading View",
+            "web_mobile": "الويب والجوال",
+            "web_trading": "WebTrader"
+        }
+    }
+}
