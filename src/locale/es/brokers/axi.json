@@ -1,0 +1,51 @@
+{
+  "description": "Axi es un bróker internacional de forex y CFD fundado en 2007, reconocido como uno de los brókers ECN más accesibles para traders de todos los niveles. Axi ofrece spreads competitivos, ejecución rápida y plataformas de trading potentes como MetaTrader 4 y MetaTrader 5. Este bróker da servicio a traders en numerosos países, con regulación global y una oferta de servicios completa.",
+  "specification": {
+    "leverage": "Hasta 1:500 (según el regulador)",
+    "spread": "Desde 0.0 pips (Pro)"
+  },
+  "profile": {
+    "slogan": "Trade Unlocked"
+  },
+  "summary": {
+    "spread": "Desde 0.0 – 0.2 pips (Pro ECN)",
+    "commission": "Pro ECN: ±$7 por lote (round-turn)",
+    "leverage": "Hasta 1:500 (según el regulador)",
+    "execution": "Rápida y estable",
+    "depositWithdrawal": "Múltiples métodos"
+  },
+  "accountTypes": [
+    ["Depósito mín. : $0+ (recomendado $200)", "Spread desde ±1.0 pips", "Sin comisión"],
+    ["Depósito mín. : ±$200", "Spread : desde 0.0 – 0.2 pips", "Comisión competitiva (~$7 por lote)"]
+  ],
+  "keyAdvantages": ["Spreads competitivos y ejecución rápida", "Regulación sólida por ASIC y FCA", "Apto para scalping y EA", "Plataformas de trading completas", "Costes transparentes y bajos"],
+  "advantages": ["Spreads bajos y ejecución rápida", "Regulación sólida (FCA/ASIC/FSCA)", "Plataformas de trading populares", "Soporte global"],
+  "disadvantages": ["El mínimo efectivo para ECN es algo más alto", "Comisión por lote en la cuenta Pro ECN"],
+  "classifications": [
+    "Ejecución y Spread",
+    "Atención al Cliente",
+    "Depósito/Retiro"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro Axi?",
+      "answer": "Sí — está supervisado por importantes reguladores como FCA, ASIC y FSCA (entidades distintas según la región)."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "No hay un mínimo oficial, aunque se recomienda empezar con $200 para una ejecución estable."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, Web y Mobile."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:500, según el regulador y la entidad."
+    },
+    {
+      "question": "¿Hay cuenta ECN?",
+      "answer": "Sí — Pro ECN con spreads muy bajos."
+    }
+  ]
+}

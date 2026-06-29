@@ -1,0 +1,56 @@
+{
+  "description": "Bróker global con ejecución rápida, spreads bajos y condiciones de trading profesionales. Pepperstone es reconocido como uno de los brókers favoritos para scalping, EA y traders activos, con acceso a Forex, Oro, Índices, Energía, CFD de acciones y CFD de cripto. Respaldado por plataformas de trading modernas y procesos de depósito y retiro rápidos y transparentes.",
+  "specification": {
+    "leverage": "Hasta 1:500",
+    "spread": "Desde 0.0 pips (Razor)"
+  },
+  "profile": {
+    "slogan": "Award-Winning Global Forex Broker"
+  },
+  "summary": {
+    "spread": "Desde 0.0 pips (Razor)",
+    "commission": "Razor: $6–$7 por lote (round-turn)",
+    "leverage": "Hasta 1:500",
+    "execution": "Rápida",
+    "depositWithdrawal": "Rápido y con múltiples métodos"
+  },
+  "accountTypes": [
+    ["Spread desde ±1.0 pips", "Sin comisión"],
+    ["Spread desde 0.0 pips", "Comisión $3.50 por lado (±$7 round-turn)"],
+    ["Condiciones de trading profesionales", "Apalancamiento flexible"]
+  ],
+  "keyAdvantages": ["Spread ECN muy bajo", "Ejecución de órdenes rápida", "Regulación de primer nivel (FCA, ASIC)", "Soporte para MT4, MT5, cTrader y TradingView", "Apto para scalping y EA", "Sin comisiones por inactividad ni por mantenimiento de cuenta"],
+  "advantages": ["Spread bajo y ejecución estable", "Regulación sólida e internacional", "Plataformas completas (MT4, MT5, cTrader, TradingView)"],
+  "disadvantages": ["Instrumentos reales fuera de los CFD limitados", "El soporte 24/7 no está disponible en todas las regiones", "El apalancamiento puede estar limitado según la ubicación"],
+  "classifications": [
+    "Velocidad de Retiro (WD)",
+    "Estabilidad del Servidor",
+    "Atención al Cliente"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro Pepperstone?",
+      "answer": "Sí. Está supervisado por FCA, ASIC, DFSA, BaFin, CySEC y SCB."
+    },
+    {
+      "question": "¿Hay depósito mínimo?",
+      "answer": "No hay un depósito mínimo oficial, pero se recomienda un depósito inicial de ~$200."
+    },
+    {
+      "question": "¿Es apto para scalping y EA?",
+      "answer": "Sí, es muy apto, sobre todo en la cuenta Razor."
+    },
+    {
+      "question": "¿Cuál es el spread más bajo?",
+      "answer": "Desde 0.0 pips en la cuenta Razor."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:500, según el regulador y la región."
+    },
+    {
+      "question": "¿Cuál es el coste de depósito/retiro?",
+      "answer": "En la mayoría de los métodos: $0."
+    }
+  ]
+}

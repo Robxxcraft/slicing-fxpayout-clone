@@ -1,0 +1,46 @@
+{
+  "description": "ZFX es un bróker de Forex y CFD que forma parte de Zeal Group, y ofrece trading en los mercados globales, incluidos Forex, índices, materias primas, metales y acciones, a través de una infraestructura ECN / STP transparente. La compañía está regulada en el Reino Unido (FCA) y en Seychelles (FSA), con un enfoque en la ejecución rápida, los spreads competitivos y el trading multiactivo.",
+  "specification": {
+    "leverage": "Hasta 1:2000 (según la cuenta y la región)",
+    "spread": "Desde 0.2 pips (ECN)"
+  },
+  "summary": {
+    "spread": "Desde 0.2 pips en la cuenta ECN; las cuentas standard/cent son más amplias",
+    "commission": "La cuenta ECN suele tener comisión (el importe depende del instrumento)",
+    "leverage": "Hasta 1:2000 en algunas cuentas/entidades (aunque las normativas temporales pueden reducir el apalancamiento durante eventos económicos importantes)",
+    "execution": "Rápida (MT4/MT5)",
+    "depositWithdrawal": "Tarjeta, transferencia bancaria, e-wallet; el tiempo depende del método"
+  },
+  "accountTypes": [
+    ["Depósito mín. ≥ $15", "Spread desde ±0.2 pips", "Apalancamiento hasta 1:2000", "Ejecución media ±480 ms", "Slippage: bajo (datos de prueba)"],
+    ["Depósito mín. ≥ $50", "Spread desde ±1.3 – 1.5 pips", "Apalancamiento hasta 1:2000", "Ejecución media ±480 ms", "Slippage: bajo (datos de prueba)"],
+    ["Depósito mín. ≥ $500", "Spread desde 0.2 pips", "Apalancamiento hasta 1:2000", "Ejecución media ±480 ms", "Slippage: bajo (datos de prueba)"]
+  ],
+  "spread": ["variable y bajo (pero volátil)", "más amplio, según la liquidez"],
+  "keyAdvantages": ["Spread muy competitivo en la cuenta ECN", "Regulación y respaldo de Zeal Group", "Apalancamiento alto disponible (según la entidad)", "Soporte completo para MT4/MT5", "Opciones de cuenta desde principiantes hasta pro (cent → ECN)"],
+  "advantages": ["Spread ECN competitivo", "Apalancamiento alto", "MT4 y MT5 disponibles", "Cuenta cent disponible"],
+  "disadvantages": ["El depósito mínimo de la cuenta ECN es bastante alto", "El rebate de IB no es transparente de cara al público", "Hay informes de quejas de usuarios (conviene tener precaución)"],
+  "classifications": [
+    "Velocidad de Retiro (WD)",
+    "Estabilidad del Servidor",
+    "Atención al Cliente"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro ZFX?",
+      "answer": "ZFX opera bajo Zeal Group e indica la regulación de FCA y FSA para las entidades del grupo; es necesario verificar la entidad local."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "Desde $15 para Cent/Mini; $50 para Standard; la ECN suele ser de $500+ (comprueba la cuenta en tu región)."
+    },
+    {
+      "question": "¿Hay cuenta demo?",
+      "answer": "Sí, dispone de cuenta demo MT4/MT5 en la web de ZFX."
+    },
+    {
+      "question": "¿Hay programa de IB?",
+      "answer": "Sí, dispone de programa de partnership / IB; los detalles del rebate se negocian."
+    }
+  ]
+}

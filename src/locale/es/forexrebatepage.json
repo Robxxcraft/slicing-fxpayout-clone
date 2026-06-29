@@ -1,0 +1,91 @@
+{
+    "helmet": {
+        "title": "Best Forex Rebate Platforms – El Mejor Cashback Forex para Traders",
+        "description": "Compara las plataformas de rebate forex y descubre por qué los traders que buscan programas de cashback transparentes y tasas de rebate competitivas confían en FXPayout."
+    },
+    "herosection": {
+        "title": "Best Forex Rebate Platforms - El Mejor Cashback Forex para Traders",
+        "paragraph": "Maximiza cada una de tus operaciones. Obtén cashback automático por cada lote operado, sin alterar el spread ni la comisión de tu bróker.",
+        "badge": "FXPayout Rebate Platform"
+    },
+    "whatrebateforex": {
+        "title": "¿Qué es el Rebate de Forex?",
+        "paragraph": "El Rebate de Forex es un sistema de cashback que permite al trader recuperar una parte de sus costes de trading a partir de la comisión del bróker. Actualmente existen diversas plataformas de rebate forex con sistemas y niveles de transparencia distintos.",
+        "badge": "REBATE FOREX",
+        "content": "FXPayout es una plataforma de rebate forex que opera como <bi>Introducing Broker (IB)</bi>, no como bróker, y <bi>no acepta depósitos</bi> ni gestiona los fondos de los usuarios."
+    },
+    "benefitsection": {
+        "title": "La Opción Preferida de los Traders Profesionales",
+        "paragraph": "Recomendamos las plataformas con el mejor historial en seguridad de fondos y velocidad de ejecución.",
+        "badge": "NO TE EQUIVOQUES AL ELEGIR",
+        "card_benefit": {
+            "badge": "Recomendado",
+            "paragraph": "FXPayout es la solución todo en uno para los traders que priorizan la transparencia. Trabajamos directamente con proveedores de liquidez para garantizar que obtengas la tasa más alta.",
+            "benefits": [
+                "No Acepta Depósitos",
+                "Sin Acceso a tu Cuenta de Trading",
+                "Rebate de Hasta el 80%",
+                "No Custodia Fondos",
+                "Soporte de Atención Ágil",
+                "Sistema Transparente y Consistente"
+            ],
+            "info": "FXPayout es ideal para traders que quieren reducir sus costes de trading sin asumir riesgos adicionales."
+        },
+        "card_rebate": {
+            "title": "Obtén el Rebate Más Alto",
+            "paragraph": "FXPayout es una plataforma de rebate forex que ofrece rebate de hasta el 95%"
+        }
+    },
+    "whychoosesection": {
+        "title": "Otras Plataformas de Rebate Forex",
+        "paragraph": "Además de FXPayout, existen diversas plataformas de rebate forex que ofrecen cashback con porcentajes distintos. No obstante, es importante tener en cuenta algunos aspectos antes de elegir una plataforma:",
+        "badge": "COMPRUEBA ANTES DE ELEGIR",
+        "features": [
+            {
+                "title": "¿La plataforma custodia fondos?",
+                "paragraph": "No. La plataforma no custodia los fondos de los usuarios. No hay un sistema de depósitos a través de la plataforma, como ocurre con FXPayout. Todas las transacciones se realizan directamente a través del bróker."
+            },
+            {
+                "title": "¿Solicita acceso a tu cuenta de trading?",
+                "paragraph": "No. La plataforma no solicita el correo ni la contraseña para iniciar sesión en tu cuenta del bróker. La seguridad de tu cuenta permanece por completo en tus manos."
+            },
+            {
+                "title": "¿Es transparente el sistema de rebate?",
+                "paragraph": "Sí. Todo el proceso de rebate es transparente, sin comisiones ocultas ni descuentos adicionales."
+            }
+        ],
+        "info": "Elegir una plataforma segura y transparente es mucho más importante que fijarse únicamente en el porcentaje de rebate."
+    },
+    "comparisonsection": {
+        "title": "¿Por qué FXPayout es Más Rentable?",
+        "paragraph": "Compara directamente las ventajas y la transparencia entre FXPayout y otras plataformas.",
+        "badge": "Comparativa",
+        "other_platforms": "Otras Plataformas",
+        "data": [
+            {
+                "title": "Porcentaje de Cashback",
+                "description": "Cashback que recibes de la comisión del bróker",
+                "other": "50% - 70%"
+            },
+            {
+                "title": "Rebate Variable",
+                "description": "Tasas de rebate elevadas en distintos instrumentos de trading"
+            },
+            {
+                "title": "Sin Depósito",
+                "description": "No necesitas transferir fondos para empezar a usar el servicio",
+                "other": "Por lo general requieren depósito"
+            },
+            {
+                "title": "Sin acceso a tu cuenta",
+                "description": "La seguridad de tu cuenta se mantiene por completo en el bróker",
+                "other": "Algunos servicios tienen acceso"
+            },
+            {
+                "title": "Transparente",
+                "description": "Todo el proceso de rebate es claro y se puede monitorear",
+                "other": "Transparencia limitada"
+            }
+        ]
+    }
+}

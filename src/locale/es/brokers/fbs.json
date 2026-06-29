@@ -1,0 +1,58 @@
+{
+  "description": "FBS es un bróker internacional fundado en 2009 que ofrece servicios de trading de Forex y CFD con condiciones de trading competitivas, distintos tipos de cuenta según las necesidades del trader y ejecución rápida de órdenes. FBS es popular entre traders desde principiantes hasta profesionales, con programas de formación, bonos y una sólida atención al cliente",
+  "specification": {
+    "leverage": "Hasta 1:3000",
+    "spread": "Desde 0.0 pips (Zero/ECN)"
+  },
+  "profile": {
+    "slogan": "Trade Forex Worldwide"
+  },
+  "summary": {
+    "spread": "Desde 0.0 pips (Zero/ECN)",
+    "commission": "ECN: ±$6–$7 por lote (round-turn)",
+    "leverage": "Hasta 1:3000",
+    "execution": "Rápida",
+    "depositWithdrawal": "Rápido y con múltiples métodos"
+  },
+  "accountTypes": [
+    ["Depósito mín. : $1", "Spread desde ±1.0 pips", "Ideal para principiantes y práctica"],
+    ["Depósito mín. : $5", "Spread desde ±1.0 pips", "Sin comisión"],
+    ["Depósito mín. : $100", "Spread desde ±0.5 – 1.2", "Sin comisión"],
+    ["Depósito mín. : $500", "Spread desde 0.0 pips", "Comisión de unos $7 por lote"],
+    ["Depósito mín. : $100", "Spread desde 0.0 pips", "Comisión competitiva"]
+  ],
+  "keyAdvantages": ["Spreads bajos, sobre todo en ECN/Zero", "Apalancamiento alto de hasta 1:3000", "Cuenta Cent para principiantes", "Programa de bonos atractivo", "Ejecución rápida", "Plataformas completas"],
+  "advantages": ["Depósito mínimo muy bajo", "Apalancamiento muy alto", "Spreads competitivos en cuentas ECN/Zero", "Cuenta Cent para traders principiantes"],
+  "disadvantages": ["El spread de las cuentas no ECN puede ser más amplio", "No ofrece instrumentos reales fuera de los CFD"],
+  "classifications": [
+    "Velocidad de Retiro",
+    "Estabilidad del Servidor",
+    "Atención al Cliente"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro FBS?",
+      "answer": "Sí. FBS está regulado por ASIC, CySEC, IFSC y FSCA, según la entidad."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "El depósito mínimo es desde $1 (Cuenta Cent)."
+    },
+    {
+      "question": "¿FBS es apto para principiantes?",
+      "answer": "Sí. La cuenta Cent y sus servicios de formación son ideales para principiantes."
+    },
+    {
+      "question": "¿Hay cuenta ECN/Zero?",
+      "answer": "Sí. Dispone de cuentas Zero y ECN con spread de 0.0 pips."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:3000, según el regulador y la región."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, WebTrader y Mobile App."
+    }
+  ]
+}

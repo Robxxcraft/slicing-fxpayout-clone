@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "Noticias de Forex y Análisis de Mercado al Día | FXPayout",
+        "description": "Accede a las últimas noticias de forex, análisis de mercado en tiempo real, tendencias de cripto y actualizaciones de la economía global directamente desde FXPayout."
+    },
+    "time": {
+      "minutesAgo": "hace {{time}} minutos",
+      "hoursAgo": "hace {{time}} horas",
+      "justNow": "Ahora mismo",
+      "march": "{{time}} de marzo"
+    },
+    "category": {
+        "latest": "Más recientes",
+        "popular": "Populares",
+        "breakingNews": "Última Hora",
+        "crypto": "Cripto",
+        "stocks": "Acciones",
+        "commodity": "Materias Primas",
+        "economy": "Economía",
+        "company": "Empresas",
+        "world": "Mundo",
+        "others": "Otros"
+    },
+    "header": {
+        "searchPlaceholder": "Busca noticias aquí..."
+    },
+    "main": {
+        "category": "Categoría",
+        "totalNews": "Número de Noticias"
+    },
+    "subscribe": {
+        "title": "Suscríbete a las Noticias Ahora",
+        "paragraph": "Recibe las últimas noticias sobre forex, cripto, acciones y economía directamente en tu correo.",
+        "emailPlaceholder": "Usa un correo activo"
+    }
+}

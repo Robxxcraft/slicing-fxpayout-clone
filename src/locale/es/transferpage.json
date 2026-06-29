@@ -1,0 +1,44 @@
+{
+    "helmet": {
+        "title": "Formulario de Transferencia de IB de Trading a FXPayout | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "header": {
+        "title": "Transfiere tu Cuenta de Trading al IB de fxpayout",
+        "paragraph": "Completa el siguiente formulario para realizar la Transferencia de IB y vincular tu cuenta de trading a fxpayout.",
+        "tag": "TRANSFERENCIA DE IB"
+    },
+    "card": {
+        "title": "Transferencia de Introducing Broker (IB)",
+        "paragraph": "Completa el siguiente formulario para realizar la Transferencia de IB a fxpayout.",
+        "steps": ["Completa el Formulario", "Copia la Plantilla de Correo", "Envía el Correo a soporte"],
+        "emailForm": {
+            "title": "Completa el Formulario",
+            "brokerLabel": "Selecciona un Bróker",
+            "accountNumberLabel": "Número de Cuenta",
+            "accountNumberPlaceholder": "Introduce el Número de Cuenta",
+            "usernameLabel": "Nombre del Titular de la Cuenta",
+            "usernamePlaceholder": "Nombre Según el Titular de la Cuenta",
+            "emailLabel": "Correo Electrónico",
+            "emailPlaceholder": "Dirección de Correo Electrónico"
+        },
+        "emailTemplate": {
+            "title": "Plantilla de Correo para la Transferencia de IB",
+            "template": {
+                "subject": "Solicitud de Cambio de IB",
+                "greeting": "Estimado equipo de Soporte", 
+                "intro": "Solicito la transferencia de mi cuenta de trading al siguiente IB:",
+                "ibId": "ID del IB:", 
+                "ibLink": "Enlace del IB:",
+                "accountData": "Datos de mi cuenta:",
+                "name": "Nombre:",
+                "tradingAccount": "Número de Cuenta de Trading:",
+                "closing": "Les agradecería su ayuda para tramitar dicha transferencia de IB.\nGracias.",
+                "regards": "Atentamente,"
+
+            },
+            "send": "Enviar a", 
+            "contactSupport": "Contactar con Soporte"
+        }
+    }
+}

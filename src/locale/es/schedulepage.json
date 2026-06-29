@@ -1,0 +1,30 @@
+{
+    "helmet": {
+        "title": "Consulta el Calendario Habitual de Rebate de {{brokerName}} | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "header": {
+        "title": "CALENDARIO DE REBATE",
+        "paragraph": "A continuación se muestra el calendario de rebate de {{brokerName}} en condiciones normales. El calendario de rebate puede sufrir retrasos en determinadas circunstancias, como problemas de servidor, mantenimiento del sistema, incidencias en el sistema de pago y retrasos en los datos de rebate por parte del bróker.",
+        "tag": "CALENDARIO DE REBATE DEL BRÓKER"
+    },
+    "tableHeader": ["Categoría", "Calendario de Rebate"],
+    "tableItems": [
+        {
+            "category": "El Informe de Rebate Aparece en el Sistema",
+            "schedule": "Diario: un día después del cierre de la orden, es decir, de 00:00 a 16:59 UTC (GMT+0)."
+        },
+        {
+            "category": "El Rebate se Acredita en el Saldo de Rebate",
+            "schedule": "Diario: un día después del cierre de la orden, es decir, de 00:00 a 16:59 UTC (GMT+0)."
+        },
+        {
+            "category": "AutoRebate a la Cuenta de Trading o Monedero del Bróker",
+            "schedule": "Función no disponible."
+        },
+        {
+            "category": "AutoRebate del Saldo de Rebate a Banco / E-Currency",
+            "schedule": "Semanal: cada lunes a miércoles a las 16:59 UTC (GMT+0), siempre que se haya alcanzado el importe mínimo de pago."
+        }
+    ]
+}

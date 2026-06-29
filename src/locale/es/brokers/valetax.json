@@ -1,0 +1,49 @@
+{
+  "description": "Valetax es un bróker global de forex y CFD que ofrece distintos tipos de cuenta de trading con apalancamiento flexible y spreads competitivos. Esta plataforma permite el acceso a más de 60 pares de divisas, así como a otros instrumentos como metales, índices, energía y cripto, a través de las populares plataformas MT4 y MT5, lo que la hace apta tanto para traders principiantes como experimentados.",
+  "specification": {
+    "leverage": "Hasta 1:2000",
+    "spread": "Desde 0.0 pips"
+  },
+  "summary": {
+    "spread": "Desde 0.0 pips",
+    "commission": "ECN: $4 por lote (algunas cuentas sin comisión)",
+    "leverage": "Hasta 1:2000",
+    "execution": "Ejecución de mercado rápida y estable",
+    "depositWithdrawal": "Proceso rápido: instantáneo/4 horas para local/cripto (según el método)"
+  },
+  "spread": ["Desde 0.0"],
+  "accountTypes": [
+    ["Depósito mín. : $1", "Spread : ±1.2 pips", "Comisión : 0", "Ideal para principiantes"],
+    ["Depósito mín. : ±$8–$10", "Spread : ±1.2 pips", "Comisión : 0"],
+    ["Depósito mín. : $50", "Spread : desde 0.0 pips", "Comisión : ±$4 por lote"],
+    ["Depósito mín. : ±$8", "Spread : ±2.0 pips", "Comisión : 0"],
+    ["Depósito mín. : ±$8", "Spread : ±2.0 pips", "Comisión : 0"],
+    ["Depósito mín. : $500", "Spread : ±0.6 pips", "Comisión : 0"]
+  ],
+  "keyAdvantages": ["Depósito mínimo muy bajo, desde $1", "Spreads competitivos de hasta 0.0 pips en la cuenta ECN", "Soporte para plataformas MT4, MT5, Web y Mobile", "Acceso a más de 60 pares de forex y a otras clases de activos", "Atención al cliente 24/7"],
+  "advantages": [" Spread y Ejecución Competitivos", "Depósito Mínimo Muy Bajo", "Apalancamiento Alto y Flexible", "Soporte de Plataformas Completo", "Variedad de Instrumentos de Trading", "Distintos Tipos de Cuenta", "Funciones Adicionales como Copy Trading (Según Algunas Fuentes)", "Opciones de Depósito Local y Soporte 24/7 (Web Oficial)"],
+  "disadvantages": ["La sede regulatoria es offshore (Mauricio y San Vicente y las Granadinas) → mayor riesgo en comparación con los brókers regulados por FCA/ASIC/CySEC.", "Hay algunas opiniones negativas relacionadas con la falta de supervisión y el riesgo del apalancamiento alto."],
+  "classifications": [
+    "Plataforma y Herramientas",
+    "Costes y Comisiones",
+    "Soporte y Servicio"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro Valetax?",
+      "answer": "Valetax cuenta con licencias en Mauricio y San Vicente y las Granadinas, pero estas regulaciones se consideran offshore y conllevan un riesgo mayor que el de los reguladores de primer nivel."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "El depósito mínimo es desde $1."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, Web y Mobile."
+    },
+    {
+      "question": "¿Qué instrumentos están disponibles?",
+      "answer": "Forex 60+ pares, metales, índices, energía y cripto."
+    }
+  ]
+}

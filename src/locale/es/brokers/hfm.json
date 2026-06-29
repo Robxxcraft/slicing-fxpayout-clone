@@ -1,0 +1,55 @@
+{
+  "description": "HFM (HF Markets), antes conocido como HotForex, es un bróker global multirregulado fundado en 2010 que lleva más de una década operando en más de 180 países. Este bróker ofrece servicios de trading de Forex, metales, materias primas, índices, CFD de acciones y criptomonedas, con distintos tipos de cuenta y plataformas de trading como MT4, MT5 y la app de HFM.",
+  "specification": {
+    "leverage": "Hasta 1:2000",
+    "spread": "Desde 0.0 pips (Zero)"
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": "Desde 0.0 pips (Zero)",
+    "commission": "Según la cuenta (Zero y Pro tienen comisión)",
+    "leverage": "Hasta 1:2000 (según la entidad/país)",
+    "execution": "Rápida y competitiva",
+    "depositWithdrawal": "Banco, tarjeta, e-wallet, cripto"
+  },
+  "spread": ["variable (tiende a ser más amplio)"],
+  "accountTypes": [
+    ["Depósito mín. : $0", "Spread : variable (desde 1.4 pips)", "Apalancamiento alto"],
+    ["Depósito mín. : $0", "Spread : 0.0", "Comisión : sí"],
+    ["Depósito mín. : ±$100", "Spread : ±0.6 pips"],
+    ["Depósito mín. : $0", "Spread : ±1.4 pips"],
+    ["Para copy trading/social trading"]
+  ],
+  "keyAdvantages": ["Regulación multijurisdiccional", "Spreads competitivos, sobre todo en la cuenta Zero", "Apalancamiento máximo alto", "Plataformas de trading potentes (MT4, MT5, HFM App)", "Soporte 24/5", "Depósitos y retiros rápidos"],
+  "advantages": ["Spread Zero muy competitivo", "Regulación completa en numerosos países", "Soporte de trading multiplataforma", "Apto desde principiantes hasta profesionales"],
+  "disadvantages": ["La estructura regulatoria varía según la entidad", "El spread de la cuenta estándar puede ser más alto", "No todas las promociones de bonos/sin depósito están disponibles"],
+  "classifications": [
+    "Depósito y Retiro",
+    "Soporte",
+    "Plataforma y Trading"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro HFM?",
+      "answer": "Sí — está regulado en numerosas jurisdicciones importantes (incluidas FCA y CySEC)."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "Puede empezar desde $0, según la cuenta."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, Web y HFM App."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:2000 (según la entidad y la región)."
+    },
+    {
+      "question": "¿Hay cuenta de copy trading?",
+      "answer": "Sí — HFCopy"
+    }
+  ]
+}

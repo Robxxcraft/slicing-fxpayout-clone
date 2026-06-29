@@ -1,0 +1,100 @@
+{
+    "helmet": {
+        "title": "VIP Rebate Forex de Hasta el 95% | Cashback de Trading FXPayout",
+        "description": ""
+    },
+    "herosection": {
+        "title": "VIP Rebate Forex de Hasta el 95% | Cashback de Trading FXPayout",
+        "paragraph": "FXPayout es una plataforma de rebate forex (Introducing Broker) que ayuda al trader a obtener cashback de cada una de sus operaciones.",
+        "badge": "FXPayout Rebate Platform"
+    },
+    "whatrebateforex": {
+        "title": "¿Qué es el Rebate de Forex?",
+        "paragraphs": [
+            "El rebate de forex es el cashback de la comisión del bróker que se devuelve al trader. Cada vez que operas, el bróker cobra determinados costes, como el spread o la comisión.",
+            "Una parte de esos costes puede devolverse a ti en forma de rebate. Al usar el rebate, mejoras la eficiencia de tu trading, ya que tus costes de transacción son menores."
+        ],
+        "badge": "REBATE FOREX",
+        "subtitle": "Cómo Funciona el Rebate de Forex",
+        "flows": [
+            {
+                "title": "El Trader Opera",
+                "paragraph": "Cada operación que realizas conlleva costes como el spread o la comisión que cobra el bróker."
+            },
+            {
+                "title": "El Bróker Genera Comisión",
+                "paragraph": "A partir de esa actividad de trading, el bróker comparte una parte de la comisión a través del sistema de Introducing Broker (IB)."
+            },
+            {
+                "title": "Se Reparte el Rebate",
+                "paragraph": "Una parte de esa comisión se te devuelve como cashback (rebate) de forma automática."
+            }
+        ]
+    },
+    "leveltradersection": {
+        "title": "Aumenta tu Rebate a Medida que Operas",
+        "paragraph": "Cuanto más activo seas en tu trading, mayor será el cashback que podrás obtener.",
+        "badge": "NO TE EQUIVOQUES AL ELEGIR",
+        "rebate_until": "Rebate Hasta",
+        "detail_levels": [
+            {
+                "tier": "Rebate Estándar",
+                "paragraph": "Este programa ofrece al trader la flexibilidad de empezar sin grandes compromisos.",
+                "terms": [
+                    "Sin Depósito Mínimo",
+                    "Activo de Inmediato Tras el Registro",
+                    "Ideal para Todo Tipo de Trader"
+                ]
+            },
+            {
+                "tier": "Rebate Activo",
+                "paragraph": "Para los traders activos, el rebate puede aumentar hasta el 85% en función de su actividad de trading.",
+                "terms": [
+                    "Actividad de trading constante durante <b>1 mes</b>",
+                    "Cuanto más activo seas en tu trading, mayor será el rebate que obtengas."
+                ]
+            },
+            {
+                "tier": "VIP Rebate",
+                "paragraph": "El programa VIP está diseñado para traders con un mayor compromiso y actividad de trading.",
+                "terms": [
+                    "Depósito total a partir de <b>$2000</b>",
+                    "Mantener un equity de cuenta mínimo de <b>$1000</b> durante un periodo de 1 mes"
+                ]
+            }
+        ],
+        "how_to_improve": "¿Cómo Puedo Subir de Nivel?",
+        "answer_to_improve": "FXPayout es ideal para traders que quieren reducir sus costes de trading sin asumir riesgos adicionales."
+    },
+    "faqsection": {
+        "title": "Preguntas Frecuentes",
+        "paragraph": "Encuentra respuestas a las preguntas más frecuentes sobre el rebate de forex y los servicios de FXPayout.",
+        "faqs": [
+            {
+                "question": "¿Qué es el forex rebate?",
+                "answer": "El forex rebate es el cashback de una parte de la comisión o el spread que se paga cada vez que operas. Con el rebate, puedes reducir tus costes de trading y aumentar tu beneficio."
+            },
+            {
+                "question": "¿Es seguro el forex rebate?",
+                "answer": "Sí, el rebate es seguro porque proviene de la comisión de un bróker regulado (Introducing Broker). No hay ningún cambio en tu cuenta de trading ni en tus condiciones de trading."
+            },
+            {
+                "question": "¿FXPayout es un bróker?",
+                "answer": "No. FXPayout no es un bróker y no gestiona tus fondos de trading. Solo actuamos como intermediario (Introducing Broker) que devuelve una parte de la comisión al trader."
+            },
+            {
+                "question": "¿Necesito transferir fondos a FXPayout?",
+                "answer": "No. No necesitas realizar ningún depósito en FXPayout. Todos tus fondos permanecen en tu cuenta del bróker."
+            },
+            {
+                "question": "¿FXPayout tiene acceso a mi cuenta de trading?",
+                "answer": "No. No tenemos acceso a tu cuenta de trading ni almacenamos tus datos de acceso o contraseña."
+            }
+        ]
+    },
+    "warningforexsection": {
+        "title": "El Trading de Forex Conlleva un Riesgo Elevado, pero los Costes Se Pueden Reducir con el Rebate",
+        "paragraph": "El trading de forex conlleva un riesgo elevado y puede ocasionar pérdidas de hasta la totalidad de tu capital. El rebate ayuda a reducir tus costes de trading, pero no elimina el riesgo del trading.",
+        "badge": "Advertencia de Riesgo"
+    }
+}

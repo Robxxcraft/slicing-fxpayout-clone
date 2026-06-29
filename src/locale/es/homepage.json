@@ -1,0 +1,183 @@
+{
+    "helmet": {
+        "title": "Opera con Más Beneficio: Rebate de Hasta el 90% | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "hero": {
+        "title": "Obtén Cashback en Cada Operación de Trading & <underline>Sin Costes Adicionales.</underline>",
+        "subtitles": [
+            "FXPayout No es un Bróker",
+            "No Acepta Depósitos",
+            "No Accede a tu Cuenta de Trading"
+        ],
+        "badge": "Opera con Menos Costes gracias al Rebate de Forex",
+        "runningTexts": [
+            "100% Sin Costes Adicionales",
+            "Fondos Directamente al Bróker",
+            "Sin Acceso a tu Cuenta",
+            "Transparente y Seguro"
+        ],
+        "estimateRebate": {
+            "title": "Rebate Estimado",
+            "subtitle": "Elige un bróker e introduce los lotes por mes para una estimación rápida",
+            "broker": "Bróker",
+            "lotPerMonth": "Lotes por Mes",
+            "pair": "Par",
+            "register": "Regístrate y Obtén",
+            "estimation": ["Estimación", "Aproximado"],
+            "claim": "Reclamación Manual",
+            "info": "Devolvemos hasta el 90% de la comisión IB al trader. Un proceso rápido, seguro y transparente, sin alterar el spread ni tus condiciones de trading." 
+        }
+    },
+    "problemSection": {
+        "title": "Sin Darte Cuenta, los Costes de Trading Reducen tus Beneficios",
+        "paragraph": "Cada operación conlleva costes como el spread y la comisión. Sin rebate, esos costes seguirán reduciendo los resultados de tu trading.",
+        "badge": "El Problema Habitual del Trader",
+        "problems": [
+            "Los costes de trading pueden reducir tus beneficios de forma significativa.",
+            "El spread, la comisión y otros costes suelen pasar desapercibidos para el trader."
+        ],
+        "then": "Entonces, ¿cuál es la solución?",
+        "solutions": [
+            "Usa el Rebate.",
+            "Con el rebate, puedes recuperar una parte de esos costes."
+        ]
+    },
+    "profile": {
+        "title": "FXPayout te ayuda a reducir tus costes de trading mediante un sistema de rebate (cashback).",
+        "paragraph": "Trabajamos como Introducing Broker (IB) y te devolvemos una parte de la comisión del bróker. Sin costes adicionales. Sin riesgos adicionales.",
+        "badge": "LA SOLUCIÓN QUE NECESITAS",
+        "searchPlaceholder": "rebate forex, cashback trading, IB forex de confianza...",
+        "badges": ["Rebate Forex", "Cashback Trading", "Rebate FBS", "Rebate Exness", "Rebate XM", "IB Forex de Confianza"],
+        "features": [
+            {
+                "title": "Rebate de Hasta el 90%",
+                "paragraph": "Obtén cashback de hasta el 90% de la comisión del bróker directamente en tu cuenta."
+            },
+            {
+                "title": "Enfocados en el trader",
+                "paragraph": "Cashback directo sin alterar tus condiciones de trading."
+            },
+            {
+                "title": "Soporte Local",
+                "paragraph": "Soporte en varios idiomas y un horario pensado para el trader."
+            }
+        ]
+    },
+    "howItWorks": {
+        "title": "Cómo Funciona FXPayout en 4 Sencillos Pasos",
+        "paragraph": "Sin cambiar tu estrategia, solo tienes que operar con normalidad. FXPayout se encarga de convertir el flujo de comisiones en cashback para ti.",
+        "tag": "CÓMO FUNCIONA",
+        "workflows": [
+            {
+                "title": "EMPIEZA",
+                "subtitle": "Regístrate a través del enlace oficial de FXPayout",
+                "paragraph": "Crea tu cuenta de FXPayout y vincula tu cuenta de trading a través del enlace oficial que te facilitamos del bróker elegido."
+            },
+            {
+                "title": "OPERA",
+                "subtitle": "Opera con normalidad en tu bróker",
+                "paragraph": "Continúa con tu actividad de trading sin cambios en el spread, el apalancamiento ni otras condiciones. Todo sigue las reglas del bróker."
+            },
+            {
+                "title": "COMISIÓN",
+                "subtitle": "El bróker envía la comisión IB a FXPayout",
+                "paragraph": "Según el volumen de lotes que operes, el bróker envía la comisión IB a FXPayout de forma automática."
+            },
+            {
+                "title": "REBATE",
+                "subtitle": "Rebate de hasta el 90% en tu cuenta",
+                "paragraph": "Te devolvemos hasta el 90% de esa comisión como cashback, que puedes retirar rápidamente vía banco local o e-wallet."
+            }
+        ]
+    },
+    "rewards": {
+        "title": "Bono de Rebate +10% para Cuentas Nuevas",
+        "paragraph": "Disfruta de esta promoción por tiempo limitado, exclusiva para traders que acaban de unirse a FXPayout.",
+        "tag": "Tiempo Limitado"
+    },
+    "brokerlistsection": {
+        "view_all_brokers": "Ver Todos los Brókers"
+    },
+    "securitySection": {
+        "title": "La Seguridad de tus Fondos es Nuestra Prioridad",
+        "badge": "LO QUE DEBES SABER",
+        "contents": [
+            {
+                "title": "FXPayout No es un Bróker",
+                "paragraph": "No gestionamos tus fondos. Todas las transacciones se realizan directamente en un bróker regulado."
+            },
+            {
+                "title": "No Acepta Depósitos",
+                "paragraph": "Nunca te pediremos que transfieras fondos. Toda tu actividad de trading permanece en tu cuenta del bróker."
+            },
+            {
+                "title": "Sin Acceso a tu Cuenta",
+                "paragraph": "No tenemos acceso a tu cuenta de trading ni almacenamos tus datos de acceso."
+            }
+        ]
+    },
+    "benefit": {
+        "title": "Maximiza tus Beneficios de Trading Sin Costes Adicionales",
+        "paragraph": "Obtén cashback de cada una de tus operaciones sin alterar las condiciones del bróker. Un sistema transparente, seguro y diseñado para mejorar la eficiencia de tus beneficios.",
+        "badge": "POR QUÉ FX PAYOUT",
+        "items": [
+            {
+                "title": "💰 Reduce tus Costes de Trading",
+                "description": "Una parte de tus costes de trading vuelve a ti en forma de cashback."
+            },
+            {
+                "title": "🔄 Rebate Directo del Bróker",
+                "description": "Una parte de tus costes de trading vuelve a ti en forma de cashback."
+            },
+            {
+                "title": "🚫 Sin Costes Adicionales",
+                "description": "Sin comisiones ocultas ni descuentos de ningún tipo. Todo es transparente."
+            },
+            {
+                "title": "🔒 Sistema Seguro y Transparente",
+                "description": "Todas las transacciones se realizan directamente en el bróker. No accedemos a tu cuenta de trading ni almacenamos tus datos de acceso."
+            },
+            {
+                "title": "⚡ Soporte Ágil",
+                "description": "Nuestro equipo de soporte local está listo para ayudarte por WhatsApp y Telegram, con respuestas rápidas y soluciones claras."
+            }
+        ]
+    },
+    "reviews": {
+        "title": "¿Qué Dicen los Traders que Usan FXPayout?",
+        "paragraph": "Experiencias reales de traders que obtienen beneficios adicionales gracias al programa de rebate.",
+        "tag": "OPINIONES",
+        "writeReview": "Escribir Opinión",
+        "successResponse": {
+            "title": "Gracias por Compartir tu Experiencia",
+            "paragraph": "Tu opinión se ha enviado correctamente y ayudará a otros usuarios a conocer la experiencia de uso de este servicio de rebate."
+        },
+        "emptyReview": "Aún no hay opiniones aquí. ¡Sé el primero en compartir tu experiencia usando nuestro servicio!",
+        "modal": {
+            "title": "Escribe tu Opinión",
+            "paragraph": "¿Qué tan satisfecho estás con nuestro servicio de rebate?",
+            "form": {
+                "usernameLabel": "Nombre Completo",
+                "usernamePlaceholder": "Introduce tu Nombre Completo",
+                "locationLabel": "Ciudad",
+                "locationPlaceholder": "Introduce el Nombre de tu Ciudad",
+                "reviewLabel": "Opinión",
+                "reviewPlaceholder": "Cuéntanos tu experiencia usando fxpayout...",
+                "submit": "Enviar Opinión",
+                "errors": {
+                    "usernameRequired": "El nombre completo no puede estar vacío",
+                    "locationRequired": "La ciudad no puede estar vacía",
+                    "reviewRequired": "La opinión no puede estar vacía",
+                    "invalidRangeRating": "La valoración debe estar en el rango de 1 a 5"
+                }
+            },
+            "errors": { "captcha": "Confirma que no eres un robot" }
+        }
+    },
+    "riskSection": {
+        "title": "El Riesgo del Trading Sigue Existiendo, los Costes Se Pueden Reducir",
+        "paragraph": "El trading de forex conlleva un riesgo elevado. Sin embargo, con FXPayout puedes reducir tus costes de trading sin aumentar el riesgo, ya que todos tus fondos permanecen en tu bróker.",
+        "cta": "Tus Fondos Siguen Seguros en el Bróker"
+    }
+}

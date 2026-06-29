@@ -1,0 +1,52 @@
+{
+  "description": "Tickmill es un bróker global de forex y CFD fundado en 2014, reconocido por sus bajos costes de trading (spreads ajustados y comisiones bajas), su ejecución rápida y el soporte de plataformas populares como MetaTrader 4 y MetaTrader 5. Tickmill da servicio a traders en numerosos países, con un enfoque en una experiencia de trading profesional y eficiente.",
+  "specification": {
+    "leverage": "Hasta 1:1000 (según la región)",
+    "spread": "Desde 0.0 – 0.3 pips (Pro/VIP)"
+  },
+  "profile": {
+    "model": "ECN trading"
+  },
+  "summary": {
+    "spread": "Desde 0.0 – 0.3 pips (Pro/VIP)",
+    "commission": "±$3 por lote por lado (cuenta Pro / Ultra)",
+    "leverage": "Hasta 1:1000 (según la región)",
+    "execution": "Rápida",
+    "depositWithdrawal": "Transferencia bancaria, débito/crédito, e-wallet"
+  },
+  "accountTypes": [
+    ["Depósito mínimo: $100", "Spread desde ±1.6 pips", "Sin comisión"],
+    ["Depósito mínimo: $100", "Spread desde 0.0 – 0.3 pips", "Comisión : $3 por lote por lado"],
+    ["Depósito mínimo más alto", "Spread muy ajustado", "Comisión : ±$2.5 – $3 por lote por lado"]
+  ],
+  "keyAdvantages": ["Spread muy bajo (ECN/Raw)", "Comisiones competitivas", "Ejecución de órdenes rápida y estable", "Regulación sólida y global", "Opción de cuenta sin swap (Islamic)", "Soporte para MT4, MT5 y TradingView"],
+  "advantages": ["Spread ECN muy bajo", "Comisiones competitivas", "Ejecución rápida y estable", "Regulación sólida en numerosas regiones", "Plataformas de trading completas"],
+  "disadvantages": ["El depósito mínimo de $100 es relativamente más alto que el de otros brókers", "La comisión se aplica en las cuentas Pro/VIP", "El apalancamiento puede estar limitado por el regulador"],
+  "classifications": [
+    "Ejecución y Spread",
+    "Atención al Cliente",
+    "Depósito / Retiro"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro Tickmill?",
+      "answer": "Sí — está regulado por FCA, CySEC, FSCA y FSA."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "El depósito mínimo es de $100."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, Web y Mobile."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:1000, según el regulador."
+    },
+    {
+      "question": "¿Hay cuenta ECN?",
+      "answer": "Sí — Pro y VIP con spread bajo."
+    }
+  ]
+}

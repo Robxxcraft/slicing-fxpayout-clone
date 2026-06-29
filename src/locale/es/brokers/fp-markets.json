@@ -1,0 +1,52 @@
+{
+  "description": "FP Markets (First Prudential Markets) es un bróker global de forex y CFD fundado en 2005, con sede en Sídney, Australia. Este bróker es reconocido por sus spreads competitivos, su ejecución rápida, el acceso a miles de instrumentos y el soporte de plataformas de trading populares como MetaTrader y cTrader. FP Markets también ofrece tecnología de trading profesional como cTrader, VPS y herramientas de análisis avanzadas.",
+  "specification": {
+    "leverage": "Hasta 1:500 (según el regulador y la entidad)",
+    "spread": ["Standard : desde aproximadamente 1.0 pips", "Raw : desde 0.0 pips"]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": ["Standard : desde aproximadamente 1.0 pips", "Raw : desde 0.0 pips"],
+    "commission": "Raw ECN ±$6 por lote en total (±$3 por lado)",
+    "leverage": "Hasta 1:500 (según el regulador y la entidad)",
+    "execution": "Rápida y sin requotes",
+    "depositWithdrawal": "Transferencia bancaria, tarjeta, e-wallet"
+  },
+  "spread": ["desde 0.0 – 0.2 pips", "variable y bajo", "más amplio"],
+  "accountTypes": [
+    ["Depósito mín. : $100", "Spread desde ±1.0 pips", "Sin comisión", "Ideal para traders retail en general"],
+    ["Depósito mín. : $100", "Spread desde 0.0 pips", "Comisión ±$3 por lado por lote", "Apto para scalping, robots y EA"]
+  ],
+  "keyAdvantages": ["Spread ECN muy bajo", "Ejecución rápida y estable", "Liquidez elevada", "Apto para EA y scalping", "Plataformas de trading completas", "Ideal para traders activos"],
+  "advantages": ["Spreads muy competitivos (Raw ECN)", "Plataformas completas (MT4, MT5, cTrader)", "Sin mark-up en la cuenta Raw", "Regulación sólida en numerosos países", "Apto para trading manual, EA y scalping"],
+  "disadvantages": ["El depósito mínimo de $100 es más alto que el de algunos brókers más accesibles", "El apalancamiento puede estar limitado por el regulador en determinadas regiones", "El spread de la cuenta Standard es más amplio que el de la ECN"],
+  "classifications": [
+    "Atención al Cliente",
+    "Comisiones y Spread",
+    "Velocidad de Ejecución"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro FP Markets?",
+      "answer": "Sí — está regulado por ASIC (Australia), CySEC (Chipre), FSCA (Sudáfrica), FSA (Seychelles) y CIMA."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "El depósito mínimo para operar en real es de $100."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5 y cTrader."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:500 para forex (según la entidad/regulador)."
+    },
+    {
+      "question": "¿Hay cuenta ECN?",
+      "answer": "Sí — la cuenta Raw ECN con spread desde 0.0 pips + comisión."
+    }
+  ]
+}
