@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "파트너 브로커 목록 및 상세 정보 | FXPayout",
+        "description": "FXPayout은 브로커 커미션의 최대 90%를 트레이더에게 직접 캐시백으로 돌려주는 신뢰할 수 있는 포렉스 리베이트 플랫폼입니다."
+    },
+    "header": {
+        "title": "파트너 브로커 및 상세 정보",
+        "paragraph": "최고의 체결 환경과 최대 90% 리베이트를 제공하는 엄선된 브로커입니다. 상품별 상세 정보를 비교하고 회원님의 트레이딩 전략에 가장 적합한 브로커를 선택하세요.",
+        "tag": "브로커 목록",
+        "searchPlaceholder": "브로커를 검색하세요",
+        "total_brokers": "총 브로커 수",
+        "filter_brokers": "브로커 필터",
+        "sort_by": "정렬 기준"
+    },
+    "card": {
+        "rebatePerInstrument": "상품별 리베이트",
+        "instrument": "거래 상품",
+        "rebate": "리베이트",
+        "register": "브로커 가입",
+        "detail": "자세히 보기"
+    },
+    "notify": {
+        "title": "리베이트 투명성",
+        "paragraph": "이용자가 직접 확인할 수 있는 커미션 & 리베이트 내역을 보관합니다. (데모: 데이터는 브라우저에 저장됩니다)."
+    },
+    "ctaregisterbroker": {
+        "title": "FXPayout 플랫폼에 합류하세요",
+        "paragraph": "찾으시는 브로커가 아직 없으신가요? 브로커 프로필을 등록하고 저희 생태계를 통해 더 많은 트레이더에게 다가가세요.",
+        "button": "브로커 등록하기"
+    }
+}

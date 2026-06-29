@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "포렉스 뉴스 & 최신 시장 분석 | FXPayout",
+        "description": "FXPayout에서 최신 포렉스 뉴스, 실시간 시장 분석, 암호화폐 동향, 글로벌 경제 소식을 바로 받아보세요."
+    },
+    "time": {
+      "minutesAgo": "{{time}}분 전",
+      "hoursAgo": "{{time}}시간 전",
+      "justNow": "방금 전",
+      "march": "3월 {{time}}일"
+    },
+    "category": {
+        "latest": "최신",
+        "popular": "인기",
+        "breakingNews": "속보",
+        "crypto": "암호화폐",
+        "stocks": "주식",
+        "commodity": "원자재",
+        "economy": "경제",
+        "company": "기업",
+        "world": "국제",
+        "others": "기타"
+    },
+    "header": {
+        "searchPlaceholder": "뉴스를 검색하세요..."
+    },
+    "main": {
+        "category": "카테고리",
+        "totalNews": "뉴스 수"
+    },
+    "subscribe": {
+        "title": "지금 뉴스 구독하기",
+        "paragraph": "포렉스, 암호화폐, 주식, 경제에 관한 최신 뉴스를 이메일로 바로 받아보세요.",
+        "emailPlaceholder": "활성 이메일을 사용하세요"
+    }
+}

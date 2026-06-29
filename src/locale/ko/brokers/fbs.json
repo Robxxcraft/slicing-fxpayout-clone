@@ -1,0 +1,58 @@
+{
+  "description": "FBS는 2009년 설립된 글로벌 브로커로, 경쟁력 있는 트레이딩 조건, 트레이더의 니즈에 맞춘 다양한 계좌 유형, 빠른 주문 체결과 함께 포렉스 및 CFD 트레이딩 서비스를 제공합니다. 교육 프로그램, 보너스, 탄탄한 고객 지원을 바탕으로 초보자부터 전문 트레이더까지 폭넓게 인기를 얻고 있습니다",
+  "specification": {
+    "leverage": "최대 1:3000",
+    "spread": "0.0 pips부터 (Zero/ECN)"
+  },
+  "profile": {
+    "slogan": "Trade Forex Worldwide"
+  },
+  "summary": {
+    "spread": "0.0 pips부터 (Zero/ECN)",
+    "commission": "ECN: 랏당 ±$6–$7 (왕복)",
+    "leverage": "최대 1:3000",
+    "execution": "빠름",
+    "depositWithdrawal": "빠르고 다양한 방법 지원"
+  },
+  "accountTypes": [
+    ["최소 입금액 : $1", "스프레드 ±1.0 pips부터", "초보자 & 연습에 적합"],
+    ["최소 입금액 : $5", "스프레드 ±1.0 pips부터", "커미션 없음"],
+    ["최소 입금액 : $100", "스프레드 ±0.5 – 1.2부터", "커미션 없음"],
+    ["최소 입금액 : $500", "스프레드 0.0 pips부터", "커미션 랏당 약 $7"],
+    ["최소 입금액 : $100", "스프레드 0.0 pips부터", "경쟁력 있는 커미션"]
+  ],
+  "keyAdvantages": ["특히 ECN/Zero에서 낮은 스프레드", "최대 1:3000의 고레버리지", "초보자용 Cent 계좌", "매력적인 보너스 프로그램", "빠른 체결", "종합 플랫폼"],
+  "advantages": ["매우 낮은 최소 입금액", "매우 높은 레버리지", "ECN/Zero 계좌의 경쟁력 있는 스프레드", "초보 트레이더용 Cent 계좌"],
+  "disadvantages": ["비ECN 계좌의 스프레드가 더 넓을 수 있음", "실물 비CFD 상품 옵션 미제공"],
+  "classifications": [
+    "출금 속도",
+    "서버 안정성",
+    "고객 지원"
+  ],
+  "faqs": [
+    {
+      "question": "FBS는 안전한가요?",
+      "answer": "네. FBS는 법인에 따라 ASIC, CySEC, IFSC, FSCA의 규제를 받습니다."
+    },
+    {
+      "question": "최소 입금액은 얼마인가요?",
+      "answer": "최소 입금액은 $1부터 시작합니다 (Cent 계좌)."
+    },
+    {
+      "question": "FBS는 초보자에게 적합한가요?",
+      "answer": "네. Cent 계좌와 교육 서비스가 초보자에게 적합합니다."
+    },
+    {
+      "question": "ECN/Zero 계좌가 있나요?",
+      "answer": "네. 스프레드 0.0 pips의 Zero 및 ECN 계좌를 제공합니다."
+    },
+    {
+      "question": "최대 레버리지는 얼마인가요?",
+      "answer": "규제 기관 및 지역에 따라 최대 1:3000."
+    },
+    {
+      "question": "어떤 플랫폼을 지원하나요?",
+      "answer": "MT4, MT5, WebTrader & 모바일 앱."
+    }
+  ]
+}

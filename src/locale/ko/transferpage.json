@@ -1,0 +1,44 @@
+{
+    "helmet": {
+        "title": "FXPayout으로 트레이딩 IB 이전 신청서 | FXPayout",
+        "description": "FXPayout은 브로커 커미션의 최대 90%를 트레이더에게 직접 캐시백으로 돌려주는 신뢰할 수 있는 포렉스 리베이트 플랫폼입니다."
+    },
+    "header": {
+        "title": "트레이딩 계좌를 fxpayout IB로 이전하세요",
+        "paragraph": "아래 양식을 작성하여 IB 이전을 진행하고 트레이딩 계좌를 fxpayout에 연동하세요.",
+        "tag": "IB 이전"
+    },
+    "card": {
+        "title": "IB(Introducing Broker) 이전",
+        "paragraph": "아래 양식을 작성하여 fxpayout으로 IB 이전을 진행하세요.",
+        "steps": ["양식 작성", "이메일 템플릿 복사", "고객지원팀에 이메일 발송"],
+        "emailForm": {
+            "title": "양식 작성",
+            "brokerLabel": "브로커 선택",
+            "accountNumberLabel": "계좌 번호",
+            "accountNumberPlaceholder": "계좌 번호를 입력하세요",
+            "usernameLabel": "예금주명",
+            "usernamePlaceholder": "예금주명과 동일하게 입력",
+            "emailLabel": "이메일",
+            "emailPlaceholder": "이메일 주소"
+        },
+        "emailTemplate": {
+            "title": "IB 이전 이메일 템플릿",
+            "template": {
+                "subject": "IB 이전 신청",
+                "greeting": "고객지원팀 담당자님께",
+                "intro": "제 트레이딩 계좌를 아래 IB로 이전 신청합니다:",
+                "ibId": "IB ID:",
+                "ibLink": "IB 링크:",
+                "accountData": "제 계좌 정보:",
+                "name": "이름:",
+                "tradingAccount": "트레이딩 계좌 번호:",
+                "closing": "해당 IB 이전 처리를 도와주시기 바랍니다.\n감사합니다.",
+                "regards": "감사합니다,"
+
+            },
+            "send": "받는 곳",
+            "contactSupport": "고객지원 문의"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "description": "FP Markets(First Prudential Markets)는 2005년 설립된 글로벌 포렉스 & CFD 브로커로, 호주 시드니에 본사를 두고 있습니다. 경쟁력 있는 스프레드, 빠른 체결, 수천 개 상품에 대한 접근, 그리고 MetaTrader와 cTrader 같은 인기 트레이딩 플랫폼 지원으로 잘 알려져 있습니다. FP Markets는 cTrader, VPS, 고급 분석 도구 등 전문 트레이딩 기술도 함께 제공합니다.",
+  "specification": {
+    "leverage": "최대 1:500 (규제 기관 & 법인에 따라 다름)",
+    "spread": ["Standard : 약 1.0 pips부터", "Raw : 0.0 pips부터"]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": ["Standard : 약 1.0 pips부터", "Raw : 0.0 pips부터"],
+    "commission": "Raw ECN: 랏당 총 ±$6 (편도 ±$3)",
+    "leverage": "최대 1:500 (규제 기관 & 법인에 따라 다름)",
+    "execution": "빠르고 리쿼트 없음",
+    "depositWithdrawal": "계좌 이체, 카드, 전자지갑"
+  },
+  "spread": ["0.0 – 0.2 pips부터", "낮은 변동형", "더 넓음"],
+  "accountTypes": [
+    ["최소 입금액 : $100", "스프레드 ±1.0 pips부터", "커미션 없음", "일반 리테일 트레이더에 적합"],
+    ["최소 입금액 : $100", "스프레드 0.0 pips부터", "커미션 랏당 편도 ±$3", "스캘핑, 로봇, EA에 적합"]
+  ],
+  "keyAdvantages": ["매우 낮은 ECN 스프레드", "빠르고 안정적인 체결", "높은 유동성", "EA & 스캘핑 친화적", "종합 트레이딩 플랫폼", "액티브 트레이더에 적합"],
+  "advantages": ["매우 경쟁력 있는 스프레드 (Raw ECN)", "종합 플랫폼 (MT4, MT5, cTrader)", "Raw 계좌 마크업 없음", "여러 국가의 강력한 규제", "수동 트레이더, EA, 스캘핑에 적합"],
+  "disadvantages": ["최소 입금액 $100로 일부 저진입 브로커보다 높음", "일부 지역에서 규제 기관에 의한 레버리지 제한 가능", "Standard 스프레드가 ECN보다 넓음"],
+  "classifications": [
+    "고객 지원",
+    "수수료 & 스프레드",
+    "체결 속도"
+  ],
+  "faqs": [
+    {
+      "question": "FP Markets는 안전한가요?",
+      "answer": "네 — ASIC(호주), CySEC(키프로스), FSCA(남아공), FSA(세이셸), CIMA의 규제를 받습니다."
+    },
+    {
+      "question": "최소 입금액은 얼마인가요?",
+      "answer": "라이브 트레이딩 최소 입금액은 $100입니다."
+    },
+    {
+      "question": "어떤 플랫폼을 지원하나요?",
+      "answer": "MT4, MT5, cTrader."
+    },
+    {
+      "question": "최대 레버리지는 얼마인가요?",
+      "answer": "포렉스의 경우 최대 1:500 (법인/규제 기관에 따라 다름)."
+    },
+    {
+      "question": "ECN 계좌가 있나요?",
+      "answer": "네 — 스프레드 0.0 pips부터 + 커미션의 Raw ECN 계좌를 제공합니다."
+    }
+  ]
+}

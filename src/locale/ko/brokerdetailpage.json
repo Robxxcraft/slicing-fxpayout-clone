@@ -1,0 +1,230 @@
+{
+    "helmet": {
+        "title": "{{brokerName}} 리베이트 랏당 최대 {{brokerEstimate}} | FXPayout",
+        "description": "FXPayout은 브로커 커미션의 최대 90%를 트레이더에게 직접 캐시백으로 돌려주는 신뢰할 수 있는 포렉스 리베이트 플랫폼입니다."
+    },
+    "navbar": {
+        "profil": "프로필",
+        "summary": "요약",
+        "accountType": "계좌 유형",
+        "spreadCommission": "스프레드 & 커미션",
+        "advantage": "장점",
+        "platform": "플랫폼",
+        "depositWithdraw": "입금 & 출금",
+        "advantagesDisadvantages": "장점 & 단점",
+        "rating": "평점",
+        "faq": "FAQ"
+    },
+    "back": "브로커 목록으로 돌아가기",
+    "overallScore": "종합 점수",
+    "header": {
+        "viewRating": "커뮤니티 리뷰 보기",
+        "detailHeaders": ["설립 연도", "최소 입금액", "레버리지", "스프레드"]
+    },
+    "profile": {
+        "title": "브로커 프로필",
+        "subtitle": "브로커의 신원 및 규제에 관한 공식 정보입니다.",
+        "cards": [
+            {
+                "title": "기본 정보",
+                "headers": {
+                    "brokerName": "브로커명",
+                    "slogan": "슬로건",
+                    "entity": "법인",
+                    "group": "그룹",
+                    "ranking": "티어",
+                    "yearFounded": "설립 연도",
+                    "brokerCategory": "브로커 유형",
+                    "totalUser": "총 이용자 수",
+                    "model": "모델",
+                    "totalInstrument": "상품 수"
+                }
+            },
+            {
+                "title": "주요 규제 기관"
+            }
+        ]
+    },
+    "summary": {
+        "title": "빠른 요약 (Quick Facts)",
+        "subtitle": "한눈에 파악하는 브로커 핵심 정보",
+        "cardHeaders": {
+            "minDeposit": "최소 입금액",
+            "accountType": "계좌 유형",
+            "spread": "스프레드",
+            "commission": "커미션",
+            "leverage": "레버리지",
+            "execution": "주문 체결",
+            "instrument": "거래 상품",
+            "depositWithdrawal": "입금 & 출금"
+        }
+    },
+    "accountType": {
+        "title": "계좌 유형",
+        "subtitle": "다양한 니즈와 트레이딩 스타일에 맞춘 계좌 옵션입니다.",
+        "profit": "장점"
+    },
+    "spread": {
+        "title": "스프레드",
+        "subtitle": "브로커 주요 상품의 스프레드 비교입니다.",
+        "accountType": "계좌 유형"
+    },
+    "advantage": {
+        "title": "주요 장점",
+        "subtitle": "브로커의 차별화된 가치를 더하는 핵심 기능입니다."
+    },
+    "platform": {
+        "title": "지원 트레이딩 플랫폼",
+        "subtitle": "트레이딩에 사용할 수 있는 플랫폼 목록입니다."
+    },
+    "depositWithdraw": {
+        "title": "입금 & 출금",
+        "subtitle": "거래 방법 및 처리 시간에 관한 정보입니다.",
+        "tableHeaders": ["방법", "입금 소요 시간", "출금 소요 시간", "수수료"]
+    },
+    "rebateProgram": {
+        "title": "리베이트 프로그램 (예상치)",
+        "subtitle": "리베이트 프로그램을 통해 트레이더가 받을 수 있는 예상 리베이트입니다.",
+        "button": "리베이트 계산기",
+        "info": "ECN 계좌 및 대량 거래량의 경우 리베이트가 더 높을 수 있습니다. 위 금액은 예상치이며 조정될 수 있습니다."
+    },
+    "advantagesDisadvantages": {
+        "title": "장점 & 단점",
+        "subtitle": "긍정적인 포인트와 유의할 점을 정리했습니다."
+    },
+    "rating": {
+        "title": "커뮤니티 평점",
+        "subtitle": "브로커 이용자들의 평가와 피드백입니다.",
+        "summaryReview": "커뮤니티 리뷰 <0>{{totalReview}}</0>건 기준"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "이용자들이 가장 자주 묻는 질문입니다."
+    },
+    "cta": {
+        "title": "{{brokerName}}에서 트레이딩할 준비가 되셨나요?",
+        "paragraph": "전용 링크를 사용하여 {{brokerName}}의 최고의 리베이트와 전문적인 트레이딩 환경을 누리세요.",
+        "registerFxpayout": "FXPayout을 통해 가입하기",
+        "visitWebsite": "브로커 웹사이트 방문하기"
+    },
+    "data": {
+        "title": {
+            "asic_regulated": "ASIC 규제",
+            "beginner_friendly": "초보자 친화적",
+            "beginner_advanced_friendly": "초보자 & 숙련자 친화적",
+            "cent_account": "센트 계좌",
+            "copy_trading_supported": "카피 트레이딩 지원",
+            "competitive_spread": "경쟁력 있는 스프레드",
+            "ecn_account": "ECN 계좌 제공",
+            "ecn_broker": "ECN 브로커",
+            "ecn_market_execution": "ECN/마켓 체결",
+            "ecn_ndd": "ECN/NDD 브로커",
+            "ecn_stp": "ECN/STP 브로커",
+            "ecn_stp_forex_cfd": "ECN/STP 포렉스 & CFD 브로커",
+            "forex_cfd": "포렉스 & CFD 브로커",
+            "flexible_leverage": "유연한 레버리지",
+            "global_forex_cfd": "글로벌 포렉스 & CFD 브로커",
+            "high_leverage": "고레버리지",
+            "human_centered_broker": "고객 중심 브로커",
+            "indonesian_regulation": "인도네시아 규제",
+            "low_deposit": "낮은 최소 입금액",
+            "low_spread": "낮은 스프레드",
+            "mt4_mt5": "MT4 & MT5 지원",
+            "multi_regulated": "다중 규제",
+            "multi_asset": "멀티 에셋",
+            "multi_asset_trading": "멀티 에셋 트레이딩",
+            "multi_platform": "멀티 플랫폼 트레이딩",
+            "no_commission": "입출금 수수료 무료",
+            "regulated_broker": "규제 브로커",
+            "raw_spread": "로우 스프레드(Raw Spread)",
+            "strong_regulation": "강력한 규제",
+            "thin_spread": "타이트한 스프레드",
+            "tier_1": "Tier 1",
+            "tier_local": "로컬 티어",
+            "ultra_fast_execution": "초고속 체결"
+        },
+        "regulations": {
+            "asic": "호주",
+            "bafin": "독일",
+            "cysec": "키프로스",
+            "cima": "케이맨 제도",
+            "cma": "케냐",
+            "cbcs": "퀴라소",
+            "dfsa": "두바이",
+            "vfsc": "바누아투",
+            "ifsc": "벨리즈",
+            "fsa": "세이셸",
+            "fsc": "모리셔스",
+            "fsca": "남아프리카공화국",
+            "fca": "영국",
+            "finex_bappebti": "리테일 포렉스 라이선스 (47/BAPPEBTI/SI/04/2013)",
+            "scb": "바하마",
+            "st_vincent_grenadines": "세인트빈센트 그레나딘"
+        },
+        "instruments": {
+            "crypto": "암호화폐",
+            "crypto_cfd": "암호화폐 CFD",
+            "commodity": "원자재",
+            "energy": "에너지",
+            "etf": "ETF",
+            "forex": "포렉스",
+            "forex_60": "포렉스 60개 이상 통화쌍",
+            "gold": "금",
+            "indices": "지수",
+            "metal": "금속",
+            "obligation": "채권",
+            "stocks": "주식",
+            "stocks_cfd": "주식 CFD",
+            "shares_cfd": "주식 CFD(Shares CFD)",
+            "turbo_instrument": "터보 상품"
+        },
+        "level": {
+            "advanced": "숙련자",
+            "beginner": "초보자",
+            "copy_trading": "카피 트레이딩",
+            "general": "일반",
+            "general_retail": "일반 리테일",
+            "news_trader": "뉴스 트레이더",
+            "pro": "프로",
+            "pro_scalper": "프로 & 스캘퍼",
+            "pro_scalper_ea": "프로, 스캘퍼, EA",
+            "trader": "트레이더",
+            "trader_retail": "리테일 트레이더",
+            "scalper_ea": "스캘퍼, EA"
+        },
+        "time": {
+            "around_20m_2h_80percent": "약 20분 – 2시간 (80% 케이스)",
+            "days_1_3": "1–3일",
+            "days_1_3_work": "영업일 기준 1–3일",
+            "depends": "경우에 따라 다름",
+            "instant": "즉시",
+            "instant_1m": "<1분 (즉시)",
+            "interval_5_30": "5–30분",
+            "interval_instant_1d_work": "즉시 – 영업일 1일",
+            "interval_instant_2d": "즉시 – 영업일 2일",
+            "interval_instant_3d_work": "즉시 – 영업일 3일",
+            "one_day": "1일"
+        },
+        "fee": {
+            "zero_broker": "일반적으로 브로커 수수료 없음",
+            "zero_broker_depends_method": "방법에 따라 다름 (일반적으로 브로커는 수수료를 부과하지 않음)",
+            "zero_broker_fees_third_party_may_apply": "일반적으로 브로커 수수료 없음 (제3자 수수료가 적용될 수 있음)"
+        },
+        "platforms": {
+            "copy_trading": "카피 트레이딩 앱",
+            "c_trader": "cTrader",
+            "exness_terminal": "Exness 터미널 (웹 기반)",
+            "exness_mobile": "Exness 모바일 앱",
+            "hfm_mobile": "HFM 모바일 앱",
+            "ios_android": "모바일 앱 (Android & iOS)",
+            "mobile_trading": "모바일 트레이딩",
+            "mt4": "MetaTrader 4 (MT4)",
+            "mt5": "MetaTrader 5 (MT5)",
+            "pro_trader": "ProTrader",
+            "octa_trader": "OctaTrader (독점 플랫폼)",
+            "trading_view": "Trading View",
+            "web_mobile": "웹 & 모바일",
+            "web_trading": "WebTrader"
+        }
+    }
+}
