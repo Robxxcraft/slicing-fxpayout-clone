@@ -42,7 +42,6 @@ export const checkValidRegisterInput = (vals: FormRegister) => {
 
 export const checkValidProfileRegister = (vals: FormUpdateProfile) => {
   const errors: Partial<Record<keyof FormUpdateProfile, string>> = {};
-  console.log("Panjang username", vals.username.length)
   if (vals.username.trim() === "") {
     errors.username = "Username tidak boleh kosong";
   } else if (vals.username.includes(" ")) {
