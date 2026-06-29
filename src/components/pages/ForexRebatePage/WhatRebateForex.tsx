@@ -15,10 +15,10 @@ const WhatRebateForex = () => {
           }>
             {t(`${key}.badge`)}
           </BadgeSection>
-          <h1 className="text-center lg:text-left text-[30px] md:text-[32px] 2xl:text-[48px] font-bold leading-[140%]">
+          <h1 className="text-center lg:text-start text-[30px] md:text-[32px] 2xl:text-[48px] font-bold leading-[140%]">
             {t(`${key}.title`)}
           </h1>
-          <p className="text-center lg:text-left text-base md:text-xl 2xl:text-2xl font-medium text-black/80 leading-[200%]">
+          <p className="text-center lg:text-start text-base md:text-xl 2xl:text-2xl font-medium text-black/80 leading-[200%]">
             {t(`${key}.paragraph`)}
           </p>
         </div>

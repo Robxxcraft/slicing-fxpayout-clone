@@ -103,9 +103,9 @@ const HeroSection = () => {
             <div 
               key={index}
               className={`
-                ${index === 0 ? "mr-2 md:mr-10 2xl:mr-20":""}
+                ${index === 0 ? "me-2 md:me-10 2xl:me-20":""}
                 ${index === 1 ? "px-2 md:px-8 2xl:px-15 border-x border-white":""}
-                ${index === 2 ? "ml-2 md:ml-10 2xl:ml-20":""}
+                ${index === 2 ? "ms-2 md:ms-10 2xl:ms-20":""}
               `}
             >
               <p className="font-wix-madefor-display font-bold text-[28px] md:text-[40px] xl:text-[48px] 2xl:text-[64px] leading-[120%]">

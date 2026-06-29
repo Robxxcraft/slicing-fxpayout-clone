@@ -51,7 +51,7 @@ const RangeDataPicker = ({
     <Modal isOpen={isOpen} onClose={onClose} maxWCL="max-w-fit 2xl:max-w-fit">
       <div className="flex justify-center">
 
-        <div className="hidden md:block border-r border-[#DDDDDD] w-[200px]">
+        <div className="hidden md:block border-e border-[#DDDDDD] w-[200px]">
           <p className="px-4 py-4 text-nowrap text-sm 2xl:text-base font-medium hover:bg-[#F5F5F5] text-primary border-b border-[#DDDDDD] cursor-pointer">
             Kostum
           </p>

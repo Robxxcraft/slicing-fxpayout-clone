@@ -29,7 +29,7 @@ const SEO = () => {
     canonical.setAttribute("href", canonicalUrl);
 
     document.documentElement.lang = lang;
-    document.documentElement.dir = isRtl ? "rtl" : "ltr"
+    document.documentElement.dir = isRtl ? "rtl" : "ltr";
   }, [location.pathname, i18n.resolvedLanguage]);
 
   return (

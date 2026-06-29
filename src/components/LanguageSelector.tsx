@@ -4,6 +4,7 @@ import { languages, type Language } from "../utils/languageSupport";
 import type { HandleChangeLanguage } from "./Navbar";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { TbWorld } from "react-icons/tb";
+import { useTranslation } from "react-i18next";
 
 const LanguageSelector = ({
   selectedLanguage,
@@ -16,6 +17,7 @@ const LanguageSelector = ({
   setOpen: Dispatch<React.SetStateAction<boolean>>;
   onChangeLanguage: HandleChangeLanguage;
 }) => {
+  const { i18n } = useTranslation();
   const selectorRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -76,13 +78,13 @@ const LanguageSelector = ({
 
       {/* MOBILE */}
       {open && 
-        <div className="flex flex-col xl:hidden px-6 md:px-11 lg:px-18 absolute top-18 left-0 w-full h-screen bg-primary">
+        <div className="flex flex-col xl:hidden px-6 md:px-11 lg:px-18 absolute top-18 start-0 w-full h-screen bg-primary">
           <div>
             <button 
               onClick={() => setOpen(false)}
-              className="py-3 w-full flex gap-1 items-center-safe text-left text-white h-fit border-b border-white/15 cursor-pointer">
-              <IoArrowBackOutline />
-              Bahasa
+              className="py-3 w-full flex gap-1 items-center-safe text-start text-white h-fit border-b border-white/15 cursor-pointer">
+              <IoArrowBackOutline className="rtl:scale-x-[-1]" />
+              {languages.find((lang) => lang.code === i18n.language)?.label}
             </button>
           </div>
           <div className="mt-6 flex flex-col gap-6">

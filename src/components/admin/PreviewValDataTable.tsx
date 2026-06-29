@@ -17,7 +17,7 @@ const PreviewValDataTable = ({
           {Object.keys(HEADER_MAPPING).map((header, idx) => (
             <Table.HeadingItem 
               key={idx}
-              className="px-1! py-1! min-w-[100px] max-w-60 sticky top-0 border-r border-b border-[#A9A9A9] bg-gray-200">
+              className="px-1! py-1! min-w-[100px] max-w-60 sticky top-0 border-e border-b border-[#A9A9A9] bg-gray-200">
               <span className="text-sm whitespace-nowrap">{header}</span>
             </Table.HeadingItem>
           ))}
@@ -27,7 +27,7 @@ const PreviewValDataTable = ({
             <Table.Row key={rowIdx}>
               {Object.values(rows).map((cell, colIdx) => (
                 <Table.Cell rowIndex={rowIdx} key={colIdx}
-                className="px-1! py-0! min-w-[100px] max-w-60 border-r border-b border-[#A9A9A9]">
+                className="px-1! py-0! min-w-[100px] max-w-60 border-e border-b border-[#A9A9A9]">
                   <span className="text-sm whitespace-nowrap leading-normal">{cell}</span>
                 </Table.Cell>
               ))}

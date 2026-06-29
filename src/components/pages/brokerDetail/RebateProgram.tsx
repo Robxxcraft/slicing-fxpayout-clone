@@ -32,7 +32,7 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
             urlTo={getLocalizedPath("calculator", i18n.language)} 
             className="mt-6 w-full! lg:w-fit!" 
             variant="primary-light" 
-            icon={<IoArrowForwardOutline />} 
+            icon={<IoArrowForwardOutline className="rtl:scale-x-[-1]" />} 
             iconPosition="right" size="xl"
           >
             {t("brokerdetailpage:rebateProgram.button")}

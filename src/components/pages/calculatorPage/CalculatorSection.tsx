@@ -159,8 +159,8 @@ const CalculatorSection = () => {
           </div>
         </form>
         <div className="mt-6 md:mt-8 flex flex-nowrap justify-center items-stretch w-full">
-          <div className="primary-scrollbar pr-4 md:pr-8 w-1/2 border-r border-[#334BBB]">
-            <div className="ml-auto flex flex-col justify-between w-full text-center">
+          <div className="primary-scrollbar pe-4 md:pe-8 w-1/2 border-e border-[#334BBB]">
+            <div className="ms-auto flex flex-col justify-between w-full text-center">
               <p className="text-base font-medium text-my-dark-purple/80">
                 {t("calculatorpage:card.estimatesRebates")}
               </p>
@@ -171,7 +171,7 @@ const CalculatorSection = () => {
               </div>
             </div>
           </div>
-          <div className="primary-scrollbar pl-4 md:pl-8 w-1/2">
+          <div className="primary-scrollbar ps-4 md:ps-8 w-1/2">
             <div className="flex flex-col justify-between w-full text-center">
               <p className="text-base font-medium text-my-dark-purple/80">
                 {t("calculatorpage:card.rebatePerLot")}

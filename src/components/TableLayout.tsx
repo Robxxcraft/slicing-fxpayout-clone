@@ -36,7 +36,7 @@ Table.HeadingItem = ({
   className?: string; 
   handleClick?: (event?: unknown) => void;
 }) => {
-  const baseStyle = `px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold text-left ${className}`
+  const baseStyle = `px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold text-start ${className}`
   return (
     <th className={baseStyle} onClick={handleClick}>
       {children}
@@ -64,7 +64,7 @@ Table.Cell = ({
 }) => {
   const baseStyle = `
     ${rowIndex % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"}
-    px-4 md:px-8 py-4 text-left leading-[36px] align-top text-base transition-all duration-300 ease-out ${className}
+    px-4 md:px-8 py-4 text-start leading-[36px] align-top text-base transition-all duration-300 ease-out ${className}
   `
   return (
     <td

@@ -66,7 +66,7 @@ const BenefitSection = () => {
               </div>
             ))}
           </div>
-          <div className="mt-6 py-4 px-5 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary">
+          <div className="mt-6 py-4 px-5 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
             <p className="text-base font-medium text-black/70 leading-[192%]">
               {t(`${key}.card_benefit.info`)}
             </p>
@@ -98,7 +98,7 @@ const BenefitSection = () => {
                   95%
                 </p>
               </div>
-              <div className="relative w-full h-2 bg-black/10 rounded-ful">
+              <div className="relative w-full h-2 bg-black/10 rounded-full">
                 <div className="w-[95%] h-2 bg-white rounded-full"></div>
               </div>
             </div>

@@ -163,7 +163,7 @@ const DrawerAffiliatorDetail = ({
       onClose={onCloseDrawer}
       maxWCL="max-w-[460px] 2xl:max-w-[540px]"
     >
-    <div className="primary-scrollbar py-5 h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)] border-t border-l border-[#D2CEE1] bg-white overflow-y-auto">
+    <div className="primary-scrollbar py-5 h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)] border-t border-s border-[#D2CEE1] bg-white overflow-y-auto">
       <div className="px-5 space-y-8 ">
         <div className="2xl:pb-4 relative">
           <div className="flex items-center justify-between">

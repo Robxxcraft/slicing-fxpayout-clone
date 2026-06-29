@@ -91,7 +91,7 @@ const DrawerDetailData = ({
   };
 
   return (
-    <div className="z-100 fixed py-5 top-20 right-0 max-w-[460px] w-full h-[calc(100vh-80px)] border-t border-l border-[#D2CEE1] bg-white">
+    <div className="z-100 fixed py-5 top-20 right-0 max-w-[460px] w-full h-[calc(100vh-80px)] border-t border-s border-[#D2CEE1] bg-white">
       <div className="px-5 pb-2 relative pr-5 flex items-center justify-between border-b border-[#D2CEE1]">
         <h2 className="text-xl font-medium">
           Detail Data

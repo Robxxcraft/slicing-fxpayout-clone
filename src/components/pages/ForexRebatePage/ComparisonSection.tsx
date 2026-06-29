@@ -98,7 +98,7 @@ const ComparisonSection = () => {
           </div>
         </div>
 
-        <div className="ml-2 lg:ml-6 py-10 flex justify-center items-center text-center bg-[#F9F9F9] border-t border-x border-[#EBEBEB] rounded-t-[20px]">
+        <div className="ms-2 lg:ms-6 py-10 flex justify-center items-center text-center bg-[#F9F9F9] border-t border-x border-[#EBEBEB] rounded-t-[20px]">
           <h3 className="text-base md:text-xl lg:text-2xl font-bold uppercase leading-[160%]">
             {t(`${key}.other_platforms`)}
           </h3>
@@ -107,7 +107,7 @@ const ComparisonSection = () => {
         {comparisonData.map((item, index) => {
           return (
             <React.Fragment key={index}>
-              <div className={`pr-6 md:pr-10 pb-6 md:pb-10 lg:pb-2.5 flex flex-col md:flex-row items-start gap-4
+              <div className={`pe-6 md:pe-10 pb-6 md:pb-10 lg:pb-2.5 flex flex-col md:flex-row items-start gap-4
                 ${index === 0 ? "pt-0" : "pt-6 md:pt-10"}
                 ${index === comparisonData.length - 1 ? "":"border-b border-b-[#B2B2B2]"}
               `}>
@@ -145,7 +145,7 @@ const ComparisonSection = () => {
               </div>
 
               {/* Other */}
-              <div className={`pl-2 lg:pl-6
+              <div className={`ps-2 lg:ps-6
                 ${index === comparisonData.length - 1 ? "":"border-b border-b-[#B2B2B2]"}
               `}>
                 <div className={`flex items-center justify-center h-full text-center border-x border-[#EBEBEB] bg-[#F9F9F9]

@@ -31,7 +31,7 @@ const DefinitionSection = ({
     <section
       id="definition"
       ref={el => {sectionsRef.current.definition = el}}
-      className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56 scroll-mt-[136px] lg:scroll-mt-[120px] pb-8 md:pb-10 lg:pb-0"
+      className="px-6 md:px-11 xl:px-0 xl:pe-24 2xl:pe-56 scroll-mt-[136px] lg:scroll-mt-[120px] pb-8 md:pb-10 lg:pb-0"
     >
       <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
         {t("claimrebatepage:definition.title")}

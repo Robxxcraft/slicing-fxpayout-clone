@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaCheck } from "react-icons/fa6";
 
 const TripleBadgeFlow = ({
@@ -7,6 +8,8 @@ const TripleBadgeFlow = ({
   stepperActive: number;
   steps: string[]
 }) => {
+  const { i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   const isMobile = window.innerWidth < 768;
 
   const clipPathLeft = "polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%)";
@@ -18,11 +21,13 @@ const TripleBadgeFlow = ({
       {steps.map((step, index) => {
       let clipPath;
       if (index === 0) {
-        clipPath = isMobile ? clipPathMobile : clipPathLeft;
+        clipPath = isMobile ? 
+          clipPathMobile : isRtl ? clipPathRight : clipPathLeft;
       } else if (index === 1) {
         clipPath = isMobile ? clipPathMobile : "";
       } else {
-        clipPath = isMobile ? clipPathMobile : clipPathRight;
+        clipPath = isMobile ? 
+          clipPathMobile : isRtl ? clipPathLeft : clipPathRight;
       }
 
       return (

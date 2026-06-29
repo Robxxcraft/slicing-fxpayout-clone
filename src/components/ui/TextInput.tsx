@@ -77,12 +77,12 @@ const TextInput = ({
       <div className="relative w-full">
         {id === "phoneNumber" && icon === undefined && 
           <p
-            className="absolute pl-4 pr-2 top-1/2 -translate-y-1/2 pointer-events-none border-r text-base 2xl:text-xl"
+            className="absolute pl-4 pr-2 top-1/2 -translate-y-1/2 pointer-events-none border-e text-base 2xl:text-xl"
           >+62</p>
         }
         {id === "amount" && icon === undefined && 
           <p
-            className="absolute pr-4 pl-2 right-0 top-1/2 -translate-y-1/2 pointer-events-none border-l text-base 2xl:text-xl"
+            className="absolute pr-4 pl-2 right-0 top-1/2 -translate-y-1/2 pointer-events-none border-s text-base 2xl:text-xl"
           >USD</p>
         }
         {icon !== undefined && altIcon !== undefined &&

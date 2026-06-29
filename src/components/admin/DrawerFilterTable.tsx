@@ -12,7 +12,7 @@ const DrawerFilterTable = ({
 }) => {
 
   return (
-    <div className="z-100 fixed py-5 top-20 right-0 max-w-full md:max-w-[320px] w-full h-[calc(100vh-50px)] border-t border-l border-[#D2CEE1] bg-white">
+    <div className="z-100 fixed py-5 top-20 right-0 max-w-full md:max-w-[320px] w-full h-[calc(100vh-50px)] border-t border-s border-[#D2CEE1] bg-white">
       <div className="px-5 pb-2 relative flex items-center justify-between border-b border-[#D2CEE1]">
         <h2 className="text-xl font-medium">
           Filter

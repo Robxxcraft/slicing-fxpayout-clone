@@ -1,3 +1,5 @@
+// TODO: Menyelesaikan masalah running text
+
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import MaskSvg from './MaskSvg';
@@ -12,15 +14,19 @@ const detail = [
 const RunningText = ({ variant = "transparent" }: {
   variant?: "primary" | "transparent"
 }) => {
-  const { t } = useTranslation(["homepage"]);
-  
+  const { i18n, t } = useTranslation(["homepage"]);
+  const isRtl = i18n.dir() === "rtl";
+
   return (
     <div className={`select-none overflow-hidden w-full whitespace-nowrap
       ${variant === "primary" ? "bg-primary":""}
     `}>
       <motion.div
         className="flex items-center flex-nowrap w-max"
-        animate={{ x: ["0%", "-50%"] }}
+        animate={{ x: isRtl ? 
+          ["-50%", "0%"] :
+          ["0%", "-50%"]
+        }}
         transition={{ 
           ease: "linear",
           duration: 20,

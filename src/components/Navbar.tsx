@@ -101,7 +101,7 @@ const Navbar = ({
             {sublist !== undefined && 
             <>
               <FaChevronDown className="text-[14px] cursor-pointer group-hover:rotate-180 transition-all duration-200" />
-              <div className="absolute py-4 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
+              <div className="absolute py-4 scale-0 group-hover:scale-100 origin-top flex top-full start-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
                 {sublist?.map((subNav, idx) => (
                   <HashLink 
                     smooth

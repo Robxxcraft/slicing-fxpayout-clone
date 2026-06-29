@@ -34,7 +34,7 @@ const TierProfile = () => {
           </div>
         </div>
       </div>
-      <div className="pl-0 lg:pl-6 pt-4 lg:pt-0 flex flex-col md:flex-row lg:flex-col gap-4 border-t lg:border-l lg:border-t-0 border-[#DDDDDD] w-full">
+      <div className="pl-0 lg:pl-6 pt-4 lg:pt-0 flex flex-col md:flex-row lg:flex-col gap-4 border-t lg:border-s lg:border-t-0 border-[#DDDDDD] w-full">
         <div className="p-4 flex gap-4 bg-[#F5F5F5] border border-[#DDDDDD] rounded-lg w-full">
           <span className="flex shrink-0 items-center justify-center size-6 2xl:size-[30px] border border-primary rounded-full">
             <TiInfoLarge className="text-base 2xl:text-[20px] text-primary" />

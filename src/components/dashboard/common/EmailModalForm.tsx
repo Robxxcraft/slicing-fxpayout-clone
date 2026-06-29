@@ -36,7 +36,7 @@ const EmailModalForm = ({
               if (isLoading) return;
               handleClose(); 
             }} 
-            className="ml-auto text-black text-2xl cursor-pointer"/>
+            className="ms-auto text-black text-2xl cursor-pointer"/>
           <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-semibold leading-[180%]">
             Masukkan Email Baru
           </h3>

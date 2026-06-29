@@ -9,10 +9,11 @@ import { getTrackBackground, Range } from "react-range";
 const traderMarks = [5, 50, 100, 200, 300, 400, 500];
 
 const CommissionSection = () => {
-  const { t } = useTranslation(["common", "affiliatelandingpage"]);
+  const { i18n, t } = useTranslation(["common", "affiliatelandingpage"]);
   const [traders, setTraders] = useState<number[]>([100]);
-
+  
   const key = "affiliatelandingpage:commissionsection";
+  const isRtl = i18n.dir() === "rtl";
 
   const commissionPerTrader = 100;
   const estimatedCommission = traders[0] * commissionPerTrader;
@@ -70,8 +71,18 @@ const CommissionSection = () => {
                 min={5}
                 max={500}
                 allowOverlap={false}
+                rtl={isRtl}
                 onChange={(values) => setTraders(values)} 
-                renderTrack={({ props, children }) => (
+                renderTrack={({ props, children }) => {
+                  const trackColors = isRtl ? [
+                    "rgba(48,127,226,0.3)", // passive kanan
+                    "#4160FF",             // active
+                  ] : [
+                    "#4160FF",             // active
+                    "rgba(48,127,226,0.3)", // passive kanan
+                  ];
+                  
+                  return (
                     <div
                     {...props}
                     style={{
@@ -79,11 +90,10 @@ const CommissionSection = () => {
                         height: "8px",
                         width: "100%",
                         background: getTrackBackground({
-                            values: traders,
-                            colors: [
-                                "#4160FF",             // active
-                                "rgba(48,127,226,0.3)" // passive kanan
-                            ],
+                            values:  isRtl
+                              ? [500 - (traders[0] - 5)]
+                              : traders,
+                            colors: trackColors,
                             min: 5,
                             max: 500,
                         }),
@@ -92,7 +102,7 @@ const CommissionSection = () => {
                     >
                         {children}
                     </div>
-                )} 
+                )}} 
                 renderThumb={({ props }) => (
                     <div
                     {...props}
@@ -110,27 +120,25 @@ const CommissionSection = () => {
 
           <div className="mt-3 relative">
             {traderMarks.map((mark, index) => {
-              let right, left = undefined;
+              let style: React.CSSProperties = {};
               let className = "absolute top-0 text-sm md:text-xl lg:text-base 2xl:text-xl text-[#344054] font-medium ";
+
               const min = traderMarks[0];
               const max = traderMarks[traderMarks.length - 1];
               if (index === 0) {
-                left = 0;
+                style = isRtl ? { right: 0 } : { left: 0 };
               } else if (index === traderMarks.length - 1) {
-                right = 0;
+                style = isRtl ? { left: 0 } : { right: 0 };
               } else {
                 const position = ((mark - min) / (max - min)) * 100;
-                className += `-translate-x-1/2`;
-                left = `${position}%`;
+                className += isRtl ? "translate-x-1/2" : "-translate-x-1/2";
+                style = isRtl ? { right: `${position}%` } : { left: `${position}%` };
               }
 
               return (
                 <span key={mark}
                   className={className}
-                  style={{ 
-                    right,
-                    left
-                  }}
+                  style={style}
                 >{mark}</span>
               )
             })}
@@ -142,9 +150,9 @@ const CommissionSection = () => {
           .map((item, index) => (
             <div key={index}
               className={`flex items-center justify-center gap-3
-                ${index === 0 ? "order-1 pr-0 lg:pr-8 w-1/2 lg:w-fit border-r border-black/20 lg:border-0":""}  
+                ${index === 0 ? "order-1 pe-0 lg:pe-8 w-1/2 lg:w-fit border-e border-black/20 lg:border-0":""}  
                 ${index === 1 ? "order-3 lg:order-2 px-0 lg:px-8 border-0 lg:border-x border-black/20":""}  
-                ${index === 2 ? "order-2 lg:order-3 pl-0 lg:pl-8 w-1/2 lg:w-fit":""}  
+                ${index === 2 ? "order-2 lg:order-3 ps-0 lg:ps-8 w-1/2 lg:w-fit":""}  
             `}>
               <FaCircleCheck className="shrink-0 text-primary text-base lg:text-xl 2xl:text-2xl" />
               <p className="text-base md:text-xl 2xl:text-2xl font-medium text-primary leading-[200%] text-center">

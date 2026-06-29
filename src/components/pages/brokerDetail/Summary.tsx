@@ -61,7 +61,7 @@ const Summary = ({
       <SubHeadingSection>{t("brokerdetailpage:summary.subtitle")}</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4 2xl:gap-6">
         {summaryItems.map((item, idx) => (
-          <div key={idx} className="px-5 2xl:px-8 py-4 2xl:py-6 flex gap-6 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary">
+          <div key={idx} className="px-5 2xl:px-8 py-4 2xl:py-6 flex gap-6 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
             <div className="w-fit">
               <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="Icon" />
             </div>

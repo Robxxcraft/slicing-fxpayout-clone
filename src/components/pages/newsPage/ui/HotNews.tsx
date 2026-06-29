@@ -15,7 +15,7 @@ const HotNews = () => {
         </div>
         <div>
           <div className="flex flex-wrap items-center text-white">
-            <div className="pr-4 flex items-center gap-2">
+            <div className="pe-4 flex items-center gap-2">
               <img src={`/news/FXPayout.png`} alt="profil"
                 loading="lazy"
                 className="size-7 md:size-8 aspect-square rounded-full object-contain bg-primary" />
@@ -26,7 +26,7 @@ const HotNews = () => {
             <p className="border-x border-white px-4 text-[15px] md:text-base font-semibold">
               {t(`newspage:category.crypto`)}
             </p>
-            <p className="pl-4 text-[15px] md:text-base">
+            <p className="ps-4 text-[15px] md:text-base">
               {t(`newspage:time.march`, { time: 10 })}
             </p>
           </div>

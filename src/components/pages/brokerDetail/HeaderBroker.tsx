@@ -47,7 +47,7 @@ const HeaderBroker = ({
       <Link
         to="/broker"
         className="flex gap-2 2xl:gap-3 items-center w-fit text-sm lg:text-base 2xl:text-xl text-my-red hover:gap-4 2xl:hover:gap-5 transition-all duration-300 ease-out">
-        <IoArrowBackOutline />
+        <IoArrowBackOutline className="rtl:rotate-180" />
         <span>{t("brokerdetailpage:back")}</span>
       </Link>
       <div className="mt-6 lg:mt-8 2xl:mt-10 flex flex-col md:flex-row gap-4 justify-between">
@@ -84,7 +84,7 @@ const HeaderBroker = ({
               <FaStar key={idx} className="text-2xl text-my-yellow" />
             ))}
             {!Number.isInteger(overallScore.rate) &&
-              <FaStarHalf className="text-2xl text-my-yellow" />
+              <FaStarHalf className="text-2xl text-my-yellow rtl:scale-x-[-1]" />
             }
           </div>
           <Link to={overallScore.communityUrl} target="_blank"
@@ -114,9 +114,9 @@ const HeaderBroker = ({
             border-[#828282]/20 md:border-[#828282]/50
           `}>
             <div className={`
-              ${idx !== 0 && "lg:border-l"}
-              ${idx !== 0 && "lg:pl-5 2xl:pl-10"} 
-              ${idx % 2 !== 0 && "md:pl-10 md:border-l"}
+              ${idx !== 0 && "lg:border-s"}
+              ${idx !== 0 && "lg:ps-5 2xl:ps-10"} 
+              ${idx % 2 !== 0 && "md:ps-10 md:border-s"}
               flex gap-4 2xl:gap-6 border-[#828282]/50`
             }>
               <div className="w-fit">

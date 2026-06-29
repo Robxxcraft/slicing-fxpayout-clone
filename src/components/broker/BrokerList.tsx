@@ -92,7 +92,7 @@ const BrokerList = ({
           <button
             onClick={handleClickPrevButton}
             className="size-10 text-base flex justify-center items-center border-[rgba(255,255,255,0.5)] rounded-[15px] cursor-pointer">
-            <FaChevronLeft color="#425EEC" />
+            <FaChevronLeft color="#425EEC" className="rtl:rotate-180" />
           </button>
         } 
 
@@ -127,7 +127,7 @@ const BrokerList = ({
           <button
             onClick={handleClickNextButton}
             className="size-10 text-base flex justify-center items-center border-[rgba(255,255,255,0.5)] rounded-[15px] cursor-pointer">
-            <FaChevronRight color="#425EEC" />
+            <FaChevronRight color="#425EEC" className="rtl:rotate-180" />
           </button>
         }
       </div>

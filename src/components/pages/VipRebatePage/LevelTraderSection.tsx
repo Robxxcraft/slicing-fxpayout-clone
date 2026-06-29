@@ -77,11 +77,11 @@ const LevelTraderSection = () => {
               `}
             >
 
-              <div className="px-4 py-2 absolute right-0 top-5 bg-my-green rounded-l-xl">
+              <div className="px-4 py-2 absolute end-0 top-5 bg-my-green rounded-s-xl">
                 <span className="text-base font-bold text-white">
                   LEVEL {index + 1}
                 </span>
-                <div className="absolute left-full top-0 w-1.5 h-12 bg-my-green rounded-r-[10px]" />
+                <div className="absolute start-full top-0 w-1.5 h-12 bg-my-green rounded-e-[10px]" />
               </div>
 
               <div className="flex items-center gap-4">
@@ -138,7 +138,7 @@ const LevelTraderSection = () => {
         })}
       </div>
 
-      <div className="mt-6 md:mt-10 p-6 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary space-y-4">
+      <div className="mt-6 md:mt-10 p-6 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary space-y-4">
         <h2 className="text-xl md:text-2xl font-semibold">
           {t(`${key}.how_to_improve`)}
         </h2>

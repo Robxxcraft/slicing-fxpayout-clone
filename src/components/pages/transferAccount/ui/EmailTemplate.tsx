@@ -36,7 +36,7 @@ const EmailTemplate = ({
         <div className="p-4 md:p-5 2xl:p-6 bg-my-light-blue rounded-xl">
           <div className="flex items-start gap-2 md:gap-4">
             <img src="/quotes-icon.svg" alt="Icon Quotes" 
-              className="mt-1 scale-70 md:scale-90 2xl:scale-100"/>
+              className="mt-1 scale-70 md:scale-90 2xl:scale-100 rtl:scale-x-[-1]"/>
             <p className="text-base md:text-lg 2xl:text-2xl text-black/60 whitespace-pre-line break-all">
               {t(`${keyTemplateEmail}.greeting`)} {rawBroker}, <br /><br />
 
@@ -57,7 +57,7 @@ const EmailTemplate = ({
           </div>
           <div
             onClick={onCopy} 
-            className="mt-3 px-5 2xl:px-8 py-3 ml-auto flex items-center justify-center gap-2 border border-primary bg-white rounded-full w-full md:w-fit hover:bg-black/2 transition-all duration-300 cursor-pointer">
+            className="mt-3 px-5 2xl:px-8 py-3 ms-auto flex items-center justify-center gap-2 border border-primary bg-white rounded-full w-full md:w-fit hover:bg-black/2 transition-all duration-300 cursor-pointer">
             {isCopied ?
               <FaCheck className="text-primary" /> : 
               <>

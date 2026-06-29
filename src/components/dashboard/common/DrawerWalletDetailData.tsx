@@ -202,7 +202,7 @@ const DrawerWalletDetailData = ({
       onClose={onCloseDrawer}
       maxWCL="max-w-[460px]"
     >
-      <div className="py-5 w-full h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)] border-t border-l border-[#D2CEE1] bg-white">
+      <div className="py-5 w-full h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)] border-t border-s border-[#D2CEE1] bg-white">
         <div className="px-5 2xl:pb-2 relative pr-5 flex items-center justify-between border-b border-[#D2CEE1]">
           <h2 className="text-xl 2xl:text-2xl font-medium">
             Akun Bank

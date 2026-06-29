@@ -37,7 +37,7 @@ const SubscribeNews = () => {
                 inputMode="email"
                 autoComplete="email"
                 className={`
-                  pl-[70px] pr-8 py-5 md:py-4 2xl:py-5 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] rounded-full focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed`
+                  ps-[70px] pe-8 py-5 md:py-4 2xl:py-5 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] rounded-full focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed`
                 }
               />
             </div>

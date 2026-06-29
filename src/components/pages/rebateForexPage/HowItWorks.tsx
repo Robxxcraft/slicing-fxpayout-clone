@@ -54,7 +54,7 @@ const HowItWorks = ({
       ref={el => {sectionsRef.current["how-it-works"] = el}}
       className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-9 border-t xl:border-0 border-[#E5E5E5]"
     >
-      <div className="px-6 md:px-11 xl:px-0 xl:pr-24 2xl:pr-56">
+      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 2xl:pe-56">
         <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
           {t("claimrebatepage:howWorks.title")}
         </h2>
@@ -84,12 +84,12 @@ const HowItWorks = ({
                 {idx !== 2 &&
                   <div 
                     style={{ width: `${(longArrowWidth / 3) - 50}px` }}
-                    className="absolute md:left-full md:-translate-x-[38%] translate-y-5 md:-translate-y-2 top-full md:top-5 flex flex-col items-center min-w-60 md:min-w-fit">
+                    className="absolute md:start-full md:ltr:-translate-x-[38%] md:rtl:translate-x-[38%] translate-y-5 md:-translate-y-2 top-full md:top-5 flex flex-col items-center min-w-60 md:min-w-fit">
                     <span className="block py-2 px-4 text-sm font-semibold text-white text-center bg-primary rounded-full w-fit">
                       {t(`${workflow.keyTranslate}.flow`)}
                     </span>
                     <img src="/line-arrow-icon.svg" alt="Arrow Icon" 
-                      className="mt-3 rotate-90 md:rotate-0 -z-1 lg:z-0 h-3"/>
+                      className="mt-3 rotate-90 md:ltr:rotate-0 md:rtl:rotate-180 -z-1 lg:z-0 h-3"/>
                   </div>
                 }
                 <h3 className="mt-4 text-xl 2xl:text-2xl font-semibold">

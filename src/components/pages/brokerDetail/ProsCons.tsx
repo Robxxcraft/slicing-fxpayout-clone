@@ -32,7 +32,7 @@ const ProsCons = ({
               <TbTriangleInvertedFilled className="text-[48px] md:text-[56px] 2xl:text-[72px] text-primary"/>
             </div>
           </div>
-          <div className='mb-7 md:mb-6 2xl:mb-8 mx-4 md:mx-7 2xl:mx-8 pt-10 md:pt-12 2xl:pt-16 pb-4 md:pb-6 2xl:pb-8 px-4 md:px-6 2xl:px-8 border-l border-r border-b border-[#4160FF] border-dashed rounded-b-2xl md:rounded-b-4xl 2xl:rounded-b-[40px]'>
+          <div className='mb-7 md:mb-6 2xl:mb-8 mx-4 md:mx-7 2xl:mx-8 pt-10 md:pt-12 2xl:pt-16 pb-4 md:pb-6 2xl:pb-8 px-4 md:px-6 2xl:px-8 border-s border-e border-b border-[#4160FF] border-dashed rounded-b-2xl md:rounded-b-4xl 2xl:rounded-b-[40px]'>
             <div className="flex flex-col gap-6 md:gap-4 2xl:gap-5">
               {Array.isArray(objAdvantages) && objAdvantages.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
@@ -56,7 +56,7 @@ const ProsCons = ({
               <TbTriangleInvertedFilled className="text-[48px] md:text-[56px] 2xl:text-[72px] text-my-pink"/>
             </div>
           </div>
-          <div className='mb-7 md:mb-6 2xl:mb-8 mx-4 md:mx-7 2xl:mx-8 pt-10 md:pt-12 2xl:pt-16 pb-4 md:pb-6 2xl:pb-8 px-4 md:px-6 2xl:px-8 border-l border-r border-b border-my-pink border-dashed rounded-b-2xl md:rounded-b-4xl 2xl:rounded-b-[40px]'>
+          <div className='mb-7 md:mb-6 2xl:mb-8 mx-4 md:mx-7 2xl:mx-8 pt-10 md:pt-12 2xl:pt-16 pb-4 md:pb-6 2xl:pb-8 px-4 md:px-6 2xl:px-8 border-s border-e border-b border-my-pink border-dashed rounded-b-2xl md:rounded-b-4xl 2xl:rounded-b-[40px]'>
             <div className="flex flex-col gap-6 md:gap-4 2xl:gap-5">
               {Array.isArray(objDisadvantages) && objDisadvantages.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">

@@ -62,11 +62,11 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
               </p>
               <table className="table-fixed mt-3 border-collapse text-[#222222] w-full">
                 <thead>
-                  <tr className="text-left">
-                    <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
+                  <tr>
+                    <th className="py-2 font-semibold text-start border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
                       {t("brokerpage:card.instrument")}
                     </th>
-                    <th className="py-2 font-semibold border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
+                    <th className="py-2 font-semibold text-start border-b-[0.5px] border-[rgba(0,0,0,0.2)]">
                       {t("brokerpage:card.rebate")}
                     </th>
                   </tr>

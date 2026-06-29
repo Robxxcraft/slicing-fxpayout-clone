@@ -11,7 +11,7 @@ const AvailableBrokerSection = () => {
       <img
         src="/circle-ornament.png"
         alt="ornament"
-        className="absolute top-0 -left-[5%] -rotate-55 w-[600px]"
+        className="absolute top-0 -start-[5%] ltr:-rotate-55 rtl:rotate-260 w-[600px]"
       />
       <div className="z-999 relative flex flex-col gap-4 md:gap-8 items-center justify-center text-center">
         <h2 className="text-xl md:text-2xl md:text-[32px] font-semibold text-white">
