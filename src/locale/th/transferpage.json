@@ -1,0 +1,43 @@
+{
+    "helmet": {
+        "title": "แบบฟอร์มโอนย้าย IB การเทรดมายัง FXPayout | FXPayout",
+        "description": "FXPayout คือแพลตฟอร์มรีเบต Forex ที่เชื่อถือได้ มอบแคชแบ็กสูงสุดถึง 90% จากค่าคอมมิชชั่นโบรกเกอร์ตรงสู่เทรดเดอร์"
+    },
+    "header": {
+        "title": "ย้ายบัญชีเทรดของคุณมายัง IB fxpayout",
+        "paragraph": "กรอกแบบฟอร์มด้านล่างเพื่อทำการโอนย้าย IB และเชื่อมต่อบัญชีเทรดของคุณกับ fxpayout",
+        "tag": "โอนย้าย IB"
+    },
+    "card": {
+        "title": "โอนย้าย Introducing Broker (IB)",
+        "paragraph": "กรอกแบบฟอร์มด้านล่างเพื่อทำการโอนย้าย IB มายัง fxpayout",
+        "steps": ["กรอกแบบฟอร์ม", "คัดลอกเทมเพลตอีเมล", "ส่งอีเมลถึงทีมซัพพอร์ต"],
+        "emailForm": {
+            "title": "กรอกแบบฟอร์ม",
+            "brokerLabel": "เลือกโบรกเกอร์",
+            "accountNumberLabel": "หมายเลขบัญชี",
+            "accountNumberPlaceholder": "กรอกหมายเลขบัญชี",
+            "usernameLabel": "ชื่อเจ้าของบัญชี",
+            "usernamePlaceholder": "ชื่อตามเจ้าของบัญชี",
+            "emailLabel": "อีเมล",
+            "emailPlaceholder": "ที่อยู่อีเมล"
+        },
+        "emailTemplate": {
+            "title": "เทมเพลตอีเมลโอนย้าย IB",
+            "template": {
+                "subject": "คำขอย้าย IB",
+                "greeting": "เรียน ทีมซัพพอร์ต",
+                "intro": "ข้าพเจ้าขอยื่นคำขอย้ายบัญชีเทรดของข้าพเจ้ามาอยู่ภายใต้ IB ดังต่อไปนี้:",
+                "ibId": "ID IB:",
+                "ibLink": "ลิงก์ IB:",
+                "accountData": "ข้อมูลบัญชีของข้าพเจ้า:",
+                "name": "ชื่อ:",
+                "tradingAccount": "หมายเลขบัญชีเทรด:",
+                "closing": "รบกวนช่วยดำเนินการโอนย้าย IB ดังกล่าวด้วย\nขอบคุณครับ/ค่ะ",
+                "regards": "ด้วยความเคารพ,"
+            },
+            "send": "ส่งถึง",
+            "contactSupport": "ติดต่อทีมซัพพอร์ต"
+        }
+    }
+}

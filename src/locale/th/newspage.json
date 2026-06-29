@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "ข่าว Forex & วิเคราะห์ตลาดล่าสุด | FXPayout",
+        "description": "รับข่าว Forex ล่าสุด วิเคราะห์ตลาดแบบเรียลไทม์ เทรนด์คริปโต และอัปเดตเศรษฐกิจโลกตรงจาก FXPayout"
+    },
+    "time": {
+      "minutesAgo": "{{time}} นาทีที่แล้ว",
+      "hoursAgo": "{{time}} ชั่วโมงที่แล้ว",
+      "justNow": "เมื่อสักครู่",
+      "march": "{{time}} มีนาคม"
+    },
+    "category": {
+        "latest": "ล่าสุด",
+        "popular": "ยอดนิยม",
+        "breakingNews": "ข่าวด่วน",
+        "crypto": "คริปโต",
+        "stocks": "หุ้น",
+        "commodity": "สินค้าโภคภัณฑ์",
+        "economy": "เศรษฐกิจ",
+        "company": "บริษัท",
+        "world": "ต่างประเทศ",
+        "others": "อื่นๆ"
+    },
+    "header": {
+        "searchPlaceholder": "ค้นหาข่าวที่นี่..."
+    },
+    "main": {
+        "category": "หมวดหมู่",
+        "totalNews": "จำนวนข่าว"
+    },
+    "subscribe": {
+        "title": "สมัครรับข่าวสารเลย",
+        "paragraph": "รับข่าวล่าสุดเกี่ยวกับ Forex คริปโต หุ้น และเศรษฐกิจ ส่งตรงถึงอีเมลของคุณ",
+        "emailPlaceholder": "ใช้อีเมลที่ใช้งานอยู่"
+    }
+}
