@@ -1,0 +1,88 @@
+{
+    "text": {
+        "select": "選択",
+        "copy": "コピー",
+        "next": "次へ",
+        "tableOfContents": "目次",
+        "previous": "前へ",
+        "advantage": "メリット",
+        "disadvantage": "デメリット",
+        "close": "閉じる",
+        "readMore": "続きを読む",
+        "seeAll": "すべて見る",
+        "month": "月",
+        "title_month": "月",
+        "from_weeks_ago": "先週比",
+        "title_traders": "トレーダー",
+        "title_others": "その他",
+        "title_all": "すべて",
+        "title_local": "国内",
+        "title_international": "海外",
+        "title_newest": "最新",
+        "title_recommendation": "おすすめ",
+        "title_name": "名前",
+        "title_login": "ログイン",
+        "title_register": "登録",
+        "highest_rebate": "キャッシュバック高い順",
+        "lowest_rebate": "キャッシュバック低い順",
+        "title_low": "低",
+        "title_medium": "中",
+        "title_high": "高",
+        "title_apply": "適用",
+        "rebate_till": "最大キャッシュバック"
+    },
+    "button": {
+        "registerNow": "今すぐ登録",
+        "calculateRebate": "キャッシュバックを計算",
+        "visitWebsite": "公式サイトを見る",
+        "join_now": "今すぐ参加",
+        "see_list_broker": "ブローカー一覧を見る",
+        "try_now": "今すぐ試す"
+    },
+    "cta": {
+        "title": "トレードの収益効率を高める準備はできていますか？",
+        "paragraph": "今すぐ登録して、最大90%のキャッシュバックを受け取りましょう。"
+    },
+    "cta_trader": {
+        "title": "今日からもっと効率的なトレードを始めよう",
+        "paragraph": "今すぐ登録して、すべての取引でキャッシュバックを受け取りましょう。追加費用は一切なし。追加のリスクもありません。"
+    },
+    "methods": {
+        "bank_transfer": "銀行振込",
+        "bank_transfer_usd_idr": "銀行振込 (USD/IDR)",
+        "crypto": "仮想通貨",
+        "debit_credit_card": "デビット/クレジットカード",
+        "e_wallet": "電子ウォレット",
+        "indonesian_local_va": "ローカルVA (ID)",
+        "indonesian_e_wallet": "インドネシア電子ウォレット",
+        "local_bank": "現地銀行",
+        "local_transfer": "現地送金",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "ホーム",
+        "broker": "ブローカー",
+        "news": "ニュース",
+        "calculator": "計算ツール",
+        "claimRebate": "申請",
+        "service": "サービス",
+        "affiliate": "アフィリエイト",
+        "subNav": {
+            "definition": "FXキャッシュバックとは？",
+            "howRebate": "FXキャッシュバックの受け取り方",
+            "howWorks": "仕組みについて",
+            "payment": "キャッシュバックの支払いシステム",
+            "schedule": "キャッシュバックのスケジュール",
+            "validation": "口座認証",
+            "transfer": "口座の移管",
+            "forex": "Forex",
+            "vipRebate": "VIPキャッシュバック"
+        }
+    },
+    "footer": {
+        "paragraph": "当サイトはIBコミッションの最大90%をトレーダーに還元します。スプレッドや取引条件を変更することなく、迅速・安全・透明なプロセスを実現します。",
+        "quickLink": "クイックリンク",
+        "contact": "お問い合わせ"
+    }
+}

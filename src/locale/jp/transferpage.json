@@ -1,0 +1,43 @@
+{
+    "helmet": {
+        "title": "FXPayoutへのIB移管申請フォーム | FXPayout",
+        "description": "FXPayoutは、ブローカーのコミッションの最大90%をトレーダーに直接還元する、信頼できるFXキャッシュバックプラットフォームです。"
+    },
+    "header": {
+        "title": "取引口座をfxpayoutのIBへ移管",
+        "paragraph": "以下のフォームにご記入いただき、IB移管を行って、取引口座をfxpayoutに連携してください。",
+        "tag": "IB移管"
+    },
+    "card": {
+        "title": "紹介ブローカー（IB）の移管",
+        "paragraph": "以下のフォームにご記入いただき、fxpayoutへのIB移管を行ってください。",
+        "steps": ["フォームに記入", "メールテンプレートをコピー", "サポート宛にメールを送信"],
+        "emailForm": {
+            "title": "フォームに記入",
+            "brokerLabel": "ブローカーを選択",
+            "accountNumberLabel": "口座番号",
+            "accountNumberPlaceholder": "口座番号を入力",
+            "usernameLabel": "口座名義人",
+            "usernamePlaceholder": "口座名義どおりのお名前",
+            "emailLabel": "メールアドレス",
+            "emailPlaceholder": "メールアドレス"
+        },
+        "emailTemplate": {
+            "title": "IB移管メールテンプレート",
+            "template": {
+                "subject": "IB移管のご依頼",
+                "greeting": "サポートチーム ご担当者様",
+                "intro": "私の取引口座を、以下のIB配下へ移管いただきたくお願い申し上げます：",
+                "ibId": "IB ID：",
+                "ibLink": "IBリンク：",
+                "accountData": "私の口座情報：",
+                "name": "氏名：",
+                "tradingAccount": "取引口座番号：",
+                "closing": "上記IB移管の手続きについて、ご対応のほどよろしくお願いいたします。\nありがとうございます。",
+                "regards": "敬具"
+            },
+            "send": "送信先",
+            "contactSupport": "サポートに問い合わせ"
+        }
+    }
+}
