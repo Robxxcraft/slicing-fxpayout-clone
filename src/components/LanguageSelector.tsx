@@ -56,7 +56,7 @@ const LanguageSelector = ({
       </button>
           
       {/* DESKTOP */}
-      <div className={`_no-scrollbar hidden xl:flex max-h-[250px] overflow-auto absolute right-0 bottom-[120%] xl:bottom-auto xl:top-[120%] xl:translate-y-0 py-4 w-60 flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)] origin-top-right transition-all duration-300 ease-out ${open ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"}`}>
+      <div className={`scrollbar-thin primary-scrollbar hidden xl:flex max-h-[250px] overflow-auto absolute right-0 bottom-[120%] xl:bottom-auto xl:top-[120%] xl:translate-y-0 py-4 w-60 flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)] origin-top-right transition-all duration-300 ease-out ${open ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"}`}>
         {languages.map((lang, idx) => (
           <button
             key={idx}

@@ -164,9 +164,9 @@ export const zfxDetail: BrokerStruc = {
     score: 4.2,
     quantityVote: 70,
     classifications: [
-      { type: "Kecepatan Eksekusi", rate: 4.4 },
-      { type: "Stabilitas Server", rate: 4.3 },
-      { type: "Customer Support", rate: 4.0 },
+      { type: `${brokerId}:classifications.0`, rate: 4.4 },
+      { type: `${brokerId}:classifications.1`, rate: 4.3 },
+      { type: `${brokerId}:classifications.2`, rate: 4.0 },
     ],
   },
   faq: `${brokerId}:faqs`

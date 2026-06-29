@@ -10,7 +10,7 @@ i18n
   .init({
     resources,
     lowerCaseLng: true,
-    supportedLngs: ["en", "id", "zh", "zh-cn"],
+    supportedLngs: ["en", "id", "zh", "zh-cn", "jp", "ko", "th", "vi", "es", "pt", "ar"],
     nonExplicitSupportedLngs: true,
     detection: {
       order: ["localStorage", "navigator", "htmlTag", "path", "cookie"],
