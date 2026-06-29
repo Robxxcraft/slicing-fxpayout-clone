@@ -1,0 +1,90 @@
+{
+    "helmet": {
+        "title": "O que é Rebate Forex? Receba a Devolução dos Custos de Trading | FXPayout",
+        "description": "A FXPayout é uma plataforma de rebate forex confiável que oferece cashback de até 90% da comissão da corretora diretamente ao trader."
+    },
+    "definition": {
+        "title": "O que é Rebate Forex?",
+        "paragraph": "O rebate forex é a devolução de parte da comissão ou do spread de cada operação de trading. Você continua operando normalmente na corretora, mas parte dos custos de trading é devolvida a você na forma de rebate.",
+        "cards": [
+            {
+                "title": "Vantagens do Rebate",
+                "paragraph": "O spread, a alavancagem e a execução das operações permanecem iguais aos de uma conta comum. Com o rebate, você reduz os custos de trading e pode aumentar o seu lucro no longo prazo."
+            },
+            {
+                "title": "Como Funciona o Rebate",
+                "paragraph": "A cada operação que você realiza, a corretora repassa parte da comissão à fxpayout como IB. Essa comissão é então devolvida à sua conta na forma de rebate e pode ser sacada."
+            }
+        ]
+    },
+    "howRebate": {
+        "title": "Como Receber o Rebate",
+        "paragraph": "Quando você abre uma conta de trading Forex (ou conecta uma conta já existente) através de nós, a sua corretora nos paga o rebate"
+    },
+    "howWorks": {
+        "title": "Como Funciona?",
+        "paragraph": "O rebate forex funciona automaticamente nos bastidores. Você continua operando normalmente na corretora, enquanto a fxpayout administra a devolução de parte da comissão do seu trading na forma de rebate.",
+        "imageFlows": "how-it-works-flow-id.webp",
+        "flows": [
+            {
+                "flow": "Spread / Comissão",
+                "title": "Operador / Trader",
+                "paragraph": "O trader realiza as operações normalmente através da corretora de sua preferência, sem alterações no spread, na alavancagem ou na estratégia de trading."
+            },
+            {
+                "flow": "Reward / Recompensa",
+                "title": "Corretora",
+                "paragraph": "A corretora recebe o spread ou a comissão de cada operação e, em seguida, repassa parte dessa comissão à fxpayout como Introducing Broker (IB)."
+            },
+            {
+                "flow": "Pagamento de Cashback / Rebate",
+                "title": "FXPAYOUT",
+                "paragraph": "A fxpayout devolve parte da comissão recebida ao trader na forma de rebate, pago de forma periódica e transparente."
+            }
+        ]
+    },
+    "payment": {
+        "title": "Sistema de Pagamento do Rebate",
+        "paragraph": "A fxpayout oferece diversos métodos de pagamento de rebate, flexíveis e de fácil acesso. Você pode escolher o método de saque conforme a sua preferência, com saque mínimo baixo e processo transparente.",
+        "tableHeaders": ["Método", "Pagamento Mínimo", "Moeda", "Taxa"],
+        "tableItems": [
+            {
+                "method": "Cryptocurrencies",
+                "cost": "Up to 3 USDT"
+            },
+            {
+                "method": "E-Wallet Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Bank Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Neteller",
+                "cost": "1.45% (Min. $0.59)"
+            },
+            {
+                "method": "Skrill / Neteller",
+                "cost": "4.4% + 0.3 USD"
+            },
+            {
+                "method": "PayPal",
+                "cost": "1.45% (Min. $0.59)"
+            }
+        ]
+    },
+    "schedule": {
+        "title": "Cronograma de Rebate",
+        "paragraph": "Confira o cronograma de pagamento de rebate conforme a sua corretora de trading. Clique em “Ver Cronograma” para os detalhes completos de cada corretora.",
+        "card": {
+            "title": "Lista de Cronogramas de Rebate por Corretora",
+            "showEntry": ["Exibir", "entradas"],
+            "searchPlaceholder": "Busque uma corretora aqui",
+            "brokerName": "Nome da Corretora",
+            "schedule": "Cronograma de Rebate",
+            "viewSchedule": "Ver Cronograma",
+            "showList": "Exibindo {{startIndex}} a {{endIndex}} de {{totalIndex}} entradas"
+        }
+    }
+}

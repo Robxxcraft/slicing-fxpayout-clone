@@ -1,0 +1,76 @@
+{
+    "description": "A TMGM é uma corretora global multiativos que oferece negociação de Forex, Metais Preciosos, Índices, Commodities, Ações CFD e Criptomoedas, com spread competitivo, execução ECN e liquidez de nível institucional.",
+    "specification": {
+        "leverage": "Até 1:1000",
+        "spread": "A partir de 0.0 pip"
+    },
+    "profile": {
+        "slogan": "Corretora Global Multiativos com Execução ECN para Forex, CFD e Trading Institucional"
+    },
+    "summary": {
+        "spread": "A partir de 0.0 pip",
+        "commission": "Conta Edge: $7 por lote round turn; Conta Classic: Sem comissão",
+        "leverage": "Até 1:1000",
+        "execution": "Execução a mercado ECN de alta velocidade",
+        "depositWithdrawal": "Instantâneo até 1 dia útil (depende do método de pagamento)"
+    },
+    "accountTypes": [
+        [
+            "Depósito mínimo: $100",
+            "Spread a partir de 1.0 pip",
+            "Sem comissão",
+            "Ideal para a maioria dos traders"
+        ],
+        [
+            "Depósito mínimo: $100",
+            "Spread a partir de 0.0 pip",
+            "Comissão de cerca de $7 por lote round turn",
+            "Ideal para scalping e uso de EA"
+        ]
+    ],
+    "keyAdvantages": [
+        "Liquidez de nível institucional",
+        "Suporte às plataformas MT4 e MT5",
+        "Spread ECN competitivo",
+        "Suporte a EA e estratégias de scalping",
+        "Possui entidade regulada pela ASIC",
+        "Oferece diversos instrumentos de trading",
+        "Suporte ao recurso de Copy Trading"
+    ],
+    "advantages": [
+        "Possui entidade regulada pela ASIC",
+        "Spread baixo disponível em determinadas contas",
+        "Ideal para EA e scalping",
+        "Suporte às plataformas MT4 e MT5",
+        "Variedade de instrumentos de trading",
+        "Boa velocidade de execução"
+    ],
+    "disadvantages": [
+        "O nível de alavancagem depende da entidade utilizada",
+        "Alavancagem alta geralmente está disponível em entidades offshore",
+        "A conta Edge é cobrada por comissão"
+    ],
+    "classifications": [
+        "Customer Support",
+        "Execution & Platforms",
+        "Fees & Costs"
+    ],
+    "faqs": [
+        {
+            "question": "A TMGM é segura?",
+            "answer": "Sim. A TMGM atua por meio de várias entidades, incluindo uma entidade regulada pela ASIC, o que oferece um bom nível de segurança e credibilidade ao trader."
+        },
+        {
+            "question": "Qual é o depósito mínimo na TMGM?",
+            "answer": "O depósito mínimo geralmente começa em $100, dependendo do tipo de conta escolhido."
+        },
+        {
+            "question": "Quais plataformas de trading a TMGM suporta?",
+            "answer": "A TMGM suporta MetaTrader 4 (MT4), MetaTrader 5 (MT5), plataforma web e aplicativo mobile."
+        },
+        {
+            "question": "Quais instrumentos estão disponíveis na TMGM?",
+            "answer": "A TMGM oferece negociação de Forex, Metais Preciosos, Índices, Ações CFD, Commodities e Criptomoedas."
+        }
+    ]
+}

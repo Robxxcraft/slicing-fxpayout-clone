@@ -1,0 +1,52 @@
+{
+  "description": "A Tickmill é uma corretora global de forex e CFD que existe desde 2014, reconhecida pelos baixos custos de trading (spread reduzido e comissão baixa), execução rápida e suporte a plataformas populares como o MetaTrader 4 e o MetaTrader 5. A Tickmill atende traders em diversos países, com foco em uma experiência de trading profissional e eficiente.",
+  "specification": {
+    "leverage": "Até 1:1000 (depende da região)",
+    "spread": "A partir de 0.0 – 0.3 pips (Pro/VIP)"
+  },
+  "profile": {
+    "model": "ECN trading"
+  },
+  "summary": {
+    "spread": "A partir de 0.0 – 0.3 pips (Pro/VIP)",
+    "commission": "±$3 por lote por lado (conta Pro / Ultra)",
+    "leverage": "Até 1:1000 (depende da região)",
+    "execution": "Rápida",
+    "depositWithdrawal": "Transferência bancária, débito/crédito, carteira digital"
+  },
+  "accountTypes": [
+    ["Depósito mínimo: $100", "Spread a partir de ±1.6 pips", "Sem comissão"],
+    ["Depósito mínimo: $100", "Spread a partir de 0.0 – 0.3 pips", "Comissão : $3 por lote por lado"],
+    ["Depósito mín. mais alto", "Spread muito reduzido", "Comissão : ±$2.5 – $3 por lote por lado"]
+  ],
+  "keyAdvantages": ["Spread muito baixo (ECN/Raw)", "Comissão competitiva", "Execução de ordens rápida e estável", "Regulação forte e global", "Opção de conta sem swap (Islamic)", "Suporte a MT4, MT5, TradingView"],
+  "advantages": ["Spread ECN muito baixo", "Comissão competitiva", "Execução rápida e estável", "Regulação forte em diversas regiões", "Plataforma de trading completa"],
+  "disadvantages": ["O depósito mínimo de $100 é relativamente mais alto do que o de outras corretoras", "A comissão se aplica às contas Pro/VIP", "A alavancagem pode ser limitada pelo regulador"],
+  "classifications": [
+    "Execution & Spread",
+    "Customer Support",
+    "Deposit / Withdrawal"
+  ],
+  "faqs": [
+    {
+      "question": "A Tickmill é segura?",
+      "answer": "Sim — é regulada por FCA, CySEC, FSCA e FSA."
+    },
+    {
+      "question": "Qual é o depósito mínimo?",
+      "answer": "O depósito mínimo é de $100."
+    },
+    {
+      "question": "Quais plataformas são suportadas?",
+      "answer": "MT4, MT5, Web e Mobile."
+    },
+    {
+      "question": "Qual é a alavancagem máxima?",
+      "answer": "Até 1:1000, dependendo do regulador."
+    },
+    {
+      "question": "Existe conta ECN?",
+      "answer": "Sim — Pro e VIP, com spread baixo."
+    }
+  ]
+}

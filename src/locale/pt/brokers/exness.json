@@ -1,0 +1,59 @@
+{
+    "description": "Corretora global com execução ultrarrápida, spread baixo e opções de conta extremamente flexíveis, incluindo a conta CENT. Oferece acesso a Forex, Ouro, Índices, Energia e CFD com condições estáveis e transparentes. Conta com processos de depósito e saque rápidos, além de plataformas de trading modernas para iniciantes e traders profissionais.",
+    "specification": {
+      "leverage": "Até 1:2000+",
+      "spread": "A partir de 0.0 pips (Raw)"
+    },
+    "profile": {
+        "slogan": "Trade with accuracy, speed, and deep liquidity"
+    },
+    "summary": {
+      "spread": "A partir de 0.0 pips (Raw) — média muito baixa",
+      "commission": "Raw/Zero: $3.5–$8 por lote (depende do par)", 
+      "leverage": "Até 1:2000+ (smart leverage system)", 
+      "execution": "0.01–0.04 segundos (ultrarrápida)",
+      "depositWithdrawal": "Ultrarrápido (<1 minuto para carteira digital/crypto)"
+    },
+    "accountTypes": [
+      ["Ideal para iniciantes e teste de estratégias", "Lote Micro/Nano", "Alavancagem alta", "Spread a partir de 0.3 pips", "Sem comissão", "Depósito mínimo: $10", "Observação: Nem todos os instrumentos estão disponíveis na conta Cent"],
+      ["Spread baixo", "Sem comissão", "Ideal para trading manual", "Depósito mín.: $10"],
+      ["Spread 0.0 - 0.3 pips", "Comissão baixa ($3.5–$4 por lote por lado)", "Execução muito rápida", "Ideal para scalping e EA"],
+      ["Spread 0.0 em mais de 30 pares", "Comissão maior", "Ideal para news trading e eventos de alto impacto"],
+      ["Sem comissão", "Spread muito baixo", "Execução instantânea", "Ideal para trader diário e swing"]
+    ],
+    "keyAdvantages": [  
+        "Ultra-fast execution (0.01–0.04 segundos)",
+        "Spread mais estável do setor",
+        "Plataforma muito leve e estável",
+        "Saque mais rápido entre as corretoras globais populares",
+        "Conta CENT (rara em corretoras Tier 1)",
+        "Liquidez profunda e baixo slippage",
+        "Unlimited leverage (em determinadas regiões)",
+        "Excelente para scalping, EA e traders de ouro"
+    ],
+    "advantages": ["Spread e execução muito estáveis", "Saque ultrarrápido", "Diversos métodos de depósito e saque", "Conta Cent disponível para iniciantes", "Amigável a EA e scalping", "Alavancagem alta e flexível"],
+    "disadvantages": ["Comissão varia por par na conta Raw/Zero", "Alavancagem limitada em algumas regulações", "Nem todos os instrumentos estão disponíveis na conta Cent"],
+    "classifications": ["Velocidade de Saque (WD)", "Estabilidade do Servidor", "Customer Support"],
+    "faqs": [
+    {
+      "question": "A Exness é segura?",
+      "answer": "A Exness é uma corretora regulada por diversas autoridades financeiras internacionais, incluindo FSA, CySEC, FSCA e FSC. A empresa atua desde 2008 e é reconhecida pela transparência ao divulgar relatórios financeiros e estatísticas de trading. Embora não esteja sob regulação da Indonésia, a Exness é uma corretora global muito utilizada por traders no mundo todo."
+    },
+    {
+      "question": "A Exness oferece Conta Cent?",
+      "answer": "Sim. A Exness oferece a conta Standard Cent, uma conta com tamanho de contrato menor, ideal para praticar, testar estratégias ou operar com risco de capital reduzido."
+    },
+    {
+      "question": "A Exness é indicada para iniciantes?",
+      "answer": "Sim. A Exness oferece conta Cent, spread estável, processo de transação simples e plataformas populares como MT4/MT5. Essa combinação ajuda o iniciante a aprender as condições reais do mercado com um risco mais controlado."
+    },
+    {
+      "question": "A Exness é indicada para EA e Scalping?",
+      "answer": "Sim. A Exness oferece suporte a EA, robôs de trading, algoritmos e estratégias de scalping sem restrições específicas. O spread apertado e a execução muito rápida fazem dela uma escolha frequente para estratégias intensivas."
+    },
+    {
+      "question": "Quão rápido é o processo de Saque (WD) na Exness?",
+      "answer": "Geralmente é muito rápido. Muitos métodos de saque por carteira digital e pagamentos locais são processados em questão de minutos, dependendo do método utilizado e das condições do sistema. O processo pode demorar mais em determinados horários ou métodos."
+    }
+  ] 
+}

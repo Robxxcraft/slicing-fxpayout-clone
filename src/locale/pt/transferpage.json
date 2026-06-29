@@ -1,0 +1,44 @@
+{
+    "helmet": {
+        "title": "Formulário de Transferência de IB de Trading para a FXPayout | FXPayout",
+        "description": "A FXPayout é uma plataforma de rebate forex confiável que oferece cashback de até 90% da comissão da corretora diretamente ao trader."
+    },
+    "header": {
+        "title": "Transfira a Sua Conta de Trading para o IB da fxpayout",
+        "paragraph": "Preencha o formulário abaixo para realizar a Transferência de IB e conectar a sua conta de trading à fxpayout.",
+        "tag": "TRANSFERÊNCIA DE IB"
+    },
+    "card": {
+        "title": "Transferência de Introducing Broker (IB)",
+        "paragraph": "Preencha o formulário abaixo para realizar a Transferência de IB para a fxpayout.",
+        "steps": ["Preencha o Formulário", "Copie o Modelo de E-mail", "Envie o E-mail ao suporte"],
+        "emailForm": {
+            "title": "Preencha o Formulário",
+            "brokerLabel": "Selecione a Corretora",
+            "accountNumberLabel": "Número da Conta",
+            "accountNumberPlaceholder": "Informe o Número da Conta",
+            "usernameLabel": "Nome do Titular da Conta",
+            "usernamePlaceholder": "Nome Conforme o Titular da Conta",
+            "emailLabel": "E-mail",
+            "emailPlaceholder": "Endereço de E-mail"
+        },
+        "emailTemplate": {
+            "title": "Modelo de E-mail para Transferência de IB",
+            "template": {
+                "subject": "Solicitação de Transferência de IB",
+                "greeting": "Prezada Equipe de Suporte,", 
+                "intro": "Venho solicitar a transferência da minha conta de trading para o seguinte IB:",
+                "ibId": "ID do IB:", 
+                "ibLink": "Link do IB:",
+                "accountData": "Dados da minha conta:",
+                "name": "Nome:",
+                "tradingAccount": "Número da Conta de Trading:",
+                "closing": "Solicito o apoio para o processo dessa transferência de IB.\nObrigado.",
+                "regards": "Atenciosamente,"
+
+            },
+            "send": "Enviar para", 
+            "contactSupport": "Contact Support"
+        }
+    }
+}

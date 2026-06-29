@@ -1,0 +1,59 @@
+{
+  "description": "A XM é uma corretora global de Forex e CFD focada na justiça do trading, na transparência dos custos e em uma experiência mais humana para o trader. A XM é reconhecida pela execução rápida, sem intervenção durante grandes notícias e por condições de trading consistentes, sem manipulação.",
+  "specification": {
+    "leverage": "Até 1:1000",
+    "spread": "A partir de ±0.6 – 1.7 pips"
+  },
+  "profile": {
+    "slogan": "Big. Fair. Human.",
+    "total_instruments": "1000+ (Forex, Índices, Energia, Metais, Ações CFD, Crypto CFD, Turbo Instruments (completo), etc.)"
+  },
+  "summary": {
+    "spread": "A partir de 0.6 – 1.7 pips",
+    "commission": "0 (Micro, Standard, Ultra Low",
+    "leverage": "Até 1:1000 (depende do regulador e da região)",
+    "execution": "Ultra-fast execution, sem requotes ou rejeições",
+    "depositWithdrawal": "Diversos métodos e rápido"
+  },
+  "accountTypes": [
+    ["Depósito mín. : $5", "Spread a partir de ±1.0 pips", "Comissão : 0", "Ideal para iniciantes e capital reduzido"],
+    ["Depósito mín. : $5", "Spread a partir de ±1.0 pips", "Comissão : 0", "Ideal para trader em geral e trading manual"],
+    ["Depósito mín. : $5", "Spread a partir de ±0.6 pips", "Comissão : 0", "Ideal para trader ativo e spread mais apertado"],
+    ["Depósito mín. : $5", "Spread a partir de 0.0 pips", "Comissão : ± $7 por lote (round-turn)"]
+  ],
+  "accountNotes": "Disponível para clientes específicos (LN)",
+  "keyAdvantages": ["Sem requotes ou rejeições", "Bônus durante todo o ano", "Sem taxas ocultas", "Ordens executadas em menos de 66ms durante a divulgação de notícias como NFP, FOMC ou CPI"],
+  "advantages": ["Capital inicial muito baixo ($5)", "Spread competitivo nas contas Ultra Low e Zero", "Suporte robusto a plataformas (MT4, MT5)", "Diversas regulações globais", "Diversos instrumentos de trading"],
+  "disadvantages": ["O spread da conta padrão pode ser mais alto", "A comissão da Zero é considerada padrão ($7 por lote)", "Os recursos de educação não são tão fortes quanto os de algumas corretoras de ponta"],
+  "classifications": [
+    "Customer Support",
+    "Execution & Platforms",
+    "Fees & Costs"
+  ],
+  "faqs": [
+    {
+      "question": "A XM é segura?",
+      "answer": "Sim. A XM é regulada por diversas grandes autoridades, como FCA, ASIC, CySEC, etc."
+    },
+    {
+      "question": "Qual é o depósito mínimo?",
+      "answer": "O depósito mínimo é de $5."
+    },
+    {
+      "question": "Quais plataformas são suportadas?",
+      "answer": "MT4, MT5, WebTrader e Mobile."
+    },
+    {
+      "question": "Qual é a alavancagem máxima?",
+      "answer": "Até 1:1000, dependendo do país/entidade."
+    },
+    {
+      "question": "Existe conta demo?",
+      "answer": "Sim, há conta demo para praticar o trading."
+    },
+    {
+      "question": "Existe conta swap-free/Islamic?",
+      "answer": "Sim, disponível para determinadas entidades/regiões."
+    }
+  ]
+}

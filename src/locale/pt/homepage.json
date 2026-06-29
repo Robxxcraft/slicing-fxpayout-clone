@@ -1,0 +1,183 @@
+{
+    "helmet": {
+        "title": "Opere com Mais Lucro com Rebate de Até 90% | FXPayout",
+        "description": "A FXPayout é uma plataforma de rebate forex confiável que oferece cashback de até 90% da comissão da corretora diretamente ao trader."
+    },
+    "hero": {
+        "title": "Receba Cashback de Cada Operação de Trading & <underline>Sem Custos Adicionais.</underline>",
+        "subtitles": [
+            "A FXPayout Não é Corretora",
+            "Não Recebe Depósitos",
+            "Não Acessa a Sua Conta de Trading"
+        ],
+        "badge": "Opere com Economia usando o Rebate Forex",
+        "runningTexts": [
+            "100% Sem Custos Adicionais",
+            "Recursos Direto para a Corretora",
+            "Sem Acesso à Conta",
+            "Transparente e Seguro"
+        ],
+        "estimateRebate": {
+            "title": "Estimativa de Rebate",
+            "subtitle": "Escolha a corretora e informe os lotes por mês para uma estimativa rápida",
+            "broker": "Corretora",
+            "lotPerMonth": "Lotes por Mês",
+            "pair": "Par",
+            "register": "Cadastre-se e Receba",
+            "estimation": ["Estimativa", "Aproximada"],
+            "claim": "Resgate Manual",
+            "info": "Devolvemos até 90% da comissão de IB ao trader. Processo rápido, seguro e transparente, sem alterar o spread ou as condições de trading." 
+        }
+    },
+    "problemSection": {
+        "title": "Sem Você Perceber, os Custos de Trading Reduzem o Seu Lucro",
+        "paragraph": "Toda operação de trading tem custos, como spread e comissão. Sem rebate, esses custos continuam reduzindo os seus resultados de trading.",
+        "badge": "Problema Comum dos Traders",
+        "problems": [
+            "Os custos de trading podem reduzir o seu lucro de forma significativa.",
+            "Spread, comissão e outras taxas muitas vezes passam despercebidos pelo trader."
+        ],
+        "then": "E qual é a solução?",
+        "solutions": [
+            "Use o Rebate.",
+            "Com o rebate, você recupera parte desses custos."
+        ]
+    },
+    "profile": {
+        "title": "A FXPayout ajuda você a reduzir os custos de trading através do sistema de rebate (cashback).",
+        "paragraph": "Atuamos como Introducing Broker (IB) e repassamos parte da comissão da corretora para você. Sem custos adicionais. Sem riscos adicionais.",
+        "badge": "PRESENTE COMO SOLUÇÃO",
+        "searchPlaceholder": "rebate forex, cashback de trading, IB forex confiável...",
+        "badges": ["Rebate Forex", "Cashback de Trading", "Rebate FBS", "Rebate Exness", "Rebate XM", "IB Forex Confiável"],
+        "features": [
+            {
+                "title": "Rebate de Até 90%",
+                "paragraph": "Receba cashback de até 90% da comissão da corretora diretamente na sua conta."
+            },
+            {
+                "title": "Foco no trader",
+                "paragraph": "Cashback direto, sem alterar as condições de trading."
+            },
+            {
+                "title": "Local Support",
+                "paragraph": "Suporte em diversos idiomas e horário de atendimento amigável ao trader."
+            }
+        ]
+    },
+    "howItWorks": {
+        "title": "Como a FXPayout Funciona em 4 Passos Simples",
+        "paragraph": "Sem mudar a sua estratégia, basta operar normalmente. A FXPayout cuida do fluxo da comissão e transforma em cashback para você.",
+        "tag": "COMO FUNCIONA",
+        "workflows": [
+            {
+                "title": "COMECE",
+                "subtitle": "Cadastre-se pelo link oficial da FXPayout",
+                "paragraph": "Crie uma conta FXPayout e conecte a sua conta de trading através do link oficial que disponibilizamos da corretora de sua preferência."
+            },
+            {
+                "title": "OPERE",
+                "subtitle": "Opere normalmente na sua corretora",
+                "paragraph": "Continue operando sem alterações no spread, na alavancagem ou em outras condições. Tudo segue as regras da corretora."
+            },
+            {
+                "title": "COMISSÃO",
+                "subtitle": "A corretora envia a comissão de IB à FXPayout",
+                "paragraph": "Com base no volume de lotes que você operou, a corretora envia a comissão de IB à FXPayout automaticamente."
+            },
+            {
+                "title": "REBATE",
+                "subtitle": "Rebate de até 90% na sua conta",
+                "paragraph": "Devolvemos até 90% dessa comissão como cashback, que pode ser sacado rapidamente via banco local ou carteira digital."
+            }
+        ]
+    },
+    "rewards": {
+        "title": "Bônus de Rebate +10% para Novas Contas",
+        "paragraph": "Aproveite a promoção por tempo limitado, exclusiva para traders que acabaram de entrar na FXPayout.",
+        "tag": "Por Tempo Limitado"
+    },
+    "brokerlistsection": {
+        "view_all_brokers": "Ver Todas as Corretoras"
+    },
+    "securitySection": {
+        "title": "A Segurança dos Seus Recursos é a Nossa Prioridade",
+        "badge": "VOCÊ PRECISA SABER",
+        "contents": [
+            {
+                "title": "A FXPayout Não é Corretora",
+                "paragraph": "Não administramos os seus recursos. Todas as transações continuam sendo feitas diretamente em uma corretora oficial."
+            },
+            {
+                "title": "Não Recebe Depósitos",
+                "paragraph": "Nunca pedimos que você transfira recursos. Toda a atividade de trading permanece na sua conta da corretora."
+            },
+            {
+                "title": "Não Tem Acesso à Conta",
+                "paragraph": "Não temos acesso à sua conta de trading e não armazenamos os seus dados de login."
+            }
+        ]
+    },
+    "benefit": {
+        "title": "Maximize o Lucro do Trading Sem Custos Adicionais",
+        "paragraph": "Receba cashback de cada operação de trading sem alterar as condições da corretora. Sistema transparente, seguro e feito para aumentar a eficiência do seu lucro.",
+        "badge": "POR QUE A FX PAYOUT",
+        "items": [
+            {
+                "title": "💰 Reduz os Custos de Trading",
+                "description": "Parte dos custos de trading volta para você como cashback."
+            },
+            {
+                "title": "🔄 Rebate Direto da Corretora",
+                "description": "Parte dos custos de trading volta para você como cashback."
+            },
+            {
+                "title": "🚫 Sem Custos Adicionais",
+                "description": "Sem taxas ocultas ou qualquer desconto. Tudo Transparente."
+            },
+            {
+                "title": "🔒 Sistema Seguro e Transparente",
+                "description": "Todas as transações continuam sendo feitas diretamente na corretora. Não acessamos a sua conta de trading nem armazenamos os seus dados de login."
+            },
+            {
+                "title": "⚡ Suporte Ágil",
+                "description": "A equipe de suporte local está pronta para ajudar você pelo WhatsApp e Telegram, com resposta rápida e soluções claras."
+            }
+        ]
+    },
+    "reviews": {
+        "title": "O que Dizem os Traders que Usam a FXPayout?",
+        "paragraph": "Experiências reais de traders que conquistaram lucro extra com o programa de rebate.",
+        "tag": "FEEDBACK",
+        "writeReview": "Escrever Avaliação",
+        "successResponse": {
+            "title": "Obrigado por Compartilhar a Sua Experiência",
+            "paragraph": "A sua avaliação foi enviada com sucesso e vai ajudar outros usuários a conhecer a experiência de usar este serviço de rebate."
+        },
+        "emptyReview": "Ainda não há avaliações aqui. Seja o primeiro a compartilhar a sua experiência usando o nosso serviço!",
+        "modal": {
+            "title": "Escreva a Sua Avaliação",
+            "paragraph": "Quão satisfeito você está com o nosso serviço de rebate?",
+            "form": {
+                "usernameLabel": "Nome Completo",
+                "usernamePlaceholder": "Informe o Seu Nome Completo",
+                "locationLabel": "Cidade",
+                "locationPlaceholder": "Informe o Nome da Sua Cidade",
+                "reviewLabel": "Avaliação",
+                "reviewPlaceholder": "Conte a sua experiência usando a fxpayout...",
+                "submit": "Enviar Avaliação",
+                "errors": {
+                    "usernameRequired": "O nome completo não pode ficar em branco",
+                    "locationRequired": "A localização não pode ficar em branco",
+                    "reviewRequired": "A avaliação não pode ficar em branco",
+                    "invalidRangeRating": "A nota deve estar no intervalo de 1 a 5"
+                }
+            },
+            "errors": { "captcha": "Confirme que você não é um robô" }
+        }
+    },
+    "riskSection": {
+        "title": "O Risco do Trading Continua, mas os Custos Podem Diminuir",
+        "paragraph": "O trading de forex tem alto risco. Mas, com a FXPayout, você pode reduzir os custos de trading sem aumentar o risco, pois todos os recursos permanecem na sua corretora.",
+        "cta": "Recursos Sempre Seguros na Corretora"
+    }
+}

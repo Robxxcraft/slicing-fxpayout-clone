@@ -1,0 +1,30 @@
+{
+    "helmet": {
+        "title": "Confira o Cronograma Regular de Rebate Mais Recente da {{brokerName}} | FXPayout",
+        "description": "A FXPayout é uma plataforma de rebate forex confiável que oferece cashback de até 90% da comissão da corretora diretamente ao trader."
+    },
+    "header": {
+        "title": "CRONOGRAMA DE REBATE",
+        "paragraph": "Veja a seguir o cronograma de rebate da {{brokerName}} em condições normais. O cronograma de rebate pode sofrer atrasos em determinadas situações, como problemas no servidor, manutenção do sistema, falhas no sistema de pagamento e atraso nos dados de rebate enviados pela corretora.",
+        "tag": "CRONOGRAMA DE REBATE DA CORRETORA"
+    },
+    "tableHeader": ["Categoria", "Cronograma de Rebate"],
+    "tableItems": [
+        {
+            "category": "Relatório de Rebate Aparece no Sistema",
+            "schedule": "Diário: Um dia após o fechamento das ordens, das 00h00 às 16h59 UTC (GMT+0)."
+        },
+        {
+            "category": "Rebate Creditado no Saldo de Rebate",
+            "schedule": "Diário: Um dia após o fechamento das ordens, das 00h00 às 16h59 UTC (GMT+0)."
+        },
+        {
+            "category": "AutoRebate para a Conta de Trading ou Carteira da Corretora",
+            "schedule": "Recurso não disponível."
+        },
+        {
+            "category": "AutoRebate do Saldo de Rebate para Banco / E-Currency",
+            "schedule": "Semanal: De segunda a quarta-feira, às 16h59 UTC (GMT+0), caso o valor mínimo de pagamento tenha sido atingido."
+        }
+    ]
+}
