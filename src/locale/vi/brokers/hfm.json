@@ -1,0 +1,55 @@
+{
+  "description": "HFM (HF Markets), trước đây được biết đến với tên HotForex, là sàn đa quy định toàn cầu được thành lập từ năm 2010 và đã hoạt động hơn một thập kỷ tại hơn 180 quốc gia. Sàn cung cấp dịch vụ giao dịch Forex, kim loại, hàng hóa, chỉ số, cổ phiếu CFD và cryptocurrency với nhiều loại tài khoản và nền tảng giao dịch bao gồm MT4, MT5 và ứng dụng HFM.",
+  "specification": {
+    "leverage": "Lên đến 1:2000",
+    "spread": "Từ 0.0 pips (Zero)"
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": "Từ 0.0 pips (Zero)",
+    "commission": "Tùy tài khoản (Zero & Pro có hoa hồng)",
+    "leverage": "Lên đến 1:2000 (tùy pháp nhân/quốc gia)",
+    "execution": "Nhanh & cạnh tranh",
+    "depositWithdrawal": "Ngân hàng, thẻ, ví điện tử, crypto"
+  },
+  "spread": ["biến động (thường rộng hơn)"],
+  "accountTypes": [
+    ["Nạp tối thiểu : $0", "Spread : biến động (từ 1.4 pips)", "Đòn bẩy cao"],
+    ["Nạp tối thiểu : $0", "Spread : 0.0", "Hoa hồng : có"],
+    ["Nạp tối thiểu : ±$100", "Spread : ±0.6 pips"],
+    ["Nạp tối thiểu : $0", "Spread : ±1.4 pips"],
+    ["Dành cho copy trading/social trading"]
+  ],
+  "keyAdvantages": ["Quy định đa khu vực pháp lý", "Spread cạnh tranh đặc biệt ở tài khoản Zero", "Đòn bẩy tối đa cao", "Nền tảng giao dịch mạnh mẽ (MT4, MT5, HFM App)", "Hỗ trợ 24/5", "Nạp & rút nhanh"],
+  "advantages": ["Spread Zero cực kỳ cạnh tranh", "Quy định đầy đủ tại nhiều quốc gia", "Hỗ trợ giao dịch đa nền tảng", "Phù hợp từ người mới đến chuyên nghiệp"],
+  "disadvantages": ["Cấu trúc quy định khác nhau cho từng pháp nhân", "Spread tài khoản standard có thể cao hơn", "Không phải tất cả ưu đãi bonus/no-deposit đều có sẵn"],
+  "classifications": [
+    "Nạp & Rút",
+    "Hỗ Trợ",
+    "Nền Tảng & Giao Dịch"
+  ],
+  "faqs": [
+    {
+      "question": "HFM có an toàn không?",
+      "answer": "Có — được quản lý tại nhiều khu vực pháp lý lớn (bao gồm FCA & CySEC)."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Có thể bắt đầu từ $0 tùy tài khoản."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, Web & HFM App."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:2000 (tùy pháp nhân và khu vực)."
+    },
+    {
+      "question": "Có tài khoản copy trading không?",
+      "answer": "Có — HFCopy"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "description": "FBS là sàn quốc tế được thành lập từ năm 2009, cung cấp dịch vụ giao dịch Forex và CFD với điều kiện giao dịch cạnh tranh, nhiều loại tài khoản đáp ứng nhu cầu của trader cùng khớp lệnh nhanh. FBS phổ biến với cả trader mới đến chuyên nghiệp nhờ chương trình đào tạo, bonus và dịch vụ khách hàng vững mạnh",
+  "specification": {
+    "leverage": "Lên đến 1:3000",
+    "spread": "Từ 0.0 pips (Zero/ECN)"
+  },
+  "profile": {
+    "slogan": "Trade Forex Worldwide"
+  },
+  "summary": {
+    "spread": "Từ 0.0 pips (Zero/ECN)",
+    "commission": "ECN: ±$6–$7 mỗi lot (round-turn)",
+    "leverage": "Lên đến 1:3000",
+    "execution": "Nhanh",
+    "depositWithdrawal": "Nhanh & nhiều phương thức"
+  },
+  "accountTypes": [
+    ["Nạp tối thiểu : $1", "Spread từ ±1.0 pips", "Phù hợp người mới & luyện tập"],
+    ["Nạp tối thiểu : $5", "Spread từ ±1.0 pips", "Không hoa hồng"],
+    ["Nạp tối thiểu : $100", "Spread từ ±0.5 – 1.2", "Không hoa hồng"],
+    ["Nạp tối thiểu : $500", "Spread từ 0.0 pips", "Hoa hồng khoảng $7 mỗi lot"],
+    ["Nạp tối thiểu : $100", "Spread từ 0.0 pips", "Hoa hồng cạnh tranh"]
+  ],
+  "keyAdvantages": ["Spread thấp đặc biệt ở ECN/Zero", "Đòn bẩy cao lên đến 1:3000", "Tài khoản Cent cho người mới", "Chương trình bonus hấp dẫn", "Khớp lệnh nhanh", "Nền tảng đầy đủ"],
+  "advantages": ["Nạp tối thiểu cực thấp", "Đòn bẩy rất cao", "Spread cạnh tranh ở tài khoản ECN/Zero", "Tài khoản Cent cho trader mới"],
+  "disadvantages": ["Spread tài khoản non-ECN có thể rộng hơn", "Không có lựa chọn sản phẩm non-CFD thực"],
+  "classifications": [
+    "Tốc Độ Rút Tiền",
+    "Độ Ổn Định Máy Chủ",
+    "Hỗ Trợ Khách Hàng"
+  ],
+  "faqs": [
+    {
+      "question": "FBS có an toàn không?",
+      "answer": "Có. FBS được quản lý bởi ASIC, CySEC, IFSC và FSCA tùy theo pháp nhân."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Mức nạp tối thiểu từ $1 (Tài Khoản Cent)."
+    },
+    {
+      "question": "FBS có phù hợp cho người mới không?",
+      "answer": "Có. Tài khoản Cent & dịch vụ đào tạo phù hợp cho người mới."
+    },
+    {
+      "question": "Có tài khoản ECN/Zero không?",
+      "answer": "Có. Có tài khoản Zero và ECN với spread 0.0 pips."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:3000 tùy cơ quan quản lý & khu vực."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, WebTrader & Mobile App."
+    }
+  ]
+}

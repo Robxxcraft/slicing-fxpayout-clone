@@ -1,0 +1,44 @@
+{
+    "helmet": {
+        "title": "Mẫu Chuyển IB Giao Dịch Sang FXPayout | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "header": {
+        "title": "Chuyển Tài Khoản Giao Dịch Của Bạn Sang IB fxpayout",
+        "paragraph": "Điền vào mẫu dưới đây để thực hiện Chuyển IB và liên kết tài khoản giao dịch của bạn với fxpayout.",
+        "tag": "CHUYỂN IB"
+    },
+    "card": {
+        "title": "Chuyển Introducing Broker (IB)",
+        "paragraph": "Điền vào mẫu dưới đây để thực hiện Chuyển IB sang fxpayout.",
+        "steps": ["Điền Mẫu", "Sao Chép Mẫu Email", "Gửi Email Đến Bộ Phận Hỗ Trợ"],
+        "emailForm": {
+            "title": "Điền Mẫu",
+            "brokerLabel": "Chọn Sàn",
+            "accountNumberLabel": "Số Tài Khoản",
+            "accountNumberPlaceholder": "Nhập Số Tài Khoản",
+            "usernameLabel": "Tên Chủ Tài Khoản",
+            "usernamePlaceholder": "Tên Đúng Theo Chủ Tài Khoản",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Địa Chỉ Email"
+        },
+        "emailTemplate": {
+            "title": "Mẫu Email Chuyển IB",
+            "template": {
+                "subject": "Yêu Cầu Chuyển IB",
+                "greeting": "Kính gửi Đội Ngũ Hỗ Trợ",
+                "intro": "Tôi xin gửi yêu cầu chuyển tài khoản giao dịch của mình về IB sau:",
+                "ibId": "ID IB:",
+                "ibLink": "Link IB:",
+                "accountData": "Thông tin tài khoản của tôi:",
+                "name": "Tên:",
+                "tradingAccount": "Số Tài Khoản Giao Dịch:",
+                "closing": "Mong được hỗ trợ xử lý quá trình chuyển IB này.\nXin cảm ơn.",
+                "regards": "Trân trọng,"
+
+            },
+            "send": "Gửi đến",
+            "contactSupport": "Liên Hệ Hỗ Trợ"
+        }
+    }
+}

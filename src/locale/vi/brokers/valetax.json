@@ -1,0 +1,49 @@
+{
+  "description": "Valetax là sàn forex và CFD toàn cầu cung cấp nhiều loại tài khoản giao dịch với đòn bẩy linh hoạt và spread cạnh tranh. Nền tảng hỗ trợ truy cập hơn 60 cặp tiền tệ cùng nhiều sản phẩm khác như kim loại, chỉ số, năng lượng và crypto thông qua các nền tảng phổ biến MT4 và MT5, phù hợp cho cả trader mới lẫn trader có kinh nghiệm.",
+  "specification": {
+    "leverage": "Lên đến 1:2000",
+    "spread": "Từ 0.0 pips"
+  },
+  "summary": {
+    "spread": "Từ 0.0 pips",
+    "commission": "ECN: $4 mỗi lot (một số tài khoản miễn hoa hồng)",
+    "leverage": "Lên đến 1:2000",
+    "execution": "Khớp lệnh thị trường nhanh & ổn định",
+    "depositWithdrawal": "Xử lý nhanh-tức thì/4 giờ cho local/crypto (tùy phương thức)"
+  },
+  "spread": ["Từ 0.0"],
+  "accountTypes": [
+    ["Nạp tối thiểu : $1", "Spread : ±1.2 pips", "Hoa hồng : 0", "Phù hợp cho người mới"],
+    ["Nạp tối thiểu : ±$8–$10", "Spread : ±1.2 pips", "Hoa hồng : 0"],
+    ["Nạp tối thiểu : $50", "Spread : từ 0.0 pips", "Hoa hồng : ±$4 mỗi lot"],
+    ["Nạp tối thiểu : ±$8", "Spread : ±2.0 pips", "Hoa hồng : 0"],
+    ["Nạp tối thiểu : ±$8", "Spread : ±2.0 pips", "Hoa hồng : 0"],
+    ["Nạp tối thiểu : $500", "Spread : ±0.6 pips", "Hoa hồng : 0"]
+  ],
+  "keyAdvantages": ["Nạp tối thiểu cực thấp chỉ từ $1", "Spread cạnh tranh đến 0.0 pips ở tài khoản ECN", "Hỗ trợ nền tảng MT4, MT5, Web, Mobile", "Truy cập hơn 60+ cặp forex và một số nhóm tài sản khác", "Hỗ trợ khách hàng 24/7"],
+  "advantages": [" Spread & Khớp Lệnh Cạnh Tranh", "Nạp Tối Thiểu Cực Thấp", "Đòn Bẩy Cao Linh Hoạt", "Hỗ Trợ Nền Tảng Đầy Đủ", "Sản Phẩm Giao Dịch Đa Dạng", "Nhiều Loại Tài Khoản", "Tính Năng Bổ Sung Như Copy Trading (Theo Một Số Nguồn)", "Tùy Chọn Nạp Local & Hỗ Trợ 24/7 (Website Chính Thức)"],
+  "disadvantages": ["Quy định trụ sở chính nằm ở offshore (Mauritius & St. Vincent & Grenadines) → rủi ro cao hơn so với các sàn được quản lý bởi FCA/ASIC/CySEC.", "Có một số đánh giá tiêu cực liên quan đến việc thiếu giám sát và rủi ro đòn bẩy cao."],
+  "classifications": [
+    "Nền Tảng & Công Cụ",
+    "Chi Phí & Phí",
+    "Hỗ Trợ & Dịch Vụ"
+  ],
+  "faqs": [
+    {
+      "question": "Valetax có an toàn không?",
+      "answer": "Valetax có giấy phép tại Mauritius và St. Vincent & Grenadines, nhưng các quy định này thuộc nhóm offshore và có rủi ro cao hơn so với các cơ quan quản lý cấp cao."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Mức nạp tối thiểu từ $1."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, Web và Mobile."
+    },
+    {
+      "question": "Những sản phẩm nào có sẵn?",
+      "answer": "Forex 60+ cặp, kim loại, chỉ số, năng lượng, crypto."
+    }
+  ]
+}

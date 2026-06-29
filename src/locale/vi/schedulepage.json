@@ -1,0 +1,30 @@
+{
+    "helmet": {
+        "title": "Xem Lịch Rebate Định Kỳ Mới Nhất Của {{brokerName}} | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "header": {
+        "title": "LỊCH REBATE",
+        "paragraph": "Dưới đây là lịch rebate của {{brokerName}} trong điều kiện bình thường. Lịch rebate có thể bị trễ trong một số trường hợp nhất định, chẳng hạn như sự cố máy chủ, bảo trì hệ thống, gián đoạn hệ thống thanh toán và chậm trễ dữ liệu rebate từ sàn.",
+        "tag": "LỊCH REBATE THEO SÀN"
+    },
+    "tableHeader": ["Danh Mục", "Lịch Rebate"],
+    "tableItems": [
+        {
+            "category": "Báo Cáo Rebate Hiển Thị Trên Hệ Thống",
+            "schedule": "Hàng ngày: Một ngày sau khi đóng lệnh, tức từ 00:00 đến 16:59 UTC (GMT+0)."
+        },
+        {
+            "category": "Rebate Được Cộng Vào Số Dư Rebate",
+            "schedule": "Hàng ngày: Một ngày sau khi đóng lệnh, tức từ 00:00 đến 16:59 UTC (GMT+0)."
+        },
+        {
+            "category": "AutoRebate Về Tài Khoản Giao Dịch Hoặc Ví Sàn",
+            "schedule": "Tính năng không khả dụng."
+        },
+        {
+            "category": "AutoRebate Từ Số Dư Rebate Về Ngân Hàng / E-Currency",
+            "schedule": "Hàng tuần: Từ Thứ Hai đến Thứ Tư lúc 16:59 UTC (GMT+0), nếu đã đạt mức thanh toán tối thiểu."
+        }
+    ]
+}

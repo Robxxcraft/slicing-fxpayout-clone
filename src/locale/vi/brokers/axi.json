@@ -1,0 +1,51 @@
+{
+  "description": "Axi là sàn forex và CFD quốc tế được thành lập từ năm 2007, được biết đến như một trong những sàn ECN thân thiện với trader ở nhiều cấp độ. Axi cung cấp spread cạnh tranh, khớp lệnh nhanh và các nền tảng giao dịch mạnh mẽ như MetaTrader 4 và MetaTrader 5. Sàn phục vụ trader tại nhiều quốc gia với quy định pháp lý toàn cầu và dịch vụ toàn diện.",
+  "specification": {
+    "leverage": "Lên đến 1:500 (tùy cơ quan quản lý)",
+    "spread": "Từ 0.0 pips (Pro)"
+  },
+  "profile": {
+    "slogan": "Trade Unlocked"
+  },
+  "summary": {
+    "spread": "Từ 0.0 – 0.2 pips (Pro ECN)",
+    "commission": "Pro ECN: ±$7 mỗi lot (round-turn)",
+    "leverage": "Lên đến 1:500 (tùy cơ quan quản lý)",
+    "execution": "Nhanh & ổn định",
+    "depositWithdrawal": "Nhiều phương thức"
+  },
+  "accountTypes": [
+    ["Nạp tối thiểu : $0+ (khuyến nghị $200)", "Spread từ ±1.0 pips", "Không hoa hồng"],
+    ["Nạp tối thiểu : ±$200", "Spread : từ 0.0 – 0.2 pips", "Hoa hồng cạnh tranh (~$7 mỗi lot)"]
+  ],
+  "keyAdvantages": ["Spread cạnh tranh & khớp lệnh nhanh", "Quy định chặt chẽ bởi ASIC & FCA", "Thân thiện với scalping & EA", "Nền tảng giao dịch đầy đủ", "Chi phí minh bạch & thấp"],
+  "advantages": ["Spread thấp & khớp lệnh nhanh", "Quy định chặt chẽ (FCA/ASIC/FSCA)", "Nền tảng giao dịch phổ biến", "Hỗ trợ toàn cầu"],
+  "disadvantages": ["Mức nạp hiệu quả cho ECN hơi cao hơn", "Có hoa hồng mỗi lot ở Pro ECN"],
+  "classifications": [
+    "Khớp Lệnh & Spread",
+    "Hỗ Trợ Khách Hàng",
+    "Nạp/Rút"
+  ],
+  "faqs": [
+    {
+      "question": "Axi có an toàn không?",
+      "answer": "Có — được giám sát bởi các cơ quan quản lý lớn như FCA, ASIC, FSCA (pháp nhân khác nhau tùy khu vực)."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Không có mức tối thiểu chính thức, nhưng khuyến nghị từ $200 để khớp lệnh ổn định."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, Web, Mobile."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:500 tùy cơ quan quản lý & pháp nhân."
+    },
+    {
+      "question": "Có tài khoản ECN không?",
+      "answer": "Có — Pro ECN với spread cực thấp."
+    }
+  ]
+}

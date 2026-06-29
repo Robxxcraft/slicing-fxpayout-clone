@@ -1,0 +1,61 @@
+{
+  "description": "Finex (PT Finex Bisnis Solusi Futures) là sàn forex chính thức của Indonesia, được thành lập từ năm 2012 và chịu sự giám sát của BAPPEBTI cùng OJK thông qua hợp tác với các tổ chức thanh toán bù trừ như PT KBI và Jakarta Futures Exchange (JFX). Sàn cung cấp quyền truy cập giao dịch đa dạng sản phẩm như forex, chỉ số, kim loại, cổ phiếu CFD và năng lượng với điều kiện giao dịch cạnh tranh cùng nền tảng hỗ trợ trực quan.",
+  "specification": {
+    "leverage": "Lên đến 1:500 (Forex & kim loại; chỉ số/năng lượng khác)",
+    "spread": "Thả nổi, từ khoảng 0.5 pip (thông thường)"
+  },
+  "profile": {
+    "name": "PT Finex Bisnis Solusi Futures (Finex)",
+    "slogan": "(không cụ thể, thương hiệu nội địa)"
+  },
+  "summary": {
+    "spread": "Từ ±0.5 pips (biến động)",
+    "commission": "±$1 mỗi lot",
+    "leverage": "Lên đến 1:500 (Forex & Kim Loại)",
+    "execution": "Nhanh",
+    "depositWithdrawal": "Ngân hàng nội địa & ví điện tử"
+  },
+  "accountTypes": [
+    ["Nạp tối thiểu : $10", "Spread từ 0.5 pips", "Hoa hồng : ±$1 mỗi lot", "Đòn bẩy : lên đến 1:500", "Sản phẩm giao dịch đầy đủ"]
+  ],
+  "spread": ["biến động; thường cao hơn so với Forex"],
+  "keyAdvantages": ["Quy định chính thức BAPPEBTI & OJK", "Nạp ban đầu thấp", "Đòn bẩy cao đến 1:500", "Khớp lệnh nhanh", "Sản phẩm giao dịch đa dạng", "Nền tảng phổ biến (MT5)"],
+  "advantages": ["Sàn chính thức được quản lý bởi BAPPEBTI", "Nạp thấp ($10)", "Spread & hoa hồng tương đối cạnh tranh", "Truy cập nhiều sản phẩm", "Khớp lệnh nhanh & hỗ trợ ngân hàng nội địa"],
+  "disadvantages": ["Chỉ có một loại tài khoản live", "Tính năng đào tạo & nghiên cứu đơn giản hơn so với sàn toàn cầu", "Chỉ có MT5 (không có MT4)"],
+  "reviewHighlights": [
+    "Xử lý nạp/rút nhanh",
+    "Chi phí giao dịch thấp",
+    "MT5 dễ sử dụng",
+    "Phù hợp cho người mới & trung cấp"
+  ],
+  "faqs": [
+    {
+      "question": "Finex có an toàn & hợp pháp không?",
+      "answer": "Có. Finex được đăng ký & cấp phép bởi BAPPEBTI tại Indonesia."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Mức nạp ban đầu tối thiểu $10."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MetaTrader 5."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:500 cho forex & kim loại."
+    },
+    {
+      "question": "Finex có tài khoản demo không?",
+      "answer": "Có — có tài khoản demo để luyện tập."
+    },
+    {
+      "question": "Spread thấp nhất là bao nhiêu?",
+      "answer": "Từ ±0.5 pips cho EUR/USD."
+    },
+    {
+      "question": "Có chương trình affiliate / rebate không?",
+      "answer": "Có — có mô hình partner/affiliate, chi tiết rebate được trao đổi tại cổng partner."
+    }
+  ]
+}

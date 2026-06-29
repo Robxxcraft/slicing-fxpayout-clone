@@ -1,0 +1,52 @@
+{
+  "description": "FP Markets (First Prudential Markets) là sàn forex & CFD toàn cầu được thành lập từ năm 2005, có trụ sở chính tại Sydney, Úc. Sàn được biết đến nhờ spread cạnh tranh, khớp lệnh nhanh, quyền truy cập hàng nghìn sản phẩm cùng việc hỗ trợ các nền tảng giao dịch phổ biến như MetaTrader và cTrader. FP Markets cũng cung cấp công nghệ giao dịch chuyên nghiệp như cTrader, VPS và các công cụ phân tích nâng cao.",
+  "specification": {
+    "leverage": "Lên đến 1:500 (tùy cơ quan quản lý & pháp nhân)",
+    "spread": ["Standard : từ khoảng 1.0 pips", "Raw : từ 0.0 pips"]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": ["Standard : từ khoảng 1.0 pips", "Raw : từ 0.0 pips"],
+    "commission": "Raw ECN ±$6 mỗi lot tổng (±$3 mỗi chiều)",
+    "leverage": "Lên đến 1:500 (tùy cơ quan quản lý & pháp nhân)",
+    "execution": "Nhanh & không requote",
+    "depositWithdrawal": "Chuyển khoản ngân hàng, thẻ, ví điện tử"
+  },
+  "spread": ["từ 0.0 – 0.2 pips", "biến động thấp", "rộng hơn"],
+  "accountTypes": [
+    ["Nạp tối thiểu : $100", "Spread từ ±1.0 pips", "Không hoa hồng", "Phù hợp cho trader retail phổ thông"],
+    ["Nạp tối thiểu : $100", "Spread từ 0.0 pips", "Hoa hồng ±$3 mỗi chiều mỗi lot", "Phù hợp scalping, robot, EA"]
+  ],
+  "keyAdvantages": ["Spread ECN cực thấp", "Khớp lệnh nhanh & ổn định", "Thanh khoản cao", "Thân thiện với EA & scalping", "Nền tảng giao dịch đầy đủ", "Phù hợp cho trader tích cực"],
+  "advantages": ["Spread cực kỳ cạnh tranh (Raw ECN)", "Nền tảng đầy đủ (MT4, MT5, cTrader)", "Không mark-up trên tài khoản Raw", "Quy định chặt chẽ tại nhiều quốc gia", "Phù hợp cho trader thủ công, EA, scalping"],
+  "disadvantages": ["Nạp tối thiểu $100 cao hơn một số sàn nhẹ", "Đòn bẩy có thể bị giới hạn bởi cơ quan quản lý ở một số khu vực", "Spread Standard rộng hơn so với ECN"],
+  "classifications": [
+    "Hỗ Trợ Khách Hàng",
+    "Phí & Spread",
+    "Tốc Độ Khớp Lệnh"
+  ],
+  "faqs": [
+    {
+      "question": "FP Markets có an toàn không?",
+      "answer": "Có — được quản lý bởi ASIC (Úc), CySEC (Cyprus), FSCA (Nam Phi), FSA (Seychelles) và CIMA."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Mức nạp tối thiểu để giao dịch live là $100."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào",
+      "answer": "MT4, MT5 và cTrader."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:500 cho forex (tùy pháp nhân/cơ quan quản lý)."
+    },
+    {
+      "question": "Có tài khoản ECN không?",
+      "answer": "Có — tài khoản Raw ECN với spread từ 0.0 pips + hoa hồng."
+    }
+  ]
+}

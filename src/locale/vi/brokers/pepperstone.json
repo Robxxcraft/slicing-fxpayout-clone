@@ -1,0 +1,56 @@
+{
+  "description": "Sàn toàn cầu với khớp lệnh nhanh, spread thấp và điều kiện giao dịch chuyên nghiệp. Pepperstone được biết đến là sàn được ưa chuộng cho scalping, EA và trader tích cực, với quyền truy cập vào Forex, Vàng, Chỉ Số, Năng Lượng, Cổ Phiếu CFD và Crypto CFD. Được hỗ trợ bởi nền tảng giao dịch hiện đại cùng quy trình nạp–rút nhanh chóng và minh bạch.",
+  "specification": {
+    "leverage": "Lên đến 1:500",
+    "spread": "Từ 0.0 pips (Razor)"
+  },
+  "profile": {
+    "slogan": "Award-Winning Global Forex Broker"
+  },
+  "summary": {
+    "spread": "Từ 0.0 pips (Razor)",
+    "commission": "Razor: $6–$7 mỗi lot (round-turn)",
+    "leverage": "Lên đến 1:500",
+    "execution": "Nhanh",
+    "depositWithdrawal": "Nhanh & nhiều phương thức"
+  },
+  "accountTypes": [
+    ["Spread từ ±1.0 pips", "Không hoa hồng"],
+    ["Spread từ 0.0 pips", "Hoa hồng $3.50 mỗi chiều (±$7 round-turn)"],
+    ["Điều kiện giao dịch chuyên nghiệp", "Đòn bẩy linh hoạt"]
+  ],
+  "keyAdvantages": ["Spread ECN cực thấp", "Khớp lệnh nhanh", "Quy định cấp cao (FCA, ASIC)", "Hỗ trợ MT4, MT5, cTrader, TradingView", "Thân thiện với scalping & EA", "Không phí không hoạt động/phí tài khoản"],
+  "advantages": ["Spread thấp & khớp lệnh ổn định", "Quy định chặt chẽ và quốc tế", "Nền tảng đầy đủ (MT4, MT5, cTrader, TradingView)"],
+  "disadvantages": ["Sản phẩm non-CFD thực bị giới hạn", "Hỗ trợ 24/7 không có sẵn cho tất cả khu vực", "Đòn bẩy có thể bị giới hạn tùy khu vực"],
+  "classifications": [
+    "Tốc Độ Rút Tiền (WD)",
+    "Độ Ổn Định Máy Chủ",
+    "Hỗ Trợ Khách Hàng"
+  ],
+  "faqs": [
+    {
+      "question": "Pepperstone có an toàn không?",
+      "answer": "Có. Được giám sát bởi FCA, ASIC, DFSA, BaFin, CySEC, SCB."
+    },
+    {
+      "question": "Có mức nạp tối thiểu không?",
+      "answer": "Không có mức nạp tối thiểu chính thức, nhưng khuyến nghị nạp ban đầu ~$200."
+    },
+    {
+      "question": "Có phù hợp cho scalping & EA không?",
+      "answer": "Có, rất phù hợp đặc biệt ở tài khoản Razor."
+    },
+    {
+      "question": "Spread thấp nhất là bao nhiêu?",
+      "answer": "Từ 0.0 pips ở tài khoản Razor."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:500, tùy cơ quan quản lý & khu vực."
+    },
+    {
+      "question": "Phí nạp/rút là bao nhiêu?",
+      "answer": "Hầu hết các phương thức: $0."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+    "description": "TMGM là sàn đa tài sản toàn cầu cung cấp giao dịch Forex, Kim Loại Quý, Chỉ Số, Hàng Hóa, Cổ Phiếu CFD và Cryptocurrency với spread cạnh tranh, khớp lệnh ECN cùng thanh khoản cấp tổ chức.",
+    "specification": {
+        "leverage": "Lên đến 1:1000",
+        "spread": "Từ 0.0 pip"
+    },
+    "profile": {
+        "slogan": "Sàn Đa Tài Sản Toàn Cầu Với Khớp Lệnh ECN Cho Forex, CFD và Giao Dịch Tổ Chức"
+    },
+    "summary": {
+        "spread": "Từ 0.0 pip",
+        "commission": "Tài khoản Edge: $7 mỗi lot round turn; Tài khoản Classic: Không hoa hồng",
+        "leverage": "Lên đến 1:1000",
+        "execution": "Khớp lệnh thị trường ECN tốc độ cao",
+        "depositWithdrawal": "Tức thì đến 1 ngày làm việc (tùy phương thức thanh toán)"
+    },
+    "accountTypes": [
+        [
+            "Nạp tối thiểu: $100",
+            "Spread từ 1.0 pip",
+            "Không hoa hồng",
+            "Phù hợp với phần lớn trader"
+        ],
+        [
+            "Nạp tối thiểu: $100",
+            "Spread từ 0.0 pip",
+            "Hoa hồng khoảng $7 mỗi lot round turn",
+            "Phù hợp cho scalping và sử dụng EA"
+        ]
+    ],
+    "keyAdvantages": [
+        "Thanh khoản cấp tổ chức",
+        "Hỗ trợ nền tảng MT4 và MT5",
+        "Spread ECN cạnh tranh",
+        "Hỗ trợ EA và chiến lược scalping",
+        "Có pháp nhân được quản lý bởi ASIC",
+        "Cung cấp đa dạng sản phẩm giao dịch",
+        "Hỗ trợ tính năng Copy Trading"
+    ],
+    "advantages": [
+        "Có pháp nhân được quản lý bởi ASIC",
+        "Spread thấp có sẵn ở một số tài khoản nhất định",
+        "Phù hợp cho EA và scalping",
+        "Hỗ trợ nền tảng MT4 và MT5",
+        "Lựa chọn sản phẩm giao dịch đa dạng",
+        "Tốc độ khớp lệnh tốt"
+    ],
+    "disadvantages": [
+        "Mức đòn bẩy tùy thuộc vào pháp nhân sử dụng",
+        "Đòn bẩy cao thường chỉ có ở các pháp nhân offshore",
+        "Tài khoản Edge bị tính phí hoa hồng"
+    ],
+    "classifications": [
+        "Hỗ Trợ Khách Hàng",
+        "Khớp Lệnh & Nền Tảng",
+        "Phí & Chi Phí"
+    ],
+    "faqs": [
+        {
+            "question": "TMGM có an toàn để sử dụng không?",
+            "answer": "Có. TMGM hoạt động thông qua nhiều pháp nhân, bao gồm pháp nhân được quản lý bởi ASIC, mang lại mức độ an toàn và uy tín tốt cho trader."
+        },
+        {
+            "question": "Mức nạp tối thiểu tại TMGM là bao nhiêu?",
+            "answer": "Mức nạp tối thiểu thường từ $100, tùy vào loại tài khoản được chọn."
+        },
+        {
+            "question": "TMGM hỗ trợ những nền tảng giao dịch nào?",
+            "answer": "TMGM hỗ trợ MetaTrader 4 (MT4), MetaTrader 5 (MT5), nền tảng web và ứng dụng mobile."
+        },
+        {
+            "question": "Những sản phẩm nào có sẵn tại TMGM?",
+            "answer": "TMGM cung cấp giao dịch Forex, Kim Loại Quý, Chỉ Số, Cổ Phiếu CFD, Hàng Hóa và Cryptocurrency."
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "helmet": {
+        "title": "VIP Rebate Forex Lên Đến 95% | Cashback Giao Dịch FXPayout",
+        "description": ""
+    },
+    "herosection": {
+        "title": "VIP Rebate Forex Lên Đến 95% | Cashback Giao Dịch FXPayout",
+        "paragraph": "FXPayout là nền tảng rebate forex (Introducing Broker) giúp trader nhận cashback từ mỗi giao dịch.",
+        "badge": "Nền Tảng Rebate FXPayout"
+    },
+    "whatrebateforex": {
+        "title": "Rebate Forex Là Gì?",
+        "paragraphs": [
+            "Rebate forex là khoản cashback từ hoa hồng của sàn được chia lại cho trader. Mỗi khi bạn giao dịch, sàn sẽ thu một số chi phí nhất định như spread hoặc hoa hồng.",
+            "Một phần các chi phí đó có thể được hoàn lại cho bạn dưới dạng rebate. Bằng cách sử dụng rebate, bạn có thể tối ưu hiệu quả giao dịch vì chi phí giao dịch được giảm xuống."
+        ],
+        "badge": "REBATE FOREX",
+        "subtitle": "Rebate Forex Hoạt Động Như Thế Nào",
+        "flows": [
+            {
+                "title": "Trader Thực Hiện Giao Dịch",
+                "paragraph": "Mỗi giao dịch bạn thực hiện sẽ bị sàn thu chi phí như spread hoặc hoa hồng."
+            },
+            {
+                "title": "Sàn Tạo Ra Hoa Hồng",
+                "paragraph": "Từ hoạt động giao dịch đó, sàn chia một phần hoa hồng thông qua hệ thống Introducing Broker (IB)."
+            },
+            {
+                "title": "Rebate Được Chia Lại",
+                "paragraph": "Một phần hoa hồng đó được hoàn lại cho bạn dưới dạng cashback (rebate) một cách tự động."
+            }
+        ]
+    },
+    "leveltradersection": {
+        "title": "Tăng Mức Rebate Theo Hoạt Động Giao Dịch Của Bạn",
+        "paragraph": "Bạn giao dịch càng tích cực, cashback bạn nhận được càng lớn.",
+        "badge": "ĐỪNG CHỌN SAI",
+        "rebate_until": "Rebate Lên Đến",
+        "detail_levels": [
+            {
+                "tier": "Rebate Tiêu Chuẩn",
+                "paragraph": "Chương trình này mang đến sự linh hoạt để trader bắt đầu mà không cần cam kết lớn.",
+                "terms": [
+                    "Không Yêu Cầu Nạp Tối Thiểu",
+                    "Kích Hoạt Ngay Sau Khi Đăng Ký",
+                    "Phù Hợp Với Mọi Loại Trader"
+                ]
+            },
+            {
+                "tier": "Active Rebate",
+                "paragraph": "Với trader tích cực, rebate có thể tăng lên đến 85% dựa trên hoạt động giao dịch.",
+                "terms": [
+                    "Giao dịch đều đặn trong <b>1 tháng</b>",
+                    "Bạn giao dịch càng tích cực, rebate nhận được càng lớn."
+                ]
+            },
+            {
+                "tier": "VIP Rebate",
+                "paragraph": "Chương trình VIP được thiết kế cho trader có mức cam kết và hoạt động giao dịch cao hơn.",
+                "terms": [
+                    "Tổng nạp từ <b>$2000</b>",
+                    "Duy trì equity tài khoản tối thiểu <b>$1000</b> trong suốt 1 tháng"
+                ]
+            }
+        ],
+        "how_to_improve": "Làm Thế Nào Để Nâng Cấp Level Của Tôi?",
+        "answer_to_improve": "FXPayout phù hợp với trader muốn giảm chi phí giao dịch mà không phát sinh thêm rủi ro."
+    },
+    "faqsection": {
+        "title": "Câu Hỏi Thường Gặp",
+        "paragraph": "Tìm câu trả lời cho những câu hỏi thường gặp về rebate forex và dịch vụ FXPayout.",
+        "faqs": [
+            {
+                "question": "Forex rebate là gì?",
+                "answer": "Forex rebate là khoản cashback từ một phần hoa hồng hoặc spread được chi trả mỗi khi bạn giao dịch. Với rebate, bạn có thể giảm chi phí giao dịch và tăng lợi nhuận."
+            },
+            {
+                "question": "Forex rebate có an toàn không?",
+                "answer": "Có, rebate an toàn vì đến từ hoa hồng của sàn chính thức (Introducing Broker). Không có thay đổi nào đối với tài khoản hay điều kiện giao dịch của bạn."
+            },
+            {
+                "question": "FXPayout có phải là sàn không?",
+                "answer": "Không. FXPayout không phải là sàn và không quản lý vốn giao dịch của bạn. Chúng tôi chỉ đóng vai trò trung gian (Introducing Broker) hoàn lại một phần hoa hồng cho trader."
+            },
+            {
+                "question": "Tôi có cần chuyển vốn sang FXPayout không?",
+                "answer": "Không. Bạn không cần nạp tiền vào FXPayout. Toàn bộ vốn vẫn nằm trong tài khoản sàn của bạn."
+            },
+            {
+                "question": "FXPayout có quyền truy cập vào tài khoản giao dịch của tôi không?",
+                "answer": "Không. Chúng tôi không có quyền truy cập vào tài khoản giao dịch của bạn và không lưu trữ thông tin đăng nhập hay mật khẩu."
+            }
+        ]
+    },
+    "warningforexsection": {
+        "title": "Giao Dịch Forex Rủi Ro Cao, Nhưng Chi Phí Có Thể Giảm Với Rebate",
+        "paragraph": "Giao dịch forex có rủi ro cao và có thể dẫn đến thua lỗ toàn bộ vốn của bạn. Rebate giúp giảm chi phí giao dịch, nhưng không loại bỏ rủi ro giao dịch.",
+        "badge": "Cảnh Báo Rủi Ro"
+    }
+}

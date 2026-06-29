@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Công Cụ Tính Rebate: Ước Tính Cashback Giao Dịch | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "header": {
+        "title": "Tính Ngay Rebate Giao Dịch Ước Tính Của Bạn",
+        "paragraph": "Nhập sàn, loại tài khoản và tổng số lot giao dịch của bạn để biết mức rebate ước tính bạn có thể nhận được mỗi tháng — nhanh chóng, minh bạch và miễn phí.",
+        "tag": "CÔNG CỤ TÍNH REBATE FXPAYOUT"
+    },
+    "card": {
+        "title": "Công Cụ Tính Rebate Ước Tính",
+        "paragraph": "Chọn sàn và nhập chi tiết giao dịch của bạn để xem rebate ước tính ngay lập tức.",
+        "broker": "Sàn",
+        "accountType": "Loại Tài Khoản",
+        "pair": "Cặp / Sản Phẩm Giao Dịch",
+        "lots": "Lot",
+        "accountTypePlaceholder": "Vui lòng chọn sàn trước",
+        "pairPlaceholder": "Nhập Lot",
+        "button": "Tính Rebate Ước Tính",
+        "estimatesRebates": "Rebate Ước Tính",
+        "rebatePerLot": "Rebate Mỗi Lot",
+        "info": "<0>fxpayout</0> hoàn lại đến 90% hoa hồng IB cho trader. Quá trình rebate được thực hiện tự động, an toàn và minh bạch mà không làm thay đổi spread, đòn bẩy hay điều kiện giao dịch của bạn.",
+        "errors": {
+            "brokerRequired": "Vui lòng chọn sàn",
+            "accountTypeRequired": "Vui lòng chọn loại tài khoản",
+            "pairRequired": "Vui lòng chọn cặp",
+            "lotsRequired": "Số lot không được để trống"
+        }
+    }
+}
