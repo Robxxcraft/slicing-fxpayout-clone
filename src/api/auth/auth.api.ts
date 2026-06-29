@@ -10,7 +10,7 @@ export const login = async (form: FormLogin) =>{
         "content-type": "application/json",
       },
       body: JSON.stringify({ 
-        email: form.email, 
+        email: form.email.toLowerCase(), 
         password: form.password 
       })
     })
@@ -41,7 +41,7 @@ export const register = async ({ form, role }: { form: FormRegister, role: UserR
       },
       body: JSON.stringify({ 
         username: form.username,
-        email: form.email, 
+        email: form.email.toLowerCase(), 
         password: form.password,
         confirmation_password: form.password2,
         role
@@ -89,7 +89,7 @@ export const generateOtp = async ({ email }: { email: string }) => {
       headers:{
         "content-type": "application/json",
       },
-      body: JSON.stringify({ email: email })
+      body: JSON.stringify({ email: email.toLowerCase() })
     });
     const responseJson = await response.json();
     if (response.status === 200) {
@@ -118,7 +118,10 @@ export const verifyOtp = async ({
       headers:{
         "content-type": "application/json",
       },
-      body: JSON.stringify({ email, otp })
+      body: JSON.stringify({ 
+        email: email.toLowerCase(), 
+        otp 
+      })
     });
     const responseJson = await response.json();
     if (response.status === 200) {
@@ -182,7 +185,7 @@ export const changeEmail = async ({ userId, email }: { userId: number; email: st
       headers:{
         "content-type": "application/json",
       },
-      body: JSON.stringify({ email: email })
+      body: JSON.stringify({ email: email.toLowerCase() })
     });
     const responseJson = await response.json();
     if (response.status === 200) {
@@ -214,8 +217,8 @@ export const verifyChangeEmail = async ({
         "content-type": "application/json",
       },
       body: JSON.stringify({ 
-        email: oldEmail, 
-        new_email: email,
+        email: oldEmail.toLowerCase(), 
+        new_email: email.toLowerCase(),
         otp: otp 
       })
     });
@@ -235,7 +238,7 @@ export const verifyChangeEmail = async ({
   }
 };
 
-export const changePasword = async ({ 
+export const changePassword = async ({ 
   userId, oldPassword, newPassword, confirmationPassword 
 }: { 
   userId: number; 

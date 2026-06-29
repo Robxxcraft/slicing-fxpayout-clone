@@ -20,7 +20,7 @@ export const checkValidRegisterInput = (vals: FormRegister) => {
     errors.username = "Username tidak boleh kosong";
   } else if (vals.username.includes(" ")) {
     errors.username = "Username tidak boleh mengandung karakter spasi";
-  } else if (vals.username.trim().length < 4 && vals.username.trim().length > 20) {
+  } else if (vals.username.length < 4 || vals.username.length > 20) {
     errors.username = "Username harus terdiri dari 4 sampai 20 karakter";
   } 
   if (vals.email.trim() === "") {
@@ -42,11 +42,12 @@ export const checkValidRegisterInput = (vals: FormRegister) => {
 
 export const checkValidProfileRegister = (vals: FormUpdateProfile) => {
   const errors: Partial<Record<keyof FormUpdateProfile, string>> = {};
+  console.log("Panjang username", vals.username.length)
   if (vals.username.trim() === "") {
     errors.username = "Username tidak boleh kosong";
   } else if (vals.username.includes(" ")) {
     errors.username = "Username tidak boleh mengandung karakter spasi";
-  } else if (vals.username.trim().length < 4 && vals.username.trim().length > 20) {
+  } else if (vals.username.length < 4 || vals.username.length > 20) {
     errors.username = "Username harus terdiri dari 4 sampai 20 karakter";
   } 
   if (vals.fullname.trim() === "") {
