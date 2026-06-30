@@ -50,7 +50,7 @@ const ChangePasswordPage = () => {
         }
       }
 
-      const { error, message } = await AuthAPI.changePasword({
+      const { error, message } = await AuthAPI.changePassword({
         userId: authUser.id,
         oldPassword: formChangePassword.values.oldPassword,    
         newPassword: formChangePassword.values.newPassword,    
