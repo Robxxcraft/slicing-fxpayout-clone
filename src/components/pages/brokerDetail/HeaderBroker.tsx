@@ -71,7 +71,7 @@ const HeaderBroker = ({
           <p className="text-base lg:text-2xl 2xl:text-[32px] leading-9 font-semibold">
             {t("brokerdetailpage:overallScore")}
           </p>
-          <div className="mt-1 lg:mt-5 2xl:mt-10 flex items-end">
+          <div className="mt-1 lg:mt-5 2xl:mt-10 flex items-end" dir="ltr">
             <p className="text-[36px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
               {overallScore.rate}
             </p>

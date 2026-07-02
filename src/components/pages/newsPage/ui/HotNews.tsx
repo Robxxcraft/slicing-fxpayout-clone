@@ -40,7 +40,7 @@ const HotNews = () => {
               </p>
               <Link to="#" className="flex items-center gap-1 text-base md:text-lg 2xl:text-xl font-medium hover:underline">
                 <span>{t(`text.readMore`)}</span>
-                <FaChevronRight />
+                <FaChevronRight className="rtl:scale-x-[-1]" />
               </Link>
             </div>
           </div>

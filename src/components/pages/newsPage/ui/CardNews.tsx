@@ -42,7 +42,7 @@ const CardNews = ({ item }: { item: NewsState }) => {
           </p>
           <Link to={item.url} className="flex items-center gap-1 text-base md:text-xl lg:text-base 2xl:text-xl font-medium text-primary hover:underline">
             <span>{t(`text.readMore`)}</span>
-            <FaChevronRight />
+            <FaChevronRight className="rtl:scale-x-[-1]" />
           </Link>
         </div>
       </div>

@@ -163,7 +163,7 @@ const CommissionSystemSection = () => {
             {t(`${key}.affiliate_commission`)}
           </p>
           <div>
-            <p className="text-[40px] md:text-[64px] lg:text-[56px] 2xl:text-[64px] font-semibold text-white">
+            <p dir="ltr" className="text-[40px] md:text-[64px] lg:text-[56px] 2xl:text-[64px] font-semibold text-white">
               $500
               <span className="text-xl leading-[135%]">
                  / {t("text.title_month")}

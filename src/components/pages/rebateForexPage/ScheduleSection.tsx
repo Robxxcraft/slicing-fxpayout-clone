@@ -162,7 +162,7 @@ const ScheduleSection = ({
                         getLocalizedPath("#", i18n.language) : getLocalizedPath(`/schedule/${row.schedule}`, i18n.language)} 
                       className="flex items-center justify-center gap-1 text-primary text-nowrap">
                       <span>{t("claimrebatepage:schedule.card.viewSchedule")}</span>
-                      <FaArrowRight size={18} className="rtl:rotate-180" />
+                      <FaArrowRight size={18} className="rtl:scale-x-[-1]" />
                     </Link>
                   </Table.Cell>
                 </Table.Row>

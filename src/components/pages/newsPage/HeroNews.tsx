@@ -30,7 +30,7 @@ const HeroNews = () => {
               key={idx}
               className="relative w-full h-full rounded-xl overflow-hidden"
             >
-              <div className="absolute px-3 2xl:px-6 py-1 2xl:py-2.5 w-fit flex items-center gap-2.5 border-white bg-primary rounded-full top-5 left-5">
+              <div className="absolute px-3 2xl:px-6 py-1 2xl:py-2.5 w-fit flex items-center gap-2.5 border-white bg-primary rounded-full top-5 start-5">
                 <img src="/star-circle-icon.svg" alt="Star Icon"
                   loading="lazy"
                   className="scale-80 2xl:scale-100" />
@@ -67,9 +67,9 @@ const HeroNews = () => {
               <p className="mb-2 md:mb-4 text-base md:text-xl lg:text-lg 2xl:text-xl leading-[163%] line-clamp-3">
                 {selectedNews.excerpt}
               </p>
-              <Link to={selectedNews.url} className="flex items-center gap-1 text-base md:text-xl lg:text-lg 2xl:text-xl font-medium text-primary hover:underline">
+              <Link to={selectedNews.url}  className="flex items-center gap-1 text-base md:text-xl lg:text-lg 2xl:text-xl font-medium text-primary hover:underline">
                 <span>{t("text.readMore")}</span>
-                <FaChevronRight />
+                <FaChevronRight className="rtl:scale-x-[-1]" />
               </Link>
             </div>
           </div>

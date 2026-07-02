@@ -159,7 +159,7 @@ export const hfmDetail: BrokerStruc = {
       { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
       { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
       { key: "other", username: `${platformsKey}.hfm_mobile`, icon: "hfm.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "hfm.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "hfm.webp" },
     ]
   },
   rebateProgram: [

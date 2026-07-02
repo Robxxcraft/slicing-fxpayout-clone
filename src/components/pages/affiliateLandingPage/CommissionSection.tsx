@@ -166,7 +166,7 @@ const CommissionSection = () => {
           <p className="text-base md:text-xl font-medium">
             {t(`${key}.potential_commission`)}
           </p>
-          <p className="my-3 text-[32px] md:text-[48px] 2xl:text-[64px] font-bold">
+          <p dir="ltr" className="my-3 text-[32px] md:text-[48px] 2xl:text-[64px] font-bold">
             ${formattingEmptyCurrency(estimatedCommission, 0)}
             <span className="text-base md:text-2xl 2xl:text-[32px] font-semibold">
               / {t("text.month")}

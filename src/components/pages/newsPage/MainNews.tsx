@@ -107,7 +107,7 @@ const MainNews = () => {
                     to="#" 
                     className="flex items-center justify-center gap-2 text-lg! lg:text-base! 2xl:text-xl! text-primary text-nowrap hover:underline">
                     <span>{row.count}</span>
-                    <FaArrowRight size={16} />
+                    <FaArrowRight size={16} className="rtl:scale-x-[-1]" />
                   </Link>
                 </Table.Cell>
               </Table.Row>

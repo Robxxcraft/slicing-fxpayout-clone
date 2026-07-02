@@ -27,7 +27,7 @@ const Spread = ({ tradingSpread }: { tradingSpread: SpreadStructure[] }) => {
               {item.spreads.map((spread, i) => (
                 <div key={i} className="py-3 flex gap-4 justify-between w-full border-b border-[#828282]/50">
                   <ContentHead smText="text-xl">{t(spread.accountType)}</ContentHead>
-                  <span className='text-end'> 
+                  <span className='text-end' dir="ltr"> 
                     <ContentBody smText="text-xl">{t(spread.spread)}</ContentBody>
                   </span>
                 </div>

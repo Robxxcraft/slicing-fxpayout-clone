@@ -136,7 +136,7 @@ export const zfxDetail: BrokerStruc = {
     platforms: [
       { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
       { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "zfx.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "zfx.webp" },
       { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "zfx.webp" },
     ]
   },

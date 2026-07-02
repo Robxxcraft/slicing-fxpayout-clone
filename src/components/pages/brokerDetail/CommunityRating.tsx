@@ -34,7 +34,7 @@ const CommunityRating = ({ brokerId, name, profileImage, ranking, communityRatin
             <p className="text-2xl 2xl:text-[32px] leading-9 font-semibold">
               {t("brokerdetailpage:overallScore")}
             </p>
-            <div className="mt-1 lg:mt-8 2xl:mt-10 flex items-end">
+            <div dir="ltr" className="mt-1 lg:mt-8 2xl:mt-10 flex items-end">
               <p className="text-[40px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
                 {communityRating.score}
               </p>

@@ -142,7 +142,7 @@ export const pepperstoneDetail: BrokerStruc = {
       { key: "mt5", username:`${platformsKey}.mt5`, icon: "meta-trader.webp" },
       { key: "c_trader", username: `${platformsKey}.c_trader`, icon: "c-trader.webp" },
       { key: "trading_view", username: `${platformsKey}.trading_view`, icon: "trading-view.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "pepperstone.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "pepperstone.webp" },
       { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "pepperstone.webp" },
     ]
   },
