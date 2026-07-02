@@ -60,7 +60,7 @@ const Navbar = ({
 
   return (
     <nav
-      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
+      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between gap-3 bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:
@@ -70,7 +70,7 @@ const Navbar = ({
               : "rgba(65,96,255,0)"
             : "rgba(65,96,255,1)",
       }}>
-      <Link to={`${getLocalizedPath("/", i18n.language)}`} className="flex gap-2 items-center">
+      <Link dir="ltr" to={`${getLocalizedPath("/", i18n.language)}`} className="flex gap-2 items-center">
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
@@ -172,7 +172,7 @@ const Navbar = ({
           left: openMenu ? "0" : "-100%",
         }}>
         <div className="mb-6 flex items-center justify-between">
-          <div className="flex gap-2 items-center">
+          <div dir="ltr" className="flex gap-2 items-center">
             <img
               src="/fxpayout-white.svg"
               alt="logo fx payout"

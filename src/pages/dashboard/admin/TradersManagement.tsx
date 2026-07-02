@@ -1,5 +1,3 @@
-// TODO: TIER DISPLAY
-
 import { useCallback, useEffect, useState, type ChangeEvent } from "react";
 import { toast } from "react-toastify";
 import { getCoreRowModel, useReactTable, type PaginationState, type RowSelectionState, type SortingState } from "@tanstack/react-table";

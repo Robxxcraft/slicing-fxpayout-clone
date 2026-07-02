@@ -61,7 +61,7 @@ const ProblemSection = () => {
             </p>
           </div>
           <div className="w-fit">
-            <div className="flex gap-2 items-center">
+            <div dir="ltr" className="flex gap-2 items-center">
               <img
                 src="/fxpayout-blue.svg"
                 alt="logo fx payout"

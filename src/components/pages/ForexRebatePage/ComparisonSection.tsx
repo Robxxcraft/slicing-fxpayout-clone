@@ -86,7 +86,7 @@ const ComparisonSection = () => {
         <div className="p-8"></div>
 
         <div className="px-8 py-10 flex justify-center bg-my-light-blue border-x-4 border-t-4 border-primary rounded-t-[20px] shadow-[6px_22px_205.8px_0] shadow-primary/22">
-          <div className="flex flex-col md:flex-row gap-2 items-center">
+          <div dir="ltr" className="flex flex-col md:flex-row gap-2 items-center">
             <img
               src="/fxpayout-blue.svg"
               alt="logo fx payout"

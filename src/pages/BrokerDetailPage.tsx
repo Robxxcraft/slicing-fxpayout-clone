@@ -1,5 +1,3 @@
-// TODO: Broker Detail Page Translate AR UI
-
 import Footer from "@/components/Footer";
 import CommunityRating from "@/components/pages/brokerDetail/CommunityRating";
 import CtaBroker from "@/components/pages/brokerDetail/CtaBroker";

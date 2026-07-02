@@ -13,7 +13,7 @@ const BenefitAffiliateSection = () => {
           <div className="w-1/2 lg:w-fit">
             {/* LOGO */}
             <div className="px-5 md:px-10 py-3 md:py-6 bg-white w-fit rounded-md md:rounded-xl shadow-[6px_22px_55.5px_0_rgba(0,0,0,0.18)]">
-              <div className="flex gap-2 items-center">
+              <div dir="ltr" className="flex gap-2 items-center">
                 <img
                   src="/fxpayout-blue.svg"
                   alt="logo fx payout"

@@ -24,7 +24,7 @@ const WhatRebateForex = () => {
         </div>
 
         <div className="p-4 md:p-10 xl:p-6 2xl:p-10 border border-primary bg-[#F6F9FF] rounded-3xl md:rounded-[40px]">
-          <div className="py-3 md:py-6 w-full flex gap-2 justify-center items-center bg-linear-to-t from-dark-primary to-primary rounded-[20px] md:rounded-3xl">
+          <div dir="ltr" className="py-3 md:py-6 w-full flex gap-2 justify-center items-center bg-linear-to-t from-dark-primary to-primary rounded-[20px] md:rounded-3xl">
             <img
               src="/fxpayout-white.svg"
               alt="logo fx payout"

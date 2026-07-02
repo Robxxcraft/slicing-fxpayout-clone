@@ -34,7 +34,7 @@ const BenefitSection = () => {
 
         <div className="px-6 md:px-8 lg:px-10 py-6 md:py-10 col-span-1 xl:col-span-8 bg-white border border-primary rounded-[40px]">
           <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between gap-2 md:gap-10">
-            <div className="flex gap-2 items-center">
+            <div dir="ltr" className="flex gap-2 items-center">
               <img
                 src="/fxpayout-blue.svg"
                 alt="logo fx payout"

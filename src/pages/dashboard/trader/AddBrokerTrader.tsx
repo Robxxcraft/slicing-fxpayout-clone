@@ -120,7 +120,7 @@ const AddBrokerTrader = () => {
             >
               <FaChevronLeft className="mr-px text-primary text-base 2xl:text-2xl" />
             </Link>
-            <Link to={getLocalizedPath("", i18n.language)} className="flex gap-2 items-center cursor-pointer">
+            <Link dir="ltr" to={getLocalizedPath("", i18n.language)} className="flex gap-2 items-center cursor-pointer">
               <img
                 src="/fxpayout-blue.svg"
                 alt="logo fx payout"
