@@ -59,7 +59,7 @@ const ProfileBroker = ({ brokerId, profile }: { brokerId: string; profile: Profi
                 <div className="w-1/2 md:w-fit">
                   <ContentHead>{t(objectTitle[key])}</ContentHead>
                 </div>
-                <div className="w-1/2 md:w-fit lg:w-[70%] text-right">
+                <div className="w-1/2 md:w-fit lg:w-[70%] text-end">
                 <ContentBody>
                 {isArray(profile[key]) ? profile[key].map((item) => t(item)).join(", ") :
                   key === "ranking" ? 
@@ -88,7 +88,7 @@ const ProfileBroker = ({ brokerId, profile }: { brokerId: string; profile: Profi
                 <div>
                   <ContentHead>{item.name}</ContentHead>
                 </div>
-                <div className="text-right">
+                <div className="text-end">
                   <ContentBody>{t(item.country)}</ContentBody>
                 </div>
               </div>

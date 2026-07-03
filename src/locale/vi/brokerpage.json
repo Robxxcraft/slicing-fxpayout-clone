@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Danh Sách Sàn Đối Tác và Chi Tiết | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "header": {
+        "title": "Sàn Đối Tác và Chi Tiết",
+        "paragraph": "Các sàn được tuyển chọn với khớp lệnh tốt nhất và mức rebate lên đến 90%. So sánh chi tiết sản phẩm và chọn sàn phù hợp nhất với chiến lược giao dịch của bạn.",
+        "tag": "DANH SÁCH SÀN",
+        "searchPlaceholder": "Tìm sàn tại đây",
+        "total_brokers": "Số Lượng Sàn",
+        "filter_brokers": "Lọc Sàn",
+        "sort_by": "Sắp Xếp Theo"
+    },
+    "card": {
+        "rebatePerInstrument": "Rebate Theo Sản Phẩm",
+        "instrument": "Sản Phẩm",
+        "rebate": "Rebate",
+        "register": "Đăng Ký Sàn",
+        "detail": "Xem Thêm"
+    },
+    "notify": {
+        "title": "Minh Bạch Rebate",
+        "paragraph": "Chúng tôi lưu trữ lịch sử hoa hồng & rebate mà người dùng có thể kiểm tra. (Demo: dữ liệu được lưu trên trình duyệt)."
+    },
+    "ctaregisterbroker": {
+        "title": "Tham Gia Nền Tảng Của Chúng Tôi",
+        "paragraph": "Sàn của bạn chưa có mặt? Hiển thị hồ sơ sàn và tiếp cận nhiều trader hơn thông qua hệ sinh thái của chúng tôi.",
+        "button": "Đăng Ký Sàn"
+    }
+}

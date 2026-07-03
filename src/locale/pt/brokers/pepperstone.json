@@ -1,0 +1,56 @@
+{
+  "description": "Corretora global com execução rápida, spread baixo e condições de trading profissionais. A Pepperstone é reconhecida como uma corretora favorita para scalping, EA e traders ativos, com acesso a Forex, Ouro, Índices, Energia, Ações CFD e Crypto CFD. Conta com plataformas de trading modernas e processos de depósito e saque rápidos e transparentes.",
+  "specification": {
+    "leverage": "Até 1:500",
+    "spread": "A partir de 0.0 pips (Razor)"
+  },
+  "profile": {
+    "slogan": "Award-Winning Global Forex Broker"
+  },
+  "summary": {
+    "spread": "A partir de 0.0 pips (Razor)",
+    "commission": "Razor: $6–$7 por lote (round-turn)",
+    "leverage": "Até 1:500",
+    "execution": "Rápida",
+    "depositWithdrawal": "Rápido e com diversos métodos"
+  },
+  "accountTypes": [
+    ["Spread a partir de ±1.0 pips", "Sem comissão"],
+    ["Spread a partir de 0.0 pips", "Comissão de $3.50 por lado (±$7 round-turn)"],
+    ["Condições de trading profissionais", "Alavancagem flexível"]
+  ],
+  "keyAdvantages": ["Spread ECN muito baixo", "Execução de ordens rápida", "Regulação de alto nível (FCA, ASIC)", "Suporte a MT4, MT5, cTrader, TradingView", "Amigável a scalping e EA", "Sem taxa de inatividade/taxa de conta"],
+  "advantages": ["Spread baixo e execução estável", "Regulação forte e internacional", "Plataforma completa (MT4, MT5, cTrader, TradingView)"],
+  "disadvantages": ["Instrumentos não-CFD reais limitados", "Suporte 24/7 não disponível para todas as regiões", "A alavancagem pode ser limitada dependendo da localização"],
+  "classifications": [
+    "Velocidade de Saque (WD)",
+    "Estabilidade do Servidor",
+    "Customer Support"
+  ],
+  "faqs": [
+    {
+      "question": "A Pepperstone é segura?",
+      "answer": "Sim. É supervisionada por FCA, ASIC, DFSA, BaFin, CySEC e SCB."
+    },
+    {
+      "question": "Existe depósito mínimo?",
+      "answer": "Não há depósito mínimo oficial, mas recomenda-se um depósito inicial de ~$200."
+    },
+    {
+      "question": "É indicada para scalping e EA?",
+      "answer": "Sim, é muito indicada, especialmente na conta Razor."
+    },
+    {
+      "question": "Qual é o spread mais baixo?",
+      "answer": "A partir de 0.0 pips na conta Razor."
+    },
+    {
+      "question": "Qual é a alavancagem máxima?",
+      "answer": "Até 1:500, dependendo do regulador e da região."
+    },
+    {
+      "question": "Qual é a taxa de depósito/saque?",
+      "answer": "A maioria dos métodos: $0."
+    }
+  ]
+}

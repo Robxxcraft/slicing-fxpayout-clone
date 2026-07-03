@@ -15,13 +15,13 @@ const HeroHome = () => {
   return (
     <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-[120px] lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between">
       {/* BACKGROUND ORNAMENT */}
-      <div className="absolute -top-[90px] -left-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
+      <div className="absolute -top-[90px] -start-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
       <img
         onContextMenu={() => false}
         src="/heroCircle.png"
         alt="hero circle"
         fetchPriority="high"
-        className="z-1 absolute bottom-0 right-0 w-[450px] opacity-70"
+        className="z-1 absolute bottom-0 end-0 w-[450px] rtl:scale-x-[-1] opacity-70"
       />
 
       {/* MAIN HERO */}

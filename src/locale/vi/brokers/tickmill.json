@@ -1,0 +1,52 @@
+{
+  "description": "Tickmill là sàn forex và CFD toàn cầu được thành lập từ năm 2014, được biết đến nhờ chi phí giao dịch thấp (spread mỏng & hoa hồng thấp), khớp lệnh nhanh cùng việc hỗ trợ các nền tảng phổ biến như MetaTrader 4 và MetaTrader 5. Tickmill phục vụ trader tại nhiều quốc gia với trọng tâm là trải nghiệm giao dịch chuyên nghiệp và hiệu quả.",
+  "specification": {
+    "leverage": "Lên đến 1:1000 (tùy khu vực)",
+    "spread": "Từ 0.0 – 0.3 pips (Pro/VIP)"
+  },
+  "profile": {
+    "model": "ECN trading"
+  },
+  "summary": {
+    "spread": "Từ 0.0 – 0.3 pips (Pro/VIP)",
+    "commission": "±$3 mỗi lot mỗi chiều (tài khoản Pro / Ultra)",
+    "leverage": "Lên đến 1:1000 (tùy khu vực)",
+    "execution": "Nhanh",
+    "depositWithdrawal": "Chuyển khoản ngân hàng, thẻ ghi nợ/tín dụng, ví điện tử"
+  },
+  "accountTypes": [
+    ["Nạp tối thiểu: $100", "Spread từ ±1.6 pips", "Không hoa hồng"],
+    ["Nạp tối thiểu: $100", "Spread từ 0.0 – 0.3 pips", "Hoa hồng : $3 mỗi lot mỗi chiều"],
+    ["Nạp tối thiểu cao hơn", "Spread cực mỏng", "Hoa hồng : ±$2.5 – $3 mỗi lot mỗi chiều"]
+  ],
+  "keyAdvantages": ["Spread cực thấp (ECN/Raw)", "Hoa hồng cạnh tranh", "Khớp lệnh nhanh & ổn định", "Quy định chặt chẽ & toàn cầu", "Có tài khoản miễn phí swap (Islamic)", "Hỗ trợ MT4, MT5, TradingView"],
+  "advantages": ["Spread ECN cực thấp", "Hoa hồng cạnh tranh", "Khớp lệnh nhanh & ổn định", "Quy định chặt chẽ tại nhiều khu vực", "Nền tảng giao dịch đầy đủ"],
+  "disadvantages": ["Nạp tối thiểu $100 tương đối cao hơn so với các sàn khác", "Hoa hồng áp dụng cho tài khoản Pro/VIP", "Đòn bẩy có thể bị giới hạn bởi cơ quan quản lý"],
+  "classifications": [
+    "Khớp Lệnh & Spread",
+    "Hỗ Trợ Khách Hàng",
+    "Nạp / Rút"
+  ],
+  "faqs": [
+    {
+      "question": "Tickmill có an toàn không?",
+      "answer": "Có — được quản lý bởi FCA, CySEC, FSCA & FSA."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Mức nạp tối thiểu là $100."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, Web & Mobile."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:1000 tùy cơ quan quản lý."
+    },
+    {
+      "question": "Có tài khoản ECN không?",
+      "answer": "Có — Pro & VIP với spread thấp."
+    }
+  ]
+}

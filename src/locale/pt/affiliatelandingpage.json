@@ -1,0 +1,193 @@
+{
+    "helmet": {
+        "title": "",
+        "description": ""
+    },
+    "herosection": {
+        "title": "Ganhe Comissões com o Trading dos Seus Indicados",
+        "paragraph": "Receba ganhos recorrentes sempre que seus indicados operarem através da FXPayout.",
+        "badge": "Programa de Afiliados",
+        "benefits": ["Sem Operar", "Sem Gerenciar Recursos"],
+        "button": "Cadastre-se Agora e Comece a Ganhar",
+        "features": [
+            {
+                "title": "Corretoras Disponíveis"
+            },
+            {
+                "title": "Traders Já Cadastrados"
+            },
+            {
+                "title": "Milhares de Dólares Pagos"
+            }
+        ],
+        "small_card": {
+            "title": "Comissão Total"
+        }
+    },
+    "commissionsection": {
+        "title": "Veja Quanto Você Pode Ganhar",
+        "paragraph": "Imagine o seu potencial de ganhos com cada indicado ativo no trading.",
+        "badge": "POTENCIAL DE COMISSÃO",
+        "subtitle": "Calculadora de Comissão de Afiliado",
+        "subparagraph": "Ajuste o número de indicados para ver a estimativa dos seus ganhos mensais.",
+        "total_refferal": "Número de Traders Indicados :",
+        "benefits": ["Sem Operar", "Ganhos Recorrentes Todo Mês", "Sem Gerenciar Recursos"],
+        "potential_commission": "Seu Potencial de Comissão",
+        "info": "*Potencial de ganhos com base na atividade de trading dos indicados."
+    },
+    "benefitaffiliatesection": {
+        "title": "Ganhe Comissões com a Atividade de Trading dos Seus Indicados",
+        "paragraphs": [
+            "A FXPayout permite que você ganhe comissões com a atividade de trading dos seus indicados.",
+            "Basta compartilhar o seu link de afiliado, e cada operação dos seus indicados gera comissão para você — sem precisar operar ou gerenciar recursos."
+        ],
+        "badge": "PROGRAMA DE AFILIADOS",
+        "small_card": {
+            "title": "Total de Traders Afiliados"
+        },
+        "preview_chart": {
+            "title": "Comissão Total Diária"
+        }
+    },
+    "revenuesection": {
+        "title": "Cada indicado que você trouxer fica vinculado permanentemente à sua conta. ",
+        "paragraph": "Enquanto eles estiverem ativos no trading, você continua recebendo comissões — não apenas uma vez, mas de forma recorrente todo mês. Um único indicado pode se tornar uma fonte de renda de longo prazo.",
+        "badge": "RENDA RECORRENTE",
+        "revenues": [
+            {
+                "title": "Ganhos de Longo Prazo",
+                "paragraph": "Enquanto o seu indicado estiver operando, você continua recebendo a sua parte da comissão. Não há prazo de validade para os seus indicados."
+            },
+            {
+                "title": "Comissão Recorrente Todo Mês",
+                "paragraph": "Cada operação da sua rede é convertida em comissão que você pode sacar a qualquer momento. Essa comissão é gerada todo mês enquanto a sua afiliação permanecer ativa."
+            }
+        ]
+    },
+    "avilablebrokersection": {
+        "title": "Seus indicados podem escolher livremente entre as corretoras disponíveis na FXPayout",
+        "paragraph": "Seja qual for a corretora que usarem, cada atividade de trading gera comissão para você."
+    },
+    "commissionsystemsection": {
+        "title": "Comece a Ganhar Comissões em 5 Passos Simples",
+        "paragraph": "Sempre que seus indicados operarem, você recebe uma parte da comissão da FXPayout. Essa comissão vem do sistema de rebate e não reduz os lucros do trader. Tudo funciona de forma automática, sem necessidade de gestão adicional.",
+        "badge": "SISTEMA DE COMISSÃO",
+        "commission_broker": "Comissão da Corretora",
+        "example_calculation": "Exemplo de Cálculo da Divisão de Comissão",
+        "transfer_rebate": "TRANSFERÊNCIA DO REBATE",
+        "fxpayout_distribute_rebate": "FXPAYOUT DISTRIBUI O REBATE",
+        "rebate_trader": "REBATE PARA O TRADER",
+        "internal_earn": "PARTE DA FXPAYOUT",
+        "fxpayout_distribute": "FXPayout Distribui",
+        "distribution_commission": "DIVISÃO DE COMISSÃO",
+        "commission_50_percent": "Se a comissão de afiliado for 50%",
+        "affiliate_commission": "Comissão de Afiliado",
+        "card_simulation": {
+            "title": "Simulação do Potencial de Comissão com 10 Indicados",
+            "paragraph": "Com apenas 10 indicados ativos que operam regularmente, você pode alcançar a liberdade financeira.",
+            "benefits": [
+                "Rebate médio por usuário: $100 / mês",
+                "Rebate total de 10 indicados: $1,000 / mês",
+                "Sua comissão (50%)"
+            ],
+            "info": "*Você só precisa de 10 traders ativos para alcançar essa meta."
+        }
+    },
+    "whocanjoinsection": {
+        "title": "Quem Pode Participar do Programa de Afiliados da FXPayout?",
+        "paragraph": "Qualquer pessoa que tenha uma rede ou audiência no mundo do trading pode aproveitar este programa de afiliados.",
+        "badge": "PARA QUEM É ESTE PROGRAMA ?",
+        "users": [
+            {
+                "title": "Trader",
+                "description": "Trader ativo que tem relacionamento ou rede com outros traders."
+            },
+            {
+                "title": "Criador de Conteúdo",
+                "description": "Criador de conteúdo que fala sobre trading, forex ou finanças."
+            },
+            {
+                "title": "Comunidade de Trading",
+                "description": "Dono ou administrador de comunidades de traders, online ou offline."
+            },
+            {
+                "title": "Afiliado de Marketing",
+                "description": "Pessoa acostumada a promover produtos por meio de marketing digital."
+            }
+        ],
+        "info": "*e qualquer pessoa que queira ter uma renda extra"
+    },
+    "howaffiliateworks": {
+        "title": "Comece a Ganhar Comissões em 5 Passos Simples",
+        "paragraph": "Cadastre-se, compartilhe o seu link de indicação e ganhe comissões com cada atividade de trading dos traders que você indicar.",
+        "badge": "COMO FUNCIONA O PROGRAMA DE AFILIADOS",
+        "workflows": [
+            {
+                "title": "cadastro",
+                "subtitle": "Cadastre-se como afiliado",
+                "paragraph":
+                "Crie uma conta e participe do programa de afiliados da FXPayout."
+            },
+            {
+                "title": "gere o link",
+                "subtitle": "Obtenha o seu link de indicação",
+                "paragraph":
+                "Receba o seu link exclusivo para começar a convidar traders."
+            },
+            {
+                "title": "compartilhe",
+                "subtitle": "Compartilhe o link com traders",
+                "paragraph":
+                "Divulgue o seu link para que traders se cadastrem"
+            },
+            {
+                "title": "indicado opera",
+                "subtitle": "Seus indicados começam a operar",
+                "paragraph":
+                "Os traders que você indicou começam a realizar operações"
+            },
+            {
+                "title": "ganhe comissão",
+                "subtitle": "Você recebe a comissão",
+                "paragraph":
+                "Você ganha comissões com cada indicado que se cadastra."
+            }
+        ]
+    },
+    "securitysection": {
+        "info": "Todas as atividades de trading são realizadas diretamente através de corretoras oficiais."
+    },
+    "faqsection": {
+        "title": "Perguntas Frequentes sobre Afiliados da FXPayout",
+        "paragraph": "Encontre respostas para as principais dúvidas sobre o programa de Afiliados da FXPayout",
+        "faqs": [
+            {
+                "question": "Preciso fazer trading?",
+                "answer": "Não. Você não precisa operar. Basta compartilhar o seu link de indicação, e a comissão será gerada a partir da atividade de trading dos seus indicados."
+            },
+            {
+                "question": "Preciso gerenciar recursos?",
+                "answer": "Não. Você não precisa gerenciar nenhum recurso. Todas as atividades de trading são realizadas diretamente pelo trader na corretora."
+            },
+            {
+                "question": "Há algum desconto sobre o rebate do trader?",
+                "answer": "Não há nenhum desconto adicional para você. A comissão que você recebe vem da divisão de comissão da corretora (Introducing Broker), sem afetar os resultados de trading do trader."
+            },
+            {
+                "question": "Posso usar mais de uma corretora?",
+                "answer": "Sim, você pode usar e promover mais de uma corretora disponível na FXPayout para alcançar mais traders."
+            }
+        ]
+    },
+    "ctasection": {
+        "title": "Comece a Ganhar Comissões com os Seus Indicados Hoje Mesmo",
+        "paragraph": "Cadastre-se agora e comece a construir uma renda de longo prazo com a FXPayout."
+    },
+    "component": {
+        "big_card": {
+            "username": "John Doe",
+            "commission": "Total de Comissões Geradas",
+            "info": "Comissões da atividade de trading dos traders que você indicou."
+        }
+    }
+}

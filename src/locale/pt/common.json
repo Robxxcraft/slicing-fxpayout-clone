@@ -1,0 +1,95 @@
+{
+    "text": {
+        "select": "Selecionar",
+        "copy": "Copiar",
+        "next": "Próximo",
+        "tableOfContents": "Índice",
+        "previous": "Anterior",
+        "advantage": "Vantagens",
+        "disadvantage": "Desvantagens",
+        "close": "Fechar",
+        "readMore": "Ler mais",
+        "seeAll": "Ver todos",
+        "month": "mês",
+        "title_month": "Mês",
+        "from_weeks_ago": "em relação à semana passada",
+        "title_traders": "Traders",
+        "title_others": "Outros",
+        "title_all": "Todos",
+        "title_local": "Local",
+        "title_international": "Internacional",
+        "title_newest": "Mais recentes",
+        "title_recommendation": "Recomendados",
+        "title_name": "Nome",
+        "title_login": "Entrar",
+        "title_register": "Cadastrar",
+        "filter_broker": "Filtrar Corretoras",
+        "title_platform": "Plataforma",
+        "title_trading": "Trading",
+        "minimum_deposit": "Depósito Mínimo",
+        "spread_broker": "Spread da Corretora",
+        "reset_filter": "Limpar Filtro",
+        "range_rebate": "Faixa de Rebate",
+        "highest_rebate": "Maior Rebate",
+        "lowest_rebate": "Menor Rebate",
+        "title_low": "Baixo",
+        "title_medium": "Médio",
+        "title_high": "Alto",
+        "title_apply": "Aplicar",
+        "rebate_till": "Rebate de Até"
+    },
+    "button": {
+        "registerNow": "Cadastre-se Agora",
+        "calculateRebate": "Calcular Rebate",
+        "visitWebsite": "Visitar o Site",
+        "join_now": "Junte-se Agora",
+        "see_list_broker": "Ver Lista de Corretoras",
+        "try_now": "Experimente Agora"
+    },
+    "cta": {
+        "title": "Pronto para aumentar a eficiência dos lucros do seu trading?",
+        "paragraph": "Cadastre-se agora e comece a receber rebate de até 90%."
+    },
+    "cta_trader": {
+        "title": "Comece a Operar com Mais Eficiência Hoje Mesmo",
+        "paragraph": "Cadastre-se agora e receba rebate de cada operação do seu trading. Sem custos adicionais. Sem riscos adicionais."
+    },
+    "methods": {
+        "bank_transfer": "Transferência Bancária",
+        "bank_transfer_usd_idr": "Transferência Bancária (USD/IDR)",
+        "crypto": "Crypto",
+        "debit_credit_card": "Cartão de Débito/Crédito",
+        "e_wallet": "Carteira Digital",
+        "indonesian_local_va": "VA Local (ID)",
+        "indonesian_e_wallet": "Carteira Digital Indonésia",
+        "local_bank": "Banco Local",
+        "local_transfer": "Transferência Local",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "Início",
+        "broker": "Corretoras",
+        "news": "Notícias",
+        "calculator": "Calculadora",
+        "claimRebate": "Resgatar Rebate",
+        "service": "Serviços",
+        "affiliate": "Afiliados",
+        "subNav": {
+            "definition": "O que é Rebate Forex?",
+            "howRebate": "Como Receber Rebate Forex", 
+            "howWorks": "Como Funciona?", 
+            "payment": "Sistema de Pagamento do Rebate", 
+            "schedule": "Cronograma de Rebate",
+            "validation": "Validação de Conta",
+            "transfer": "Transferência de Conta",   
+            "forex": "Forex",
+            "vipRebate": "Rebate VIP"      
+        }
+    },
+    "footer": {
+        "paragraph": "Devolvemos até 90% da comissão de IB ao trader. Processo rápido, seguro e transparente, sem alterar o spread ou as suas condições de trading.",
+        "quickLink": "Links Rápidos",
+        "contact": "Fale Conosco"
+    }
+}

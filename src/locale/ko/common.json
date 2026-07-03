@@ -1,0 +1,95 @@
+{
+    "text": {
+        "select": "선택",
+        "copy": "복사",
+        "next": "다음",
+        "tableOfContents": "목차",
+        "previous": "이전",
+        "advantage": "장점",
+        "disadvantage": "단점",
+        "close": "닫기",
+        "readMore": "자세히 보기",
+        "seeAll": "전체 보기",
+        "month": "월",
+        "title_month": "월",
+        "from_weeks_ago": "지난주 대비",
+        "title_traders": "트레이더",
+        "title_others": "기타",
+        "title_all": "전체",
+        "title_local": "로컬",
+        "title_international": "글로벌",
+        "title_newest": "최신순",
+        "title_recommendation": "추천순",
+        "title_name": "이름순",
+        "title_login": "로그인",
+        "title_register": "회원가입",
+        "filter_broker": "브로커 필터",
+        "title_platform": "플랫폼",
+        "title_trading": "트레이딩",
+        "minimum_deposit": "최소 입금액",
+        "spread_broker": "브로커 스프레드",
+        "reset_filter": "필터 초기화",
+        "range_rebate": "리베이트 범위",
+        "highest_rebate": "리베이트 높은순",
+        "lowest_rebate": "리베이트 낮은순",
+        "title_low": "낮음",
+        "title_medium": "보통",
+        "title_high": "높음",
+        "title_apply": "적용",
+        "rebate_till": "리베이트 최대"
+    },
+    "button": {
+        "registerNow": "지금 가입하기",
+        "calculateRebate": "리베이트 계산하기",
+        "visitWebsite": "웹사이트 방문하기",
+        "join_now": "지금 합류하기",
+        "see_list_broker": "브로커 목록 보기",
+        "try_now": "지금 사용해보기"
+    },
+    "cta": {
+        "title": "트레이딩 수익 효율을 높일 준비가 되셨나요?",
+        "paragraph": "지금 가입하고 최대 90% 리베이트를 받아보세요."
+    },
+    "cta_trader": {
+        "title": "오늘부터 더 효율적으로 트레이딩하세요",
+        "paragraph": "지금 가입하고 모든 트레이딩 거래에서 리베이트를 받으세요. 추가 비용 없이, 추가 리스크 없이."
+    },
+    "methods": {
+        "bank_transfer": "계좌 이체",
+        "bank_transfer_usd_idr": "계좌 이체 (USD/IDR)",
+        "crypto": "암호화폐",
+        "debit_credit_card": "체크/신용카드",
+        "e_wallet": "전자지갑",
+        "indonesian_local_va": "로컬 VA (ID)",
+        "indonesian_e_wallet": "인도네시아 전자지갑",
+        "local_bank": "로컬 은행",
+        "local_transfer": "로컬 이체",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "홈",
+        "broker": "브로커",
+        "news": "뉴스",
+        "calculator": "계산기",
+        "claimRebate": "리베이트 신청",
+        "service": "서비스",
+        "affiliate": "제휴",
+        "subNav": {
+            "definition": "포렉스 리베이트란?",
+            "howRebate": "포렉스 리베이트 받는 방법",
+            "howWorks": "어떻게 작동하나요?",
+            "payment": "리베이트 지급 시스템",
+            "schedule": "리베이트 지급 일정",
+            "validation": "계좌 인증",
+            "transfer": "계좌 이전",
+            "forex": "포렉스",
+            "vipRebate": "VIP 리베이트"
+        }
+    },
+    "footer": {
+        "paragraph": "저희는 IB 커미션의 최대 90%를 트레이더에게 돌려드립니다. 스프레드나 트레이딩 환경의 변경 없이 빠르고, 안전하며, 투명하게 진행됩니다.",
+        "quickLink": "바로가기",
+        "contact": "문의하기"
+    }
+}

@@ -1,0 +1,230 @@
+{
+    "helmet": {
+        "title": "Rebate {{brokerName}} hasta {{brokerEstimate}} por Lote | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "navbar": {
+        "profil": "Perfil",
+        "summary": "Resumen",
+        "accountType": "Tipos de Cuenta", 
+        "spreadCommission": "Spread y Comisión",
+        "advantage": "Ventajas",
+        "platform": "Plataforma", 
+        "depositWithdraw": "Depósito y Retiro",
+        "advantagesDisadvantages": "Ventajas y Desventajas", 
+        "rating": "Valoración",
+        "faq": "FAQ"
+    },
+    "back": "Volver al Listado de Brókers",
+    "overallScore": "Puntuación Global",
+    "header": {
+        "viewRating": "Ver Opiniones de la Comunidad",
+        "detailHeaders": ["Año de Fundación", "Depósito Mín.", "Apalancamiento", "Spread"]
+    },
+    "profile": {
+        "title": "Perfil del Bróker",
+        "subtitle": "Información oficial sobre la identidad y la regulación del bróker.",
+        "cards": [
+            {
+                "title": "Información Principal",
+                "headers": {
+                    "brokerName": "Nombre del Bróker",
+                    "slogan": "Eslogan",
+                    "entity": "Entidad",
+                    "group": "Grupo",
+                    "ranking": "Tier",
+                    "yearFounded": "Año de Fundación",
+                    "brokerCategory": "Tipo de Bróker",
+                    "totalUser": "Total de Usuarios",
+                    "model": "Modelo",
+                    "totalInstrument": "Número de Instrumentos"
+                }
+            },
+            {
+                "title": "Regulación Principal"
+            }
+        ]
+    },
+    "summary": {
+        "title": "Resumen Rápido (Quick Facts)",
+        "subtitle": "Información clave del bróker para una visión rápida",
+        "cardHeaders": {
+            "minDeposit": "Depósito Mín.", 
+            "accountType": "Tipos de Cuenta", 
+            "spread": "Spread", 
+            "commission": "Comisión", 
+            "leverage": "Apalancamiento", 
+            "execution": "Ejecución de Órdenes", 
+            "instrument": "Instrumentos", 
+            "depositWithdrawal": "Depósito y Retiro"
+        }
+    },
+    "accountType": {
+        "title": "Tipos de Cuenta",
+        "subtitle": "Opciones de cuenta para distintas necesidades y estilos de trading.",
+        "profit": "Beneficio"
+    },
+    "spread": {
+        "title": "Spread",
+        "subtitle": "Comparativa de spreads en los principales instrumentos del bróker.",
+        "accountType": "Tipo de Cuenta"
+    },
+    "advantage": {
+        "title": "Ventajas Principales",
+        "subtitle": "Características destacadas que aportan valor adicional al bróker."
+    },
+    "platform": {
+        "title": "Plataformas de Trading Compatibles",
+        "subtitle": "Listado de plataformas disponibles para operar."
+    },
+    "depositWithdraw": {
+        "title": "Depósito y Retiro",
+        "subtitle": "Información sobre métodos y tiempos de procesamiento de las transacciones.",
+        "tableHeaders": ["Método", "Tiempo de Depósito", "Tiempo de Retiro", "Comisión"]
+    },
+    "rebateProgram": {
+        "title": "Programa de Rebate (Estimado)",
+        "subtitle": "Estimación del rebate que el trader puede obtener a través de tu programa de rebate.",
+        "button": "Calculadora de Rebate",
+        "info": "El rebate puede ser mayor para cuentas ECN y volúmenes de trading elevados. Los valores anteriores son estimaciones y pueden ajustarse."
+    },
+    "advantagesDisadvantages": {
+        "title": "Ventajas y Desventajas",
+        "subtitle": "Resumen de los puntos positivos y los aspectos a tener en cuenta."
+    },
+    "rating": {
+        "title": "Valoración de la Comunidad",
+        "subtitle": "Valoraciones y opiniones de los usuarios del bróker.",
+        "summaryReview": "Basado en <0>{{totalReview}}</0> Opiniones de la Comunidad"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Las preguntas más frecuentes de los usuarios."
+    },
+    "cta": {
+        "title": "¿Listo para Operar con {{brokerName}}?",
+        "paragraph": "Utiliza tu enlace exclusivo para acceder al mejor rebate y a condiciones de trading profesionales en {{brokerName}}.",
+        "registerFxpayout": "Regístrate a través de FXPayout",
+        "visitWebsite": "Visitar la Web del Bróker"
+    },
+    "data": {
+        "title": {
+            "asic_regulated": "Regulado por ASIC",
+            "beginner_friendly": "Ideal para Principiantes",
+            "beginner_advanced_friendly": "Ideal para Principiantes y Avanzados",
+            "cent_account": "Cuenta Cent",
+            "copy_trading_supported": "Compatible con Copy Trading",
+            "competitive_spread": "Spread Competitivo",
+            "ecn_account": "Cuenta ECN Disponible",
+            "ecn_broker": "Bróker ECN",
+            "ecn_market_execution": "Ejecución ECN/Market",
+            "ecn_ndd": "Bróker ECN/NDD",
+            "ecn_stp": "Bróker ECN/STP",
+            "ecn_stp_forex_cfd": "Bróker ECN/STP Forex y CFD",
+            "forex_cfd": "Bróker Forex y CFD",
+            "flexible_leverage": "Apalancamiento Flexible",
+            "global_forex_cfd": "Bróker Global de Forex y CFD",
+            "high_leverage": "Apalancamiento Alto",
+            "human_centered_broker": "Bróker Centrado en las Personas",
+            "indonesian_regulation": "Regulado en Indonesia",
+            "low_deposit": "Depósito Mínimo Bajo",
+            "low_spread": "Spread Bajo",
+            "mt4_mt5": "Compatible con MT4 y MT5",
+            "multi_regulated": "Multirregulado",
+            "multi_asset": "Multiactivo",
+            "multi_asset_trading": "Trading Multiactivo",
+            "multi_platform": "Trading Multiplataforma",
+            "no_commission": "Sin Comisión en Depósito/Retiro",
+            "regulated_broker": "Bróker Regulado",
+            "raw_spread": "Raw Spread",
+            "strong_regulation": "Regulación Sólida",
+            "thin_spread": "Spread Ajustado",
+            "tier_1": "Tier 1",
+            "tier_local": "Tier Local",
+            "ultra_fast_execution": "Ejecución Ultrarrápida"
+        },
+        "regulations": {
+            "asic": "Australia",
+            "bafin": "Alemania",
+            "cysec": "Chipre",
+            "cima": "Islas Caimán",
+            "cma": "Kenia",
+            "cbcs": "Curazao",
+            "dfsa": "Dubái",
+            "vfsc": "Vanuatu",
+            "ifsc": "Belice",
+            "fsa": "Seychelles",
+            "fsc": "Mauricio",
+            "fsca": "Sudáfrica",
+            "fca": "Reino Unido",
+            "finex_bappebti": "Retail Forex License (47/BAPPEBTI/SI/04/2013)",
+            "scb": "Bahamas",
+            "st_vincent_grenadines": "San Vicente y las Granadinas"
+        },
+        "instruments": {
+            "crypto": "Cripto",
+            "crypto_cfd": "CFD de Cripto",
+            "commodity": "Materias Primas",
+            "energy": "Energía",
+            "etf": "ETF",
+            "forex": "Forex",
+            "forex_60": "Forex 60+ pares",
+            "gold": "Oro",
+            "indices": "Índices",
+            "metal": "Metales",
+            "obligation": "Bonos",
+            "stocks": "Acciones",
+            "stocks_cfd": "CFD de Acciones",
+            "shares_cfd": "Shares CFD",
+            "turbo_instrument": "Instrumentos Turbo"
+        },
+        "level": {
+            "advanced": "Avanzado",
+            "beginner": "Principiante",
+            "copy_trading": "Copy Trading",
+            "general": "General",
+            "general_retail": "Retail General",
+            "news_trader": "News Trader",
+            "pro": "Pro",
+            "pro_scalper": "Pro y Scalper",
+            "pro_scalper_ea": "Pro, Scalper, EA",
+            "trader": "Trader",
+            "trader_retail": "Trader Retail",
+            "scalper_ea": "Scalper, EA"
+        },
+        "time": {
+            "around_20m_2h_80percent": "Aproximadamente 20 minutos – 2 horas (80% de los casos)",
+            "days_1_3": "1–3 días",
+            "days_1_3_work": "1–3 días hábiles",
+            "depends": "Depende",
+            "instant": "Instantáneo",
+            "instant_1m": "<1m (Instantáneo)",
+            "interval_5_30": "5–30 Minutos",
+            "interval_instant_1d_work": "Instantáneo - 1 día hábil",
+            "interval_instant_2d": "Instantáneo – 2 días hábiles",
+            "interval_instant_3d_work": "Instantáneo – 3 días hábiles",
+            "one_day": "1 Día"
+        },
+        "fee": {
+            "zero_broker": "Generalmente sin comisión del bróker",
+            "zero_broker_depends_method": "Depende del método (por lo general el bróker no cobra comisión)",
+            "zero_broker_fees_third_party_may_apply": "Por lo general sin comisión del bróker (pueden aplicarse comisiones de terceros)"
+        },
+        "platforms": {
+            "copy_trading": "App de Copy Trading",
+            "c_trader": "cTrader",
+            "exness_terminal": "Exness Terminal (basada en web)",
+            "exness_mobile": "Exness Mobile App",
+            "hfm_mobile": "HFM Mobile App",
+            "ios_android": "App Móvil (Android e iOS)",
+            "mobile_trading": "Trading Móvil",
+            "mt4": "MetaTrader 4 (MT4)",
+            "mt5": "MetaTrader 5 (MT5)",
+            "pro_trader": "ProTrader",
+            "octa_trader": "OctaTrader (plataforma exclusiva)",
+            "trading_view": "Trading View",
+            "web_mobile": "Web y Móvil",
+            "web_trading": "WebTrader"
+        }
+    }
+}

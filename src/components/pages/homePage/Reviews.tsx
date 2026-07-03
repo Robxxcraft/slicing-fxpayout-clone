@@ -39,7 +39,7 @@ const Reviews = () => {
       <section className="mt-14 xl:mt-[120px] py-14 xl:py-[120px] bg-[#F9F9F9]">
         <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4">
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-start text-start">
               <BadgeSection
                 icon={
                   <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
@@ -103,14 +103,14 @@ const Reviews = () => {
               <SwiperSlide
                 key={idx}
                 className={`${
-                  idx === 0 ? "ml-5 md:ml-10 xl:ml-24 2xl:ml-56" : "md:ml-4"
+                  idx === 0 ? "ms-5 md:ms-10 xl:ms-24 2xl:ms-56" : "md:ms-4"
                 } ${
-                  idx === dataTestimonial.length - 1 && "mr-5 md:mr-10 xl:mr-24 2xl:mr-56"
+                  idx === dataTestimonial.length - 1 && "me-5 md:me-10 xl:me-24 2xl:me-56"
                 } relative p-[22px] lg:p-6 2xl:p-10 w-full! md:w-[400px]! lg:w-[560px]! 2xl:w-[660px]! h-full! bg-[#4160FB]/80 rounded-[20px]`}>
                 <img
                   src="/quote.png"
                   alt="quote icon"
-                  className="absolute h-13 md:h-16 lg:h-[130px] bottom-5 lg:-bottom-5 right-5 lg:right-0 opacity-30"
+                  className="absolute h-13 md:h-16 lg:h-[130px] bottom-5 lg:-bottom-5 end-5 lg:end-0 opacity-30"
                 />
                 <div className="flex flex-col flex-1 justify-between">
                   <div>

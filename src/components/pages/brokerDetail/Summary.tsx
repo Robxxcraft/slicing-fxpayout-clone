@@ -56,12 +56,12 @@ const Summary = ({
   ];
 
   return (
-    <section id="ringkasan" className="scroll-mt-18 lg:scroll-mt-0 pt-6 md:pt-10 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
+    <section id="summary" className="scroll-mt-18 lg:scroll-mt-0 pt-6 md:pt-10 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
       <HeadingSection>{t("brokerdetailpage:summary.title")}</HeadingSection>
       <SubHeadingSection>{t("brokerdetailpage:summary.subtitle")}</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4 2xl:gap-6">
         {summaryItems.map((item, idx) => (
-          <div key={idx} className="px-5 2xl:px-8 py-4 2xl:py-6 flex gap-6 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary">
+          <div key={idx} className="px-5 2xl:px-8 py-4 2xl:py-6 flex gap-6 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
             <div className="w-fit">
               <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="Icon" />
             </div>

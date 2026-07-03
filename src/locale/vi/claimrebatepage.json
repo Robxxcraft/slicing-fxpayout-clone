@@ -1,0 +1,90 @@
+{
+    "helmet": {
+        "title": "Rebate Forex Là Gì? Nhận Hoàn Phí Giao Dịch | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "definition": {
+        "title": "Rebate Forex Là Gì?",
+        "paragraph": "Rebate forex là khoản hoàn lại một phần hoa hồng hoặc spread từ mỗi giao dịch. Bạn vẫn giao dịch như bình thường tại sàn, nhưng một phần chi phí giao dịch sẽ được hoàn lại cho bạn dưới dạng rebate.",
+        "cards": [
+            {
+                "title": "Ưu Điểm Của Rebate",
+                "paragraph": "Spread, đòn bẩy và khớp lệnh vẫn giữ nguyên như tài khoản thông thường. Với rebate, bạn có thể giảm chi phí giao dịch và tiềm năng tăng lợi nhuận trong dài hạn."
+            },
+            {
+                "title": "Cơ Chế Hoạt Động Của Rebate",
+                "paragraph": "Mỗi khi bạn giao dịch, sàn sẽ chia một phần hoa hồng cho fxpayout với vai trò IB. Khoản hoa hồng đó sau đó được hoàn lại vào tài khoản của bạn dưới dạng rebate và có thể rút về."
+            }
+        ]
+    },
+    "howRebate": {
+        "title": "Cách Nhận Rebate",
+        "paragraph": "Khi bạn mở tài khoản giao dịch Forex (hoặc liên kết tài khoản có sẵn) thông qua chúng tôi, sàn của bạn sẽ trả rebate cho chúng tôi"
+    },
+    "howWorks": {
+        "title": "Cơ Chế Hoạt Động Như Thế Nào?",
+        "paragraph": "Rebate forex hoạt động tự động ở phía sau. Bạn vẫn giao dịch như bình thường tại sàn, trong khi fxpayout quản lý việc hoàn lại một phần hoa hồng giao dịch của bạn dưới dạng rebate.",
+        "imageFlows": "how-it-works-flow-id.webp",
+        "flows": [
+            {
+                "flow": "Spread / Hoa Hồng",
+                "title": "Trader",
+                "paragraph": "Trader thực hiện giao dịch như bình thường qua sàn mình chọn mà không thay đổi spread, đòn bẩy hay chiến lược giao dịch."
+            },
+            {
+                "flow": "Reward / Phần Thưởng",
+                "title": "Sàn",
+                "paragraph": "Sàn nhận spread hoặc hoa hồng từ mỗi giao dịch, sau đó chia một phần hoa hồng đó cho fxpayout với vai trò Introducing Broker (IB)."
+            },
+            {
+                "flow": "Chi Trả Cashback / Rebate",
+                "title": "FXPAYOUT",
+                "paragraph": "fxpayout hoàn lại một phần hoa hồng nhận được cho trader dưới dạng rebate, được chi trả định kỳ và minh bạch."
+            }
+        ]
+    },
+    "payment": {
+        "title": "Hệ Thống Chi Trả Rebate",
+        "paragraph": "fxpayout cung cấp nhiều phương thức chi trả rebate linh hoạt và dễ tiếp cận. Bạn có thể chọn phương thức rút tiền theo nhu cầu, với mức rút tối thiểu thấp và quy trình minh bạch.",
+        "tableHeaders": ["Phương Thức", "Thanh Toán Tối Thiểu", "Tiền Tệ", "Phí"],
+        "tableItems": [
+            {
+                "method": "Cryptocurrencies",
+                "cost": "Up to 3 USDT"
+            },
+            {
+                "method": "E-Wallet Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Bank Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Neteller",
+                "cost": "1.45% (Min. $0.59)"
+            },
+            {
+                "method": "Skrill / Neteller",
+                "cost": "4.4% + 0.3 USD"
+            },
+            {
+                "method": "PayPal",
+                "cost": "1.45% (Min. $0.59)"
+            }
+        ]
+    },
+    "schedule": {
+        "title": "Lịch Chi Trả Rebate",
+        "paragraph": "Tìm lịch chi trả rebate theo sàn giao dịch của bạn. Nhấn “Xem Lịch” để biết chi tiết đầy đủ của từng sàn.",
+        "card": {
+            "title": "Danh Sách Lịch Rebate Theo Sàn",
+            "showEntry": ["Hiển thị", "mục"],
+            "searchPlaceholder": "Tìm sàn tại đây",
+            "brokerName": "Tên Sàn",
+            "schedule": "Lịch Rebate",
+            "viewSchedule": "Xem Lịch",
+            "showList": "Hiển thị {{startIndex}} đến {{endIndex}} trong {{totalIndex}} mục"
+        }
+    }
+}

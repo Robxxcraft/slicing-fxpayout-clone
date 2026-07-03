@@ -12,7 +12,7 @@ const CtaRegisterBroker = ({
   return (
     <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-15 2xl:pt-20">
       <div className={`px-4 md:px-6 2xl:px-10 py-6 2xl:py-10 w-full flex items-center gap-4 2xl:gap-6 bg-primary/5 border border-primary
-        ${horizontal ? "flex-col md:flex-row justify-center md:justify-start text-center md:text-left rounded-[40px] md:rounded-3xl" : "flex-col justify-center text-center rounded-[40px]"}  
+        ${horizontal ? "flex-col md:flex-row justify-center md:justify-start text-center md:text-start rounded-[40px] md:rounded-3xl" : "flex-col justify-center items-center text-center rounded-[40px]"}  
       `}>
 
         <div className="flex justify-center items-center size-18 2xl:size-20 bg-primary/10 rounded-full">
@@ -36,7 +36,9 @@ const CtaRegisterBroker = ({
           target="_blank"
           variant="primary" 
           size="xl" 
-          className="ml-auto! w-full! md:w-fit! font-medium! text-nowrap"
+          className={`font-medium! text-nowrap
+            ${horizontal ? "ms-auto! w-full! md:w-fit!" : ""}  
+          `}
         >
           {t(`${key}.button`)}
         </Button>

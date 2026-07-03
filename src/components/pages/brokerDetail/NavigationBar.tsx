@@ -68,7 +68,7 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl, o
                     {fullRankingText}
                   </p>
                   {isOverflowing && 
-                    <p className="pl-1 inline-block text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80">
+                    <p className="ps-1 inline-block text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80">
                       {fullRankingText}
                     </p>
                   }

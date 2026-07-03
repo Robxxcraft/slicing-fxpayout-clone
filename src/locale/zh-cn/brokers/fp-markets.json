@@ -1,0 +1,52 @@
+{
+  "description": "FP Markets(First Prudential Markets)是一家成立于2005年的全球性外汇及差价合约经纪商,总部位于澳大利亚悉尼。该经纪商以具竞争力的点差、快速的执行、可交易数千种品种,以及对 MetaTrader、cTrader 等热门交易平台的支持而著称。FP Markets 还提供 cTrader、VPS 及高级分析工具等专业交易技术。",
+  "specification": {
+    "leverage": "最高 1:500(视监管机构及运营主体而定)",
+    "spread": ["标准账户:低至约 1.0 点", "Raw 账户:低至 0.0 点"]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": ["标准账户:低至约 1.0 点", "Raw 账户:低至 0.0 点"],
+    "commission": "Raw ECN 账户:每手共约 $6(每边约 $3)",
+    "leverage": "最高 1:500(视监管机构及运营主体而定)",
+    "execution": "快速且无重新报价",
+    "depositWithdrawal": "银行转账、银行卡、电子钱包"
+  },
+  "spread": ["低至 0.0 – 0.2 点", "浮动且较低", "较宽"],
+  "accountTypes": [
+    ["最低入金:$100", "点差低至约 1.0 点", "免佣金", "适合普通零售交易者"],
+    ["最低入金:$100", "点差低至 0.0 点", "佣金每手每边约 $3", "适合剥头皮、智能交易系统、EA"]
+  ],
+  "keyAdvantages": ["ECN 点差极低", "执行快速且稳定", "流动性高", "适合 EA 与剥头皮", "交易平台功能完善", "适合活跃交易者"],
+  "advantages": ["点差极具竞争力(Raw ECN)", "平台齐全(MT4、MT5、cTrader)", "Raw 账户无点差加价", "多国严格监管", "适合手动交易、EA 及剥头皮"],
+  "disadvantages": ["最低入金 $100,高于部分低门槛经纪商", "部分地区杠杆可能受监管限制", "标准账户点差宽于 ECN 账户"],
+  "classifications": [
+    "客户支持",
+    "费用与点差",
+    "执行速度"
+  ],
+  "faqs": [
+    {
+      "question": "FP Markets 安全吗?",
+      "answer": "安全——受 ASIC(澳大利亚)、CySEC(塞浦路斯)、FSCA(南非)、FSA(塞舌尔)及 CIMA 监管。"
+    },
+    {
+      "question": "最低入金是多少?",
+      "answer": "真实账户交易的最低入金为 $100。"
+    },
+    {
+      "question": "支持哪些平台?",
+      "answer": "MT4、MT5 和 cTrader。"
+    },
+    {
+      "question": "最高杠杆是多少?",
+      "answer": "外汇最高 1:500(视运营主体/监管机构而定)。"
+    },
+    {
+      "question": "是否提供 ECN 账户?",
+      "answer": "提供——Raw ECN 账户,点差低至 0.0 点,另收佣金。"
+    }
+  ]
+}

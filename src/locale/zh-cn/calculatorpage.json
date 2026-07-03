@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "返佣计算器:估算您的交易返现 | FXPayout",
+        "description": "FXPayout 是值得信赖的外汇返佣平台,将经纪商佣金的最高90%以现金返还方式直接返给交易者。"
+    },
+    "header": {
+        "title": "立即估算您的交易返佣",
+        "paragraph": "输入经纪商、账户类型和您的总交易手数,即可了解每月可获得的返佣预估值——快捷、透明、零费用。",
+        "tag": "FXPAYOUT 返佣计算器"
+    },
+    "card": {
+        "title": "返佣估算计算器",
+        "paragraph": "选择经纪商并输入您的交易详情,即时查看返佣预估值。",
+        "broker": "经纪商",
+        "accountType": "账户类型",
+        "pair": "货币对 / 交易品种",
+        "lots": "手数",
+        "accountTypePlaceholder": "请先选择经纪商",
+        "pairPlaceholder": "请输入手数",
+        "button": "计算返佣预估值",
+        "estimatesRebates": "返佣预估值",
+        "rebatePerLot": "每手返佣",
+        "info": "<0>fxpayout</0> 将最高90%的IB佣金返还给交易者。返佣流程全自动、安全、透明,不改变您的点差、杠杆或任何交易条件。",
+        "errors": {
+            "brokerRequired": "请选择经纪商",
+            "accountTypeRequired": "请选择账户类型",
+            "pairRequired": "请选择货币对",
+            "lotsRequired": "手数不能为空"
+        }
+    }
+}

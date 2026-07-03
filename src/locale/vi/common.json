@@ -1,0 +1,95 @@
+{
+    "text": {
+        "select": "Chọn",
+        "copy": "Copy",
+        "next": "Tiếp Theo",
+        "tableOfContents": "Mục Lục",
+        "previous": "Trước",
+        "advantage": "Ưu Điểm",
+        "disadvantage": "Nhược Điểm",
+        "close": "Đóng",
+        "readMore": "Đọc thêm",
+        "seeAll": "Xem tất cả",
+        "month": "tháng",
+        "title_month": "Tháng",
+        "from_weeks_ago": "so với tuần trước",
+        "title_traders": "Traders",
+        "title_others": "Khác",
+        "title_all": "Tất Cả",
+        "title_local": "Trong Nước",
+        "title_international": "Quốc Tế",
+        "title_newest": "Mới Nhất",
+        "title_recommendation": "Đề Xuất",
+        "title_name": "Tên",
+        "title_login": "Đăng Nhập",
+        "title_register": "Đăng Ký",
+        "filter_broker": "Lọc Sàn",
+        "title_platform": "Nền Tảng",
+        "title_trading": "Giao Dịch",
+        "minimum_deposit": "Nạp Tối Thiểu",
+        "spread_broker": "Spread Của Sàn",
+        "reset_filter": "Đặt Lại Bộ Lọc",
+        "range_rebate": "Khoảng Rebate",
+        "highest_rebate": "Rebate Cao Nhất",
+        "lowest_rebate": "Rebate Thấp Nhất",
+        "title_low": "Thấp",
+        "title_medium": "Trung Bình",
+        "title_high": "Cao",
+        "title_apply": "Áp Dụng",
+        "rebate_till": "Rebate Lên Đến"
+    },
+    "button": {
+        "registerNow": "Đăng Ký Ngay",
+        "calculateRebate": "Tính Rebate",
+        "visitWebsite": "Truy Cập Website",
+        "join_now": "Tham Gia Ngay",
+        "see_list_broker": "Xem Danh Sách Sàn",
+        "try_now": "Thử Ngay"
+    },
+    "cta": {
+        "title": "Sẵn sàng tối ưu hiệu quả lợi nhuận giao dịch của bạn?",
+        "paragraph": "Đăng ký ngay và bắt đầu nhận rebate lên đến 90%."
+    },
+    "cta_trader": {
+        "title": "Bắt Đầu Giao Dịch Hiệu Quả Hơn Ngay Hôm Nay",
+        "paragraph": "Đăng ký ngay và nhận rebate từ mỗi giao dịch của bạn. Không phí phụ thu. Không rủi ro phát sinh."
+    },
+    "methods": {
+        "bank_transfer": "Chuyển Khoản Ngân Hàng",
+        "bank_transfer_usd_idr": "Chuyển Khoản Ngân Hàng (USD/IDR)",
+        "crypto": "Crypto",
+        "debit_credit_card": "Thẻ Ghi Nợ/Tín Dụng",
+        "e_wallet": "Ví Điện Tử",
+        "indonesian_local_va": "VA Nội Địa (ID)",
+        "indonesian_e_wallet": "Ví Điện Tử Indonesia",
+        "local_bank": "Ngân Hàng Nội Địa",
+        "local_transfer": "Chuyển Khoản Nội Địa",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "Home",
+        "broker": "Sàn",
+        "news": "News",
+        "calculator": "Công Cụ Tính",
+        "claimRebate": "Nhận Rebate",
+        "service": "Dịch Vụ",
+        "affiliate": "Affiliate",
+        "subNav": {
+            "definition": "Rebate Forex Là Gì?",
+            "howRebate": "Cách Nhận Rebate Forex",
+            "howWorks": "Cơ Chế Hoạt Động Như Thế Nào?",
+            "payment": "Hệ Thống Chi Trả Rebate",
+            "schedule": "Lịch Rebate",
+            "validation": "Xác Thực Tài Khoản",
+            "transfer": "Chuyển Tài Khoản",
+            "forex": "Forex",
+            "vipRebate": "VIP Rebate"
+        }
+    },
+    "footer": {
+        "paragraph": "Chúng tôi hoàn lại đến 90% hoa hồng IB cho trader. Quy trình nhanh chóng, an toàn và minh bạch mà không làm thay đổi spread hay điều kiện giao dịch.",
+        "quickLink": "Liên Kết Nhanh",
+        "contact": "Liên Hệ"
+    }
+}

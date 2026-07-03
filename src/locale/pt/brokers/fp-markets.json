@@ -1,0 +1,52 @@
+{
+  "description": "A FP Markets (First Prudential Markets) é uma corretora global de forex e CFD que existe desde 2005, com sede em Sydney, na Austrália. A corretora é reconhecida pelos spreads competitivos, execução rápida, acesso a milhares de instrumentos e suporte a plataformas de trading populares como o MetaTrader e o cTrader. A FP Markets também oferece tecnologias de trading profissionais, como cTrader, VPS e ferramentas analíticas avançadas.",
+  "specification": {
+    "leverage": "Até 1:500 (depende do regulador e da entidade)",
+    "spread": ["Standard : a partir de cerca de 1.0 pips", "Raw : a partir de 0.0 pips"]
+  },
+  "profile": {
+    "slogan": "Trusted Global Forex & CFD Broker"
+  },
+  "summary": {
+    "spread": ["Standard : a partir de cerca de 1.0 pips", "Raw : a partir de 0.0 pips"],
+    "commission": "Raw ECN ±$6 por lote no total (±$3 por lado)",
+    "leverage": "Até 1:500 (depende do regulador e da entidade)",
+    "execution": "Rápida e sem requote",
+    "depositWithdrawal": "Transferência bancária, cartão, carteira digital"
+  },
+  "spread": ["a partir de 0.0 – 0.2 pips", "variável baixo", "mais largo"],
+  "accountTypes": [
+    ["Depósito mín. : $100", "Spread a partir de ±1.0 pips", "Sem comissão", "Ideal para trader de varejo em geral"],
+    ["Depósito mín. : $100", "Spread a partir de 0.0 pips", "Comissão de ±$3 por lado por lote", "Ideal para scalping, robôs e EA"]
+  ],
+  "keyAdvantages": ["Spread ECN muito baixo", "Execução rápida e estável", "Alta liquidez", "Amigável a EA e scalping", "Plataforma de trading completa", "Ideal para traders ativos"],
+  "advantages": ["Spread muito competitivo (Raw ECN)", "Plataforma completa (MT4, MT5, cTrader)", "Sem mark-up na conta Raw", "Regulação forte em diversos países", "Ideal para trader manual, EA e scalping"],
+  "disadvantages": ["O depósito mínimo de $100 é mais alto do que o de algumas corretoras mais acessíveis", "A alavancagem pode ser limitada pelo regulador em determinadas regiões", "O spread da conta Standard é mais largo do que o da ECN"],
+  "classifications": [
+    "Customer Support",
+    "Fees & Spread",
+    "Execution Speed"
+  ],
+  "faqs": [
+    {
+      "question": "A FP Markets é segura?",
+      "answer": "Sim — é regulada pela ASIC (Austrália), CySEC (Chipre), FSCA (África do Sul), FSA (Seychelles) e CIMA."
+    },
+    {
+      "question": "Qual é o depósito mínimo?",
+      "answer": "O depósito mínimo para uma conta live é de $100."
+    },
+    {
+      "question": "Quais plataformas são suportadas",
+      "answer": "MT4, MT5 e cTrader."
+    },
+    {
+      "question": "Qual é a alavancagem máxima?",
+      "answer": "Até 1:500 para forex (depende da entidade/regulador)."
+    },
+    {
+      "question": "Existe conta ECN?",
+      "answer": "Sim — a conta Raw ECN, com spread a partir de 0.0 pips + comissão."
+    }
+  ]
+}

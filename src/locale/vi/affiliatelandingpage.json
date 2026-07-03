@@ -1,0 +1,188 @@
+{
+    "helmet": {
+            "title": "Công Cụ Tính Rebate: Ước Tính Cashback Giao Dịch | FXPayout",
+            "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+        },
+    "herosection": {
+        "title": "Kiếm Hoa Hồng Từ Việc Giới Thiệu Trader",
+        "paragraph": "Nhận thu nhập định kỳ mỗi khi người bạn giới thiệu giao dịch thông qua FXPayout.",
+        "badge": "Chương Trình Affiliate",
+        "benefits": ["Không Cần Giao Dịch", "Không Cần Quản Lý Vốn"],
+        "button": "Đăng Ký Ngay & Bắt Đầu Kiếm Tiền",
+        "features": [
+            {
+                "title": "Sàn Hỗ Trợ"
+            },
+            {
+                "title": "Trader Đã Tham Gia"
+            },
+            {
+                "title": "Hàng Nghìn Đô Đã Chi Trả"
+            }
+        ],
+        "small_card": {
+            "title": "Tổng Hoa Hồng"
+        }
+    },
+    "commissionsection": {
+        "title": "Xem Bạn Có Thể Kiếm Được Bao Nhiêu",
+        "paragraph": "Hình dung tiềm năng thu nhập từ mỗi trader bạn giới thiệu đang giao dịch tích cực.",
+        "badge": "TIỀM NĂNG HOA HỒNG",
+        "subtitle": "Công Cụ Tính Hoa Hồng Affiliate",
+        "subparagraph": "Điều chỉnh số lượng trader giới thiệu để xem ước tính thu nhập hàng tháng của bạn.",
+        "total_refferal": "Số Lượng Trader Giới Thiệu :",
+        "benefits": ["Không Cần Giao Dịch", "Thu Nhập Định Kỳ Mỗi Tháng", "Không Cần Quản Lý Vốn"],
+        "potential_commission": "Hoa Hồng Tiềm Năng Của Bạn",
+        "info": "*Thu nhập tiềm năng dựa trên hoạt động giao dịch của trader giới thiệu."
+    },
+    "benefitaffiliatesection": {
+        "title": "Kiếm Hoa Hồng Từ Hoạt Động Giao Dịch Của Trader Bạn Giới Thiệu",
+        "paragraphs": [
+            "FXPayout giúp bạn kiếm hoa hồng từ hoạt động giao dịch của trader bạn giới thiệu.",
+            "Chỉ cần chia sẻ link affiliate của bạn, và mỗi giao dịch từ người được giới thiệu sẽ tạo ra hoa hồng cho bạn — không cần giao dịch hay quản lý vốn."
+        ],
+        "badge": "CHƯƠNG TRÌNH AFFILIATE",
+        "small_card": {
+            "title": "Tổng Trader Affiliate"
+        },
+        "preview_chart": {
+            "title": "Tổng Hoa Hồng Hàng Ngày"
+        }
+    },
+    "revenuesection": {
+        "title": "Mỗi trader bạn giới thiệu sẽ được liên kết vĩnh viễn với tài khoản của bạn. ",
+        "paragraph": "Chỉ cần họ còn giao dịch tích cực, bạn sẽ tiếp tục nhận hoa hồng — không chỉ một lần, mà lặp lại mỗi tháng. Một trader giới thiệu có thể trở thành nguồn thu nhập lâu dài.",
+        "badge": "THU NHẬP ĐỊNH KỲ",
+        "revenues": [
+            {
+                "title": "Thu Nhập Dài Hạn",
+                "paragraph": "Chỉ cần trader bạn giới thiệu còn giao dịch tích cực, bạn sẽ tiếp tục nhận phần hoa hồng. Không có thời hạn hết hiệu lực cho trader giới thiệu của bạn."
+            },
+            {
+                "title": "Hoa Hồng Định Kỳ Mỗi Tháng",
+                "paragraph": "Mỗi giao dịch từ mạng lưới của bạn được quy đổi thành hoa hồng mà bạn có thể rút bất cứ lúc nào. Khoản hoa hồng này sẽ được tạo ra mỗi tháng miễn là affiliate của bạn còn hoạt động."
+            }
+        ]
+    },
+    "avilablebrokersection": {
+        "title": "Trader bạn giới thiệu tự do chọn sàn có sẵn trên FXPayout",
+        "paragraph": "Dù họ sử dụng sàn nào, mỗi hoạt động giao dịch vẫn tạo ra hoa hồng cho bạn."
+    },
+    "commissionsystemsection": {
+        "title": "Bắt Đầu Kiếm Hoa Hồng Chỉ Với 5 Bước Đơn Giản",
+        "paragraph": "Mỗi khi trader bạn giới thiệu giao dịch, bạn sẽ nhận được phần hoa hồng từ FXPayout. Khoản hoa hồng này đến từ hệ thống rebate và không làm giảm lợi nhuận của trader. Tất cả đều tự động, không cần quản lý thêm.",
+        "badge": "HỆ THỐNG HOA HỒNG",
+        "commission_broker": "Hoa Hồng Sàn",
+        "example_calculation": "Ví Dụ Cách Tính Phân Chia Hoa Hồng",
+        "transfer_rebate": "CHUYỂN REBATE",
+        "fxpayout_distribute_rebate": "FXPAYOUT PHÂN PHỐI REBATE",
+        "rebate_trader": "REBATE CHO TRADER",
+        "internal_earn": "PHẦN CỦA FXPAYOUT",
+        "fxpayout_distribute": "FXPayout Phân Phối",
+        "distribution_commission": "PHÂN CHIA HOA HỒNG",
+        "commission_50_percent": "Nếu hoa hồng affiliate là 50%",
+        "affiliate_commission": "Hoa Hồng Affiliate",
+        "card_simulation": {
+            "title": "Mô Phỏng Tiềm Năng Hoa Hồng Từ 10 Trader Giới Thiệu",
+            "paragraph": "Chỉ với 10 trader giới thiệu tích cực giao dịch thường xuyên, bạn có thể đạt được tự do tài chính.",
+            "benefits": [
+                "Rebate trung bình mỗi người: $100 / tháng",
+                "Tổng rebate từ 10 trader giới thiệu: $1,000 / tháng",
+                "Hoa hồng của bạn (50%)"
+            ],
+            "info": "*Bạn chỉ cần 10 trader giao dịch tích cực để đạt được mục tiêu này."
+        }
+    },
+    "whocanjoinsection": {
+        "title": "Ai Có Thể Tham Gia Chương Trình Affiliate FXPayout?",
+        "paragraph": "Bất kỳ ai có mạng lưới hoặc cộng đồng trong thế giới trading đều có thể tận dụng chương trình affiliate này.",
+        "badge": "CHƯƠNG TRÌNH NÀY DÀNH CHO AI ?",
+        "users": [
+            {
+                "title": "Trader",
+                "description": "Trader tích cực có quan hệ hoặc mạng lưới với các trader khác."
+            },
+            {
+                "title": "Content Creator",
+                "description": "Người sáng tạo nội dung về trading, forex hoặc tài chính."
+            },
+            {
+                "title": "Cộng Đồng Trading",
+                "description": "Chủ sở hữu hoặc quản lý cộng đồng trader, cả online lẫn offline."
+            },
+            {
+                "title": "Affiliate Marketer",
+                "description": "Người quen với việc quảng bá sản phẩm qua digital marketing."
+            }
+        ],
+        "info": "*và bất kỳ ai trong số các bạn muốn có thêm thu nhập"
+    },
+    "howaffiliateworks": {
+        "title": "Bắt Đầu Kiếm Hoa Hồng Chỉ Với 5 Bước Đơn Giản",
+        "paragraph": "Đăng ký, chia sẻ link giới thiệu và nhận hoa hồng từ mỗi hoạt động giao dịch của trader bạn giới thiệu.",
+        "badge": "Cách Hoạt Động CỦA CHƯƠNG TRÌNH AFFILIATE",
+        "workflows": [
+            {
+                "title": "đăng ký",
+                "subtitle": "Đăng ký làm affiliate",
+                "paragraph": "Tạo tài khoản và tham gia chương trình affiliate FXPayout."
+            },
+            {
+                "title": "tạo link",
+                "subtitle": "Nhận link giới thiệu của bạn",
+                "paragraph": "Nhận link riêng để bắt đầu mời trader tham gia."
+            },
+            {
+                "title": "chia sẻ",
+                "subtitle": "Chia sẻ link đến trader",
+                "paragraph": "Lan tỏa link của bạn đến các trader để họ đăng ký"
+            },
+            {
+                "title": "ref giao dịch",
+                "subtitle": "Trader giới thiệu bắt đầu giao dịch",
+                "paragraph": "Trader bạn giới thiệu bắt đầu thực hiện giao dịch"
+            },
+            {
+                "title": "nhận hoa hồng",
+                "subtitle": "Bạn nhận hoa hồng",
+                "paragraph": "Bạn nhận hoa hồng từ mỗi trader bạn giới thiệu."
+            }
+        ]
+    },
+    "securitysection": {
+        "info": "Mọi hoạt động giao dịch đều được thực hiện trực tiếp qua sàn chính thức."
+    },
+    "faqsection": {
+        "title": "Câu Hỏi Thường Gặp Về Affiliate FXPayout",
+        "paragraph": "Tìm câu trả lời cho những câu hỏi thường gặp về chương trình Affiliate FXPayout",
+        "faqs": [
+            {
+                "question": "Tôi có phải giao dịch không?",
+                "answer": "Không. Bạn không cần giao dịch. Bạn chỉ cần chia sẻ link giới thiệu, và hoa hồng sẽ được tạo ra từ hoạt động giao dịch của trader bạn giới thiệu."
+            },
+            {
+                "question": "Tôi có cần quản lý vốn không?",
+                "answer": "Không. Bạn không cần quản lý bất kỳ khoản vốn nào. Mọi hoạt động giao dịch đều do trader tự thực hiện tại sàn."
+            },
+            {
+                "question": "Có bị trừ vào rebate của trader không?",
+                "answer": "Không có khoản trừ thêm nào từ phía bạn. Hoa hồng bạn nhận được đến từ việc phân chia hoa hồng của sàn (Introducing Broker), không ảnh hưởng đến kết quả giao dịch của trader."
+            },
+            {
+                "question": "Có thể sử dụng nhiều hơn một sàn không?",
+                "answer": "Có, bạn có thể sử dụng và quảng bá nhiều sàn có sẵn trên FXPayout để tiếp cận nhiều trader hơn."
+            }
+        ]
+    },
+    "ctasection": {
+        "title": "Bắt Đầu Kiếm Hoa Hồng Từ Trader Giới Thiệu Ngay Hôm Nay",
+        "paragraph": "Đăng ký ngay và bắt đầu xây dựng thu nhập dài hạn từ FXPayout."
+    },
+    "component": {
+        "big_card": {
+            "username": "John Doe",
+            "commission": "Tổng Hoa Hồng Đã Tạo",
+            "info": "Hoa hồng từ hoạt động giao dịch của trader bạn giới thiệu."
+        }
+    }
+}

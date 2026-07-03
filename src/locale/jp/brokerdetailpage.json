@@ -1,0 +1,230 @@
+{
+    "helmet": {
+        "title": "{{brokerName}}のキャッシュバック 1ロットあたり最大{{brokerEstimate}} | FXPayout",
+        "description": "FXPayoutは、ブローカーのコミッションの最大90%をトレーダーに直接還元する、信頼できるFXキャッシュバックプラットフォームです。"
+    },
+    "navbar": {
+        "profil": "プロフィール",
+        "summary": "概要",
+        "accountType": "口座タイプ",
+        "spreadCommission": "スプレッド＆コミッション",
+        "advantage": "強み",
+        "platform": "プラットフォーム",
+        "depositWithdraw": "入金＆出金",
+        "advantagesDisadvantages": "メリット＆デメリット",
+        "rating": "評価",
+        "faq": "FAQ"
+    },
+    "back": "ブローカー一覧に戻る",
+    "overallScore": "総合スコア",
+    "header": {
+        "viewRating": "コミュニティのレビューを見る",
+        "detailHeaders": ["設立年", "最低入金額", "レバレッジ", "スプレッド"]
+    },
+    "profile": {
+        "title": "ブローカープロフィール",
+        "subtitle": "ブローカーの企業情報と規制に関する公式情報。",
+        "cards": [
+            {
+                "title": "基本情報",
+                "headers": {
+                    "brokerName": "ブローカー名",
+                    "slogan": "スローガン",
+                    "entity": "運営会社",
+                    "group": "グループ",
+                    "ranking": "ティア",
+                    "yearFounded": "設立年",
+                    "brokerCategory": "ブローカーの種類",
+                    "totalUser": "総ユーザー数",
+                    "model": "モデル",
+                    "totalInstrument": "取扱銘柄数"
+                }
+            },
+            {
+                "title": "主要な規制"
+            }
+        ]
+    },
+    "summary": {
+        "title": "クイックファクト（概要）",
+        "subtitle": "ブローカーの要点をひと目で把握できる情報",
+        "cardHeaders": {
+            "minDeposit": "最低入金額",
+            "accountType": "口座タイプ",
+            "spread": "スプレッド",
+            "commission": "コミッション",
+            "leverage": "レバレッジ",
+            "execution": "注文約定方式",
+            "instrument": "取扱銘柄",
+            "depositWithdrawal": "入金＆出金"
+        }
+    },
+    "accountType": {
+        "title": "口座タイプ",
+        "subtitle": "さまざまなニーズや取引スタイルに合わせた口座の選択肢。",
+        "profit": "メリット"
+    },
+    "spread": {
+        "title": "スプレッド",
+        "subtitle": "ブローカーの主要銘柄におけるスプレッドの比較。",
+        "accountType": "口座タイプ"
+    },
+    "advantage": {
+        "title": "主な強み",
+        "subtitle": "ブローカーの付加価値となる優れた特徴。"
+    },
+    "platform": {
+        "title": "対応取引プラットフォーム",
+        "subtitle": "取引に利用できるプラットフォームの一覧。"
+    },
+    "depositWithdraw": {
+        "title": "入金＆出金",
+        "subtitle": "取引の方法および処理時間に関する情報。",
+        "tableHeaders": ["方法", "入金時間", "出金時間", "手数料"]
+    },
+    "rebateProgram": {
+        "title": "キャッシュバックプログラム（目安）",
+        "subtitle": "キャッシュバックプログラムを通じてトレーダーが受け取れるキャッシュバックの目安。",
+        "button": "キャッシュバック計算ツール",
+        "info": "ECN口座や大口の取引量では、キャッシュバックがさらに高くなる場合があります。上記の数値は目安であり、調整される場合があります。"
+    },
+    "advantagesDisadvantages": {
+        "title": "メリット＆デメリット",
+        "subtitle": "プラス面と注意すべき点のまとめ。"
+    },
+    "rating": {
+        "title": "コミュニティ評価",
+        "subtitle": "ブローカー利用者による評価とフィードバック。",
+        "summaryReview": "<0>{{totalReview}}</0>件のコミュニティレビューに基づく"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "利用者から最もよく寄せられる質問。"
+    },
+    "cta": {
+        "title": "{{brokerName}}で取引を始める準備はできましたか？",
+        "paragraph": "あなた専用のリンクを使って、{{brokerName}}で最高のキャッシュバックとプロ仕様の取引条件をご利用ください。",
+        "registerFxpayout": "FXPayout経由で登録",
+        "visitWebsite": "ブローカーの公式サイトを見る"
+    },
+    "data": {
+        "title": {
+            "asic_regulated": "ASIC規制",
+            "beginner_friendly": "初心者向け",
+            "beginner_advanced_friendly": "初心者・上級者向け",
+            "cent_account": "セント口座",
+            "copy_trading_supported": "コピートレード対応",
+            "competitive_spread": "競争力のあるスプレッド",
+            "ecn_account": "ECN口座あり",
+            "ecn_broker": "ECNブローカー",
+            "ecn_market_execution": "ECN/マーケット執行",
+            "ecn_ndd": "ECN/NDDブローカー",
+            "ecn_stp": "ECN/STPブローカー",
+            "ecn_stp_forex_cfd": "ECN/STP FX・CFDブローカー",
+            "forex_cfd": "FX・CFDブローカー",
+            "flexible_leverage": "柔軟なレバレッジ",
+            "global_forex_cfd": "グローバルFX・CFDブローカー",
+            "high_leverage": "ハイレバレッジ",
+            "human_centered_broker": "人間味のあるブローカー",
+            "indonesian_regulation": "インドネシア規制対応",
+            "low_deposit": "低い最低入金額",
+            "low_spread": "低スプレッド",
+            "mt4_mt5": "MT4・MT5対応",
+            "multi_regulated": "複数規制対応",
+            "multi_asset": "マルチアセット",
+            "multi_asset_trading": "マルチアセット取引",
+            "multi_platform": "マルチプラットフォーム取引",
+            "no_commission": "入出金手数料無料",
+            "regulated_broker": "規制対応ブローカー",
+            "raw_spread": "Raw（生）スプレッド",
+            "strong_regulation": "強固な規制",
+            "thin_spread": "狭いスプレッド",
+            "tier_1": "ティア1",
+            "tier_local": "ローカルティア",
+            "ultra_fast_execution": "超高速約定"
+        },
+        "regulations": {
+            "asic": "オーストラリア",
+            "bafin": "ドイツ",
+            "cysec": "キプロス",
+            "cima": "ケイマン諸島",
+            "cma": "ケニア",
+            "cbcs": "キュラソー",
+            "dfsa": "ドバイ",
+            "vfsc": "バヌアツ",
+            "ifsc": "ベリーズ",
+            "fsa": "セーシェル",
+            "fsc": "モーリシャス",
+            "fsca": "南アフリカ",
+            "fca": "イギリス",
+            "finex_bappebti": "リテールFXライセンス (47/BAPPEBTI/SI/04/2013)",
+            "scb": "バハマ",
+            "st_vincent_grenadines": "セントビンセント・グレナディーン諸島"
+        },
+        "instruments": {
+            "crypto": "仮想通貨",
+            "crypto_cfd": "仮想通貨CFD",
+            "commodity": "商品",
+            "energy": "エネルギー",
+            "etf": "ETF",
+            "forex": "FX",
+            "forex_60": "FX 60通貨ペア以上",
+            "gold": "ゴールド",
+            "indices": "株価指数",
+            "metal": "メタル",
+            "obligation": "債券",
+            "stocks": "株式",
+            "stocks_cfd": "株式CFD",
+            "shares_cfd": "シェアCFD",
+            "turbo_instrument": "ターボ銘柄"
+        },
+        "level": {
+            "advanced": "上級者",
+            "beginner": "初心者",
+            "copy_trading": "コピートレード",
+            "general": "一般",
+            "general_retail": "一般リテール",
+            "news_trader": "ニューストレーダー",
+            "pro": "プロ",
+            "pro_scalper": "プロ・スキャルパー",
+            "pro_scalper_ea": "プロ・スキャルパー・EA",
+            "trader": "トレーダー",
+            "trader_retail": "リテールトレーダー",
+            "scalper_ea": "スキャルパー・EA"
+        },
+        "time": {
+            "around_20m_2h_80percent": "約20分〜2時間（80%のケース）",
+            "days_1_3": "1〜3日",
+            "days_1_3_work": "1〜3営業日",
+            "depends": "場合による",
+            "instant": "即時",
+            "instant_1m": "1分未満（即時）",
+            "interval_5_30": "5〜30分",
+            "interval_instant_1d_work": "即時〜1営業日",
+            "interval_instant_2d": "即時〜2営業日",
+            "interval_instant_3d_work": "即時〜3営業日",
+            "one_day": "1日"
+        },
+        "fee": {
+            "zero_broker": "通常はブローカー手数料なし",
+            "zero_broker_depends_method": "方法による（通常ブローカーは手数料を徴収しません）",
+            "zero_broker_fees_third_party_may_apply": "通常はブローカー手数料なし（第三者手数料がかかる場合あり）"
+        },
+        "platforms": {
+            "copy_trading": "コピートレードアプリ",
+            "c_trader": "cTrader",
+            "exness_terminal": "Exness Terminal（ウェブ版）",
+            "exness_mobile": "Exness モバイルアプリ",
+            "hfm_mobile": "HFM モバイルアプリ",
+            "ios_android": "モバイルアプリ（Android・iOS）",
+            "mobile_trading": "モバイル取引",
+            "mt4": "MetaTrader 4 (MT4)",
+            "mt5": "MetaTrader 5 (MT5)",
+            "pro_trader": "ProTrader",
+            "octa_trader": "OctaTrader（専用プラットフォーム）",
+            "trading_view": "TradingView",
+            "web_mobile": "ウェブ・モバイル",
+            "web_trading": "WebTrader"
+        }
+    }
+}

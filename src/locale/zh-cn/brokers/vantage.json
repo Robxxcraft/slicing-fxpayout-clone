@@ -1,0 +1,51 @@
+{
+  "description": "Vantage(又称 Vantage Markets)是一家成立于2009年的国际外汇及差价合约经纪商,提供外汇、指数、金属、大宗商品、股票差价合约、ETF 及债券等多种全球金融品种的交易。Vantage 整合了 MetaTrader 4、MetaTrader 5、ProTrader 等热门交易平台及自有 App,带来强大而灵活的交易体验。",
+  "specification": {
+    "leverage": "最高 1:500(部分 Premium 运营主体可达 1:2000)",
+    "spread": "低至 0.0 点(Raw / Pro 账户)"
+  },
+  "summary": {
+    "spread": "低至 0.0 点(Raw / Pro 账户)",
+    "commission": "Raw ECN 账户每手每边低至约 $3",
+    "leverage": "最高 1:500(部分 Premium 运营主体可达 1:2000)",
+    "execution": "通过 ECN/STP 快速稳定执行",
+    "depositWithdrawal": "方式众多,通常无经纪商费用"
+  },
+  "spread": ["低至 0.0 点", "低至约 0.3 – 0.5 点", "低至约 0.3 – 0.5 点"],
+  "accountTypes": [
+    ["最低入金:$50", "点差:低至约 1.1 – 1.6 点", "佣金:$0"],
+    ["最低入金:$50", "点差:低至 0.0 点", "佣金:每手每边约 $3"],
+    ["最低入金:约 $50 – $10,000(视运营主体而定)", "点差:低至 0.0 点", "佣金:每手每边约 $1.50 – $3"],
+    ["更多账户类型", "功能因交易者不同需求而异"]
+  ],
+  "keyAdvantages": ["点差与执行具竞争力", "可交易1000多种差价合约品种", "全球监管严格", "提供 ECN 与 STP 模式", "负余额保护", "集成跟单交易(ZuluTrade、DupliTrade)", "现代化交易平台"],
+  "advantages": ["多个全球司法管辖区严格监管", "Raw ECN / Pro ECN 账户点差低", "账户选择灵活,契合不同交易策略", "平台齐全,交易功能先进", "经纪商不收取出入金费用"],
+  "disadvantages": ["标准账户点差可能高于 ECN 账户", "Raw ECN 账户固定按手收取佣金", "各运营主体监管因客户所在地区而异"],
+  "classifications": [
+    "平台与工具",
+    "成本与费用",
+    "支持与服务"
+  ],
+  "faqs": [
+    {
+      "question": "Vantage 安全吗?",
+      "answer": "安全——受 ASIC、FCA、FSCA、CIMA 及 VFSC 监管,具体视运营主体而定。"
+    },
+    {
+      "question": "最低入金是多少?",
+      "answer": "$50 起(视账户及运营主体而定)。"
+    },
+    {
+      "question": "支持哪些平台?",
+      "answer": "MT4、MT5、ProTrader、网页版及移动端。"
+    },
+    {
+      "question": "最高杠杆是多少?",
+      "answer": "最高 1:500(部分 Premium 运营主体可达 1:2000)。"
+    },
+    {
+      "question": "是否提供 ECN 账户?",
+      "answer": "提供——设有 Raw ECN 与 Pro ECN 账户,点差低、佣金具竞争力。"
+    }
+  ]
+}

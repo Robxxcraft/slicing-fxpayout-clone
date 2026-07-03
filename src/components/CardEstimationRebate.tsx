@@ -47,8 +47,8 @@ const CardEstimationRebate = () => {
 
   return (
     <div className="relative w-full lg:w-fit">
-        <div className="absolute -top-[25%] left-1/2 bg-[#ABF3DB] size-[140px] rounded-full blur-[60px]"></div>
-        <div className="absolute top-0 left-[10%] bg-[#ABF3DB] size-[300px] rounded-full blur-[120px]"></div>
+        <div className="absolute -top-[25%] start-1/2 bg-[#ABF3DB] size-[140px] rounded-full blur-[60px]"></div>
+        <div className="absolute top-0 start-[10%] bg-[#ABF3DB] size-[300px] rounded-full blur-[120px]"></div>
 
         <div className="px-6 py-8 relative z-9999 flex flex-col gap-2 md:gap-4 h-full w-full max-w-full lg:max-w-[470px] rounded-[20px] bg-white">
           <div>
@@ -80,7 +80,7 @@ const CardEstimationRebate = () => {
                     </option>
                   ))}
                 </select>
-                <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <FaChevronDown className="absolute end-4 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
             <div className="flex gap-4">
@@ -122,7 +122,7 @@ const CardEstimationRebate = () => {
                       </option>
                     ))}
                   </select>
-                  <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <FaChevronDown className="absolute end-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
             </div>

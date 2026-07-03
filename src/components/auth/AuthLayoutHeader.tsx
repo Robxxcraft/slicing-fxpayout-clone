@@ -12,7 +12,7 @@ const AuthLayoutHeader = ({
   const { i18n } = useTranslation();
   return (
     <div className="flex flex-col gap-2 items-center text-center">
-      <Link to={getLocalizedPath("", i18n.language)} className="flex gap-2 items-center cursor-pointer">
+      <Link dir="ltr" to={getLocalizedPath("", i18n.language)} className="flex gap-2 items-center cursor-pointer">
         <img
           src="/fxpayout-blue.svg"
           alt="logo fx payout"

@@ -1,0 +1,59 @@
+{
+  "description": "XM là sàn forex & CFD toàn cầu tập trung vào sự công bằng trong giao dịch, minh bạch chi phí và trải nghiệm thân thiện cho trader. XM được biết đến với khớp lệnh nhanh, không can thiệp khi có tin lớn cùng điều kiện giao dịch nhất quán không thao túng.",
+  "specification": {
+    "leverage": "Lên đến 1:1000",
+    "spread": "Từ ±0.6 – 1.7 pips"
+  },
+  "profile": {
+    "slogan": "Big. Fair. Human.",
+    "total_instruments": "1000+ (Forex, Chỉ Số, Năng Lượng, Kim Loại / Metal, Cổ Phiếu CFD, Crypto CFD, Turbo Instruments (đầy đủ), v.v.)"
+  },
+  "summary": {
+    "spread": "Từ 0.6 – 1.7 pips",
+    "commission": "0 (Micro, Standard, Ultra Low",
+    "leverage": "Lên đến 1:1000 (tùy cơ quan quản lý & khu vực)",
+    "execution": "Khớp lệnh siêu nhanh, không requote hay từ chối lệnh",
+    "depositWithdrawal": "Nhiều phương thức & nhanh"
+  },
+  "accountTypes": [
+    ["Nạp tối thiểu : $5", "Spread từ ±1.0 pips", "Hoa hồng : 0", "Phù hợp cho người mới & vốn nhỏ"],
+    ["Nạp tối thiểu : $5", "Spread từ ±1.0 pips", "Hoa hồng : 0", "Phù hợp cho trader phổ thông & giao dịch thủ công"],
+    ["Nạp tối thiểu : $5", "Spread từ ±0.6 pips", "Hoa hồng : 0", "Phù hợp cho trader tích cực & spread chặt hơn"],
+    ["Nạp tối thiểu : $5", "Spread từ 0.0 pips", "Hoa hồng : ± $7 mỗi lot (round-turn)"]
+  ],
+  "accountNotes": "Có sẵn cho một số khách hàng nhất định (LN)",
+  "keyAdvantages": ["Không requote hay từ chối lệnh", "Bonus quanh năm", "Không phí ẩn", "Lệnh được khớp dưới 66ms khi ra tin như NFP, FOMC hay CPI"],
+  "advantages": ["Vốn ban đầu cực thấp ($5)", "Spread cạnh tranh ở tài khoản Ultra Low & Zero", "Hỗ trợ nền tảng mạnh mẽ (MT4, MT5)", "Nhiều quy định toàn cầu", "Nhiều sản phẩm giao dịch"],
+  "disadvantages": ["Spread tài khoản standard có thể cao hơn", "Hoa hồng Zero ở mức tiêu chuẩn ($7 mỗi lot)", "Tính năng đào tạo không mạnh bằng một số sàn hàng đầu"],
+  "classifications": [
+    "Hỗ Trợ Khách Hàng",
+    "Khớp Lệnh & Nền Tảng",
+    "Phí & Chi Phí"
+  ],
+  "faqs": [
+    {
+      "question": "XM có an toàn không?",
+      "answer": "Có. XM được quản lý bởi nhiều cơ quan lớn như FCA, ASIC, CySEC, v.v."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Mức nạp tối thiểu là $5."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, WebTrader, Mobile."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:1000 tùy quốc gia/pháp nhân."
+    },
+    {
+      "question": "Có tài khoản demo không?",
+      "answer": "Có, có tài khoản demo để luyện tập giao dịch."
+    },
+    {
+      "question": "Có tài khoản swap-free/Islamic không?",
+      "answer": "Có, có sẵn cho một số pháp nhân/khu vực nhất định."
+    }
+  ]
+}

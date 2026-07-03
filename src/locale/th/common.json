@@ -1,0 +1,95 @@
+{
+    "text": {
+        "select": "เลือก",
+        "copy": "คัดลอก",
+        "next": "ถัดไป",
+        "tableOfContents": "สารบัญ",
+        "previous": "ก่อนหน้า",
+        "advantage": "ข้อดี",
+        "disadvantage": "ข้อเสีย",
+        "close": "ปิด",
+        "readMore": "อ่านเพิ่มเติม",
+        "seeAll": "ดูทั้งหมด",
+        "month": "เดือน",
+        "title_month": "เดือน",
+        "from_weeks_ago": "จากสัปดาห์ที่แล้ว",
+        "title_traders": "เทรดเดอร์",
+        "title_others": "อื่นๆ",
+        "title_all": "ทั้งหมด",
+        "title_local": "ในประเทศ",
+        "title_international": "ต่างประเทศ",
+        "title_newest": "ล่าสุด",
+        "title_recommendation": "แนะนำ",
+        "title_name": "ชื่อ",
+        "title_login": "เข้าสู่ระบบ",
+        "title_register": "สมัครสมาชิก",
+        "filter_broker": "กรองโบรกเกอร์",
+        "title_platform": "แพลตฟอร์ม",
+        "title_trading": "การเทรด",
+        "minimum_deposit": "ฝากขั้นต่ำ",
+        "spread_broker": "สเปรดของโบรกเกอร์",
+        "reset_filter": "รีเซ็ตตัวกรอง",
+        "range_rebate": "ช่วงรีเบต",
+        "highest_rebate": "รีเบตสูงสุด",
+        "lowest_rebate": "รีเบตต่ำสุด",
+        "title_low": "ต่ำ",
+        "title_medium": "ปานกลาง",
+        "title_high": "สูง",
+        "title_apply": "ใช้งาน",
+        "rebate_till": "รีเบตสูงสุด"
+    },
+    "button": {
+        "registerNow": "สมัครเลย",
+        "calculateRebate": "คำนวณรีเบต",
+        "visitWebsite": "เยี่ยมชมเว็บไซต์",
+        "join_now": "เข้าร่วมเลย",
+        "see_list_broker": "ดูรายชื่อโบรกเกอร์",
+        "try_now": "ลองเลย"
+    },
+    "cta": {
+        "title": "พร้อมเพิ่มประสิทธิภาพกำไรจากการเทรดของคุณแล้วหรือยัง?",
+        "paragraph": "สมัครเลยและเริ่มรับรีเบตสูงสุดถึง 90%"
+    },
+    "cta_trader": {
+        "title": "เริ่มเทรดอย่างมีประสิทธิภาพยิ่งขึ้นวันนี้",
+        "paragraph": "สมัครเลยและรับรีเบตจากทุกธุรกรรมการเทรดของคุณ ไม่มีค่าใช้จ่ายเพิ่มเติม ไม่มีความเสี่ยงเพิ่มเติม"
+    },
+    "methods": {
+        "bank_transfer": "โอนผ่านธนาคาร",
+        "bank_transfer_usd_idr": "โอนผ่านธนาคาร (USD/IDR)",
+        "crypto": "คริปโต",
+        "debit_credit_card": "บัตรเดบิต/เครดิต",
+        "e_wallet": "E-Wallet",
+        "indonesian_local_va": "VA ในประเทศ (ID)",
+        "indonesian_e_wallet": "E-Wallet อินโดนีเซีย",
+        "local_bank": "ธนาคารในประเทศ",
+        "local_transfer": "โอนในประเทศ",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "หน้าแรก",
+        "broker": "โบรกเกอร์",
+        "news": "ข่าวสาร",
+        "calculator": "เครื่องคำนวณ",
+        "claimRebate": "เคลมรีเบต",
+        "service": "บริการ",
+        "affiliate": "พันธมิตร",
+        "subNav": {
+            "definition": "รีเบต Forex คืออะไร?",
+            "howRebate": "วิธีรับรีเบต Forex",
+            "howWorks": "ทำงานอย่างไร?",
+            "payment": "ระบบการจ่ายรีเบต",
+            "schedule": "ตารางการจ่ายรีเบต",
+            "validation": "ยืนยันบัญชี",
+            "transfer": "โอนย้ายบัญชี",
+            "forex": "Forex",
+            "vipRebate": "VIP Rebate"
+        }
+    },
+    "footer": {
+        "paragraph": "เราคืนค่าคอมมิชชั่น IB สูงสุดถึง 90% ให้กับเทรดเดอร์ กระบวนการรวดเร็ว ปลอดภัย และโปร่งใส โดยไม่เปลี่ยนแปลงสเปรดหรือเงื่อนไขการเทรด",
+        "quickLink": "ลิงก์ด่วน",
+        "contact": "ติดต่อเรา"
+    }
+}

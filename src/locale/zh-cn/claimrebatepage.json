@@ -1,0 +1,90 @@
+{
+    "helmet": {
+        "title": "什么是外汇返佣?拿回您的交易成本 | FXPayout",
+        "description": "FXPayout 是值得信赖的外汇返佣平台,将经纪商佣金的最高90%以现金返还方式直接返给交易者。"
+    },
+    "definition": {
+        "title": "什么是外汇返佣?",
+        "paragraph": "外汇返佣是指将每笔交易的部分佣金或点差返还给您。您仍照常在经纪商处交易,但部分交易成本会以返佣的形式回到您手中。",
+        "cards": [
+            {
+                "title": "返佣的优势",
+                "paragraph": "点差、杠杆和交易执行与普通账户完全相同。通过返佣,您可以降低交易成本,并有望在长期中提升利润。"
+            },
+            {
+                "title": "返佣运作机制",
+                "paragraph": "您每完成一笔交易,经纪商都会将部分佣金作为IB佣金分给 FXPayout。这部分佣金随后会以返佣形式返入您的账户,并可提现。"
+            }
+        ]
+    },
+    "howRebate": {
+        "title": "如何获得返佣",
+        "paragraph": "当您通过我们开立外汇交易账户(或绑定已有账户)后,您的经纪商便会向我们支付返佣。"
+    },
+    "howWorks": {
+        "title": "返佣是如何运作的?",
+        "paragraph": "外汇返佣在后台自动运作。您仍照常在经纪商处交易,而 FXPayout 负责将您部分交易佣金以返佣形式返还给您。",
+        "imageFlows": "how-it-works-flow-id.webp",
+        "flows": [
+            {
+                "flow": "点差 / 佣金",
+                "title": "交易者",
+                "paragraph": "交易者通过所选经纪商照常交易,点差、杠杆及交易策略均不受任何影响。"
+            },
+            {
+                "flow": "回报 / 奖励",
+                "title": "经纪商",
+                "paragraph": "经纪商从每笔交易中收取点差或佣金,再将其中一部分作为IB佣金分给 FXPayout(介绍经纪商)。"
+            },
+            {
+                "flow": "返现 / 返佣发放",
+                "title": "FXPAYOUT",
+                "paragraph": "FXPayout 将所收到佣金的一部分以返佣形式返还给交易者,定期发放,公开透明。"
+            }
+        ]
+    },
+    "payment": {
+        "title": "返佣支付方式",
+        "paragraph": "FXPayout 提供多种灵活便捷的返佣支付方式。您可根据个人偏好选择提现方式,起提金额低,流程透明。",
+        "tableHeaders": ["方式", "最低支付金额", "币种", "手续费"],
+        "tableItems": [
+            {
+                "method": "加密货币",
+                "cost": "最高 3 USDT"
+            },
+            {
+                "method": "印尼电子钱包",
+                "cost": "$0"
+            },
+            {
+                "method": "印尼银行",
+                "cost": "$0"
+            },
+            {
+                "method": "Neteller",
+                "cost": "1.45%(最低 $0.59)"
+            },
+            {
+                "method": "Skrill / Neteller",
+                "cost": "4.4% + 0.3 USD"
+            },
+            {
+                "method": "PayPal",
+                "cost": "1.45%(最低 $0.59)"
+            }
+        ]
+    },
+    "schedule": {
+        "title": "返佣发放时间",
+        "paragraph": "查看不同经纪商的返佣发放时间。点击“查看时间表”了解各经纪商的完整详情。",
+        "card": {
+            "title": "经纪商返佣时间表",
+            "showEntry": ["显示", "条"],
+            "searchPlaceholder": "在此搜索经纪商",
+            "brokerName": "经纪商名称",
+            "schedule": "返佣时间",
+            "viewSchedule": "查看时间表",
+            "showList": "正在显示第 {{startIndex}} 至 {{endIndex}} 条,共 {{totalIndex}} 条"
+        }
+    }
+}

@@ -76,7 +76,7 @@ const WhyChooseSection = () => {
           ))}
         </div>
 
-        <div className="mt-4 lg:mt-6 py-4 px-5 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary">
+        <div className="mt-4 lg:mt-6 py-4 px-5 bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
           <p className="text-base md:text-xl font-medium text-black/70 leading-[192%]">
             {t(`${key}.info`)}
           </p>

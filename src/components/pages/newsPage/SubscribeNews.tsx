@@ -16,7 +16,7 @@ const SubscribeNews = () => {
     <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-15 2xl:pt-20">
       <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl overflow-hidden">
         <div className="z-999 flex flex-col lg:flex-row justify-between items-center gap-6 w-full ">
-          <div className="max-w-full lg:max-w-1/2 text-center lg:text-left">
+          <div className="max-w-full lg:max-w-1/2 text-center lg:text-start">
             <h2 className="text-2xl 2xl:text-[40px] font-bold text-white leading-[134%] max-w-[620px]">
               {t("newspage:subscribe.title")}
             </h2>
@@ -27,7 +27,7 @@ const SubscribeNews = () => {
           <div className="flex flex-col md:flex-row items-center gap-2 max-w-full lg:max-w-1/2">
             <div className="relative w-full">
               <img src="/email-icon.svg" alt="Icon email"
-                className="absolute left-8 top-1/2 -translate-y-1/2 pointer-events-none" />
+                className="absolute start-8 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 name="email"
                 id="email"
@@ -37,7 +37,7 @@ const SubscribeNews = () => {
                 inputMode="email"
                 autoComplete="email"
                 className={`
-                  pl-[70px] pr-8 py-5 md:py-4 2xl:py-5 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] rounded-full focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed`
+                  ps-[70px] pe-8 py-5 md:py-4 2xl:py-5 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] rounded-full focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed`
                 }
               />
             </div>
@@ -49,7 +49,7 @@ const SubscribeNews = () => {
         <img
           src="/circle-ornament.png"
           alt="ornament"
-          className="absolute z-10 top-0 -left-[10%] -rotate-55 w-[600px]"
+          className="absolute z-10 top-0 -start-[10%] ltr:-rotate-55 rtl:rotate-260 w-[600px]"
         />
       </div>
     </section>

@@ -97,10 +97,10 @@ const Profile = () => {
           }>
             {t("homepage:profile.badge")}
           </BadgeSection>
-          <h2 className="my-6 2xl:my-8 text-center lg:text-left text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[48px] font-bold leading-[120%]">
+          <h2 className="my-6 2xl:my-8 text-center lg:text-start text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[48px] font-bold leading-[120%]">
             {t("homepage:profile.title")}
           </h2>
-          <p className="text-center lg:text-left text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">
+          <p className="text-center lg:text-start text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">
             {t("homepage:profile.paragraph")}
           </p>
         </div>

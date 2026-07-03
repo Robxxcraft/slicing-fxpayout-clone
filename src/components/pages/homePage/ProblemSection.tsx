@@ -31,13 +31,13 @@ const ProblemSection = () => {
           {problems.map((item, index) => (
             <div 
               key={index}
-              className="px-5 2xl:px-8 py-4 2xl:py-6 flex items-start md:items-center justify-between gap-6 bg-[#FAF4F4] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-[#FF4141]"
+              className="px-5 2xl:px-8 py-4 2xl:py-6 flex items-start md:items-center justify-between gap-6 bg-my-red-100 rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-my-red-700"
             >
-              <p className="text-base md:text-xl 2xl:text-2xl text-[#FF4141] font-medium leading-[160%]">
+              <p className="text-base md:text-xl 2xl:text-2xl text-my-red-700 font-medium leading-[160%]">
                 {item} 
               </p>
               <div className="w-fit">
-                <BoundedIcon icon={`/money-down.svg`} alt="Icon Money" 
+                <BoundedIcon icon={index === 0 ? `/money-down.svg` : "money-spread.svg"} alt="Icon Money" 
                   bgCL="bg-[#FFE3E3]"
                 />
               </div>
@@ -51,7 +51,7 @@ const ProblemSection = () => {
           </p>
         </div>
 
-        <div className="px-5 2xl:px-8 py-4 2xl:py-6 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between w-full bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-l-10 border-primary">
+        <div className="px-5 2xl:px-8 py-4 2xl:py-6 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between w-full bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
           <div>
             <p className="text-base md:text-xl 2xl:text-2xl text-primary font-bold leading-[160%]">
               {t("homepage:problemSection.solutions.0")}
@@ -61,7 +61,7 @@ const ProblemSection = () => {
             </p>
           </div>
           <div className="w-fit">
-            <div className="flex gap-2 items-center">
+            <div dir="ltr" className="flex gap-2 items-center">
               <img
                 src="/fxpayout-blue.svg"
                 alt="logo fx payout"

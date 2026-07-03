@@ -1,0 +1,95 @@
+{
+    "text": {
+        "select": "选择",
+        "copy": "复制",
+        "next": "下一个",
+        "tableOfContents": "目录",
+        "previous": "上一个",
+        "advantage": "优点",
+        "disadvantage": "缺点",
+        "close": "关闭",
+        "readMore": "阅读更多",
+        "seeAll": "查看全部",
+        "month": "月",
+        "title_month": "月份",
+        "from_weeks_ago": "较上周",
+        "title_traders": "交易者",
+        "title_others": "其他",
+        "title_all": "全部",
+        "title_local": "本地",
+        "title_international": "国际",
+        "title_newest": "最新",
+        "title_recommendation": "推荐",
+        "title_name": "名称",
+        "title_login": "登录",
+        "title_register": "注册",
+        "filter_broker": "筛选经纪商",
+        "title_platform": "平台",
+        "title_trading": "交易",
+        "minimum_deposit": "最低入金",
+        "spread_broker": "经纪商点差",
+        "reset_filter": "重置筛选",
+        "highest_rebate": "返佣最高",
+        "range_rebate": "返佣区间",
+        "lowest_rebate": "返佣最低",
+        "title_low": "低",
+        "title_medium": "中",
+        "title_high": "高",
+        "title_apply": "应用",
+        "rebate_till": "返佣高达"
+    },
+    "button": {
+        "registerNow": "立即注册",
+        "calculateRebate": "计算返佣",
+        "visitWebsite": "访问官网",
+        "join_now": "立即加入",
+        "see_list_broker": "查看经纪商列表",
+        "try_now": "立即体验"
+    },
+    "cta": {
+        "title": "准备好提升您的交易利润效率了吗?",
+        "paragraph": "立即注册,开始领取高达90%的返佣。"
+    },
+    "cta_trader": {
+        "title": "今天就开始更高效地交易",
+        "paragraph": "立即注册,让每笔交易都能获得返佣。零额外费用,零额外风险。"
+    },
+    "methods": {
+        "bank_transfer": "银行转账",
+        "bank_transfer_usd_idr": "银行转账(USD/IDR)",
+        "crypto": "加密货币",
+        "debit_credit_card": "借记卡/信用卡",
+        "e_wallet": "电子钱包",
+        "indonesian_local_va": "本地虚拟账户(印尼)",
+        "indonesian_e_wallet": "印尼电子钱包",
+        "local_bank": "本地银行",
+        "local_transfer": "本地转账",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "首页",
+        "broker": "经纪商",
+        "news": "资讯",
+        "calculator": "计算器",
+        "claimRebate": "申领返佣",
+        "service": "服务",
+        "affiliate": "联盟代理",
+        "subNav": {
+            "definition": "什么是外汇返佣?",
+            "howRebate": "如何获得外汇返佣",
+            "howWorks": "返佣是如何运作的?",
+            "payment": "返佣支付方式",
+            "schedule": "返佣发放时间",
+            "validation": "账户验证",
+            "transfer": "账户转移",
+            "forex": "外汇",
+            "vipRebate": "VIP 返佣"
+        }
+    },
+    "footer": {
+        "paragraph": "我们将最高90%的IB佣金返还给交易者。流程快捷、安全、透明,不改变点差或任何交易条件。",
+        "quickLink": "快速链接",
+        "contact": "联系我们"
+    }
+}

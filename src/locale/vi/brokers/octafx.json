@@ -1,0 +1,56 @@
+{
+  "description": "OctaFX là sàn forex và CFD quốc tế đã hoạt động từ năm 2011, mang đến quyền truy cập vào thị trường toàn cầu bao gồm forex, kim loại, chỉ số, hàng hóa và cryptocurrency. OctaFX được biết đến nhờ spread thấp, chi phí giao dịch cạnh tranh không hoa hồng trên nhiều sản phẩm cùng các nền tảng giao dịch mạnh mẽ như MetaTrader và OctaTrader. OctaFX cũng cung cấp tính năng copy trading và hỗ trợ 24/7 cho khách hàng trên toàn cầu.",
+  "specification": {
+    "leverage": "Lên đến 1:500",
+    "spread": "Từ ±0.6 pips"
+  },
+  "profile": {
+    "slogan": "Trusted Forex & CFD Broker",
+    "totalUser": "40+ triệu trader tại 180+ quốc gia",
+    "totalInstrument": "Số Lượng Sản Phẩm : 300+ (Forex, cổ phiếu CFD, kim loại, chỉ số, crypto)"
+  },
+  "summary": {
+    "spread": "Từ ±0.6 pips",
+    "commission": "Không có phí non-trading (nạp/rút miễn phí)",
+    "leverage": "Lên đến 1:500 (tùy sản phẩm & pháp nhân)",
+    "execution": "Nhanh & ổn định",
+    "depositWithdrawal": "Nhiều phương thức không phí non-trading"
+  },
+  "spreadAccount": ["Tất cả loại tài khoản"],
+  "spread": ["biến động, cao hơn forex tùy điều kiện thị trường"],
+  "accountTypes": [
+    ["Nạp tối thiểu : $50", "Spread từ ±1.0 pips", "Phù hợp người mới"],
+    ["Nạp tối thiểu : $50", "Spread từ ±0.3 – 0.8 pips", "Không hoa hồng"],
+    ["Nạp tối thiểu : $100", "Spread từ 0.0 pips", "Hoa hồng cạnh tranh"]
+  ],
+  "keyAdvantages": ["Spread thấp (thông thường từ 0.6 pips)", "Nạp & rút miễn phí (non-trading)", "Đòn bẩy linh hoạt lên đến 1:500", "Nền tảng giao dịch mạnh mẽ (MT4, MT5, OctaTrader)", "Copy trading & tính năng xã hội", "Truy cập hơn 300 sản phẩm toàn cầu", "Hỗ trợ khách hàng 24/7"],
+  "advantages": ["Điều kiện giao dịch tối ưu chi phí", "Spread cạnh tranh", "Nền tảng đầy đủ (MT4, MT5, OctaTrader)", "Nạp & rút miễn phí", "Nhiều sản phẩm giao dịch"],
+  "disadvantages": ["Không có quy định top-tier như FCA/ASIC đầy đủ trên tất cả pháp nhân", "Spread có thể giãn rộng khi biến động cao", "Một số đánh giá người dùng đề cập vấn đề dịch vụ nhất định (đánh giá trái chiều)"],
+  "classifications": [
+    "Dịch Vụ Khách Hàng",
+    "Nền Tảng & Khớp Lệnh",
+    "Chi Phí & Spread"
+  ],
+  "faqs": [
+    {
+      "question": "OctaFX có an toàn không?",
+      "answer": "Có, OctaFX hoạt động từ năm 2011 và được quản lý thông qua pháp nhân CySEC cho khu vực châu Âu."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "$25 (khuyến nghị $100 để có margin tốt hơn)."
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, OctaTrader, mobile & web."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:500 tùy sản phẩm & khu vực."
+    },
+    {
+      "question": "Có tài khoản demo không?",
+      "answer": "Có, OctaFX cung cấp tài khoản demo miễn phí."
+    }
+  ]
+}

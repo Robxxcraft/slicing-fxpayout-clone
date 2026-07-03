@@ -1,0 +1,61 @@
+{
+  "description": "Finex(PT Finex Bisnis Solusi Futures)是一家成立于2012年的印尼正规外汇经纪商,受 BAPPEBTI(印尼商品期货交易监管局)及 OJK(印尼金融服务管理局)监管,并与 PT KBI、雅加达期货交易所(JFX)等清算机构合作。该经纪商提供外汇、指数、金属、股票差价合约及能源等多种品种的交易,交易条件具竞争力,平台操作直观便捷。",
+  "specification": {
+    "leverage": "最高 1:500(外汇及金属;指数/能源有所不同)",
+    "spread": "浮动点差,通常低至约 0.5 点"
+  },
+  "profile": {
+    "name": "PT Finex Bisnis Solusi Futures(Finex)",
+    "slogan": "(无特定口号,本地品牌)"
+  },
+  "summary": {
+    "spread": "低至约 0.5 点(浮动)",
+    "commission": "约每手 $1",
+    "leverage": "最高 1:500(外汇及金属)",
+    "execution": "快速",
+    "depositWithdrawal": "本地银行及电子钱包"
+  },
+  "accountTypes": [
+    ["最低入金:$10", "点差低至 0.5 点", "佣金:约每手 $1", "杠杆:最高 1:500", "交易品种齐全"]
+  ],
+  "spread": ["浮动点差;通常高于外汇"],
+  "keyAdvantages": ["受 BAPPEBTI 与 OJK 正规监管", "初始入金门槛低", "高杠杆,最高达 1:500", "执行快速", "交易品种丰富", "热门平台(MT5)"],
+  "advantages": ["受 BAPPEBTI 监管的正规经纪商", "入金门槛低($10)", "点差与佣金相对具竞争力", "可交易品种众多", "执行快速,支持本地银行"],
+  "disadvantages": ["仅提供一种真实账户类型", "教育与研究功能较全球性经纪商更为简单", "仅支持 MT5(无 MT4)"],
+  "reviewHighlights": [
+    "出入金处理快速",
+    "交易成本低",
+    "MT5 使用便捷",
+    "适合新手与中级交易者"
+  ],
+  "faqs": [
+    {
+      "question": "Finex 安全合法吗?",
+      "answer": "安全。Finex 已在印尼 BAPPEBTI 注册并持有牌照。"
+    },
+    {
+      "question": "最低入金是多少?",
+      "answer": "初始最低入金为 $10。"
+    },
+    {
+      "question": "支持哪些平台?",
+      "answer": "MetaTrader 5。"
+    },
+    {
+      "question": "最高杠杆是多少?",
+      "answer": "外汇及金属最高 1:500。"
+    },
+    {
+      "question": "Finex 提供模拟账户吗?",
+      "answer": "提供——设有模拟账户供练习。"
+    },
+    {
+      "question": "最低点差是多少?",
+      "answer": "EUR/USD 低至约 0.5 点。"
+    },
+    {
+      "question": "是否有联盟代理 / 返佣计划?",
+      "answer": "有——提供合作伙伴/联盟代理模式,返佣详情可在合作伙伴门户中洽谈了解。"
+    }
+  ]
+}

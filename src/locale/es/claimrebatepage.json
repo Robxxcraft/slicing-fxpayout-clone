@@ -1,0 +1,90 @@
+{
+    "helmet": {
+        "title": "¿Qué es el Rebate de Forex? Recupera tus Costes de Trading | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "definition": {
+        "title": "¿Qué es el Rebate de Forex?",
+        "paragraph": "El rebate de forex es la devolución de una parte de la comisión o el spread de cada operación. Sigues operando con normalidad en tu bróker, pero una parte de tus costes de trading se te devuelve en forma de rebate.",
+        "cards": [
+            {
+                "title": "Ventajas del Rebate",
+                "paragraph": "El spread, el apalancamiento y la ejecución se mantienen igual que en una cuenta normal. Con el rebate, puedes reducir tus costes de trading y aumentar tu rentabilidad potencial a largo plazo."
+            },
+            {
+                "title": "Cómo Funciona el Rebate",
+                "paragraph": "Cada vez que realizas una operación, el bróker comparte una parte de la comisión con fxpayout como IB. Esa comisión se devuelve después a tu cuenta en forma de rebate y puedes retirarla."
+            }
+        ]
+    },
+    "howRebate": {
+        "title": "Cómo Obtener tu Rebate",
+        "paragraph": "Cuando abres una cuenta de trading de Forex (o vinculas una cuenta existente) a través de nosotros, tu bróker nos paga un rebate"
+    },
+    "howWorks": {
+        "title": "¿Cómo Funciona?",
+        "paragraph": "El rebate de forex funciona de forma automática en segundo plano. Sigues operando con normalidad en tu bróker, mientras fxpayout gestiona la devolución de una parte de tu comisión de trading en forma de rebate.",
+        "imageFlows": "how-it-works-flow-id.webp",
+        "flows": [
+            {
+                "flow": "Spread / Comisión",
+                "title": "Trader",
+                "paragraph": "El trader realiza sus operaciones con normalidad a través del bróker de su elección, sin cambios en el spread, el apalancamiento ni su estrategia de trading."
+            },
+            {
+                "flow": "Reward / Recompensa",
+                "title": "Bróker",
+                "paragraph": "El bróker recibe el spread o la comisión de cada operación y luego comparte una parte de esa comisión con fxpayout como Introducing Broker (IB)."
+            },
+            {
+                "flow": "Pago de Cashback / Rebate",
+                "title": "FXPAYOUT",
+                "paragraph": "fxpayout devuelve al trader una parte de la comisión recibida en forma de rebate, pagado de manera periódica y transparente."
+            }
+        ]
+    },
+    "payment": {
+        "title": "Sistema de Pago del Rebate",
+        "paragraph": "fxpayout ofrece diversos métodos de pago de rebate, flexibles y de fácil acceso. Puedes elegir el método de retiro que prefieras, con un mínimo de retiro bajo y un proceso transparente.",
+        "tableHeaders": ["Método", "Pago Mínimo", "Moneda", "Comisión"],
+        "tableItems": [
+            {
+                "method": "Cryptocurrencies",
+                "cost": "Up to 3 USDT"
+            },
+            {
+                "method": "E-Wallet Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Bank Indonesia",
+                "cost": "$0"
+            },
+            {
+                "method": "Neteller",
+                "cost": "1.45% (Min. $0.59)"
+            },
+            {
+                "method": "Skrill / Neteller",
+                "cost": "4.4% + 0.3 USD"
+            },
+            {
+                "method": "PayPal",
+                "cost": "1.45% (Min. $0.59)"
+            }
+        ]
+    },
+    "schedule": {
+        "title": "Calendario de Rebate",
+        "paragraph": "Consulta el calendario de pago del rebate según tu bróker de trading. Haz clic en «Ver Calendario» para ver los detalles completos de cada bróker.",
+        "card": {
+            "title": "Listado de Calendarios de Rebate por Bróker",
+            "showEntry": ["Mostrar", "entradas"],
+            "searchPlaceholder": "Busca un bróker aquí",
+            "brokerName": "Nombre del Bróker",
+            "schedule": "Calendario de Rebate",
+            "viewSchedule": "Ver Calendario",
+            "showList": "Mostrando {{startIndex}} a {{endIndex}} de {{totalIndex}} entradas"
+        }
+    }
+}

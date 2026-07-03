@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Listado de Brókers Asociados y Detalles | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "header": {
+        "title": "Brókers Asociados y Detalles",
+        "paragraph": "Brókers seleccionados con la mejor ejecución y esquemas de rebate de hasta el 90%. Compara los detalles de los instrumentos y elige el bróker que mejor se adapte a tu estrategia de trading.",
+        "tag": "LISTADO DE BRÓKERS",
+        "searchPlaceholder": "Busca un bróker aquí",
+        "total_brokers": "Número de Brókers",
+        "filter_brokers": "Filtrar Brókers",
+        "sort_by": "Ordenar Por"
+    },
+    "card": {
+        "rebatePerInstrument": "Rebate por Instrumento",
+        "instrument": "Instrumento",
+        "rebate": "Rebate",
+        "register": "Registrarse en el Bróker",
+        "detail": "Ver Más"
+    },
+    "notify": {
+        "title": "Transparencia del Rebate",
+        "paragraph": "Conservamos un historial de comisiones y rebate auditable por el usuario. (Demo: los datos se almacenan en el navegador)."
+    },
+    "ctaregisterbroker": {
+        "title": "Únete a Nuestra Plataforma",
+        "paragraph": "¿Tu bróker aún no está disponible? Muestra el perfil de tu bróker y llega a más traders a través de nuestro ecosistema.",
+        "button": "Registrar Bróker"
+    }
+}

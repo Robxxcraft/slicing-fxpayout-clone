@@ -32,8 +32,8 @@ const SecuritySection = ({
   return (
     <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-14 xl:pt-[120px]">
       <div className="relative pt-[72px] pb-8 md:pb-[72px] px-6 md:px-10 lg:px-16 bg-primary rounded-3xl">
-        <div className="py-2 pl-2 pr-4 absolute top-5 left-0 bg-my-green rounded-r-xl">
-          <div className="absolute top-0 right-full w-1.5 h-11 bg-my-green rounded-l-lg"></div>
+        <div className="py-2 ps-2 pe-4 absolute top-5 start-0 bg-my-green rounded-e-xl">
+          <div className="absolute top-0 end-full w-1.5 h-11 bg-my-green rounded-s-lg"></div>
           <p className="uppercase text-base text-white font-bold">
             {t("homepage:securitySection.badge")}
           </p>
@@ -78,7 +78,7 @@ const SecuritySection = ({
             />
           </div>
         </div>
-        <div onContextMenu={() => false} className="z-95 hidden xl:block absolute right-1 top-1/2 -translate-y-1/2 w-[320px] 2xl:w-[420px] select-none pointer-events-none">
+        <div onContextMenu={() => false} className="z-95 hidden xl:block absolute end-1 top-1/2 -translate-y-1/2 w-[320px] 2xl:w-[420px] select-none pointer-events-none">
           <img src="/secure-fxpayout.webp" alt="Secure FXPayout" 
             className="w-full object-contain"
           />

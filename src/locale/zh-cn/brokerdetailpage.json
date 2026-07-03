@@ -1,0 +1,230 @@
+{
+    "helmet": {
+        "title": "{{brokerName}} 返佣每手高达 {{brokerEstimate}} | FXPayout",
+        "description": "FXPayout 是值得信赖的外汇返佣平台,将经纪商佣金的最高90%以现金返还方式直接返给交易者。"
+    },
+    "navbar": {
+        "profil": "简介",
+        "summary": "概览",
+        "accountType": "账户类型",
+        "spreadCommission": "点差与佣金",
+        "advantage": "优势",
+        "platform": "交易平台",
+        "depositWithdraw": "入金与出金",
+        "advantagesDisadvantages": "优点与缺点",
+        "rating": "评分",
+        "faq": "常见问题"
+    },
+    "back": "返回经纪商列表",
+    "overallScore": "综合评分",
+    "header": {
+        "viewRating": "查看社区评价",
+        "detailHeaders": ["成立年份", "最低入金", "杠杆", "点差"]
+    },
+    "profile": {
+        "title": "经纪商简介",
+        "subtitle": "关于经纪商资质与监管的官方信息。",
+        "cards": [
+            {
+                "title": "主要信息",
+                "headers": {
+                    "brokerName": "经纪商名称",
+                    "slogan": "口号",
+                    "entity": "运营主体",
+                    "group": "集团",
+                    "ranking": "层级",
+                    "yearFounded": "成立年份",
+                    "brokerCategory": "经纪商类型",
+                    "totalUser": "用户总数",
+                    "model": "运营模式",
+                    "totalInstrument": "交易品种数量"
+                }
+            },
+            {
+                "title": "主要监管"
+            }
+        ]
+    },
+    "summary": {
+        "title": "快速概览(Quick Facts)",
+        "subtitle": "经纪商核心信息,助您快速了解",
+        "cardHeaders": {
+            "minDeposit": "最低入金",
+            "accountType": "账户类型",
+            "spread": "点差",
+            "commission": "佣金",
+            "leverage": "杠杆",
+            "execution": "订单执行",
+            "instrument": "交易品种",
+            "depositWithdrawal": "入金与出金"
+        }
+    },
+    "accountType": {
+        "title": "账户类型",
+        "subtitle": "适配不同需求与交易风格的账户选择。",
+        "profit": "优势"
+    },
+    "spread": {
+        "title": "点差",
+        "subtitle": "经纪商主要品种的点差对比。",
+        "accountType": "账户类型"
+    },
+    "advantage": {
+        "title": "核心优势",
+        "subtitle": "构成该经纪商加分项的特色功能。"
+    },
+    "platform": {
+        "title": "支持的交易平台",
+        "subtitle": "可用于交易的平台列表。"
+    },
+    "depositWithdraw": {
+        "title": "入金与出金",
+        "subtitle": "交易方式及处理时间信息。",
+        "tableHeaders": ["方式", "入金到账时间", "出金到账时间", "手续费"]
+    },
+    "rebateProgram": {
+        "title": "返佣计划(估算)",
+        "subtitle": "交易者通过返佣计划可获得的预估返佣。",
+        "button": "返佣计算器",
+        "info": "ECN账户及大交易量可享更高返佣,以上数值仅为估算,可能会有调整。"
+    },
+    "advantagesDisadvantages": {
+        "title": "优点与缺点",
+        "subtitle": "正面亮点与需注意事项的汇总。"
+    },
+    "rating": {
+        "title": "社区评分",
+        "subtitle": "来自经纪商用户的评价与反馈。",
+        "summaryReview": "基于 <0>{{totalReview}}</0> 条社区评价"
+    },
+    "faq": {
+        "title": "常见问题",
+        "subtitle": "用户最常提出的问题。"
+    },
+    "cta": {
+        "title": "准备好在 {{brokerName}} 交易了吗?",
+        "paragraph": "使用您的专属链接,在 {{brokerName}} 享受最优返佣与专业交易条件。",
+        "registerFxpayout": "通过 FXPayout 注册",
+        "visitWebsite": "访问经纪商官网"
+    },
+    "data": {
+        "title": {
+            "asic_regulated": "ASIC 监管",
+            "beginner_friendly": "适合新手",
+            "beginner_advanced_friendly": "新手与高手皆宜",
+            "cent_account": "美分账户",
+            "copy_trading_supported": "支持跟单交易",
+            "competitive_spread": "点差具竞争力",
+            "ecn_account": "提供 ECN 账户",
+            "ecn_broker": "ECN 经纪商",
+            "ecn_market_execution": "ECN/市价执行",
+            "ecn_ndd": "ECN/NDD 经纪商",
+            "ecn_stp": "ECN/STP 经纪商",
+            "ecn_stp_forex_cfd": "ECN/STP 外汇及差价合约经纪商",
+            "forex_cfd": "外汇及差价合约经纪商",
+            "flexible_leverage": "灵活杠杆",
+            "global_forex_cfd": "全球外汇及差价合约经纪商",
+            "high_leverage": "高杠杆",
+            "human_centered_broker": "以人为本的经纪商",
+            "indonesian_regulation": "印尼监管",
+            "low_deposit": "低门槛入金",
+            "low_spread": "低点差",
+            "mt4_mt5": "支持 MT4 与 MT5",
+            "multi_regulated": "多重监管",
+            "multi_asset": "多资产",
+            "multi_asset_trading": "多资产交易",
+            "multi_platform": "多平台交易",
+            "no_commission": "出入金免手续费",
+            "regulated_broker": "受监管经纪商",
+            "raw_spread": "原始点差",
+            "strong_regulation": "监管严格",
+            "thin_spread": "极低点差",
+            "tier_1": "一级(Tier 1)",
+            "tier_local": "本地层级",
+            "ultra_fast_execution": "超快执行"
+        },
+        "regulations": {
+            "asic": "澳大利亚",
+            "bafin": "德国",
+            "cysec": "塞浦路斯",
+            "cima": "开曼群岛",
+            "cma": "肯尼亚",
+            "cbcs": "库拉索",
+            "dfsa": "迪拜",
+            "vfsc": "瓦努阿图",
+            "ifsc": "伯利兹",
+            "fsa": "塞舌尔",
+            "fsc": "毛里求斯",
+            "fsca": "南非",
+            "fca": "英国",
+            "finex_bappebti": "零售外汇牌照(47/BAPPEBTI/SI/04/2013)",
+            "scb": "巴哈马",
+            "st_vincent_grenadines": "圣文森特和格林纳丁斯"
+        },
+        "instruments": {
+            "crypto": "加密货币",
+            "crypto_cfd": "加密货币差价合约",
+            "commodity": "大宗商品",
+            "energy": "能源",
+            "etf": "ETF",
+            "forex": "外汇",
+            "forex_60": "60+ 货币对",
+            "gold": "黄金",
+            "indices": "指数",
+            "metal": "金属",
+            "obligation": "债券",
+            "stocks": "股票",
+            "stocks_cfd": "股票差价合约",
+            "shares_cfd": "股票差价合约",
+            "turbo_instrument": "涡轮产品"
+        },
+        "level": {
+            "advanced": "进阶",
+            "beginner": "新手",
+            "copy_trading": "跟单交易",
+            "general": "通用",
+            "general_retail": "普通零售",
+            "news_trader": "新闻交易者",
+            "pro": "专业",
+            "pro_scalper": "专业及剥头皮交易者",
+            "pro_scalper_ea": "专业、剥头皮、EA",
+            "trader": "交易者",
+            "trader_retail": "零售交易者",
+            "scalper_ea": "剥头皮、EA"
+        },
+        "time": {
+            "around_20m_2h_80percent": "约20分钟–2小时(80%情况)",
+            "days_1_3": "1–3天",
+            "days_1_3_work": "1–3个工作日",
+            "depends": "视情况而定",
+            "instant": "即时",
+            "instant_1m": "<1分钟(即时)",
+            "interval_5_30": "5–30分钟",
+            "interval_instant_1d_work": "即时 - 1个工作日",
+            "interval_instant_2d": "即时 – 2个工作日",
+            "interval_instant_3d_work": "即时 – 3个工作日",
+            "one_day": "1天"
+        },
+        "fee": {
+            "zero_broker": "通常无经纪商费用",
+            "zero_broker_depends_method": "视方式而定(通常经纪商不收费)",
+            "zero_broker_fees_third_party_may_apply": "通常无经纪商费用(第三方费用可能适用)"
+        },
+        "platforms": {
+            "copy_trading": "跟单交易 App",
+            "c_trader": "cTrader",
+            "exness_terminal": "Exness Terminal(网页版)",
+            "exness_mobile": "Exness 手机 App",
+            "hfm_mobile": "HFM 手机 App",
+            "ios_android": "手机 App(Android 与 iOS)",
+            "mobile_trading": "移动端交易",
+            "mt4": "MetaTrader 4(MT4)",
+            "mt5": "MetaTrader 5(MT5)",
+            "pro_trader": "ProTrader",
+            "octa_trader": "OctaTrader(专属平台)",
+            "trading_view": "TradingView",
+            "web_mobile": "网页版与移动端",
+            "web_trading": "WebTrader"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "description": "Sàn toàn cầu với khớp lệnh siêu nhanh, spread thấp cùng các lựa chọn tài khoản cực kỳ linh hoạt bao gồm cả tài khoản CENT. Cung cấp quyền truy cập vào Forex, Vàng, Chỉ Số, Năng Lượng và CFD với điều kiện ổn định, minh bạch. Được hỗ trợ bởi quy trình nạp-rút nhanh cùng nền tảng giao dịch hiện đại cho cả người mới đến trader chuyên nghiệp.",
+    "specification": {
+      "leverage": "Lên đến 1:2000+",
+      "spread": "Từ 0.0 pips (Raw)"
+    },
+    "profile": {
+        "slogan": "Trade with accuracy, speed, and deep liquidity"
+    },
+    "summary": {
+      "spread": "Từ 0.0 pips (Raw) — trung bình cực thấp",
+      "commission": "Raw/Zero: $3.5–$8 mỗi lot (tùy cặp)",
+      "leverage": "Lên đến 1:2000+ (hệ thống smart leverage)",
+      "execution": "0.01–0.04 giây (siêu nhanh)",
+      "depositWithdrawal": "Siêu nhanh (<1 phút với ví điện tử/crypto)"
+    },
+    "accountTypes": [
+      ["Phù hợp cho người mới & thử nghiệm chiến lược", "Lot Micro/Nano", "Đòn bẩy cao", "Spread từ 0.3 pips", "Không hoa hồng", "Nạp tối thiểu: $10", "Lưu ý: Không phải tất cả sản phẩm đều có ở tài khoản Cent"],
+      ["Spread thấp", "Không hoa hồng", "Phù hợp cho giao dịch thủ công", "Nạp tối thiểu: $10"],
+      ["Spread 0.0 - 0.3 pips", "Hoa hồng thấp ($3.5–$4 mỗi lot mỗi chiều)", "Khớp lệnh cực nhanh", "Lý tưởng cho scalping & EA"],
+      ["Spread 0.0 trên 30+ cặp", "Hoa hồng cao hơn", "Lý tưởng cho news trading & sự kiện high-impact"],
+      ["Không hoa hồng", "Spread cực thấp", "Khớp lệnh tức thì", "Lý tưởng cho trader trong ngày & swing"]
+    ],
+    "keyAdvantages": [
+        "Khớp lệnh siêu nhanh (0.01–0.04 giây)",
+        "Spread ổn định nhất ngành",
+        "Nền tảng cực nhẹ và ổn định",
+        "Rút tiền nhanh nhất trong số các sàn toàn cầu phổ biến",
+        "Tài khoản CENT (hiếm có ở sàn Tier 1)",
+        "Thanh khoản sâu & slippage thấp",
+        "Đòn bẩy không giới hạn (một số khu vực)",
+        "Rất phù hợp cho scalping, EA và trader vàng"
+    ],
+    "advantages": ["Spread & khớp lệnh cực ổn định", "Rút tiền siêu nhanh", "Nhiều phương thức nạp & rút", "Có tài khoản Cent cho người mới", "Thân thiện với EA & scalping", "Đòn bẩy lớn và linh hoạt"],
+    "disadvantages": ["Hoa hồng khác nhau theo từng cặp ở tài khoản Raw/Zero", "Đòn bẩy bị giới hạn ở một số quy định", "Không phải tất cả sản phẩm đều có ở tài khoản Cent"],
+    "classifications": ["Tốc Độ Rút Tiền (WD)", "Độ Ổn Định Máy Chủ", "Hỗ Trợ Khách Hàng"],
+    "faqs": [
+    {
+      "question": "Exness Có An Toàn Không?",
+      "answer": "Exness là sàn được quản lý bởi nhiều cơ quan tài chính quốc tế, bao gồm FSA, CySEC, FSCA và FSC. Công ty đã hoạt động từ năm 2008 và được biết đến với sự minh bạch trong việc công bố báo cáo tài chính cũng như thống kê giao dịch. Dù không chịu sự quản lý tại Indonesia, Exness vẫn là một sàn toàn cầu được nhiều trader quốc tế sử dụng."
+    },
+    {
+      "question": "Exness Có Cung Cấp Tài Khoản Cent Không?",
+      "answer": "Có. Exness cung cấp tài khoản Standard Cent, là loại tài khoản có kích thước hợp đồng nhỏ hơn nên phù hợp để luyện tập, thử nghiệm chiến lược hoặc giao dịch với rủi ro vốn thấp."
+    },
+    {
+      "question": "Exness Có Phù Hợp Cho Người Mới Không?",
+      "answer": "Phù hợp. Exness cung cấp tài khoản Cent, spread ổn định, quy trình giao dịch dễ dàng cùng các nền tảng phổ biến như MT4/MT5. Sự kết hợp này giúp người mới làm quen với điều kiện thị trường thực tế với rủi ro được kiểm soát tốt hơn."
+    },
+    {
+      "question": "Exness Có Phù Hợp Cho EA & Scalping Không?",
+      "answer": "Có. Exness hỗ trợ EA, robot giao dịch, thuật toán và chiến lược scalping mà không có giới hạn đặc biệt. Spread chặt cùng tốc độ khớp lệnh cực nhanh khiến sàn thường được sử dụng cho các chiến lược giao dịch cường độ cao."
+    },
+    {
+      "question": "Quy Trình Rút Tiền Ở Exness Nhanh Như Thế Nào?",
+      "answer": "Thường rất nhanh. Nhiều phương thức rút tiền qua ví điện tử và thanh toán nội địa được xử lý trong vài phút, tùy vào phương thức sử dụng và tình trạng hệ thống. Quá trình có thể lâu hơn vào một số khung giờ hoặc với một số phương thức nhất định."
+    }
+  ]
+}

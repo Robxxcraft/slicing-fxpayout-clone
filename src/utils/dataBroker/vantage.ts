@@ -157,7 +157,7 @@ export const vantageDetail: BrokerStruc = {
       { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
       { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
       { key: "pro_trader", username: `${platformsKey}.pro_trader`, icon: "pro-trader.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "vantage.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "vantage.webp" },
       { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "vantage.webp" },
     ]
   },

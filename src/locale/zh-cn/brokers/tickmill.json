@@ -1,0 +1,52 @@
+{
+  "description": "Tickmill 是一家成立于2014年的全球性外汇及差价合约经纪商,以低交易成本(低点差、低佣金)、快速执行,以及对 MetaTrader 4、MetaTrader 5 等热门平台的支持而著称。Tickmill 服务覆盖多个国家,专注于为交易者提供专业、高效的交易体验。",
+  "specification": {
+    "leverage": "最高 1:1000(视地区而定)",
+    "spread": "低至 0.0 – 0.3 点(Pro/VIP 账户)"
+  },
+  "profile": {
+    "model": "ECN 交易"
+  },
+  "summary": {
+    "spread": "低至 0.0 – 0.3 点(Pro/VIP 账户)",
+    "commission": "每手每边约 $3(Pro / Ultra 账户)",
+    "leverage": "最高 1:1000(视地区而定)",
+    "execution": "快速",
+    "depositWithdrawal": "银行转账、借记卡/信用卡、电子钱包"
+  },
+  "accountTypes": [
+    ["最低入金:$100", "点差低至约 1.6 点", "免佣金"],
+    ["最低入金:$100", "点差低至 0.0 – 0.3 点", "佣金:每手每边 $3"],
+    ["最低入金较高", "点差极低", "佣金:每手每边约 $2.5 – $3"]
+  ],
+  "keyAdvantages": ["点差极低(ECN/Raw)", "佣金具竞争力", "订单执行快速稳定", "监管严格且覆盖全球", "提供免隔夜利息账户(伊斯兰账户)", "支持 MT4、MT5、TradingView"],
+  "advantages": ["ECN 点差极低", "佣金具竞争力", "执行快速稳定", "多地区严格监管", "交易平台功能完善"],
+  "disadvantages": ["最低入金 $100,相对其他经纪商偏高", "Pro/VIP 账户收取佣金", "杠杆可能受监管机构限制"],
+  "classifications": [
+    "执行与点差",
+    "客户支持",
+    "入金 / 出金"
+  ],
+  "faqs": [
+    {
+      "question": "Tickmill 安全吗?",
+      "answer": "安全——受 FCA、CySEC、FSCA 及 FSA 监管。"
+    },
+    {
+      "question": "最低入金是多少?",
+      "answer": "最低入金为 $100。"
+    },
+    {
+      "question": "支持哪些平台?",
+      "answer": "MT4、MT5、网页版及移动端。"
+    },
+    {
+      "question": "最高杠杆是多少?",
+      "answer": "最高 1:1000,视监管机构而定。"
+    },
+    {
+      "question": "是否提供 ECN 账户?",
+      "answer": "提供——Pro 与 VIP 账户,点差低。"
+    }
+  ]
+}

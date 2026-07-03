@@ -34,7 +34,7 @@ const CommunityRating = ({ brokerId, name, profileImage, ranking, communityRatin
             <p className="text-2xl 2xl:text-[32px] leading-9 font-semibold">
               {t("brokerdetailpage:overallScore")}
             </p>
-            <div className="mt-1 lg:mt-8 2xl:mt-10 flex items-end">
+            <div dir="ltr" className="mt-1 lg:mt-8 2xl:mt-10 flex items-end">
               <p className="text-[40px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
                 {communityRating.score}
               </p>
@@ -78,7 +78,7 @@ const CommunityRating = ({ brokerId, name, profileImage, ranking, communityRatin
                     </div>
                   </div>
                   <div className="mt-1 2xl:mt-2 relative h-6 md:h-5 2xl:h-6 w-full bg-[#EBEBEB] rounded-full overflow-hidden">
-                    <div className="absolute top-0 left-0 h-full bg-linear-to-t from-dark-primary to-primary rounded-full"
+                    <div className="absolute top-0 start-0 h-full bg-linear-to-t from-dark-primary to-primary rounded-full"
                       style={{ width: `${item.rate * 100 / 5}%` }}></div>
                   </div>
                 </div>

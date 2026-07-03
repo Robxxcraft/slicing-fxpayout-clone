@@ -1,0 +1,61 @@
+{
+  "description": "A Finex (PT Finex Bisnis Solusi Futures) é uma corretora de forex oficial da Indonésia que existe desde 2012 e é supervisionada pela BAPPEBTI e pela OJK, em parceria com instituições de compensação como a PT KBI e a Jakarta Futures Exchange (JFX). A corretora oferece acesso a diversos instrumentos de trading, como forex, índices, metais, ações CFD e energia, com condições de trading competitivas e o suporte de uma plataforma intuitiva.",
+  "specification": {
+    "leverage": "Até 1:500 (Forex e metais; índices/energia variam)",
+    "spread": "Variável, a partir de cerca de 0.5 pip (típico)"
+  },
+  "profile": {
+    "name": "PT Finex Bisnis Solusi Futures (Finex)",
+    "slogan": "(não especificado, marca local)"
+  },
+  "summary": {
+    "spread": "A partir de ±0.5 pips (variável)",
+    "commission": "±$1 por lote",
+    "leverage": "Até 1:500 (Forex e Metais)",
+    "execution": "Rápida",
+    "depositWithdrawal": "Banco local e carteira digital"
+  },
+  "accountTypes": [
+    ["Depósito mín. : $10", "Spread a partir de 0.5 pips", "Comissão : ±$1 por lote", "Alavancagem : até 1:500", "Instrumentos de trading completos"]
+  ],
+  "spread": ["variável; geralmente mais alto do que no Forex"],
+  "keyAdvantages": ["Regulação oficial da BAPPEBTI e da OJK", "Depósito inicial baixo", "Alavancagem alta de até 1:500", "Execução rápida", "Variedade de instrumentos de trading", "Plataforma popular (MT5)"],
+  "advantages": ["Corretora oficial regulada pela BAPPEBTI", "Depósito baixo ($10)", "Spread e comissão relativamente competitivos", "Acesso a diversos instrumentos", "Execução rápida e suporte a bancos locais"],
+  "disadvantages": ["Apenas um tipo de conta real", "Recursos de educação e pesquisa mais simples do que em corretoras globais", "Apenas MT5 (sem MT4)"],
+  "reviewHighlights": [
+    "Rápido no processo de depósito/saque",
+    "Custos de trading baixos",
+    "MT5 confortável de usar",
+    "Ideal para iniciantes e intermediários"
+  ],
+  "faqs": [
+    {
+      "question": "A Finex é segura e legal?",
+      "answer": "Sim. A Finex é registrada e licenciada pela BAPPEBTI na Indonésia."
+    },
+    {
+      "question": "Qual é o depósito mínimo?",
+      "answer": "O depósito inicial mínimo é de $10."
+    },
+    {
+      "question": "Quais plataformas são suportadas?",
+      "answer": "MetaTrader 5."
+    },
+    {
+      "question": "Qual é a alavancagem máxima?",
+      "answer": "Até 1:500 para forex e metais."
+    },
+    {
+      "question": "A Finex tem conta demo?",
+      "answer": "Sim — há conta demo disponível para prática."
+    },
+    {
+      "question": "Qual é o spread mais baixo?",
+      "answer": "A partir de ±0.5 pips para EUR/USD."
+    },
+    {
+      "question": "Existe programa de afiliados / rebate?",
+      "answer": "Sim — há um modelo de parceiro/afiliado; os detalhes do rebate são tratados no portal de parceiros."
+    }
+  ]
+}

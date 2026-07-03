@@ -130,7 +130,7 @@ const FilterBroker = ({
             selectedInput={selectedSort} 
             handleChangeInput={(key) => onChangeSort(key)} 
             wrapperCL="lg:px-4! h-10! lg:h-15! w-full! md:w-[220px]! border-black!"
-            inputCL="w-full! md:w-[220px]! text-left!"
+            inputCL="w-full! md:w-[220px]! text-start!"
             textInputCL="lg:px-4! py-4!"
             objectInput={selectInputs} />
         </div>

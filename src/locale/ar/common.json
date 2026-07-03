@@ -1,0 +1,95 @@
+{
+    "text": {
+        "select": "اختر",
+        "copy": "نسخ",
+        "next": "التالي",
+        "tableOfContents": "المحتويات",
+        "previous": "السابق",
+        "advantage": "المزايا",
+        "disadvantage": "العيوب",
+        "close": "إغلاق",
+        "readMore": "اقرأ المزيد",
+        "seeAll": "عرض الكل",
+        "month": "شهر",
+        "title_month": "الشهر",
+        "from_weeks_ago": "عن الأسبوع الماضي",
+        "title_traders": "متداولون",
+        "title_others": "أخرى",
+        "title_all": "الكل",
+        "title_local": "محلي",
+        "title_international": "دولي",
+        "title_newest": "الأحدث",
+        "title_recommendation": "موصى به",
+        "title_name": "الاسم",
+        "title_login": "تسجيل الدخول",
+        "title_register": "تسجيل",
+        "filter_broker": "تصفية الوسطاء",
+        "title_platform": "المنصة",
+        "title_trading": "التداول",
+        "minimum_deposit": "الحد الأدنى للإيداع",
+        "spread_broker": "سبريد الوسيط",
+        "reset_filter": "إعادة ضبط التصفية",
+        "range_rebate": "نطاق الريبيت",
+        "highest_rebate": "أعلى ريبيت",
+        "lowest_rebate": "أقل ريبيت",
+        "title_low": "منخفض",
+        "title_medium": "متوسط",
+        "title_high": "مرتفع",
+        "title_apply": "تطبيق",
+        "rebate_till": "ريبيت حتى"
+    },
+    "button": {
+        "registerNow": "سجّل الآن",
+        "calculateRebate": "احسب الريبيت",
+        "visitWebsite": "زيارة الموقع",
+        "join_now": "انضم الآن",
+        "see_list_broker": "عرض قائمة الوسطاء",
+        "try_now": "جرّب الآن"
+    },
+    "cta": {
+        "title": "هل أنت مستعد لرفع كفاءة أرباح تداولك؟",
+        "paragraph": "سجّل الآن وابدأ بالحصول على ريبيت يصل إلى ‎90%‎."
+    },
+    "cta_trader": {
+        "title": "ابدأ التداول بكفاءة أكبر اليوم",
+        "paragraph": "سجّل الآن واحصل على ريبيت من كل صفقة تداول. بدون رسوم إضافية. بدون مخاطر إضافية."
+    },
+    "methods": {
+        "bank_transfer": "تحويل بنكي",
+        "bank_transfer_usd_idr": "تحويل بنكي (USD/IDR)",
+        "crypto": "العملات الرقمية",
+        "debit_credit_card": "بطاقة خصم/ائتمان",
+        "e_wallet": "محفظة إلكترونية",
+        "indonesian_local_va": "حساب افتراضي محلي (ID)",
+        "indonesian_e_wallet": "محفظة إلكترونية إندونيسيا",
+        "local_bank": "بنك محلي",
+        "local_transfer": "تحويل محلي",
+        "perfect_money": "Perfect Money",
+        "skrill_neteller": "Skrill/Neteller"
+    },
+    "navbar": {
+        "home": "الرئيسية",
+        "broker": "الوسطاء",
+        "news": "الأخبار",
+        "calculator": "الحاسبة",
+        "claimRebate": "اطلب الريبيت",
+        "service": "الخدمات",
+        "affiliate": "الأفلييت",
+        "subNav": {
+            "definition": "ما هو ريبيت الفوركس؟",
+            "howRebate": "كيفية الحصول على ريبيت الفوركس",
+            "howWorks": "كيف تعمل؟",
+            "payment": "نظام دفع الريبيت",
+            "schedule": "جدول الريبيت",
+            "validation": "التحقق من الحساب",
+            "transfer": "نقل الحساب",
+            "forex": "الفوركس",
+            "vipRebate": "ريبيت VIP"
+        }
+    },
+    "footer": {
+        "paragraph": "نعيد حتى ‎90%‎ من عمولة الوسيط المُعرِّف (IB) إلى المتداول. عملية سريعة وآمنة وشفافة دون تغيير السبريد أو ظروف التداول.",
+        "quickLink": "روابط سريعة",
+        "contact": "تواصل معنا"
+    }
+}

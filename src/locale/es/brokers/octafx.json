@@ -1,0 +1,56 @@
+{
+  "description": "OctaFX es un bróker internacional de forex y CFD que opera desde 2011, ofreciendo acceso a los mercados globales, incluidos forex, metales, índices, materias primas y criptomonedas. OctaFX es reconocido por sus spreads bajos, sus costes de trading competitivos sin comisión en numerosos instrumentos y sus potentes plataformas de trading como MetaTrader y OctaTrader. OctaFX también ofrece copy trading y soporte 24/7 para clientes de todo el mundo.",
+  "specification": {
+    "leverage": "Hasta 1:500",
+    "spread": "Desde ±0.6 pips"
+  },
+  "profile": {
+    "slogan": "Trusted Forex & CFD Broker",
+    "totalUser": "Más de 40 millones de traders en más de 180 países",
+    "totalInstrument": "Número de Instrumentos : 300+ (Forex, CFD de acciones, metales, índices, cripto)"
+  },
+  "summary": {
+    "spread": "Desde ±0.6 pips",
+    "commission": "Sin comisiones no relacionadas con el trading (depósito/retiro gratis)",
+    "leverage": "Hasta 1:500 (según el instrumento y la entidad)",
+    "execution": "Rápida y estable",
+    "depositWithdrawal": "Múltiples métodos sin comisiones no relacionadas con el trading"
+  },
+  "spreadAccount": ["Todos los tipos de cuenta"],
+  "spread": ["variable, más alto que en forex según las condiciones del mercado"],
+  "accountTypes": [
+    ["Depósito mín. : $50", "Spread desde ±1.0 pips", "Ideal para principiantes"],
+    ["Depósito mín. : $50", "Spread desde ±0.3 – 0.8 pips", "Sin comisión"],
+    ["Depósito mín. : $100", "Spread desde 0.0 pips", "Comisión competitiva"]
+  ],
+  "keyAdvantages": ["Spreads bajos (típicamente desde 0.6 pips)", "Depósitos y retiros sin comisión (no relacionados con el trading)", "Apalancamiento flexible de hasta 1:500", "Plataformas de trading potentes (MT4, MT5, OctaTrader)", "Copy trading y funciones sociales", "Acceso a más de 300 instrumentos globales", "Atención al cliente 24/7"],
+  "advantages": ["Condiciones de trading con costes reducidos", "Spreads competitivos", "Plataformas completas (MT4, MT5, OctaTrader)", "Depósitos y retiros sin comisión", "Amplia variedad de instrumentos de trading"],
+  "disadvantages": ["No alcanza el nivel de los brókers con regulación top-tier como FCA/ASIC de forma plena en todas las entidades", "El spread puede ampliarse en momentos de alta volatilidad", "Algunas opiniones de usuarios mencionan problemas puntuales de servicio (opiniones dispares)"],
+  "classifications": [
+    "Atención al Cliente",
+    "Plataforma y Ejecución",
+    "Costes y Spreads"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro OctaFX?",
+      "answer": "Sí, OctaFX opera desde 2011 y está regulado a través de la entidad CySEC para la región europea."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "$25 (se recomienda $100 para un margen más holgado)."
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, OctaTrader, móvil y web."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:500, según el instrumento y la región."
+    },
+    {
+      "question": "¿Hay cuenta demo?",
+      "answer": "Sí, OctaFX ofrece cuenta demo gratuita."
+    }
+  ]
+}

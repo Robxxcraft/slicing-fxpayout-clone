@@ -126,7 +126,7 @@ export const finexDetail: BrokerStruc = {
     ],
     platforms: [
       { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "finex.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "finex.webp" },
       { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "finex.webp" },
     ]
   },

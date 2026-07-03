@@ -1,0 +1,51 @@
+{
+  "description": "Vantage (còn được biết đến với tên Vantage Markets) là sàn forex và CFD quốc tế được thành lập từ năm 2009, cung cấp quyền truy cập giao dịch đa dạng sản phẩm tài chính toàn cầu bao gồm forex, chỉ số, kim loại, hàng hóa, cổ phiếu CFD, ETF và trái phiếu. Vantage tích hợp các nền tảng giao dịch phổ biến như MetaTrader 4, MetaTrader 5, ProTrader cùng ứng dụng riêng để mang đến trải nghiệm giao dịch mạnh mẽ và linh hoạt.",
+  "specification": {
+    "leverage": "Lên đến 1:500 (một số pháp nhân Premium đến 1:2000)",
+    "spread": "Từ 0.0 pips (Raw / Pro)"
+  },
+  "summary": {
+    "spread":"Từ 0.0 pips (Raw / Pro)",
+    "commission": "Từ ±$3 mỗi lot mỗi chiều ở Raw ECN",
+    "leverage": "Lên đến 1:500 (một số pháp nhân Premium đến 1:2000)",
+    "execution": "Nhanh & ổn định qua ECN/STP",
+    "depositWithdrawal": "Nhiều phương thức, thường không phí từ sàn"
+  },
+  "spread": ["từ 0.0 pips", "từ ±0.3 – 0.5 pips", "từ ±0.3 – 0.5 pips"],
+  "accountTypes": [
+    ["Nạp tối thiểu : $50", "Spread : từ ≈ 1.1 – 1.6 pips", "Hoa hồng : $0"],
+    ["Nạp tối thiểu : $50", "Spread : từ 0.0 pips", "Hoa hồng : ±$3 mỗi lot mỗi chiều"],
+    ["Nạp tối thiểu : ±$50 – $10,000 (tùy pháp nhân)", "Spread : từ 0.0 pips", " Hoa hồng : ±$1.50 – $3 mỗi lot mỗi chiều"],
+    ["Biến thể tài khoản bổ sung", "Tính năng theo nhu cầu của từng trader khác nhau"]
+  ],
+  "keyAdvantages": ["Spread & khớp lệnh cạnh tranh", "Truy cập 1,000+ sản phẩm CFD", "Quy định toàn cầu chặt chẽ", "Tùy chọn ECN & STP", "Bảo vệ số dư âm", "Tích hợp copy trading (ZuluTrade, DupliTrade)", "Nền tảng giao dịch hiện đại"],
+  "advantages": ["Quy định chặt chẽ tại nhiều khu vực pháp lý toàn cầu", "Spread thấp ở Raw ECN / Pro ECN", "Lựa chọn tài khoản linh hoạt theo chiến lược của trader", "Nền tảng đầy đủ & tính năng giao dịch nâng cao", "Không phí nạp/rút từ sàn"],
+  "disadvantages": [" Spread Standard có thể cao hơn so với ECN", "Hoa hồng mỗi lot vẫn áp dụng ở Raw ECN", "Quy định pháp nhân khác nhau tùy khu vực của khách hàng"],
+  "classifications": [
+    "Nền Tảng & Công Cụ",
+    "Chi Phí & Phí",
+    "Hỗ Trợ & Dịch Vụ"
+  ],
+  "faqs": [
+    {
+      "question": "Vantage có an toàn không?",
+      "answer": "Có — được quản lý bởi ASIC, FCA, FSCA, CIMA & VFSC tùy theo pháp nhân."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Từ $50 (tùy tài khoản & pháp nhân)"
+    },
+    {
+      "question": "Hỗ trợ những nền tảng nào?",
+      "answer": "MT4, MT5, ProTrader, Web và Mobile."
+    },
+    {
+      "question": "Đòn bẩy tối đa là bao nhiêu?",
+      "answer": "Lên đến 1:500 (có pháp nhân Premium đến 1:2000)."
+    },
+    {
+      "question": "Có tài khoản ECN không?",
+      "answer": "Có — có Raw ECN & Pro ECN với spread thấp và hoa hồng cạnh tranh."
+    }
+  ]
+}

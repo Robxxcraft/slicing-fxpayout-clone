@@ -10,11 +10,11 @@ const Rewards = () => {
       <img
         src="/circle-ornament.png"
         alt="ornament"
-        className="absolute top-0 -left-[5%] -rotate-55 w-[600px]"
+        className="absolute top-0 -start-[5%] ltr:-rotate-55 rtl:rotate-260 w-[600px]"
       />
       <div className="z-999 relative flex flex-col xl:flex-row gap-x-8 gap-y-6 lg:gap-y-8 items-center justify-between">
         <div className="flex flex-row gap-2 lg:gap-5 2xl:gap-6 w-full xl:w-fit">
-          <IoMegaphone className="mb-3 md:mb-0 mt-2 lg:mt-0 text-white text-[26px] lg:text-[48px] text-center w-fit" />
+          <IoMegaphone className="mb-3 md:mb-0 mt-2 lg:mt-0 text-white text-[26px] lg:text-[48px] text-center w-fit rtl:scale-x-[-1]" />
           <div className="w-full">
             <div className="mb-2 lg:mb-3 flex flex-row md:items-center justify-between xl:justify-start gap-x-6">
               <h2 className="text-base md:text-xl lg:text-[26px] 2xl:text-[32px] font-semibold text-white">

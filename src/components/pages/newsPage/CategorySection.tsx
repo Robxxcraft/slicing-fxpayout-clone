@@ -17,7 +17,7 @@ const CategorySection = () => {
             to="#" 
             className="flex gap-2 items-center text-primary hover:underline">
             <span className="text-base md:text-xl lg:text-base 2xl:text-xl font-medium">{t(`text.seeAll`)}</span>
-            <HiArrowLongRight className="text-xl md:text-2xl lg:text-xl 2xl:text-2xl" />
+            <HiArrowLongRight className="text-xl md:text-2xl lg:text-xl 2xl:text-2xl rtl:scale-x-[-1]" />
           </Link>
         </div>
         <div className="mt-5 2xl:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-10 lg:gap-6 2xl:gap-10">
@@ -37,7 +37,7 @@ const CategorySection = () => {
                 to="#" 
                 className="flex gap-2 items-center text-primary hover:underline">
                 <span className="text-base md:text-xl lg:text-base 2xl:text-xl font-medium">{t(`text.seeAll`)}</span>
-                <HiArrowLongRight className="text-xl 2xl:text-2xl" />
+                <HiArrowLongRight className="text-xl 2xl:text-2xl rtl:scale-x-[-1]" />
               </Link>
             </div>
             <div className="mt-5 2xl:mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-6 2xl:gap-10">
@@ -55,7 +55,7 @@ const CategorySection = () => {
                 to="#" 
                 className="flex gap-2 items-center text-primary hover:underline">
                 <span className="text-base md:text-xl lg:text-base 2xl:text-xl font-medium">{t(`text.seeAll`)}</span>
-                <HiArrowLongRight className="text-xl 2xl:text-2xl" />
+                <HiArrowLongRight className="text-xl 2xl:text-2xl rtl:scale-x-[-1]" />
               </Link>
             </div>
             <div className="mt-5 2xl:mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-6 2xl:gap-10">

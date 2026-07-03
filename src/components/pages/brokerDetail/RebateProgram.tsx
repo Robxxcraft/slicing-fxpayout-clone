@@ -32,7 +32,7 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
             urlTo={getLocalizedPath("calculator", i18n.language)} 
             className="mt-6 w-full! lg:w-fit!" 
             variant="primary-light" 
-            icon={<IoArrowForwardOutline />} 
+            icon={<IoArrowForwardOutline className="rtl:scale-x-[-1]" />} 
             iconPosition="right" size="xl"
           >
             {t("brokerdetailpage:rebateProgram.button")}
@@ -44,7 +44,7 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
             <>          
               <div className="px-6 md:px-8 2xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
                 <p className="text-base 2xl:text-xl font-semibold text-white">EUR/USD</p>
-                <div className="mt-3 lg:mt-2 flex items-end text-white">
+                <div dir="ltr" className="mt-3 lg:mt-2 flex items-end text-white">
                   <p className="text-[30px] md:text-[36px] 2xl:text-[48px] lg:leading-14 font-semibold">
                     ${estimateEur}
                   </p>
@@ -55,7 +55,7 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
               </div>
               <div className="px-6 md:px-8 2xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
                 <p className="text-base 2xl:text-xl font-semibold text-white">XAU/USD</p>
-                <div className="mt-3 lg:mt-2 flex items-end text-white">
+                <div dir="ltr" className="mt-3 lg:mt-2 flex items-end text-white">
                   <p className="text-[30px] md:text-[36px] 2xl:text-[48px] lg:leading-14 font-semibold">
                     ${estimateXau}
                   </p>

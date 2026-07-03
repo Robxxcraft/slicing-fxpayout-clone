@@ -1,0 +1,51 @@
+{
+  "description": "Vantage (también conocido como Vantage Markets) es un bróker internacional de forex y CFD fundado en 2009, que ofrece acceso al trading de una amplia gama de instrumentos financieros globales, incluidos forex, índices, metales, materias primas, CFD de acciones, ETF y bonos. Vantage combina plataformas de trading populares como MetaTrader 4, MetaTrader 5, ProTrader y su propia aplicación para ofrecer una experiencia de trading potente y flexible.",
+  "specification": {
+    "leverage": "Hasta 1:500 (algunas entidades Premium hasta 1:2000)",
+    "spread": "Desde 0.0 pips (Raw / Pro)"
+  },
+  "summary": {
+    "spread":"Desde 0.0 pips (Raw / Pro)",
+    "commission": "Desde ±$3 por lote por lado en Raw ECN",
+    "leverage": "Hasta 1:500 (algunas entidades Premium hasta 1:2000)",
+    "execution": "Rápida y estable vía ECN/STP",
+    "depositWithdrawal": "Múltiples métodos, por lo general sin comisión del bróker"
+  },
+  "spread": ["desde 0.0 pips", "desde ±0.3 – 0.5 pips", "desde ±0.3 – 0.5 pips"],
+  "accountTypes": [
+    ["Depósito mín. : $50", "Spread : desde ≈ 1.1 – 1.6 pips", "Comisión : $0"],
+    ["Depósito mín. : $50", "Spread : desde 0.0 pips", "Comisión : ±$3 por lote por lado"],
+    ["Depósito mín. : ±$50 – $10,000 (según la entidad)", "Spread : desde 0.0 pips", " Comisión : ±$1.50 – $3 por lote por lado"],
+    ["Variantes de cuenta adicionales", "Funciones adaptadas a las necesidades de distintos traders"]
+  ],
+  "keyAdvantages": ["Spread y ejecución competitivos", "Acceso a más de 1.000 instrumentos CFD", "Regulación global sólida", "Opciones ECN y STP", "Protección de saldo negativo", "Integración de copy trading (ZuluTrade, DupliTrade)", "Plataformas de trading modernas"],
+  "advantages": ["Regulación sólida en numerosas jurisdicciones globales", "Spread bajo en Raw ECN / Pro ECN", "Opciones de cuenta flexibles según la estrategia del trader", "Plataformas completas y funciones de trading avanzadas", "Sin comisiones de depósito/retiro por parte del bróker"],
+  "disadvantages": [" El spread de la cuenta Standard puede ser más alto que el de la ECN", "La comisión por lote sigue aplicándose en Raw ECN", "La regulación de la entidad varía según la región del cliente"],
+  "classifications": [
+    "Plataforma y Herramientas",
+    "Costes y Comisiones",
+    "Soporte y Servicio"
+  ],
+  "faqs": [
+    {
+      "question": "¿Es seguro Vantage?",
+      "answer": "Sí — está regulado por ASIC, FCA, FSCA, CIMA y VFSC, según la entidad."
+    },
+    {
+      "question": "¿Cuál es el depósito mínimo?",
+      "answer": "Desde $50 (según la cuenta y la entidad)"
+    },
+    {
+      "question": "¿Qué plataformas son compatibles?",
+      "answer": "MT4, MT5, ProTrader, Web y Mobile."
+    },
+    {
+      "question": "¿Cuál es el apalancamiento máximo?",
+      "answer": "Hasta 1:500 (hay entidades Premium hasta 1:2000)."
+    },
+    {
+      "question": "¿Hay cuenta ECN?",
+      "answer": "Sí — dispone de Raw ECN y Pro ECN con spread bajo y comisiones competitivas."
+    }
+  ]
+}

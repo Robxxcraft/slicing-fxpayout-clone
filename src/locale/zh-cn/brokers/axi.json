@@ -1,0 +1,51 @@
+{
+  "description": "Axi 是一家成立于2007年的国际外汇及差价合约经纪商,以适合各级别交易者的 ECN 经纪商著称。Axi 提供具竞争力的点差、快速的订单执行,以及 MetaTrader 4、MetaTrader 5 等强大的交易平台。该经纪商持有全球多地监管牌照,服务覆盖多个国家,功能完善。",
+  "specification": {
+    "leverage": "最高 1:500(视监管机构而定)",
+    "spread": "低至 0.0 点(Pro 账户)"
+  },
+  "profile": {
+    "slogan": "Trade Unlocked"
+  },
+  "summary": {
+    "spread": "低至 0.0 – 0.2 点(Pro ECN)",
+    "commission": "Pro ECN:每手约 $7(双边)",
+    "leverage": "最高 1:500(视监管机构而定)",
+    "execution": "快速且稳定",
+    "depositWithdrawal": "多种方式"
+  },
+  "accountTypes": [
+    ["最低入金:$0 起(建议 $200)", "点差低至约 1.0 点", "免佣金"],
+    ["最低入金:约 $200", "点差:低至 0.0 – 0.2 点", "佣金具竞争力(约每手 $7)"]
+  ],
+  "keyAdvantages": ["点差具竞争力、执行快速", "受 ASIC 与 FCA 严格监管", "适合剥头皮与 EA", "交易平台功能完善", "费用透明且低廉"],
+  "advantages": ["低点差、执行快速", "监管严格(FCA/ASIC/FSCA)", "热门交易平台", "全球客户支持"],
+  "disadvantages": ["ECN 账户的实际入金门槛偏高", "Pro ECN 账户按手收取佣金"],
+  "classifications": [
+    "执行与点差",
+    "客户支持",
+    "出入金"
+  ],
+  "faqs": [
+    {
+      "question": "Axi 安全吗?",
+      "answer": "安全——受 FCA、ASIC、FSCA 等大型监管机构监管(不同地区对应不同运营主体)。"
+    },
+    {
+      "question": "最低入金是多少?",
+      "answer": "没有官方最低入金要求,但建议从 $200 起,以获得稳定的订单执行。"
+    },
+    {
+      "question": "支持哪些平台?",
+      "answer": "MT4、MT5、网页版、移动端。"
+    },
+    {
+      "question": "最高杠杆是多少?",
+      "answer": "最高 1:500,视监管机构及运营主体而定。"
+    },
+    {
+      "question": "是否提供 ECN 账户?",
+      "answer": "提供——Pro ECN 账户,点差极低。"
+    }
+  ]
+}

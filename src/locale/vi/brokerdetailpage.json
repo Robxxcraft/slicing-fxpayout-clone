@@ -1,0 +1,230 @@
+{
+    "helmet": {
+        "title": "Rebate {{brokerName}} lên đến {{brokerEstimate}} mỗi Lot | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "navbar": {
+        "profil": "Hồ Sơ",
+        "summary": "Tổng Quan",
+        "accountType": "Loại Tài Khoản",
+        "spreadCommission": "Spread & Hoa Hồng",
+        "advantage": "Ưu Điểm",
+        "platform": "Nền Tảng",
+        "depositWithdraw": "Nạp & Rút",
+        "advantagesDisadvantages": "Ưu & Nhược Điểm",
+        "rating": "Đánh Giá",
+        "faq": "FAQ"
+    },
+    "back": "Quay Lại Danh Sách Sàn",
+    "overallScore": "Điểm Tổng Thể",
+    "header": {
+        "viewRating": "Xem Đánh Giá Cộng Đồng",
+        "detailHeaders": ["Năm Thành Lập", "Nạp Tối Thiểu", "Đòn Bẩy", "Spread"]
+    },
+    "profile": {
+        "title": "Hồ Sơ Sàn",
+        "subtitle": "Thông tin chính thức về danh tính và quy định pháp lý của sàn.",
+        "cards": [
+            {
+                "title": "Thông Tin Chính",
+                "headers": {
+                    "brokerName": "Tên Sàn",
+                    "slogan": "Slogan",
+                    "entity": "Pháp Nhân",
+                    "group": "Tập Đoàn",
+                    "ranking": "Tier",
+                    "yearFounded": "Năm Thành Lập",
+                    "brokerCategory": "Loại Sàn",
+                    "totalUser": "Tổng Người Dùng",
+                    "model": "Mô Hình",
+                    "totalInstrument": "Số Lượng Sản Phẩm"
+                }
+            },
+            {
+                "title": "Giấy Phép Chính"
+            }
+        ]
+    },
+    "summary": {
+        "title": "Tổng Quan Nhanh (Quick Facts)",
+        "subtitle": "Thông tin cốt lõi về sàn để bạn nắm bắt nhanh",
+        "cardHeaders": {
+            "minDeposit": "Nạp Tối Thiểu",
+            "accountType": "Loại Tài Khoản",
+            "spread": "Spread",
+            "commission": "Hoa Hồng",
+            "leverage": "Đòn Bẩy",
+            "execution": "Khớp Lệnh",
+            "instrument": "Sản Phẩm",
+            "depositWithdrawal": "Nạp & Rút"
+        }
+    },
+    "accountType": {
+        "title": "Loại Tài Khoản",
+        "subtitle": "Các lựa chọn tài khoản cho nhiều nhu cầu và phong cách giao dịch.",
+        "profit": "Ưu Điểm"
+    },
+    "spread": {
+        "title": "Spread",
+        "subtitle": "So sánh spread trên các sản phẩm chính của sàn.",
+        "accountType": "Loại Tài Khoản"
+    },
+    "advantage": {
+        "title": "Ưu Điểm Nổi Bật",
+        "subtitle": "Các tính năng nổi bật tạo nên giá trị vượt trội của sàn."
+    },
+    "platform": {
+        "title": "Nền Tảng Giao Dịch Được Hỗ Trợ",
+        "subtitle": "Danh sách các nền tảng có thể sử dụng để giao dịch."
+    },
+    "depositWithdraw": {
+        "title": "Nạp & Rút",
+        "subtitle": "Thông tin về phương thức và thời gian xử lý giao dịch.",
+        "tableHeaders": ["Phương Thức", "Thời Gian Nạp", "Thời Gian Rút", "Phí"]
+    },
+    "rebateProgram": {
+        "title": "Chương Trình Rebate (Ước Tính)",
+        "subtitle": "Ước tính rebate mà trader có thể nhận được thông qua chương trình rebate của bạn.",
+        "button": "Công Cụ Tính Rebate",
+        "info": "Rebate có thể cao hơn với tài khoản ECN và khối lượng giao dịch lớn. Các giá trị trên chỉ mang tính ước tính và có thể điều chỉnh."
+    },
+    "advantagesDisadvantages": {
+        "title": "Ưu & Nhược Điểm",
+        "subtitle": "Tóm tắt các điểm tích cực và những điều cần lưu ý."
+    },
+    "rating": {
+        "title": "Đánh Giá Cộng Đồng",
+        "subtitle": "Nhận xét và phản hồi từ người dùng của sàn.",
+        "summaryReview": "Dựa trên <0>{{totalReview}}</0> Đánh Giá Cộng Đồng"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Những câu hỏi được người dùng đặt ra nhiều nhất."
+    },
+    "cta": {
+        "title": "Sẵn Sàng Giao Dịch Với {{brokerName}}?",
+        "paragraph": "Sử dụng link riêng của bạn để truy cập rebate tốt nhất và điều kiện giao dịch chuyên nghiệp tại {{brokerName}}.",
+        "registerFxpayout": "Đăng Ký Qua FXPayout",
+        "visitWebsite": "Truy Cập Website Sàn"
+    },
+    "data": {
+        "title": {
+            "asic_regulated": "ASIC Regulated",
+            "beginner_friendly": "Beginner Friendly",
+            "beginner_advanced_friendly": "Beginner & Advanced Friendly",
+            "cent_account": "Tài Khoản Cent",
+            "copy_trading_supported": "Copy Trading Supported",
+            "competitive_spread": "Spread Cạnh Tranh",
+            "ecn_account": "ECN Account Available",
+            "ecn_broker": "ECN Broker",
+            "ecn_market_execution": "ECN/Market Execution",
+            "ecn_ndd": "ECN/NDD Broker",
+            "ecn_stp": "ECN/STP Broker",
+            "ecn_stp_forex_cfd": "ECN/STP Forex & CFD Broker",
+            "forex_cfd": "Forex & CFD Broker",
+            "flexible_leverage": "Đòn Bẩy Linh Hoạt",
+            "global_forex_cfd": "Global Forex & CFD Broker",
+            "high_leverage": "High Leverage",
+            "human_centered_broker": "Human-Centered Broker",
+            "indonesian_regulation": "Được Quản Lý Tại Indonesia",
+            "low_deposit": "Low Minimum Deposit",
+            "low_spread": "Low Spread",
+            "mt4_mt5": "MT4 & MT5 Supported",
+            "multi_regulated": "Multi-Regulated",
+            "multi_asset": "Multi-Asset",
+            "multi_asset_trading": "Multi-Asset Trading",
+            "multi_platform": "Multi-Platform Trading",
+            "no_commission": "No Commission Deposit/Withdrawal",
+            "regulated_broker": "Regulated Broker",
+            "raw_spread": "Raw Spread",
+            "strong_regulation": "Quy Định Chặt Chẽ",
+            "thin_spread": "Spread Mỏng",
+            "tier_1": "Tier 1",
+            "tier_local": "Tier Local",
+            "ultra_fast_execution": "Ultra-Fast Execution"
+        },
+        "regulations": {
+            "asic": "Úc",
+            "bafin": "Đức",
+            "cysec": "Cyprus",
+            "cima": "Quần Đảo Cayman",
+            "cma": "Kenya",
+            "cbcs": "Curacao",
+            "dfsa": "Dubai",
+            "vfsc": "Vanuatu",
+            "ifsc": "Belize",
+            "fsa": "Seychelles",
+            "fsc": "Mauritius",
+            "fsca": "Nam Phi",
+            "fca": "Vương Quốc Anh",
+            "finex_bappebti": "Retail Forex License (47/BAPPEBTI/SI/04/2013)",
+            "scb": "Bahamas",
+            "st_vincent_grenadines": "Saint Vincent and the Grenadines"
+        },
+        "instruments": {
+            "crypto": "Crypto",
+            "crypto_cfd": "Crypto CFD",
+            "commodity": "Hàng Hóa",
+            "energy": "Năng Lượng",
+            "etf": "ETF",
+            "forex": "Forex",
+            "forex_60": "Forex 60+ cặp",
+            "gold": "Vàng",
+            "indices": "Chỉ Số",
+            "metal": "Kim Loại",
+            "obligation": "Trái Phiếu",
+            "stocks": "Cổ Phiếu",
+            "stocks_cfd": "Cổ Phiếu CFD",
+            "shares_cfd": "Shares CFD",
+            "turbo_instrument": "Sản Phẩm Turbo"
+        },
+        "level": {
+            "advanced": "Advanced",
+            "beginner": "Người Mới",
+            "copy_trading": "Copy Trading",
+            "general": "Chung",
+            "general_retail": "Retail Chung",
+            "news_trader": "News Trader",
+            "pro": "Pro",
+            "pro_scalper": "Pro & Scalper",
+            "pro_scalper_ea": "Pro, Scalper, EA",
+            "trader": "Trader",
+            "trader_retail": "Trader Retail",
+            "scalper_ea": "Scalper, EA"
+        },
+        "time": {
+            "around_20m_2h_80percent": "Khoảng 20 phút – 2 giờ (80% trường hợp)",
+            "days_1_3": "1–3 ngày",
+            "days_1_3_work": "1–3 ngày làm việc",
+            "depends": "Tùy trường hợp",
+            "instant": "Instant",
+            "instant_1m": "<1m (Instant)",
+            "interval_5_30": "5–30 Phút",
+            "interval_instant_1d_work": "Instant - 1 ngày làm việc",
+            "interval_instant_2d": "Instant – 2 ngày làm việc",
+            "interval_instant_3d_work": "Instant – 3 ngày làm việc",
+            "one_day": "1 Ngày"
+        },
+        "fee": {
+            "zero_broker": "Thường không có phí từ sàn",
+            "zero_broker_depends_method": "Tùy phương thức (thường sàn không thu phí)",
+            "zero_broker_fees_third_party_may_apply": "Thường không có phí từ sàn (có thể áp dụng phí bên thứ ba)"
+        },
+        "platforms": {
+            "copy_trading": "Copy Trading App",
+            "c_trader": "cTrader",
+            "exness_terminal": "Exness Terminal (Web-based)",
+            "exness_mobile": "Exness Mobile App",
+            "hfm_mobile": "HFM Mobile App",
+            "ios_android": "Mobile App (Android & iOS)",
+            "mobile_trading": "Mobile Trading",
+            "mt4": "MetaTrader 4 (MT4)",
+            "mt5": "MetaTrader 5 (MT5)",
+            "pro_trader": "ProTrader",
+            "octa_trader": "OctaTrader (nền tảng độc quyền)",
+            "trading_view": "Trading View",
+            "web_mobile": "Web & Mobile",
+            "web_trading": "WebTrader"
+        }
+    }
+}

@@ -13,7 +13,7 @@ const BenefitAffiliateSection = () => {
           <div className="w-1/2 lg:w-fit">
             {/* LOGO */}
             <div className="px-5 md:px-10 py-3 md:py-6 bg-white w-fit rounded-md md:rounded-xl shadow-[6px_22px_55.5px_0_rgba(0,0,0,0.18)]">
-              <div className="flex gap-2 items-center">
+              <div dir="ltr" className="flex gap-2 items-center">
                 <img
                   src="/fxpayout-blue.svg"
                   alt="logo fx payout"
@@ -48,8 +48,8 @@ const BenefitAffiliateSection = () => {
             <BigCardAffiliate />
           </div>
           {/* PREVIEW CHART */}
-          <div className="absolute z-1 bottom-3 md:bottom-6 lg:bottom-8 right-0 left-3 md:left-6 lg:left-8 shadow-[6px_22px_55.5px_0_rgba(0,0,0,0.18)] rounded-l-[20px]">
-            <p className="absolute top-2.5 md:top-5 left-3 md:left-6 text-[10px] md:text-lg lg:text-xl font-semibold">
+          <div className="absolute z-1 bottom-3 md:bottom-6 lg:bottom-8 right-0 start-3 md:start-6 lg:start-8 shadow-[6px_22px_55.5px_0_rgba(0,0,0,0.18)] rounded-s-[20px]">
+            <p className="absolute top-2.5 md:top-5 start-3 md:start-6 text-[10px] md:text-lg lg:text-xl font-semibold">
               {t(`${key}.preview_chart.title`)}
             </p>
             <img 
@@ -62,7 +62,7 @@ const BenefitAffiliateSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center xl:items-start text-center xl:text-left gap-4">
+        <div className="flex flex-col items-center xl:items-start text-center xl:text-start gap-4">
           <BadgeSection
             icon={
               <img src="/fxpayout-white.svg" alt="FXPAYOUT LOGO" 

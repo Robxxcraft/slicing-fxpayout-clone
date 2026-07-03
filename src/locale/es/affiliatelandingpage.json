@@ -1,0 +1,193 @@
+{
+    "helmet": {
+        "title": "",
+        "description": ""
+    },
+    "herosection": {
+        "title": "Genera Comisiones con el Trading de tus Referidos",
+        "paragraph": "Obtén ingresos recurrentes cada vez que tus referidos operan a través de FXPayout.",
+        "badge": "Programa de Afiliados",
+        "benefits": ["Sin Operar", "Sin Gestionar Fondos"],
+        "button": "Regístrate Ahora y Empieza a Ganar",
+        "features": [
+            {
+                "title": "Brókers Disponibles"
+            },
+            {
+                "title": "Traders ya Registrados"
+            },
+            {
+                "title": "Miles de Dólares Pagados"
+            }
+        ],
+        "small_card": {
+            "title": "Comisión Total"
+        }
+    },
+    "commissionsection": {
+        "title": "Descubre Cuánto Puedes Ganar",
+        "paragraph": "Imagina tu potencial de ingresos por cada referido que opere activamente.",
+        "badge": "POTENCIAL DE COMISIÓN",
+        "subtitle": "Calculadora de Comisiones de Afiliado",
+        "subparagraph": "Ajusta el número de referidos para ver una estimación de tus ingresos mensuales.",
+        "total_refferal": "Número de Traders Referidos :",
+        "benefits": ["Sin Operar", "Ingresos Recurrentes Cada Mes", "Sin Gestionar Fondos"],
+        "potential_commission": "Tu Potencial de Comisión",
+        "info": "*Potencial de ingresos basado en la actividad de trading de tus referidos."
+    },
+    "benefitaffiliatesection": {
+        "title": "Genera Comisiones con la Actividad de Trading de tus Referidos",
+        "paragraphs": [
+            "FXPayout te permite obtener comisiones a partir de la actividad de trading de tus referidos.",
+            "Solo comparte tu enlace de afiliado y cada operación de tus referidos generará una comisión para ti, sin necesidad de operar ni gestionar fondos."
+        ],
+        "badge": "PROGRAMA DE AFILIADOS",
+        "small_card": {
+            "title": "Total de Traders Afiliados"
+        },
+        "preview_chart": {
+            "title": "Comisión Total Diaria"
+        }
+    },
+    "revenuesection": {
+        "title": "Cada referido que invites quedará vinculado de forma permanente a tu cuenta. ",
+        "paragraph": "Mientras sigan operando activamente, seguirás recibiendo comisiones, no solo una vez, sino de forma recurrente cada mes. Un solo referido puede convertirse en una fuente de ingresos a largo plazo.",
+        "badge": "INGRESOS RECURRENTES",
+        "revenues": [
+            {
+                "title": "Ingresos a Largo Plazo",
+                "paragraph": "Mientras tus referidos sigan operando activamente, seguirás recibiendo tu parte de la comisión. No hay fecha de caducidad para tus referidos."
+            },
+            {
+                "title": "Comisiones Recurrentes Cada Mes",
+                "paragraph": "Cada operación realizada por tu red se convierte en una comisión que puedes retirar en cualquier momento. Esta comisión se genera mes a mes mientras tu afiliación siga activa."
+            }
+        ]
+    },
+    "avilablebrokersection": {
+        "title": "Tus referidos pueden elegir libremente cualquier bróker disponible en FXPayout",
+        "paragraph": "Sea cual sea el bróker que utilicen, cada actividad de trading seguirá generando comisiones para ti."
+    },
+    "commissionsystemsection": {
+        "title": "Empieza a Generar Comisiones en 5 Sencillos Pasos",
+        "paragraph": "Cada vez que tus referidos operan, recibes tu parte de la comisión de FXPayout. Esta comisión proviene del sistema de rebate y no reduce las ganancias del trader. Todo funciona de forma automática, sin necesidad de gestión adicional.",
+        "badge": "SISTEMA DE COMISIONES",
+        "commission_broker": "Comisión del Bróker",
+        "example_calculation": "Ejemplo de Cálculo del Reparto de Comisiones",
+        "transfer_rebate": "TRANSFERENCIA DE REBATE",
+        "fxpayout_distribute_rebate": "FXPAYOUT DISTRIBUYE EL REBATE",
+        "rebate_trader": "REBATE PARA EL TRADER",
+        "internal_earn": "PARTE DE FXPAYOUT",
+        "fxpayout_distribute": "FXPayout Distribuye",
+        "distribution_commission": "REPARTO DE COMISIONES",
+        "commission_50_percent": "Si la comisión de afiliado es del 50%",
+        "affiliate_commission": "Comisión de Afiliado",
+        "card_simulation": {
+            "title": "Simulación del Potencial de Comisión con 10 Referidos",
+            "paragraph": "Con solo 10 referidos activos que operen de forma regular, puedes alcanzar la libertad financiera.",
+            "benefits": [
+                "Rebate promedio por usuario: $100 / mes",
+                "Rebate total de 10 referidos: $1,000 / mes",
+                "Tu comisión (50%)"
+            ],
+            "info": "*Solo necesitas 10 traders activos para alcanzar este objetivo."
+        }
+    },
+    "whocanjoinsection": {
+        "title": "¿Quién Puede Unirse al Programa de Afiliados de FXPayout?",
+        "paragraph": "Cualquier persona con una red o audiencia en el mundo del trading puede aprovechar este programa de afiliados.",
+        "badge": "¿PARA QUIÉN ES ESTE PROGRAMA?",
+        "users": [
+            {
+                "title": "Trader",
+                "description": "Traders activos que cuentan con contactos o una red de otros traders."
+            },
+            {
+                "title": "Creador de Contenido",
+                "description": "Creadores de contenido sobre trading, forex o finanzas."
+            },
+            {
+                "title": "Comunidad de Trading",
+                "description": "Propietarios o administradores de comunidades de traders, tanto online como presenciales."
+            },
+            {
+                "title": "Afiliado de Marketing",
+                "description": "Personas habituadas a promocionar productos mediante marketing digital."
+            }
+        ],
+        "info": "*y cualquiera que quiera tener ingresos adicionales"
+    },
+    "howaffiliateworks": {
+        "title": "Empieza a Generar Comisiones en 5 Sencillos Pasos",
+        "paragraph": "Regístrate, comparte tu enlace de referido y obtén comisiones por cada actividad de trading de los traders que refieras.",
+        "badge": "Cómo Funciona el PROGRAMA DE AFILIADOS",
+        "workflows": [
+            {
+                "title": "regístrate",
+                "subtitle": "Regístrate como afiliado",
+                "paragraph":
+                "Crea una cuenta y únete al programa de afiliados de FXPayout."
+            },
+            {
+                "title": "genera el enlace",
+                "subtitle": "Obtén tu enlace de referido",
+                "paragraph":
+                "Consigue tu enlace único para empezar a invitar a traders a unirse."
+            },
+            {
+                "title": "comparte",
+                "subtitle": "Comparte el enlace con traders",
+                "paragraph":
+                "Difunde tu enlace entre los traders para que se registren"
+            },
+            {
+                "title": "referido opera",
+                "subtitle": "Tus referidos empiezan a operar",
+                "paragraph":
+                "Los traders que refieras comienzan a realizar operaciones"
+            },
+            {
+                "title": "recibe comisión",
+                "subtitle": "Recibes tu comisión",
+                "paragraph":
+                "Obtienes una comisión por cada referido que se registra."
+            }
+        ]
+    },
+    "securitysection": {
+        "info": "Todas las operaciones se realizan directamente a través de brókers regulados."
+    },
+    "faqsection": {
+        "title": "Preguntas Frecuentes sobre Afiliados de FXPayout",
+        "paragraph": "Encuentra respuestas a las preguntas más frecuentes sobre el programa de Afiliados de FXPayout",
+        "faqs": [
+            {
+                "question": "¿Tengo que operar?",
+                "answer": "No. No necesitas operar. Solo tienes que compartir tu enlace de referido, y las comisiones se generarán a partir de la actividad de trading de tus referidos."
+            },
+            {
+                "question": "¿Necesito gestionar fondos?",
+                "answer": "No. No necesitas gestionar ningún fondo. Todas las operaciones las realizan directamente los traders en el bróker."
+            },
+            {
+                "question": "¿Se descuenta algo del rebate del trader?",
+                "answer": "No hay ningún descuento adicional por tu parte. La comisión que recibes proviene del reparto de comisiones del bróker (Introducing Broker), sin afectar los resultados de trading del trader."
+            },
+            {
+                "question": "¿Puedo utilizar más de un bróker?",
+                "answer": "Sí, puedes utilizar y promocionar más de un bróker disponible en FXPayout para llegar a más traders."
+            }
+        ]
+    },
+    "ctasection": {
+        "title": "Empieza a Generar Comisiones con tus Referidos Hoy Mismo",
+        "paragraph": "Regístrate ahora y empieza a construir ingresos a largo plazo con FXPayout."
+    },
+    "component": {
+        "big_card": {
+            "username": "John Doe",
+            "commission": "Comisión Total Generada",
+            "info": "Comisión por la actividad de trading de los traders que refieras."
+        }
+    }
+}

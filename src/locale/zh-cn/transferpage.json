@@ -1,0 +1,43 @@
+{
+    "helmet": {
+        "title": "交易IB转移至 FXPayout 申请表 | FXPayout",
+        "description": "FXPayout 是值得信赖的外汇返佣平台,将经纪商佣金的最高90%以现金返还方式直接返给交易者。"
+    },
+    "header": {
+        "title": "将您的交易账户转入 FXPayout 旗下IB",
+        "paragraph": "请填写以下表单,办理IB转移并将您的交易账户绑定至 FXPayout。",
+        "tag": "IB 转移"
+    },
+    "card": {
+        "title": "介绍经纪商(IB)转移",
+        "paragraph": "请填写以下表单,办理转入 FXPayout 的IB转移。",
+        "steps": ["填写表单", "复制邮件模板", "发送邮件至客服"],
+        "emailForm": {
+            "title": "填写表单",
+            "brokerLabel": "选择经纪商",
+            "accountNumberLabel": "账户号码",
+            "accountNumberPlaceholder": "请输入账户号码",
+            "usernameLabel": "账户持有人姓名",
+            "usernamePlaceholder": "请填写与账户一致的姓名",
+            "emailLabel": "邮箱",
+            "emailPlaceholder": "邮箱地址"
+        },
+        "emailTemplate": {
+            "title": "IB 转移邮件模板",
+            "template": {
+                "subject": "IB 转移申请",
+                "greeting": "尊敬的客服团队:",
+                "intro": "本人现申请将我的交易账户转移至以下IB名下:",
+                "ibId": "IB ID:",
+                "ibLink": "IB 链接:",
+                "accountData": "我的账户信息:",
+                "name": "姓名:",
+                "tradingAccount": "交易账户号码:",
+                "closing": "烦请协助办理上述IB转移,谢谢。",
+                "regards": "此致敬礼,"
+            },
+            "send": "发送至",
+            "contactSupport": "联系客服"
+        }
+    }
+}

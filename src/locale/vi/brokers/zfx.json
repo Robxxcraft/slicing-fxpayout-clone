@@ -1,0 +1,46 @@
+{
+  "description": "ZFX là sàn Forex & CFD thuộc Zeal Group, cung cấp giao dịch trên thị trường toàn cầu bao gồm Forex, chỉ số, hàng hóa, kim loại và cổ phiếu thông qua hạ tầng ECN / STP minh bạch. Công ty được quản lý tại Anh (FCA) và Seychelles (FSA), tập trung vào khớp lệnh nhanh, spread cạnh tranh và giao dịch đa tài sản.",
+  "specification": {
+    "leverage": "Lên đến 1:2000 (tùy tài khoản & khu vực)",
+    "spread": "Từ 0.2 pips (ECN)"
+  },
+  "summary": {
+    "spread": "Từ 0.2 pips ở tài khoản ECN; tài khoản standard/cent rộng hơn",
+    "commission": "ECN thường có hoa hồng (giá trị tùy sản phẩm)",
+    "leverage": "Lên đến 1:2000 cho một số tài khoản/pháp nhân (nhưng quy định tạm thời có thể giảm đòn bẩy khi có sự kiện kinh tế lớn)",
+    "execution": "Nhanh (MT4/MT5)",
+    "depositWithdrawal": "Thẻ, chuyển khoản ngân hàng, ví điện tử; thời gian tùy phương thức"
+  },
+  "accountTypes": [
+    ["Nạp tối thiểu ≥ $15", "Spread từ ±0.2 pips", "Đòn bẩy lên đến 1:2000", "Khớp lệnh trung bình ±480 ms", "Slippage: thấp (dữ liệu kiểm thử)"],
+    ["Nạp tối thiểu ≥ $50", "Spread từ ±1.3 – 1.5 pips", "Đòn bẩy lên đến 1:2000", "Khớp lệnh trung bình ±480 ms", "Slippage: thấp (dữ liệu kiểm thử)"],
+    ["Nạp tối thiểu ≥ $500", "Spread từ 0.2 pips", "Đòn bẩy lên đến 1:2000", "Khớp lệnh trung bình ±480 ms", "Slippage: thấp (dữ liệu kiểm thử)"]
+  ],
+  "spread": ["biến động thấp (nhưng dễ biến động)", "rộng hơn, tùy thanh khoản"],
+  "keyAdvantages": ["Spread cực kỳ cạnh tranh ở tài khoản ECN", "Được quản lý & hậu thuẫn bởi Zeal Group", "Có đòn bẩy cao (tùy pháp nhân)", "Hỗ trợ đầy đủ MT4/MT5", "Lựa chọn tài khoản cho người mới đến pro (cent → ECN)"],
+  "advantages": ["Spread ECN cạnh tranh", "Đòn bẩy cao", "Có MT4 & MT5", "Có tài khoản cent"],
+  "disadvantages": ["Nạp tối thiểu ECN khá cao", "Rebate IB không minh bạch công khai", "Có báo cáo phàn nàn từ người dùng (cần thận trọng)"],
+  "classifications": [
+    "Tốc Độ Rút Tiền (WD)",
+    "Độ Ổn Định Máy Chủ",
+    "Hỗ Trợ Khách Hàng"
+  ],
+  "faqs": [
+    {
+      "question": "ZFX có an toàn không?",
+      "answer": "ZFX hoạt động dưới Zeal Group và công bố quy định FCA & FSA cho các pháp nhân của tập đoàn; cần xác minh pháp nhân tại khu vực của bạn."
+    },
+    {
+      "question": "Mức nạp tối thiểu là bao nhiêu?",
+      "answer": "Từ $15 cho Cent/Mini; $50 cho Standard; ECN thường $500+ (kiểm tra tài khoản tại khu vực của bạn)."
+    },
+    {
+      "question": "Có tài khoản demo không?",
+      "answer": "Có, có tài khoản demo MT4/MT5 trên website ZFX."
+    },
+    {
+      "question": "Có chương trình IB không?",
+      "answer": "Có, có chương trình partnership / IB; chi tiết rebate được thương lượng."
+    }
+  ]
+}

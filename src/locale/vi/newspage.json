@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "Tin Tức Forex & Phân Tích Thị Trường Mới Nhất | FXPayout",
+        "description": "Cập nhật tin tức forex mới nhất, phân tích thị trường real-time, xu hướng crypto và thông tin kinh tế toàn cầu trực tiếp từ FXPayout."
+    },
+    "time": {
+      "minutesAgo": "{{time}} phút trước",
+      "hoursAgo": "{{time}} giờ trước",
+      "justNow": "Vừa xong",
+      "march": "{{time}} Tháng 3"
+    },
+    "category": {
+        "latest": "Mới Nhất",
+        "popular": "Phổ Biến",
+        "breakingNews": "Breaking News",
+        "crypto": "Crypto",
+        "stocks": "Cổ Phiếu",
+        "commodity": "Hàng Hóa",
+        "economy": "Kinh Tế",
+        "company": "Doanh Nghiệp",
+        "world": "Thế Giới",
+        "others": "Khác"
+    },
+    "header": {
+        "searchPlaceholder": "Tìm tin tức tại đây..."
+    },
+    "main": {
+        "category": "Danh Mục",
+        "totalNews": "Số Lượng Tin"
+    },
+    "subscribe": {
+        "title": "Đăng Ký Nhận Tin Ngay",
+        "paragraph": "Nhận tin tức mới nhất về forex, crypto, cổ phiếu và kinh tế trực tiếp vào email của bạn.",
+        "emailPlaceholder": "Sử dụng email đang hoạt động"
+    }
+}

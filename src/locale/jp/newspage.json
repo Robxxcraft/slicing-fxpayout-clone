@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "最新FXニュース＆マーケット分析 | FXPayout",
+        "description": "FXPayoutから、最新のFXニュース、リアルタイムのマーケット分析、仮想通貨のトレンド、世界経済の最新情報をお届けします。"
+    },
+    "time": {
+      "minutesAgo": "{{time}}分前",
+      "hoursAgo": "{{time}}時間前",
+      "justNow": "たった今",
+      "march": "3月{{time}}日"
+    },
+    "category": {
+        "latest": "最新",
+        "popular": "人気",
+        "breakingNews": "速報",
+        "crypto": "仮想通貨",
+        "stocks": "株式",
+        "commodity": "商品",
+        "economy": "経済",
+        "company": "企業",
+        "world": "国際",
+        "others": "その他"
+    },
+    "header": {
+        "searchPlaceholder": "ニュースを検索..."
+    },
+    "main": {
+        "category": "カテゴリー",
+        "totalNews": "ニュース件数"
+    },
+    "subscribe": {
+        "title": "今すぐニュースを購読",
+        "paragraph": "FX、仮想通貨、株式、経済に関する最新ニュースをあなたのメールに直接お届けします。",
+        "emailPlaceholder": "有効なメールアドレスをご入力ください"
+    }
+}

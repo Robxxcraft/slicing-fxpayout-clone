@@ -139,7 +139,7 @@ export const octaFxDetail: BrokerStruc = {
       { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
       { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
       { key: "other", username: `${platformsKey}.octa_trader`, icon: "octafx.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "octafx.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "octafx.webp" },
       { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "octafx.webp" },
     ]
   },

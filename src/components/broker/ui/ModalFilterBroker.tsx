@@ -38,7 +38,7 @@ const availablePlatforms = [
   { key: "mt5", text: "MetaTrader 5 (MT5)" },
   { key: "c_trader", text: "cTrader" },
   { key: "trading_view", text: "Trading View" },
-  { key: "web_trader", text: "WebTrader" },
+  { key: "web_trading", text: "WebTrader" },
   { key: "pro_trader", text: "ProTrader" },
 ];
 
@@ -50,12 +50,14 @@ const ModalFilterBroker = ({
   selectedPlatforms,
   onApplyChanges,
 }: ModalFilterBrokerProps) => {
-  const { t } = useTranslation(["common"]);
+  const { i18n, t } = useTranslation(["common", "brokerdetailpage"]);
   const [rebate, setRebate] = useState<RebateRange>(selectedRebate);
   const [minDeposit, setMinDeposit] = useState<number[]>([selectedMinDeposit]);
   const [selectedSpread, setSelectedSpread] = useState<string>("low");
   const [platforms, setPlatforms] = useState<EnumPlatformBroker[]>(selectedPlatforms);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const isRtl = i18n.dir() === "rtl";
 
   useEffect(() => {
     if (isVisible) {
@@ -100,11 +102,13 @@ const ModalFilterBroker = ({
   return (
     <Modal isOpen={isVisible} onClose={handleClose} maxWCL="max-w-[820px] px-2! lg:px-4!">
       <div className="scrollbar-thin px-4 space-y-4 2xl:space-y-6 max-h-[calc(100dvh-100px)] overflow-y-auto">
+
+        {/* HEADER */}
         <div className="pb-2 relative flex flex-col border-b border-primary/20">
           <div className="flex items-center justify-center gap-2">
             <FaFilter className="scale-x-[-1] text-3xl 2xl:text-4xl text-primary" />
             <h2 className="text-2xl 2xl:text-[32px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-              Filter Broker
+              {t("text.filter_broker")}
             </h2>
           </div>
           
@@ -113,18 +117,20 @@ const ModalFilterBroker = ({
             className="ml-auto md:absolute right-0 top-1/2 md:-translate-y-1/2 text-base 2xl:text-xl text-primary underline cursor-pointer"
             onClick={handleResetFilter}
           >
-            Reset Filter
+            {t("text.reset_filter")}
           </button>
         </div>
+
+
         <h3 className="pb-2 font-medium text-lg 2xl:text-2xl leading-[160%] border-b border-primary/20">
-          Trading
+          {t("text.title_trading")}
         </h3>
         <div className="pb-10">
           <div className="mb-4 flex justify-between items-center">
             <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
-              Range Rebate : 
+              {t("text.range_rebate")}: 
             </p>
-            <p className="text-base 2xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+            <p className="text-base 2xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text" dir="ltr">
               ${rebate.start} -  ${rebate.end}
             </p>
           </div>
@@ -134,31 +140,40 @@ const ModalFilterBroker = ({
                 values={[rebate.start, rebate.end]} 
                 min={0}
                 max={50}
+                rtl={isRtl}
                 allowOverlap={false}
                 onChange={([start, end]) => setRebate({ start, end })} 
-                renderTrack={({ props, children }) => (
+                renderTrack={({ props, children }) => {
+                  const min = 0;
+                  const max = 50;
+
+                  const startPercent = ((rebate.start - min) / (max - min)) * 100;
+                  const endPercent = ((rebate.end - min) / (max - min)) * 100;
+
+                  return (
                     <div
-                    {...props}
-                    style={{
-                        ...props.style,
-                        height: "8px",
-                        width: "100%",
-                        background: getTrackBackground({
-                            values: [rebate.start, rebate.end],
-                            colors: [
-                                "rgba(48,127,226,0.3)", // passive kiri
-                                "#4160FF",             // active
-                                "rgba(48,127,226,0.3)" // passive kanan
-                            ],
-                            min: 0,
-                            max: 50,
-                        }),
-                    }}
-                    className="rounded-full"
+                      {...props}
+                      className="relative w-full h-2 rounded-full bg-blue-200"
                     >
-                        {children}
+                      <div
+                        className="absolute h-full rounded-full bg-primary"
+                        style={
+                          isRtl
+                            ? {
+                                left: `${100 - endPercent}%`,
+                                width: `${endPercent - startPercent}%`,
+                              }
+                            : {
+                                left: `${startPercent}%`,
+                                width: `${endPercent - startPercent}%`,
+                              }
+                        }
+                      />
+
+                      {children}
                     </div>
-                )} 
+                  );
+                }}
                 renderThumb={({ props }) => (
                     <div
                     {...props}
@@ -177,27 +192,25 @@ const ModalFilterBroker = ({
 
           <div className="mt-4 relative">
               {rebateMarks.map((mark, index) => {
-                let right, left = undefined;
+                let style: React.CSSProperties = {};
                 let className = "absolute top-0 text-sm md:text-xl lg:text-base 2xl:text-xl text-[#344054] font-medium ";
                 const min = rebateMarks[0];
                 const max = rebateMarks[rebateMarks.length - 1];
+
                 if (index === 0) {
-                  left = 0;
+                  style = isRtl ? { right: 0 } : { left: 0 };
                 } else if (index === rebateMarks.length - 1) {
-                  right = 0;
+                  style = isRtl ? { left: 0 } : { right: 0 };
                 } else {
                   const position = ((mark - min) / (max - min)) * 100;
-                  className += `-translate-x-1/2`;
-                  left = `${position}%`;
+                  className += isRtl ? "translate-x-1/2" : "-translate-x-1/2";
+                  style = isRtl ? { right: `${position}%` } : { left: `${position}%` };
                 }
 
                 return (
                   <span key={mark}
                     className={className}
-                    style={{ 
-                      right,
-                      left
-                    }}
+                    style={style}
                   >${mark}</span>
                 )
               })}
@@ -206,7 +219,7 @@ const ModalFilterBroker = ({
 
         {/* SPREAD */}
         <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
-            Spread Broker:
+            {t("text.spread_broker")}:
         </p>
         <div className="mt-4 2xl:mt-6 flex flex-wrap items-center gap-2">
             {levelSpread.map((item, index) => (
@@ -229,9 +242,9 @@ const ModalFilterBroker = ({
         <div className="pb-10 border-b border-primary/20">
           <div className="mb-4 flex justify-between items-center">
             <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
-              Minimum Deposit : 
+              {t("text.minimum_deposit")}: 
             </p>
-            <p className="text-base 2xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+            <p className="text-base 2xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text" dir="ltr">
               &gt;${minDeposit[0]} 
             </p>
           </div>
@@ -241,9 +254,19 @@ const ModalFilterBroker = ({
                 values={minDeposit} 
                 min={0}
                 max={200}
+                rtl={isRtl}
                 allowOverlap={false}
                 onChange={(values) => setMinDeposit(values)} 
-                renderTrack={({ props, children }) => (
+                renderTrack={({ props, children }) => {
+                  const trackColors = isRtl ? [
+                    "rgba(48,127,226,0.3)", // passive kanan
+                    "#4160FF",             // active
+                  ] : [
+                    "#4160FF",             // active
+                    "rgba(48,127,226,0.3)" // passive kanan
+                  ];
+                  
+                  return (
                     <div
                     {...props}
                     style={{
@@ -251,11 +274,10 @@ const ModalFilterBroker = ({
                         height: "8px",
                         width: "100%",
                         background: getTrackBackground({
-                            values: minDeposit,
-                            colors: [
-                                "#4160FF",             // active
-                                "rgba(48,127,226,0.3)" // passive kanan
-                            ],
+                            values:isRtl
+                              ? [200 - (minDeposit[0] - 0)]
+                              : minDeposit,
+                            colors: trackColors,
                             min: 0,
                             max: 200,
                         }),
@@ -264,7 +286,7 @@ const ModalFilterBroker = ({
                     >
                         {children}
                     </div>
-                )} 
+                )}} 
                 renderThumb={({ props }) => (
                     <div
                     {...props}
@@ -283,27 +305,25 @@ const ModalFilterBroker = ({
 
           <div className="mt-4 relative">
               {minDepositMarks.map((mark, index) => {
-                let right, left = undefined;
+                let style: React.CSSProperties = {};
                 let className = "absolute top-0 text-sm md:text-xl lg:text-base 2xl:text-xl text-[#344054] font-medium ";
+
                 const min = minDepositMarks[0];
                 const max = minDepositMarks[minDepositMarks.length - 1];
                 if (index === 0) {
-                  left = 0;
+                  style = isRtl ? { right: 0 } : { left: 0 };
                 } else if (index === minDepositMarks.length - 1) {
-                  right = 0;
+                  style = isRtl ? { left: 0 } : { right: 0 };
                 } else {
                   const position = ((mark - min) / (max - min)) * 100;
-                  className += `-translate-x-1/2`;
-                  left = `${position}%`;
+                  className += isRtl ? "translate-x-1/2" : "-translate-x-1/2";
+                  style = isRtl ? { right: `${position}%` } : { left: `${position}%` };
                 }
 
                 return (
                   <span key={mark}
                     className={className}
-                    style={{ 
-                      right,
-                      left
-                    }}
+                    style={style}
                   >${mark}</span>
                 )
               })}
@@ -312,11 +332,11 @@ const ModalFilterBroker = ({
 
         {/* PLATFORM */}
         <h3 className="pb-2 font-medium text-lg 2xl:text-2xl leading-[160%] border-b border-primary/20">
-          Platform
+          {t("text.title_platform")}
         </h3>
         <div>
           <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
-            Platform:
+            {t("text.title_platform")}:
           </p>
 
           <div className="mt-4 2xl:mt-6 flex items-center gap-4 2xl:gap-6 flex-wrap">
@@ -337,9 +357,9 @@ const ModalFilterBroker = ({
                 />
                 <label 
                     htmlFor={`platform-checkbox-${data.key}`} 
-                    className="pl-2 text-base font-medium leading-6 cursor-pointer select-none"
+                    className="ps-2 text-base font-medium leading-6 cursor-pointer select-none"
                 >
-                  {data.text}
+                  {t(`brokerdetailpage:data.platforms.${data.key}`)}
                 </label>
               </div>
             ))}

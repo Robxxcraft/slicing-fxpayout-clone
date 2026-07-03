@@ -151,7 +151,7 @@ export const tickmillDetail: BrokerStruc = {
     platforms: [
       { key: "mt4", username: `${platformsKey}.mt4`, icon: "meta-trader.webp" },
       { key: "mt5", username: `${platformsKey}.mt5`, icon: "meta-trader.webp" },
-      { key: "web_trader", username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
+      { key: "web_trading", username: `${platformsKey}.web_trading`, icon: "tickmill.webp" },
       { key: "ios_android", username: `${platformsKey}.ios_android`, icon: "tickmill.webp" },
     ]
   },

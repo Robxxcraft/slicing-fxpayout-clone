@@ -9,8 +9,9 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    supportedLngs: ["en", "id"],
-    load: "languageOnly",
+    lowerCaseLng: true,
+    supportedLngs: ["en", "id", "zh", "zh-cn", "jp", "ko", "th", "vi", "es", "pt", "ar"],
+    nonExplicitSupportedLngs: true,
     detection: {
       order: ["localStorage", "navigator", "htmlTag", "path", "cookie"],
       lookupFromPathIndex: 0,
@@ -18,7 +19,12 @@ i18n
     },
     ns: namespace,
     defaultNS: "common",
-    fallbackLng: "en",
+    fallbackLng: {
+      "zh": ["zh-cn"],
+      "zh-Hans": ["zh-cn"],
+      "zh-Hans-CN": ["zh-cn"],
+      default: ["en"],
+    },
     interpolation: { escapeValue: false }
   }, (error) => {
     if (!error) {

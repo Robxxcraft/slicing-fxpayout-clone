@@ -1,0 +1,51 @@
+{
+  "description": "Vantage(Vantage Markets로도 알려짐)는 2009년 설립된 글로벌 포렉스 및 CFD 브로커로, 포렉스, 지수, 금속, 원자재, 주식 CFD, ETF, 채권 등 다양한 글로벌 금융 상품에 대한 트레이딩 접근을 제공합니다. Vantage는 MetaTrader 4, MetaTrader 5, ProTrader 같은 인기 트레이딩 플랫폼과 자체 앱을 결합하여 강력하고 유연한 트레이딩 경험을 제공합니다.",
+  "specification": {
+    "leverage": "최대 1:500 (일부 Premium 법인은 1:2000까지)",
+    "spread": "0.0 pips부터 (Raw / Pro)"
+  },
+  "summary": {
+    "spread":"0.0 pips부터 (Raw / Pro)",
+    "commission": "Raw ECN 기준 랏당 편도 ±$3부터",
+    "leverage": "최대 1:500 (일부 Premium 법인은 1:2000까지)",
+    "execution": "ECN/STP를 통한 빠르고 안정적인 체결",
+    "depositWithdrawal": "다양한 방법, 일반적으로 브로커 수수료 없음"
+  },
+  "spread": ["0.0 pips부터", "±0.3 – 0.5 pips부터", "±0.3 – 0.5 pips부터"],
+  "accountTypes": [
+    ["최소 입금액 : $50", "스프레드 : 약 1.1 – 1.6 pips부터", "커미션 : $0"],
+    ["최소 입금액 : $50", "스프레드 : 0.0 pips부터", "커미션 : 랏당 편도 ±$3"],
+    ["최소 입금액 : ±$50 – $10,000 (법인에 따라 다름)", "스프레드 : 0.0 pips부터", "커미션 : 랏당 편도 ±$1.50 – $3"],
+    ["추가 계좌 옵션", "트레이더별 니즈에 맞춘 기능"]
+  ],
+  "keyAdvantages": ["경쟁력 있는 스프레드 & 체결", "1,000개 이상의 CFD 상품 접근", "강력한 글로벌 규제", "ECN & STP 옵션", "마이너스 잔액 보호", "카피 트레이딩 연동 (ZuluTrade, DupliTrade)", "최신 트레이딩 플랫폼"],
+  "advantages": ["여러 글로벌 관할권의 강력한 규제", "Raw ECN / Pro ECN의 낮은 스프레드", "트레이더 전략에 맞춘 유연한 계좌 선택지", "종합 플랫폼 & 고급 트레이딩 기능", "브로커 측 입출금 수수료 없음"],
+  "disadvantages": ["Standard 스프레드가 ECN보다 높을 수 있음", "Raw ECN에는 랏당 커미션이 계속 적용됨", "고객 지역에 따라 법인별 규제가 다름"],
+  "classifications": [
+    "플랫폼 & 도구",
+    "비용 & 수수료",
+    "지원 & 서비스"
+  ],
+  "faqs": [
+    {
+      "question": "Vantage는 안전한가요?",
+      "answer": "네 — 법인에 따라 ASIC, FCA, FSCA, CIMA & VFSC의 규제를 받습니다."
+    },
+    {
+      "question": "최소 입금액은 얼마인가요?",
+      "answer": "$50부터 시작합니다 (계좌 & 법인에 따라 다름)"
+    },
+    {
+      "question": "어떤 플랫폼을 지원하나요?",
+      "answer": "MT4, MT5, ProTrader, 웹, 모바일."
+    },
+    {
+      "question": "최대 레버리지는 얼마인가요?",
+      "answer": "최대 1:500 (일부 Premium 법인은 1:2000까지)."
+    },
+    {
+      "question": "ECN 계좌가 있나요?",
+      "answer": "네 — 낮은 스프레드와 경쟁력 있는 커미션의 Raw ECN & Pro ECN 계좌를 제공합니다."
+    }
+  ]
+}

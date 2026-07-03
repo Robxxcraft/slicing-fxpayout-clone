@@ -60,7 +60,7 @@ const Navbar = ({
 
   return (
     <nav
-      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
+      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between gap-3 bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:
@@ -70,7 +70,7 @@ const Navbar = ({
               : "rgba(65,96,255,0)"
             : "rgba(65,96,255,1)",
       }}>
-      <Link to={`${getLocalizedPath("/", i18n.language)}`} className="flex gap-2 items-center">
+      <Link dir="ltr" to={`${getLocalizedPath("/", i18n.language)}`} className="flex gap-2 items-center">
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
@@ -101,7 +101,7 @@ const Navbar = ({
             {sublist !== undefined && 
             <>
               <FaChevronDown className="text-[14px] cursor-pointer group-hover:rotate-180 transition-all duration-200" />
-              <div className="absolute py-4 scale-0 group-hover:scale-100 origin-top flex top-full left-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
+              <div className="absolute py-4 scale-0 group-hover:scale-100 origin-top flex top-full start-0 flex-col bg-white w-60 h-fit shadow-lg rounded-xl transition-all duration-200 delay-200 ease-out">
                 {sublist?.map((subNav, idx) => (
                   <HashLink 
                     smooth
@@ -146,7 +146,7 @@ const Navbar = ({
             size="lg" 
             className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
           >
-            Login
+            {t("text.title_login")}
           </Button>
           <Button 
             buttonType="link" 
@@ -155,7 +155,7 @@ const Navbar = ({
             size="lg" 
             className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
           >
-            Daftar
+            {t("text.title_register")}
           </Button>
         </>
         }
@@ -172,7 +172,7 @@ const Navbar = ({
           left: openMenu ? "0" : "-100%",
         }}>
         <div className="mb-6 flex items-center justify-between">
-          <div className="flex gap-2 items-center">
+          <div dir="ltr" className="flex gap-2 items-center">
             <img
               src="/fxpayout-white.svg"
               alt="logo fx payout"
@@ -255,12 +255,12 @@ const Navbar = ({
           <>
             <Link to={getLocalizedPath("login", i18n.language)} className="w-fit text-center">
               <span className="block w-fit px-6 py-3 text-base font-medium bg-primary text-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-out">
-                Login
+                {t("text.title_login")}
               </span>
             </Link>
             <Link to={getLocalizedPath("register", i18n.language)} className="w-fit text-center">
               <span className="block w-fit px-6 py-3 text-base font-medium text-black bg-white border border-white rounded-lg hover:bg-[rgba(255,255,255,0.8)] transition-all duration-300 ease-out">
-                Daftar
+                {t("text.title_register")}
               </span>
             </Link>
           </>

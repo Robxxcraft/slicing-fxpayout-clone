@@ -1,0 +1,51 @@
+{
+  "description": "A Axi é uma corretora internacional de forex e CFD que existe desde 2007 e é reconhecida como uma das corretoras ECN amigáveis para traders de todos os níveis. A Axi oferece spreads competitivos, execução rápida e plataformas de trading robustas, como o MetaTrader 4 e o MetaTrader 5. A corretora atende traders em diversos países, com regulação global e serviços completos.",
+  "specification": {
+    "leverage": "Até 1:500 (depende do regulador)",
+    "spread": "A partir de 0.0 pips (Pro)"
+  },
+  "profile": {
+    "slogan": "Trade Unlocked"
+  },
+  "summary": {
+    "spread": "A partir de 0.0 – 0.2 pips (Pro ECN)",
+    "commission": "Pro ECN: ±$7 por lote (round-turn)",
+    "leverage": "Até 1:500 (depende do regulador)",
+    "execution": "Rápida e estável",
+    "depositWithdrawal": "Diversos métodos"
+  },
+  "accountTypes": [
+    ["Depósito mín. : $0+ (recomendado $200)", "Spread a partir de ±1.0 pips", "Sem comissão"],
+    ["Depósito mín. : ±$200", "Spread : a partir de 0.0 – 0.2 pips", "Comissão competitiva (~$7 por lote)"]
+  ],
+  "keyAdvantages": ["Spread competitivo e execução rápida", "Regulação forte pela ASIC e FCA", "Amigável a scalping e EA", "Plataforma de trading completa", "Custos transparentes e baixos"],
+  "advantages": ["Spread baixo e execução rápida", "Regulação forte (FCA/ASIC/FSCA)", "Plataformas de trading populares", "Suporte global"],
+  "disadvantages": ["Mínimo efetivo para ECN um pouco mais alto", "Comissão por lote no Pro ECN"],
+  "classifications": [
+    "Execution & Spread",
+    "Customer Support",
+    "Deposit/Withdrawal"
+  ],
+  "faqs": [
+    {
+      "question": "A Axi é segura?",
+      "answer": "Sim — é supervisionada por grandes reguladores como FCA, ASIC e FSCA (entidades diferentes conforme a região)."
+    },
+    {
+      "question": "Qual é o depósito mínimo?",
+      "answer": "Não há um mínimo oficial, mas recomenda-se a partir de $200 para uma execução estável."
+    },
+    {
+      "question": "Quais plataformas são suportadas?",
+      "answer": "MT4, MT5, Web e Mobile."
+    },
+    {
+      "question": "Qual é a alavancagem máxima?",
+      "answer": "Até 1:500, dependendo do regulador e da entidade."
+    },
+    {
+      "question": "Existe conta ECN?",
+      "answer": "Sim — Pro ECN, com spread muito baixo."
+    }
+  ]
+}

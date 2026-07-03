@@ -31,7 +31,7 @@ const DepositWIthdraw = ({
                     "brokerdetailpage:depositWithdraw.tableHeaders.2",
                     "brokerdetailpage:depositWithdraw.tableHeaders.3"
                   ].map((item) => (
-                    <th key={item} className="px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold tracking-[2%] text-left">
+                    <th key={item} className="px-4 md:px-8 py-6 bg-[#F1F3F9] font-semibold tracking-[2%] text-start">
                       {t(item)}
                     </th>
                   ))}
@@ -41,22 +41,22 @@ const DepositWIthdraw = ({
                 {paymentMethods.map((method, idx) => (
                   <tr key={idx}>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
-                      px-4 md:px-8 py-6 md:py-4 text-left`}
+                      px-4 md:px-8 py-6 md:py-4 text-start`}
                     >
                       {t(method.method)}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
-                      px-4 md:px-8 py-6 md:py-4 text-left`}
+                      px-4 md:px-8 py-6 md:py-4 text-start`}
                     >
                       {t(method.time.deposit)}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
-                      px-4 md:px-8 py-6 md:py-4 text-left`}
+                      px-4 md:px-8 py-6 md:py-4 text-start`}
                     >
                       {t(method.time.withdraw)}
                     </td>
                     <td className={`${idx % 2 === 0 ? "bg-white" : "bg-[#F8F9FC]"} 
-                      px-4 md:px-8 py-6 md:py-4 text-left`}
+                      px-4 md:px-8 py-6 md:py-4 text-start`}
                     >
                       {t(method.fee)}
                     </td>

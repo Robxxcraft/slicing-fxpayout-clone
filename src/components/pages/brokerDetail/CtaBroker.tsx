@@ -25,7 +25,7 @@ const CtaBroker = ({
             {t("brokerdetailpage:cta.paragraph", { brokerName: name })}
           </p>
           <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-3">
-            <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl" />} iconPosition="right">
+            <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl rtl:scale-x-[-1]" />} iconPosition="right">
               {t("brokerdetailpage:cta.registerFxpayout")}
             </Button>
             <Button 
@@ -35,7 +35,7 @@ const CtaBroker = ({
               target={websiteUrl.length === 1 ? "_blank" : undefined} 
               variant="outline-light" 
               size="xl" 
-              icon={<FaExternalLinkAlt className="text-base 2xl:text-xl" />} 
+              icon={<FaExternalLinkAlt className="text-base 2xl:text-xl rtl:scale-x-[-1]" />} 
               iconPosition="right"
             >
               {t("brokerdetailpage:cta.visitWebsite")}
@@ -45,7 +45,7 @@ const CtaBroker = ({
         <img
           src="/circle-ornament.png"
           alt="ornament"
-          className="absolute z-10 top-0 -left-[10%] -rotate-55 w-[600px]"
+          className="absolute z-10 top-0 -start-[10%] ltr:-rotate-55 rtl:rotate-260 w-[600px]"
         />
       </div>
     </section>

@@ -97,7 +97,7 @@ const DrawerWithdrawalDetail = ({
       onClose={onCloseDrawer}
       maxWCL="max-w-[600px]"
     >
-    <div className={`primary-scrollbar border-t border-l border-[#D2CEE1] bg-white overflow-y-auto
+    <div className={`primary-scrollbar border-t border-s border-[#D2CEE1] bg-white overflow-y-auto
       ${!isLoading.general && dataWithdrawal.status === "pending" ? "h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)]" : "h-screen"}  
     `}>
       <div className="px-5 pr-5 py-3 h-[calc(100%-64px)] overflow-y-auto overflow-x-hidden">

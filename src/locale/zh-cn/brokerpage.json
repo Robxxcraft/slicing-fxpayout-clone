@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "合作经纪商列表及详情 | FXPayout",
+        "description": "FXPayout 是值得信赖的外汇返佣平台,将经纪商佣金的最高90%以现金返还方式直接返给交易者。"
+    },
+    "header": {
+        "title": "合作经纪商及详情",
+        "paragraph": "精选经纪商,执行优质,返佣高达90%。对比各品种详情,选择最适合您交易策略的经纪商。",
+        "tag": "经纪商列表",
+        "searchPlaceholder": "在此搜索经纪商",
+        "total_brokers": "经纪商数量",
+        "filter_brokers": "筛选经纪商",
+        "sort_by": "排序方式"
+    },
+    "card": {
+        "rebatePerInstrument": "各品种返佣",
+        "instrument": "交易品种",
+        "rebate": "返佣",
+        "register": "注册经纪商",
+        "detail": "查看详情"
+    },
+    "notify": {
+        "title": "返佣透明化",
+        "paragraph": "我们保存佣金与返佣记录,供用户随时查核。(演示:数据保存在浏览器中)。"
+    },
+    "ctaregisterbroker": {
+        "title": "加入我们的平台",
+        "paragraph": "还没有您的经纪商?展示经纪商资料,通过我们的生态系统触达更多交易者。",
+        "button": "登记经纪商"
+    }
+}

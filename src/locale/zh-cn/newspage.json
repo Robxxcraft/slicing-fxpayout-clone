@@ -1,0 +1,36 @@
+{
+    "helmet": {
+        "title": "外汇新闻与最新市场分析 | FXPayout",
+        "description": "从 FXPayout 获取最新外汇新闻、实时市场分析、加密货币走势及全球经济动态。"
+    },
+    "time": {
+        "minutesAgo": "{{time}} 分钟前",
+        "hoursAgo": "{{time}} 小时前",
+        "justNow": "刚刚",
+        "march": "3月{{time}}日"
+    },
+    "category": {
+        "latest": "最新",
+        "popular": "热门",
+        "breakingNews": "突发新闻",
+        "crypto": "加密货币",
+        "stocks": "股票",
+        "commodity": "大宗商品",
+        "economy": "经济",
+        "company": "公司",
+        "world": "国际",
+        "others": "其他"
+    },
+    "header": {
+        "searchPlaceholder": "在此搜索新闻..."
+    },
+    "main": {
+        "category": "分类",
+        "totalNews": "新闻数量"
+    },
+    "subscribe": {
+        "title": "立即订阅新闻",
+        "paragraph": "将外汇、加密货币、股票及经济领域的最新资讯直接发送到您的邮箱。",
+        "emailPlaceholder": "请填写常用邮箱"
+    }
+}

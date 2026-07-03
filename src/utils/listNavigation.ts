@@ -66,13 +66,13 @@ export const listNavigation: NavigationLink[] = [
 
 export const listNavigationBrokers: NavigationLink[] = [
   { code: "profil", title: "Profil", url: "#profil" },
-  { code: "summary", title: "Ringkasan", url: "#ringkasan" },
-  { code: "accountType", title: "Jenis Akun", url: "#jenis-akun" },
-  { code: "spreadCommission", title: "Spread & Komisi", url: "#spread-komisi" },
-  { code: "advantage", title: "Keunggulan", url: "#keunggulan" },
+  { code: "summary", title: "Ringkasan", url: "#summary" },
+  { code: "accountType", title: "Jenis Akun", url: "#account-type" },
+  { code: "spreadCommission", title: "Spread & Komisi", url: "#spread-commission" },
+  { code: "advantage", title: "Keunggulan", url: "#advantage" },
   { code: "platform", title: "Platform", url: "#platform" },
   { code: "depositWithdraw", title: "Deposit & Withdraw", url: "#deposit-withdraw" },
-  { code: "advantagesDisadvantages", title: "Kelebihan & Kekurangan", url: "#kelebihan-kekurangan" },
+  { code: "advantagesDisadvantages", title: "Kelebihan & Kekurangan", url: "#pros-cons" },
   { code: "rating", title: "Rating", url: "#rating" },
   { code: "faq", title: "FAQ", url: "#faq" },
 ];

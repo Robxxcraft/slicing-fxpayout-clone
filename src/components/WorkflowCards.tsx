@@ -50,9 +50,9 @@ const WorkflowCards = ({
             </p>
           </div>
           {idx !== workflows.length - 1 && (
-            <div className={`absolute top-full right-1/2 translate-x-1/2 -translate-y-6 flex items-center justify-center size-14 bg-[#EBECE7] rounded-full z-50 rotate-90 
-              ${colResponsive === "small-laptop" ? "xl:top-1/2 xl:-right-8 xl:translate-x-0 xl:-translate-y-1/2 xl:rotate-0":""}
-              ${colResponsive === "laptop" ? "lg:top-1/2 lg:-right-8 lg:translate-x-0 lg:-translate-y-1/2 lg:rotate-0":""}
+            <div className={`absolute top-full end-1/2 ltr:translate-x-1/2 rtl:-translate-x-1/2 -translate-y-6 flex items-center justify-center size-14 bg-[#EBECE7] rounded-full z-50 rotate-90 
+              ${colResponsive === "small-laptop" ? "xl:top-1/2 xl:-end-8 xl:ltr:translate-x-0 xl:rtl:translate-x-0 xl:-translate-y-1/2 xl:rotate-0 xl:rtl:rotate-180":""}
+              ${colResponsive === "laptop" ? "lg:top-1/2 lg:-end-8 lg:ltr:translate-x-0 lg:rtl:translate-x-0 lg:-translate-y-1/2 lg:rotate-0 lg:rtl:rotate-180":""}
             `}>
               <div className="flex items-center justify-center size-10 bg-linear-to-t from-dark-primary to-primary rounded-full">
                 <FaArrowRight color="#fff" />

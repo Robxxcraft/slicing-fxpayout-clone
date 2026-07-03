@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Lista de Corretoras Parceiras e Detalhes | FXPayout",
+        "description": "A FXPayout é uma plataforma de rebate forex confiável que oferece cashback de até 90% da comissão da corretora diretamente ao trader."
+    },
+    "header": {
+        "title": "Corretoras Parceiras e Detalhes",
+        "paragraph": "Corretoras selecionadas com a melhor execução e esquema de rebate de até 90%. Compare os detalhes dos instrumentos e escolha a corretora mais adequada para a sua estratégia de trading.",
+        "tag": "LISTA DE CORRETORAS",
+        "searchPlaceholder": "Busque uma corretora aqui",
+        "total_brokers": "Total de Corretoras",
+        "filter_brokers": "Filtrar Corretoras",
+        "sort_by": "Ordenar Por"
+    },
+    "card": {
+        "rebatePerInstrument": "Rebate por Instrumento",
+        "instrument": "Instrumento",
+        "rebate": "Rebate",
+        "register": "Cadastrar Corretora",
+        "detail": "Saiba Mais"
+    },
+    "notify": {
+        "title": "Transparência do Rebate",
+        "paragraph": "Mantemos um histórico de comissões e rebates auditável pelo usuário. (Demo: os dados são armazenados no navegador)."
+    },
+    "ctaregisterbroker": {
+        "title": "Junte-se à Nossa Plataforma",
+        "paragraph": "A sua corretora ainda não está disponível? Exiba o perfil da corretora e alcance mais traders através do nosso ecossistema.",
+        "button": "Cadastrar Corretora"
+    }
+}

@@ -12,7 +12,7 @@ const MainAdvantage = ({
   const { t } = useTranslation([brokerId, "brokerdetailpage"]);
   const advantages = t(keyAdvantages, { returnObjects: true });
   return (
-    <section id="keunggulan" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
+    <section id="advantage" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>{t("brokerdetailpage:advantage.title")}</HeadingSection>
       <SubHeadingSection>{t("brokerdetailpage:advantage.subtitle")}</SubHeadingSection>
       <div className="mt-6 2xl:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2 lg:gap-3 2xl:gap-6">

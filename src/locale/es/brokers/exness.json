@@ -1,0 +1,59 @@
+{
+    "description": "Bróker global con ejecución ultrarrápida, spreads bajos y opciones de cuenta muy flexibles, incluida la cuenta CENT. Ofrece acceso a Forex, Oro, Índices, Energía y CFD con condiciones estables y transparentes. Respaldado por procesos de depósito y retiro rápidos y plataformas de trading modernas, aptas tanto para principiantes como para traders profesionales.",
+    "specification": {
+      "leverage": "Hasta 1:2000+",
+      "spread": "Desde 0.0 pips (Raw)"
+    },
+    "profile": {
+        "slogan": "Trade with accuracy, speed, and deep liquidity"
+    },
+    "summary": {
+      "spread": "Desde 0.0 pips (Raw) — promedio muy bajo",
+      "commission": "Raw/Zero: $3.5–$8 por lote (según el par)", 
+      "leverage": "Hasta 1:2000+ (smart leverage system)", 
+      "execution": "0.01–0.04 segundos (ultrarrápida)",
+      "depositWithdrawal": "Ultrarrápido (<1 minuto para e-wallet/cripto)"
+    },
+    "accountTypes": [
+      ["Ideal para principiantes y para probar estrategias", "Lote Micro/Nano", "Apalancamiento alto", "Spread desde 0.3 pips", "Sin comisión", "Depósito mínimo: $10", "Nota: No todos los instrumentos están disponibles en la cuenta Cent"],
+      ["Spread bajo", "Sin comisión", "Apto para trading manual", "Depósito mín.: $10"],
+      ["Spread 0.0 - 0.3 pips", "Comisión baja ($3.5–$4 por lote por lado)", "Ejecución muy rápida", "Ideal para scalping y EA"],
+      ["Spread 0.0 en más de 30 pares", "Comisión más elevada", "Ideal para news trading y eventos de alto impacto"],
+      ["Sin comisión", "Spread muy bajo", "Ejecución instantánea", "Ideal para traders intradía y swing"]
+    ],
+    "keyAdvantages": [  
+        "Ejecución ultrarrápida (0.01–0.04 segundos)",
+        "El spread más estable del sector",
+        "Plataforma muy ligera y estable",
+        "El retiro más rápido entre los brókers globales populares",
+        "Cuenta CENT (poco habitual en brókers Tier 1)",
+        "Liquidez profunda y slippage bajo",
+        "Apalancamiento ilimitado (en determinadas regiones)",
+        "Muy apto para scalping, EA y traders de oro"
+    ],
+    "advantages": ["Spread y ejecución muy estables", "Retiro ultrarrápido", "Múltiples métodos de depósito y retiro", "Cuenta Cent disponible para principiantes", "Apto para EA y scalping", "Apalancamiento alto y flexible"],
+    "disadvantages": ["La comisión varía según el par en las cuentas Raw/Zero", "El apalancamiento está limitado en algunas regulaciones", "No todos los instrumentos están disponibles en la cuenta Cent"],
+    "classifications": ["Velocidad de Retiro (WD)", "Estabilidad del Servidor", "Atención al Cliente"],
+    "faqs": [
+    {
+      "question": "¿Es seguro Exness?",
+      "answer": "Exness es un bróker regulado por varias autoridades financieras internacionales, entre ellas FSA, CySEC, FSCA y FSC. La compañía opera desde 2008 y es reconocida por su transparencia al publicar sus informes financieros y estadísticas de trading. Aunque no está bajo la regulación de Indonesia, Exness es un bróker global ampliamente utilizado por traders a nivel internacional."
+    },
+    {
+      "question": "¿Exness ofrece cuenta Cent?",
+      "answer": "Sí. Exness ofrece la cuenta Standard Cent, una cuenta con un tamaño de contrato más pequeño, ideal para practicar, probar estrategias u operar con un riesgo de capital reducido."
+    },
+    {
+      "question": "¿Exness es apto para principiantes?",
+      "answer": "Sí. Exness ofrece cuenta Cent, spreads estables, transacciones sencillas y plataformas populares como MT4/MT5. Esta combinación ayuda a los principiantes a aprender en condiciones reales de mercado con un riesgo más controlado."
+    },
+    {
+      "question": "¿Exness es apto para EA y scalping?",
+      "answer": "Sí. Exness admite EA, robots de trading, algoritmos y estrategias de scalping sin restricciones especiales. Sus spreads ajustados y su ejecución muy rápida hacen que se utilice con frecuencia para estrategias intensivas."
+    },
+    {
+      "question": "¿Qué tan rápido es el proceso de retiro (WD) en Exness?",
+      "answer": "Por lo general, muy rápido. Muchos métodos de retiro mediante e-wallet y pagos locales se procesan en cuestión de minutos, según el método utilizado y el estado del sistema. El proceso puede tardar más en determinadas horas o con ciertos métodos."
+    }
+  ] 
+}

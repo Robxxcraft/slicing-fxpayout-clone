@@ -1,0 +1,31 @@
+{
+    "helmet": {
+        "title": "Calculadora de Rebate: Calcula tu Cashback de Trading Estimado | FXPayout",
+        "description": "FXPayout es una plataforma de rebate forex de confianza que ofrece cashback de hasta el 90% de la comisión del bróker directamente al trader."
+    },
+    "header": {
+        "title": "Calcula Ahora el Rebate Estimado de tu Trading",
+        "paragraph": "Introduce tu bróker, tipo de cuenta y el total de lotes operados para conocer el rebate estimado que puedes obtener cada mes: rápido, transparente y sin coste.",
+        "tag": "CALCULADORA DE REBATE FXPAYOUT"
+    },
+    "card": {
+        "title": "Calculadora de Rebate Estimado",
+        "paragraph": "Elige un bróker e introduce los detalles de tu trading para ver el rebate estimado al instante.",
+        "broker": "Bróker",
+        "accountType": "Tipo de Cuenta",
+        "pair": "Par / Instrumento de Trading",
+        "lots": "Lotes",
+        "accountTypePlaceholder": "Selecciona primero un bróker",
+        "pairPlaceholder": "Introduce los Lotes",
+        "button": "Calcular Rebate Estimado",
+        "estimatesRebates": "Rebate Estimado",
+        "rebatePerLot": "Rebate por Lote",
+        "info": "<0>fxpayout</0> devuelve hasta el 90% de la comisión IB al trader. El proceso de rebate se realiza de forma automática, segura y transparente, sin alterar tu spread, apalancamiento ni tus condiciones de trading.",
+        "errors": {
+            "brokerRequired": "Debes seleccionar un bróker",
+            "accountTypeRequired": "Debes seleccionar un tipo de cuenta",
+            "pairRequired": "Debes seleccionar un par",
+            "lotsRequired": "El número de lotes no puede estar vacío"
+        }
+    }
+}

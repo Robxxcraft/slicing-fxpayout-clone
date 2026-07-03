@@ -3,6 +3,8 @@ import { FaChevronDown } from "react-icons/fa6";
 import { languages, type Language } from "../utils/languageSupport";
 import type { HandleChangeLanguage } from "./Navbar";
 import { IoArrowBackOutline } from "react-icons/io5";
+import { TbWorld } from "react-icons/tb";
+import { useTranslation } from "react-i18next";
 
 const LanguageSelector = ({
   selectedLanguage,
@@ -15,6 +17,7 @@ const LanguageSelector = ({
   setOpen: Dispatch<React.SetStateAction<boolean>>;
   onChangeLanguage: HandleChangeLanguage;
 }) => {
+  const { i18n } = useTranslation();
   const selectorRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -41,11 +44,7 @@ const LanguageSelector = ({
           e.stopPropagation();
           setOpen(!open)
         }}>
-        <img
-          src={`/flags/${selectedLanguage.flag}`}
-          alt={`flag-${selectedLanguage.label}`}
-          className="w-8"
-        />
+        <TbWorld className="text-xl text-white" />
         <span className="text-white text-sm 2xl:text-base">
           {selectedLanguage.code.toLocaleUpperCase()}
         </span>
@@ -59,7 +58,7 @@ const LanguageSelector = ({
       </button>
           
       {/* DESKTOP */}
-      <div className={`_no-scrollbar hidden xl:flex max-h-[250px] overflow-auto absolute right-0 bottom-[120%] xl:bottom-auto xl:top-[120%] xl:translate-y-0 py-4 w-60 flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)] origin-top-right transition-all duration-300 ease-out ${open ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"}`}>
+      <div className={`scrollbar-thin primary-scrollbar hidden xl:flex max-h-[250px] overflow-auto absolute right-0 bottom-[120%] xl:bottom-auto xl:top-[120%] xl:translate-y-0 py-4 w-60 flex-col border border-[rgba(34,34,34,0.1)] bg-white rounded-lg shadow-[0_4px_41.8px_0_rgba(0,0,0,0.1)] origin-top-right transition-all duration-300 ease-out ${open ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"}`}>
         {languages.map((lang, idx) => (
           <button
             key={idx}
@@ -79,13 +78,13 @@ const LanguageSelector = ({
 
       {/* MOBILE */}
       {open && 
-        <div className="flex flex-col xl:hidden px-6 md:px-11 lg:px-18 absolute top-18 left-0 w-full h-screen bg-primary">
+        <div className="flex flex-col xl:hidden px-6 md:px-11 lg:px-18 absolute top-18 start-0 w-full h-screen bg-primary">
           <div>
             <button 
               onClick={() => setOpen(false)}
-              className="py-3 w-full flex gap-1 items-center-safe text-left text-white h-fit border-b border-white/15 cursor-pointer">
-              <IoArrowBackOutline />
-              Bahasa
+              className="py-3 w-full flex gap-1 items-center-safe text-start text-white h-fit border-b border-white/15 cursor-pointer">
+              <IoArrowBackOutline className="rtl:scale-x-[-1]" />
+              {languages.find((lang) => lang.code === i18n.language)?.label}
             </button>
           </div>
           <div className="mt-6 flex flex-col gap-6">

@@ -1,0 +1,183 @@
+{
+    "helmet": {
+        "title": "Giao Dịch Lợi Hơn Với Rebate Lên Đến 90% | FXPayout",
+        "description": "FXPayout là nền tảng rebate forex uy tín, hoàn lại đến 90% hoa hồng từ sàn trực tiếp cho trader."
+    },
+    "hero": {
+        "title": "Nhận Cashback Từ Mỗi Giao Dịch & <underline>Không Mất Phí Phụ Thu.</underline>",
+        "subtitles": [
+            "FXPayout Không Phải Là Sàn",
+            "Không Nhận Tiền Nạp",
+            "Không Truy Cập Tài Khoản Giao Dịch Của Bạn"
+        ],
+        "badge": "Giao Dịch Tiết Kiệm Với Rebate Forex",
+        "runningTexts": [
+            "100% Không Phí Phụ Thu",
+            "Vốn Vào Thẳng Sàn",
+            "Không Truy Cập Tài Khoản",
+            "Minh Bạch & An Toàn"
+        ],
+        "estimateRebate": {
+            "title": "Rebate Ước Tính",
+            "subtitle": "Chọn sàn và nhập số lot mỗi tháng để ước tính nhanh",
+            "broker": "Sàn",
+            "lotPerMonth": "Lot Mỗi Tháng",
+            "pair": "Cặp",
+            "register": "Đăng Ký & Nhận Ngay",
+            "estimation": ["Ước Tính", "Dự Kiến"],
+            "claim": "Nhận Thủ Công",
+            "info": "Chúng tôi hoàn lại đến 90% hoa hồng IB cho trader. Quy trình nhanh chóng, an toàn và minh bạch mà không làm thay đổi spread hay điều kiện giao dịch."
+        }
+    },
+    "problemSection": {
+        "title": "Không Hề Hay Biết, Chi Phí Giao Dịch Đang Bào Mòn Lợi Nhuận Của Bạn",
+        "paragraph": "Mỗi giao dịch đều có chi phí như spread và hoa hồng. Không có rebate, những chi phí này sẽ liên tục bào mòn kết quả giao dịch của bạn.",
+        "badge": "Vấn Đề Thường Gặp Của Trader",
+        "problems": [
+            "Chi phí giao dịch có thể làm giảm đáng kể lợi nhuận của bạn.",
+            "Spread, hoa hồng và các chi phí khác thường bị trader bỏ qua."
+        ],
+        "then": "Vậy giải pháp là gì?",
+        "solutions": [
+            "Sử Dụng Rebate.",
+            "Với rebate, bạn có thể nhận lại một phần các chi phí đó."
+        ]
+    },
+    "profile": {
+        "title": "FXPayout giúp bạn giảm chi phí giao dịch thông qua hệ thống rebate (cashback).",
+        "paragraph": "Chúng tôi hoạt động với vai trò Introducing Broker (IB) và chia sẻ một phần hoa hồng của sàn cho bạn. Không phí phụ thu. Không rủi ro phát sinh.",
+        "badge": "GIẢI PHÁP DÀNH CHO BẠN",
+        "searchPlaceholder": "rebate forex, cashback giao dịch, IB forex uy tín...",
+        "badges": ["Rebate Forex", "Cashback Giao Dịch", "Rebate FBS", "Rebate Exness", "Rebate XM", "IB Forex Uy Tín"],
+        "features": [
+            {
+                "title": "Rebate Lên Đến 90%",
+                "paragraph": "Nhận cashback lên đến 90% hoa hồng của sàn trực tiếp vào tài khoản của bạn."
+            },
+            {
+                "title": "Tập trung vào trader",
+                "paragraph": "Cashback trực tiếp mà không làm thay đổi điều kiện giao dịch."
+            },
+            {
+                "title": "Hỗ Trợ Bản Địa",
+                "paragraph": "Hỗ trợ đa ngôn ngữ & giờ làm việc thân thiện với trader."
+            }
+        ]
+    },
+    "howItWorks": {
+        "title": "Cách FXPayout Hoạt Động Trong 4 Bước Đơn Giản",
+        "paragraph": "Không cần thay đổi chiến lược, bạn chỉ cần giao dịch như bình thường. FXPayout sẽ lo phần chuyển hoa hồng thành cashback cho bạn.",
+        "tag": "CÁCH HOẠT ĐỘNG",
+        "workflows": [
+            {
+                "title": "BẮT ĐẦU",
+                "subtitle": "Đăng ký qua link chính thức của FXPayout",
+                "paragraph": "Tạo tài khoản FXPayout và liên kết tài khoản giao dịch của bạn qua link chính thức mà chúng tôi cung cấp từ sàn bạn chọn."
+            },
+            {
+                "title": "GIAO DỊCH",
+                "subtitle": "Giao dịch như bình thường tại sàn của bạn",
+                "paragraph": "Tiếp tục giao dịch mà không thay đổi spread, đòn bẩy hay điều kiện nào khác. Mọi thứ vẫn tuân theo quy định của sàn."
+            },
+            {
+                "title": "HOA HỒNG",
+                "subtitle": "Sàn gửi hoa hồng IB về FXPayout",
+                "paragraph": "Dựa trên khối lượng lot bạn giao dịch, sàn tự động gửi hoa hồng IB về FXPayout."
+            },
+            {
+                "title": "REBATE",
+                "subtitle": "Rebate lên đến 90% về tài khoản của bạn",
+                "paragraph": "Chúng tôi hoàn lại đến 90% hoa hồng đó dưới dạng cashback, có thể rút nhanh qua ngân hàng nội địa hoặc ví điện tử."
+            }
+        ]
+    },
+    "rewards": {
+        "title": "Bonus Rebate +10% Cho Tài Khoản Mới",
+        "paragraph": "Tận hưởng ưu đãi có thời hạn dành riêng cho trader mới gia nhập FXPayout.",
+        "tag": "Thời Gian Có Hạn"
+    },
+    "brokerlistsection": {
+        "view_all_brokers": "Xem Tất Cả Sàn"
+    },
+    "securitySection": {
+        "title": "An Toàn Vốn Của Bạn Là Ưu Tiên Của Chúng Tôi",
+        "badge": "BẠN CẦN BIẾT",
+        "contents": [
+            {
+                "title": "FXPayout Không Phải Là Sàn",
+                "paragraph": "Chúng tôi không quản lý vốn của bạn. Mọi giao dịch vẫn được thực hiện trực tiếp tại sàn chính thức."
+            },
+            {
+                "title": "Không Nhận Tiền Nạp",
+                "paragraph": "Chúng tôi không bao giờ yêu cầu bạn chuyển vốn. Mọi hoạt động giao dịch vẫn nằm trong tài khoản sàn của bạn."
+            },
+            {
+                "title": "Không Có Quyền Truy Cập Tài Khoản",
+                "paragraph": "Chúng tôi không có quyền truy cập vào tài khoản giao dịch và không lưu trữ thông tin đăng nhập của bạn."
+            }
+        ]
+    },
+    "benefit": {
+        "title": "Tối Đa Hóa Lợi Nhuận Giao Dịch Mà Không Mất Phí Phụ Thu",
+        "paragraph": "Nhận cashback từ mỗi giao dịch của bạn mà không làm thay đổi điều kiện sàn. Hệ thống minh bạch, an toàn và được thiết kế để tối ưu hiệu quả lợi nhuận của bạn.",
+        "badge": "VÌ SAO CHỌN FXPAYOUT",
+        "items": [
+            {
+                "title": "💰 Giảm Chi Phí Giao Dịch",
+                "description": "Một phần chi phí giao dịch quay về với bạn dưới dạng cashback."
+            },
+            {
+                "title": "🔄 Rebate Trực Tiếp Từ Sàn",
+                "description": "Một phần chi phí giao dịch quay về với bạn dưới dạng cashback."
+            },
+            {
+                "title": "🚫 Không Phí Phụ Thu",
+                "description": "Không có phí ẩn hay bất kỳ khoản khấu trừ nào. Tất cả đều minh bạch."
+            },
+            {
+                "title": "🔒 Hệ Thống An Toàn & Minh Bạch",
+                "description": "Mọi giao dịch vẫn được thực hiện trực tiếp tại sàn. Chúng tôi không truy cập tài khoản giao dịch hay lưu trữ thông tin đăng nhập của bạn."
+            },
+            {
+                "title": "⚡ Hỗ Trợ Phản Hồi Nhanh",
+                "description": "Đội ngũ hỗ trợ bản địa sẵn sàng giúp bạn qua WhatsApp và Telegram với phản hồi nhanh và giải pháp rõ ràng."
+            }
+        ]
+    },
+    "reviews": {
+        "title": "Trader Nói Gì Khi Dùng FXPayout?",
+        "paragraph": "Trải nghiệm thực tế từ những trader đã có thêm lợi nhuận nhờ chương trình rebate.",
+        "tag": "FEEDBACK",
+        "writeReview": "Viết Đánh Giá",
+        "successResponse": {
+            "title": "Cảm Ơn Bạn Đã Chia Sẻ Trải Nghiệm",
+            "paragraph": "Đánh giá của bạn đã được gửi thành công và sẽ giúp những người dùng khác hiểu hơn về trải nghiệm khi sử dụng dịch vụ rebate này."
+        },
+        "emptyReview": "Chưa có đánh giá nào ở đây. Hãy là người đầu tiên chia sẻ trải nghiệm của bạn khi sử dụng dịch vụ của chúng tôi!",
+        "modal": {
+            "title": "Viết Đánh Giá Của Bạn",
+            "paragraph": "Bạn hài lòng đến mức nào với dịch vụ rebate của chúng tôi?",
+            "form": {
+                "usernameLabel": "Họ và Tên",
+                "usernamePlaceholder": "Nhập Họ và Tên Của Bạn",
+                "locationLabel": "Thành Phố",
+                "locationPlaceholder": "Nhập Tên Thành Phố Của Bạn",
+                "reviewLabel": "Đánh Giá",
+                "reviewPlaceholder": "Viết trải nghiệm của bạn khi sử dụng fxpayout...",
+                "submit": "Gửi Đánh Giá",
+                "errors": {
+                    "usernameRequired": "Họ và tên không được để trống",
+                    "locationRequired": "Thành phố không được để trống",
+                    "reviewRequired": "Đánh giá không được để trống",
+                    "invalidRangeRating": "Rating phải nằm trong khoảng 1-5"
+                }
+            },
+            "errors": { "captcha": "Vui lòng xác nhận bạn không phải là robot" }
+        }
+    },
+    "riskSection": {
+        "title": "Rủi Ro Giao Dịch Vẫn Còn, Nhưng Chi Phí Có Thể Giảm",
+        "paragraph": "Giao dịch forex có rủi ro cao. Tuy nhiên với FXPayout, bạn có thể giảm chi phí giao dịch mà không phát sinh thêm rủi ro, vì toàn bộ vốn vẫn nằm tại sàn của bạn.",
+        "cta": "Vốn Luôn An Toàn Tại Sàn"
+    }
+}
