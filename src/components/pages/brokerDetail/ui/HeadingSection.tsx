@@ -10,8 +10,8 @@ const HeadingSection = ({
   children: React.ReactNode
 }) => {
   const baseStyle = `${variant === "second" ? 
-      smText !== null ? `${smText} md:text-2xl 2xl:text-[32px]` 
-      : "text-xl md:text-2xl 2xl:text-[32px]" 
+      smText !== null ? `${smText} md:text-2xl 3xl:text-[32px]` 
+      : "text-xl md:text-2xl 3xl:text-[32px]" 
     : "text-2xl md:text-[32px]"} font-semibold` 
   let styleVariant = "";
 

@@ -130,7 +130,7 @@ const VerifyEmailPage = () => {
 
   return (
     <div className="font-inter flex justify-center w-full max-h-screen h-screen">
-      <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[560px] 2xl:max-w-[560px] bg-white rounded-4xl">
+      <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[560px] 3xl:max-w-[560px] bg-white rounded-4xl">
         <AuthLayoutHeader 
           title="Verifikasi Email"
           paragraph={<>

@@ -60,7 +60,7 @@ const Navbar = ({
 
   return (
     <nav
-      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 2xl:px-56 max-h-20 lg:max-h-[90px] 2xl:max-h-full flex items-center justify-between gap-3 bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
+      className="z-999995 w-full fixed px-[26px] md:px-11 lg:px-18 xl:px-24 3xl:px-56 max-h-20 lg:max-h-[90px] 3xl:max-h-full flex items-center justify-between gap-3 bg-[rgba(65,96,255,0.5)] backdrop-blur-[27.5px] transition-all duration-300"
       style={{
         height: scrollY > 10 ? "100px" : "140px",
         backgroundColor:
@@ -74,9 +74,9 @@ const Navbar = ({
         <img
           src="/fxpayout-white.svg"
           alt="logo fx payout"
-          className="w-4 md:w-5 lg:w-5 2xl:w-5"
+          className="w-4 md:w-5 lg:w-5 3xl:w-5"
         />
-        <span className="text-base md:text-lg 2xl:text-lg font-semibold text-white">
+        <span className="text-base md:text-lg 3xl:text-lg font-semibold text-white">
           FXPAYOUT
         </span>
       </Link>
@@ -84,7 +84,7 @@ const Navbar = ({
         {listNavigation.map(({ code, title, url, sublist }, index) => (
           <div
             key={index}
-            className={`relative group flex items-center gap-2 px-2 text-light-gray text-sm 2xl:text-base border-white transition-all duration-300 ease-out`}
+            className={`relative group flex items-center gap-2 px-2 text-light-gray text-sm 3xl:text-base border-white transition-all duration-300 ease-out`}
           >
             <Link 
               to={getLocalizedPath(url, i18n.language)} 
@@ -124,7 +124,7 @@ const Navbar = ({
           </div>
         ))}
       </div>
-      <div className="hidden xl:flex gap-2 2xl:gap-4 items-center">
+      <div className="hidden xl:flex gap-2 3xl:gap-4 items-center">
         <LanguageSelector
           selectedLanguage={selectedLanguage}
           open={openLanguageSelector}
@@ -144,7 +144,7 @@ const Navbar = ({
             urlTo={getLocalizedPath("login", i18n.language)} 
             variant="outline-light" 
             size="lg" 
-            className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
+            className="px-8! py-3! font-medium! text-sm! 3xl:text-base!"
           >
             {t("text.title_login")}
           </Button>
@@ -153,7 +153,7 @@ const Navbar = ({
             urlTo={getLocalizedPath("register", i18n.language)} 
             variant="light" 
             size="lg" 
-            className="px-8! py-3! font-medium! text-sm! 2xl:text-base!"
+            className="px-8! py-3! font-medium! text-sm! 3xl:text-base!"
           >
             {t("text.title_register")}
           </Button>

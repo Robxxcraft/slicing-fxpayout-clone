@@ -26,10 +26,10 @@ const DetailPaymentDrawer = ({
   return (
     <div className="py-5 w-full rounded-xl border border-[#777777] bg-white">
       <div className="px-4 pb-4 flex items-center justify-between border-b border-[#EAEAEA]">
-        <p className="uppercase text-base font-bold 2xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
+        <p className="uppercase text-base font-bold 3xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
           PAYMENT METHODS
         </p>
-        <p className="text-black/80 font-medium text-base 2xl:text-xl">
+        <p className="text-black/80 font-medium text-base 3xl:text-xl">
           {method === "bank" ? 
             "Bank Transfer" : "Crypto"
           }
@@ -42,9 +42,9 @@ const DetailPaymentDrawer = ({
             if (key === "wallet_address") {
               return (
                 <div className="space-y-1">
-                  <p className="text-sm 2xl:text-lg font-medium text-black/60">{value}</p>
+                  <p className="text-sm 3xl:text-lg font-medium text-black/60">{value}</p>
                   <div className="flex items-center gap-3"> 
-                    <p className="text-sm 2xl:text-xl font-medium text-black">
+                    <p className="text-sm 3xl:text-xl font-medium text-black">
                       {secureWalletAddress}
                     </p>
                     <div
@@ -58,8 +58,8 @@ const DetailPaymentDrawer = ({
             }
             return (
               <div className="space-y-2">
-                <p className="text-sm 2xl:text-lg font-medium text-black/60">{value}</p>
-                <p className="text-sm 2xl:text-xl font-medium text-black">
+                <p className="text-sm 3xl:text-lg font-medium text-black/60">{value}</p>
+                <p className="text-sm 3xl:text-xl font-medium text-black">
                   {key === "bank" ? bank : key === "account_name" ? account_name : ""}
                 </p>
               </div>
@@ -67,13 +67,13 @@ const DetailPaymentDrawer = ({
           </> : 
           <>
             <div className="space-y-2">
-              <p className="text-sm 2xl:text-lg font-medium text-black/60">Pemilik Wallet</p>
-              <p className="text-sm 2xl:text-xl font-medium text-black">{account_name}</p>
+              <p className="text-sm 3xl:text-lg font-medium text-black/60">Pemilik Wallet</p>
+              <p className="text-sm 3xl:text-xl font-medium text-black">{account_name}</p>
             </div>
             <div className="space-y-1">
-              <p className="text-sm 2xl:text-lg font-medium text-black/60">Alamat Wallet</p>
+              <p className="text-sm 3xl:text-lg font-medium text-black/60">Alamat Wallet</p>
               <div className="flex items-center gap-3"> 
-                <p className="text-sm 2xl:text-xl font-medium text-black">
+                <p className="text-sm 3xl:text-xl font-medium text-black">
                   {secureWalletAddress}
                 </p>
                 <div
@@ -84,12 +84,12 @@ const DetailPaymentDrawer = ({
               </div>
             </div>
             <div className="space-y-2">
-              <p className="text-sm 2xl:text-lg font-medium text-black/60">Token</p>
-              <p className="text-sm 2xl:text-xl font-medium text-black">USDT</p>
+              <p className="text-sm 3xl:text-lg font-medium text-black/60">Token</p>
+              <p className="text-sm 3xl:text-xl font-medium text-black">USDT</p>
             </div>
             <div className="space-y-2">
-              <p className="text-sm 2xl:text-lg font-medium text-black/60">Network</p>
-              <p className="text-sm 2xl:text-xl font-medium text-black">BNB</p>
+              <p className="text-sm 3xl:text-lg font-medium text-black/60">Network</p>
+              <p className="text-sm 3xl:text-xl font-medium text-black">BNB</p>
             </div>
           </>
         }

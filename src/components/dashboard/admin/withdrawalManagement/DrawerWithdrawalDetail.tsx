@@ -98,23 +98,23 @@ const DrawerWithdrawalDetail = ({
       maxWCL="max-w-[600px]"
     >
     <div className={`primary-scrollbar border-t border-s border-[#D2CEE1] bg-white overflow-y-auto
-      ${!isLoading.general && dataWithdrawal.status === "pending" ? "h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)]" : "h-screen"}  
+      ${!isLoading.general && dataWithdrawal.status === "pending" ? "h-[calc(100dvh-64px)] 3xl:h-[calc(100dvh-90px)]" : "h-screen"}  
     `}>
       <div className="px-5 pr-5 py-3 h-[calc(100%-64px)] overflow-y-auto overflow-x-hidden">
         {/* HEADER */}
-        <div className="pb-2 2xl:pb-4 relative">
+        <div className="pb-2 3xl:pb-4 relative">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl 2xl:text-2xl font-semibold">
+            <h2 className="text-xl 3xl:text-2xl font-semibold">
               Detail Withdrawal
             </h2>
             <div
               onClick={onCloseDrawer} 
               className="p-2 aspect-square hover:bg-[#F5F5F5] rounded-xl transition-all duration-300 cursor-pointer">
               <IoCloseOutline 
-                className="text-2xl 2xl:text-3xl" />
+                className="text-2xl 3xl:text-3xl" />
             </div>
           </div>
-          <p className="mt-1 text-black/60 text-base 2xl:text-xl leading-[160%]">
+          <p className="mt-1 text-black/60 text-base 3xl:text-xl leading-[160%]">
             ID: {formattingWithdrawalId(dataWithdrawal.id)} • {" "}
             Dibuat pada {formattingFullDate(dataWithdrawal.created_at)} 
           </p>
@@ -125,7 +125,7 @@ const DrawerWithdrawalDetail = ({
           
           {/* AMOUNT */}
           <div className="flex flex-col items-center justify-center gap-2">
-            <p className="uppercase text-base font-bold 2xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
+            <p className="uppercase text-base font-bold 3xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
               REQUESTED AMOUNTS
             </p>
             <p className="text-[32px] md:text-[36px] font-semibold">

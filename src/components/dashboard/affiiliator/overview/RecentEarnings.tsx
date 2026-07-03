@@ -25,10 +25,10 @@ const RecentEarnings = ({
   isLoading: boolean;
 }) => {
   return (
-    <section className="mt-7 2xl:mt-10">
+    <section className="mt-7 3xl:mt-10">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-y-2">
         <div>
-          <h2 className="text-xl 2xl:text-[2rem] font-semibold">
+          <h2 className="text-xl 3xl:text-[2rem] font-semibold">
             Recent Earnings
           </h2>
           <ParagraphDashboard colorCL="text-black/60">
@@ -36,7 +36,7 @@ const RecentEarnings = ({
           </ParagraphDashboard>
         </div>
         <Link to="#"
-          className="flex items-center gap-4 text-base 2xl:text-xl font-medium text-primary underline"
+          className="flex items-center gap-4 text-base 3xl:text-xl font-medium text-primary underline"
         >
           <span>Lihat semua</span>
           <HiOutlineArrowLongRight className="text-2xl" />
@@ -52,7 +52,7 @@ const RecentEarnings = ({
               className={`
                 ${idx === CONFIG_HEADERS.length - 1 ? "px-2! text-right!" : "text-left!"}
                 ${idx === 0 ? "px-0! pl-2! pr-8!":""}
-                py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg! select-none
+                py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg! select-none
             `}
             >
               {header.header}
@@ -93,7 +93,7 @@ const RecentEarnings = ({
 
       {/* LOADING & 0 DATA TABLE */}
       {dataEarnings.length === 0 && isLoading &&
-        <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+        <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
           <Spinner />
         </div>
       }

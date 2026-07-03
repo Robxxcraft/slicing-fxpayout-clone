@@ -14,7 +14,7 @@ const HeroNews = () => {
   const selectedNews = featuredNews[activeIndex];
 
   return (
-    <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-6 md:pt-10">
+    <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 pt-6 md:pt-10">
       <div className="flex flex-col lg:flex-row items-center gap-6 md:gap-8">
         <Swiper
           spaceBetween={30}
@@ -23,18 +23,18 @@ const HeroNews = () => {
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           modules={[Pagination]}
-          className="mySwiper relative w-full lg:w-[440px] 2xl:w-[660px] h-[400px] md:h-[440px] lg:h-[300px] 2xl:h-[440px]"
+          className="mySwiper relative w-full lg:w-[440px] 3xl:w-[660px] h-[400px] md:h-[440px] lg:h-[300px] 3xl:h-[440px]"
         >
           {featuredNews.map((item, idx) => (
             <SwiperSlide
               key={idx}
               className="relative w-full h-full rounded-xl overflow-hidden"
             >
-              <div className="absolute px-3 2xl:px-6 py-1 2xl:py-2.5 w-fit flex items-center gap-2.5 border-white bg-primary rounded-full top-5 start-5">
+              <div className="absolute px-3 3xl:px-6 py-1 3xl:py-2.5 w-fit flex items-center gap-2.5 border-white bg-primary rounded-full top-5 start-5">
                 <img src="/star-circle-icon.svg" alt="Star Icon"
                   loading="lazy"
-                  className="scale-80 2xl:scale-100" />
-                <span className="text-xs 2xl:text-sm font-semibold text-white">FEATURED</span>
+                  className="scale-80 3xl:scale-100" />
+                <span className="text-xs 3xl:text-sm font-semibold text-white">FEATURED</span>
               </div>
               <img src={`/news/${item.cover}`} alt={`Cover ${item.title}`} 
                 className="w-full h-full object-cover object-center" />
@@ -45,29 +45,29 @@ const HeroNews = () => {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <img src={`/news/${selectedNews.user.profile}`} alt="profil"
-                className="size-6 md:size-8 2xl:size-10 aspect-square rounded-full object-contain bg-primary" />
-              <p className="text-base md:text-xl lg:text-base 2xl:text-xl font-medium">
+                className="size-6 md:size-8 3xl:size-10 aspect-square rounded-full object-contain bg-primary" />
+              <p className="text-base md:text-xl lg:text-base 3xl:text-xl font-medium">
                 {selectedNews.user.username}
               </p>
             </div>
             <div className="h-5 w-0.5 bg-black/50" />
-            <p className="text-base md:text-xl lg:text-base 2xl:text-xl font-semibold text-primary">
+            <p className="text-base md:text-xl lg:text-base 3xl:text-xl font-semibold text-primary">
               {t(`newspage:category.${selectedNews.category}`)}
             </p>
             <div className="h-5 w-0.5 bg-black/50" />
-            <p className="text-base md:text-xl lg:text-base 2xl:text-xl">
+            <p className="text-base md:text-xl lg:text-base 3xl:text-xl">
               {t(`${selectedNews.createdAt}`, { time: 12 })}
             </p>
           </div>
           <div className="mt-4 flex flex-col gap-4">
-            <h3 className="text-2xl md:text-4xl lg:text-2xl 2xl:text-4xl font-medium leading-[180%]">
+            <h3 className="text-2xl md:text-4xl lg:text-2xl 3xl:text-4xl font-medium leading-[180%]">
               {selectedNews.title}
             </h3>
             <div>
-              <p className="mb-2 md:mb-4 text-base md:text-xl lg:text-lg 2xl:text-xl leading-[163%] line-clamp-3">
+              <p className="mb-2 md:mb-4 text-base md:text-xl lg:text-lg 3xl:text-xl leading-[163%] line-clamp-3">
                 {selectedNews.excerpt}
               </p>
-              <Link to={selectedNews.url}  className="flex items-center gap-1 text-base md:text-xl lg:text-lg 2xl:text-xl font-medium text-primary hover:underline">
+              <Link to={selectedNews.url}  className="flex items-center gap-1 text-base md:text-xl lg:text-lg 3xl:text-xl font-medium text-primary hover:underline">
                 <span>{t("text.readMore")}</span>
                 <FaChevronRight className="rtl:scale-x-[-1]" />
               </Link>

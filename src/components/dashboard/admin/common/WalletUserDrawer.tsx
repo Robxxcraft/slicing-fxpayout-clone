@@ -31,11 +31,11 @@ const WalletUserDrawer = ({
   return (
     <div>
       {!isLoading && (wallets.length === 0 || totalUnverified.length > 0) && 
-        <div className="mb-4 px-4 py-2 2xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
-          <span className="flex shrink-0 items-center justify-center size-5 2xl:size-7 border border-[#BE5409] rounded-full">
-            <TiInfoLarge className="text-sm 2xl:text-lg text-[#BE5409]" />
+        <div className="mb-4 px-4 py-2 3xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
+          <span className="flex shrink-0 items-center justify-center size-5 3xl:size-7 border border-[#BE5409] rounded-full">
+            <TiInfoLarge className="text-sm 3xl:text-lg text-[#BE5409]" />
           </span>
-          <p className="text-sm 2xl:text-lg text-[#BE5409]">
+          <p className="text-sm 3xl:text-lg text-[#BE5409]">
             {wallets.length === 0 ? "Pengguna belum menambahkan data wallet." : 
             totalUnverified.length > 0 ? `Terdapat ${totalUnverified.length} rekening bank memerlukan verifikasi.` : ""}
           </p>
@@ -53,7 +53,7 @@ const WalletUserDrawer = ({
               </>
               :
               (wallets.length > 0 &&
-                <p className="text-base 2xl:text-xl font-bold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                <p className="text-base 3xl:text-xl font-bold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
                   Akun Wallet
                 </p>
               )
@@ -90,7 +90,7 @@ const WalletUserDrawer = ({
                 className="p-4 grid grid-cols-2 gap-y-4 gap-x-2.5 border border-[#DDDDDD] rounded-xl"
               >
                 <div className="col-span-1 w-full">
-                  <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60 font-semibold uppercase">
+                  <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60 font-semibold uppercase">
                     {wallet.method}
                   </p>
                 </div>
@@ -107,27 +107,27 @@ const WalletUserDrawer = ({
                 {wallet.method === "bank" ?
                   <>
                     <div className="col-span-1 space-y-2.5 w-full">
-                      <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+                      <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                         Bank
                       </p>
-                      <p className="truncate w-full text-base 2xl:text-xl">
+                      <p className="truncate w-full text-base 3xl:text-xl">
                         {wallet.data.bank}
                       </p>
                     </div>
                     <div className="col-span-1 space-y-2.5 w-full">
-                      <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+                      <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                         Pemilik Rekening
                       </p>
-                      <p className="truncate w-full text-base 2xl:text-xl">
+                      <p className="truncate w-full text-base 3xl:text-xl">
                         {wallet.data.username}
                       </p>
                     </div>
                     <div className="col-span-2 space-y-2.5 w-full">
-                      <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+                      <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                         Nomor Rekening
                       </p>
                       <div className="flex items-center gap-3">
-                          <p className="truncate w-fit text-base 2xl:text-xl">
+                          <p className="truncate w-fit text-base 3xl:text-xl">
                             ••••{showLastFourWalletAddress(wallet.data.accountNumber)}
                           </p>
                           <button
@@ -141,27 +141,27 @@ const WalletUserDrawer = ({
                 : 
                   <>
                     <div className="col-span-1 space-y-2.5 w-full">
-                      <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+                      <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                         Token
                       </p>
-                      <p className="truncate w-full text-base 2xl:text-xl">
+                      <p className="truncate w-full text-base 3xl:text-xl">
                         {wallet.data.token}
                       </p>
                     </div>
                     <div className="col-span-1 space-y-2.5 w-full">
-                      <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+                      <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                         Network
                       </p>
-                      <p className="truncate w-full text-base 2xl:text-xl">
+                      <p className="truncate w-full text-base 3xl:text-xl">
                         {wallet.data.network}
                       </p>
                     </div>
                     <div className="col-span-2 space-y-2.5 w-full">
-                      <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+                      <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                         Alamat Wallet
                       </p>
                       <div className="flex items-center gap-3">
-                          <p className="truncate w-fit text-base 2xl:text-xl">
+                          <p className="truncate w-fit text-base 3xl:text-xl">
                             ••••{showLastFourWalletAddress(wallet.data.accountNumber)}
                           </p>
                           <button

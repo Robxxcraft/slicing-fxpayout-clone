@@ -39,7 +39,7 @@ const StatusTag = ({
         background: `#${STATUS_CONFIG[status].background}`,
         borderColor: `#${STATUS_CONFIG[status].text}`
        }}
-      className={`px-2.5 2xl:px-4 py-1 2xl:py flex justify-center items-center gap-1 border-[0.5px] rounded-full
+      className={`px-2.5 3xl:px-4 py-1 3xl:py flex justify-center items-center gap-1 border-[0.5px] rounded-full
         ${iconPosition === "left" ? "flex-row" : "flex-row-reverse"}  
       `}
     >
@@ -50,7 +50,7 @@ const StatusTag = ({
         style={{ 
           color: `#${STATUS_CONFIG[status].text}`
         }}
-        className="text-xs 2xl:text-base text-[#BE5409] font-medium">
+        className="text-xs 3xl:text-base text-[#BE5409] font-medium">
        {text}      
       </p>
     </div>

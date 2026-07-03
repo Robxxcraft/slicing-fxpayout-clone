@@ -20,14 +20,14 @@ const TermValidation = ({
 }) => {
   const { t } = useTranslation(["validationpage"]);
   return (
-    <div className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-8 lg:pt-10">
+    <div className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 pt-8 lg:pt-10">
       <div className="p-4 md:p-6 bg-my-light-blue border border-primary rounded-[10px]">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2 md:gap-3">
             <span className="flex shrink-0 items-center justify-center size-6 md:size-7 lg:size-9 border border-primary rounded-full">
               <TiInfoLarge className="text-base lg:text-[20px] text-primary" />
             </span>
-            <p className="text-base lg:text-lg 2xl:text-xl font-semibold text-[rgba(0,0,0,0.8)]">
+            <p className="text-base lg:text-lg 3xl:text-xl font-semibold text-[rgba(0,0,0,0.8)]">
               {t("validationpage:notify.title")}
             </p>
           </div>
@@ -44,7 +44,7 @@ const TermValidation = ({
                 {(idx + 1).toString().padStart(2, "0")}
               </span>
               <div>
-              <p className="text-base 2xl:text-xl font-medium leading-[142%]">
+              <p className="text-base 3xl:text-xl font-medium leading-[142%]">
                 {t(`${term.translateKey}.title`)}
               </p>
               <p className="mt-2.5 text-sm md:text-base leading-[142%]">

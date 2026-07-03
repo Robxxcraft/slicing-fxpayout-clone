@@ -98,14 +98,14 @@ ${rawUsername}`);
   const stepperActive = isCopied && isFormFilled ? 2 : isFormFilled ? 1 : 0;
 
   return (
-    <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-6 lg:mt-8 2xl:mt-10">
+    <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 mt-6 lg:mt-8 3xl:mt-10">
       <div className="p-4 md:p-8 border border-[#D0D0D0] rounded-3xl shadow-[0_5px_30px_0_rgba(25,33,61,0.06)]">
         <div className="flex flex-col xl:flex-row gap-8 items-start xl:items-center">
           <div className="xl:max-w-[540px]">
-            <h2 className="text-xl md:text-[1.75rem] 2xl:text-[2rem] text-black font-semibold">
+            <h2 className="text-xl md:text-[1.75rem] 3xl:text-[2rem] text-black font-semibold">
               {t("transferpage:card.title")}
             </h2>
-            <p className="mt-2 w-full text-base 2xl:text-2xl font-medium text-black/60 leading-[160%]">
+            <p className="mt-2 w-full text-base 3xl:text-2xl font-medium text-black/60 leading-[160%]">
               {t("transferpage:card.paragraph")}
             </p>
           </div>

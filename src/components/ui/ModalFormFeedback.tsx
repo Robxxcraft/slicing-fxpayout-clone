@@ -97,14 +97,14 @@ const ModalFormFeedback = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/review-primary-icon.svg" alt="Review Primary Icon" />
-            <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-bold text-transparent bg-linear-to-b from-primary to-dark-primary bg-clip-text leading-[180%]">
+            <h3 className="text-xl md:text-2xl 3xl:text-[2rem] font-bold text-transparent bg-linear-to-b from-primary to-dark-primary bg-clip-text leading-[180%]">
               {t("homepage:reviews.modal.title")}
             </h3>
           </div>
           <IoCloseOutline onClick={handleClose} className="text-primary text-4xl cursor-pointer"/>
         </div>
         <div className="my-6 flex flex-col gap-4">
-          <p className="text-sm md:text-base 2xl:text-xl font-medium text-black text-center leading-[180%]">
+          <p className="text-sm md:text-base 3xl:text-xl font-medium text-black text-center leading-[180%]">
             {t("homepage:reviews.modal.paragraph")}
           </p>
           <div className="grid grid-cols-5 md:flex justify-center gap-2 md:gap-3">
@@ -169,7 +169,7 @@ const ModalFormFeedback = ({
               hl={i18n.language}
             />
             {errorMessageCapthca &&
-              <span className="text-sm 2xl:text-base text-red-500">
+              <span className="text-sm 3xl:text-base text-red-500">
                 {t(errorMessageCapthca)}
               </span>
             }
@@ -180,7 +180,7 @@ const ModalFormFeedback = ({
               disabled={isLoading || isEmptyField}
               loading={isLoading}
               buttonType="submit" 
-              className="py-4! 2xl:py-5! text-lg! 2xl:text-xl! font-medium! w-full!"
+              className="py-4! 3xl:py-5! text-lg! 3xl:text-xl! font-medium! w-full!"
             > {t("homepage:reviews.modal.form.submit")}
             </Button>
           </div>

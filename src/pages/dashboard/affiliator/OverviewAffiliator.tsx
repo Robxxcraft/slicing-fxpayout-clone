@@ -163,7 +163,7 @@ const OverviewAffiliator = () => {
   const overviewLoading = isLoading.card && (cardData.activeTraders === 0 || cardData.refferedTraders === 0 || cardData.balance === 0);
   return (
     <WrapperDashboardComponent>
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 2xl:gap-5">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 3xl:gap-5">
         <CardOverview 
           status={"active"} title={"Reffered Traders"} 
           icon={<LuUsers />} content={cardData.refferedTraders.toLocaleString()} 

@@ -112,33 +112,33 @@ const AddBrokerTrader = () => {
   return (
     <>
       <div className="font-inter flex justify-center w-full max-h-screen h-screen">
-        <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[760px] 2xl:max-w-[840px] bg-white rounded-4xl">
+        <div className="px-4 md:px-6 py-6 md:py-10 flex flex-col items-center w-full h-fit max-w-[760px] 3xl:max-w-[840px] bg-white rounded-4xl">
           {/* HEADER */}
           <div className="relative flex flex-col gap-2 items-center text-center">
             <Link to={getLocalizedPath("trader/broker", i18n.language)}
-              className="absolute top-0 left-0 flex justify-center items-center size-8 2xl:size-12 rounded-full border border-[#DDDDDD] hover:bg-[#F5F5F5] transition-all duration-300"
+              className="absolute top-0 left-0 flex justify-center items-center size-8 3xl:size-12 rounded-full border border-[#DDDDDD] hover:bg-[#F5F5F5] transition-all duration-300"
             >
-              <FaChevronLeft className="mr-px text-primary text-base 2xl:text-2xl" />
+              <FaChevronLeft className="mr-px text-primary text-base 3xl:text-2xl" />
             </Link>
             <Link dir="ltr" to={getLocalizedPath("", i18n.language)} className="flex gap-2 items-center cursor-pointer">
               <img
                 src="/fxpayout-blue.svg"
                 alt="logo fx payout"
-                className="w-5 lg:w-6 2xl:w-8"
+                className="w-5 lg:w-6 3xl:w-8"
               />
-              <span className="text-2xl 2xl:text-3xl font-bold text-primary">
+              <span className="text-2xl 3xl:text-3xl font-bold text-primary">
                 FXPAYOUT
               </span>
             </Link>
-            <h1 className="text-2xl 2xl:text-[2rem] font-semibold">
+            <h1 className="text-2xl 3xl:text-[2rem] font-semibold">
               Hubungkan Akun Broker
             </h1>
-            <p className="text-base 2xl:text-xl leading-[169.2%]">
+            <p className="text-base 3xl:text-xl leading-[169.2%]">
               Lengkapi formulir di bawah ini untuk menghubungkan akun broker dan memperoleh rebate.
             </p>
           </div>
 
-          <form onSubmit={handleSubmitConnectBroker} className="mt-8 flex flex-col gap-3 2xl:gap-5 w-full">
+          <form onSubmit={handleSubmitConnectBroker} className="mt-8 flex flex-col gap-3 3xl:gap-5 w-full">
             <div>
               <SelectInput 
                 id="broker" 
@@ -154,10 +154,10 @@ const AddBrokerTrader = () => {
                 disabled={isLoading || resLoadBrokers.loading || resLoadBrokers.error !== ""}
                 required />
               {resLoadBrokers.loading && 
-                <p className="mt-2 text-sm 2xl:text-lg text-black/60">Sedang memuat data broker...</p>
+                <p className="mt-2 text-sm 3xl:text-lg text-black/60">Sedang memuat data broker...</p>
               }
               {resLoadBrokers.error && !resLoadBrokers.loading && 
-                <p className="mt-2 text-sm 2xl:text-lg text-black/60">Data broker gagal dimuat. {" "}
+                <p className="mt-2 text-sm 3xl:text-lg text-black/60">Data broker gagal dimuat. {" "}
                   <span onClick={fetchBrokerList} className="text-[#DF1E1E] underline cursor-pointer">Coba lagi</span>.
                 </p>
               }
@@ -177,7 +177,7 @@ const AddBrokerTrader = () => {
               isMobileLabel={false}
               disabled={isLoading}
               required />
-            <div className="flex flex-col md:flex-row gap-4 2xl:gap-5">
+            <div className="flex flex-col md:flex-row gap-4 3xl:gap-5">
               <div className="w-full md:w-1/2">
                 <TextInput
                   id="fullname"
@@ -210,7 +210,7 @@ const AddBrokerTrader = () => {
                   required />
               </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-4 2xl:gap-5">
+            <div className="flex flex-col md:flex-row gap-4 3xl:gap-5">
               <div className="w-full md:w-1/2">
                 <SelectInput 
                   id="platform" 
@@ -241,9 +241,9 @@ const AddBrokerTrader = () => {
                   required />
               </div>
             </div>
-            <div className="mt-2 flex flex-col md:flex-row gap-4 2xl:gap-5">
+            <div className="mt-2 flex flex-col md:flex-row gap-4 3xl:gap-5">
               <div className="w-full md:w-1/2">
-                <p className="text-base 2xl:text-xl text-black/80">
+                <p className="text-base 3xl:text-xl text-black/80">
                   *Mohon periksa kembali detail akun Anda. Kesalahan pengisian data dapat menghambat proses verifikasi dan sinkronisasi rebate Anda.
                 </p>
               </div>
@@ -253,7 +253,7 @@ const AddBrokerTrader = () => {
                   loading={isLoading} 
                   variant="primary-light" 
                   buttonType="submit" 
-                  className="mt-2 w-full! py-4! 2xl:py-5!">
+                  className="mt-2 w-full! py-4! 3xl:py-5!">
                   Verifikasi
                 </Button>
               </div>

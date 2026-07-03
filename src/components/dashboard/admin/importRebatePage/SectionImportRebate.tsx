@@ -33,7 +33,7 @@ const SectionImportRebate = ({
               <img src="/brokerDetail/check-gradient.png" alt="Check Icon" 
                 className="size-5"
               />
-              <p className="text-base 2xl:text-xl font-medium text-black/80">
+              <p className="text-base 3xl:text-xl font-medium text-black/80">
                 {item}
               </p>
             </div>
@@ -42,7 +42,7 @@ const SectionImportRebate = ({
       </div>
       <div className="px-5 py-6 w-full lg:w-[65%] rounded-2xl bg-white">
         <div className="pb-5 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-[#DDDDDD]">
-          <p className="text-base 2xl:text-xl">
+          <p className="text-base 3xl:text-xl">
             Gunakan template untuk menghindari kesalahan format.
           </p>
           <a 
@@ -51,7 +51,7 @@ const SectionImportRebate = ({
             className="shrink-0 px-4 py-3 flex items-center gap-2 border border-primary rounded-full hover:bg-[#F5F5F5] cursor-pointer transition-all duration-300"
           >
             <LuDownload className="text-xl text-primary" />
-            <span className="text-base 2xl:text-xl text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text whitespace-nowrap">
+            <span className="text-base 3xl:text-xl text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text whitespace-nowrap">
               Download Template
             </span>
           </a>

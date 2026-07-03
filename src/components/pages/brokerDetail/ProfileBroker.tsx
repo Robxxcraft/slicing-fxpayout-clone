@@ -37,25 +37,25 @@ const ProfileBroker = ({ brokerId, profile }: { brokerId: string; profile: Profi
   };
   const coreInformations = profileKeys.slice(0, profileKeys.length - 1);
   return (
-    <section id="profil" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
+    <section id="profil" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 3xl:mt-16 py-8 md:py-10 3xl:py-14 px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>{t("brokerdetailpage:profile.title")}</HeadingSection>
       <SubHeadingSection>{t("brokerdetailpage:profile.subtitle")}</SubHeadingSection>
-      <div className="mt-6 2xl:mt-8 flex flex-col lg:flex-row gap-4 lg:gap-5 2xl:gap-6">
-        <div className="p-6 2xl:p-8 flex-2 w-full border border-[#D0D0D0] bg-white rounded-3xl">
+      <div className="mt-6 3xl:mt-8 flex flex-col lg:flex-row gap-4 lg:gap-5 3xl:gap-6">
+        <div className="p-6 3xl:p-8 flex-2 w-full border border-[#D0D0D0] bg-white rounded-3xl">
 
           {/* INFORMASI UTAMA */}
-          <div className="flex items-center gap-4 2xl:gap-6">
+          <div className="flex items-center gap-4 3xl:gap-6">
             <BoundedIcon variant="second" icon="/brokerDetail/info.svg" alt="icon"/>
             <HeadingSection variant="second">
               {t("brokerdetailpage:profile.cards.0.title")}
             </HeadingSection>
           </div>
-          <div className="mt-6 2xl:mt-10">
+          <div className="mt-6 3xl:mt-10">
             {coreInformations.map((key, idx) => (
               <div 
                 key={idx} 
                 className={`${coreInformations.length - 1 === idx ? "border-0" : "border-b border-[#828282]/50"}
-                  py-2 2xl:py-3 flex gap-y-2 flex-row justify-between w-full`}>
+                  py-2 3xl:py-3 flex gap-y-2 flex-row justify-between w-full`}>
                 <div className="w-1/2 md:w-fit">
                   <ContentHead>{t(objectTitle[key])}</ContentHead>
                 </div>
@@ -74,17 +74,17 @@ const ProfileBroker = ({ brokerId, profile }: { brokerId: string; profile: Profi
         </div>
 
         {/* REGULASI UTAMA */}
-        <div className="p-6 2xl:p-8 flex-1 w-full border border-[#D0D0D0] bg-white rounded-3xl">
-          <div className="flex items-center gap-4 2xl:gap-6">
+        <div className="p-6 3xl:p-8 flex-1 w-full border border-[#D0D0D0] bg-white rounded-3xl">
+          <div className="flex items-center gap-4 3xl:gap-6">
             <BoundedIcon variant="second" icon="/brokerDetail/regulation.svg" alt="icon"/>
             <HeadingSection variant="second">
               {t("brokerdetailpage:profile.cards.1.title")}
             </HeadingSection>
           </div>
-          <div className="mt-6 2xl:mt-10">
+          <div className="mt-6 3xl:mt-10">
             {profile.regulations.map((item, idx) => (
               <div key={idx} className={` ${profile.regulations.length - 1 === idx ? "border-0" : "border-b border-[#828282]/50"}
-                py-2 2xl:py-3 flex justify-between w-full`}>
+                py-2 3xl:py-3 flex justify-between w-full`}>
                 <div>
                   <ContentHead>{item.name}</ContentHead>
                 </div>

@@ -17,13 +17,13 @@ const CardBankForm = ({ form, handleChangeForm, selectedBroker, errors, handleTe
 
   return (
     <>
-      <div className="pb-4 md:pb-6 px-4 md:px-6 2xl:px-8 flex items-center gap-6 border-b border-[#D0D0D0]">
+      <div className="pb-4 md:pb-6 px-4 md:px-6 3xl:px-8 flex items-center gap-6 border-b border-[#D0D0D0]">
         <BoundedIcon variant="third" icon="/bank-icon.svg" alt="icon" maskColor="bg-primary"/>
         <h3 className="text-xl md:text-2xl text-my-purple font-medium leading-[115%]">
           {t("validationpage:card.bankForm.title")}
         </h3>
       </div>
-      <div className="px-4 md:px-6 2xl:px-8 mt-4 md:mt-6 flex flex-col gap-4">
+      <div className="px-4 md:px-6 3xl:px-8 mt-4 md:mt-6 flex flex-col gap-4">
         <SelectInput 
           id="rebate" 
           label={t("validationpage:card.bankForm.rebateLabel")} 

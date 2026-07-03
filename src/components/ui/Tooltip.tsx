@@ -23,15 +23,15 @@ const Tooltip = ({
     btnClass = "bg-linear-to-t from-dark-primary to-primary text-white border border-primary";
   }
   return (
-    <div className={`relative group inline-block h-9 2xl:h-12 
+    <div className={`relative group inline-block h-9 3xl:h-12 
       ${fullMobile ? "w-full md:w-fit":""}`
     }>
       <button
         disabled={disabled}
         onClick={handleClick}
         className={`${btnClass} 
-          ${fullMobile ? "px-2.5 md:px-0 flex md:block items-center justify-center gap-2 w-full h-9 md:w-9 2xl:h-12 2xl:w-12":"size-9 2xl:size-12"}
-          text-base 2xl:text-xl rounded-md place-items-center cursor-pointer transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait
+          ${fullMobile ? "px-2.5 md:px-0 flex md:block items-center justify-center gap-2 w-full h-9 md:w-9 3xl:h-12 3xl:w-12":"size-9 3xl:size-12"}
+          text-base 3xl:text-xl rounded-md place-items-center cursor-pointer transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-wait
         `}
       >
         {icon}
@@ -42,7 +42,7 @@ const Tooltip = ({
         opacity-0 group-hover:opacity-100
         pointer-events-none
         transition-all duration-200
-        bg-gray-500 text-white text-xs 2xl:text-lg
+        bg-gray-500 text-white text-xs 3xl:text-lg
         px-2 py-1 rounded-md whitespace-nowrap
         z-50">
           {detail}

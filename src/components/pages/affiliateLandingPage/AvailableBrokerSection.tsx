@@ -7,7 +7,7 @@ const AvailableBrokerSection = () => {
   const key = "affiliatelandingpage:avilablebrokersection";
 
   return (
-    <section className="relative px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-10 md:py-15 bg-primary overflow-hidden">
+    <section className="relative px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-10 md:py-15 bg-primary overflow-hidden">
       <img
         src="/circle-ornament.png"
         alt="ornament"
@@ -17,18 +17,18 @@ const AvailableBrokerSection = () => {
         <h2 className="text-xl md:text-2xl md:text-[32px] font-semibold text-white">
           {t(`${key}.title`)}
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 lg:gap-7 2xl:gap-10">
+        <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 lg:gap-7 3xl:gap-10">
           {imageBrokers.map((item) => (
             <div
               key={item} 
-              className="p-px md:p-1 size-8 md:size-15 lg:size-18 2xl:size-20 flex justify-center items-center border border-white rounded-full"
+              className="p-px md:p-1 size-8 md:size-15 lg:size-18 3xl:size-20 flex justify-center items-center border border-white rounded-full"
             >
               <img src={`/broker/${item}.webp`} alt={item} 
                 className="size-full object-fill bg-white rounded-full"
               />
             </div>
           ))}
-          <div className="size-8 md:size-15 lg:size-18 2xl:size-20 flex flex-col items-center justify-center text-center bg-white rounded-full">
+          <div className="size-8 md:size-15 lg:size-18 3xl:size-20 flex flex-col items-center justify-center text-center bg-white rounded-full">
             <p className="text-[8px] md:text-base lg:text-2xl font-semibold text-primary">
               20+
             </p>
@@ -37,7 +37,7 @@ const AvailableBrokerSection = () => {
             </p>
           </div>
         </div>
-        <p className="text-base md:text-xl 2xl:text-2xl font-medium text-white/80 leading-[154%] lg:max-w-[790px]">
+        <p className="text-base md:text-xl 3xl:text-2xl font-medium text-white/80 leading-[154%] lg:max-w-[790px]">
           {t(`${key}.paragraph`)}
         </p>
       </div>

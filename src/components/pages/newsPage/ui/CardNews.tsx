@@ -14,33 +14,33 @@ const CardNews = ({ item }: { item: NewsState }) => {
           />
         </div>
       }
-      <div className="mt-4 2xl:mt-6 flex items-center gap-3 lg:gap-1.5">
+      <div className="mt-4 3xl:mt-6 flex items-center gap-3 lg:gap-1.5">
         <div className="flex flex-wrap items-center gap-2">
           <img src={`/news/${item.user.profile}`} alt="profil"
             loading="lazy"
-            className="size-7 md:size-6 2xl:size-8 aspect-square rounded-full object-contain bg-primary" />
-          <p className="text-[15px] md:text-base lg:text-sm 2xl:text-base font-medium">
+            className="size-7 md:size-6 3xl:size-8 aspect-square rounded-full object-contain bg-primary" />
+          <p className="text-[15px] md:text-base lg:text-sm 3xl:text-base font-medium">
             {item.user.username}
           </p>
         </div>
         <div className="h-4 w-0.5 bg-black/50" />
-        <p className="text-[15px] md:text-base lg:text-sm 2xl:text-base font-semibold text-primary">
+        <p className="text-[15px] md:text-base lg:text-sm 3xl:text-base font-semibold text-primary">
           {t(`newspage:category.${item.category}`)}
         </p>
         <div className="h-4 w-0.5 bg-black/50" />
-        <p className="text-[15px] md:text-base lg:text-sm 2xl:text-base">
+        <p className="text-[15px] md:text-base lg:text-sm 3xl:text-base">
           {t(`${item.createdAt.split(",")[1]}`, { time: item.createdAt.split(",")[0] })}
         </p>
       </div>
-      <div className="mt-3 2xl:mt-4 flex flex-col gap-2 2xl:gap-4">
-        <h3 className="text-2xl lg:text-xl 2xl:text-2xl font-medium leading-[180%]">
+      <div className="mt-3 3xl:mt-4 flex flex-col gap-2 3xl:gap-4">
+        <h3 className="text-2xl lg:text-xl 3xl:text-2xl font-medium leading-[180%]">
           {item.title}
         </h3>
         <div>
-          <p className="mb-2 md:mb-4 text-base md:text-xl lg:text-base 2xl:text-xl leading-[163%] line-clamp-3">
+          <p className="mb-2 md:mb-4 text-base md:text-xl lg:text-base 3xl:text-xl leading-[163%] line-clamp-3">
             {item.excerpt}
           </p>
-          <Link to={item.url} className="flex items-center gap-1 text-base md:text-xl lg:text-base 2xl:text-xl font-medium text-primary hover:underline">
+          <Link to={item.url} className="flex items-center gap-1 text-base md:text-xl lg:text-base 3xl:text-xl font-medium text-primary hover:underline">
             <span>{t(`text.readMore`)}</span>
             <FaChevronRight className="rtl:scale-x-[-1]" />
           </Link>

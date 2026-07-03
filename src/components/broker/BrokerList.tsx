@@ -81,13 +81,13 @@ const BrokerList = ({
 
   return (
     <>
-      <div className="mt-6 lg:mt-8 2xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 2xl:gap-6">
+      <div className="mt-6 lg:mt-8 3xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 3xl:gap-6">
         {brokerPartners.slice(startIndex, endIndex).map((item, idx) => (
           <BrokerItem key={idx} item={item} />
         ))}
       </div>
       {pathUrl === "broker" &&
-      <div className="mt-6 md:mt-8 2xl:mt-10 px-5 w-full flex items-center justify-center gap-3 md:gap-4">
+      <div className="mt-6 md:mt-8 3xl:mt-10 px-5 w-full flex items-center justify-center gap-3 md:gap-4">
         {currentPage > 1 &&
           <button
             onClick={handleClickPrevButton}

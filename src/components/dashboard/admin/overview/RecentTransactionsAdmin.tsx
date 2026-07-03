@@ -78,20 +78,20 @@ const RecentTransactionsAdmin = ({
 
   return (
     <>
-      <section className="mt-8 2xl:mt-10">
+      <section className="mt-8 3xl:mt-10">
 
         {/* HEADER */}
         <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
           <div>
-            <h2 className="text-2xl 2xl:text-[2rem] font-semibold">
+            <h2 className="text-2xl 3xl:text-[2rem] font-semibold">
               Recent Transactions
             </h2>
-            <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
+            <p className="text-base 3xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
               Daftar transaksi penarikan dana terbaru yang diajukan oleh pengguna.
             </p>
           </div>
           <Link to={getLocalizedPath("dashboard/withdrawals", i18n.language)} className="flex items-center gap-3 text-primary">
-            <p className="text-base 2xl:text-xl">Lihat Semua</p>
+            <p className="text-base 3xl:text-xl">Lihat Semua</p>
             <HiArrowLongRight className="text-2xl" />
           </Link>
         </div>
@@ -104,7 +104,7 @@ const RecentTransactionsAdmin = ({
 
           {/* LOADING & 0 DATA TABLE */}
           {dataWithdrawals.length === 0 && isLoading &&
-            <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+            <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
               <Spinner />
             </div>
           }

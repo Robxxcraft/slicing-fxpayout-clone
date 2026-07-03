@@ -40,7 +40,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
                 {item.name}
               </h2>
             </div>
-            <div className="px-2 2xl:px-4 py-3 text-sm 2xl:text-base font-medium bg-linear-to-t from-dark-primary to-primary text-white border-white h-fit rounded-full border inline-flex items-center justify-center gap-3 text-nowrap">
+            <div className="px-2 3xl:px-4 py-3 text-sm 3xl:text-base font-medium bg-linear-to-t from-dark-primary to-primary text-white border-white h-fit rounded-full border inline-flex items-center justify-center gap-3 text-nowrap">
               {item.statusRebate} Rebate
             </div>
           </div>
@@ -96,7 +96,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
               target={item.registerUrl.length === 1 ? "_blank" : undefined} 
               variant="primary-light" 
               size="md" 
-              className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
+              className="px-0! text-sm! 3xl:text-base! font-medium! w-full!"
             >
               {t("brokerpage:card.register")}
             </Button>
@@ -106,7 +106,7 @@ const BrokerItem = ({ item }: { item: BrokerStruc }) => {
             urlTo={getLocalizedPath(`/broker/${item.detailUrl}#`, i18n.language)}
             variant="outline" 
             size="md" 
-            className="px-0! text-sm! 2xl:text-base! font-medium! w-full!"
+            className="px-0! text-sm! 3xl:text-base! font-medium! w-full!"
           >
             {t("brokerpage:card.detail")}
           </Button>

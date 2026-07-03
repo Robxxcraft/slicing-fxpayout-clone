@@ -161,7 +161,7 @@ const ManagementTraders = () => {
         </ParagraphDashboard>
 
         {/* FILTER TABLE */}
-        <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
+        <div className="mt-3 md:mt-4 mb-4 3xl:mt-5 3xl:mb-5">
           <div className="space-y-2"> 
             <SearchDashboard 
               query={globalFiltering}
@@ -170,8 +170,8 @@ const ManagementTraders = () => {
               containerCL="max-w-full!"
             />
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-              <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529] w-fit">
-                <span className="text-base 2xl:text-xl">Tampilkan</span>
+              <div className="flex items-center gap-1.5 3xl:gap-2.5 text-[#212529] w-fit">
+                <span className="text-base 3xl:text-xl">Tampilkan</span>
                 <SelectDropdown 
                   selectedInput={pagination.pageSize.toString()} 
                   handleChangeInput={handleChangeFilterLimit} 
@@ -187,8 +187,8 @@ const ManagementTraders = () => {
                   handleChangeInput={handleChangeStatus} 
                   objectInput={statusMap} 
                   disabled={isLoading}  
-                  wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-                  inputCL="w-[200px]! 2xl:w-[240px]!"             
+                  wrapperCL="w-full! md:w-[150px]! 3xl:w-[200px]!"             
+                  inputCL="w-[200px]! 3xl:w-[240px]!"             
                 />
                 <Tooltip 
                   disabled={isLoading}
@@ -214,13 +214,13 @@ const ManagementTraders = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataTraderBroker.length === 0 && (initLoad || isLoading) &&
-          <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+          <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
             <Spinner />
           </div>
         }
         {dataTraderBroker.length === 0 && !initLoad && !isLoading &&
           <NoDataFound>
-            <p className="text-black/80 text-base 2xl:text-xl">
+            <p className="text-black/80 text-base 3xl:text-xl">
             {useFilter ?
               "Tidak ditemukan data trader yang sesuai dengan filter atau pencarian Anda." :
               "Saat ini, belum ada trader aktif dengan akun broker yang terhubung. Mulai undang trader untuk mendapatkan komisi rebate."}
@@ -229,7 +229,7 @@ const ManagementTraders = () => {
         }
 
         <div className="mt-4">
-          <p className="text-base 2xl:text-xl text-black/80">
+          <p className="text-base 3xl:text-xl text-black/80">
             {`Menampilkan 
             ${pagination.pageIndex === 0 ? (dataTraderBroker.length > 0 ? "1":"0") : pagination.pageSize * pagination.pageIndex} 
             hingga  

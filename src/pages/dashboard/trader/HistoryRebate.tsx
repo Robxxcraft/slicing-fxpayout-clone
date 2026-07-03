@@ -157,15 +157,15 @@ const HistoryRebate = () => {
             </span>
           }
         </TitleDashboard>
-        <ParagraphDashboard maxW="w-fit lg:w-[760px] 2xl:w-full">
+        <ParagraphDashboard maxW="w-fit lg:w-[760px] 3xl:w-full">
           Daftar riwayat perolehan rebate Anda. Gunakan filter untuk melihat detail komisi berdasarkan periode waktu serta broker.
         </ParagraphDashboard>
 
         {/* FILTER TABLE */}
-        <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
+        <div className="mt-3 md:mt-4 mb-4 3xl:mt-5 3xl:mb-5">
           <div className="flex items-center justify-between gap-2">
-            <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529]">
-              <span className="text-base 2xl:text-xl">Tampilkan</span>
+            <div className="flex items-center gap-1.5 3xl:gap-2.5 text-[#212529]">
+              <span className="text-base 3xl:text-xl">Tampilkan</span>
               <SelectDropdown 
                 selectedInput={pagination.pageSize.toString()} 
                 handleChangeInput={handleChangeFilterLimit} 
@@ -174,7 +174,7 @@ const HistoryRebate = () => {
                 wrapperCL="w-fit!"         
               />
             </div>
-            <div className="flex items-center gap-2 2xl:gap-3">
+            <div className="flex items-center gap-2 3xl:gap-3">
               <div className="hidden md:block">
                 <DateRangeButton 
                   openPopup={() => setShowPopupRange(true)} 
@@ -214,7 +214,7 @@ const HistoryRebate = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataRebate.length === 0 && (initLoad || isLoading) &&
-          <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+          <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
             <Spinner />
           </div>
         }
@@ -228,7 +228,7 @@ const HistoryRebate = () => {
           </NoDataFound>
         }
         <div className="mt-4">
-          <p className="text-base 2xl:text-xl text-black/80">
+          <p className="text-base 3xl:text-xl text-black/80">
             {`Menampilkan 
             ${pagination.pageIndex === 0 ? (dataRebate.length > 0 ? "1":"0") : pagination.pageSize * pagination.pageIndex} 
             hingga  

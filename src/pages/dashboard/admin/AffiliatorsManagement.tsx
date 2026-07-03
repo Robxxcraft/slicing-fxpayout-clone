@@ -184,14 +184,14 @@ const AffiliatorsManagement = () => {
         </TitleDashboard>
 
         {/* FILTER TABLE */}
-        <div className="my-4 flex flex-col md:flex-row justify-between items-center gap-2 2xl:gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+        <div className="my-4 flex flex-col md:flex-row justify-between items-center gap-2 3xl:gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-2 3xl:gap-3 w-full">
             <SearchDashboard 
               query={globalFiltering} 
               onQuery={handleChangeGlobalFiltering} 
               placeholder={"Cari nama lengkap atau email"} />
             {tableInstance.getSelectedRowModel().flatRows.length === 1 && 
-              <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+              <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
                 {tableInstance.getSelectedRowModel().flatRows.length === 1 && 
                   <Tooltip 
                     fullMobile
@@ -206,14 +206,14 @@ const AffiliatorsManagement = () => {
               </div>
             }
           </div>
-          <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+          <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
             <SelectDropdown 
               selectedInput={filterStatus} 
               handleChangeInput={handleChangeStatus} 
               objectInput={statusMapNoRejected}     
               disabled={isLoading}  
-              wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-              inputCL="w-[200px]! 2xl:w-[240px]!"        
+              wrapperCL="w-full! md:w-[150px]! 3xl:w-[200px]!"             
+              inputCL="w-[200px]! 3xl:w-[240px]!"        
             />
             <Tooltip 
               disabled={isLoading}
@@ -238,13 +238,13 @@ const AffiliatorsManagement = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataAffiliators.length === 0 && (initLoad || isLoading) &&
-          <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+          <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
             <Spinner />
           </div>
         }
         {dataAffiliators.length === 0 && !initLoad && !isLoading &&
           <NoDataFound useImage>
-            <p className="text-black/80 text-base 2xl:text-xl">
+            <p className="text-black/80 text-base 3xl:text-xl">
             {useFilter ?
               "Tidak ditemukan data affiliator yang sesuai dengan filter atau pencarian Anda." :
               "Belum ada affiliator yang terdaftar di sistem saat ini."}

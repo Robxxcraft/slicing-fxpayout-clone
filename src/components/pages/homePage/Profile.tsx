@@ -37,10 +37,10 @@ const Profile = () => {
   };
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-14 xl:pt-[60px]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-14 xl:pt-[60px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
-        <div className="order-2 lg:order-1 px-4 py-6 md:px-6 2xl:px-[42px] md:py-6 2xl:py-[42px] w-full bg-[#F9F8F4] rounded-[20px] md:rounded-[40px]">
-          <div className="py-3 md:py-4 2xl:py-6 px-3 md:px-4 2xl:px-5 flex items-center gap-2 md:gap-4 w-full bg-white border border-[#D0D5DD] rounded-full">
+        <div className="order-2 lg:order-1 px-4 py-6 md:px-6 3xl:px-[42px] md:py-6 3xl:py-[42px] w-full bg-[#F9F8F4] rounded-[20px] md:rounded-[40px]">
+          <div className="py-3 md:py-4 3xl:py-6 px-3 md:px-4 3xl:px-5 flex items-center gap-2 md:gap-4 w-full bg-white border border-[#D0D5DD] rounded-full">
             <label htmlFor="search" className="cursor-pointer">
               <CiSearch className="text-2xl text-[#7E7E7E]" />
             </label>
@@ -54,7 +54,7 @@ const Profile = () => {
               className="w-full text-[12px] md:text-base placeholder:text-primary focus:outline-0"
             />
           </div>
-          <div className="my-4 lg:my-5 2xl:my-6 flex flex-wrap gap-x-1 lg:gap-x-2 gap-y-3 lg:gap-y-2">
+          <div className="my-4 lg:my-5 3xl:my-6 flex flex-wrap gap-x-1 lg:gap-x-2 gap-y-3 lg:gap-y-2">
             {[
               "homepage:profile.badges.0",
               "homepage:profile.badges.1",
@@ -65,14 +65,14 @@ const Profile = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="px-4 lg:px-5 2xl:px-6 py-2 lg:py-3 bg-my-light-blue border border-primary rounded-full">
+                className="px-4 lg:px-5 3xl:px-6 py-2 lg:py-3 bg-my-light-blue border border-primary rounded-full">
                 <p className="text-[12px] md:text-base lg:text-sm bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
                   {t(item)}
                 </p>
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-2 lg:gap-3 2xl:gap-4">
+          <div className="flex flex-col gap-2 lg:gap-3 3xl:gap-4">
             {featuresProfile.map((item, idx) => (
               <div
                 key={idx}
@@ -97,7 +97,7 @@ const Profile = () => {
           }>
             {t("homepage:profile.badge")}
           </BadgeSection>
-          <h2 className="my-6 2xl:my-8 text-center lg:text-start text-2xl md:text-[32px] lg:text-[36px] 2xl:text-[48px] font-bold leading-[120%]">
+          <h2 className="my-6 3xl:my-8 text-center lg:text-start text-2xl md:text-[32px] lg:text-[36px] 3xl:text-[48px] font-bold leading-[120%]">
             {t("homepage:profile.title")}
           </h2>
           <p className="text-center lg:text-start text-base md:text-2xl font-medium text-[rgba(0,0,0,0.8)] leading-[200%]">

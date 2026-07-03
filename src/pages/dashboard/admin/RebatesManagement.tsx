@@ -326,14 +326,14 @@ const RebatesManagement = () => {
         </div>
 
         {/* FILTER TABLE */}
-        <div className="my-4 flex flex-col justify-between items-center gap-2 2xl:gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+        <div className="my-4 flex flex-col justify-between items-center gap-2 3xl:gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-2 3xl:gap-3 w-full">
             <SearchDashboard 
               query={globalFiltering} 
               onQuery={handleChangeGlobalFiltering} 
               placeholder={"Cari id akun trading atau broker"} />
             {tableInstance.getSelectedRowModel().flatRows.length > 0 && 
-              <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+              <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
                 {tableInstance.getSelectedRowModel().flatRows.length === 1 &&
                   <Tooltip 
                     fullMobile
@@ -349,7 +349,7 @@ const RebatesManagement = () => {
                   (tableInstance.getSelectedRowModel().flatRows.filter((row) => ["approved", "rejected"].includes(row.getValue("status"))).length === 0) && 
                   <div
                     onClick={() => setShowPopupDelete(true)}
-                    className="h-9 2xl:h-12 px-2 2xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
+                    className="h-9 3xl:h-12 px-2 3xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
                     <p className="text-nowrap">
                       Hapus {tableInstance.getSelectedRowModel().flatRows.length} data
                     </p>
@@ -358,7 +358,7 @@ const RebatesManagement = () => {
               </div>
             }
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+          <div className="flex flex-col md:flex-row items-center gap-2 3xl:gap-3 w-full">
             <DateRangeButton 
               openPopup={() => setShowPopupRange(true)} 
               isLoading={isLoading} 
@@ -366,14 +366,14 @@ const RebatesManagement = () => {
               containerCL="w-full!"
               buttonCL="w-full!"
             />
-            <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+            <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
               <SelectDropdown 
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeFilterStatus} 
                 objectInput={rebateStatusMap}     
                 disabled={isLoading}  
-                wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-                inputCL="w-[200px]! 2xl:w-[240px]!"        
+                wrapperCL="w-full! md:w-[150px]! 3xl:w-[200px]!"             
+                inputCL="w-[200px]! 3xl:w-[240px]!"        
               />
               <Tooltip 
                 disabled={isLoading}
@@ -399,7 +399,7 @@ const RebatesManagement = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataRebates.length === 0 && (initLoad || isLoading) &&
-            <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+            <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
               <Spinner />
             </div>
         }

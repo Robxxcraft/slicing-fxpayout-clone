@@ -61,11 +61,11 @@ const ProfileUserDrawer = ({
   return (
     <div>
       {!isLoading && status === "pending" && 
-        <div className="mb-4 px-4 py-2 2xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
-          <span className="flex shrink-0 items-center justify-center size-5 2xl:size-7 border border-[#BE5409] rounded-full">
-            <TiInfoLarge className="text-sm 2xl:text-lg text-[#BE5409]" />
+        <div className="mb-4 px-4 py-2 3xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
+          <span className="flex shrink-0 items-center justify-center size-5 3xl:size-7 border border-[#BE5409] rounded-full">
+            <TiInfoLarge className="text-sm 3xl:text-lg text-[#BE5409]" />
           </span>
-          <p className="text-sm 2xl:text-lg text-[#BE5409]">
+          <p className="text-sm 3xl:text-lg text-[#BE5409]">
             Pengguna belum menyelesaikan verifikasi email. 
           </p>
         </div>
@@ -88,10 +88,10 @@ const ProfileUserDrawer = ({
               key={layout.key} 
               className="flex flex-col gap-1 w-full"
             >
-              <p className="w-full text-nowrap text-sm 2xl:text-lg text-black/60">
+              <p className="w-full text-nowrap text-sm 3xl:text-lg text-black/60">
                 {layout.header}
               </p>
-              <p className="p-2.5 2xl:p-3 truncate w-full text-base 2xl:text-xl bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">
+              <p className="p-2.5 3xl:p-3 truncate w-full text-base 3xl:text-xl bg-[#F9F9F9] border border-[#D0D5DD] rounded-lg">
                 {layout.key === "gender" ? 
                 layout.value === "male" ? "Laki-laki" : "Perempuan"
                 : layout.value

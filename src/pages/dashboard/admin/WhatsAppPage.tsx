@@ -136,10 +136,10 @@ const WhatsAppPage = () => {
           <div className="p-5 col-span-1 lg:col-span-2 bg-white rounded-xl border border-[#DDDDDD] h-fit">
             <div className="flex flex-col md:flex-row gap-y-4 items-start md:items-center justify-between">
               <div>
-                <h2 className="text-base 2xl:text-lg font-semibold">
+                <h2 className="text-base 3xl:text-lg font-semibold">
                   WhatsApp Connection
                 </h2>
-                <p className="text-sm 2xl:text-base text-gray-500">
+                <p className="text-sm 3xl:text-base text-gray-500">
                   Connect WhatsApp account menggunakan QR code
                 </p>
               </div>

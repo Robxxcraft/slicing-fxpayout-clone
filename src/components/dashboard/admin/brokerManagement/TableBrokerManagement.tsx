@@ -19,7 +19,7 @@ const TableBrokerManagement = ({
    <Table isLoading={isLoading} className={`mt-0!`}>
       <thead>
       {tableInstance.getHeaderGroups().map((headerEl) => {
-        const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg!"
+        const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg!"
         return (
           <tr key={headerEl.id}>
             {headerEl.headers.map((cellEl) => {
@@ -76,7 +76,7 @@ const TableBrokerManagement = ({
                     rowIndex={rowIndex}
                     className={`${baseStyle} ${isSelectRow ? "px-2!":""}
                       ${cellIndex === rowEl.getVisibleCells().length - 1 ? "px-2! text-right!" : "text-left!"}
-                      ${cellIndex === 1 ? "px-0! pl-2! pr-8!" : ""} 2xl:text-xl!
+                      ${cellIndex === 1 ? "px-0! pl-2! pr-8!" : ""} 3xl:text-xl!
                     `}
                   >
                     {flexRender(

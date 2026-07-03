@@ -40,7 +40,7 @@ const ReviewImportRebate = ({
                 {statusImport === "SUCCESS" ? totalData:""}
                 {statusImport === "ERROR" ? countError:""}
               </p>
-              <p className="text-base 2xl:text-xl font-medium">
+              <p className="text-base 3xl:text-xl font-medium">
                 {statusImport === "SUCCESS" ? "Success":""}
                 {statusImport === "ERROR" ? "Error":""}
               </p>
@@ -55,7 +55,7 @@ const ReviewImportRebate = ({
           </div>
         </div>
 
-        <p className="mt-6 text-lg 2xl:text-xl">
+        <p className="mt-6 text-lg 3xl:text-xl">
           {statusImport === "SUCCESS" &&
             "Seluruh data berhasil diimpor. Silakan tinjau dan verifikasi data rebate agar dapat segera diterima oleh pengguna."
           }
@@ -68,7 +68,7 @@ const ReviewImportRebate = ({
         <div className="mt-6 px-4 md:px-5 py-6 w-full rounded-2xl bg-white">
           <div className="flex items-center gap-4">
             <IoWarning className="text-[#DF1E1E] text-2xl" />
-            <p className="text-lg 2xl:text-xl font-medium">
+            <p className="text-lg 3xl:text-xl font-medium">
               ERROR IMPORT
             </p>
           </div>

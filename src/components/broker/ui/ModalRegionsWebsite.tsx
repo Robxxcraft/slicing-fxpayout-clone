@@ -52,7 +52,7 @@ const ModalRegionsWebsite = ({
               {globalWebsite.region}
             </p>
             <div className="size-5 flex items-center justify-center">
-              <FaExternalLinkAlt className="text-base 2xl:text-xl rtl:scale-x-[-1]" />
+              <FaExternalLinkAlt className="text-base 3xl:text-xl rtl:scale-x-[-1]" />
             </div>
           </Button>
         </div>
@@ -72,7 +72,7 @@ const ModalRegionsWebsite = ({
                 {web.region}
               </p>
               <div className="size-5 flex items-center justify-center">
-                <FaExternalLinkAlt className="text-base 2xl:text-xl rtl:scale-x-[-1]" />
+                <FaExternalLinkAlt className="text-base 3xl:text-xl rtl:scale-x-[-1]" />
               </div>
             </Button>
           </div>

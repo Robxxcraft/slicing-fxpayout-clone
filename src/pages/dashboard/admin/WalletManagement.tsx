@@ -383,14 +383,14 @@ const WalletManagement = () => {
         </TitleDashboard>
 
         {/* FILTER TABLE */}
-        <div className="my-4 space-y-2 2xl:space-y-3">
+        <div className="my-4 space-y-2 3xl:space-y-3">
           <div className="flex items-center gap-2 w-full border-b border-[#DDDDDD]">
             <div 
             onClick={() => handleChangeTabs("bank")}
             className={`px-2 py-1  border-primary rounded-t-lg hover:bg-light-gray transition-all duration-300 cursor-pointer
               ${activeTab === "bank" ? "border-b-2 font-medium" : "border-b-0 font-normal"}
             `}>
-              <p className="text-base 2xl:text-lg">
+              <p className="text-base 3xl:text-lg">
                 Bank
               </p>
             </div>
@@ -399,14 +399,14 @@ const WalletManagement = () => {
             className={`px-2 py-1  border-primary rounded-t-lg hover:bg-light-gray transition-all duration-300 cursor-pointer
               ${activeTab === "crypto" ? "border-b-2 font-medium" : "border-b-0 font-normal"}
             `}>
-              <p className="text-base 2xl:text-lg">
+              <p className="text-base 3xl:text-lg">
                 Crypto
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2 2xl:gap-3">
-            <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 3xl:gap-3">
+            <div className="flex flex-col md:flex-row items-center gap-2 3xl:gap-3 w-full">
               <SearchDashboard 
                 query={globalFiltering} 
                 onQuery={handleChangeGlobalFiltering} 
@@ -415,11 +415,11 @@ const WalletManagement = () => {
               {/* BUTTON DEL BANK */}
               {activeTab === "bank" ? 
                 tableBankInstance.getSelectedRowModel().flatRows.length > 0 &&
-                <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+                <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
                 {tableBankInstance.getSelectedRowModel().flatRows.length > 0 &&
                   <div
                     onClick={() => setShowPopupDelete(true)}
-                    className="h-9 2xl:h-12 px-2 2xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
+                    className="h-9 3xl:h-12 px-2 3xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
                     <p className="text-nowrap">
                       Hapus {tableBankInstance.getSelectedRowModel().flatRows.length} data
                     </p>
@@ -430,11 +430,11 @@ const WalletManagement = () => {
               
                 // BUTTON DEL CRYPTO
                tableCryptoInstance.getSelectedRowModel().flatRows.length > 0 &&
-                <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+                <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
                 {tableCryptoInstance.getSelectedRowModel().flatRows.length > 0 &&
                   <div
                     onClick={() => setShowPopupDelete(true)}
-                    className="h-9 2xl:h-12 px-2 2xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
+                    className="h-9 3xl:h-12 px-2 3xl:px-4 flex flex-1 items-center rounded-md border border-my-red bg-my-red text-white place-items-center cursor-pointer active:brightness-90 transition-all duration-300 ease-out">
                     <p className="text-nowrap">
                       Hapus {tableCryptoInstance.getSelectedRowModel().flatRows.length} data
                     </p>
@@ -444,13 +444,13 @@ const WalletManagement = () => {
               }
               
             </div>
-            <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+            <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
               <SelectDropdown 
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeFilterStatus} 
                 objectInput={statusMap}       
-                wrapperCL={`w-full! md:w-[150px]! 2xl:w-[200px]!`}             
-                inputCL="w-[200px]! 2xl:w-[240px]!"   
+                wrapperCL={`w-full! md:w-[150px]! 3xl:w-[200px]!`}             
+                inputCL="w-[200px]! 3xl:w-[240px]!"   
                 disabled={activeTab === "crypto" || isLoading}     
               />
               <Tooltip 
@@ -498,7 +498,7 @@ const WalletManagement = () => {
         {/* LOADING & 0 DATA TABLE */}
         {(activeTab === "crypto" ? dataCrypto.length === 0 : dataBank.length === 0) 
           && ((activeTab === "crypto" ? initLoad.crypto : initLoad.bank) || isLoading) &&
-            <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+            <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
               <Spinner />
             </div>
         }

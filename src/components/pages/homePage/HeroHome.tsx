@@ -13,7 +13,7 @@ const HeroHome = () => {
   }) as string[];
   
   return (
-    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-[120px] lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between">
+    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-[120px] lg:py-32 3xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between">
       {/* BACKGROUND ORNAMENT */}
       <div className="absolute -top-[90px] -start-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
       <img
@@ -25,7 +25,7 @@ const HeroHome = () => {
       />
 
       {/* MAIN HERO */}
-      <div className="z-999 flex flex-col gap-6 2xl:gap-8 max-w-full lg:max-w-[60%] text-white">
+      <div className="z-999 flex flex-col gap-6 3xl:gap-8 max-w-full lg:max-w-[60%] text-white">
         <BadgeHero
           icon={
             <img src="/badgeCirclePercent.svg" alt="badge percent" />
@@ -43,13 +43,13 @@ const HeroHome = () => {
             }}
           />
         </h1>
-        <div className="lg:mb-3 2xl:mb-6 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div className="lg:mb-3 3xl:mb-6 flex flex-wrap items-center gap-x-8 gap-y-4">
           {subtitles.map((subtitle, index) => (
             <div key={index}
               className="flex items-center gap-3"
             >
-              <FaCircleCheck className="text-[#00E900] text-base md:text-xl 2xl:text-2xl" />
-              <p className="text-base md:text-xl 2xl:text-2xl font-semibold text-light-gray leading-[200%]">
+              <FaCircleCheck className="text-[#00E900] text-base md:text-xl 3xl:text-2xl" />
+              <p className="text-base md:text-xl 3xl:text-2xl font-semibold text-light-gray leading-[200%]">
                 {subtitle}
               </p>
             </div>
@@ -61,7 +61,7 @@ const HeroHome = () => {
             urlTo={`${getLocalizedPath("/register", i18n.language)}`}
             variant="light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t("button.registerNow")}
           </Button>
@@ -70,7 +70,7 @@ const HeroHome = () => {
             urlTo={`${getLocalizedPath("/calculator", i18n.language)}`}
             variant="outline-light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t("button.calculateRebate")}
           </Button>

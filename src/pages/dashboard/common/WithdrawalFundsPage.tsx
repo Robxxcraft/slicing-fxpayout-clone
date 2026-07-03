@@ -201,28 +201,28 @@ const WithdrawalFundsPage = () => {
         <div className="mt-4 md:mt-6 flex flex-col md:flex-row gap-5 md:gap-8">
           <div className="px-8 py-5 w-full md:w-[420px] h-fit bg-linear-to-t from-dark-primary to-primary rounded-2xl text-white">
             <div className="flex items-center gap-2">
-              <IoWalletOutline className="text-xl 2xl:text-3xl" />
-              <p className="font-medium text-lg 2xl:text-2xl">Current Balance</p>
+              <IoWalletOutline className="text-xl 3xl:text-3xl" />
+              <p className="font-medium text-lg 3xl:text-2xl">Current Balance</p>
             </div>
-            <p className="mt-2.5 2xl:mt-5 font-semibold text-5xl">
+            <p className="mt-2.5 3xl:mt-5 font-semibold text-5xl">
               {formattingUsd(balance?.balance || 0)}
             </p>
-            <p className="mt-2.5 font-medium text-base 2xl:text-xl">
+            <p className="mt-2.5 font-medium text-base 3xl:text-xl">
               Available to withdrawal
             </p>
           </div>
           <div className="">
-            <h2 className="font-medium text-xl 2xl:text-2xl">
+            <h2 className="font-medium text-xl 3xl:text-2xl">
               Akun Wallet
             </h2>
             {wallets.filter((wallet) => wallet.status === "rejected").length > 0 &&
-              <p className="w-full md:w-[420px] 2xl:w-[540px] text-sm 2xl:text-base leading-[160%]">
+              <p className="w-full md:w-[420px] 3xl:w-[540px] text-sm 3xl:text-base leading-[160%]">
                 {wallets.filter((wallet) => wallet.status === "rejected").length} {" "} 
                 akun wallet memerlukan perhatian. Perbaiki akun wallet untuk dapat melakukan penarikan dengan akun terkait.
               </p>
             }
             {wallets.length === 0 && initLoad ?
-              <div className="p-3 2xl:p-5 mt-4 w-full md:w-[420px] 2xl:w-[540px] rounded-lg bg-black/5">
+              <div className="p-3 3xl:p-5 mt-4 w-full md:w-[420px] 3xl:w-[540px] rounded-lg bg-black/5">
                 <div className="flex items-center gap-3 w-full animate-pulse">
                   <div className="shrink-0 size-9 bg-gray-300 rounded-full"></div>
                   <div className="flex flex-col gap-2 w-full">
@@ -238,9 +238,9 @@ const WithdrawalFundsPage = () => {
                     type="button"
                     variant="primary-light"
                     onClick={() => setAddWalletDrawer(true)}
-                    icon={<IoIosAdd className="text-2xl 2xl:text-3xl" />}
+                    icon={<IoIosAdd className="text-2xl 3xl:text-3xl" />}
                     iconPosition="left"
-                    className="py-3! w-full! rounded-full! text-base! 2xl:text-xl! font-medium!"
+                    className="py-3! w-full! rounded-full! text-base! 3xl:text-xl! font-medium!"
                   >
                     Tambahkan akun wallet
                   </Button>
@@ -258,7 +258,7 @@ const WithdrawalFundsPage = () => {
                     {wallets.length < 5 &&
                       <button
                         onClick={() => setAddWalletDrawer(true)}
-                        className="py-2.5 2xl:py-4 w-full text-[14px] 2xl:text-lg font-medium text-primary rounded-full hover:bg-[#F5F5F5] transition-colors duration-300 cursor-pointer"
+                        className="py-2.5 3xl:py-4 w-full text-[14px] 3xl:text-lg font-medium text-primary rounded-full hover:bg-[#F5F5F5] transition-colors duration-300 cursor-pointer"
                       >
                         Tambahkan akun wallet
                       </button>
@@ -273,16 +273,16 @@ const WithdrawalFundsPage = () => {
       </section>
 
       {/* PENDING WITHDRAWAL */}
-      <section className="mt-8 2xl:mt-10">
-        <h2 className="font-medium text-xl 2xl:text-2xl">
+      <section className="mt-8 3xl:mt-10">
+        <h2 className="font-medium text-xl 3xl:text-2xl">
           Pending Withdrawal
         </h2>
 
         {/* FILTER TABLE */}
-        <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
+        <div className="mt-3 md:mt-4 mb-4 3xl:mt-5 3xl:mb-5">
           <div className="flex items-center justify-between gap-2">
-            <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529]">
-              <span className="text-base 2xl:text-xl">Tampilkan</span>
+            <div className="flex items-center gap-1.5 3xl:gap-2.5 text-[#212529]">
+              <span className="text-base 3xl:text-xl">Tampilkan</span>
               <SelectDropdown 
                 selectedInput={metaPage.limit.toLocaleString()} 
                 handleChangeInput={(key) => setMetaPage((prev) => ({
@@ -295,7 +295,7 @@ const WithdrawalFundsPage = () => {
                 wrapperCL="w-fit!"         
               />
             </div>
-            <div className="flex items-center gap-2 2xl:gap-3 w-fit">
+            <div className="flex items-center gap-2 3xl:gap-3 w-fit">
               <Tooltip 
                 disabled={isLoading}
                 icon={<LuRefreshCcw className={`${isLoading ? "animate-spin" : ""}`} />} 
@@ -316,7 +316,7 @@ const WithdrawalFundsPage = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataWithdrawal.length === 0 && (initLoad || isLoading) &&
-          <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+          <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
             <Spinner />
           </div>
         }
@@ -326,7 +326,7 @@ const WithdrawalFundsPage = () => {
           </NoDataFound>
         }
         <div className="mt-4">
-          <p className="text-base 2xl:text-xl text-black/80">
+          <p className="text-base 3xl:text-xl text-black/80">
             {`Menampilkan 
             ${metaPage.pageIndex === 1 ? (dataWithdrawal.length > 0 ? "1":"0") : metaPage.limit * metaPage.pageIndex} 
             hingga  

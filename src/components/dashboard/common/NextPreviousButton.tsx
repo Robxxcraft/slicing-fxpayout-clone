@@ -17,7 +17,7 @@ const NextPreviousButton = ({
         onClick={onPreviousPage}
         disabled={disabledPrev}
         aria-disabled={disabledPrev}
-        className="size-9 2xl:size-12 text-base 2xl:text-xl rounded-l-md bg-white border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
+        className="size-9 3xl:size-12 text-base 3xl:text-xl rounded-l-md bg-white border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
       >
         <FaChevronLeft />
       </button>
@@ -25,7 +25,7 @@ const NextPreviousButton = ({
         onClick={onNextPage}
         disabled={disabledNext}
         aria-disabled={disabledNext}
-        className="size-9 2xl:size-12 text-base 2xl:text-xl rounded-r-md bg-white border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
+        className="size-9 3xl:size-12 text-base 3xl:text-xl rounded-r-md bg-white border border-[#D2CEE1] text-black/60 place-items-center cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300 ease-out disabled:opacity-60 disabled:hover:bg-black/0 disabled:cursor-auto"
       >
         <FaChevronRight />
       </button>

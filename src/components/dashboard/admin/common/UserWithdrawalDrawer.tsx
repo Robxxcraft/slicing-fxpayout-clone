@@ -42,7 +42,7 @@ const UserWithdrawalDrawer = ({
   return (
     <div className="py-5 w-full rounded-xl border border-[#777777] bg-white">
       <div className="px-4 pb-4 flex items-center justify-between border-b border-[#EAEAEA]">
-        <p className="uppercase text-base font-bold 2xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
+        <p className="uppercase text-base font-bold 3xl:text-xl bg-linear-to-t from-dark-primary to-primary bg-clip-text text-transparent">
           USER information
         </p>
       </div>
@@ -61,15 +61,15 @@ const UserWithdrawalDrawer = ({
           }
           return (
           <div key={item.title} className="space-y-2">
-            <p className="text-sm 2xl:text-lg font-medium text-black/60">{item.title}</p>
+            <p className="text-sm 3xl:text-lg font-medium text-black/60">{item.title}</p>
             {item.title === "Alamat Email" ? 
               <div className="flex items-center gap-2">
-                <p className="text-sm 2xl:text-xl font-medium text-black">{item.content}</p>
+                <p className="text-sm 3xl:text-xl font-medium text-black">{item.content}</p>
                 <img src="/check.svg" alt="check icon"
-                  className="mt-px scale-80 2xl:scale-100"
+                  className="mt-px scale-80 3xl:scale-100"
                 />
               </div>
-            : <p className="text-sm 2xl:text-xl font-medium text-black">{item.content}</p>
+            : <p className="text-sm 3xl:text-xl font-medium text-black">{item.content}</p>
             }
           </div>
         )})}

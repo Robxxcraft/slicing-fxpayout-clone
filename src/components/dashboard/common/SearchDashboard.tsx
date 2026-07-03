@@ -13,9 +13,9 @@ const SearchDashboard = ({
   containerCL?: string
 }) => {
   return (
-    <div className={`h-9 2xl:h-12 py-2 md:py-0 px-2 2xl:px-4 flex flex-1 items-center gap-2 2xl:gap-4 w-full bg-white border border-[#D2CEE1] rounded-lg ${containerCL}`}>
+    <div className={`h-9 3xl:h-12 py-2 md:py-0 px-2 3xl:px-4 flex flex-1 items-center gap-2 3xl:gap-4 w-full bg-white border border-[#D2CEE1] rounded-lg ${containerCL}`}>
       <label htmlFor="search" className="cursor-pointer">
-        <CiSearch className="text-2xl 2xl:text-3xl text-[#7E7E7E]" />
+        <CiSearch className="text-2xl 3xl:text-3xl text-[#7E7E7E]" />
       </label>
       <input
         id="search"
@@ -25,7 +25,7 @@ const SearchDashboard = ({
         onChange={onQuery}
         type="text"
         autoComplete="off"
-        className="w-full text-base 2xl:text-xl placeholder:text-[rgba(0,0,0,0.6)] focus:outline-0 placeholder:text-ellipsis placeholder:line-clamp-1"
+        className="w-full text-base 3xl:text-xl placeholder:text-[rgba(0,0,0,0.6)] focus:outline-0 placeholder:text-ellipsis placeholder:line-clamp-1"
       />
     </div>
   )

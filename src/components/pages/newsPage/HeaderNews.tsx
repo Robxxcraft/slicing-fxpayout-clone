@@ -13,7 +13,7 @@ const HeaderNews = () => {
   };
 
   return (
-    <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-[120px] lg:pt-[150px] 2xl:pt-[200px]">
+    <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 pt-[120px] lg:pt-[150px] 3xl:pt-[200px]">
       <div className="flex justify-between items-start lg:items-end flex-col lg:flex-row w-full">
         <div>
           <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
@@ -23,11 +23,11 @@ const HeaderNews = () => {
               NEWS
             </span>
           </div>  
-          <h1 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[100%]">
+          <h1 className="my-4 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[100%]">
             FXPayout News
           </h1>
         </div>
-        <div className="py-4 2xl:py-6 px-5 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-full lg:max-w-[440px]">
+        <div className="py-4 3xl:py-6 px-5 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-full lg:max-w-[440px]">
           <label htmlFor="search" className="cursor-pointer">
             <CiSearch className="text-2xl text-[#7E7E7E]" />
           </label>
@@ -48,7 +48,7 @@ const HeaderNews = () => {
           <Link 
             key={item.code}
             to={item.url}
-            className="text-sm md:text-lg lg:text-base 2xl:text-xl hover:underline text-nowrap"
+            className="text-sm md:text-lg lg:text-base 3xl:text-xl hover:underline text-nowrap"
           >
             {t(`newspage:category.${item.code}`)}
           </Link>

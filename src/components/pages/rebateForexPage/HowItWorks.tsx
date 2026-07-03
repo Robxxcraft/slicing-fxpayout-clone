@@ -54,11 +54,11 @@ const HowItWorks = ({
       ref={el => {sectionsRef.current["how-it-works"] = el}}
       className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-9 border-t xl:border-0 border-[#E5E5E5]"
     >
-      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 2xl:pe-56">
-        <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
+      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 3xl:pe-56">
+        <h2 className="font-medium text-2xl md:text-[2rem] 3xl:text-[2.5rem]">
           {t("claimrebatepage:howWorks.title")}
         </h2>
-        <p className="mt-6 text-xl 2xl:text-2xl leading-[169.2%]">
+        <p className="mt-6 text-xl 3xl:text-2xl leading-[169.2%]">
           {t("claimrebatepage:howWorks.paragraph")}
         </p>
         <img 
@@ -79,7 +79,7 @@ const HowItWorks = ({
               <div key={idx} className="relative flex flex-col items-center">
                 <div className="py-4 xl:py-6 px-4 xl:px-5 bg-my-light-blue w-fit rounded-lg ">
                   <img src={workflow.icon} alt={workflow.altIcon} 
-                    className="size-12 md:size-14 xl:size-16sche 2xl:size-20 object-contain"/>
+                    className="size-12 md:size-14 xl:size-16sche 3xl:size-20 object-contain"/>
                 </div>
                 {idx !== 2 &&
                   <div 
@@ -92,10 +92,10 @@ const HowItWorks = ({
                       className="mt-3 rotate-90 md:ltr:rotate-0 md:rtl:rotate-180 -z-1 lg:z-0 h-3"/>
                   </div>
                 }
-                <h3 className="mt-4 text-xl 2xl:text-2xl font-semibold">
+                <h3 className="mt-4 text-xl 3xl:text-2xl font-semibold">
                   {t(`${workflow.keyTranslate}.title`)}
                 </h3>
-                <p className="relative mt-4 p-6 bg-my-light-blue rounded-2xl border border-[#425DE8]/20 text-base 2xl:text-xl text-center leading-[142%]">
+                <p className="relative mt-4 p-6 bg-my-light-blue rounded-2xl border border-[#425DE8]/20 text-base 3xl:text-xl text-center leading-[142%]">
                   {t(`${workflow.keyTranslate}.paragraph`)}
                 </p>
               </div>

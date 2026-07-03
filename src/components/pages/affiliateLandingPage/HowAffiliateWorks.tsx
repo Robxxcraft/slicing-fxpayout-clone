@@ -51,7 +51,7 @@ const HowAffiliateWorks = () => {
   const key = "affiliatelandingpage:howaffiliateworks";
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-14 xl:pt-[120px]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-14 xl:pt-[120px]">
       <div className="flex flex-col items-center text-center">
         <BadgeSection
           icon={
@@ -60,7 +60,7 @@ const HowAffiliateWorks = () => {
         }>
           {t(`${key}.badge`)}
         </BadgeSection>
-        <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
+        <h2 className="my-4 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]">
           {t(`${key}.title`)}
         </h2>
         <p className="text-base md:text-xl leading-[160%]">

@@ -76,12 +76,12 @@ const FloatingStatusSelection = ({
             exit={{ scaleY: 0, opacity: 0 }}
             transition={{ duration: 0.15 }}
             className={`absolute bottom-[calc(100%+4px)] left-1/2 -translate-x-1/2 origin-bottom`}>
-            <div className={`p-2 h-full border border-[#DDDDDD] bg-white w-[200px] 2xl:w-60 rounded-lg shadow-sm`}>
+            <div className={`p-2 h-full border border-[#DDDDDD] bg-white w-[200px] 3xl:w-60 rounded-lg shadow-sm`}>
               {objectsInput.map((item) => (
                 <p 
                   key={item.key}
                   onClick={() => handleChange(item.key)}
-                  className="p-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md  cursor-pointer">
+                  className="p-2 py-2 w-full text-base 3xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md  cursor-pointer">
                   {item.value}
                 </p>
               ))}

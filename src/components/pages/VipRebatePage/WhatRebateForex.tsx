@@ -30,7 +30,7 @@ const WhatRebateForex = () => {
   const key = "viprebatepage:whatrebateforex";
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-15 xl:pt-[120px]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-15 xl:pt-[120px]">
       <div className="flex flex-col-reverse xl:flex-row items-center justify-between gap-6 md:gap-10">
 
         <div className="space-y-4 flex flex-col items-start">
@@ -40,10 +40,10 @@ const WhatRebateForex = () => {
           }>
             {t(`${key}.badge`)}
           </BadgeSection>
-          <h1 className="text-start text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
+          <h1 className="text-start text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]">
             {t(`${key}.title`)}
           </h1>
-          <p className="text-start text-base md:text-xl 2xl:text-2xl font-medium text-black/80 leading-[160%]">
+          <p className="text-start text-base md:text-xl 3xl:text-2xl font-medium text-black/80 leading-[160%]">
             {t(`${key}.paragraphs.0`)} 
             <br />
             <br />

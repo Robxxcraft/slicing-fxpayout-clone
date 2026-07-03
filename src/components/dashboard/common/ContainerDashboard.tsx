@@ -69,7 +69,7 @@ const ContainerDashboard = () => {
         <AsideDashboard onLogout={handleLogoutUser} />
         {/* Mobile Aside/Nav */}
         <MobileNavDashboard onLogout={handleLogoutUser} showMobileNav={showMobileNav} setShowMobileNav={setShowMobileNav} />
-        <div className="mt-16 2xl:mt-[90px] relative flex-1 flex flex-col min-h-[calc(100vh-80px)] w-full overflow-x-auto">
+        <div className="mt-16 3xl:mt-[90px] relative flex-1 flex flex-col min-h-[calc(100vh-80px)] w-full overflow-x-auto">
           {<Outlet />}
         </div>
       </div>

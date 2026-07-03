@@ -25,16 +25,16 @@ const BrokerUserDrawer = ({
       {isLoading ? 
         <div className="h-3 w-full bg-gray-300 rounded-full"></div>  
       :
-        <p className="text-base 2xl:text-xl font-bold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+        <p className="text-base 3xl:text-xl font-bold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
           Active account: {brokers.length - totalUnverified}
         </p>
       }
       {!isLoading && (totalUnverified > 0 || brokers.length === 0) &&
-        <div className="mt-4 px-4 py-2 2xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
-          <span className="flex shrink-0 items-center justify-center size-5 2xl:size-7 border border-[#BE5409] rounded-full">
-            <TiInfoLarge className="text-sm 2xl:text-lg text-[#BE5409]" />
+        <div className="mt-4 px-4 py-2 3xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
+          <span className="flex shrink-0 items-center justify-center size-5 3xl:size-7 border border-[#BE5409] rounded-full">
+            <TiInfoLarge className="text-sm 3xl:text-lg text-[#BE5409]" />
           </span>
-          <p className="text-sm 2xl:text-lg text-[#BE5409]">
+          <p className="text-sm 3xl:text-lg text-[#BE5409]">
             {totalUnverified > 0 ? `Terdapat ${totalUnverified} akun yang memerlukan verifikasi.` :
               brokers.length === 0 ? "Pengguna belum menghubungkan akun trader." : ""}
           </p>
@@ -59,16 +59,16 @@ const BrokerUserDrawer = ({
           <div className="p-4 flex items-center justify-between gap-4 rounded-xl w-full border border-[#DDDDDD]">
             <div className="space-y-3">
               <div className="flex items-center gap-4">
-                <p className="font-medium text-base 2xl:text-xl max-w-[80%] truncate">
+                <p className="font-medium text-base 3xl:text-xl max-w-[80%] truncate">
                   {broker.account_number}
                 </p>
                 <div className="px-3 py-1 rounded-sm border border-primary">
-                  <p className="uppercase text-sm 2xl:text-lg text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+                  <p className="uppercase text-sm 3xl:text-lg text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
                     {broker.platform}
                   </p>
                 </div>
               </div>
-              <p className="text-sm 2xl:text-lg font-bold">
+              <p className="text-sm 3xl:text-lg font-bold">
                 Broker: {" "}
                 <span className="font-medium text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
                   {broker.name}

@@ -7,9 +7,9 @@ const BenefitAffiliateSection = () => {
   const { t } = useTranslation(["common", "affiliatelandingpage"]);
   const key = "affiliatelandingpage:benefitaffiliatesection";
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-14 xl:pt-[120px]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-14 xl:pt-[120px]">
       <div className="flex flex-col-reverse xl:flex-row items-center gap-6 md:gap-10">
-        <div className="relative px-3 md:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-8 pb-40 md:pb-70 lg:pb-64 2xl:pb-80 inline-flex shrink-0 gap-3 md:gap-7 w-full lg:w-fit bg-my-light-blue/40 rounded-[10px] md:rounded-[20px] overflow-hidden">
+        <div className="relative px-3 md:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-8 pb-40 md:pb-70 lg:pb-64 3xl:pb-80 inline-flex shrink-0 gap-3 md:gap-7 w-full lg:w-fit bg-my-light-blue/40 rounded-[10px] md:rounded-[20px] overflow-hidden">
           <div className="w-1/2 lg:w-fit">
             {/* LOGO */}
             <div className="px-5 md:px-10 py-3 md:py-6 bg-white w-fit rounded-md md:rounded-xl shadow-[6px_22px_55.5px_0_rgba(0,0,0,0.18)]">
@@ -70,7 +70,7 @@ const BenefitAffiliateSection = () => {
           }>
             {t(`${key}.badge`)}
           </BadgeSection>
-          <h2 className="text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
+          <h2 className="text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]">
             {t(`${key}.title`)}
           </h2>
           <p className="text-base md:text-xl leading-[160%] max-w-5xl">

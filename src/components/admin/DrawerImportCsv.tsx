@@ -102,7 +102,7 @@ const DrawerImportCsv = ({
   }
 
   return (
-    <div className="z-100 fixed py-5 top-20 right-0 max-w-[640px] 2xl:max-w-[720px] w-full h-[calc(100vh-80px)] border-t border-s border-[#D2CEE1] bg-white">
+    <div className="z-100 fixed py-5 top-20 right-0 max-w-[640px] 3xl:max-w-[720px] w-full h-[calc(100vh-80px)] border-t border-s border-[#D2CEE1] bg-white">
       <div className="px-5 pb-2 relative flex items-center justify-between border-b border-[#D2CEE1]">
         <h2 className="text-xl font-medium">
           Import CSV/Excel
@@ -115,7 +115,7 @@ const DrawerImportCsv = ({
           className="text-2xl cursor-pointer" />
       </div>
       <div className="pt-2 pb-4 px-5 flex flex-col gap-5 w-full h-[calc(100%-80px)] overflow-y-auto overflow-x-hidden">
-        <p className="text-base 2xl:text-xl text-black/80">
+        <p className="text-base 3xl:text-xl text-black/80">
           Pastikan penamaan kolom sudah sesuai dengan sistem. Download 
           <a href="/file/template-validation-data.csv" className="underline" download="Template_Validation_Data.csv"> template file CSV</a>.
         </p>

@@ -28,7 +28,7 @@ const TablePendingWithdrawal = ({
             className={`
               ${cellIndex === CONFIG_HEADERS.length - 1 ? "px-0! pr-2! pl-8! text-right!" : "text-left!"}
               ${cellIndex === 0 ? "px-0! pl-2! pr-8!":""}
-              py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg! select-none
+              py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg! select-none
             `}
           >
             {headerEl.header}

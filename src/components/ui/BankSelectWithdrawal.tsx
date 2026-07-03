@@ -62,7 +62,7 @@ const BankSelectWithdrawal = ({
 
   return (
     <div ref={dropdownRef} className={`relative select-none w-full`}>
-      <p className="mb-3 text-base 2xl:text-xl font-medium text-[#344054]">
+      <p className="mb-3 text-base 3xl:text-xl font-medium text-[#344054]">
         Metode Penarikan
       </p>
       <div
@@ -73,7 +73,7 @@ const BankSelectWithdrawal = ({
           }
         }}
         className={` ${isLoading ? "bg-[#F5F5F5] cursor-not-allowed" : "bg-white cursor-pointer"}
-        py-4 2xl:py-6 px-4 flex items-center justify-between gap-2 w-full border border-[#CED4DA] rounded-md focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] hover:bg-[#F5F5F5] transition-[background] duration-300
+        py-4 3xl:py-6 px-4 flex items-center justify-between gap-2 w-full border border-[#CED4DA] rounded-md focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] hover:bg-[#F5F5F5] transition-[background] duration-300
       `}>
         {loadData ?
           <>
@@ -82,7 +82,7 @@ const BankSelectWithdrawal = ({
                 alt="Method Icon" 
                 className="scale-90"
               />
-              <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+              <p className="text-base 3xl:text-xl text-black/80 text-nowrap">
                 {"<Mengambil data wallet>"}
               </p>
             </div>
@@ -99,7 +99,7 @@ const BankSelectWithdrawal = ({
               } alt="Method Icon" 
                 className={`${selectedMethod.method === "bank" ? "scale-90" : "size-8"}`}
               />
-              <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+              <p className="text-base 3xl:text-xl text-black/80 text-nowrap">
                 {loadData ? "<Pilih Metode>"
                 : selectedMethod.method === "crypto" ?
                     `Crypto •••• ${showLastFourWalletAddress(selectedMethod.data.accountNumber)}` :
@@ -118,7 +118,7 @@ const BankSelectWithdrawal = ({
                 alt="Method Icon" 
                 className="scale-90"
               />
-              <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+              <p className="text-base 3xl:text-xl text-black/80 text-nowrap">
                 {"<Tidak ditemukan data wallet>"}
               </p>
             </div>
@@ -129,7 +129,7 @@ const BankSelectWithdrawal = ({
         }
       </div>
       {loadData && 
-        <p className="mt-2 text-sm 2xl:text-lg text-black/60">Sedang memuat data bank...</p>
+        <p className="mt-2 text-sm 3xl:text-lg text-black/60">Sedang memuat data bank...</p>
       }
       <AnimatePresence>
         {open &&
@@ -151,10 +151,10 @@ const BankSelectWithdrawal = ({
                     <img src="/bnb-icon.svg" alt="BNB Icon" 
                       className="size-8" />
                     <div>
-                      <p className="text-base 2xl:text-xl text-black/80 group-hover:text-primary font-medium">
+                      <p className="text-base 3xl:text-xl text-black/80 group-hover:text-primary font-medium">
                         •••• {showLastFourWalletAddress(item.data.accountNumber)}
                       </p>
-                      <p className="text-sm 2xl:text-lg text-black/60 font-medium">
+                      <p className="text-sm 3xl:text-lg text-black/60 font-medium">
                         Crypto Method
                       </p>
                     </div>
@@ -170,11 +170,11 @@ const BankSelectWithdrawal = ({
                 <img src="/bank-icon.svg" alt="Bank Icon" 
                   className="scale-90" />
                 <div>
-                  <p className="text-base 2xl:text-xl text-black/80 group-hover:text-primary font-medium">
+                  <p className="text-base 3xl:text-xl text-black/80 group-hover:text-primary font-medium">
                     {item.data.bank} •••• {" "}
                     {showLastFourWalletAddress(item.data.accountNumber)}
                   </p>
-                  <p className="text-sm 2xl:text-lg text-black/60 font-medium">
+                  <p className="text-sm 3xl:text-lg text-black/60 font-medium">
                     Bank Method
                   </p>
                 </div>

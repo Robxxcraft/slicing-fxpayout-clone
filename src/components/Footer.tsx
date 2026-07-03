@@ -16,23 +16,23 @@ import { getLocalizedPath } from "@/helper/pathHelper";
 const Footer = () => {
   const { t, i18n } = useTranslation(["common"]);
   return (
-    <footer className="xl:mt-4 2xl:mt-5">
-      <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-11 xl:py-20 flex flex-col md:flex-row gap-6 md:gap-10 flex-wrap lg:flex-nowrap">
+    <footer className="xl:mt-4 3xl:mt-5">
+      <div className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-11 xl:py-20 flex flex-col md:flex-row gap-6 md:gap-10 flex-wrap lg:flex-nowrap">
         <div className="mb-2 md:mb-0 flex flex-2 basis-full lg:basis-0 flex-col">
           <div className="flex gap-2 items-center">
             <img
               src="/fxpayout-blue.svg"
               alt="logo fx payout"
-              className="rtl:order-1 ltr:order-0 w-5 lg:w-6 2xl:w-8"
+              className="rtl:order-1 ltr:order-0 w-5 lg:w-6 3xl:w-8"
             />
-            <span className="rtl:order-0 ltr:order-1 text-2xl 2xl:text-3xl font-semibold text-primary">
+            <span className="rtl:order-0 ltr:order-1 text-2xl 3xl:text-3xl font-semibold text-primary">
               FXPAYOUT
             </span>
           </div>
-          <p className="mt-2 lg:mt-3 2xl:mt-4 mb-4 2xl:mb-6 text-base 2xl:text-lg text-primary">
+          <p className="mt-2 lg:mt-3 3xl:mt-4 mb-4 3xl:mb-6 text-base 3xl:text-lg text-primary">
            {t("footer.paragraph")}
           </p>
-          <div className="flex items-center gap-4 2xl:gap-6">
+          <div className="flex items-center gap-4 3xl:gap-6">
             {socialMedia.map((item) => (
               <Link
                 to={item.url}
@@ -46,17 +46,17 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col flex-1">
-          <p className="mb-[26px] lg:mb-5 2xl:mb-6 text-xl md:text-2xl lg:text-lg 2xl:text-xl font-semibold text-primary">
+          <p className="mb-[26px] lg:mb-5 3xl:mb-6 text-xl md:text-2xl lg:text-lg 3xl:text-xl font-semibold text-primary">
             {t("footer.quickLink")}
           </p>
-          <div className="flex flex-col gap-3 2xl:gap-4">
+          <div className="flex flex-col gap-3 3xl:gap-4">
             {listNavigation.map(({ title, url, code, sublist }, index) => {
               if (title === "Klaim Rebate") {
                 return (
                   <Link
                     key={index}
                     to={getLocalizedPath("rebate-forex", i18n.language)}
-                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    className="text-base 3xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
                     {t(`navbar.${code}`)}
                   </Link>
                 )
@@ -66,7 +66,7 @@ const Footer = () => {
                   <Link
                     key={index}
                     to={getLocalizedPath(url, i18n.language)}
-                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    className="text-base 3xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
                     {t(`navbar.${code}`)}
                   </Link>
                 );
@@ -75,7 +75,7 @@ const Footer = () => {
                   <Link
                     key={idx}
                     to={getLocalizedPath(item.url, i18n.language)}
-                    className="text-base 2xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
+                    className="text-base 3xl:text-xl text-primary hover:font-semibold transition-all duration-300 ease-out">
                      {t(`navbar.subNav.${item.code}`)}
                   </Link>
                 ))
@@ -84,41 +84,41 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col flex-1 md:flex-2">
-          <p className="mb-[26px] lg:mb-5 2xl:mb-6 text-xl md:text-2xl lg:text-lg 2xl:text-xl font-semibold text-primary">
+          <p className="mb-[26px] lg:mb-5 3xl:mb-6 text-xl md:text-2xl lg:text-lg 3xl:text-xl font-semibold text-primary">
             {t("footer.contact")}
           </p>
-          <div className="flex flex-col gap-3 2xl:gap-4">
-            <div className="flex gap-4 2xl:gap-5">
-              <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
-                <FaMapMarkerAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
+          <div className="flex flex-col gap-3 3xl:gap-4">
+            <div className="flex gap-4 3xl:gap-5">
+              <div className="mt-px shrink-0 relative size-6 3xl:size-8 bg-primary rounded-full">
+                <FaMapMarkerAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-base 3xl:text-lg text-white" />
               </div>
-              <p className="w-fit text-base 2xl:text-[18px] text-primary">
+              <p className="w-fit text-base 3xl:text-[18px] text-primary">
                 1 Raffles Quay, #10-02 <br /> Singapore 048583
               </p>
             </div>
-            <div className="flex gap-4 2xl:gap-5">
-              <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
-                <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
+            <div className="flex gap-4 3xl:gap-5">
+              <div className="mt-px shrink-0 relative size-6 3xl:size-8 bg-primary rounded-full">
+                <FaPhoneAlt className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 3xl:text-base text-white" />
               </div>
               <div className="flex flex-col" dir="ltr">
-                <a href="https://wa.me/6282125597634" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
+                <a href="https://wa.me/6282125597634" target="_blank" className="w-fit text-base 3xl:text-[18px] text-primary underline">
                   +62 821-2559-7634
                 </a>
               </div>
             </div>
-            <div className="flex gap-4 2xl:gap-5">
-              <div className="mt-px shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
-                <FaWhatsapp className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 2xl:text-base text-white" />
+            <div className="flex gap-4 3xl:gap-5">
+              <div className="mt-px shrink-0 relative size-6 3xl:size-8 bg-primary rounded-full">
+                <FaWhatsapp className="absolute top-1/2 left-1/2 -translate-1/2 text-sm 3xl:text-base text-white" />
               </div>
-              <a href="https://whatsapp.com/channel/0029VbBwSxf8fewzsFqX8B2f" target="_blank" className="w-fit text-base 2xl:text-[18px] text-primary underline">
+              <a href="https://whatsapp.com/channel/0029VbBwSxf8fewzsFqX8B2f" target="_blank" className="w-fit text-base 3xl:text-[18px] text-primary underline">
                 WhatsApp Channel
               </a>
             </div>
-            <div className="flex gap-4 2xl:gap-5">
-              <div className="shrink-0 relative size-6 2xl:size-8 bg-primary rounded-full">
-                <IoMdMail className="absolute top-1/2 left-1/2 -translate-1/2 text-base 2xl:text-lg text-white" />
+            <div className="flex gap-4 3xl:gap-5">
+              <div className="shrink-0 relative size-6 3xl:size-8 bg-primary rounded-full">
+                <IoMdMail className="absolute top-1/2 left-1/2 -translate-1/2 text-base 3xl:text-lg text-white" />
               </div>
-              <p className="w-fit text-base 2xl:text-[18px] text-primary">
+              <p className="w-fit text-base 3xl:text-[18px] text-primary">
                 support@fxpayout.com
               </p>
             </div>

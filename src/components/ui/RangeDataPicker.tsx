@@ -48,18 +48,18 @@ const RangeDataPicker = ({
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} maxWCL="max-w-fit 2xl:max-w-fit">
+    <Modal isOpen={isOpen} onClose={onClose} maxWCL="max-w-fit 3xl:max-w-fit">
       <div className="flex justify-center">
 
         <div className="hidden md:block border-e border-[#DDDDDD] w-[200px]">
-          <p className="px-4 py-4 text-nowrap text-sm 2xl:text-base font-medium hover:bg-[#F5F5F5] text-primary border-b border-[#DDDDDD] cursor-pointer">
+          <p className="px-4 py-4 text-nowrap text-sm 3xl:text-base font-medium hover:bg-[#F5F5F5] text-primary border-b border-[#DDDDDD] cursor-pointer">
             Kostum
           </p>
           {presets.map((preset, index) => (
             <p 
               key={index}
               onClick={() => handleChangeRangePreset(preset.getValue)}
-              className="px-4 py-4 text-black/80 text-nowrap text-sm 2xl:text-base font-medium hover:bg-[#F5F5F5] hover:text-primary border-b border-[#DDDDDD] cursor-pointer"
+              className="px-4 py-4 text-black/80 text-nowrap text-sm 3xl:text-base font-medium hover:bg-[#F5F5F5] hover:text-primary border-b border-[#DDDDDD] cursor-pointer"
             >
               {preset.label}
             </p>
@@ -74,7 +74,7 @@ const RangeDataPicker = ({
                   ${isLoading ? "cursor-default" : "cursor-pointer"}
                 `}
               >
-                <p className="text-black/80 text-base 2xl:text-lg font-medium">
+                <p className="text-black/80 text-base 3xl:text-lg font-medium">
                   Batal
                 </p>
               </div>
@@ -93,7 +93,7 @@ const RangeDataPicker = ({
                 `}
               >
                 {isLoading && <Spinner h="h-5" />}
-                <p className="text-primary text-base 2xl:text-lg font-medium">
+                <p className="text-primary text-base 3xl:text-lg font-medium">
                   Terapkan
                 </p>
               </div>

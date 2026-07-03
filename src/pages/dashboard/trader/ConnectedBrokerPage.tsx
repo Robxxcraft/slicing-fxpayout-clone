@@ -137,21 +137,21 @@ const ConnectedBrokerPage = () => {
         {/* HEADER */}
         <HeaderConnectedBroker />
         {/* FILTER TABLE */}
-        <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
-          <div className="flex items-center flex-col md:flex-row justify-between gap-2 2xl:gap-3">
+        <div className="mt-3 md:mt-4 mb-4 3xl:mt-5 3xl:mb-5">
+          <div className="flex items-center flex-col md:flex-row justify-between gap-2 3xl:gap-3">
             <SearchDashboard 
               query={querySearch}
               onQuery={handleQueryBrokerUser}
               placeholder="Search..."
             />
-            <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+            <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
               <SelectDropdown 
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeStatus} 
                 objectInput={statusMap}       
                 disabled={isLoading}
-                wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-                inputCL="w-[200px]! 2xl:w-[240px]!"        
+                wrapperCL="w-full! md:w-[150px]! 3xl:w-[200px]!"             
+                inputCL="w-[200px]! 3xl:w-[240px]!"        
               />
               <Tooltip 
                 disabled={isLoading}
@@ -178,7 +178,7 @@ const ConnectedBrokerPage = () => {
         />
         {/* LOADING & 0 DATA TABLE */}
         {brokersUser.length === 0 && (initLoad || isLoading) &&
-          <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+          <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
             <Spinner />
           </div>
         }
@@ -187,7 +187,7 @@ const ConnectedBrokerPage = () => {
             {useFilter ?
               "Tidak ditemukan data broker yang sesuai dengan filter atau pencarian Anda."
             : 
-              <p className="text-black/80 text-base 2xl:text-xl">Belum ditemukan data broker yang terhubung. {" "}
+              <p className="text-black/80 text-base 3xl:text-xl">Belum ditemukan data broker yang terhubung. {" "}
                 <Link to={getLocalizedPath("trader/broker/connect", i18n.language)}
                   className="text-primary underline"
                 >Hubungkan broker.</Link>
@@ -197,7 +197,7 @@ const ConnectedBrokerPage = () => {
         }
 
         <div className="mt-4">
-          <p className="text-base 2xl:text-xl text-black/80">
+          <p className="text-base 3xl:text-xl text-black/80">
             {`Menampilkan 
             ${metaPage.pageIndex === 1 ? (brokersUser.length > 0 ? "1":"0") : metaPage.limit * (metaPage.pageIndex - 1)} 
             hingga  

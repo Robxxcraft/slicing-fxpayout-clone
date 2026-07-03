@@ -163,7 +163,7 @@ const ImportRebatePage = () => {
   const canNextStepFromOne = file || data.length !== 0;
   return (
     <WrapperDashboardComponent>
-      <section className="flex flex-col justify-between min-h-[calc(100vh-120px)] 2xl:min-h-[calc(100vh-170px)] h-full">
+      <section className="flex flex-col justify-between min-h-[calc(100vh-120px)] 3xl:min-h-[calc(100vh-170px)] h-full">
         <div>
           <div className="space-y-2.5">
             <TitleDashboard>
@@ -215,7 +215,7 @@ const ImportRebatePage = () => {
               iconPosition="left"
               disabled={isLoading}
               size="md"
-              className="px-0! 2xl:px-0! pr-6! 2xl:pr-8! pl-3! 2xl:pl-5! py-2! 2xl:py-3! rounded-lg!"
+              className="px-0! 3xl:px-0! pr-6! 3xl:pr-8! pl-3! 3xl:pl-5! py-2! 3xl:py-3! rounded-lg!"
             >
               {step === 2 && "Back"}
               {step === 3 && statusImport === "ERROR" && "Tinjau Ulang"}
@@ -231,7 +231,7 @@ const ImportRebatePage = () => {
               loading={isLoading}
               iconPosition="right"
               size="md"
-              className="ml-auto px-0! 2xl:px-0! pl-6! 2xl:pl-8! pr-3! 2xl:pr-5! py-2! 2xl:py-3! rounded-lg!"
+              className="ml-auto px-0! 3xl:px-0! pl-6! 3xl:pl-8! pr-3! 3xl:pr-5! py-2! 3xl:py-3! rounded-lg!"
             >
               {step === 1 && "Next"}
               {step === 2 && "Import"}

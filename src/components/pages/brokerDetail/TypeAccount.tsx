@@ -30,10 +30,10 @@ const TypeAccount = ({
   }, [accountDetail.length]);
 
   return (
-    <section id="account-type" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 bg-[#F9F9F9]">
+    <section id="account-type" className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 3xl:mt-16 py-8 md:py-10 3xl:py-14 px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 bg-[#F9F9F9]">
       <HeadingSection>{t("brokerdetailpage:accountType.title")}</HeadingSection>
       <SubHeadingSection>{t("brokerdetailpage:accountType.subtitle")}</SubHeadingSection>
-      <div className="mt-6 2xl:mt-8 flex flex-col gap-3 lg:gap-4 2xl:gap-6">
+      <div className="mt-6 3xl:mt-8 flex flex-col gap-3 lg:gap-4 3xl:gap-6">
         {gridCard.map((value, index) => {
           let gridClass;
           if (value.column === 3) {
@@ -43,7 +43,7 @@ const TypeAccount = ({
           } else {
             gridClass = "grid-cols-1";
           }
-          const containerClass = `grid ${gridClass} gap-3 lg:gap-4 2xl:gap-6`; 
+          const containerClass = `grid ${gridClass} gap-3 lg:gap-4 3xl:gap-6`; 
           const startIndex = index * 3;
           const lastIndex = startIndex + value.column;
           

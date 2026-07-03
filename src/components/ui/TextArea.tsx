@@ -37,7 +37,7 @@ const TextArea = ({
   const styleInput =`
     ${errorMessage === "" ? "border-[#D0D5DD]" : "border-red-500"} 
     ${icon !== undefined && altIcon !== undefined ? "pl-[54px]" : "pl-4"}
-    py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed resize-none
+    py-4 3xl:py-6 w-full bg-white text-base 3xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed resize-none
     ${inputClassName}
   `;
   return (
@@ -45,7 +45,7 @@ const TextArea = ({
       style={{ gap: gap === undefined ? "12px" : `${gap}px` }}>
       <label
         htmlFor={id}
-        className={`${labelClassName} text-base 2xl:text-xl font-medium text-[#344054]`}>
+        className={`${labelClassName} text-base 3xl:text-xl font-medium text-[#344054]`}>
         {label}
         {!required &&
           <span className="ml-1 text-base text-black/50">(opsional)</span>
@@ -73,12 +73,12 @@ const TextArea = ({
         </span>
       }
       {helperText !== undefined &&
-        <span className="-mt-1 text-sm 2xl:text-base text-black/50">
+        <span className="-mt-1 text-sm 3xl:text-base text-black/50">
           {helperText}
         </span>
       }
       {errorMessage === "" && helperText === undefined && placeholder !== undefined && isMobileLabel &&
-        <span className="inline-block md:hidden text-sm 2xl:text-base text-black/50">
+        <span className="inline-block md:hidden text-sm 3xl:text-base text-black/50">
           {placeholder}
         </span>
       }

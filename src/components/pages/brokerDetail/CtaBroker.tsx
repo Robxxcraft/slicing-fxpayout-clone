@@ -15,17 +15,17 @@ const CtaBroker = ({
 }) => {
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
-    <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-20">
-      <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
+    <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 pt-10 lg:pt-18 xl:pt-20">
+      <div className="relative py-10 xl:py-14 3xl:py-[72px] px-4 xl:px-10 flex flex-col items-center justify-center bg-primary rounded-3xl text-center overflow-hidden">
         <div className="z-11 w-full flex flex-col items-center">
-          <h2 className="text-2xl 2xl:text-[40px] font-bold text-white leading-[134%] max-w-full">
+          <h2 className="text-2xl 3xl:text-[40px] font-bold text-white leading-[134%] max-w-full">
             {t("brokerdetailpage:cta.title", { brokerName: name })}
           </h2>
-          <p className="mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620px]">
+          <p className="mt-4 text-base 3xl:text-xl text-white leading-[160%] max-w-[620px]">
             {t("brokerdetailpage:cta.paragraph", { brokerName: name })}
           </p>
           <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-3">
-            <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 2xl:text-2xl rtl:scale-x-[-1]" />} iconPosition="right">
+            <Button buttonType="link" urlTo='/broker' variant="primary-light" size="xl" icon={<IoArrowForward className="text-xl 3xl:text-2xl rtl:scale-x-[-1]" />} iconPosition="right">
               {t("brokerdetailpage:cta.registerFxpayout")}
             </Button>
             <Button 
@@ -35,7 +35,7 @@ const CtaBroker = ({
               target={websiteUrl.length === 1 ? "_blank" : undefined} 
               variant="outline-light" 
               size="xl" 
-              icon={<FaExternalLinkAlt className="text-base 2xl:text-xl rtl:scale-x-[-1]" />} 
+              icon={<FaExternalLinkAlt className="text-base 3xl:text-xl rtl:scale-x-[-1]" />} 
               iconPosition="right"
             >
               {t("brokerdetailpage:cta.visitWebsite")}

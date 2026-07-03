@@ -19,10 +19,10 @@ const PreviewFileXlsx = ({
           className="scale-90 md:scale-100 select-none"
         />
         <div className="space-y-2">
-          <p className="text-base 2xl:text-lg line-clamp-2 text-ellipsis">
+          <p className="text-base 3xl:text-lg line-clamp-2 text-ellipsis">
             {filname}
           </p>
-          <p className="text-sm 2xl:text-base">
+          <p className="text-sm 3xl:text-base">
             {getSizeFileFormat(size)}
           </p>
         </div>
@@ -32,7 +32,7 @@ const PreviewFileXlsx = ({
           onClick={onDeleteFile} 
           className="shrink-0 group p-2 h-fit aspect-square hover:bg-[#F5F5F5] rounded-xl transition-all duration-300 cursor-pointer">
           <IoCloseOutline 
-            className="text-2xl 2xl:text-3xl group-hover:text-my-red transition-all duration-300" />
+            className="text-2xl 3xl:text-3xl group-hover:text-my-red transition-all duration-300" />
         </div>
       }
     </div>
