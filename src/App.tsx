@@ -128,15 +128,6 @@ function App() {
     setIsDashboard(isMatch);
   }, [location.pathname]);
 
-  useEffect(() => {
-    ReactGA.initialize("G-FWNT67K53F");
-    ReactGA.send({ 
-      hitType: "pageview", 
-      page: location.pathname + location.search, 
-      title: document.title
-    });
-  }, [location.pathname, location.search]);
-
   if (initialization) {
     return null;
   }
