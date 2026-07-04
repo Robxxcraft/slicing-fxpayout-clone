@@ -34,61 +34,64 @@ const BrokerDetailPage = () => {
   }
 
   return (
-    <div className="font-inter">
+    <>
       {broker &&
         <title>
           {t("brokerdetailpage:helmet.title", { brokerName: broker.name, brokerEstimate: broker.rebateProgram[0].estimate })}
         </title>
       }
+      <meta name="description" content={t("brokerdetailpage:helmet.description")} />
+      <div className="font-inter">
 
-      <NavigationBar 
-        name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} 
-        openWebsiteModal={() => setShowModal(true)} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl}
-      />
-      
-      <main>
-        <HeaderBroker 
-          brokerId={broker.detailUrl} name={broker.name} ranking={broker.ranking} 
-          badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} 
-          description={broker.detailDescription} spesification={broker.specification} openWebsiteModal={() => setShowModal(true)} 
-          registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} 
+        <NavigationBar 
+          name={broker.name} ranking={broker.ranking} profileImage={broker.profileImage} 
+          openWebsiteModal={() => setShowModal(true)} registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl}
         />
         
-        <ProfileBroker brokerId={broker.detailUrl} profile={broker.profile}/>
+        <main>
+          <HeaderBroker 
+            brokerId={broker.detailUrl} name={broker.name} ranking={broker.ranking} 
+            badges={broker.badges} profileImage={broker.profileImage} overallScore={broker.overallScore} 
+            description={broker.detailDescription} spesification={broker.specification} openWebsiteModal={() => setShowModal(true)} 
+            registerUrl={broker.registerUrl} websiteUrl={broker.websiteUrl} 
+          />
+          
+          <ProfileBroker brokerId={broker.detailUrl} profile={broker.profile}/>
 
-        <Summary brokerId={broker.detailUrl} summaryBroker={broker.summary} />
+          <Summary brokerId={broker.detailUrl} summaryBroker={broker.summary} />
 
-        <TypeAccount brokerId={broker.detailUrl} accountDetail={broker.accountTypes} />
+          <TypeAccount brokerId={broker.detailUrl} accountDetail={broker.accountTypes} />
 
-        <Spread tradingSpread={broker.tradingSpreads} />
-        
-        <MainAdvantage brokerId={broker.detailUrl} keyAdvantages={broker.keyAdvantages} />
+          <Spread tradingSpread={broker.tradingSpreads} />
+          
+          <MainAdvantage brokerId={broker.detailUrl} keyAdvantages={broker.keyAdvantages} />
 
-        <DepositWIthdraw brokerId={broker.detailUrl} paymentMethods={broker.depositWithdrawal.paymentMethods} platforms={broker.depositWithdrawal.platforms}/>
+          <DepositWIthdraw brokerId={broker.detailUrl} paymentMethods={broker.depositWithdrawal.paymentMethods} platforms={broker.depositWithdrawal.platforms}/>
 
-        <RebateProgram detailData={broker.rebateProgram} />
+          <RebateProgram detailData={broker.rebateProgram} />
 
-        <ProsCons brokerId={broker.detailUrl} advantages={broker.advantages} disadvantages={broker.disadvantages} />
-        
-        <CommunityRating brokerId={broker.detailUrl} name={broker.name} profileImage={broker.profileImage} ranking={broker.ranking} communityRating={broker.communityRating} />
+          <ProsCons brokerId={broker.detailUrl} advantages={broker.advantages} disadvantages={broker.disadvantages} />
+          
+          <CommunityRating brokerId={broker.detailUrl} name={broker.name} profileImage={broker.profileImage} ranking={broker.ranking} communityRating={broker.communityRating} />
 
-        <FaqBroker brokerId={broker.detailUrl} faq={broker.faq} />
+          <FaqBroker brokerId={broker.detailUrl} faq={broker.faq} />
 
-        <CtaBroker name={broker.name} openWebsiteModal={() => setShowModal(true)} websiteUrl={broker.websiteUrl} />
-      </main>
+          <CtaBroker name={broker.name} openWebsiteModal={() => setShowModal(true)} websiteUrl={broker.websiteUrl} />
+        </main>
 
-      <Footer />
+        <Footer />
 
-      {showModal && 
-        <ModalRegionsWebsite 
-          isVisible={showModal} 
-          handleClose={() => setShowModal(false)} 
-          brokerName={broker.name}
-          imageBroker={broker.profileImage}
-          websiteItems={broker.registerUrl}        
-        />
-      }
-    </div>
+        {showModal && 
+          <ModalRegionsWebsite 
+            isVisible={showModal} 
+            handleClose={() => setShowModal(false)} 
+            brokerName={broker.name}
+            imageBroker={broker.profileImage}
+            websiteItems={broker.registerUrl}        
+          />
+        }
+      </div>
+    </>
   );
 };
 

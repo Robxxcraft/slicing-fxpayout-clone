@@ -38,32 +38,35 @@ const RebateForex = () => {
   useLockBodyScroll(openSidebar);
 
   return (
-    <div className="font-inter">
+    <>
       <title>{t("claimrebatepage:helmet.title")}</title>
-      <Navbar active="Klaim Rebate" />
-      <div className="pt-20 lg:pt-[150px] 3xl:pt-[200px] flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 xl:gap-14 3xl:gap-20">
-        <AsideSection 
-          asideBarRef={asideBarRef} 
-          setOpenSidebar={setOpenSidebar} 
-          openSidebar={openSidebar} 
-          activeSection={activeSection} />
-          
-        <div className="w-full lg:w-[80%]">
-          <DefinitionSection sectionsRef={sectionsRef} />
-          <HowToRebate sectionsRef={sectionsRef} />
-          <HowItWorks sectionsRef={sectionsRef} />
-          <PaymentSection sectionsRef={sectionsRef} />
-          <ScheduleSection sectionsRef={sectionsRef} />
+      <meta name="description" content={t("claimrebatepage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="Klaim Rebate" />
+        <div className="pt-20 lg:pt-[150px] 3xl:pt-[200px] flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 xl:gap-14 3xl:gap-20">
+          <AsideSection 
+            asideBarRef={asideBarRef} 
+            setOpenSidebar={setOpenSidebar} 
+            openSidebar={openSidebar} 
+            activeSection={activeSection} />
+            
+          <div className="w-full lg:w-[80%]">
+            <DefinitionSection sectionsRef={sectionsRef} />
+            <HowToRebate sectionsRef={sectionsRef} />
+            <HowItWorks sectionsRef={sectionsRef} />
+            <PaymentSection sectionsRef={sectionsRef} />
+            <ScheduleSection sectionsRef={sectionsRef} />
+          </div>
         </div>
+        <CtaSection 
+          title={t("cta.title")}
+          paragraph={t("cta.paragraph")}
+          button={t("button.registerNow")}
+          urlButton={getLocalizedPath("register", i18n.language)}
+        />
+        <Footer />
       </div>
-      <CtaSection 
-        title={t("cta.title")}
-        paragraph={t("cta.paragraph")}
-        button={t("button.registerNow")}
-        urlButton={getLocalizedPath("register", i18n.language)}
-      />
-      <Footer />
-    </div>
+    </>
   );
 };
 

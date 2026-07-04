@@ -15,29 +15,32 @@ import { useTranslation } from "react-i18next";
 const VipRebatePage = () => {
   const { t, i18n } = useTranslation(["common", "viprebatepage"]);
   return (
-    <div className="font-inter">
+    <>
       <title>{t("viprebatepage:helmet.title")}</title>
-      <Navbar active="layanan" transparentBgTop />
-      <main>
-        <HeroSection />
-        <WhatRebateForex />
-        <LevelTraderSection />
-        <HowTraderWorks />
-        <div className="space-y-15 xl:space-y-[120px]">
-          <SecuritySection />
-          <RunningText variant="primary" />
-        </div>
-        <FaqSection />
-        <WarningForexSection />
-        <CtaSection 
-          title={t("cta_trader.title")}
-          paragraph={t("cta_trader.paragraph")}
-          button={t("button.registerNow")}
-          urlButton={getLocalizedPath("/register", i18n.language)}
-        />
-      </main>
-      <Footer />
-    </div>
+      <meta name="description" content={t("viprebatepage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="layanan" transparentBgTop />
+        <main>
+          <HeroSection />
+          <WhatRebateForex />
+          <LevelTraderSection />
+          <HowTraderWorks />
+          <div className="space-y-15 xl:space-y-[120px]">
+            <SecuritySection />
+            <RunningText variant="primary" />
+          </div>
+          <FaqSection />
+          <WarningForexSection />
+          <CtaSection 
+            title={t("cta_trader.title")}
+            paragraph={t("cta_trader.paragraph")}
+            button={t("button.registerNow")}
+            urlButton={getLocalizedPath("/register", i18n.language)}
+          />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
 

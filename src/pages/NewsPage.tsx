@@ -8,18 +8,20 @@ import MainNews from "@/components/pages/newsPage/MainNews";
 
 const NewsPage = () => {
   return (
-    <div className="font-inter">
+    <>
       <title>News</title>
-      <Navbar active="news" />
-      <main>
-        <HeaderNews />
-        <HeroNews />
-        <CategorySection />
-        <MainNews />
-        <SubscribeNews />
-      </main>
-      <Footer />
-    </div>
+      <div className="font-inter">
+        <Navbar active="news" />
+        <main>
+          <HeaderNews />
+          <HeroNews />
+          <CategorySection />
+          <MainNews />
+          <SubscribeNews />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
 

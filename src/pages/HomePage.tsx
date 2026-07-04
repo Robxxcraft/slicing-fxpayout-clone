@@ -20,33 +20,36 @@ import CtaRegisterBroker from "@/components/broker/CtaRegisterBroker";
 const HomePage = () => {
   const { t, i18n } = useTranslation(["common", "homepage"]);
   return (
-    <div className="font-inter">
+    <>
       <title>{t("homepage:helmet.title")}</title>
-      <Navbar active="home" transparentBgTop />
-      <main>
-        <HeroHome />
-        <ProblemSection />
-        <Profile />
-        <HowItWorks />
-        <Rewards />
-        <BrokerListSection />
-        <CtaRegisterBroker 
-          horizontal
-        />
-        <SecuritySection />
-        <Benefits />
-        <Reviews />
-        <RunningText variant="primary" />
-        <RiskSection />
-        <CtaSection 
-          title={t("cta_trader.title")}
-          paragraph={t("cta_trader.paragraph")}
-          button={t("button.registerNow")}
-          urlButton={getLocalizedPath("register", i18n.language)}
-        />
-      </main>
-      <Footer />
-    </div>
+      <meta name="description" content={t("homepage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="home" transparentBgTop />
+        <main>
+          <HeroHome />
+          <ProblemSection />
+          <Profile />
+          <HowItWorks />
+          <Rewards />
+          <BrokerListSection />
+          <CtaRegisterBroker 
+            horizontal
+          />
+          <SecuritySection />
+          <Benefits />
+          <Reviews />
+          <RunningText variant="primary" />
+          <RiskSection />
+          <CtaSection 
+            title={t("cta_trader.title")}
+            paragraph={t("cta_trader.paragraph")}
+            button={t("button.registerNow")}
+            urlButton={getLocalizedPath("register", i18n.language)}
+          />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

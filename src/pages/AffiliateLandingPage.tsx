@@ -18,32 +18,35 @@ import { useTranslation } from "react-i18next";
 const AffiliateLandingPage = () => {
   const { t, i18n } = useTranslation(["common", "affiliatelandingpage"]);
   return (
-    <div className="font-inter">
+    <>
       <title>{t("affiliatelandingpage:helmet.title")}</title>
-      <Navbar active="affiliate" transparentBgTop />
-      <main>
-        <HeroSection />
-        <CommissionSection />
-        <BenefitAffiliateSection />
-        <RevenueSection />
-        <AvailableBrokerSection />
-        <CommissionSystemSection />
-        <WhoCanJoinSection />
-        <HowAffiliateWorks />
-        <div className="space-y-15 xl:space-y-[120px]">
-          <SecuritySection info={t("affiliatelandingpage:securitysection.info")} />
-          <RunningText variant="primary" />
-        </div>
-      </main>
-      <FaqAffiliateSection />
-      <CtaSection 
-        title={t("affiliatelandingpage:ctasection.title")} 
-        paragraph={t("affiliatelandingpage:ctasection.paragraph")} 
-        button={t("button.registerNow")} 
-        urlButton={getLocalizedPath("/register", i18n.language)}
-      />
-      <Footer />
-    </div>
+      <meta name="description" content={t("affiliatelandingpage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="affiliate" transparentBgTop />
+        <main>
+          <HeroSection />
+          <CommissionSection />
+          <BenefitAffiliateSection />
+          <RevenueSection />
+          <AvailableBrokerSection />
+          <CommissionSystemSection />
+          <WhoCanJoinSection />
+          <HowAffiliateWorks />
+          <div className="space-y-15 xl:space-y-[120px]">
+            <SecuritySection info={t("affiliatelandingpage:securitysection.info")} />
+            <RunningText variant="primary" />
+          </div>
+        </main>
+        <FaqAffiliateSection />
+        <CtaSection 
+          title={t("affiliatelandingpage:ctasection.title")} 
+          paragraph={t("affiliatelandingpage:ctasection.paragraph")} 
+          button={t("button.registerNow")} 
+          urlButton={getLocalizedPath("/register", i18n.language)}
+        />
+        <Footer />
+      </div>
+    </>
   )
 }
 
