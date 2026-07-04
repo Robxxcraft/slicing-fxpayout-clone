@@ -10,25 +10,28 @@ const CalculatorPage = () => {
   const { t, i18n } = useTranslation(["common", "calculatorpage"]);
 
   return (
-    <div className="font-inter">
+    <>
       <title>{t("calculatorpage:helmet.title")}</title>
-      <Navbar active="kalkulator" />
-      <main>
-        <HeaderSection 
-          icon="/kalkulator-icon.svg" 
-          badge={t("calculatorpage:header.tag")} 
-          title={t("calculatorpage:header.title")} 
-          paragraph={t("calculatorpage:header.paragraph")} />
-        <CalculatorSection />
-        <CtaSection 
-          title={t("cta.title")}
-          paragraph={t("cta.paragraph")}
-          button={t("button.registerNow")}
-          urlButton={getLocalizedPath("register", i18n.language)}
-        />
-      </main>
-      <Footer />
-    </div>
+      <meta name="description" content={t("calculatorpage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="kalkulator" />
+        <main>
+          <HeaderSection 
+            icon="/kalkulator-icon.svg" 
+            badge={t("calculatorpage:header.tag")} 
+            title={t("calculatorpage:header.title")} 
+            paragraph={t("calculatorpage:header.paragraph")} />
+          <CalculatorSection />
+          <CtaSection 
+            title={t("cta.title")}
+            paragraph={t("cta.paragraph")}
+            button={t("button.registerNow")}
+            urlButton={getLocalizedPath("register", i18n.language)}
+          />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

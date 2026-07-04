@@ -10,28 +10,30 @@ const TransferAccount = () => {
   const { t, i18n } = useTranslation(["common", "transferpage"]);
 
   return (
-    <div className="font-inter">
+    <>
       <title>{t("transferpage:helmet.title")}</title>
-
-      <Navbar active="layanan" />
-      <main>
-        <div className="bg-[#F9F9F9] pb-10">
-          <HeaderSection 
-            icon="/transfer-ib.svg" 
-            badge={t("transferpage:header.tag")} 
-            title={t("transferpage:header.title")} 
-            paragraph={t("transferpage:header.paragraph")} />
-          <TransferForm />
-        </div>
-        <CtaSection 
-          title={t("cta.title")}
-          paragraph={t("cta.paragraph")}
-          button={t("button.registerNow")}
-          urlButton={getLocalizedPath("register", i18n.language)}
-        />
-      </main>
-      <Footer />
-    </div>
+      <meta name="description" content={t("transferpage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="layanan" />
+        <main>
+          <div className="bg-[#F9F9F9] pb-10">
+            <HeaderSection 
+              icon="/transfer-ib.svg" 
+              badge={t("transferpage:header.tag")} 
+              title={t("transferpage:header.title")} 
+              paragraph={t("transferpage:header.paragraph")} />
+            <TransferForm />
+          </div>
+          <CtaSection 
+            title={t("cta.title")}
+            paragraph={t("cta.paragraph")}
+            button={t("button.registerNow")}
+            urlButton={getLocalizedPath("register", i18n.language)}
+          />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

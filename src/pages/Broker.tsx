@@ -161,48 +161,51 @@ const Broker = () => {
   useLockBodyScroll(showFilter);
 
   return (
-    <div className="font-inter">
+    <>
       <title>{t("brokerpage:helmet.title")}</title>
-      <Navbar active="broker" />
-      <main>
-        <Header />
-        <FilterBroker 
-          query={query} 
-          onHandleSearch={handleSearch} 
-          totalBrokers={brokerPartners.length}
-          selectedCategory={selectedCategory}
-          onChangeCategory={handleChangeCategory}
-          selectedSort={selectedSort}
-          onChangeSort={handleChangeSort}
-          onShowFilter={() => setShowFilter(true)}
-        />
-        {brokerPartners.length === 0 ? 
-          <p className="mt-6 lg:mt-8 3xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 text-center text-black/80">
-            Broker not found
-          </p>
-        :
-          <BrokerList brokerPartners={brokerPartners} pathUrl="broker" />
-        }
-        {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
-        <CtaRegisterBroker />
-        <CtaSection 
-          title={t("cta_trader.title")}
-          paragraph={t("cta_trader.paragraph")}
-          button={t("button.registerNow")}
-          urlButton={getLocalizedPath("register", i18n.language)}
-        />
-      </main>
-      <Footer />
+      <meta name="description" content={t("brokerpage:helmet.description")} />
+      <div className="font-inter">
+        <Navbar active="broker" />
+        <main>
+          <Header />
+          <FilterBroker 
+            query={query} 
+            onHandleSearch={handleSearch} 
+            totalBrokers={brokerPartners.length}
+            selectedCategory={selectedCategory}
+            onChangeCategory={handleChangeCategory}
+            selectedSort={selectedSort}
+            onChangeSort={handleChangeSort}
+            onShowFilter={() => setShowFilter(true)}
+          />
+          {brokerPartners.length === 0 ? 
+            <p className="mt-6 lg:mt-8 3xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 text-center text-black/80">
+              Broker not found
+            </p>
+          :
+            <BrokerList brokerPartners={brokerPartners} pathUrl="broker" />
+          }
+          {showNotify && <NotifyBroker setShowNotify={setShowNotify} />}
+          <CtaRegisterBroker />
+          <CtaSection 
+            title={t("cta_trader.title")}
+            paragraph={t("cta_trader.paragraph")}
+            button={t("button.registerNow")}
+            urlButton={getLocalizedPath("register", i18n.language)}
+          />
+        </main>
+        <Footer />
 
-      <ModalFilterBroker 
-        isVisible={showFilter} 
-        handleClose={() => setShowFilter(false)}    
-        selectedRebate={selectedRebate}
-        selectedMinDeposit={selectedMinDeposit}
-        selectedPlatforms={selectedPlatforms}
-        onApplyChanges={handleApplyChanges}
-      />
-    </div>
+        <ModalFilterBroker 
+          isVisible={showFilter} 
+          handleClose={() => setShowFilter(false)}    
+          selectedRebate={selectedRebate}
+          selectedMinDeposit={selectedMinDeposit}
+          selectedPlatforms={selectedPlatforms}
+          onApplyChanges={handleApplyChanges}
+        />
+      </div>
+    </>
   );
 };
 
