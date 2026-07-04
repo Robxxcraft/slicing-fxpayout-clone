@@ -72,10 +72,10 @@ const categories = [
 const MainNews = () => {  
   const { t } = useTranslation(["newspage"]);
   return (
-    <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-15 2xl:pt-20">
+    <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-15 3xl:pt-20">
       <HotNews />
 
-      <div className="pt-10 md:pt-15 2xl:pt-20 flex flex-col xl:flex-row items-center justify-between gap-6 md:gap-10 lg:gap-20 w-full">
+      <div className="pt-10 md:pt-15 3xl:pt-20 flex flex-col xl:flex-row items-center justify-between gap-6 md:gap-10 lg:gap-20 w-full">
         <div className="flex flex-col">
           {plainNews.map((item, idx) => (
             <div key={idx} 
@@ -88,10 +88,10 @@ const MainNews = () => {
         </div>
         <Table className="mt-0! min-w-full xl:min-w-[30%]">
           <Table.Heading>
-            <Table.HeadingItem className="py-4! 2xl:py-6 text-nowrap text-lg! lg:text-base! 2xl:text-xl!">
+            <Table.HeadingItem className="py-4! 3xl:py-6 text-nowrap text-lg! lg:text-base! 3xl:text-xl!">
               {t(`newspage:main.category`)}
             </Table.HeadingItem>
-            <Table.HeadingItem className="py-4! 2xl:py-6 text-center! text-nowrap text-lg! lg:text-base! 2xl:text-xl!">
+            <Table.HeadingItem className="py-4! 3xl:py-6 text-center! text-nowrap text-lg! lg:text-base! 3xl:text-xl!">
               {t(`newspage:main.totalNews`)}
             </Table.HeadingItem>
           </Table.Heading>
@@ -99,13 +99,13 @@ const MainNews = () => {
           <Table.Body>
             {categories.map((row, rowIdx) => (
               <Table.Row key={rowIdx}>
-                <Table.Cell rowIndex={rowIdx} className="py-2! 2xl:py-4 text-lg! lg:text-base! 2xl:text-xl!">
+                <Table.Cell rowIndex={rowIdx} className="py-2! 3xl:py-4 text-lg! lg:text-base! 3xl:text-xl!">
                   {t(`newspage:category.${row.keyTranslate}`)}
                 </Table.Cell>
                 <Table.Cell rowIndex={rowIdx}>
                   <Link 
                     to="#" 
-                    className="flex items-center justify-center gap-2 text-lg! lg:text-base! 2xl:text-xl! text-primary text-nowrap hover:underline">
+                    className="flex items-center justify-center gap-2 text-lg! lg:text-base! 3xl:text-xl! text-primary text-nowrap hover:underline">
                     <span>{row.count}</span>
                     <FaArrowRight size={16} className="rtl:scale-x-[-1]" />
                   </Link>

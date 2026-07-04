@@ -24,10 +24,10 @@ const SuccessModal = ({
             className="size-32 md:size-40 object-contain"
           />
         </div>
-        <h3 className="text-xl md:text-2xl 2xl:text-[2rem] font-bold text-gray-900 leading-[180%]">
+        <h3 className="text-xl md:text-2xl 3xl:text-[2rem] font-bold text-gray-900 leading-[180%]">
           {title}
         </h3>
-        <p className="mb-8 text-base 2xl:text-xl text-gray-500 leading-[180%]">
+        <p className="mb-8 text-base 3xl:text-xl text-gray-500 leading-[180%]">
           {paragraph}
         </p>
         <Button 

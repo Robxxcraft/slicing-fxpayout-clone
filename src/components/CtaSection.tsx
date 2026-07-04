@@ -12,14 +12,14 @@ const CtaSection = ({
   urlButton: string;
 }) => {
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 lg:pt-18 xl:pt-28">
-      <div className="relative py-10 xl:py-14 2xl:py-[72px] px-4 xl:px-10 bg-primary rounded-3xl text-center overflow-hidden">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 lg:pt-18 xl:pt-28">
+      <div className="relative py-10 xl:py-14 3xl:py-[72px] px-4 xl:px-10 bg-primary rounded-3xl text-center overflow-hidden">
         <div className="z-20 relative flex flex-col items-center justify-center">
-          <h2 className="text-2xl 2xl:text-[40px] font-bold text-white leading-[134%] max-w-[620px] 2xl:max-w-[860px]">
+          <h2 className="text-2xl 3xl:text-[40px] font-bold text-white leading-[134%] max-w-[620px] 3xl:max-w-[860px]">
             {/* {t("cta.title")} */}
             {title}
           </h2>
-          <p className="mt-4 text-base 2xl:text-xl text-white leading-[160%] max-w-[620px] 2xl:max-w-[860px]">
+          <p className="mt-4 text-base 3xl:text-xl text-white leading-[160%] max-w-[620px] 3xl:max-w-[860px]">
             {paragraph}
           </p>
           <Button 

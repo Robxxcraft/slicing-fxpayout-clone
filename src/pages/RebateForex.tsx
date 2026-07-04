@@ -41,7 +41,7 @@ const RebateForex = () => {
     <div className="font-inter">
       <title>{t("claimrebatepage:helmet.title")}</title>
       <Navbar active="Klaim Rebate" />
-      <div className="pt-20 lg:pt-[150px] 2xl:pt-[200px] flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 xl:gap-14 2xl:gap-20">
+      <div className="pt-20 lg:pt-[150px] 3xl:pt-[200px] flex flex-col lg:flex-row items-stretch gap-6 md:gap-10 xl:gap-14 3xl:gap-20">
         <AsideSection 
           asideBarRef={asideBarRef} 
           setOpenSidebar={setOpenSidebar} 

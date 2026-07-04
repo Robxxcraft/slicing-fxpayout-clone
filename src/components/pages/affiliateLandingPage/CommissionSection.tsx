@@ -19,7 +19,7 @@ const CommissionSection = () => {
   const estimatedCommission = traders[0] * commissionPerTrader;
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-10 md:py-15 xl:py-[120px] bg-[#F9F9F9]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-10 md:py-15 xl:py-[120px] bg-[#F9F9F9]">
       <div className="flex flex-col items-center justify-center gap-4">
         <BadgeSection
           icon={
@@ -28,7 +28,7 @@ const CommissionSection = () => {
         }>
           {t(`${key}.badge`)}
         </BadgeSection>
-        <h2 className="text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%] text-center">
+        <h2 className="text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%] text-center">
           {t(`${key}.title`)}
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-5xl text-center">
@@ -57,10 +57,10 @@ const CommissionSection = () => {
 
         <div className="mt-6 pb-10 border-b border-black/20">
           <div className="flex justify-between items-center">
-            <p className="font-medium text-base md:text-2xl lg:text-xl 2xl:text-2xl text-[#344054] max-w-1/2">
+            <p className="font-medium text-base md:text-2xl lg:text-xl 3xl:text-2xl text-[#344054] max-w-1/2">
               {t(`${key}.total_refferal`)}
             </p>
-            <p className="font-bold text-base md:text-2xl lg:text-xl 2xl:text-2xl text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+            <p className="font-bold text-base md:text-2xl lg:text-xl 3xl:text-2xl text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
               {traders} {t("text.title_traders")}
             </p>
           </div>
@@ -121,7 +121,7 @@ const CommissionSection = () => {
           <div className="mt-3 relative">
             {traderMarks.map((mark, index) => {
               let style: React.CSSProperties = {};
-              let className = "absolute top-0 text-sm md:text-xl lg:text-base 2xl:text-xl text-[#344054] font-medium ";
+              let className = "absolute top-0 text-sm md:text-xl lg:text-base 3xl:text-xl text-[#344054] font-medium ";
 
               const min = traderMarks[0];
               const max = traderMarks[traderMarks.length - 1];
@@ -154,8 +154,8 @@ const CommissionSection = () => {
                 ${index === 1 ? "order-3 lg:order-2 px-0 lg:px-8 border-0 lg:border-x border-black/20":""}  
                 ${index === 2 ? "order-2 lg:order-3 ps-0 lg:ps-8 w-1/2 lg:w-fit":""}  
             `}>
-              <FaCircleCheck className="shrink-0 text-primary text-base lg:text-xl 2xl:text-2xl" />
-              <p className="text-base md:text-xl 2xl:text-2xl font-medium text-primary leading-[200%] text-center">
+              <FaCircleCheck className="shrink-0 text-primary text-base lg:text-xl 3xl:text-2xl" />
+              <p className="text-base md:text-xl 3xl:text-2xl font-medium text-primary leading-[200%] text-center">
                 {item}
               </p>
             </div>
@@ -166,9 +166,9 @@ const CommissionSection = () => {
           <p className="text-base md:text-xl font-medium">
             {t(`${key}.potential_commission`)}
           </p>
-          <p dir="ltr" className="my-3 text-[32px] md:text-[48px] 2xl:text-[64px] font-bold">
+          <p dir="ltr" className="my-3 text-[32px] md:text-[48px] 3xl:text-[64px] font-bold">
             ${formattingEmptyCurrency(estimatedCommission, 0)}
-            <span className="text-base md:text-2xl 2xl:text-[32px] font-semibold">
+            <span className="text-base md:text-2xl 3xl:text-[32px] font-semibold">
               / {t("text.month")}
             </span>
           </p>

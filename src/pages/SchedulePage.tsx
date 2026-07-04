@@ -42,7 +42,7 @@ const SchedulePage = () => {
           titleHighlight={broker.name.toUpperCase()}
           flipTitle={i18n.language === "en"}
           paragraph={t("schedulepage:header.paragraph", { brokerName: broker.name })} />
-        <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 mt-10 lg:mt-8 2xl:mt-10">
+        <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 mt-10 lg:mt-8 3xl:mt-10">
           <Table>
             <Table.Heading>
               <Table.HeadingItem>

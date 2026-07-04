@@ -161,23 +161,23 @@ const DrawerAffiliatorDetail = ({
     <DrawerContainer 
       isOpen={isOpen} 
       onClose={onCloseDrawer}
-      maxWCL="max-w-[460px] 2xl:max-w-[540px]"
+      maxWCL="max-w-[460px] 3xl:max-w-[540px]"
     >
-    <div className="primary-scrollbar py-5 h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)] border-t border-s border-[#D2CEE1] bg-white overflow-y-auto">
+    <div className="primary-scrollbar py-5 h-[calc(100dvh-64px)] 3xl:h-[calc(100dvh-90px)] border-t border-s border-[#D2CEE1] bg-white overflow-y-auto">
       <div className="px-5 space-y-8 ">
-        <div className="2xl:pb-4 relative">
+        <div className="3xl:pb-4 relative">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl 2xl:text-2xl font-semibold">
+            <h2 className="text-xl 3xl:text-2xl font-semibold">
               Affiliator Information
             </h2>
             <div
               onClick={onCloseDrawer} 
               className="p-2 aspect-square hover:bg-[#F5F5F5] rounded-xl transition-all duration-300 cursor-pointer">
               <IoCloseOutline 
-                className="text-2xl 2xl:text-3xl" />
+                className="text-2xl 3xl:text-3xl" />
             </div>
           </div>
-          <p className="mt-1 text-base 2xl:text-xl text-black/60 leading-[160%]">
+          <p className="mt-1 text-base 3xl:text-xl text-black/60 leading-[160%]">
             Dibuat pada {formattingFullDate(dataAffiliator.created_at)}
           </p>
         </div>

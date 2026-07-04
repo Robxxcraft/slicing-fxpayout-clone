@@ -6,7 +6,7 @@ const CommissionSystemSection = () => {
   const key = "affiliatelandingpage:commissionsystemsection";
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-15 xl:pt-[120px]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-15 xl:pt-[120px]">
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <BadgeSection
           icon={
@@ -15,7 +15,7 @@ const CommissionSystemSection = () => {
         }>
           {t(`${key}.badge`)}
         </BadgeSection>
-        <h2 className="text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%] text-center">
+        <h2 className="text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%] text-center">
           {t(`${key}.title`)}
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-5xl text-center">
@@ -132,7 +132,7 @@ const CommissionSystemSection = () => {
 
       <div className="mt-6 md:mt-10 py-8 md:py-10 lg:py-15 px-6 md:px-10 flex flex-col lg:flex-row justify-between items-center gap-6 bg-primary rounded-3xl">
         <div>
-          <h3 className="text-2xl md:text-3xl lg:text-[32px] 2xl:text-[40px] font-bold text-white leading-[132%]">
+          <h3 className="text-2xl md:text-3xl lg:text-[32px] 3xl:text-[40px] font-bold text-white leading-[132%]">
             {t(`${key}.card_simulation.title`)}
           </h3>
           <p className="mt-2 text-base md:text-xl text-white leading-[188%]">
@@ -163,7 +163,7 @@ const CommissionSystemSection = () => {
             {t(`${key}.affiliate_commission`)}
           </p>
           <div>
-            <p dir="ltr" className="text-[40px] md:text-[64px] lg:text-[56px] 2xl:text-[64px] font-semibold text-white">
+            <p dir="ltr" className="text-[40px] md:text-[64px] lg:text-[56px] 3xl:text-[64px] font-semibold text-white">
               $500
               <span className="text-xl leading-[135%]">
                  / {t("text.title_month")}

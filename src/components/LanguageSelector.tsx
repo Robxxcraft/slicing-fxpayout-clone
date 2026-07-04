@@ -45,11 +45,11 @@ const LanguageSelector = ({
           setOpen(!open)
         }}>
         <TbWorld className="text-xl text-white" />
-        <span className="text-white text-sm 2xl:text-base">
+        <span className="text-white text-sm 3xl:text-base">
           {selectedLanguage.code.toLocaleUpperCase()}
         </span>
         <FaChevronDown
-          className="text-sm 2xl:text-base text-white"
+          className="text-sm 3xl:text-base text-white"
           style={{
             transform: open ? "rotate(180deg)" : "rotate(0deg)",
             transition: "0.3s ease",
@@ -69,7 +69,7 @@ const LanguageSelector = ({
               alt={`flag-${lang.label}`}
               className="w-8"
             />
-            <span className="text-black text-sm 2xl:text-base">
+            <span className="text-black text-sm 3xl:text-base">
               {lang.label}
             </span>
           </button>
@@ -93,7 +93,7 @@ const LanguageSelector = ({
                 key={idx}
                 onClick={() => onChangeLanguage(lang)}
                 className="flex gap-2 items-center cursor-pointer hover:font-bold">
-                <span className="text-white text-base 2xl:text-xl">
+                <span className="text-white text-base 3xl:text-xl">
                   {lang.label}
                 </span>
               </button>

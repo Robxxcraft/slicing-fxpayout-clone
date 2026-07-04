@@ -37,7 +37,7 @@ const Reviews = () => {
   return (
     <>
       <section className="mt-14 xl:mt-[120px] py-14 xl:py-[120px] bg-[#F9F9F9]">
-        <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56">
+        <div className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4">
             <div className="flex flex-col items-start text-start">
               <BadgeSection
@@ -46,7 +46,7 @@ const Reviews = () => {
               }>
                 {t("homepage:reviews.tag")}
               </BadgeSection>
-              <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]">
+              <h2 className="my-4 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]">
                 {t("homepage:reviews.title")}
               </h2>
               <p className="text-base md:text-xl leading-[160%]">
@@ -93,7 +93,7 @@ const Reviews = () => {
             }}
             className="mt-6 lg:mt-8 xl:mt-10">
             {dataTestimonial.length === 0 ? 
-            <div className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 flex justify-center">
+            <div className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 flex justify-center">
               <p className="text-center text-black/80 max-w-3xl">
                 {t("homepage:reviews.emptyReview")}
               </p>
@@ -103,10 +103,10 @@ const Reviews = () => {
               <SwiperSlide
                 key={idx}
                 className={`${
-                  idx === 0 ? "ms-5 md:ms-10 xl:ms-24 2xl:ms-56" : "md:ms-4"
+                  idx === 0 ? "ms-5 md:ms-10 xl:ms-24 3xl:ms-56" : "md:ms-4"
                 } ${
-                  idx === dataTestimonial.length - 1 && "me-5 md:me-10 xl:me-24 2xl:me-56"
-                } relative p-[22px] lg:p-6 2xl:p-10 w-full! md:w-[400px]! lg:w-[560px]! 2xl:w-[660px]! h-full! bg-[#4160FB]/80 rounded-[20px]`}>
+                  idx === dataTestimonial.length - 1 && "me-5 md:me-10 xl:me-24 3xl:me-56"
+                } relative p-[22px] lg:p-6 3xl:p-10 w-full! md:w-[400px]! lg:w-[560px]! 3xl:w-[660px]! h-full! bg-[#4160FB]/80 rounded-[20px]`}>
                 <img
                   src="/quote.png"
                   alt="quote icon"
@@ -122,18 +122,18 @@ const Reviews = () => {
                         />
                       ))}
                     </div>
-                    <p className="mt-4 lg:mt-5 2xl:mt-6 text-base lg:text-[25px] 2xl:text-[32px] leading-[160%] text-white">
+                    <p className="mt-4 lg:mt-5 3xl:mt-6 text-base lg:text-[25px] 3xl:text-[32px] leading-[160%] text-white">
                       {testimonial.review}
                     </p>
                   </div>
-                  <div className="mt-4 lg:mt-5 2xl:mt-6 flex gap-2 lg:gap-4">
+                  <div className="mt-4 lg:mt-5 3xl:mt-6 flex gap-2 lg:gap-4">
                     <img
                       src={`https://ui-avatars.com/api/?name=${testimonial.name}&background=fff&color=4160FF&bold=true&font-size=0.4`}
                       alt={`Profil ${testimonial.name}`}
                       className="size-9 lg:size-[60px] rounded-full object-cover"
                     />
                     <div>
-                      <p className="text-base lg:text-[21px] 2xl:text-[26px] text-white -tracking-[2.5%]">
+                      <p className="text-base lg:text-[21px] 3xl:text-[26px] text-white -tracking-[2.5%]">
                         {testimonial.name}
                       </p>
                       <p className="text-sm lg:text-base text-white/60 -tracking-[2.5%]">

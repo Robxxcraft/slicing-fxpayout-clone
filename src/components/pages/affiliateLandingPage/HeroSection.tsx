@@ -25,7 +25,7 @@ const HeroSection = () => {
   ];
   
   return (
-    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-[120px] lg:pt-32 2xl:pt-40 pb-12 lg:pb-32 2xl:pb-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen md:min-h-fit">
+    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-[120px] lg:pt-32 3xl:pt-40 pb-12 lg:pb-32 3xl:pb-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen md:min-h-fit">
       {/* BACKGROUND ORNAMENT */}
       <div className="absolute -top-[60px] -left-[60px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
       <img 
@@ -39,9 +39,9 @@ const HeroSection = () => {
         src="/heroCircle.png"
         alt="hero circle"
         fetchPriority="high"
-        className="z-1 absolute scale-x-[-1] bottom-0 left-0 w-[320px] lg:w-[440px] 2xl:w-[480px] opacity-70 select-none pointer-events-none"
+        className="z-1 absolute scale-x-[-1] bottom-0 left-0 w-[320px] lg:w-[440px] 3xl:w-[480px] opacity-70 select-none pointer-events-none"
       />
-      <div className="hidden xl:block absolute left-10 2xl:left-20 top-40">
+      <div className="hidden xl:block absolute left-10 3xl:left-20 top-40">
         <SmallCardAffiliate 
           title={t(`${key}.small_card.title`)} 
           paragraph={"$1.254"} 
@@ -54,34 +54,34 @@ const HeroSection = () => {
           info={t("text.from_weeks_ago")}        
         />
       </div>
-      <div className="hidden xl:block absolute right-10 2xl:right-20 top-1/2 -translate-y-1/2">
+      <div className="hidden xl:block absolute right-10 3xl:right-20 top-1/2 -translate-y-1/2">
         <BigCardAffiliate />
       </div>
 
 
       {/* MAIN */}
       <div className="z-999 flex flex-col justify-center items-center gap-6 text-white text-center w-full">
-        <div className="flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-4 xl:gap-6 w-full max-w-full xl:max-w-[720px] 2xl:max-w-[980px]">
+        <div className="flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-4 xl:gap-6 w-full max-w-full xl:max-w-[720px] 3xl:max-w-[980px]">
           <BadgeHero 
             icon={
               <img src="/share-affiliate.svg" alt="Share Icon" 
-                className="scale-80 2xl:scale-100"
+                className="scale-80 3xl:scale-100"
               />
             }
           >
             {t(`${key}.badge`)}
           </BadgeHero>
-          <h1 className="font-wix-madefor-display font-bold text-[36px] md:text-[40px] xl:text-[48px] 2xl:text-[64px] leading-[120%]">
+          <h1 className="font-wix-madefor-display font-bold text-[36px] md:text-[40px] xl:text-[48px] 3xl:text-[64px] leading-[120%]">
             {t(`${key}.title`)}
           </h1>
-          <p className="text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
+          <p className="text-base md:text-xl 3xl:text-2xl font-medium text-light-gray leading-[200%]">
             {t(`${key}.paragraph`)}
           </p>
           <div className="hidden lg:flex items-center justify-center gap-8">
             {[t(`${key}.benefits.0`), t(`${key}.benefits.1`)].map((item, idx) => (
               <div key={idx} className="flex items-center gap-3">
-                <FaCircleCheck className="text-white text-base md:text-lg 2xl:text-2xl" />
-                <p className="text-base 2xl:text-2xl font-semibold text-white leading-[200%]">
+                <FaCircleCheck className="text-white text-base md:text-lg 3xl:text-2xl" />
+                <p className="text-base 3xl:text-2xl font-semibold text-white leading-[200%]">
                   {item}
                 </p>
               </div>
@@ -92,26 +92,26 @@ const HeroSection = () => {
             urlTo={`${getLocalizedPath("/register", i18n.language)}`}
             variant="light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t(`${key}.button`)}
           </Button>
         </div>
 
-        <div className="mt-6 md:mt-10 2xl:mt-20 flex justify-center flex-nowrap gap-y-5">
+        <div className="mt-6 md:mt-10 3xl:mt-20 flex justify-center flex-nowrap gap-y-5">
           {features.map((item, index) => (
             <div 
               key={index}
               className={`
-                ${index === 0 ? "me-2 md:me-10 2xl:me-20":""}
-                ${index === 1 ? "px-2 md:px-8 2xl:px-15 border-x border-white":""}
-                ${index === 2 ? "ms-2 md:ms-10 2xl:ms-20":""}
+                ${index === 0 ? "me-2 md:me-10 3xl:me-20":""}
+                ${index === 1 ? "px-2 md:px-8 3xl:px-15 border-x border-white":""}
+                ${index === 2 ? "ms-2 md:ms-10 3xl:ms-20":""}
               `}
             >
-              <p className="font-wix-madefor-display font-bold text-[28px] md:text-[40px] xl:text-[48px] 2xl:text-[64px] leading-[120%]">
+              <p className="font-wix-madefor-display font-bold text-[28px] md:text-[40px] xl:text-[48px] 3xl:text-[64px] leading-[120%]">
                 {item.skor}
               </p>
-              <p className="text-sm md:text-base 2xl:text-2xl font-medium text-light-gray leading-[200%]">
+              <p className="text-sm md:text-base 3xl:text-2xl font-medium text-light-gray leading-[200%]">
                 {t(`${item.keyTranslate}.title`)}
               </p>
             </div>

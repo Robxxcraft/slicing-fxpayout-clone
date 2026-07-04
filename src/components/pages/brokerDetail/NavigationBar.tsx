@@ -51,24 +51,24 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl, o
   return (
     <>
       <nav
-        className="z-999 lg:py-8 2xl:py-10 px-5 xl:px-24 2xl:px-56 w-full top-0 fixed lg:static h-full min-h-18 max-h-18 md:max-h-fit flex lg:block items-center bg-white shadow-[0_6px_126.7px_0_rgba(0,0,0,0.1)]">
+        className="z-999 lg:py-8 3xl:py-10 px-5 xl:px-24 3xl:px-56 w-full top-0 fixed lg:static h-full min-h-18 max-h-18 md:max-h-fit flex lg:block items-center bg-white shadow-[0_6px_126.7px_0_rgba(0,0,0,0.1)]">
         {/* ROW 1 */}
         <div className="py-5 lg:py-0 flex flex-col lg:flex-row gap-y-3 justify-between items-center w-full">
           <div className="flex justify-between items-center w-full lg:w-fit gap-x-3">
-            <div ref={containerRef} className="flex gap-3 lg:gap-5 2xl:gap-6 w-full overflow-hidden">
+            <div ref={containerRef} className="flex gap-3 lg:gap-5 3xl:gap-6 w-full overflow-hidden">
               <img
                 src={`/broker/${profileImage}`}
                 alt={`Logo ${name}`}
-                className="size-12 lg:size-16 2xl:size-[84px] rounded-lg lg:rounded-xl 2xl:rounded-[20px]"
+                className="size-12 lg:size-16 3xl:size-[84px] rounded-lg lg:rounded-xl 3xl:rounded-[20px]"
               />
               <div className="max-w-full overflow-hidden">
-                <p className="text-xl lg:text-[26px] 2xl:text-[36px] font-semibold text-black">{name}</p>
+                <p className="text-xl lg:text-[26px] 3xl:text-[36px] font-semibold text-black">{name}</p>
                 <div className={`${isOverflowing && "animate-marquee "} whitespace-nowrap inline-block`}>
-                  <p ref={textRef} className="inline-block text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80 text-nowrap">
+                  <p ref={textRef} className="inline-block text-sm lg:text-lg 3xl:text-2xl font-medium text-black/80 text-nowrap">
                     {fullRankingText}
                   </p>
                   {isOverflowing && 
-                    <p className="ps-1 inline-block text-sm lg:text-lg 2xl:text-2xl font-medium text-black/80">
+                    <p className="ps-1 inline-block text-sm lg:text-lg 3xl:text-2xl font-medium text-black/80">
                       {fullRankingText}
                     </p>
                   }
@@ -90,12 +90,12 @@ const NavigationBar = ({ name, ranking, profileImage, registerUrl, websiteUrl, o
 
         {/* ROW 2 */}
         {/* DESKTOP NAV */}
-        <div className="mt-5 2xl:mt-8 hidden lg:flex gap-8 2xl:gap-10">
+        <div className="mt-5 3xl:mt-8 hidden lg:flex gap-8 3xl:gap-10">
           {listNavigationBrokers.map(({ title, url, code }) => (
             <a
               href={url}
               key={title}
-              className="text-sm 2xl:text-xl text-black hover:font-medium">
+              className="text-sm 3xl:text-xl text-black hover:font-medium">
               {t(`brokerdetailpage:navbar.${code}`)}
             </a>
           ))}
@@ -167,7 +167,7 @@ const ButtonCta = ({
   return (
     <div className={`
       ${scrollY > 10 ? "lg:flex" : "md:flex"}
-       hidden gap-3 2xl:gap-4 w-full lg:w-fit
+       hidden gap-3 3xl:gap-4 w-full lg:w-fit
     `}>
       <Button 
         buttonType={registerUrl.length === 1 ? "link" : "button"}

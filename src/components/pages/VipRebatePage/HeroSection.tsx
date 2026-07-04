@@ -13,7 +13,7 @@ const HeroSection = () => {
   }) as string[];
   
   return (
-    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-[120px] lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen lg:min-h-fit">
+    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-[120px] lg:py-32 3xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen lg:min-h-fit">
       {/* BACKGROUND ORNAMENT */}
       <div className="absolute -top-[90px] -left-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
       <div className="hidden md:block absolute -top-[50px] -right-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <h1 className="font-wix-madefor-display font-bold text-[36px] md:text-[40px] xl:text-[52px] leading-[120%]">
             {t(`${key}.title`)}
           </h1>
-          <p className="text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
+          <p className="text-base md:text-xl 3xl:text-2xl font-medium text-light-gray leading-[200%]">
             {t(`${key}.paragraph`)}
           </p>
         </div>
@@ -48,8 +48,8 @@ const HeroSection = () => {
             <div key={index}
               className="flex items-center gap-3"
             >
-              <FaCircleCheck className="text-[#00E900] text-base md:text-xl 2xl:text-2xl" />
-              <p className="text-base md:text-xl 2xl:text-2xl font-semibold text-light-gray leading-[200%]">
+              <FaCircleCheck className="text-[#00E900] text-base md:text-xl 3xl:text-2xl" />
+              <p className="text-base md:text-xl 3xl:text-2xl font-semibold text-light-gray leading-[200%]">
                 {subtitle}
               </p>
             </div>
@@ -61,7 +61,7 @@ const HeroSection = () => {
             urlTo={`${getLocalizedPath("/register", i18n.language)}`}
             variant="light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t("button.registerNow")}
           </Button>
@@ -70,7 +70,7 @@ const HeroSection = () => {
             urlTo={`${getLocalizedPath("/broker", i18n.language)}`}
             variant="outline-light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t("button.see_list_broker")}
           </Button>

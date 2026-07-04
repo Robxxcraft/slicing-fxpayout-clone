@@ -277,14 +277,14 @@ const WithdrawalRequestManagement = () => {
         </TitleDashboard>
 
         {/* FILTER TABLE */}
-        <div className="my-4 flex flex-col justify-between items-center gap-2 2xl:gap-3">
-          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+        <div className="my-4 flex flex-col justify-between items-center gap-2 3xl:gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-2 3xl:gap-3 w-full">
             <SearchDashboard 
               query={globalFiltering} 
               onQuery={handleChangeGlobalFiltering} 
               placeholder={"Cari nama lengkap atau alamat penarikan/rekening/wallet"} />
             {tableInstance.getSelectedRowModel().flatRows.length === 1 && 
-              <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+              <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
                 {tableInstance.getSelectedRowModel().flatRows.length === 1 &&
                   <Tooltip 
                     fullMobile
@@ -299,7 +299,7 @@ const WithdrawalRequestManagement = () => {
               </div>
             }
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-2 2xl:gap-3 w-full">
+          <div className="flex flex-col md:flex-row items-center gap-2 3xl:gap-3 w-full">
             <DateRangeButton 
               openPopup={() => setShowPopupRange(true)} 
               isLoading={isLoading} 
@@ -307,14 +307,14 @@ const WithdrawalRequestManagement = () => {
               containerCL="w-full!"
               buttonCL="w-full!"
             />
-            <div className="flex items-center gap-2 2xl:gap-3 w-full md:w-fit">
+            <div className="flex items-center gap-2 3xl:gap-3 w-full md:w-fit">
               <SelectDropdown 
                 selectedInput={filterStatus} 
                 handleChangeInput={handleChangeFilterStatus} 
                 objectInput={statusMap}       
                 disabled={isLoading}
-                wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-                inputCL="w-[200px]! 2xl:w-[240px]!"        
+                wrapperCL="w-full! md:w-[150px]! 3xl:w-[200px]!"             
+                inputCL="w-[200px]! 3xl:w-[240px]!"        
               />
               <Tooltip 
                 disabled={isLoading}
@@ -340,7 +340,7 @@ const WithdrawalRequestManagement = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataWithdrawals.length === 0 && (initLoad || isLoading) &&
-            <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+            <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
               <Spinner />
             </div>
         }

@@ -6,10 +6,10 @@ type TableProps = {
 };
 
 const Table = ({ children, className, tableClass, isLoading }: TableProps) => {
-  const baseStyle = `primary-scrollbar mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl ${className}
+  const baseStyle = `primary-scrollbar mt-6 3xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl ${className}
     ${isLoading ? "opacity-70 select-none" : "opacity-100"}
   `;
-  const tableStyle = `table-auto w-full text-[#1D2433] text-base 2xl:text-xl ${tableClass}`;
+  const tableStyle = `table-auto w-full text-[#1D2433] text-base 3xl:text-xl ${tableClass}`;
   return (
     <div className={baseStyle}>
       <table className={tableStyle}>

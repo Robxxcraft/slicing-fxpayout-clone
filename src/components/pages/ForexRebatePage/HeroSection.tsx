@@ -9,7 +9,7 @@ const HeroSection = () => {
   const key = "forexrebatepage:herosection";
 
   return (
-    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-10 lg:py-32 2xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen lg:min-h-fit">
+    <header className="relative bg-primary px-5 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-10 lg:py-32 3xl:py-40 flex flex-col lg:flex-row gap-y-10 gap-4 xl:gap-8 items-center justify-between overflow-hidden min-h-screen lg:min-h-fit">
       {/* BACKGROUND ORNAMENT */}
       <div className="absolute -top-[90px] -left-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
       <div className="hidden md:block absolute -top-[50px] -right-[90px] bg-[#ABF3DB] size-80 rounded-full blur-[120px] opacity-80"></div>
@@ -31,10 +31,10 @@ const HeroSection = () => {
         >
           {t(`${key}.badge`)}
         </BadgeHero>
-        <h1 className="max-w-5xl font-wix-madefor-display font-bold text-[36px] md:text-[40px] lg:text-[48px] 2xl:text-[52px] leading-[148%]">
+        <h1 className="max-w-5xl font-wix-madefor-display font-bold text-[36px] md:text-[40px] lg:text-[48px] 3xl:text-[52px] leading-[148%]">
           {t(`${key}.title`)}
         </h1>
-        <p className="max-w-5xl text-base md:text-xl 2xl:text-2xl font-medium text-light-gray leading-[200%]">
+        <p className="max-w-5xl text-base md:text-xl 3xl:text-2xl font-medium text-light-gray leading-[200%]">
           {t(`${key}.paragraph`)}
         </p>
         <div className="flex flex-row gap-4 flex-wrap md:flex-nowrap">
@@ -43,7 +43,7 @@ const HeroSection = () => {
             urlTo={`${getLocalizedPath("/register", i18n.language)}`}
             variant="light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t("button.registerNow")}
           </Button>
@@ -52,7 +52,7 @@ const HeroSection = () => {
             urlTo={`${getLocalizedPath("/broker", i18n.language)}`}
             variant="outline-light" 
             size="xl" 
-            className="py-4! 2xl:py-6! flex md:block flex-1 md:flex-0 text-base! 2xl:text-xl! font-medium! text-nowrap"
+            className="py-4! 3xl:py-6! flex md:block flex-1 md:flex-0 text-base! 3xl:text-xl! font-medium! text-nowrap"
           >
             {t("button.see_list_broker")}
           </Button>

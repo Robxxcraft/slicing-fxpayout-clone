@@ -37,7 +37,7 @@ const Modal = ({ isOpen, onClose, isOverlayClose=true, maxWCL, children }:
                 ease: "easeOut"
               }}
               className={`${maxWCL ? maxWCL : "max-w-md"}
-                bg-white w-full 2xl:max-w-[720px] rounded-3xl p-6 md:p-8 shadow-lg pointer-events-auto relative overflow-hidden transform-gpu will-change-transform`}
+                bg-white w-full 3xl:max-w-[720px] rounded-3xl p-6 md:p-8 shadow-lg pointer-events-auto relative overflow-hidden transform-gpu will-change-transform`}
             >
               {children}
             </motion.div>

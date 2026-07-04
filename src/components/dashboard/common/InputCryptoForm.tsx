@@ -17,7 +17,7 @@ const InputCryptoForm = ({ values, handleChange, errors }: {
           value={values.token || ""} 
           onChangeForm={handleChange} 
           typeInput="text"
-          labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+          labelClassName="text-sm! 3xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}
           errorMessage={errors.token}
@@ -33,7 +33,7 @@ const InputCryptoForm = ({ values, handleChange, errors }: {
           value={values.network || ""} 
           onChangeForm={handleChange} 
           typeInput="text" 
-          labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+          labelClassName="text-sm! 3xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}
           errorMessage={errors.network}
@@ -49,7 +49,7 @@ const InputCryptoForm = ({ values, handleChange, errors }: {
           value={values.accountNumber} 
           onChangeForm={handleChange} 
           typeInput="text"
-          labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+          labelClassName="text-sm! 3xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}
           errorMessage={errors.accountNumber}
@@ -57,8 +57,8 @@ const InputCryptoForm = ({ values, handleChange, errors }: {
         />
         <div className="mt-3">
           <div className="flex gap-2">
-            <span className="mt-1 flex shrink-0 items-center justify-center size-4 2xl:size-7 border border-primary rounded-full">
-              <TiInfoLarge className="text-sm 2xl:text-base text-primary" />
+            <span className="mt-1 flex shrink-0 items-center justify-center size-4 3xl:size-7 border border-primary rounded-full">
+              <TiInfoLarge className="text-sm 3xl:text-base text-primary" />
             </span>
             <p className="w-fit text-base md:text-sm font-medium text-[rgba(0,0,0,0.8)] leading-[178%]">
               Pastikan alamat wallet yang Anda input adalah alamat USDT dengan jaringan BNB Smart Chain (BEP20) yang benar dan valid.

@@ -24,7 +24,7 @@ const RevenueSection = () => {
   const key = "affiliatelandingpage:revenuesection";
   
   return (
-    <section className="mt-10 md:mt-14 xl:mt-[120px] px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 py-10 md:py-15 xl:py-[120px] bg-[#F9F9F9]">
+    <section className="mt-10 md:mt-14 xl:mt-[120px] px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 py-10 md:py-15 xl:py-[120px] bg-[#F9F9F9]">
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <BadgeSection
           icon={
@@ -33,7 +33,7 @@ const RevenueSection = () => {
         }>
           {t(`${key}.badge`)}
         </BadgeSection>
-        <h2 className="text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%] text-center">
+        <h2 className="text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%] text-center">
           {t(`${key}.title`)}
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-5xl text-center">

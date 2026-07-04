@@ -43,23 +43,23 @@ const HeaderBroker = ({
   ]
 
   return (
-    <header className="mt-[92px] md:mt-[180px] lg:mt-[50px] 2xl:mt-[60px] px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
+    <header className="mt-[92px] md:mt-[180px] lg:mt-[50px] 3xl:mt-[60px] px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56">
       <Link
         to="/broker"
-        className="flex gap-2 2xl:gap-3 items-center w-fit text-sm lg:text-base 2xl:text-xl text-my-red hover:gap-4 2xl:hover:gap-5 transition-all duration-300 ease-out">
+        className="flex gap-2 3xl:gap-3 items-center w-fit text-sm lg:text-base 3xl:text-xl text-my-red hover:gap-4 3xl:hover:gap-5 transition-all duration-300 ease-out">
         <IoArrowBackOutline className="rtl:rotate-180" />
         <span>{t("brokerdetailpage:back")}</span>
       </Link>
-      <div className="mt-6 lg:mt-8 2xl:mt-10 flex flex-col md:flex-row gap-4 justify-between">
-        <div className="flex gap-4 lg:gap-6 2xl:gap-8 items-start w-fit">
+      <div className="mt-6 lg:mt-8 3xl:mt-10 flex flex-col md:flex-row gap-4 justify-between">
+        <div className="flex gap-4 lg:gap-6 3xl:gap-8 items-start w-fit">
           <img src={`/broker/${profileImage}`} alt={`Logo ${name}`} 
-            className="size-16 lg:size-28 xl:size-45 2xl:size-60 rounded-[10px] lg:rounded-[20px] object-center object-cover" 
+            className="size-16 lg:size-28 xl:size-45 3xl:size-60 rounded-[10px] lg:rounded-[20px] object-center object-cover" 
           />
           <div>
-            <h1 className="text-2xl lg:text-3xl xl:text-[36px] 2xl:text-[48px] font-semibold">
+            <h1 className="text-2xl lg:text-3xl xl:text-[36px] 3xl:text-[48px] font-semibold">
               {name}
             </h1>
-            <p className="mt-2 md:mt-0 text-xl xl:text-2xl 2xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
+            <p className="mt-2 md:mt-0 text-xl xl:text-2xl 3xl:text-[32px] leading-5 md:leading-9 font-medium uppercase text-black/80">
               Tier {ranking.tier} {ranking.title}
             </p>
             <BioBroker badges={badges} openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} />
@@ -67,19 +67,19 @@ const HeaderBroker = ({
         </div>
         {/* <div className="block md:hidden"><BioBroker /></div> */}
         
-        <div className="px-6 lg:px-8 2xl:px-10 py-4 lg:py-6 2xl:py-8 flex flex-col items-center bg-my-light-blue rounded-[20px] min-w-[270px] lg:w-fit">
-          <p className="text-base lg:text-2xl 2xl:text-[32px] leading-9 font-semibold">
+        <div className="px-6 lg:px-8 3xl:px-10 py-4 lg:py-6 3xl:py-8 flex flex-col items-center bg-my-light-blue rounded-[20px] min-w-[270px] lg:w-fit">
+          <p className="text-base lg:text-2xl 3xl:text-[32px] leading-9 font-semibold">
             {t("brokerdetailpage:overallScore")}
           </p>
-          <div className="mt-1 lg:mt-5 2xl:mt-10 flex items-end" dir="ltr">
-            <p className="text-[36px] lg:text-[48px] 2xl:text-[64px] lg:leading-16 font-semibold">
+          <div className="mt-1 lg:mt-5 3xl:mt-10 flex items-end" dir="ltr">
+            <p className="text-[36px] lg:text-[48px] 3xl:text-[64px] lg:leading-16 font-semibold">
               {overallScore.rate}
             </p>
-            <p className="text-xl lg:text-[26px] 2xl:text-[36px] leading-11 tracking-[10%] font-semibold">
+            <p className="text-xl lg:text-[26px] 3xl:text-[36px] leading-11 tracking-[10%] font-semibold">
               /5
             </p>
           </div>
-          <div className="lg:mt-5 2xl:mt-4 flex gap-2">
+          <div className="lg:mt-5 3xl:mt-4 flex gap-2">
             {Array.from({length: Math.floor(overallScore.rate)}).map((_, idx) => (
               <FaStar key={idx} className="text-2xl text-my-yellow" />
             ))}
@@ -97,14 +97,14 @@ const HeaderBroker = ({
       <div className="block lg:hidden"><ButtonCta openModal={openWebsiteModal} registerUrl={registerUrl} websiteUrl={websiteUrl} /></div>
 
       {/* DESCRIPTION */}
-      <div className="mt-6 2xl:mt-10">
-        <p className="text-base 2xl:text-2xl leading-[180%] text-black/80">
+      <div className="mt-6 3xl:mt-10">
+        <p className="text-base 3xl:text-2xl leading-[180%] text-black/80">
           {t(description)}
         </p>
       </div>
 
       {/* DETAILBIO */}
-      <div className="mt-4 lg:mt-8 2xl:mt-10 md:py-4 lg:py-6 2xl:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-2 border-t border-b border-[#828282]/50">
+      <div className="mt-4 lg:mt-8 3xl:mt-10 md:py-4 lg:py-6 3xl:py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-2 border-t border-b border-[#828282]/50">
         {detailBio.map((item, idx) => (
           <div key={idx} className={`
             ${idx === 0 && "pt-4 md:pt-0 pb-4 lg:pb-0 border-b lg:border-b-0"}
@@ -115,18 +115,18 @@ const HeaderBroker = ({
           `}>
             <div className={`
               ${idx !== 0 && "lg:border-s"}
-              ${idx !== 0 && "lg:ps-5 2xl:ps-10"} 
+              ${idx !== 0 && "lg:ps-5 3xl:ps-10"} 
               ${idx % 2 !== 0 && "md:ps-10 md:border-s"}
-              flex gap-4 2xl:gap-6 border-[#828282]/50`
+              flex gap-4 3xl:gap-6 border-[#828282]/50`
             }>
               <div className="w-fit">
                 <BoundedIcon icon={`/brokerDetail/${item.icon}`} alt="Icon" />
               </div>
               <div className="flex flex-col gap-1 lg:gap-2">
-                <p className="text-base 2xl:text-2xl text-black/80">
+                <p className="text-base 3xl:text-2xl text-black/80">
                   {t(item.title)}
                 </p>
-                <p className="text-xl 2xl:text-[28px] 2xl:leading-8 font-semibold">
+                <p className="text-xl 3xl:text-[28px] 3xl:leading-8 font-semibold">
                   {Array.isArray(item.detail) ? 
                     item.detail.map((text: string) => (
                       <span key={text}>{text}<br/></span>
@@ -157,13 +157,13 @@ const BioBroker = ({
   const { t } = useTranslation(["brokerdetailpage"]);
   return (
     <>
-      <div className="mt-3 lg:mt-4 2xl:mt-6 flex flex-wrap gap-2 w-fit">
+      <div className="mt-3 lg:mt-4 3xl:mt-6 flex flex-wrap gap-2 w-fit">
         {badges.map((item, idx) => (
           <div key={idx}
             className="bg-linear-to-t from-dark-primary to-primary border border-transparent bg-clip-border rounded-lg overflow-hidden"
           >
-            <div className="px-3 lg:px-5 2xl:px-6 py-2 2xl:py-3 w-full bg-my-light-blue">
-              <p className="text-[12px] md:text-sm 2xl:text-base bg-linear-to-t from-dark-primary to-primary text-transparent font-semibold bg-clip-text text-nowrap">
+            <div className="px-3 lg:px-5 3xl:px-6 py-2 3xl:py-3 w-full bg-my-light-blue">
+              <p className="text-[12px] md:text-sm 3xl:text-base bg-linear-to-t from-dark-primary to-primary text-transparent font-semibold bg-clip-text text-nowrap">
                 {t(item)}
               </p>
             </div>
@@ -186,7 +186,7 @@ const ButtonCta = ({
 }) => {
   const { t } = useTranslation(["common"]);
   return (
-    <div className="mt-3 md:mt-4 2xl:mt-6 flex flex-row gap-2 lg:gap-3 2xl:gap-4 flex-wrap md:flex-nowrap">
+    <div className="mt-3 md:mt-4 3xl:mt-6 flex flex-row gap-2 lg:gap-3 3xl:gap-4 flex-wrap md:flex-nowrap">
       <Button 
         buttonType={registerUrl.length === 1 ? "link" : "button"}
         onClick={registerUrl.length === 1 ? () => {} : () => openModal()}

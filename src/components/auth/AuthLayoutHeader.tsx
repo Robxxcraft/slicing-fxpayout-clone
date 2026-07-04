@@ -16,9 +16,9 @@ const AuthLayoutHeader = ({
         <img
           src="/fxpayout-blue.svg"
           alt="logo fx payout"
-          className="w-5 lg:w-6 2xl:w-8"
+          className="w-5 lg:w-6 3xl:w-8"
         />
-        <span className="text-xl 2xl:text-3xl font-bold text-primary">
+        <span className="text-xl 3xl:text-3xl font-bold text-primary">
           FXPAYOUT
         </span>
       </Link>

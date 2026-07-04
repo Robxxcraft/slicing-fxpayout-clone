@@ -90,11 +90,11 @@ const EditProfileForm = ({
         {authUser && !authUser.isGoogle ?
           <button 
             onClick={() => setShowModalUpdateEmail(prev => ({ ...prev, email: true}))} 
-            className="mt-3 text-base 2xl:text-xl font-medium underline text-primary cursor-pointer">
+            className="mt-3 text-base 3xl:text-xl font-medium underline text-primary cursor-pointer">
             Perbarui email
           </button>
         :
-          <p className="mt-3 text-base 2xl:text-xl text-black/60">
+          <p className="mt-3 text-base 3xl:text-xl text-black/60">
             Email Anda terhubung dengan akun Google dan tidak dapat diubah melalui pengaturan profil.
           </p>
         }

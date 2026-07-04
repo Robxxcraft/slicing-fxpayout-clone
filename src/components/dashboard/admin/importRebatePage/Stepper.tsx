@@ -18,7 +18,7 @@ const Stepper = ({ step }: { step: number }) => {
                 {passed ?
                   <FaCheck className="text-white text-lg" />
                 :
-                  <span className={`text-base 2xl:text-xl font-medium
+                  <span className={`text-base 3xl:text-xl font-medium
                     ${active ? "text-primary": "text-black/60"}
                   `}>
                     {index + 1}
@@ -26,7 +26,7 @@ const Stepper = ({ step }: { step: number }) => {
                 }
               </div>
               <p className={`${active ? "text-primary": "text-black/60"}
-                text-base 2xl:text-xl font-medium whitespace-nowrap
+                text-base 3xl:text-xl font-medium whitespace-nowrap
               `}>
                 {item}
               </p>

@@ -101,20 +101,20 @@ const ModalFilterBroker = ({
 
   return (
     <Modal isOpen={isVisible} onClose={handleClose} maxWCL="max-w-[820px] px-2! lg:px-4!">
-      <div className="scrollbar-thin px-4 space-y-4 2xl:space-y-6 max-h-[calc(100dvh-100px)] overflow-y-auto">
+      <div className="scrollbar-thin px-4 space-y-4 3xl:space-y-6 max-h-[calc(100dvh-100px)] overflow-y-auto">
 
         {/* HEADER */}
         <div className="pb-2 relative flex flex-col border-b border-primary/20">
           <div className="flex items-center justify-center gap-2">
-            <FaFilter className="scale-x-[-1] text-3xl 2xl:text-4xl text-primary" />
-            <h2 className="text-2xl 2xl:text-[32px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
+            <FaFilter className="scale-x-[-1] text-3xl 3xl:text-4xl text-primary" />
+            <h2 className="text-2xl 3xl:text-[32px] font-semibold text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
               {t("text.filter_broker")}
             </h2>
           </div>
           
           <button
             type="button"
-            className="ml-auto md:absolute right-0 top-1/2 md:-translate-y-1/2 text-base 2xl:text-xl text-primary underline cursor-pointer"
+            className="ml-auto md:absolute right-0 top-1/2 md:-translate-y-1/2 text-base 3xl:text-xl text-primary underline cursor-pointer"
             onClick={handleResetFilter}
           >
             {t("text.reset_filter")}
@@ -122,15 +122,15 @@ const ModalFilterBroker = ({
         </div>
 
 
-        <h3 className="pb-2 font-medium text-lg 2xl:text-2xl leading-[160%] border-b border-primary/20">
+        <h3 className="pb-2 font-medium text-lg 3xl:text-2xl leading-[160%] border-b border-primary/20">
           {t("text.title_trading")}
         </h3>
         <div className="pb-10">
           <div className="mb-4 flex justify-between items-center">
-            <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
+            <p className="text-base 3xl:text-xl font-medium leading-6 text-[#344054]">
               {t("text.range_rebate")}: 
             </p>
-            <p className="text-base 2xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text" dir="ltr">
+            <p className="text-base 3xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text" dir="ltr">
               ${rebate.start} -  ${rebate.end}
             </p>
           </div>
@@ -193,7 +193,7 @@ const ModalFilterBroker = ({
           <div className="mt-4 relative">
               {rebateMarks.map((mark, index) => {
                 let style: React.CSSProperties = {};
-                let className = "absolute top-0 text-sm md:text-xl lg:text-base 2xl:text-xl text-[#344054] font-medium ";
+                let className = "absolute top-0 text-sm md:text-xl lg:text-base 3xl:text-xl text-[#344054] font-medium ";
                 const min = rebateMarks[0];
                 const max = rebateMarks[rebateMarks.length - 1];
 
@@ -218,15 +218,15 @@ const ModalFilterBroker = ({
         </div>
 
         {/* SPREAD */}
-        <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
+        <p className="text-base 3xl:text-xl font-medium leading-6 text-[#344054]">
             {t("text.spread_broker")}:
         </p>
-        <div className="mt-4 2xl:mt-6 flex flex-wrap items-center gap-2">
+        <div className="mt-4 3xl:mt-6 flex flex-wrap items-center gap-2">
             {levelSpread.map((item, index) => (
               <div 
                 key={index}
                 onClick={() => setSelectedSpread(item.key)}
-                className={`px-6 2xl:px-8 py-3 2xl:py-4 border rounded-full cursor-pointer
+                className={`px-6 3xl:px-8 py-3 3xl:py-4 border rounded-full cursor-pointer
                   ${item.key === selectedSpread ? "bg-primary" : "bg-transparent"}
               `}>
                 <p className={`text-sm md:text-base font-medium
@@ -241,10 +241,10 @@ const ModalFilterBroker = ({
         {/* MINIMUM DEPOSIT */}
         <div className="pb-10 border-b border-primary/20">
           <div className="mb-4 flex justify-between items-center">
-            <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
+            <p className="text-base 3xl:text-xl font-medium leading-6 text-[#344054]">
               {t("text.minimum_deposit")}: 
             </p>
-            <p className="text-base 2xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text" dir="ltr">
+            <p className="text-base 3xl:text-xl font-bold leading-6 text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text" dir="ltr">
               &gt;${minDeposit[0]} 
             </p>
           </div>
@@ -306,7 +306,7 @@ const ModalFilterBroker = ({
           <div className="mt-4 relative">
               {minDepositMarks.map((mark, index) => {
                 let style: React.CSSProperties = {};
-                let className = "absolute top-0 text-sm md:text-xl lg:text-base 2xl:text-xl text-[#344054] font-medium ";
+                let className = "absolute top-0 text-sm md:text-xl lg:text-base 3xl:text-xl text-[#344054] font-medium ";
 
                 const min = minDepositMarks[0];
                 const max = minDepositMarks[minDepositMarks.length - 1];
@@ -331,15 +331,15 @@ const ModalFilterBroker = ({
         </div>
 
         {/* PLATFORM */}
-        <h3 className="pb-2 font-medium text-lg 2xl:text-2xl leading-[160%] border-b border-primary/20">
+        <h3 className="pb-2 font-medium text-lg 3xl:text-2xl leading-[160%] border-b border-primary/20">
           {t("text.title_platform")}
         </h3>
         <div>
-          <p className="text-base 2xl:text-xl font-medium leading-6 text-[#344054]">
+          <p className="text-base 3xl:text-xl font-medium leading-6 text-[#344054]">
             {t("text.title_platform")}:
           </p>
 
-          <div className="mt-4 2xl:mt-6 flex items-center gap-4 2xl:gap-6 flex-wrap">
+          <div className="mt-4 3xl:mt-6 flex items-center gap-4 3xl:gap-6 flex-wrap">
             {availablePlatforms.map((data) => (
               <div key={data.key} className="flex items-center cursor-pointer">
                 <input 
@@ -353,7 +353,7 @@ const ModalFilterBroker = ({
                     )
                   }}
                   checked={platforms.includes(data.key as EnumPlatformBroker)}
-                  className="size-4 2xl:size-6 checked:accent-primary rounded-sm cursor-pointer"
+                  className="size-4 3xl:size-6 checked:accent-primary rounded-sm cursor-pointer"
                 />
                 <label 
                     htmlFor={`platform-checkbox-${data.key}`} 
@@ -369,7 +369,7 @@ const ModalFilterBroker = ({
         <Button
           variant="primary-light"
           buttonType="button"
-          className="py-4! md:py-6! lg:py-4! 2xl:py-6! w-full!"
+          className="py-4! md:py-6! lg:py-4! 3xl:py-6! w-full!"
           onClick={handleApplyFilter}
         >
           {t("text.title_apply")}

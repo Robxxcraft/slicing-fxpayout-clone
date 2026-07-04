@@ -19,7 +19,7 @@ const DrawerContainer = ({ isOpen, onClose, isOverlayClose=true, maxWCL, childre
             ease: "easeOut"
           }}
           onClick={isOverlayClose ? onClose : undefined} 
-          className={`z-90 fixed w-full bg-black/5 backdrop-blur-[2px] h-full top-16 2xl:top-[90px] right-0 transform-gpu will-change-transform`}
+          className={`z-90 fixed w-full bg-black/5 backdrop-blur-[2px] h-full top-16 3xl:top-[90px] right-0 transform-gpu will-change-transform`}
         >
           <motion.div 
             initial={{ x: "100%" }}
@@ -31,7 +31,7 @@ const DrawerContainer = ({ isOpen, onClose, isOverlayClose=true, maxWCL, childre
             }}
             onClick={(e) => e.stopPropagation()}
             className={`fixed right-0 z-99 w-full transform-gpu will-change-transform
-              ${maxWCL ? maxWCL : "max-w-[460px] 2xl:max-w-[540px]"}  
+              ${maxWCL ? maxWCL : "max-w-[460px] 3xl:max-w-[540px]"}  
             `}
           >
             {children}

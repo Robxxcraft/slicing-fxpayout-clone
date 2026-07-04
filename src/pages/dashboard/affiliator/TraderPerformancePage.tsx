@@ -162,10 +162,10 @@ const TraderPerformancePage = () => {
       </ParagraphDashboard>
 
       {/* FILTER TABLE */}
-      <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
+      <div className="mt-3 md:mt-4 mb-4 3xl:mt-5 3xl:mb-5">
         <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529] w-fit">
-            <span className="text-base 2xl:text-xl">Tampilkan</span>
+          <div className="flex items-center gap-1.5 3xl:gap-2.5 text-[#212529] w-fit">
+            <span className="text-base 3xl:text-xl">Tampilkan</span>
             <SelectDropdown 
               selectedInput={pagination.pageSize.toString()} 
               handleChangeInput={handleChangeFilterLimit} 
@@ -215,13 +215,13 @@ const TraderPerformancePage = () => {
 
       {/* LOADING & 0 DATA TABLE */}
       {dataTraderPerformance.length === 0 && (initLoad || isLoading) &&
-        <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+        <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
           <Spinner />
         </div>
       }
       {dataTraderPerformance.length === 0 && !initLoad && !isLoading &&
         <NoDataFound>
-          <p className="text-black/80 text-base 2xl:text-xl">
+          <p className="text-black/80 text-base 3xl:text-xl">
             {useFilter ? 
               "Tidak ada pendapatan terkini dari trader yang sesuai dengan filter Anda." 
             :
@@ -232,7 +232,7 @@ const TraderPerformancePage = () => {
       }
 
       <div className="mt-4">
-        <p className="text-base 2xl:text-xl text-black/80">
+        <p className="text-base 3xl:text-xl text-black/80">
           {`Menampilkan 
           ${pagination.pageIndex === 0 ? (dataTraderPerformance.length > 0 ? "1":"0") : pagination.pageSize * pagination.pageIndex} 
           hingga  

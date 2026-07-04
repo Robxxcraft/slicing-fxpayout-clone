@@ -57,8 +57,8 @@ const TextInput = ({
       : icon !== undefined && altIcon !== undefined ? "pr-4" 
       : id === "amount" ? "pr-[64px]" : "pr-4" }
     ${icon !== undefined && altIcon !== undefined ? "pl-[54px]" 
-      : id === "phoneNumber" ? "pl-[64px] 2xl:pl-[72px]" : "pl-4"}
-    py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed 
+      : id === "phoneNumber" ? "pl-[64px] 3xl:pl-[72px]" : "pl-4"}
+    py-4 3xl:py-6 w-full bg-white text-base 3xl:text-xl placeholder:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed 
     ${inputClassName}
   `;
   return (
@@ -67,7 +67,7 @@ const TextInput = ({
       {label !== "" && 
         <label
           htmlFor={id}
-          className={`${labelClassName} text-base 2xl:text-xl font-medium text-[#344054]`}>
+          className={`${labelClassName} text-base 3xl:text-xl font-medium text-[#344054]`}>
           {label}
           {!required &&
             <span className="ml-1 text-base text-black/50">(opsional)</span>
@@ -77,12 +77,12 @@ const TextInput = ({
       <div className="relative w-full">
         {id === "phoneNumber" && icon === undefined && 
           <p
-            className="absolute pl-4 pr-2 top-1/2 -translate-y-1/2 pointer-events-none border-e text-base 2xl:text-xl"
+            className="absolute pl-4 pr-2 top-1/2 -translate-y-1/2 pointer-events-none border-e text-base 3xl:text-xl"
           >+62</p>
         }
         {id === "amount" && icon === undefined && 
           <p
-            className="absolute pr-4 pl-2 right-0 top-1/2 -translate-y-1/2 pointer-events-none border-s text-base 2xl:text-xl"
+            className="absolute pr-4 pl-2 right-0 top-1/2 -translate-y-1/2 pointer-events-none border-s text-base 3xl:text-xl"
           >USD</p>
         }
         {icon !== undefined && altIcon !== undefined &&
@@ -106,7 +106,7 @@ const TextInput = ({
         {isInputPassword && 
           <div
             onClick={() => setShowPassword(!showPassword)} 
-            className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-black/60 text-xl 2xl:text-2xl">{
+            className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-black/60 text-xl 3xl:text-2xl">{
             showPassword ? <FaEye /> : <FaEyeSlash />
           }</div>
         }
@@ -117,12 +117,12 @@ const TextInput = ({
         </span>
       }
       {helperText !== undefined &&
-        <span className={`${helperTextClassName} -mt-1 text-sm 2xl:text-base text-black/50`}>
+        <span className={`${helperTextClassName} -mt-1 text-sm 3xl:text-base text-black/50`}>
           {helperText}
         </span>
       }
       {errorMessage === "" && helperText === undefined && placeholder !== undefined && isMobileLabel &&
-        <span className="inline-block md:hidden text-sm 2xl:text-base text-black/50">
+        <span className="inline-block md:hidden text-sm 3xl:text-base text-black/50">
           {placeholder}
         </span>
       }

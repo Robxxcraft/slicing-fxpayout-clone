@@ -30,13 +30,13 @@ const DropzoneFile = ({
       >
         <img src="/upload-cloud-icon.svg" alt="cloud upload" />
         {isDragActive ?
-          <span className="text-sm 2xl:text-base text-black/80 font-medium">Lepaskan file disini</span>
+          <span className="text-sm 3xl:text-base text-black/80 font-medium">Lepaskan file disini</span>
           :
           <>
-            <span className="text-sm 2xl:text-base text-black/80 font-medium">
+            <span className="text-sm 3xl:text-base text-black/80 font-medium">
               Klik atau geser file ke sini untuk mengunggah
             </span>
-            <span className="text-sm 2xl:text-base text-black/60">
+            <span className="text-sm 3xl:text-base text-black/60">
               Pastikan file berformat .xlsx dengan ukuran maksimal {maxSizeMb} MB.
             </span>
           </>

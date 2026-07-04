@@ -99,7 +99,7 @@ const RegisterPage = () => {
         <div className="mt-8 relative text-center w-full">
           <div className="h-px w-full border border-light-gray"></div>
           <div className="absolute top-1/2 left-1/2 -translate-1/2 px-3 bg-white">
-            <span className="text-sm 2xl:text-base font-medium text-black/60">
+            <span className="text-sm 3xl:text-base font-medium text-black/60">
               Atau
             </span>
           </div>
@@ -113,7 +113,7 @@ const RegisterPage = () => {
           role={selectedRole}
         />
         
-        <p className="mt-8 text-sm 2xl:text-base text-black/80">
+        <p className="mt-8 text-sm 3xl:text-base text-black/80">
           Sudah memiliki akun? {" "} 
           <Link to={getLocalizedPath("login", i18n.language)} className="font-medium text-primary cursor-pointer hover:underline">
             Login Sekarang

@@ -13,7 +13,7 @@ const WorkflowCards = ({
 }) => {
   const { t } = useTranslation(["homepage"]);
   return (
-    <div className={`mt-6 2xl:mt-10 flex justify-center items-stretch lg:items-center xl:items-stretch gap-2 h-max
+    <div className={`mt-6 3xl:mt-10 flex justify-center items-stretch lg:items-center xl:items-stretch gap-2 h-max
       ${colResponsive === "small-laptop" ? "flex-col xl:flex-row":""}
       ${colResponsive === "laptop" ? "flex-col lg:flex-row":""}
     `}>

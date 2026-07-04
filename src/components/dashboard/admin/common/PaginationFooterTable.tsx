@@ -32,7 +32,7 @@ const PaginationFooterTable = ({
   return (
     <div className="mt-4 flex items-center justify-between">
       <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-        <p className="text-base 2xl:text-xl">Baris per halaman</p>
+        <p className="text-base 3xl:text-xl">Baris per halaman</p>
         <SelectDropdown
           selectedInput={pageSize.toString()}
           handleChangeInput={onChangePageSize}
@@ -43,7 +43,7 @@ const PaginationFooterTable = ({
           positionY="up"
         />
 
-        <p className="text-base 2xl:text-xl">
+        <p className="text-base 3xl:text-xl">
           {totalData === 0 
             ? "Menampilkan 0 entri." 
             : `Menampilkan ${pageIndex * pageSize + 1} hingga ${Math.min((pageIndex + 1) * pageSize, totalData)} dari ${totalData} entri.`

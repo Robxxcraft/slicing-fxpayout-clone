@@ -145,10 +145,10 @@ const TransactionHistoryPage = () => {
         </div>
         
         {/* FILTER TABLE */}
-        <div className="mt-3 md:mt-4 mb-4 2xl:mt-5 2xl:mb-5">
+        <div className="mt-3 md:mt-4 mb-4 3xl:mt-5 3xl:mb-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-            <div className="flex items-center gap-1.5 2xl:gap-2.5 text-[#212529] w-full md:w-fit">
-              <span className="text-base 2xl:text-xl">Tampilkan</span>
+            <div className="flex items-center gap-1.5 3xl:gap-2.5 text-[#212529] w-full md:w-fit">
+              <span className="text-base 3xl:text-xl">Tampilkan</span>
               <div>
                 <SelectDropdown 
                   selectedInput={pagination.pageSize.toString()} 
@@ -166,8 +166,8 @@ const TransactionHistoryPage = () => {
                 handleChangeInput={handleChangeStatus} 
                 objectInput={statusMap} 
                 disabled={isLoading}
-                wrapperCL="w-full! md:w-[150px]! 2xl:w-[200px]!"             
-                inputCL="w-[200px]! 2xl:w-[240px]!"             
+                wrapperCL="w-full! md:w-[150px]! 3xl:w-[200px]!"             
+                inputCL="w-[200px]! 3xl:w-[240px]!"             
               />
               <Tooltip 
                 disabled={isLoading}
@@ -193,7 +193,7 @@ const TransactionHistoryPage = () => {
 
         {/* LOADING & 0 DATA TABLE */}
         {dataWithdrawal.length === 0 && (initLoad || isLoading) &&
-          <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+          <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
             <Spinner />
           </div>
         }
@@ -205,7 +205,7 @@ const TransactionHistoryPage = () => {
           </NoDataFound>
         }
         <div className="mt-4">
-          <p className="text-base 2xl:text-xl text-black/80">
+          <p className="text-base 3xl:text-xl text-black/80">
             {`Menampilkan 
             ${pagination.pageIndex === 0 ? (dataWithdrawal.length > 0 ? "1":"0") : pagination.pageSize * pagination.pageIndex} 
             hingga  

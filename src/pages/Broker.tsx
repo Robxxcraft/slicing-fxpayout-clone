@@ -177,7 +177,7 @@ const Broker = () => {
           onShowFilter={() => setShowFilter(true)}
         />
         {brokerPartners.length === 0 ? 
-          <p className="mt-6 lg:mt-8 2xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 text-center text-black/80">
+          <p className="mt-6 lg:mt-8 3xl:mt-10 px-6 md:px-11 lg:px-18 xl:px-24 text-center text-black/80">
             Broker not found
           </p>
         :

@@ -14,15 +14,15 @@ const DepositWIthdraw = ({
 ) => {
   const { t } = useTranslation([brokerId, "brokerdetailpage"]);
   return (
-    <section className="mt-10 md:mt-12 2xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 2xl:gap-14">
+    <section className="mt-10 md:mt-12 3xl:mt-16 px-5 md:px-11 lg:px-18 xl:px-24 3xl:px-56">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 3xl:gap-14">
 
         {/* DEPOSIT & WITHDRAW */}
         <div id="deposit-withdraw" className="scroll-mt-26 lg:scroll-mt-10 lg:col-span-7 w-full">
           <HeadingSection>{t("brokerdetailpage:depositWithdraw.title")}</HeadingSection>
           <SubHeadingSection>{t("brokerdetailpage:depositWithdraw.subtitle")}</SubHeadingSection>
-          <div className="mt-6 2xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl">
-            <table className="table-auto w-full text-[#1D2433] text-base 2xl:text-xl">
+          <div className="mt-6 3xl:mt-10 border border-[#A9A9A9] overflow-auto rounded-2xl">
+            <table className="table-auto w-full text-[#1D2433] text-base 3xl:text-xl">
               <thead>
                 <tr>
                   {[
@@ -71,7 +71,7 @@ const DepositWIthdraw = ({
         <div id="platform" className="scroll-mt-26 lg:scroll-mt-10 lg:col-span-5 w-full">
           <HeadingSection>{t("brokerdetailpage:platform.title")}</HeadingSection>
           <SubHeadingSection>{t("brokerdetailpage:platform.subtitle")}</SubHeadingSection>
-          <div className="mt-6 2xl:mt-10 flex flex-col gap-2 2xl:gap-3.5">
+          <div className="mt-6 3xl:mt-10 flex flex-col gap-2 3xl:gap-3.5">
             {platforms.map((platform, idx) => (
               <div key={idx} className="flex gap-4 items-center">
                 <img src={`/broker/${platform.icon}`} alt={`Profil ${platform.username}`} 

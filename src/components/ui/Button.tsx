@@ -36,7 +36,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "relative h-fit rounded-full text-[15px] md:text-base 2xl:text-xl font-semibold transition-all duration-300 ease-out border inline-flex items-center justify-center gap-3";
+    "relative h-fit rounded-full text-[15px] md:text-base 3xl:text-xl font-semibold transition-all duration-300 ease-out border inline-flex items-center justify-center gap-3";
 
   let variantStyles = "";
   let sizeStyles = "";
@@ -86,15 +86,15 @@ export default function Button({
   }
 
   if (size === "xl") {
-    sizeStyles = "px-8 md:px-6 lg:px-12 2xl:px-14 py-5 md:py-4 2xl:py-5";
+    sizeStyles = "px-8 md:px-6 lg:px-12 3xl:px-14 py-5 md:py-4 3xl:py-5";
   }
 
   if (size === "lg") {
-    sizeStyles = "px-5 xl:px-8 2xl:px-10 py-[10px] xl:py-[14px] 2xl:py-[18px]";
+    sizeStyles = "px-5 xl:px-8 3xl:px-10 py-[10px] xl:py-[14px] 3xl:py-[18px]";
   }
 
   if (size === "md") {
-    sizeStyles = "px-6 2xl:px-8 py-4";
+    sizeStyles = "px-6 3xl:px-8 py-4";
   }
 
   const finalClass = `${baseStyles} ${variantStyles} ${sizeStyles} ${className}

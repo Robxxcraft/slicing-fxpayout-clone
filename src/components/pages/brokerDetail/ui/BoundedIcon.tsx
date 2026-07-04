@@ -21,10 +21,10 @@ const BoundedIcon = ({
 }: BoundedIconProps) => {
   return (
     <div className={`
-      ${variant === "first" ? "size-16 2xl:size-20":""}
-      ${variant === "second" ? "size-12 2xl:size-20":""}
+      ${variant === "first" ? "size-16 3xl:size-20":""}
+      ${variant === "second" ? "size-12 3xl:size-20":""}
       ${variant === "third" ? "size-12":""}
-      ${variant === "fourth" ? "size-12 2xl:size-16":""}
+      ${variant === "fourth" ? "size-12 3xl:size-16":""}
       ${roundedVariant === "roundRect" ? "rounded-lg":""}
       ${roundedVariant === "circle" ? "rounded-full":""}
       ${bgCL}
@@ -32,20 +32,20 @@ const BoundedIcon = ({
       {maskColor === undefined ?
         <img src={icon} alt={alt}
           className={`
-            ${variant === "first" ? "h-6 md:h-7 2xl:h-9":""} 
-            ${variant === "second" ? "h-5 2xl:h-9":""} 
+            ${variant === "first" ? "h-6 md:h-7 3xl:h-9":""} 
+            ${variant === "second" ? "h-5 3xl:h-9":""} 
             ${variant === "third" ? "h-5":""} 
-            ${variant === "fourth" ? paddingVariant === "normal" ? "h-5 2xl:h-7" : "h-9 2xl:h-11":""} 
+            ${variant === "fourth" ? paddingVariant === "normal" ? "h-5 3xl:h-7" : "h-9 3xl:h-11":""} 
             object-contain`} />
       : <MaskSvg 
         icon={icon} 
         label={alt} 
         color={maskColor} 
         className={`
-          ${variant === "first" ? "size-6 md:size-7 2xl:size-9":""} 
-          ${variant === "second" ? "size-5 2xl:size-9":""} 
+          ${variant === "first" ? "size-6 md:size-7 3xl:size-9":""} 
+          ${variant === "second" ? "size-5 3xl:size-9":""} 
           ${variant === "third" ? "size-5":""} 
-          ${variant === "fourth" ? paddingVariant === "normal" ? "size-5 2xl:size-7" : "size-9 2xl:size-11":""}`} />
+          ${variant === "fourth" ? paddingVariant === "normal" ? "size-5 3xl:size-7" : "size-9 3xl:size-11":""}`} />
       }
     </div>
   )

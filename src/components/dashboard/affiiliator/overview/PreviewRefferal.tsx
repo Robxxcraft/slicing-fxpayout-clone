@@ -13,23 +13,23 @@ const PreviewRefferal = ({
   codeRefferal: string;
 }) => {
   return (
-    <section className="mt-7 2xl:mt-10">
-      <h2 className="text-xl 2xl:text-[2rem] font-semibold">
+    <section className="mt-7 3xl:mt-10">
+      <h2 className="text-xl 3xl:text-[2rem] font-semibold">
         Refferal Tools
       </h2>
-      <div className="mt-4 2xl:mt-5 flex flex-col xl:flex-row gap-2 lg:gap-4 2xl:gap-5">
-        <div className="max-w-[580px] 2xl:max-w-[960px] w-full rounded-lg overflow-hidden border border-[#DDDDDD] h-fit">
-          <div className="pt-5 2xl:pt-6 px-4 2xl:px-6 pb-4 2xl:pb-6 flex flex-col gap-4 bg-white">
+      <div className="mt-4 3xl:mt-5 flex flex-col xl:flex-row gap-2 lg:gap-4 3xl:gap-5">
+        <div className="max-w-[580px] 3xl:max-w-[960px] w-full rounded-lg overflow-hidden border border-[#DDDDDD] h-fit">
+          <div className="pt-5 3xl:pt-6 px-4 3xl:px-6 pb-4 3xl:pb-6 flex flex-col gap-4 bg-white">
             <div className="flex items-center gap-2.5">
-              <TbWorld className="text-[26px] 2xl:text-3xl text-gray-800" />
-              <p className="font-medium text-xl 2xl:text-2xl">Your Refferal Link</p>
+              <TbWorld className="text-[26px] 3xl:text-3xl text-gray-800" />
+              <p className="font-medium text-xl 3xl:text-2xl">Your Refferal Link</p>
             </div>
             <ParagraphDashboard maxW="full" colorCL="text-black/80">
               Share link berikut kepada calon trader untuk mendaftar akun FXPayout trader dan dapatkan hadiah 10% dari total rebate yang diperoleh oleh tradermu.  
             </ParagraphDashboard>
             <div className="flex flex-col lg:flex-row items-center gap-2.5">
               <div className="p-4 w-full bg-[#FFFEFE] border border-[#DDDDDD] rounded-lg">
-                <p className="text-base 2xl:text-xl text-nowrap truncate">
+                <p className="text-base 3xl:text-xl text-nowrap truncate">
                   https://fxpayout.com/register?ref={codeRefferal}
                 </p>
               </div>
@@ -40,8 +40,8 @@ const PreviewRefferal = ({
                 {isCopied.url ? 
                   <FaCheck className="text-xl" /> : 
                   <>
-                    <TbCopy className="rotate-90 text-xl 2xl:text-3xl" />
-                    <span className="text-base 2xl:text-lg">Salin Link</span>
+                    <TbCopy className="rotate-90 text-xl 3xl:text-3xl" />
+                    <span className="text-base 3xl:text-lg">Salin Link</span>
                   </>
                 }
               </button>
@@ -49,11 +49,11 @@ const PreviewRefferal = ({
           </div>
           <div className="w-full h-2.5 bg-primary"></div>
         </div>  
-        <div className="max-w-[360px] 2xl:max-w-[420px] w-full rounded-lg overflow-hidden border border-[#DDDDDD] h-fit">
-          <div className="pt-5 2xl:pt-6 px-4 2xl:px-6 pb-4 2xl:pb-6 flex flex-col gap-4 bg-white">
+        <div className="max-w-[360px] 3xl:max-w-[420px] w-full rounded-lg overflow-hidden border border-[#DDDDDD] h-fit">
+          <div className="pt-5 3xl:pt-6 px-4 3xl:px-6 pb-4 3xl:pb-6 flex flex-col gap-4 bg-white">
             <div className="flex items-center gap-2.5">
-              <VscKey className="text-2xl 2xl:text-3xl text-gray-800 scale-x-[-1] rotate-90" />
-              <p className="font-medium text-xl 2xl:text-2xl">Unique Code</p>
+              <VscKey className="text-2xl 3xl:text-3xl text-gray-800 scale-x-[-1] rotate-90" />
+              <p className="font-medium text-xl 3xl:text-2xl">Unique Code</p>
             </div>
             <ParagraphDashboard maxW="full" colorCL="text-black/80">
               Trader bisa langsung memasukkan kode secara manual ketika mendaftar.
@@ -70,8 +70,8 @@ const PreviewRefferal = ({
               {isCopied.code ? 
                 <FaCheck className="text-xl" /> : 
                 <>
-                  <TbCopy className="rotate-90 text-xl 2xl:text-3xl" />
-                  <span className="text-base 2xl:text-lg">Salin Kode</span>
+                  <TbCopy className="rotate-90 text-xl 3xl:text-3xl" />
+                  <span className="text-base 3xl:text-lg">Salin Kode</span>
                 </>
               }
             </button>

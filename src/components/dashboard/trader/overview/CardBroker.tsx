@@ -37,13 +37,13 @@ const CardBroker = ({
     <div className="w-full min-h-[220px] rounded-lg overflow-hidden border border-[#DDDDDD]">
       <div className="px-4 lg:px-6 pt-4 lg:pt-6 pb-3 bg-white">
         <div className="flex justify-between items-center gap-3">
-          <div className="flex items-center gap-2.5 2xl:gap-4">
+          <div className="flex items-center gap-2.5 3xl:gap-4">
             <img src={`/broker/${formatingUrlBroker(name)}.webp`} alt="Icon logo broker" 
-              className="size-10 lg:size-12 2xl:size-14 rounded-full object-cover object-center"    
+              className="size-10 lg:size-12 3xl:size-14 rounded-full object-cover object-center"    
             />
             <div className="flex-1 min-w-0">
-              <p className="text-base 2xl:text-xl font-medium truncate">{name}</p>
-              <p className="text-sm 2xl:text-lg text-black/60 truncate">{accountNumber}</p>
+              <p className="text-base 3xl:text-xl font-medium truncate">{name}</p>
+              <p className="text-sm 3xl:text-lg text-black/60 truncate">{accountNumber}</p>
             </div>
           </div>
           {status === "approved" && 
@@ -66,20 +66,20 @@ const CardBroker = ({
             />}
         </div>
         <div className="min-w-0 mt-3 lg:mt-4">
-          <p className="text-sm 2xl:text-lg text-black/60">Total Rebate</p>
-          <p className="text-[32px] 2xl:text-[36px] font-semibold truncate">{formattingUsd(totalRebate)}</p>
+          <p className="text-sm 3xl:text-lg text-black/60">Total Rebate</p>
+          <p className="text-[32px] 3xl:text-[36px] font-semibold truncate">{formattingUsd(totalRebate)}</p>
         </div>
         <div className="mt-3 lg:mt-4 flex items-center gap-2">
           <div
             onClick={() => syncingBroker()} 
-            className="py-2 2xl:py-3 flex items-center gap-2 justify-center w-full border rounded-lg cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300">
-            <HiOutlineRefresh className={`${isLoading ? "animate-spin" : ""} text-black/60 text-base 2xl:text-2xl`} />
-            <p className="text-xs 2xl:text-base font-medium text-black/80">{isLoading ? "Syncing..." : "Sync Status"}</p>
+            className="py-2 3xl:py-3 flex items-center gap-2 justify-center w-full border rounded-lg cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300">
+            <HiOutlineRefresh className={`${isLoading ? "animate-spin" : ""} text-black/60 text-base 3xl:text-2xl`} />
+            <p className="text-xs 3xl:text-base font-medium text-black/80">{isLoading ? "Syncing..." : "Sync Status"}</p>
           </div>
           <Link
             to={getLocalizedPath(`trader/rebate/${formatingUrlBroker(name)}`, i18n.language)} 
             className="p-2 shrink-0 rounded-lg cursor-pointer hover:bg-[#F5F5F5] transition-all duration-300">
-            <LuExternalLink className="text-lg 2xl:text-2xl text-primary" />
+            <LuExternalLink className="text-lg 3xl:text-2xl text-primary" />
           </Link>
         </div>
       </div>

@@ -67,7 +67,7 @@ const OverviewAdminHeader = ({
             <Link to={getLocalizedPath("dashboard/brokers", i18n.language)} className="w-full max-w-full md:max-w-1/2 cursor-pointer">
               <CardOverview 
                 title={"Pending Broker Connections"} 
-                icon={<BsBank2 className="text-base! 2xl:text-lg!" />}
+                icon={<BsBank2 className="text-base! 3xl:text-lg!" />}
                 content={brokers.toLocaleString()} detail={"Total pending trader requests"} 
                 isLoading={isLoading}
                 bottomLine 
@@ -85,9 +85,9 @@ const OverviewAdminHeader = ({
           </div>
         </div>
         <div className="px-5 py-6 bg-white w-full h-full border border-[#DDDDDD] rounded-lg">
-          <p className="text-base 2xl:text-2xl font-medium">Total Users</p>
+          <p className="text-base 3xl:text-2xl font-medium">Total Users</p>
           <div className="mt-2 md:mt-5 w-full flex justify-center">
-            <div className="relative w-[80%] md:w-[50%] lg:w-[80%] 2xl:w-[60%] aspect-square">
+            <div className="relative w-[80%] md:w-[50%] lg:w-[80%] 3xl:w-[60%] aspect-square">
               <Doughnut 
                 key="donat-total-user"
                 data={{ 
@@ -109,7 +109,7 @@ const OverviewAdminHeader = ({
                 }}
               />
               <div className="absolute top-1/2 left-1/2 -translate-1/2">
-                <p className="text-2xl md:text-[32px] lg:text-2xl 2xl:text-[2rem] font-semibold">
+                <p className="text-2xl md:text-[32px] lg:text-2xl 3xl:text-[2rem] font-semibold">
                   {traders + affiliators}
                 </p>
               </div>
@@ -118,19 +118,19 @@ const OverviewAdminHeader = ({
           <div className="mt-2 md:mt-5 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="size-3 2xl:size-4 rounded-full bg-[#f87171]"></div>
-                <p className="text-sm 2xl:text-lg font-medium">Affiliators</p>
+                <div className="size-3 3xl:size-4 rounded-full bg-[#f87171]"></div>
+                <p className="text-sm 3xl:text-lg font-medium">Affiliators</p>
               </div>
-              <span className="text-sm 2xl:text-lg font-medium text-black/70">
+              <span className="text-sm 3xl:text-lg font-medium text-black/70">
                 {affiliators}
               </span>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="size-3 2xl:size-4 rounded-full bg-[#6366f1]"></div>
-                <p className="text-sm 2xl:text-lg font-medium">Traders</p>
+                <div className="size-3 3xl:size-4 rounded-full bg-[#6366f1]"></div>
+                <p className="text-sm 3xl:text-lg font-medium">Traders</p>
               </div>
-              <span className="text-sm 2xl:text-lg font-medium text-black/70">
+              <span className="text-sm 3xl:text-lg font-medium text-black/70">
                 {traders}
               </span>
             </div>

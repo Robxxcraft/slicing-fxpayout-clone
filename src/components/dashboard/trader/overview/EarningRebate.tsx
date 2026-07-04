@@ -76,13 +76,13 @@ const EarningRebate = () => {
   }, []);
 
   return (
-    <section className="mt-7 2xl:mt-10">
+    <section className="mt-7 3xl:mt-10">
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
         <div>
-          <h2 className="text-xl 2xl:text-[2rem] font-semibold">
+          <h2 className="text-xl 3xl:text-[2rem] font-semibold">
             Earnings Rebate Overview
           </h2>
-          <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
+          <p className="text-base 3xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
             Pantau komisi rebate yang Anda hasilkan dari waktu ke waktu.
           </p>
         </div>
@@ -96,7 +96,7 @@ const EarningRebate = () => {
               }} 
               className={`${interval === intervalDays ? "bg-linear-to-t from-dark-primary to-primary border border-primary" : "bg-transparent"}
               py-2 px-2.5 w-full md:w-fit border border-[#DDDDDD] rounded-md cursor-pointer`}>
-              <p className={`${interval === intervalDays ? "text-white" : "text-black/60"} text-sm 2xl:text-lg text-center font-medium`}>
+              <p className={`${interval === intervalDays ? "text-white" : "text-black/60"} text-sm 3xl:text-lg text-center font-medium`}>
                 {interval} Days
               </p>
             </div>
@@ -105,13 +105,13 @@ const EarningRebate = () => {
       </div>
 
       {/* DETAIL CHART */}
-      <div className="mt-4 2xl:mt-5 flex flex-col md:flex-row gap-2 lg:gap-4 2xl:gap-5">
-        <div className="shrink-0 space-y-2 md:space-y-4 2xl:space-y-5 select-none">
-          <div className="p-5 lg:p-6 w-full md:max-w-60 2xl:max-w-[320px] h-fit bg-white border border-[#DDDDDD] rounded-lg">
+      <div className="mt-4 3xl:mt-5 flex flex-col md:flex-row gap-2 lg:gap-4 3xl:gap-5">
+        <div className="shrink-0 space-y-2 md:space-y-4 3xl:space-y-5 select-none">
+          <div className="p-5 lg:p-6 w-full md:max-w-60 3xl:max-w-[320px] h-fit bg-white border border-[#DDDDDD] rounded-lg">
             <div className="pb-4 md:pb-6 border-b">
-              <p className="font-medium text-base 2xl:text-lg">Total Earnings</p>
+              <p className="font-medium text-base 3xl:text-lg">Total Earnings</p>
               {!isLoading ? (rebateByDate &&
-                <p className="mt-2 md:mt-4 text-[32px] 2xl:text-[36px] leading-[39px] font-semibold">
+                <p className="mt-2 md:mt-4 text-[32px] 3xl:text-[36px] leading-[39px] font-semibold">
                   {formattingUsd(Object.values(rebateByDate).reduce((prev, cur) => prev + cur, 0))}
                 </p>)
                 :
@@ -121,24 +121,24 @@ const EarningRebate = () => {
               }
             </div>
             <div className="mt-4 md:mt-6 flex gap-2 items-center">
-              <span className="flex shrink-0 items-center justify-center size-5 2xl:size-7 border border-primary rounded-full">
-                <TiInfoLarge className="text-sm 2xl:text-xl text-primary" />
+              <span className="flex shrink-0 items-center justify-center size-5 3xl:size-7 border border-primary rounded-full">
+                <TiInfoLarge className="text-sm 3xl:text-xl text-primary" />
               </span>
-              <span className="text-xs 2xl:text-base text-black/60">
+              <span className="text-xs 3xl:text-base text-black/60">
                 Total Rebate yang dihasilkan dalam {intervalDays} hari terakhir 
               </span>
             </div>
           </div>
-          <div className="p-5 lg:p-6 w-full md:max-w-60 2xl:max-w-[320px] h-fit bg-white border border-[#DDDDDD] rounded-lg">
+          <div className="p-5 lg:p-6 w-full md:max-w-60 3xl:max-w-[320px] h-fit bg-white border border-[#DDDDDD] rounded-lg">
             <div className="pb-4 md:pb-6"> 
-              <p className="font-medium text-base 2xl:text-lg">Broker Breakdown</p>
+              <p className="font-medium text-base 3xl:text-lg">Broker Breakdown</p>
             </div>
             {!isLoading ? (rebateByBroker && 
               <div className="space-y-1">
               {Object.entries(rebateByBroker).map(([broker, rebate]) => (
                 <div key={broker} className="flex justify-between items-center">
-                  <p className="text-sm 2xl:text-lg text-primary font-medium">{broker}</p>
-                  <p className="text-sm 2xl:text-lg text-black/80 font-bold">{formattingUsd(rebate)}</p>
+                  <p className="text-sm 3xl:text-lg text-primary font-medium">{broker}</p>
+                  <p className="text-sm 3xl:text-lg text-black/80 font-bold">{formattingUsd(rebate)}</p>
                 </div>
               ))}
               </div>)

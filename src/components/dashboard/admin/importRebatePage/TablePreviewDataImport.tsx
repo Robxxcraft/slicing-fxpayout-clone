@@ -9,7 +9,7 @@ const TablePreviewDataImport = ({ data }: { data: ImportRebateData[]; }) => {
     <Table className="mt-6!">
       <Table.Heading>
         {Object.keys(HEADER_REBATE_IMPORT).map((header, idx) => {
-          const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg!";
+          const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg!";
     
           return (
           <Table.HeadingItem 
@@ -40,7 +40,7 @@ const TablePreviewDataImport = ({ data }: { data: ImportRebateData[]; }) => {
               <Table.Cell rowIndex={rowIdx} key={collIdx}
               className={`${baseStyle}
                 ${collIdx === Object.values(rows).length - 1 ? "px-2! text-right!" : "text-left!"}
-                ${collIdx === 0 ? "px-0! pl-2! pr-8!" : ""} 2xl:text-xl!  
+                ${collIdx === 0 ? "px-0! pl-2! pr-8!" : ""} 3xl:text-xl!  
               `}>
                 <span className="text-sm whitespace-nowrap leading-normal">{finalVal}</span>
               </Table.Cell>

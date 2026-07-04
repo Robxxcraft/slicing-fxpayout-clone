@@ -181,15 +181,15 @@ const WithdrawalRequestPage = () => {
         {/* HEADER */}
         <div className="flex gap-4 md:gap-8 items-center">
           <button onClick={() => redirectUser(authUser, "withdrawal")}
-            className="flex justify-center items-center size-8 2xl:size-12 rounded-full border border-[#DDDDDD] hover:bg-[#F5F5F5] transition-all duration-300 cursor-pointer"
+            className="flex justify-center items-center size-8 3xl:size-12 rounded-full border border-[#DDDDDD] hover:bg-[#F5F5F5] transition-all duration-300 cursor-pointer"
           >
-            <FaChevronLeft className="mr-px text-primary text-base 2xl:text-2xl" />
+            <FaChevronLeft className="mr-px text-primary text-base 3xl:text-2xl" />
           </button>
           <TitleDashboard>
             Withdrawal Request
           </TitleDashboard>
         </div>
-        <p className="my-4 md:my-6 text-base md:text-lg 2xl:text-xl text-black/80">
+        <p className="my-4 md:my-6 text-base md:text-lg 3xl:text-xl text-black/80">
           Silakan lengkapi formulir di bawah ini untuk menarik saldo Anda. Pastikan kembali nominal dan detail tujuan penarikan sebelum menekan tombol lanjutkan.
         </p>
 
@@ -212,24 +212,24 @@ const WithdrawalRequestPage = () => {
           }
 
           {/* INFORMATION BALANCE WITHDRAWAL */}
-          <div className="px-4 md:px-8 py-5 max-w-[360px] 2xl:max-w-[400px] w-fit bg-[#FAFAFA] border border-dashed border-primary rounded-2xl">
-            <p className="text-lg 2xl:text-2xl font-medium">
+          <div className="px-4 md:px-8 py-5 max-w-[360px] 3xl:max-w-[400px] w-fit bg-[#FAFAFA] border border-dashed border-primary rounded-2xl">
+            <p className="text-lg 3xl:text-2xl font-medium">
               Saldo yang akan ditarik
             </p>
             {selectedMethod && selectedMethod.method === "bank" ? 
               <>
-                <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold wrap-break-word">
+                <p className="my-2.5 3xl:my-4 text-4xl 3xl:text-[40px] font-semibold wrap-break-word">
                   {balance && 
                     formattingRp(Number(formWithdrawal.values.amount) <= balance.balance 
                     ? Number(formWithdrawal.values.amount) * EXCHANGE_RATE || 0 : 0)
                   }
                 </p>
-                <p className="text-xs 2xl:text-lg text-black/80 leading-[160%]">
+                <p className="text-xs 3xl:text-lg text-black/80 leading-[160%]">
                   Note: Estimasi saldo diterima dihitung berdasarkan kurs real-time dari pihak payment provider/broker saat proses withdraw berlangsung. Nilai akhir yang diterima dapat berbeda mengikuti kurs masing-masing broker. Apabila broker menggunakan sistem fixed rate, maka nominal akan otomatis disesuaikan berdasarkan kurs tersebut.
                 </p>
               </>  
               : 
-              <p className="my-2.5 2xl:my-4 text-4xl 2xl:text-[40px] font-semibold wrap-break-word">
+              <p className="my-2.5 3xl:my-4 text-4xl 3xl:text-[40px] font-semibold wrap-break-word">
                 {balance && 
                 formattingUsd(Number(formWithdrawal.values.amount) <= balance.balance 
                   ? Number(formWithdrawal.values.amount) : 0)}

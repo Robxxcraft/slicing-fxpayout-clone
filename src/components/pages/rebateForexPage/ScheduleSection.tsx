@@ -93,11 +93,11 @@ const ScheduleSection = ({
       ref={el => {sectionsRef.current["scehdule"] = el}}
       className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-9 border-t xl:border-0 border-[#E5E5E5]"
     >
-      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 2xl:pe-56">
-        <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
+      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 3xl:pe-56">
+        <h2 className="font-medium text-2xl md:text-[2rem] 3xl:text-[2.5rem]">
           {t("claimrebatepage:schedule.title")}
         </h2>
-        <p className="mb-4 md:mb-6 mt-6 text-xl 2xl:text-2xl leading-[169.2%]">
+        <p className="mb-4 md:mb-6 mt-6 text-xl 3xl:text-2xl leading-[169.2%]">
           {t("claimrebatepage:schedule.paragraph")}
         </p>
         <div className="px-4 md:px-6 py-6 flex flex-col gap-4 md:gap-6 bg-[#F9F9F9] border border-[#D0D0D0] shadow-[0_1px_3px_0_rgba(0,0,0,0.2)] rounded-3xl">
@@ -106,19 +106,19 @@ const ScheduleSection = ({
           </h3>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
             <div className="flex items-center gap-1.5 text-[#212529]">
-              <span className="text-base 2xl:text-xl">{t("claimrebatepage:schedule.card.showEntry.0")}</span>
+              <span className="text-base 3xl:text-xl">{t("claimrebatepage:schedule.card.showEntry.0")}</span>
               <select 
                 name="entry" 
                 id="entry" 
                 value={totalEntry}
                 onChange={(e) => setTotalEntry(Number(e.target.value))}
-                className="px-3 py-2 text-base 2xl:text-xl text-[#495057] bg-white border border-[#CED4DA] rounded-md"
+                className="px-3 py-2 text-base 3xl:text-xl text-[#495057] bg-white border border-[#CED4DA] rounded-md"
               >
                 {supportEntry.map((item) => (
                   <option key={item} value={item}>{item}</option>
                 ))}
               </select>
-              <span className="text-base 2xl:text-xl">{t("claimrebatepage:schedule.card.showEntry.1")}</span>
+              <span className="text-base 3xl:text-xl">{t("claimrebatepage:schedule.card.showEntry.1")}</span>
             </div>
             <div className="py-4 px-4 md:px-8 flex items-center gap-4 w-full bg-white border border-[#D0D5DD] rounded-xl max-w-[400px]">
               <label htmlFor="search" className="cursor-pointer">
@@ -170,7 +170,7 @@ const ScheduleSection = ({
             </Table.Body>
           </Table>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-            <p className="text-sm 2xl:text-xl  text-[#212529]">
+            <p className="text-sm 3xl:text-xl  text-[#212529]">
               {t("claimrebatepage:schedule.card.showList", {
                 startIndex: showIndex.start + 1,
                 endIndex: showIndex.end < filteredBrokers.length ? showIndex.end : filteredBrokers.length,

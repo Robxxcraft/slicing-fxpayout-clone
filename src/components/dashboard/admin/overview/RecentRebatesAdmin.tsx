@@ -28,19 +28,19 @@ const RecentRebatesAdmin = ({
     date: item.created_at
   }));
   return (
-    <section className="mt-8 2xl:mt-10">
+    <section className="mt-8 3xl:mt-10">
       {/* HEADER */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
         <div>
-          <h2 className="text-2xl 2xl:text-[2rem] font-semibold">
+          <h2 className="text-2xl 3xl:text-[2rem] font-semibold">
             Recent Rebates
           </h2>
-          <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
+          <p className="text-base 3xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
             Ringkasan riwayat rebate yang baru saja masuk.
           </p>
         </div>
         <Link to={getLocalizedPath("dashboard/rebates", i18n.language)} className="flex items-center gap-3 text-primary">
-          <p className="text-base 2xl:text-xl">Lihat Semua</p>
+          <p className="text-base 3xl:text-xl">Lihat Semua</p>
           <HiArrowLongRight className="text-2xl" />
         </Link>
       </div>
@@ -52,7 +52,7 @@ const RecentRebatesAdmin = ({
             <Table.HeadingItem key={header} className={`
               ${idx === CONFIG_HEADER.length - 1 ? "px-2! text-right!" : "text-left!"} 
               ${idx === 0 ? "px-2!":""}
-              py-3! text-nowrap font-medium! text-sm! 2xl:text-lg!`}>
+              py-3! text-nowrap font-medium! text-sm! 3xl:text-lg!`}>
               {header}
             </Table.HeadingItem>
           ))}
@@ -77,7 +77,7 @@ const RecentRebatesAdmin = ({
                 return (
                   <Table.Cell rowIndex={rowIndex} key={cellIndex} className={`${cellIndex === CONFIG_HEADER.length - 1 ? "px-2! text-right!" : "text-left!"}
                   ${cellIndex === 0 ? "px-2!":""}
-                    py-2! 2xl:text-xl! group-hover:bg-gray-200 text-nowrap`}>
+                    py-2! 3xl:text-xl! group-hover:bg-gray-200 text-nowrap`}>
                     {key === "date" ? formattingFullDate(value.toLocaleString()) : value}
                   </Table.Cell>
                 )
@@ -89,7 +89,7 @@ const RecentRebatesAdmin = ({
 
       {/* LOADING & 0 DATA TABLE */}
       {dataRows.length === 0 && isLoading &&
-        <div className="mt-4 2xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
+        <div className="mt-4 3xl:mt-5 flex flex-col items-center justify-center w-full h-fit">
           <Spinner />
         </div>
       }

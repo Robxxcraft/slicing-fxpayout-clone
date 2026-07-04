@@ -202,23 +202,23 @@ const DrawerWalletDetailData = ({
       onClose={onCloseDrawer}
       maxWCL="max-w-[460px]"
     >
-      <div className="py-5 w-full h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)] border-t border-s border-[#D2CEE1] bg-white">
-        <div className="px-5 2xl:pb-2 relative pr-5 flex items-center justify-between border-b border-[#D2CEE1]">
-          <h2 className="text-xl 2xl:text-2xl font-medium">
+      <div className="py-5 w-full h-[calc(100dvh-64px)] 3xl:h-[calc(100dvh-90px)] border-t border-s border-[#D2CEE1] bg-white">
+        <div className="px-5 3xl:pb-2 relative pr-5 flex items-center justify-between border-b border-[#D2CEE1]">
+          <h2 className="text-xl 3xl:text-2xl font-medium">
             Akun Bank
           </h2>
           <div
             onClick={onCloseDrawer} 
             className="p-2 aspect-square hover:bg-[#F5F5F5] rounded-xl transition-all duration-300 cursor-pointer">
             <IoCloseOutline 
-              className="text-2xl 2xl:text-3xl" />
+              className="text-2xl 3xl:text-3xl" />
           </div>
         </div>
         <form onSubmit={handleSubmitData} className="h-full">
-          <div className={`pt-2 2xl:pt-4 pb-4 px-5 flex flex-col gap-4 w-full overflow-y-auto overflow-x-hidden
-            ${walletData !== null ? "h-[calc(100%-140px)] 2xl:h-[calc(100%-180px)]" : "h-[calc(100%-80px)] 2xl:h-[calc(100%-100px)]"}    
+          <div className={`pt-2 3xl:pt-4 pb-4 px-5 flex flex-col gap-4 w-full overflow-y-auto overflow-x-hidden
+            ${walletData !== null ? "h-[calc(100%-140px)] 3xl:h-[calc(100%-180px)]" : "h-[calc(100%-80px)] 3xl:h-[calc(100%-100px)]"}    
           `}>
-            <div className="flex flex-wrap gap-2.5 2xl:gap-4">
+            <div className="flex flex-wrap gap-2.5 3xl:gap-4">
               <div className="w-full">
                 <SelectInput 
                   id="method" 
@@ -229,7 +229,7 @@ const DrawerWalletDetailData = ({
                   optionData={["bank", "crypto"]}
                   labelOptions={["Bank", "Crypto"]}
                   errorMessage={formWallet.errors.method}
-                  labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+                  labelClassName="text-sm! 3xl:text-lg! text-black/60!"
                   selectClassName="py-2.5! px-2! w-full"
                   gap={8}
                   disabled={isLoading || walletData !== null}

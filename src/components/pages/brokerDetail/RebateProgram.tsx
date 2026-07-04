@@ -18,13 +18,13 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
   }
 
   return (
-    <section className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 2xl:mt-16 py-8 md:py-10 2xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 2xl:px-56">
-      <div className="px-6 2xl:px-10 py-10 2xl:py-14 grid grid-cols-1 lg:grid-cols-2 gap-6 2xl:gap-8 bg-primary rounded-2xl 2xl:rounded-3xl">
+    <section className="scroll-mt-18 lg:scroll-mt-0 mt-10 lg:mt-12 3xl:mt-16 py-8 md:py-10 3xl:py-14 px-5 md:px-11 lg:px-18 xl:px-24 3xl:px-56">
+      <div className="px-6 3xl:px-10 py-10 3xl:py-14 grid grid-cols-1 lg:grid-cols-2 gap-6 3xl:gap-8 bg-primary rounded-2xl 3xl:rounded-3xl">
         <div>
-          <h2 className="text-[36px] 2xl:text-[40px] font-bold leading-[132%] text-white">
+          <h2 className="text-[36px] 3xl:text-[40px] font-bold leading-[132%] text-white">
             {t("brokerdetailpage:rebateProgram.title")}
           </h2>
-          <p className="mt-4 text-base 2xl:text-xl leading-[160%] text-white">
+          <p className="mt-4 text-base 3xl:text-xl leading-[160%] text-white">
             {t("brokerdetailpage:rebateProgram.subtitle")}
           </p>
           <Button 
@@ -39,27 +39,27 @@ const RebateProgram = ({ detailData }: { detailData: RebateProgramType }) => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-2 gap-y-4 gap-x-2 lg:gap-x-4 2xl:gap-x-6">
+        <div className="grid grid-cols-2 gap-y-4 gap-x-2 lg:gap-x-4 3xl:gap-x-6">
           {!isRebateProgramText &&
             <>          
-              <div className="px-6 md:px-8 2xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
-                <p className="text-base 2xl:text-xl font-semibold text-white">EUR/USD</p>
+              <div className="px-6 md:px-8 3xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
+                <p className="text-base 3xl:text-xl font-semibold text-white">EUR/USD</p>
                 <div dir="ltr" className="mt-3 lg:mt-2 flex items-end text-white">
-                  <p className="text-[30px] md:text-[36px] 2xl:text-[48px] lg:leading-14 font-semibold">
+                  <p className="text-[30px] md:text-[36px] 3xl:text-[48px] lg:leading-14 font-semibold">
                     ${estimateEur}
                   </p>
-                  <p className="text-base lg:text-lg 2xl:text-2xl leading-10 md:leading-9 2xl:leading-8 tracking-[10%] font-semibold">
+                  <p className="text-base lg:text-lg 3xl:text-2xl leading-10 md:leading-9 3xl:leading-8 tracking-[10%] font-semibold">
                     / lot
                   </p>
                 </div>
               </div>
-              <div className="px-6 md:px-8 2xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
-                <p className="text-base 2xl:text-xl font-semibold text-white">XAU/USD</p>
+              <div className="px-6 md:px-8 3xl:px-10 py-4 flex flex-col items-center w-full h-fit bg-[#F5F7FF]/20 border border-white rounded-2xl md:rounded-[20px]">
+                <p className="text-base 3xl:text-xl font-semibold text-white">XAU/USD</p>
                 <div dir="ltr" className="mt-3 lg:mt-2 flex items-end text-white">
-                  <p className="text-[30px] md:text-[36px] 2xl:text-[48px] lg:leading-14 font-semibold">
+                  <p className="text-[30px] md:text-[36px] 3xl:text-[48px] lg:leading-14 font-semibold">
                     ${estimateXau}
                   </p>
-                  <p className="text-base lg:text-lg 2xl:text-2xl leading-10 md:leading-9 2xl:leading-8 tracking-[10%] font-semibold">
+                  <p className="text-base lg:text-lg 3xl:text-2xl leading-10 md:leading-9 3xl:leading-8 tracking-[10%] font-semibold">
                     / lot
                   </p>
                 </div>

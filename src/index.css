@@ -3,6 +3,7 @@
 @theme {
   --font-inter: "Inter", sans-serif;
   --font-wix-madefor-display: "Wix Madefor Display", sans-serif;
+  --breakpoint-3xl: 123.75rem;;
 
   --color-primary: #4160ff;
   --color-dark-primary: #213269;

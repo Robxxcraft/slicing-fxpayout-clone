@@ -21,14 +21,14 @@ const PreviewImportRebate = ({
     
       <div className="mt-6 flex flex-col md:flex-row justify-between gap-4">
         <div>
-          <p className="font-medium text-lg 2xl:text-xl">
+          <p className="font-medium text-lg 3xl:text-xl">
             Preview Data
           </p>
-          <p className="text-base 2xl:text-lg text-black/80">
+          <p className="text-base 3xl:text-lg text-black/80">
             Tampilan 5 data teratas dari keseluruhan data yang di import.
           </p>
         </div>
-        <p className="shrink-0 px-4 py-2.5 h-fit border border-primary rounded-full text-sm 2xl:text-lg text-center text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text whitespace-nowrap">
+        <p className="shrink-0 px-4 py-2.5 h-fit border border-primary rounded-full text-sm 3xl:text-lg text-center text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text whitespace-nowrap">
           Records {data.length} data
         </p>
       </div>

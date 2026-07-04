@@ -14,26 +14,26 @@ const BrokerOverview = ({
 }) => {
   const { i18n } = useTranslation();
   return (
-    <section className="mt-7 2xl:mt-10">
+    <section className="mt-7 3xl:mt-10">
       <div className="flex flex-col md:flex-row justify-between items-start gap-3">
         <div>
-          <h2 className="text-xl 2xl:text-[2rem] font-semibold">
+          <h2 className="text-xl 3xl:text-[2rem] font-semibold">
             Connected Broker
           </h2>
-          <p className="text-base 2xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
+          <p className="text-base 3xl:text-xl text-black/80 md:max-w-[760px] leading-[169.2%]">
             Daftar seluruh broker yang terkoneksi dengan akun Anda dan pantau status koneksi dan perolehan komisi rebate Anda.
           </p>
         </div>
         <TinyButton 
           buttonType="link" 
-          icon={<IoIosAdd className="text-2xl 2xl:text-3xl" />} 
+          icon={<IoIosAdd className="text-2xl 3xl:text-3xl" />} 
           iconPosition="left"
           urlTo={getLocalizedPath("trader/broker/connect", i18n.language)}
         >
           Tambah Broker
         </TinyButton>
       </div>
-      <div className="mt-4 2xl:mt-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 2xl:gap-5">
+      <div className="mt-4 3xl:mt-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 3xl:gap-5">
         {initLoad ?
           Array.from({ length: 3 }).map((_, idx) => (
             <div key={idx} className="w-full rounded-lg overflow-hidden border border-[#DDDDDD]">
@@ -68,8 +68,8 @@ const BrokerOverview = ({
             />
           ))
         : 
-          <div className="mt-4 2xl:mt-5 col-span-1 md:col-span-2 xl:col-span-3">
-            <p className="text-base 2xl:text-xl text-center text-black/80">Belum ditemukan data broker yang terhubung. {" "}
+          <div className="mt-4 3xl:mt-5 col-span-1 md:col-span-2 xl:col-span-3">
+            <p className="text-base 3xl:text-xl text-center text-black/80">Belum ditemukan data broker yang terhubung. {" "}
               <Link to={getLocalizedPath("trader/broker/connect", i18n.language)}
                 className="text-primary underline"
               >Hubungkan broker.</Link>

@@ -74,8 +74,8 @@ const SelectDropdown = ({
         onClick={handleOpen}
         className={`${wrapperCL}
         ${disabled ? "opacity-70 cursor-auto" : "opacity-100 cursor-pointer focus:outline-primary/60 focus:outline-2 focus:bg-[#F5F5F5] hover:bg-[#F5F5F5]"}
-        px-2 h-9 2xl:h-12 flex items-center justify-between gap-2 w-fit bg-white border border-[#CED4DA] rounded-md transition-[background] duration-300`}>
-        <p className="text-base 2xl:text-xl text-black/80 text-nowrap">
+        px-2 h-9 3xl:h-12 flex items-center justify-between gap-2 w-fit bg-white border border-[#CED4DA] rounded-md transition-[background] duration-300`}>
+        <p className="text-base 3xl:text-xl text-black/80 text-nowrap">
           {objectInput.find(item => item.key === selectedInput)?.value}
         </p>
         <FaChevronDown 
@@ -96,7 +96,7 @@ const SelectDropdown = ({
               <p 
                 key={item.key}
                 onClick={() => handleChange(item.key)}
-                className={`${textInputCL} px-2 py-2 w-full text-base 2xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md cursor-pointer`}>
+                className={`${textInputCL} px-2 py-2 w-full text-base 3xl:text-xl text-black/80 hover:text-primary font-medium hover:bg-[#F5F5F5] rounded-md cursor-pointer`}>
                 {item.value}
               </p>
             ))}

@@ -6,7 +6,7 @@ const ContentBody = ({
   children: React.ReactNode
 }) => {
   return (
-    <p className={`${smText !== null ? smText : "text-base" } text-base md:text-xl 2xl:text-2xl md:leading-[180%] font-semibold text-black`}>
+    <p className={`${smText !== null ? smText : "text-base" } text-base md:text-xl 3xl:text-2xl md:leading-[180%] font-semibold text-black`}>
       {children}
     </p>
   )

@@ -52,11 +52,11 @@ const PaymentSection = ({
       ref={el => {sectionsRef.current["payment"] = el}}
       className="pt-8 md:pt-10 xl:pt-20 scroll-mt-[66px] lg:scroll-mt-9 border-t xl:border-0 border-[#E5E5E5]"
     >
-      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 2xl:pe-56">
-        <h2 className="font-medium text-2xl md:text-[2rem] 2xl:text-[2.5rem]">
+      <div className="px-6 md:px-11 xl:px-0 xl:pe-24 3xl:pe-56">
+        <h2 className="font-medium text-2xl md:text-[2rem] 3xl:text-[2.5rem]">
           {t("claimrebatepage:payment.title")}
         </h2>
-        <p className="mt-6 text-xl 2xl:text-2xl leading-[169.2%]">
+        <p className="mt-6 text-xl 3xl:text-2xl leading-[169.2%]">
           {t("claimrebatepage:payment.paragraph")}
         </p>
         <Table>

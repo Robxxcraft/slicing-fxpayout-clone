@@ -16,7 +16,7 @@ const InputBankForm = ({ values, handleChange, errors }: {
           value={values.bank || ""} 
           onChangeForm={handleChange} 
           typeInput="text" 
-          labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+          labelClassName="text-sm! 3xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}
           errorMessage={errors.bank}
@@ -32,12 +32,12 @@ const InputBankForm = ({ values, handleChange, errors }: {
           onChangeForm={handleChange} 
           typeInput="text"
           inputMode="numeric"
-          labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+          labelClassName="text-sm! 3xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}
           errorMessage={errors.accountNumber}
           helperText="Gunakan angka saja tanpa tanda baca" 
-          helperTextClassName="text-sm! 2xl:text-lg!"
+          helperTextClassName="text-sm! 3xl:text-lg!"
           required
         />
       </div>
@@ -51,12 +51,12 @@ const InputBankForm = ({ values, handleChange, errors }: {
           typeInput="text"
           inputMode="text"
           autoComplete="name"
-          labelClassName="text-sm! 2xl:text-lg! text-black/60!"
+          labelClassName="text-sm! 3xl:text-lg! text-black/60!"
           inputClassName="py-2.5! px-2! w-full"
           gap={8}
           errorMessage={errors.username} 
           helperText="Pastikan nama sesuai dengan yang tertera di buku tabungan atau aplikasi m-banking Anda."
-          helperTextClassName="text-sm! 2xl:text-lg!"
+          helperTextClassName="text-sm! 3xl:text-lg!"
           required
         />
       </div>

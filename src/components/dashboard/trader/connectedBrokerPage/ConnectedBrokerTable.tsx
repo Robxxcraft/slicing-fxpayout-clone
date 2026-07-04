@@ -24,7 +24,7 @@ const ConnectedBrokerTable = ({
             ${idx === CONFIG_HEADERS.length - 1 ? "px-2!":""}
             ${idx === CONFIG_HEADERS.length - 2 ? "text-right!" : "text-left!"}
             ${idx === 0 ? "px-0! pl-4! pr-8!":""}
-            py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg! select-none
+            py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg! select-none
           `}>
             {header.header}
           </Table.HeadingItem>
@@ -50,7 +50,7 @@ const ConnectedBrokerTable = ({
                       onClick={() => {
                         onOpenDeleteConfirm(data.connectionId);
                       }} 
-                      className="text-base 2xl:text-2xl text-black/60 cursor-pointer" />
+                      className="text-base 3xl:text-2xl text-black/60 cursor-pointer" />
                   </div>
                 </Table.Cell>)
               } else if (header.key === "status") {

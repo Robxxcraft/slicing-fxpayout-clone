@@ -44,7 +44,7 @@ const SelectInput = ({
       style={{ gap: gap === undefined ? "12px" : `${gap}px` }}>
       <label
         htmlFor={id}
-        className={`${labelClassName} flex text-base 2xl:text-xl font-medium text-[#344054]`}>
+        className={`${labelClassName} flex text-base 3xl:text-xl font-medium text-[#344054]`}>
         {label}
         {!required &&
           <span className="ml-1 text-base text-black/50">(opsional)</span>
@@ -64,7 +64,7 @@ const SelectInput = ({
           className={`
             ${icon !== undefined && altIcon !== undefined ? "px-[54px]" : "px-4"}
             ${errorMessage === "" ? "border-[#D0D5DD]" : "border-red-500"}
-            _select-no-arrow py-4 2xl:py-6 w-full bg-white text-base 2xl:text-xl has-[option[value='']:checked]:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed
+            _select-no-arrow py-4 3xl:py-6 w-full bg-white text-base 3xl:text-xl has-[option[value='']:checked]:text-[#747474] border rounded-lg focus:outline-primary disabled:bg-[#F5F5F5] disabled:cursor-not-allowed
             ${selectClassName}
           `}>
             <option value="" disabled>
@@ -87,7 +87,7 @@ const SelectInput = ({
         </span>
       }
       {errorMessage === "" && showMobileHelperText &&
-        <span className="inline-bloc md:hidden text-sm 2xl:text-base text-black/50">
+        <span className="inline-bloc md:hidden text-sm 3xl:text-base text-black/50">
           {mobileHelperText}
         </span>
       }

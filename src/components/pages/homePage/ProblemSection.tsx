@@ -8,7 +8,7 @@ const ProblemSection = () => {
     returnObjects: true
   }) as string[];
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-14 xl:pt-[120px]">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-14 xl:pt-[120px]">
       <div className="flex flex-col items-center justify-center gap-y-4">
         <BadgeSection
           icon={
@@ -18,7 +18,7 @@ const ProblemSection = () => {
         >
           {t("homepage:problemSection.badge")}
         </BadgeSection>
-        <h2 className="my-4 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%] text-center">
+        <h2 className="my-4 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%] text-center">
           {t("homepage:problemSection.title")}
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-5xl text-center">
@@ -31,9 +31,9 @@ const ProblemSection = () => {
           {problems.map((item, index) => (
             <div 
               key={index}
-              className="px-5 2xl:px-8 py-4 2xl:py-6 flex items-start md:items-center justify-between gap-6 bg-my-red-100 rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-my-red-700"
+              className="px-5 3xl:px-8 py-4 3xl:py-6 flex items-start md:items-center justify-between gap-6 bg-my-red-100 rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-my-red-700"
             >
-              <p className="text-base md:text-xl 2xl:text-2xl text-my-red-700 font-medium leading-[160%]">
+              <p className="text-base md:text-xl 3xl:text-2xl text-my-red-700 font-medium leading-[160%]">
                 {item} 
               </p>
               <div className="w-fit">
@@ -46,17 +46,17 @@ const ProblemSection = () => {
         </div>
 
         <div className="relative w-full border-t border-dashed">
-          <p className="px-3 absolute top-1/2 left-1/2 -translate-1/2 text-base md:text-lg 2xl:text-xl font-semibold text-black/50 leading-[160%] bg-white whitespace-nowrap uppercase">
+          <p className="px-3 absolute top-1/2 left-1/2 -translate-1/2 text-base md:text-lg 3xl:text-xl font-semibold text-black/50 leading-[160%] bg-white whitespace-nowrap uppercase">
             {t("homepage:problemSection.then")} 
           </p>
         </div>
 
-        <div className="px-5 2xl:px-8 py-4 2xl:py-6 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between w-full bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
+        <div className="px-5 3xl:px-8 py-4 3xl:py-6 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between w-full bg-[#F4F6FA] rounded-lg shadow-[0_3px_13.1px_0_rgba(0,0,0,0.1)] border-s-10 border-primary">
           <div>
-            <p className="text-base md:text-xl 2xl:text-2xl text-primary font-bold leading-[160%]">
+            <p className="text-base md:text-xl 3xl:text-2xl text-primary font-bold leading-[160%]">
               {t("homepage:problemSection.solutions.0")}
             </p>
-            <p className="text-base md:text-xl 2xl:text-2xl text-primary font-medium leading-[160%]">
+            <p className="text-base md:text-xl 3xl:text-2xl text-primary font-medium leading-[160%]">
               {t("homepage:problemSection.solutions.1")} 
             </p>
           </div>
@@ -65,9 +65,9 @@ const ProblemSection = () => {
               <img
                 src="/fxpayout-blue.svg"
                 alt="logo fx payout"
-                className="w-5 lg:w-6 2xl:w-7"
+                className="w-5 lg:w-6 3xl:w-7"
               />
-              <span className="text-lg md:text-2xl 2xl:text-3xl font-bold text-primary">
+              <span className="text-lg md:text-2xl 3xl:text-3xl font-bold text-primary">
                 FXPAYOUT
               </span>
             </div>

@@ -10,7 +10,7 @@ const ParagraphDashboard = ({
   const maxWCL = maxW === "full" ? "w-full" : maxW; 
   return (
     <p
-     className={`${colorCL} ${maxWCL} text-base 2xl:text-xl leading-[169.2%]`}
+     className={`${colorCL} ${maxWCL} text-base 3xl:text-xl leading-[169.2%]`}
      >
       {children}
     </p>

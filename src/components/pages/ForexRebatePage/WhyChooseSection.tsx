@@ -31,7 +31,7 @@ const WhyChooseSection = () => {
   const key = "forexrebatepage:whychoosesection";
 
   return (
-    <section className="px-6 md:px-10 lg:px-18 xl:px-24 2xl:px-56 pt-10 md:pt-15 2xl:pt-20">
+    <section className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56 pt-10 md:pt-15 3xl:pt-20">
 
       <div className="flex flex-col items-center justify-center gap-4">
         <BadgeSection
@@ -41,7 +41,7 @@ const WhyChooseSection = () => {
         }>
           {t(`${key}.badge`)}
         </BadgeSection>
-        <h2 className="text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%] text-center">
+        <h2 className="text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%] text-center">
           {t(`${key}.title`)}
         </h2>
         <p className="text-base md:text-xl leading-[160%] max-w-5xl text-center">

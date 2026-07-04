@@ -16,7 +16,7 @@ const HeaderSection = ({
   flipTitle=false
 }: HeaderSection) => {
   return (
-    <section className="px-6 md:px-11 lg:px-18 xl:px-24 2xl:px-56 pt-[120px] lg:pt-[150px] 2xl:pt-[200px]">
+    <section className="px-6 md:px-11 lg:px-18 xl:px-24 3xl:px-56 pt-[120px] lg:pt-[150px] 3xl:pt-[200px]">
       <div className="flex flex-col items-center justify-center text-center">
         <div className="px-6 py-2 w-fit flex gap-2 items-center bg-primary rounded-full">
           <img src={icon} alt={badge}
@@ -26,7 +26,7 @@ const HeaderSection = ({
           </span>
         </div>
         <h1 className={`${flipTitle ? "flex-row-reverse" : "flex-row"}
-          my-4 flex gap-2 text-2xl md:text-[32px] 2xl:text-[44px] font-bold leading-[132%]`}>
+          my-4 flex gap-2 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]`}>
           {title}
           {titleHighlight !== undefined && <span className="text-primary">{" "} {titleHighlight}</span>}
         </h1>

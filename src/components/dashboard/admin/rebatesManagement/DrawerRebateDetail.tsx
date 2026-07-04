@@ -67,29 +67,29 @@ const DrawerRebateDetail = ({
     <DrawerContainer 
       isOpen={isOpen} 
       onClose={onCloseDrawer}
-      maxWCL="max-w-[460px] 2xl:max-w-[540px]"
+      maxWCL="max-w-[460px] 3xl:max-w-[540px]"
     >
       <div className={`primary-scrollbar border-t border-s border-[#D2CEE1] bg-white overflow-y-auto
-        ${!isLoading && dataRebate.status === "pending" ? "h-[calc(100dvh-64px)] 2xl:h-[calc(100dvh-90px)]" : "h-screen"} 
+        ${!isLoading && dataRebate.status === "pending" ? "h-[calc(100dvh-64px)] 3xl:h-[calc(100dvh-90px)]" : "h-screen"} 
       `}>
         <div className="px-5 pr-5 py-3 h-[calc(100%-64px)] overflow-y-auto overflow-x-hidden">
           {/* HEADER */}
-          <div className="pb-2 2xl:pb-4 relative">
+          <div className="pb-2 3xl:pb-4 relative">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl 2xl:text-2xl font-semibold">
+              <h2 className="text-xl 3xl:text-2xl font-semibold">
                 Detail Rebate
               </h2>
               <div
                 onClick={onCloseDrawer} 
                 className="p-2 aspect-square hover:bg-[#F5F5F5] rounded-xl transition-all duration-300 cursor-pointer">
                 <IoCloseOutline 
-                  className="text-2xl 2xl:text-3xl" />
+                  className="text-2xl 3xl:text-3xl" />
               </div>
             </div>
-            <p className="mt-1 text-black/60 text-base 2xl:text-xl leading-[160%]">
+            <p className="mt-1 text-black/60 text-base 3xl:text-xl leading-[160%]">
               Dibuat pada {formattingFullDate(dataRebate.date)} 
             </p>
-            <p className="mt-1 text-sm 2xl:text-lg  leading-[160%]">
+            <p className="mt-1 text-sm 3xl:text-lg  leading-[160%]">
               Perubahan data total rebate hanya diperbolehkan selama status belum terverifikasi.
             </p>
           </div>
@@ -97,11 +97,11 @@ const DrawerRebateDetail = ({
           {/* DETAIL */}
           <div className="pt-8 pb-5 space-y-4">
             {dataRebate.status !== "pending" &&
-              <div className="mb-4 px-4 py-2 2xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
-                <span className="flex shrink-0 items-center justify-center size-5 2xl:size-7 border border-[#BE5409] rounded-full">
-                  <TiInfoLarge className="text-sm 2xl:text-lg text-[#BE5409]" />
+              <div className="mb-4 px-4 py-2 3xl:py-3 flex items-center gap-2 bg-[#FEF3C6]">
+                <span className="flex shrink-0 items-center justify-center size-5 3xl:size-7 border border-[#BE5409] rounded-full">
+                  <TiInfoLarge className="text-sm 3xl:text-lg text-[#BE5409]" />
                 </span>
-                <p className="text-sm 2xl:text-lg text-[#BE5409]">
+                <p className="text-sm 3xl:text-lg text-[#BE5409]">
                   Rebate sudah terverifikasi. Tidak dapat melakukan perubahan data
                 </p>
               </div>
@@ -163,20 +163,20 @@ const DrawerRebateDetail = ({
 
           {/* BUTTON */}
           {dataRebate.status === "pending" && 
-            <div className="absolute px-5 py-2 2xl:py-3 flex gap-2 left-0 bottom-0 w-full bg-white border-t border-[#D2CEE1]">
+            <div className="absolute px-5 py-2 3xl:py-3 flex gap-2 left-0 bottom-0 w-full bg-white border-t border-[#D2CEE1]">
               {!isEdited ? 
                 <>
                 <button 
                   disabled={isLoading}
                   onClick={() => openPopUpStatus("rejected")}
-                  className="py-3 flex items-center justify-center gap-2 w-full rounded-lg border border-my-red text-my-red text-sm 2xl:text-base hover:shadow-[0_0_1px_1px] shadow-my-red/80 transition-all duration-300 cursor-pointer"
+                  className="py-3 flex items-center justify-center gap-2 w-full rounded-lg border border-my-red text-my-red text-sm 3xl:text-base hover:shadow-[0_0_1px_1px] shadow-my-red/80 transition-all duration-300 cursor-pointer"
                 >
                   <span>Reject</span> 
                 </button>
                 <button 
                   disabled={isLoading}
                   onClick={() => openPopUpStatus("approved")}
-                  className="py-3 flex items-center justify-center gap-2 w-full rounded-lg bg-primary text-white text-sm 2xl:text-base cursor-pointer hover:brightness-90 transition-all duration-300"
+                  className="py-3 flex items-center justify-center gap-2 w-full rounded-lg bg-primary text-white text-sm 3xl:text-base cursor-pointer hover:brightness-90 transition-all duration-300"
                 >
                   <FaCheck />
                   <span>Approve</span> 

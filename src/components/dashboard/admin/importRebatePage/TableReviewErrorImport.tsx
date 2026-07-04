@@ -12,7 +12,7 @@ const TableReviewErrorImport = ({
     <Table className="mt-6!">
       <Table.Heading>
         {["Baris", "Keterangan"].map((header, idx) => {
-          const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 2xl:text-lg!";
+          const baseStyle = "py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg!";
       
           return (
           <Table.HeadingItem 
@@ -31,11 +31,11 @@ const TableReviewErrorImport = ({
           return (
           <Table.Row key={rowIdx}>
             <Table.Cell rowIndex={rowIdx}
-            className={`${baseStyle} w-[100px]! px-4! text-lg! 2xl:text-xl! whitespace-nowrap leading-normal truncate`}>
+            className={`${baseStyle} w-[100px]! px-4! text-lg! 3xl:text-xl! whitespace-nowrap leading-normal truncate`}>
               {rows.row}
             </Table.Cell>
             <Table.Cell rowIndex={rowIdx}
-            className={`${baseStyle} text-left! 2xl:text-xl! whitespace-nowrap leading-normal`}>
+            className={`${baseStyle} text-left! 3xl:text-xl! whitespace-nowrap leading-normal`}>
               {rows.message}
             </Table.Cell>
           </Table.Row>
