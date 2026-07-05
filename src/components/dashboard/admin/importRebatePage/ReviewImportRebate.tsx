@@ -73,6 +73,7 @@ const ReviewImportRebate = ({
             </p>
           </div>
           <TableReviewErrorImport 
+            nameKey="Baris"
             detailError={detailError}
           />
         </div>

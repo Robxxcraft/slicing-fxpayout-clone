@@ -35,3 +35,15 @@ export type RebateAdminManagement = {
   affiliate_earning: number;
   internal_earning: number;
 };
+
+export type ResponseChangeStatusRebate = {
+  message: string;
+  total: string;
+  successCount: number;
+  failedCount: number;
+  idsSuccess: number[];
+  detailFailed: {
+    id: number;
+    error: string;
+  }[];
+}
