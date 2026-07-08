@@ -91,7 +91,7 @@ const OverviewAdminHeader = ({
               <Doughnut 
                 key="donat-total-user"
                 data={{ 
-                  labels: ["Traders", "Affiliators"],
+                  labels: ["Traders", "Refferal Partner"],
                   datasets: [{
                     data: [traders, affiliators],
                     backgroundColor: ["#6366f1", "#f87171"],
@@ -119,7 +119,7 @@ const OverviewAdminHeader = ({
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <div className="size-3 3xl:size-4 rounded-full bg-[#f87171]"></div>
-                <p className="text-sm 3xl:text-lg font-medium">Affiliators</p>
+                <p className="text-sm 3xl:text-lg font-medium">Refferal Partner</p>
               </div>
               <span className="text-sm 3xl:text-lg font-medium text-black/70">
                 {affiliators}

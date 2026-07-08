@@ -15,7 +15,7 @@ const TierProfile = () => {
         <p className="text-xl 3xl:text-[26px] font-bold text-black/40 uppercase tracking-[5%]">
           Tier {" "}
           {authUser.role === "user" && "Trader"}
-          {authUser.role === "affiliator" && "Affiliator"}
+          {authUser.role === "affiliator" && "Refferal Partner"}
         </p>
         <div className="mt-6 flex gap-4">
           <div className="p-3 w-20 3xl:w-[100px] h-fit bg-[#F5F5F5] border border-[#DDDDDD] rounded-2xl">

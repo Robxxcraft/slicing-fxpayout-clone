@@ -24,6 +24,37 @@
             "title": "Tổng Hoa Hồng"
         }
     },
+    "levelaffiliatesection": {
+        "title": "Cấp Độ Đối Tác Referral Partner",
+        "paragraph": "Phát triển mạng lưới referral của bạn và nhận tỷ lệ revenue share cao hơn khi càng nhiều trader tích cực tham gia qua link referral của bạn.",
+        "shared": "Chia Sẻ Lợi Nhuận",
+        "requirement": "Điều Kiện",
+        "tiers": [
+            {
+                "title": "Đối Tác Khởi Đầu",
+                "requirement": "0-49 Trader Tích Cực",
+                "description": "Phù hợp cho affiliate mới bắt đầu xây dựng cộng đồng trader của mình."
+            },
+            {
+                "title": "Đối Tác Tích Cực",
+                "requirement": "50-99 Trader Tích Cực",
+                "description": "Mở rộng cộng đồng của bạn và nhận hoa hồng định kỳ cao hơn."
+            },
+            {
+                "title": "Đối Tác Master VIP",
+                "requirement": "100+ Trader Tích Cực",
+                "description": "Cấp độ affiliate cao nhất với tỷ lệ revenue sharing tối đa và hỗ trợ ưu tiên."
+            }
+        ],
+        "how_to_work": {
+            "title": "Cấp độ referral partner hoạt động như thế nào?",
+            "flows": [
+                "Cấp độ referral partner của bạn được xác định bởi số lượng trader tích cực đăng ký và giao dịch qua link referral của bạn.",
+                "Khi số lượng trader tích cực của bạn tăng lên, tỷ lệ chia sẻ lợi nhuận của bạn cũng tự động tăng theo.",
+                "Chỉ trader tích cực mới được tính để xác định cấp độ referral partner của bạn."
+            ]
+        }
+    },
     "commissionsection": {
         "title": "Xem Bạn Có Thể Kiếm Được Bao Nhiêu",
         "paragraph": "Hình dung tiềm năng thu nhập từ mỗi trader bạn giới thiệu đang giao dịch tích cực.",

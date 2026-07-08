@@ -51,20 +51,12 @@ const MobileNavDashboard = ({ onLogout, showMobileNav, setShowMobileNav
           </div>
         </div>
         {authUser?.role !== "admin" &&
-        <>
           <div className="flex items-center justify-between">
             <p className="font-semibold">Balance</p>
             <p>
               {formattingUsd(balance?.balance || 0)} USD
             </p>
           </div>
-          {(authUser?.referralCode || authUser?.affiliatorCode) &&
-            <div className="flex items-center justify-between">
-              <p className="font-semibold">Referral</p>
-              <p>{authUser.referralCode || authUser.affiliatorCode}</p>
-            </div>
-          }
-        </>
         }
       </div>
       <div className="pt-3">

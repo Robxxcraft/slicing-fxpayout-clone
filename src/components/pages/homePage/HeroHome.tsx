@@ -3,8 +3,9 @@ import CardEstimationRebate from "@/components/CardEstimationRebate";
 import { Trans, useTranslation } from "react-i18next";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { FaCircleCheck } from "react-icons/fa6";
-import RunningText from "@/components/ui/RunningText";
 import BadgeHero from "@/components/ui/BadgeHero";
+import MarqueeSection from "@/components/ui/MarqueeSection";
+import RunningText from "@/components/ui/RunningText";
 
 const HeroHome = () => {
   const { t, i18n } = useTranslation(["common", "homepage"]);
@@ -82,7 +83,9 @@ const HeroHome = () => {
 
       {/* RUNNING TEXT */}
       <div className="absolute bottom-0 left-0 overflow-hidden w-full whitespace-nowrap border-t lg:border-t-0 border-white">
-        <RunningText />
+        <MarqueeSection speed={60}>
+          <RunningText />
+        </MarqueeSection>
       </div>
     </header>
   );

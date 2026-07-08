@@ -65,31 +65,71 @@
         ]
     },
     "howItWorks": {
-        "title": "Cómo Funciona FXPayout en 4 Sencillos Pasos",
-        "paragraph": "Sin cambiar tu estrategia, solo tienes que operar con normalidad. FXPayout se encarga de convertir el flujo de comisiones en cashback para ti.",
+        "title": "Cómo Funciona FXPayout en 6 Sencillos Pasos",
+        "paragraph": "Opera con normalidad sin cambiar tu estrategia. FXPayout convierte la comisión IB del bróker en cashback (rebate), que puedes consultar y retirar desde el Panel del Trader.",
         "tag": "CÓMO FUNCIONA",
+        "see_detail": "Ver Detalle de los Pasos",
+        "open_broker": "Abrir Página del Bróker",
         "workflows": [
             {
-                "title": "EMPIEZA",
-                "subtitle": "Regístrate a través del enlace oficial de FXPayout",
-                "paragraph": "Crea tu cuenta de FXPayout y vincula tu cuenta de trading a través del enlace oficial que te facilitamos del bróker elegido."
+                "title": "Crea tu Cuenta de FXPayout",
+                "description": "Regístrate en FXPayout",
+                "details": ["Crea tu cuenta de FXPayout usando el mismo correo con el que estás registrado en el bróker para agilizar el proceso de verificación. Una vez completado el registro, podrás acceder al Panel del Trader para gestionar tu cuenta de trading, el rebate y los retiros."],
+                "info": "Usa el mismo correo que en tu cuenta del bróker."
             },
             {
-                "title": "OPERA",
-                "subtitle": "Opera con normalidad en tu bróker",
-                "paragraph": "Continúa con tu actividad de trading sin cambios en el spread, el apalancamiento ni otras condiciones. Todo sigue las reglas del bróker."
+                "title": "Regístrate en el Bróker a través de FXPayout",
+                "description": "Vincula tu cuenta del bróker",
+                "details": ["Regístrate en el bróker a través de la página oficial de Brókers de FXPayout. Una vez creada la cuenta del bróker, entra en Panel del Trader -> Brókers y añade el bróker y el número de cuenta de trading MT4/MT5."],
+                "info": "Asegúrate de que el bróker y el número de cuenta sean correctos."
             },
             {
-                "title": "COMISIÓN",
-                "subtitle": "El bróker envía la comisión IB a FXPayout",
-                "paragraph": "Según el volumen de lotes que operes, el bróker envía la comisión IB a FXPayout de forma automática."
+                "title": "Espera el Proceso de Validación",
+                "description": "El administrador verifica la cuenta de trading",
+                "details": [
+                    "El equipo de FXPayout verificará si la cuenta de trading ya se encuentra dentro de la red de IB de FXPayout.", 
+                    ["⏳ En Espera de Verificación", "✅ Vinculada Correctamente", "❌ Verificación Fallida"]
+                ],
+                "info": "Puedes empezar a operar una vez que la cuenta se haya validado correctamente."
             },
             {
-                "title": "REBATE",
-                "subtitle": "Rebate de hasta el 90% en tu cuenta",
-                "paragraph": "Te devolvemos hasta el 90% de esa comisión como cashback, que puedes retirar rápidamente vía banco local o e-wallet."
+                "title": "Añade tu Monedero de Retiro",
+                "description": "Configura el método de retiro del rebate",
+                "details": [
+                    "Entra en el menú Monedero / Retiro y añade tu método de pago.", [
+                    "🏦 Banco Local", "💳 E-Wallet", "🪙 USDT (BEP-20 / BNB Smart Chain)"
+                ]],
+                "info": "Este monedero se utiliza al retirar tu rebate."
+            },
+            {
+                "title": "Opera con Normalidad",
+                "description": "Opera sin cambiar tu estrategia",
+                "details": ["Continúa operando con normalidad. El bróker enviará la comisión IB a FXPayout y el sistema calculará automáticamente el rebate según tu volumen de trading."],
+                "info": "Todo el rebate se puede consultar desde el Panel del Trader."
+            },
+            {
+                "title": "Recibe y Retira tu Rebate",
+                "description": "El rebate está listo para retirar",
+                "details": [
+                    "Una vez que el rebate esté disponible, realiza el retiro usando el método de pago que hayas añadido previamente. Si encuentras algún problema como:", [
+                    "• El rebate aún no se ha acreditado", "• Retiro pendiente", "• Cuenta sin validar", "• El estado no ha cambiado"
+                ]],
+                "info": "El rebate solo se aplica a las cuentas que se encuentran dentro de la red de IB de FXPAYOUT."
             }
-        ]
+        ],
+        "notes": {
+            "title": "Notas Importantes",
+            "items": [
+                "Usa el mismo correo en tu cuenta de FXPayout y en tu cuenta del bróker.",
+                "Regístrate en el bróker únicamente a través de la página oficial de FXPayout.",
+                "Añade el bróker y el número de cuenta de trading al Panel del Trader.",
+                "Asegúrate de que todos los datos de la cuenta sean correctos para que el rebate pueda detectarse."
+            ]
+        },
+        "warning": {
+            "title": "Advertencia",
+            "paragraph": "FXPayout solo abona el rebate a las cuentas de trading que se encuentran dentro de la red de IB de FXPAYOUT. Si la cuenta se crea directamente a través de la web del bróker o mediante otro IB, no se podrá abonar el rebate."
+        }
     },
     "rewards": {
         "title": "Bono de Rebate +10% para Cuentas Nuevas",
@@ -148,7 +188,6 @@
         "title": "¿Qué Dicen los Traders que Usan FXPayout?",
         "paragraph": "Experiencias reales de traders que obtienen beneficios adicionales gracias al programa de rebate.",
         "tag": "OPINIONES",
-        "writeReview": "Escribir Opinión",
         "successResponse": {
             "title": "Gracias por Compartir tu Experiencia",
             "paragraph": "Tu opinión se ha enviado correctamente y ayudará a otros usuarios a conocer la experiencia de uso de este servicio de rebate."

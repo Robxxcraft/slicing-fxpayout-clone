@@ -9,20 +9,13 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { type Testimonial } from "@/types/testimonial.type";
 import { useTranslation } from "react-i18next";
-import Button from "@/components/ui/Button";
 import { useEffect, useState } from "react";
-import ModalFormFeedback from "@/components/ui/ModalFormFeedback";
-import type { ModalResponse } from "@/types/validationForm.type";
-import SuccessModal from "@/components/ui/SuccessModal";
-import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { GuestAPI } from "@/api";
 import BadgeSection from "@/components/ui/BadgeSection";
 
 const Reviews = () => {
   const { t } = useTranslation(["common", "homepage"]);
   const [dataTestimonial, setDataTestimonial] = useState<Testimonial[]>([]);
-  const [showModalForm, setShowModalForm] = useState<boolean>(false);
-  const [showFeedbackSubmitForm, setShowFeedbackSubmitForm] = useState<ModalResponse>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -33,29 +26,23 @@ const Reviews = () => {
     }
     getData();
   }, []);
-  useLockBodyScroll(showModalForm || showFeedbackSubmitForm !== null);
   return (
     <>
       <section className="mt-14 xl:mt-[120px] py-14 xl:py-[120px] bg-[#F9F9F9]">
         <div className="px-6 md:px-10 lg:px-18 xl:px-24 3xl:px-56">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4">
-            <div className="flex flex-col items-start text-start">
-              <BadgeSection
-                icon={
-                  <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
-              }>
-                {t("homepage:reviews.tag")}
-              </BadgeSection>
-              <h2 className="my-4 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]">
-                {t("homepage:reviews.title")}
-              </h2>
-              <p className="text-base md:text-xl leading-[160%]">
-                {t("homepage:reviews.paragraph")}
-              </p>
-            </div>
-            <Button variant="outline-primary" buttonType="button" onClick={() => setShowModalForm(true)}>
-              {t("homepage:reviews.writeReview")}
-            </Button>
+          <div className="flex flex-col items-center text-center">
+            <BadgeSection
+              icon={
+                <BiSolidQuoteAltRight className="scale-x-[-1] text-2xl text-[#FAC14C]" />
+            }>
+              {t("homepage:reviews.tag")}
+            </BadgeSection>
+            <h2 className="my-4 text-2xl md:text-[32px] 3xl:text-[44px] font-bold leading-[132%]">
+              {t("homepage:reviews.title")}
+            </h2>
+            <p className="text-base md:text-xl leading-[160%]">
+              {t("homepage:reviews.paragraph")}
+            </p>
           </div>
         </div>
         <div className="relative">
@@ -147,20 +134,6 @@ const Reviews = () => {
           </Swiper>
         </div>
       </section>
-      {showModalForm && 
-        <ModalFormFeedback 
-          isVisible={showModalForm} 
-          handleClose={() => setShowModalForm(false)} 
-          setShowResponse={setShowFeedbackSubmitForm}
-        />
-      }
-      {showFeedbackSubmitForm === "SUCCESS" && 
-      <SuccessModal 
-        title={t("homepage:reviews.successResponse.title")}
-        paragraph={t("homepage:reviews.successResponse.paragraph")}
-        closeText={t("common:text.close")}
-        isVisible={showFeedbackSubmitForm === "SUCCESS"} 
-        toggleModal={() => setShowFeedbackSubmitForm(null)} />}
     </>
   );
 };

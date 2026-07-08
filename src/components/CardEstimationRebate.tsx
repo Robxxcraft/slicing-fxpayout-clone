@@ -139,10 +139,10 @@ const CardEstimationRebate = () => {
             <p className="primary-scrollbar max-w-[70%] overflow-auto text-[32px] md:text-[40px] font-semibold text-my-dark-purple leading-12">{estimationRebate}</p>
           </div>
           <div className="w-full flex items-center gap-2 flex-wrap md:flex-nowrap">
-            <Button buttonType="link" urlTo={`${getLocalizedPath("/register", i18n.language)}`} variant="primary-light" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
+            <Button buttonType="link" urlTo={`${getLocalizedPath("/broker", i18n.language)}`} variant="primary-light" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
               {t("homepage:hero.estimateRebate.register")}
             </Button>
-            <Button buttonType="link" urlTo={`${getLocalizedPath("/broker", i18n.language)}`} variant="outline" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
+            <Button buttonType="link" urlTo={`${getLocalizedPath("/register", i18n.language)}`} variant="outline" size="md" className="px-4! md:px-0! flex md:block flex-1 text-center text-nowrap text-base! font-medium!">
               {t("homepage:hero.estimateRebate.claim")}
             </Button>
           </div>

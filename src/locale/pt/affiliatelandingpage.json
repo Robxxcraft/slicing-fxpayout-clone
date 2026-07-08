@@ -24,6 +24,37 @@
             "title": "Comissão Total"
         }
     },
+    "levelaffiliatesection": {
+        "title": "Níveis de Parceria do Referral Partner",
+        "paragraph": "Desenvolva a sua rede de indicados e receba uma parcela maior de revenue share à medida que mais traders ativos se cadastram pelo seu link de indicação.",
+        "shared": "Divisão de Receita",
+        "requirement": "Requisito",
+        "tiers": [
+            {
+                "title": "Parceiro Iniciante",
+                "requirement": "0-49 Traders Ativos",
+                "description": "Ideal para o afiliado que está começando a construir a sua comunidade de traders."
+            },
+            {
+                "title": "Parceiro Ativo",
+                "requirement": "50-99 Traders Ativos",
+                "description": "Expanda a sua comunidade e receba comissões recorrentes ainda maiores."
+            },
+            {
+                "title": "Parceiro Master VIP",
+                "requirement": "100+ Traders Ativos",
+                "description": "O nível mais alto de afiliado, com a máxima parcela de revenue sharing e suporte prioritário."
+            }
+        ],
+        "how_to_work": {
+            "title": "Como funcionam os níveis de referral partner?",
+            "flows": [
+                "O seu nível de referral partner é definido pelo número de traders ativos que se cadastram e operam pelo seu link de indicação.",
+                "À medida que o número de traders ativos aumenta, o seu percentual de divisão de receita também aumenta automaticamente.",
+                "Apenas os traders ativos são contabilizados para definir o seu nível de referral partner."
+            ]
+        }
+    },
     "commissionsection": {
         "title": "Veja Quanto Você Pode Ganhar",
         "paragraph": "Imagine o seu potencial de ganhos com cada indicado ativo no trading.",

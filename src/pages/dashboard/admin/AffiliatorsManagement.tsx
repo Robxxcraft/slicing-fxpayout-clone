@@ -162,14 +162,14 @@ const AffiliatorsManagement = () => {
       {/* CARD OVERVIEW */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <CardOverview 
-          title={"Total Affiliators"} 
+          title={"Total Refferal Partners"} 
           icon={<FaUsers />} 
           content={dataAdminOverview ? dataAdminOverview.affiliators.toLocaleString() : "0"} 
-          detail={"Total active record affiliator"} 
+          detail={"Total active record Refferal Partner"} 
           isLoading={dataAdminOverview === null}
         />
         <CardOverview 
-          title={"Pending Affiliators"} 
+          title={"Pending Refferal Partners"} 
           icon={<FaUsers />} 
           content={dataAdminOverview ? dataAdminOverview.pendingAffiliators.toLocaleString() : "0"} 
           detail={`Unverified users out of ${dataAdminOverview ? dataAdminOverview.affiliators.toLocaleString() : "0"} total registrations`} 
@@ -180,7 +180,7 @@ const AffiliatorsManagement = () => {
       
       <section className="mt-5">
         <TitleDashboard>
-          Affiliators Management
+          Refferal Partners Management
         </TitleDashboard>
 
         {/* FILTER TABLE */}
@@ -246,8 +246,8 @@ const AffiliatorsManagement = () => {
           <NoDataFound useImage>
             <p className="text-black/80 text-base 3xl:text-xl">
             {useFilter ?
-              "Tidak ditemukan data affiliator yang sesuai dengan filter atau pencarian Anda." :
-              "Belum ada affiliator yang terdaftar di sistem saat ini."}
+              "Tidak ditemukan data refferal partner yang sesuai dengan filter atau pencarian Anda." :
+              "Belum ada refferal partner yang terdaftar di sistem saat ini."}
             </p>
           </NoDataFound>
         }

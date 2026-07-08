@@ -13,18 +13,20 @@ import React, { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { TiInfoLarge } from "react-icons/ti";
 
+const initialBroker = Object.values(brokers)[0];
+
 const CalculatorSection = () => {
   const { t } = useTranslation(["common", "calculatorpage"]);
   const form = useForm<FormState>({
-    broker: "",
-    accountType: "",
-    pair: "",
-    lots: ""
+    broker: initialBroker.name,
+    accountType: initialBroker.rebateRates[0].accountType,
+    pair: initialBroker.rebateRates[0].pair,
+    lots: "1"
   });
-  const [selectedBroker, setSelectedBroker] = useState<BrokerStruc>();
+  const [selectedBroker, setSelectedBroker] = useState<BrokerStruc>(initialBroker);
   const [rebateResult, setRebateResult] = useState<RebateResult>({
-    estimate: 0.0,
-    rebatesPerLot: 0.0
+    estimate: initialBroker.rebateRates[0].rebatePerLot,
+    rebatesPerLot: initialBroker.rebateRates[0].rebatePerLot
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const allBrokers = Object.values(brokers).sort((a, b) => a.name.localeCompare(b.name));

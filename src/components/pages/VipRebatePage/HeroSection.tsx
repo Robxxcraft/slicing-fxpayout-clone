@@ -1,5 +1,6 @@
 import BadgeHero from "@/components/ui/BadgeHero";
 import Button from "@/components/ui/Button";
+import MarqueeSection from "@/components/ui/MarqueeSection";
 import RunningText from "@/components/ui/RunningText";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
@@ -79,7 +80,9 @@ const HeroSection = () => {
 
       {/* RUNNING TEXT */}
       <div className="absolute bottom-0 left-0 overflow-hidden w-full whitespace-nowrap border-t lg:border-t-0 border-white">
-        <RunningText />
+        <MarqueeSection speed={60}>
+          <RunningText />
+        </MarqueeSection>
       </div>
     </header>
   )

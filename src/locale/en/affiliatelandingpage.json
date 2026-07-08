@@ -24,6 +24,37 @@
             "title": "Total Commission"
         }
     },
+    "levelaffiliatesection": {
+        "title": "Affiliate Partnership Levels",
+        "paragraph": "Grow your referral network and unlock higher revenue sharing as more active traders join through your referral link.",
+        "shared": "Revenue Share",
+        "requirement": "Requirement",
+        "tiers": [
+            {
+                "title": "Starter Partner",
+                "requirement": "0-49 Active Traders",
+                "description": "Perfect for affiliates who are starting to build their trading community."
+            },
+            {
+                "title": "Active Partner",
+                "requirement": "50-99 Active Traders",
+                "description": "Expand your community and receive higher recurring commissions."
+            },
+            {
+                "title": "VIP Master Partner",
+                "requirement": "100+ Active Traders",
+                "description": "Highest affiliate level with maximum revenue sharing and priority support."
+            }
+        ],
+        "how_to_work": {
+            "title": "How do Affiliate Tiers work?",
+            "flows": [
+                "Your affiliate level is determined by the number of active traders who register and trade through your referral link.", 
+                "As your active trader count increases, your Revenue Share percentage automatically increases.", 
+                "Only active traders are counted toward your affiliate tier."
+            ]
+        }
+    },
     "commissionsection": {
         "title": "See How Much You Can Earn",
         "paragraph": "Estimate your earning potential from every active trader you refer.",

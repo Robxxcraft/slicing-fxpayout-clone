@@ -65,31 +65,71 @@
         ]
     },
     "howItWorks": {
-        "title": "Cách FXPayout Hoạt Động Trong 4 Bước Đơn Giản",
-        "paragraph": "Không cần thay đổi chiến lược, bạn chỉ cần giao dịch như bình thường. FXPayout sẽ lo phần chuyển hoa hồng thành cashback cho bạn.",
+        "title": "Cách FXPayout Hoạt Động Trong 6 Bước Đơn Giản",
+        "paragraph": "Giao dịch như bình thường mà không thay đổi chiến lược. FXPayout quản lý hoa hồng IB từ sàn thành cashback (rebate) có thể theo dõi và rút qua Dashboard Trader.",
         "tag": "CÁCH HOẠT ĐỘNG",
+        "see_detail": "Xem Chi Tiết Các Bước",
+        "open_broker": "Mở Trang Sàn",
         "workflows": [
             {
-                "title": "BẮT ĐẦU",
-                "subtitle": "Đăng ký qua link chính thức của FXPayout",
-                "paragraph": "Tạo tài khoản FXPayout và liên kết tài khoản giao dịch của bạn qua link chính thức mà chúng tôi cung cấp từ sàn bạn chọn."
+                "title": "Tạo Tài Khoản FXPayout",
+                "description": "Đăng ký tài khoản FXPayout",
+                "details": ["Tạo tài khoản FXPayout bằng chính email đã đăng ký tại sàn để quá trình xác minh dễ dàng hơn. Sau khi đăng ký thành công, bạn có thể truy cập Dashboard Trader để quản lý tài khoản giao dịch, rebate và withdrawal."],
+                "info": "Sử dụng cùng email với tài khoản sàn."
             },
             {
-                "title": "GIAO DỊCH",
-                "subtitle": "Giao dịch như bình thường tại sàn của bạn",
-                "paragraph": "Tiếp tục giao dịch mà không thay đổi spread, đòn bẩy hay điều kiện nào khác. Mọi thứ vẫn tuân theo quy định của sàn."
+                "title": "Đăng Ký Sàn Qua FXPayout",
+                "description": "Liên kết tài khoản sàn của bạn",
+                "details": ["Đăng ký sàn thông qua trang Sàn chính thức của FXPayout. Sau khi tạo tài khoản sàn thành công, mở Dashboard Trader -> Sàn rồi thêm sàn và số tài khoản giao dịch MT4/MT5."],
+                "info": "Đảm bảo sàn và số tài khoản chính xác."
             },
             {
-                "title": "HOA HỒNG",
-                "subtitle": "Sàn gửi hoa hồng IB về FXPayout",
-                "paragraph": "Dựa trên khối lượng lot bạn giao dịch, sàn tự động gửi hoa hồng IB về FXPayout."
+                "title": "Chờ Quá Trình Xác Thực",
+                "description": "Admin xác minh tài khoản giao dịch",
+                "details": [
+                    "Đội ngũ FXPayout sẽ xác minh xem tài khoản giao dịch đã nằm trong mạng lưới IB FXPayout hay chưa.",
+                    ["⏳ Đang Chờ Xác Minh", "✅ Kết Nối Thành Công", "❌ Xác Minh Thất Bại"]
+                ],
+                "info": "Có thể bắt đầu giao dịch sau khi tài khoản được xác thực thành công."
             },
             {
-                "title": "REBATE",
-                "subtitle": "Rebate lên đến 90% về tài khoản của bạn",
-                "paragraph": "Chúng tôi hoàn lại đến 90% hoa hồng đó dưới dạng cashback, có thể rút nhanh qua ngân hàng nội địa hoặc ví điện tử."
+                "title": "Thêm Ví Withdrawal",
+                "description": "Thiết lập phương thức rút rebate",
+                "details": [
+                    "Vào menu Wallet / Withdrawal rồi thêm phương thức thanh toán.", [
+                    "🏦 Ngân Hàng Nội Địa", "💳 Ví Điện Tử", "🪙 USDT (BEP-20 / BNB Smart Chain)"
+                ]],
+                "info": "Ví này được dùng khi thực hiện rút rebate."
+            },
+            {
+                "title": "Giao Dịch Như Bình Thường",
+                "description": "Giao dịch mà không thay đổi chiến lược",
+                "details": ["Tiếp tục giao dịch như bình thường. Sàn sẽ gửi hoa hồng IB cho FXPayout và hệ thống tự động tính rebate dựa trên khối lượng giao dịch."],
+                "info": "Toàn bộ rebate có thể theo dõi qua Dashboard Trader."
+            },
+            {
+                "title": "Nhận & Rút Rebate",
+                "description": "Rebate sẵn sàng để rút",
+                "details": [
+                    "Sau khi rebate có sẵn, thực hiện withdrawal bằng phương thức thanh toán đã thêm trước đó. Nếu gặp sự cố như:", [
+                    "• Rebate chưa vào", "• Withdrawal bị trễ", "• Tài khoản chưa được xác thực", "• Trạng thái chưa thay đổi"
+                ]],
+                "info": "Rebate chỉ áp dụng cho tài khoản nằm trong mạng lưới IB FXPAYOUT."
             }
-        ]
+        ],
+        "notes": {
+            "title": "Lưu Ý Quan Trọng",
+            "items": [
+                "Sử dụng cùng email giữa tài khoản FXPayout và tài khoản sàn.",
+                "Chỉ đăng ký sàn thông qua trang chính thức của FXPayout.",
+                "Thêm sàn và số tài khoản giao dịch vào Dashboard Trader.",
+                "Đảm bảo toàn bộ thông tin tài khoản chính xác để rebate được nhận diện."
+            ]
+        },
+        "warning": {
+            "title": "Cảnh Báo",
+            "paragraph": "FXPayout chỉ cấp rebate cho tài khoản giao dịch nằm trong mạng lưới IB FXPAYOUT. Nếu tài khoản được tạo trực tiếp qua website sàn hoặc sử dụng IB khác, rebate sẽ không được cấp."
+        }
     },
     "rewards": {
         "title": "Bonus Rebate +10% Cho Tài Khoản Mới",
@@ -148,7 +188,6 @@
         "title": "Trader Nói Gì Khi Dùng FXPayout?",
         "paragraph": "Trải nghiệm thực tế từ những trader đã có thêm lợi nhuận nhờ chương trình rebate.",
         "tag": "FEEDBACK",
-        "writeReview": "Viết Đánh Giá",
         "successResponse": {
             "title": "Cảm Ơn Bạn Đã Chia Sẻ Trải Nghiệm",
             "paragraph": "Đánh giá của bạn đã được gửi thành công và sẽ giúp những người dùng khác hiểu hơn về trải nghiệm khi sử dụng dịch vụ rebate này."

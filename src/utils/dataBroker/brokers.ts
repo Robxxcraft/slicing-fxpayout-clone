@@ -17,10 +17,11 @@ import { zfxDetail } from "./zfx";
 
 export const brokers = {
   "tmgm": tmgmDetail,
-  "exness": exnessDetail,
   "valetax": valetaxDetail,
-  "xm": xmDetail,
+  "exness": exnessDetail,
+  "vantage": vantageDetail,
   "hfm": hfmDetail,
+  "xm": xmDetail,
   "zfx": zfxDetail,
   "fbs": fbsDetail,
   "octafx": octaFxDetail,
@@ -29,7 +30,6 @@ export const brokers = {
   // "ic-markets": icMarketDetail,
   "fp-markets": fpMarketsDetail,
   // "eightcap": eightcapDetail,
-  "vantage": vantageDetail,
   "axi": axiDetail,
   "finex": finexDetail,
 }

@@ -24,6 +24,37 @@
             "title": "Total Komisi"
         }
     },
+    "levelaffiliatesection": {
+        "title": "Level Kemitraan Refferal Partner",
+        "paragraph": "Kembangkan jaringan referral Anda dan dapatkan porsi revenue share yang lebih tinggi saat lebih banyak trader aktif bergabung melalui link referral Anda.",
+        "shared": "Bagi Hasil",
+        "requirement": "Syarat",
+        "tiers": [
+            {
+                "title": "Mitra Pemula",
+                "requirement": "0-49 Trader Aktif",
+                "description": "Cocok untuk affiliate yang baru mulai membangun komunitas trader mereka."
+            },
+            {
+                "title": "Mitra Aktif",
+                "requirement": "50-99 Trader Aktif",
+                "description": "Perluas komunitas Anda dan dapatkan komisi berulang yang lebih tinggi."
+            },
+            {
+                "title": "Mitra Master VIP",
+                "requirement": "100+ Trader Aktif",
+                "description": "Level affiliate tertinggi dengan porsi revenue sharing maksimal dan dukungan prioritas."
+            }
+        ],
+        "how_to_work": {
+            "title": "Bagaimana level refferal partner bekerja?",
+            "flows": [
+                "Level refferal partner Anda ditentukan oleh jumlah trader aktif yang mendaftar dan trading melalui link referral Anda.",
+                "Saat jumlah trader aktif Anda meningkat, persentase bagi hasil Anda juga akan meningkat secara otomatis.",
+                "Hanya trader aktif yang dihitung untuk menentukan level refferal partner Anda."
+            ]
+        }
+    },
     "commissionsection": {
         "title": "Lihat Berapa Banyak yang Bisa Anda Hasilkan",
         "paragraph": "Bayangkan potensi penghasilan Anda dari setiap referral yang aktif trading.",
