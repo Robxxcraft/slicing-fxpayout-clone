@@ -136,7 +136,7 @@ export const tmgmDetail: BrokerStruc = {
   rebateProgram: [
     { pair: "XAU/USD", estimate: 18 },
     { pair: "EUR/USD", estimate: 9 },
-    { pair: "FOREX", estimate: 1 },
+    { pair: "CRYPTO", estimate: 1 },
   ],
   rebateRates: [
     { accountType: "STD-SWF-USD", pair: "XAU/USD", rebatePerLot: 18 },
