@@ -174,7 +174,6 @@ export const exnessDetail: BrokerStruc = {
   },
   rebateProgram: [
     { pair: "XAU/USD", estimate: 11.23 },
-    { pair: "FOREX", estimate: 3.99 },
     { pair: "CRYPTO", estimate: 7.20 },
     { pair: "EUR/USD", estimate: 3.20 },
   ],
