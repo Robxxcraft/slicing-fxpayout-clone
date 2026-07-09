@@ -65,31 +65,71 @@
         ]
     },
     "howItWorks": {
-        "title": "Cara Kerja FXPayout dalam 4 Langkah Sederhana",
-        "paragraph": "Tanpa mengubah strategi, Anda cukup trading seperti biasa. FXPayout yang mengurus aliran komisi menjadi cashback untuk Anda.",
+        "title": "Cara Kerja FXPayout dalam 6 Langkah Sederhana",
+        "paragraph": "Trading seperti biasa tanpa mengubah strategi. FXPayout mengelola komisi IB dari broker menjadi cashback (rebate) yang dapat dipantau dan dicairkan melalui Dashboard Trader.",
         "tag": "CARA KERJA",
+        "see_detail": "Lihat Detail Langkah",
+        "open_broker": "Buka Halaman Broker",
         "workflows": [
             {
-                "title": "MULAI",
-                "subtitle": "Daftar lewat link resmi FXPayout",
-                "paragraph": "Buat akun FXPayout dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan."
+                "title": "Buat Akun FXPayout",
+                "description": "Daftar akun FXPayout",
+                "details": ["Buat akun FXPayout menggunakan email yang sama dengan email yang terdaftar pada broker agar proses verifikasi lebih mudah. Setelah berhasil mendaftar, Anda dapat mengakses Dashboard Trader untuk mengelola akun trading, rebate, dan withdrawal."],
+                "info": "Gunakan email yang sama dengan akun broker."
             },
             {
-                "title": "TRADING",
-                "subtitle": "Trading seperti biasa di broker Anda",
-                "paragraph": "Lanjutkan aktivitas trading tanpa perubahan spread, leverage, atau kondisi lain. Semua tetap mengikuti aturan broker."
+                "title": "Daftar Broker melalui FXPayout",
+                "description": "Hubungkan akun broker Anda",
+                "details": ["Daftarkan broker melalui halaman resmi Broker FXPayout. Setelah akun broker berhasil dibuat, buka Dashboard Trader -> Broker kemudian tambahkan broker dan nomor akun trading MT4/MT5."],
+                "info": "Pastikan broker dan nomor akun benar."
             },
             {
-                "title": "KOMISI",
-                "subtitle": "Broker mengirim komisi IB ke FXPayout",
-                "paragraph": "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke FXPayout secara otomatis."
+                "title": "Tunggu Proses Validasi",
+                "description": "Admin memverifikasi akun trading",
+                "details": [
+                    "Tim FXPayout akan memverifikasi apakah akun trading sudah berada di bawah jaringan IB FXPayout.", 
+                    ["⏳ Menunggu Verifikasi", "✅ Berhasil Terhubung", "❌ Gagal Verifikasi"]
+                ],
+                "info": "Trading dapat dimulai setelah akun berhasil tervalidasi."
             },
             {
-                "title": "REBATE",
-                "subtitle": "Rebate hingga 90% ke akun Anda",
-                "paragraph": "Kami mengembalikan hingga 90% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet."
+                "title": "Tambahkan Wallet Withdrawal",
+                "description": "Atur metode pencairan rebate",
+                "details": [
+                    "Masuk ke menu Wallet / Withdrawal kemudian tambahkan metode pembayaran.", [
+                    "🏦 Bank Lokal", "💳 E-Wallet", "🪙 USDT (BEP-20 / BNB Smart Chain)"
+                ]],
+                "info": "Wallet ini digunakan saat melakukan withdrawal rebate."
+            },
+            {
+                "title": "Trading Seperti Biasa",
+                "description": "Trading tanpa perubahan strategi",
+                "details": ["Lanjutkan trading seperti biasa. Broker akan mengirim komisi IB kepada FXPayout dan sistem secara otomatis menghitung rebate berdasarkan volume trading."],
+                "info": "Seluruh rebate dapat dipantau melalui Dashboard Trader."
+            },
+            {
+                "title": "Terima & Tarik Rebate",
+                "description": "Rebate siap dicairkan",
+                "details": [
+                    "Setelah rebate tersedia, lakukan withdrawal menggunakan metode pembayaran yang telah ditambahkan sebelumnya. Jika mengalami kendala seperti:", [
+                    "• Rebate belum masuk", "• Withdrawal tertunda", "• Akun belum tervalidas", "• Status belum berubah"
+                ]],
+                "info": "Rebate hanya berlaku untuk akun yang berada di bawah jaringan IB FXPAYOUT."
             }
-        ]
+        ],
+        "notes": {
+            "title": "Catatan Penting",
+            "items": [
+                "Gunakan email yang sama antara akun FXPayout dan akun broker.",
+                "Daftarkan broker hanya melalui halaman resmi FXPayout.",
+                "Tambahkan broker dan nomor akun trading ke Dashboard Trader.",
+                "Pastikan seluruh data akun benar agar rebate dapat terdeteksi."
+            ]
+        },
+        "warning": {
+            "title": "Peringatan",
+            "paragraph": "FXPayout hanya memberikan rebate kepada akun trading yang berada di bawah jaringan IB FXPAYOUT. Jika akun dibuat langsung melalui website broker atau menggunakan IB lain, rebate tidak dapat diberikan."
+        }
     },
     "rewards": {
         "title": "Bonus Rebate +10% untuk Akun Baru",
@@ -148,7 +188,6 @@
         "title": "Apa Kata Trader yang Menggunakan FXPayout?",
         "paragraph": "Pengalaman nyata dari trader yang mendapatkan tambahan profit dari program rebate.",
         "tag": "FEEDBACK",
-        "writeReview": "Tulis Review",
         "successResponse": {
             "title": "Terima Kasih Sudah Berbagi Pengalaman",
             "paragraph": "Review kamu telah berhasil dikirim dan akan membantu pengguna lain mengetahui pengalaman menggunakan layanan rebate ini."

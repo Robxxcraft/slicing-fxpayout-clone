@@ -16,18 +16,20 @@ import { IoCloseOutline } from "react-icons/io5";
 const ModalFormFeedback = ({ 
   isVisible, 
   handleClose,
-  setShowResponse
+  setShowResponse,
+  initUsername,
 }: {
   isVisible: boolean;
   handleClose: () => void;
-  setShowResponse: React.Dispatch<React.SetStateAction<ModalResponse>>
+  setShowResponse: React.Dispatch<React.SetStateAction<ModalResponse>>;
+  initUsername?: string;
 }) => {
   const { t, i18n } = useTranslation(["homepage"]);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const formFeedback = useForm<FormFeedback>({
     rating: 0,
-    username: "",
+    username: initUsername || "",
     location: "",
     review: ""
   }); 

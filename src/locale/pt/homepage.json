@@ -65,31 +65,71 @@
         ]
     },
     "howItWorks": {
-        "title": "Como a FXPayout Funciona em 4 Passos Simples",
-        "paragraph": "Sem mudar a sua estratégia, basta operar normalmente. A FXPayout cuida do fluxo da comissão e transforma em cashback para você.",
+        "title": "Como a FXPayout Funciona em 6 Passos Simples",
+        "paragraph": "Opere normalmente sem mudar a sua estratégia. A FXPayout administra a comissão de IB da corretora e a transforma em cashback (rebate), que pode ser acompanhado e sacado pelo Dashboard do Trader.",
         "tag": "COMO FUNCIONA",
+        "see_detail": "Ver Detalhes do Passo",
+        "open_broker": "Abrir a Página da Corretora",
         "workflows": [
             {
-                "title": "COMECE",
-                "subtitle": "Cadastre-se pelo link oficial da FXPayout",
-                "paragraph": "Crie uma conta FXPayout e conecte a sua conta de trading através do link oficial que disponibilizamos da corretora de sua preferência."
+                "title": "Crie uma Conta FXPayout",
+                "description": "Cadastre uma conta FXPayout",
+                "details": ["Crie uma conta FXPayout usando o mesmo e-mail cadastrado na corretora para facilitar o processo de verificação. Após o cadastro, você pode acessar o Dashboard do Trader para gerenciar as contas de trading, os rebates e os saques."],
+                "info": "Use o mesmo e-mail da sua conta na corretora."
             },
             {
-                "title": "OPERE",
-                "subtitle": "Opere normalmente na sua corretora",
-                "paragraph": "Continue operando sem alterações no spread, na alavancagem ou em outras condições. Tudo segue as regras da corretora."
+                "title": "Cadastre a Corretora pela FXPayout",
+                "description": "Conecte a sua conta da corretora",
+                "details": ["Cadastre a corretora pela página oficial de Corretoras da FXPayout. Após a criação da conta na corretora, acesse o Dashboard do Trader -> Corretoras e, em seguida, adicione a corretora e o número da conta de trading MT4/MT5."],
+                "info": "Confira se a corretora e o número da conta estão corretos."
             },
             {
-                "title": "COMISSÃO",
-                "subtitle": "A corretora envia a comissão de IB à FXPayout",
-                "paragraph": "Com base no volume de lotes que você operou, a corretora envia a comissão de IB à FXPayout automaticamente."
+                "title": "Aguarde o Processo de Validação",
+                "description": "O admin verifica a conta de trading",
+                "details": [
+                    "A equipe da FXPayout vai verificar se a conta de trading já está sob a rede de IB da FXPayout.", 
+                    ["⏳ Aguardando Verificação", "✅ Conectado com Sucesso", "❌ Falha na Verificação"]
+                ],
+                "info": "O trading pode começar assim que a conta for validada com sucesso."
             },
             {
-                "title": "REBATE",
-                "subtitle": "Rebate de até 90% na sua conta",
-                "paragraph": "Devolvemos até 90% dessa comissão como cashback, que pode ser sacado rapidamente via banco local ou carteira digital."
+                "title": "Adicione uma Carteira de Saque",
+                "description": "Configure o método de saque do rebate",
+                "details": [
+                    "Acesse o menu Carteira / Saque e adicione um método de pagamento.", [
+                    "🏦 Banco Local", "💳 Carteira Digital", "🪙 USDT (BEP-20 / BNB Smart Chain)"
+                ]],
+                "info": "Essa carteira é usada ao realizar o saque do rebate."
+            },
+            {
+                "title": "Opere Normalmente",
+                "description": "Opere sem mudar a sua estratégia",
+                "details": ["Continue operando normalmente. A corretora enviará a comissão de IB à FXPayout, e o sistema calcula o rebate automaticamente com base no volume de trading."],
+                "info": "Todos os rebates podem ser acompanhados pelo Dashboard do Trader."
+            },
+            {
+                "title": "Receba e Saque o Rebate",
+                "description": "O rebate está pronto para saque",
+                "details": [
+                    "Quando o rebate estiver disponível, faça o saque usando o método de pagamento que você adicionou anteriormente. Caso tenha algum problema, como:", [
+                    "• Rebate ainda não creditado", "• Saque pendente", "• Conta ainda não validada", "• Status ainda não alterado"
+                ]],
+                "info": "O rebate é válido apenas para contas que estão sob a rede de IB da FXPAYOUT."
             }
-        ]
+        ],
+        "notes": {
+            "title": "Observações Importantes",
+            "items": [
+                "Use o mesmo e-mail na conta FXPayout e na conta da corretora.",
+                "Cadastre a corretora apenas pela página oficial da FXPayout.",
+                "Adicione a corretora e o número da conta de trading ao Dashboard do Trader.",
+                "Confira se todos os dados da conta estão corretos para que o rebate seja detectado."
+            ]
+        },
+        "warning": {
+            "title": "Aviso",
+            "paragraph": "A FXPayout concede rebate apenas às contas de trading que estão sob a rede de IB da FXPAYOUT. Se a conta for criada diretamente pelo site da corretora ou usando outro IB, o rebate não poderá ser concedido."
+        }
     },
     "rewards": {
         "title": "Bônus de Rebate +10% para Novas Contas",
@@ -148,7 +188,6 @@
         "title": "O que Dizem os Traders que Usam a FXPayout?",
         "paragraph": "Experiências reais de traders que conquistaram lucro extra com o programa de rebate.",
         "tag": "FEEDBACK",
-        "writeReview": "Escrever Avaliação",
         "successResponse": {
             "title": "Obrigado por Compartilhar a Sua Experiência",
             "paragraph": "A sua avaliação foi enviada com sucesso e vai ajudar outros usuários a conhecer a experiência de usar este serviço de rebate."

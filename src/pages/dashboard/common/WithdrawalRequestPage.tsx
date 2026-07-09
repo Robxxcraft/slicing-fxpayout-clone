@@ -25,6 +25,7 @@ import Button from "@/components/ui/Button";
 import SuccessModal from "@/components/ui/SuccessModal";
 
 import { FaChevronLeft } from "react-icons/fa6";
+import ModalFormFeedback from "@/components/ui/ModalFormFeedback";
 
 const WithdrawalRequestPage = () => {
   const { redirectUser } = useRedirectByRole();
@@ -33,6 +34,7 @@ const WithdrawalRequestPage = () => {
   const [initLoad, setInitLoad] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<ModalResponse>(null);
+  const [showPopupReview, setShowPopupReview] = useState<boolean>(false);
   const formWithdrawal = useForm<FormWithdrawalRequest>({
     amount: "0",
   });
@@ -155,7 +157,7 @@ const WithdrawalRequestPage = () => {
     }
   }
 
-  useLockBodyScroll(showModal === "SUCCESS");
+  useLockBodyScroll(showModal === "SUCCESS" || showPopupReview);
 
   const walletStatusMessage = {
     empty: "Anda belum menambahkan data wallet. Silakan tambahkan terlebih dahulu untuk dapat melakukan penarikan.",
@@ -278,9 +280,21 @@ const WithdrawalRequestPage = () => {
           isVisible={showModal === "SUCCESS"} 
           toggleModal={() => {
             setShowModal(null);
-            redirectUser(authUser, "withdrawal");
+            setShowPopupReview(true);
           }} 
         />}
+
+      {showPopupReview && 
+        <ModalFormFeedback 
+          isVisible={showPopupReview} 
+          handleClose={() => {
+            setShowPopupReview(false);
+            redirectUser(authUser, "withdrawal");
+          }} 
+          setShowResponse={() => {}}
+          initUsername={authUser?.fullName}
+        />
+      }
     </div>
   )
 }

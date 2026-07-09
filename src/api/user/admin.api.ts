@@ -1,5 +1,6 @@
 import type { ValidationData } from "@/models/validationData";
 import { _fetchWithAuth, BASE_URL } from "@/services/apiClient";
+import type { ResponseChangeStatusRebate } from "@/types/rebate.type";
 import type { OrderStatus, RebateStatusType, StatusType } from "@/types/status.type";
 import type { UserTier } from "@/types/user.type";
 
@@ -412,7 +413,19 @@ export const bulkChangeStatusRebates = async ({
     });
     const responseJson = await response.json();
     if (response.status === 200) {
-      return { error: false, message: responseJson.result.message }
+      const data = {
+        message: responseJson.message, 
+        total: responseJson.total, 
+        successCount: responseJson.succeeded_count, 
+        failedCount: responseJson.failed_count, 
+        idsSuccess: responseJson.succeeded_ids, 
+        detailFailed: responseJson.failed
+      } as ResponseChangeStatusRebate;
+      return { 
+        error: false, 
+        message: data.message,
+        data
+      }
     }
 
     return { error: true, message: responseJson.error || responseJson.message };

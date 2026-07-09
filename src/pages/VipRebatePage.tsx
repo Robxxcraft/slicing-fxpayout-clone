@@ -8,6 +8,7 @@ import HowTraderWorks from "@/components/pages/VipRebatePage/HowTraderWorks";
 import LevelTraderSection from "@/components/pages/VipRebatePage/LevelTraderSection";
 import WarningForexSection from "@/components/pages/VipRebatePage/WarningForexSection";
 import WhatRebateForex from "@/components/pages/VipRebatePage/WhatRebateForex";
+import MarqueeSection from "@/components/ui/MarqueeSection";
 import RunningText from "@/components/ui/RunningText";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
@@ -27,7 +28,9 @@ const VipRebatePage = () => {
           <HowTraderWorks />
           <div className="space-y-15 xl:space-y-[120px]">
             <SecuritySection />
-            <RunningText variant="primary" />
+            <MarqueeSection variant="primary" speed={60}>
+              <RunningText />
+            </MarqueeSection>
           </div>
           <FaqSection />
           <WarningForexSection />

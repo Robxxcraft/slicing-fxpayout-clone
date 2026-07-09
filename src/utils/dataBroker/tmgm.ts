@@ -134,26 +134,22 @@ export const tmgmDetail: BrokerStruc = {
     ]
   },
   rebateProgram: [
-    { pair: "EUR/USD", estimate: { min: 6, max: 9 } },
-    { pair: "XAU/USD", estimate: { min: 10, max: 15 } },
+    { pair: "XAU/USD", estimate: 18 },
+    { pair: "EUR/USD", estimate: 9 },
     { pair: "FOREX", estimate: 1 },
   ],
   rebateRates: [
-    { accountType: "Standard", pair: "XAU/USD", rebatePerLot: 18 },
-    { accountType: "Standard", pair: "EUR/USD", rebatePerLot: 9 },
-    { accountType: "Standard", pair: "CRYPTO", rebatePerLot: 1 },
+    { accountType: "STD-SWF-USD", pair: "XAU/USD", rebatePerLot: 18 },
+    { accountType: "STD-SWF-USD", pair: "EUR/USD", rebatePerLot: 9 },
+    { accountType: "STD-SWF-USD", pair: "CRYPTO", rebatePerLot: 1 },
 
-    { accountType: "Prime", pair: "XAU/USD", rebatePerLot: 9 },
-    { accountType: "Prime", pair: "EUR/USD", rebatePerLot: 6 },
-    { accountType: "Prime", pair: "CRYPTO", rebatePerLot: 1 },
+    { accountType: "Edge-SF-USC", pair: "XAU/USD", rebatePerLot: 2 },
+    { accountType: "Edge-SF-USC", pair: "EUR/USD", rebatePerLot: 2 },
+    { accountType: "Edge-SF-USC", pair: "CRYPTO", rebatePerLot: 1 },
 
-    { accountType: "Classic", pair: "XAU/USD", rebatePerLot: 4 },
-    { accountType: "Classic", pair: "EUR/USD", rebatePerLot: 4 },
-    { accountType: "Classic", pair: "CRYPTO", rebatePerLot: 1 },
-
-    { accountType: "Edge", pair: "XAU/USD", rebatePerLot: 2 },
-    { accountType: "Edge", pair: "EUR/USD", rebatePerLot: 2 },
-    { accountType: "Edge", pair: "CRYPTO", rebatePerLot: 1 },
+    { accountType: "Edge-SF-USD", pair: "XAU/USD", rebatePerLot: 2 },
+    { accountType: "Edge-SF-USD", pair: "EUR/USD", rebatePerLot: 2 },
+    { accountType: "Edge-SF-USD", pair: "CRYPTO", rebatePerLot: 1 },
   ],
   advantages: `${brokerId}:advantages`,
   disadvantages: `${brokerId}:disadvantages`,

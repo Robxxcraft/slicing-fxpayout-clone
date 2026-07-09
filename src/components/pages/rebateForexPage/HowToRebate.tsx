@@ -1,42 +1,6 @@
+import FlowTrader from "@/components/FlowTrader";
 import React from "react";
-import WorkflowCards from "@/components/WorkflowCards";
 import { useTranslation } from "react-i18next";
-import type { TypeWorkflowComponent } from "@/types/workflow.type";
-
-const workflows: TypeWorkflowComponent[] = [
-  {
-    title: "mulai",
-    subtitle: "Daftar lewat link resmi FXPayout",
-    description:
-      "Buat akun FXPayout dan hubungkan akun trading Anda melalui link resmi yang kami sediakan dari broker pilihan.",
-    image: "flow-start.webp",
-    translateKey: "homepage:howItWorks.workflows.0" 
-  },
-  {
-    title: "trading",
-    subtitle: "Trading seperti biasa di broker Anda",
-    description:
-      "Lanjutkan aktivitas trading tanpa perubahan spread, leverage, atau kondisi lain. Semua tetap mengikuti aturan broker.",
-    image: "flow-trade.webp",
-    translateKey: "homepage:howItWorks.workflows.1" 
-  },
-  {
-    title: "komisi",
-    subtitle: "Broker mengirim komisi IB ke FXPayout",
-    description:
-      "Berdasarkan volume lot yang Anda trading-kan, broker mengirimkan komisi IB ke FXPayout secara otomatis.",
-    image: "flow-commision.webp",
-    translateKey: "homepage:howItWorks.workflows.2" 
-  },
-  {
-    title: "rebate",
-    subtitle: "Rebate hingga 90% ke akun Anda",
-    description:
-      "Kami mengembalikan hingga 90% komisi tersebut sebagai cashback bisa dicairkan cepat via bank lokal atau e-wallet.",
-    image: "flow-rebate.webp",
-    translateKey: "homepage:howItWorks.workflows.3" 
-  },
-];
 
 const HowToRebate = ({
   sectionsRef
@@ -57,9 +21,8 @@ const HowToRebate = ({
         <p className="mt-6 text-xl 3xl:text-2xl leading-[169.2%]">
           {t("claimrebatepage:howRebate.paragraph")}
         </p>
-        <WorkflowCards 
-          workflows={workflows}
-        />
+
+      <FlowTrader sizeWindow="small" />
       </div>
     </section>
   )

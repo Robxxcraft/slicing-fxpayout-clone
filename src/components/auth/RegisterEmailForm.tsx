@@ -94,7 +94,7 @@ const RegisterEmailForm = ({
         variant="primary-light" 
         buttonType="submit" 
         className="mt-2 w-full! py-3!">
-        Daftar {role === "user" ? "Trader" : "Affiliator"}
+        Daftar {role === "user" ? "Trader" : "Refferal Partner"}
       </Button>
     </form>
   )

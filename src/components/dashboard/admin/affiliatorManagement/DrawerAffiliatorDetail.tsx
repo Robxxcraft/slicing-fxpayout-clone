@@ -168,7 +168,7 @@ const DrawerAffiliatorDetail = ({
         <div className="3xl:pb-4 relative">
           <div className="flex items-center justify-between">
             <h2 className="text-xl 3xl:text-2xl font-semibold">
-              Affiliator Information
+              Refferal Partner Information
             </h2>
             <div
               onClick={onCloseDrawer} 

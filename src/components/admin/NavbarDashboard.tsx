@@ -42,15 +42,8 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
 
         {/* INFO USER */}
         <div className="hidden lg:flex items-center gap-3">
-          {(authUser?.referralCode || authUser?.affiliatorCode) &&
-            <div className="px-3 3xl:px-4 py-1 3xl:py-2 bg-[#F5F5F5] border border-primary border-dashed rounded-sm">
-              <p className="text-lg 3xl:text-xl font-medium text-transparent bg-linear-to-t from-dark-primary to-primary bg-clip-text">
-                {authUser.referralCode || authUser.affiliatorCode}
-              </p>
-            </div>
-          }
           <p className="px-3 3xl:px-4 py-1 3xl:py-2 text-sm 3xl:text-base rounded-sm bg-primary text-white">
-            {authUser?.role === "admin" ? "Admin" : authUser?.role === "affiliator" ? "Affiliator" : "Trader"}
+            {authUser?.role === "admin" ? "Admin" : authUser?.role === "affiliator" ? "Refferal Partner" : "Trader"}
           </p>
           <div 
             className="relative"
@@ -102,20 +95,12 @@ const NavbarDashboard = ({ showMobileNav, setShowMobileNav }: {
                       </div>
                     </div>
                     {authUser?.role !== "admin" && 
-                    <>
                       <div className="flex items-center justify-between text-base 3xl:text-lg">
                         <p className="font-semibold">Balance</p>
                         <p>
                           {formattingUsd(balance?.balance || 0)} USD
                         </p>
                       </div>
-                      {(authUser?.referralCode || authUser?.affiliatorCode) &&
-                        <div className="flex items-center justify-between text-base 3xl:text-lg">
-                          <p className="font-semibold">Referral</p>
-                          <p>{authUser.referralCode || authUser.affiliatorCode}</p>
-                        </div>
-                      }
-                    </>
                     }
                   </div>
 

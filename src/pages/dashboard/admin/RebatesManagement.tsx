@@ -17,7 +17,7 @@ import { columnsDef } from "@/constants/columns/rebatesManagementColumns";
 import { useLockBodyScroll } from "@/hooks/useBodyLockScroll";
 import { useAdminOverviewContext } from "@/hooks/useAdminOverviewContext";
 import type { FullRebateStatusType, SetStatusType } from "@/types/status.type";
-import type { RebateAdminManagement, ResponseRebateAPI } from "@/types/rebate.type";
+import type { RebateAdminManagement, ResponseChangeStatusRebate, ResponseRebateAPI } from "@/types/rebate.type";
 import { formattingRp, formattingUsd } from "@/helper/formattingCurrency";
 import { EXCHANGE_RATE } from "@/constants/exchangeRate";
 import { formatDateYYYYMMDD } from "@/helper/formattingDate";
@@ -46,6 +46,7 @@ import { CgInfo } from "react-icons/cg";
 import { RiStockFill } from "react-icons/ri";
 import { LuRefreshCcw } from "react-icons/lu";
 import { IoCardOutline } from "react-icons/io5";
+import DrawerResponseRebate from "@/components/dashboard/admin/rebatesManagement/DrawerResponseRebate";
 
 const supportEntry = [
   { key: "10", value: "10"}, 
@@ -63,6 +64,7 @@ const RebatesManagement = () => {
   const [showPopupStatus, setShowPopupStatus] = useState<boolean>(false);
   const [showPopupDelete, setShowPopupDelete] = useState<boolean>(false);
   const [selectedStatusChange, setSelectedStatusChange] = useState<SetStatusType | null>(null);
+  const [responseChangeStatusRebate, setResponseChangeStatusRebate] = useState<ResponseChangeStatusRebate | null>(null);
 
   // Data Overview
   const { dataAdminOverview, fetchDataAdminOverview } = useAdminOverviewContext();
@@ -200,29 +202,13 @@ const RebatesManagement = () => {
     
     setIsLoading(true);
     const rebateIds = tableInstance.getSelectedRowModel().flatRows.map((item) => Number(item.original.id));
-    const { error, message } = await AdminAPI.bulkChangeStatusRebates({
+    const { error, message, data } = await AdminAPI.bulkChangeStatusRebates({
       rebateIds, status: selectedStatusChange
     });
     if (error) {
       toast.error(message);
-    } else {
-      if (selectedData) {
-        setSelectedData((prev) => {
-          if (!prev) return null 
-          
-          return {
-          ...prev,
-          status: selectedStatusChange
-        }});
-      }
-      setDataRebates((prev) => (
-        prev.map((item) => (
-          rebateIds.includes(item.id) ?
-          {...item, status: selectedStatusChange} :
-          item
-        ))
-      ));
-      toast.success(message);
+    } else if (data) {
+      setResponseChangeStatusRebate(data);
       fetchData();
     }
     setShowPopupStatus(false);
@@ -280,7 +266,7 @@ const RebatesManagement = () => {
     setPagination((prev) => ({ ...prev, pageIndex: 0 }));
   } 
 
-  useLockBodyScroll(selectedData !== null || showPopupStatus || showPopupDelete || showPopupRange);
+  useLockBodyScroll(selectedData !== null || responseChangeStatusRebate !== null || showPopupStatus || showPopupDelete || showPopupRange);
   const dateFilter =
     !!range?.from &&
     !!range?.to &&
@@ -290,7 +276,7 @@ const RebatesManagement = () => {
     );
   const useFilter = filterStatus !== "all" || globalFiltering || dateFilter;
   return (
-    <WrapperDashboardComponent>
+    <WrapperDashboardComponent className="relative">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <CardOverview 
           title={"Total Rebates"} 
@@ -440,8 +426,18 @@ const RebatesManagement = () => {
           onUpdateRebateById={handleUpdateRebateById}
         />
       }
+      {responseChangeStatusRebate &&
+        <DrawerResponseRebate 
+          isOpen={responseChangeStatusRebate !== null}
+          onCloseDrawer={() => { 
+            setResponseChangeStatusRebate(null)
+          }}
+          response={responseChangeStatusRebate}
+          status={selectedStatusChange}
+        />
+      }
       {tableInstance.getSelectedRowModel().flatRows.length > 0 &&
-        (tableInstance.getSelectedRowModel().flatRows.filter(row => row.getValue("status") === "approved").length === 0 ?
+        (tableInstance.getSelectedRowModel().flatRows.filter(row => ["approved", "auto_credited"].includes(row.getValue("status"))).length === 0 ?
         <FloatingStatusSelection 
           selectedNumber={tableInstance.getSelectedRowModel().flatRows.length} 
           onClose={() => tableInstance.resetRowSelection()} 

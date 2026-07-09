@@ -75,7 +75,7 @@ export const columnsDef = [
   },
   {
     accessorKey: "affiliate_earning",
-    header: "Affiliator Earn",
+    header: "Refferal Partner Earn",
     cell: ({ getValue }: { getValue: () => string }) => formattingUsd(Number(getValue() || 0)),
     enableSorting: false
   },

@@ -65,31 +65,71 @@
         ]
     },
     "howItWorks": {
-        "title": "How FXPayout Works in 4 Simple Steps",
-        "paragraph": "Without changing your strategy, you simply trade as usual. FXPayout takes care of the commission flow into cashback for you.",
+        "title": "How FXPayout Works in 6 Simple Steps",
+        "paragraph": "Trade as usual without changing your strategy. FXPayout manages broker IB commissions into cashback (rebates) that can be monitored and withdrawn via the Trader Dashboard.",
         "tag": "HOW IT WORKS",
+        "see_detail": "View Step Details",
+        "open_broker": "Open Broker Page",
         "workflows": [
             {
-                "title": "START",
-                "subtitle": "Register via the official FXPayout link",
-                "paragraph": "Create an FXPayout account and link your trading account through the official link we provide from your chosen broker."
+                "title": "Create Your FXPayout Account",
+                "description": "Register your FXPayout account",
+                "details": ["Create your FXPayout account using the same email as your broker account to make verification easier. Once registered, you can access the Trader Dashboard to manage trading accounts, rebates, and withdrawals."],
+                "info": "Use the same email as your broker account."
             },
             {
-                "title": "TRADE",
-                "subtitle": "Trade as usual with your broker",
-                "paragraph": "Continue your trading activities without changing spreads, leverage, or other conditions. Everything follows the broker's rules."
+                "title": "Register Broker via FXPayout",
+                "description": "Connect your broker account",
+                "details": ["Register your broker through the official FXPayout Broker page. After your broker account is created, open Trader Dashboard -> Broker, then add your broker and MT4/MT5 trading account number."],
+                "info": "Make sure your broker and account number are correct."
             },
             {
-                "title": "COMMISSION",
-                "subtitle": "Broker sends IB commission to FXPayout",
-                "paragraph": "Based on the lot volume you trade, the broker automatically sends the IB commission to FXPayout."
+                "title": "Wait for Validation Process",
+                "description": "Admin verifies your trading account",
+                "details": [
+                    "The FXPayout team will verify whether your trading account is already under the FXPayout IB network.", 
+                    ["⏳ Waiting for Verification", "✅ Successfully Connected", "❌ Verification Failed"]
+                ],
+                "info": "Trading can start after your account is validated."
             },
             {
-                "title": "REBATE",
-                "subtitle": "Up to 90% rebate to your account",
-                "paragraph": "We return up to 90% of that commission as cashback, which can be withdrawn quickly via local banks or e-wallets."
+                "title": "Add Wallet Withdrawal",
+                "description": "Set your rebate withdrawal method",
+                "details": [
+                    "Go to the Wallet / Withdrawal menu, then add your payment method.", [
+                    "🏦 Local Bank", "💳 E-Wallet", "🪙 USDT (BEP-20 / BNB Smart Chain)"
+                ]],
+                "info": "This wallet method will be used for rebate withdrawals."
+            },
+            {
+                "title": "Trade as Usual",
+                "description": "Trade without changing your strategy",
+                "details": ["Continue trading as usual. The broker sends IB commissions to FXPayout, and the system automatically calculates your rebate based on trading volume."],
+                "info": "All rebates can be monitored via the Trader Dashboard."
+            },
+            {
+                "title": "Receive & Withdraw Rebate",
+                "description": "Your rebate is ready to withdraw",
+                "details": [
+                    "Once your rebate is available, withdraw using the payment method you added earlier. If you face issues such as:", [
+                    "• Rebate not credited yet", "• Withdrawal delayed", "• Account not yet validated", "• Status not updated"
+                ]],
+                "info": "Rebates only apply to accounts under the FXPAYOUT IB network."
             }
-        ]
+        ],
+        "notes": {
+            "title": "Important Notes",
+            "items": [
+                "Use the same email for both FXPayout and broker accounts.",
+                "Register brokers only through the official FXPayout page.",
+                "Add your broker and trading account number in Trader Dashboard.",
+                "Ensure all account data is correct so rebates can be detected."
+            ]
+        },
+        "warning": {
+            "title": "Warning",
+            "paragraph": "FXPayout only provides rebates for trading accounts under the FXPAYOUT IB network. If the account was created directly through the broker website or under another IB, rebates cannot be provided."
+        }
     },
     "rewards": {
         "title": "Bonus Rebate +10% for New Accounts",
@@ -148,7 +188,6 @@
         "title": "What Do Traders Who Use FXPayout Say?",
         "paragraph": "Real experiences from traders earning additional profit from the rebate program.",
         "tag": "FEEDBACK",
-        "writeReview": "Write a Review",
         "successResponse": {
             "title": "Thank You for Sharing Your Experience",
             "paragraph": "Your review has been successfully submitted and will help other users learn about the experience of using this rebate service."

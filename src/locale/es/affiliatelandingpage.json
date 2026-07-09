@@ -24,6 +24,37 @@
             "title": "Comisión Total"
         }
     },
+    "levelaffiliatesection": {
+        "title": "Niveles de Socio Referidor",
+        "paragraph": "Amplía tu red de referidos y obtén una mayor porción de revenue share a medida que más traders activos se unan a través de tu enlace de referido.",
+        "shared": "Reparto de Ingresos",
+        "requirement": "Requisito",
+        "tiers": [
+            {
+                "title": "Socio Inicial",
+                "requirement": "0-49 Traders Activos",
+                "description": "Ideal para afiliados que están empezando a construir su comunidad de traders."
+            },
+            {
+                "title": "Socio Activo",
+                "requirement": "50-99 Traders Activos",
+                "description": "Amplía tu comunidad y obtén comisiones recurrentes más altas."
+            },
+            {
+                "title": "Socio Master VIP",
+                "requirement": "100+ Traders Activos",
+                "description": "El nivel de afiliado más alto, con la máxima porción de revenue sharing y soporte prioritario."
+            }
+        ],
+        "how_to_work": {
+            "title": "¿Cómo funcionan los niveles de socio referidor?",
+            "flows": [
+                "Tu nivel de socio referidor se determina según el número de traders activos que se registran y operan a través de tu enlace de referido.",
+                "A medida que aumenta tu número de traders activos, tu porcentaje de reparto de ingresos también aumenta de forma automática.",
+                "Solo los traders activos se contabilizan para determinar tu nivel de socio referidor."
+            ]
+        }
+    },
     "commissionsection": {
         "title": "Descubre Cuánto Puedes Ganar",
         "paragraph": "Imagina tu potencial de ingresos por cada referido que opere activamente.",

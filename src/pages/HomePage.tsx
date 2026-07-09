@@ -12,10 +12,11 @@ import Reviews from "@/components/pages/homePage/Reviews";
 import Rewards from "@/components/pages/homePage/Rewards";
 import ProblemSection from "@/components/pages/homePage/ProblemSection";
 import SecuritySection from "@/components/pages/homePage/SecuritySection";
-import RunningText from "@/components/ui/RunningText";
 import RiskSection from "@/components/pages/homePage/RiskSection";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import CtaRegisterBroker from "@/components/broker/CtaRegisterBroker";
+import MarqueeSection from "@/components/ui/MarqueeSection";
+import RunningText from "@/components/ui/RunningText";
 
 const HomePage = () => {
   const { t, i18n } = useTranslation(["common", "homepage"]);
@@ -38,7 +39,9 @@ const HomePage = () => {
           <SecuritySection />
           <Benefits />
           <Reviews />
-          <RunningText variant="primary" />
+          <MarqueeSection variant="primary" speed={60}>
+            <RunningText />
+          </MarqueeSection>
           <RiskSection />
           <CtaSection 
             title={t("cta_trader.title")}

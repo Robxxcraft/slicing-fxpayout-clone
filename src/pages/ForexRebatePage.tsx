@@ -8,6 +8,7 @@ import HeroSection from "@/components/pages/ForexRebatePage/HeroSection";
 import WhatRebateForex from "@/components/pages/ForexRebatePage/WhatRebateForex";
 import WhyChooseSection from "@/components/pages/ForexRebatePage/WhyChooseSection";
 import SecuritySection from "@/components/pages/homePage/SecuritySection";
+import MarqueeSection from "@/components/ui/MarqueeSection";
 import RunningText from "@/components/ui/RunningText";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import { useTranslation } from "react-i18next";
@@ -28,7 +29,9 @@ const ForexRebatePage = () => {
           <ComparisonSection />
           <div className="space-y-15 xl:space-y-[120px]">
             <SecuritySection />
-            <RunningText variant="primary" />
+            <MarqueeSection variant="primary" speed={60}>
+              <RunningText />
+            </MarqueeSection>
           </div>
           <FaqSection />
           <CtaSection 

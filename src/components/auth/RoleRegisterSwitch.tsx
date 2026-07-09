@@ -26,7 +26,7 @@ const RoleRegisterSwitch = ({
         onClick={() => changeRole("affiliator")}  
       >
         <p className="font-medium text-base">
-          Affiliator
+          Refferal Partner
         </p>
       </div>
     </div>
