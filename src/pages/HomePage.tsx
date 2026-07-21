@@ -8,6 +8,7 @@ import BrokerListSection from "@/components/pages/homePage/BrokerListSection";
 import HeroHome from "@/components/pages/homePage/HeroHome";
 import HowItWorks from "@/components/pages/homePage/HowItWorks";
 import Profile from "@/components/pages/homePage/Profile";
+import Withdrawal from "@/components/pages/homePage/Withdrawal";
 import Reviews from "@/components/pages/homePage/Reviews";
 import Rewards from "@/components/pages/homePage/Rewards";
 import ProblemSection from "@/components/pages/homePage/ProblemSection";
@@ -38,6 +39,7 @@ const HomePage = () => {
           />
           <SecuritySection />
           <Benefits />
+          <Withdrawal />
           <Reviews />
           <MarqueeSection variant="primary" speed={60}>
             <RunningText />

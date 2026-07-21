@@ -157,6 +157,33 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "Tersedia Berbagai Metode Penarikan (Withdrawal)",
+        "paragraph": "Pencairan rebate Anda cepat, aman, dan fleksibel. Pilih metode penarikan yang paling nyaman untuk Anda.",
+        "badge": "Metode Penarikan",
+        "items": [
+            {
+                "title": "💰 Mengurangi Biaya Trading",
+                "description": "Sebagian biaya trading kembali ke Anda sebagai cashback."
+            },
+            {
+                "title": "🔄 Rebate Langsung dari Broker",
+                "description": "Sebagian biaya trading kembali ke Anda sebagai cashback."
+            },
+            {
+                "title": "🚫 Tanpa Biaya Tambahan",
+                "description": "Tanpa biaya tersembunyi atau potongan apa pun. Semuanya Transparan."
+            },
+            {
+                "title": "🔒 Sistem Aman & Transparan",
+                "description": "Semua transaksi tetap dilakukan langsung di broker. Kami tidak mengakses akun trading atau menyimpan data login Anda."
+            },
+            {
+                "title": "⚡ Dukungan Responsif",
+                "description": "Tim support lokal siap membantu Anda melalui WhatsApp dan Telegram dengan respon cepat dan solusi yang jelas."
+            }
+        ]
+    },
     "benefit": {
         "title": "Maksimalkan Profit Trading Tanpa Biaya Tambahan",
         "paragraph": "Dapatkan cashback dari setiap transaksi trading Anda tanpa mengubah kondisi broker. Sistem transparan, aman, dan dirancang untuk meningkatkan efisiensi profit Anda.",
