@@ -184,6 +184,48 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "Multiple Withdrawal Methods Available",
+        "paragraph": "Withdraw your rebates quickly, securely, and flexibly. Choose the withdrawal method that works best for you.",
+        "badge": "Withdrawal Methods",
+
+        "bankTransfer": {
+            "title": "Bank Transfer",
+            "badge": "Safe & Trusted",
+            "description": "Enjoy secure and transparent rebate withdrawals directly to your local bank account.",
+            "availableBanks": "Available Banks",
+            "others": "and more",
+            "process": "Processed in 1–3 Business Days"
+        },
+
+        "ewallet": {
+            "title": "E-Wallet",
+            "badge": "Fast & Instant",
+            "description": "Receive your rebates faster through popular digital wallets. Fast, convenient, and flexible.",
+            "availableWallets": "Available E-Wallets",
+            "others": "and more",
+            "process": "Instant Processing (24/7)"
+        },
+
+        "crypto": {
+            "title": "Crypto",
+            "badge": "Fast & Global",
+            "description": "The fastest solution for international traders. Receive USDT transfers via the BNB Smart Chain network.",
+            "currency": "Currency",
+            "network": "All Networks",
+            "networkLabel": "Network",
+            "usdtName": "Tether USD",
+            "bnbName": "BEP20",
+            "process": "Processed in 10–60 Minutes"
+        },
+
+        "security": {
+            "title": "100% Secure & Verified",
+            "description": "We use multiple layers of security to ensure every withdrawal transaction is safe and protected.",
+            "ssl": "SSL Encrypted",
+            "trusted": "Safe & Trusted"
+        }
+    },
     "reviews": {
         "title": "What Do Traders Who Use FXPayout Say?",
         "paragraph": "Real experiences from traders earning additional profit from the rebate program.",

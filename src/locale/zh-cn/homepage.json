@@ -184,6 +184,48 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "多种出金方式可供选择",
+        "paragraph": "您的返佣提现快速、安全且灵活。选择最适合您的出金方式。",
+        "badge": "出金方式",
+
+        "bankTransfer": {
+        "title": "银行转账",
+        "badge": "安全可靠",
+        "description": "返佣可安全、透明地直接转入您的本地银行账户。",
+        "availableBanks": "支持的银行",
+        "others": "等更多银行",
+        "process": "处理时间：1-3 个工作日"
+        },
+
+        "ewallet": {
+        "title": "电子钱包",
+        "badge": "便捷快速",
+        "description": "通过多种热门电子钱包更快收到返佣，方便、灵活。",
+        "availableWallets": "支持的电子钱包",
+        "others": "等更多钱包",
+        "process": "即时到账（24/7）"
+        },
+
+        "crypto": {
+        "title": "加密货币",
+        "badge": "快速 · 全球适用",
+        "description": "国际交易者的最快提现方案，通过 BNB Smart Chain 网络接收 USDT。",
+        "currency": "币种",
+        "network": "支持所有网络",
+        "networkLabel": "网络",
+        "usdtName": "Tether USD (USDT)",
+        "bnbName": "BEP20",
+        "process": "处理时间：10-60 分钟"
+        },
+
+        "security": {
+        "title": "100% 安全且已验证",
+        "description": "我们采用多层安全机制，确保您的每一笔提现交易都安全可靠。",
+        "ssl": "SSL 加密",
+        "trusted": "安全可靠"
+        }
+    },
     "reviews": {
         "title": "使用过 FXPayout 的交易者怎么说?",
         "paragraph": "来自交易者的真实体验,他们通过返佣计划获得了额外利润。",

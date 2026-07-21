@@ -184,6 +184,48 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "Múltiples Métodos de Retiro Disponibles",
+        "paragraph": "Retira tus rebates de forma rápida, segura y flexible. Elige el método de retiro que mejor se adapte a ti.",
+        "badge": "Métodos de Retiro",
+
+        "bankTransfer": {
+            "title": "Transferencia Bancaria",
+            "badge": "Seguro y Confiable",
+            "description": "Disfruta de retiros de rebate seguros y transparentes directamente a tu cuenta bancaria local.",
+            "availableBanks": "Bancos Disponibles",
+            "others": "y más",
+            "process": "Procesado en 1–3 Días Hábiles"
+        },
+
+        "ewallet": {
+            "title": "Billetera Electrónica",
+            "badge": "Rápido e Instantáneo",
+            "description": "Recibe tus rebates más rápido a través de las billeteras digitales más populares. Rápido, práctico y flexible.",
+            "availableWallets": "Billeteras Disponibles",
+            "others": "y más",
+            "process": "Procesamiento Instantáneo (24/7)"
+        },
+
+        "crypto": {
+            "title": "Criptomonedas",
+            "badge": "Rápido y Global",
+            "description": "La solución más rápida para traders internacionales. Recibe transferencias de USDT mediante la red BNB Smart Chain.",
+            "currency": "Moneda",
+            "network": "Todas las Redes",
+            "networkLabel": "Red",
+            "usdtName": "Tether USD",
+            "bnbName": "BEP20",
+            "process": "Procesado en 10–60 Minutos"
+        },
+
+        "security": {
+            "title": "100% Seguro y Verificado",
+            "description": "Utilizamos múltiples capas de seguridad para garantizar que cada transacción de retiro sea segura y esté protegida.",
+            "ssl": "Cifrado SSL",
+            "trusted": "Seguro y Confiable"
+        }
+        },
     "reviews": {
         "title": "¿Qué Dicen los Traders que Usan FXPayout?",
         "paragraph": "Experiencias reales de traders que obtienen beneficios adicionales gracias al programa de rebate.",

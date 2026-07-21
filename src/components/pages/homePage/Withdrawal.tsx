@@ -1,13 +1,5 @@
 import { useTranslation } from "react-i18next";
-import BoundedIcon from "../brokerDetail/ui/BoundedIcon";
 import BadgeSection from "@/components/ui/BadgeSection";
-
-type Withdrawal = {
-  icon: string;
-  title: string;
-  paragraph: string;
-  translateKey: string;
-};
 
 const banks: any = [
   {
@@ -81,33 +73,32 @@ const Withdrawals = () => {
 
             <div>
               <h2 className="text-xl font-bold text-blue-600">
-                Bank Transfer
+                {t("homepage:withdrawal.bankTransfer.title")}
               </h2>
               <span className="mt-1 inline-flex items-center gap-1 rounded-md bg-blue-100 px-3 py-1 text-xs font-medium text-blue-600">
                 <img
                 src="/shield.svg"
                 alt="logo fx payout"
                 className="w-3 text-blue-600 my-1"
-              /> Aman &amp; Terpercaya
+              /> {t("homepage:withdrawal.bankTransfer.badge")}
               </span>
             </div>
           </div>
 
           {/* Description */}
           <p className="px-5 text-sm leading-6 text-gray-600">
-            Nikmati pencairan rebate yang aman dan transparan langsung ke rekening
-            bank lokal Anda.
+            {t("homepage:withdrawal.bankTransfer.description")}
           </p>
 
           {/* Bank List */}
           <div className="mt-5 px-5">
             <div className="mb-2 flex items-center justify-between text-sm">
               <span className="font-semibold text-blue-600">
-                Bank Tersedia
+                {t("homepage:withdrawal.bankTransfer.availableBanks")}
               </span>
 
               <span className="text-gray-400">
-                dan lainnya
+                {t("homepage:withdrawal.bankTransfer.others")}
               </span>
             </div>
 
@@ -134,7 +125,7 @@ const Withdrawals = () => {
                 alt="logo fx payout"
                 className="w-5 3xl:w-5 text-blue-600"
                 /></span>
-            Proses 1-3 Hari Kerja
+            {t("homepage:withdrawal.bankTransfer.process")}
           </button>
         </div>
 
@@ -151,32 +142,32 @@ const Withdrawals = () => {
 
             <div>
               <h2 className="text-xl font-bold text-blue-600">
-                E-Wallet
+                {t("homepage:withdrawal.ewallet.title")}
               </h2>
               <span className="mt-1 inline-flex items-center gap-1 rounded-md bg-blue-100 px-2.5 py-1 text-xs font-medium text-blue-600">
                 <img
                 src="/timer.svg"
                 alt="logo fx payout"
                 className="w-4 text-blue-600 my-0.5"
-              /> Praktis &amp; Instant
+              /> {t("homepage:withdrawal.ewallet.badge")}
               </span>
             </div>
           </div>
 
           {/* Description */}
           <p className="px-5 text-sm leading-6 text-gray-600">
-            Terima rebate lebih cepat melalui berbagai dompet digital populer. Praktis, dan fleksibel.
+            {t("homepage:withdrawal.ewallet.description")}
           </p>
 
           {/* Bank List */}
           <div className="mt-5 px-5">
             <div className="mb-2 flex items-center justify-between text-sm">
               <span className="font-semibold text-blue-600">
-                E-Wallet Tersedia
+                {t("homepage:withdrawal.ewallet.availableWallets")}
               </span>
 
               <span className="text-gray-400">
-                dan lainnya
+                {t("homepage:withdrawal.ewallet.others")}
               </span>
             </div>
 
@@ -203,7 +194,7 @@ const Withdrawals = () => {
                 alt="logo fx payout"
                 className="w-4 3xl:w-4 text-blue-600"
                 /></span>
-            Proses Instant (24/7)
+            {t("homepage:withdrawal.ewallet.process")}
           </button>
         </div>
 
@@ -220,32 +211,32 @@ const Withdrawals = () => {
 
             <div>
               <h2 className="text-xl font-bold text-blue-600">
-                Crypto
+                {t("homepage:withdrawal.crypto.title")}
               </h2>
               <span className="mt-1 inline-flex items-center gap-1 rounded-md bg-blue-100 px-3 py-1 text-xs font-medium text-blue-600">
                 <img
                 src="/globe.svg"
                 alt="globe"
                 className="w-3 text-blue-600 mr-0.5 my-1"
-              /> Cepat &amp; Global
+              /> {t("homepage:withdrawal.crypto.badge")}
               </span>
             </div>
           </div>
 
           {/* Description */}
           <p className="px-5 text-sm leading-6 text-gray-600">
-            Solusi tercepat bagi trader internasional. Nikmati transfer USDT melalui jaringan BNB Smart Chain.
+            {t("homepage:withdrawal.crypto.description")}
           </p>
 
           {/* Bank List */}
           <div className="mt-5 px-5">
             <div className="mb-2 flex items-center justify-between text-sm">
               <span className="font-semibold text-blue-600">
-                Mata Uang
+                {t("homepage:withdrawal.crypto.currency")}
               </span>
 
               <span className="font-semibold text-blue-600">
-                Semua Network
+                {t("homepage:withdrawal.crypto.network")}
               </span>
             </div>
 
@@ -262,7 +253,7 @@ const Withdrawals = () => {
                     />
                   <div>
                     <div className="text-xs lg:text-sm xl:text-xs">USDT</div>
-                    <div className="text-gray-500 text-xs lg:text-sm xl:text-xs">Tether USD</div>
+                    <div className="text-gray-500 text-xs lg:text-sm xl:text-xs">{t("homepage:withdrawal.crypto.usdtName")}</div>
                   </div>
                   </div>
                 </div>
@@ -274,7 +265,7 @@ const Withdrawals = () => {
                       className="w-6 h-4 lg:w-12 xl:w-6 text-blue-600"
                     />
                   </div>
-                  <div className="text-[9px] lg:text-sm xl:text-[9px] text-gray-500 mx-1">Network</div>
+                  <div className="text-[9px] lg:text-sm xl:text-[9px] text-gray-500 mx-1">{t("homepage:withdrawal.crypto.networkLabel")}</div>
                   <div>
                     <img
                       src="/line-network-2.svg"
@@ -296,7 +287,7 @@ const Withdrawals = () => {
                   />
                   <div>
                     <div className="text-xs lg:text-sm xl:text-xs">BNB</div>
-                    <div className="text-gray-500 text-xs lg:text-sm xl:text-xs">BEP20</div>
+                    <div className="text-gray-500 text-xs lg:text-sm xl:text-xs">{t("homepage:withdrawal.crypto.bnbName")}</div>
                   </div>
                   </div>
                 </div>
@@ -310,7 +301,7 @@ const Withdrawals = () => {
                 alt="logo fx payout"
                 className="w-5 3xl:w-5 text-blue-600"
                 /></span>
-            Proses 10-60 Menit
+            {t("homepage:withdrawal.crypto.process")}
           </button>
         </div>
       </div>
@@ -328,23 +319,22 @@ const Withdrawals = () => {
 
             <div>
               <h2 className="text-lg lg:text-xl font-bold text-gray-900">
-                100% Aman & Terverifikasi
+                {t("homepage:withdrawal.security.title")}
               </h2>
 
               <p className="mt-2 max-w-2xl text-sm leading-7 text-gray-600">
-                Kami menggunakan sistem keamanan berlapis untuk memastikan setiap
-                transaksi penarikan Anda aman dan terlindungi.
+                {t("homepage:withdrawal.security.description")}
               </p>
             </div>
           </div>
 
-          <div className="flex gap-3 w-full max-w-sm">
+          <div className="flex gap-3 xl:justify-end w-full max-w-sm">
             <div className="flex items-center rounded-full border border-blue-500 px-3 text-blue-600 bg-blue-100">
               <div className="font-semibold text-sm py-1 flex"><img
                 src="/shield-2.svg"
                 alt="logo fx payout"
                 className="w-4 3xl:w-5 text-blue-600 mr-2"
-                /><div className="text-sm lg:text-md">SSL Encrypted</div></div>
+                /><div className="text-sm lg:text-md">{t("homepage:withdrawal.security.ssl")}</div></div>
             </div>
 
             <div className="flex items-center rounded-full border border-blue-500 px-3 text-blue-600 bg-blue-100">
@@ -354,7 +344,7 @@ const Withdrawals = () => {
                 alt="logo fx payout"
                 className="w-5 3xl:w-5 text-blue-600 mr-2"
                 />
-                <div className="text-sm lg:text-md">Aman & Terpercaya</div></div>
+                <div className="text-sm lg:text-md">{t("homepage:withdrawal.security.trusted")}</div></div>
             </div>
           </div>
         </div>

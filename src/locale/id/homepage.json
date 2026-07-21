@@ -157,33 +157,6 @@
             }
         ]
     },
-    "withdrawal": {
-        "title": "Tersedia Berbagai Metode Penarikan (Withdrawal)",
-        "paragraph": "Pencairan rebate Anda cepat, aman, dan fleksibel. Pilih metode penarikan yang paling nyaman untuk Anda.",
-        "badge": "Metode Penarikan",
-        "items": [
-            {
-                "title": "💰 Mengurangi Biaya Trading",
-                "description": "Sebagian biaya trading kembali ke Anda sebagai cashback."
-            },
-            {
-                "title": "🔄 Rebate Langsung dari Broker",
-                "description": "Sebagian biaya trading kembali ke Anda sebagai cashback."
-            },
-            {
-                "title": "🚫 Tanpa Biaya Tambahan",
-                "description": "Tanpa biaya tersembunyi atau potongan apa pun. Semuanya Transparan."
-            },
-            {
-                "title": "🔒 Sistem Aman & Transparan",
-                "description": "Semua transaksi tetap dilakukan langsung di broker. Kami tidak mengakses akun trading atau menyimpan data login Anda."
-            },
-            {
-                "title": "⚡ Dukungan Responsif",
-                "description": "Tim support lokal siap membantu Anda melalui WhatsApp dan Telegram dengan respon cepat dan solusi yang jelas."
-            }
-        ]
-    },
     "benefit": {
         "title": "Maksimalkan Profit Trading Tanpa Biaya Tambahan",
         "paragraph": "Dapatkan cashback dari setiap transaksi trading Anda tanpa mengubah kondisi broker. Sistem transparan, aman, dan dirancang untuk meningkatkan efisiensi profit Anda.",
@@ -210,6 +183,47 @@
                 "description": "Tim support lokal siap membantu Anda melalui WhatsApp dan Telegram dengan respon cepat dan solusi yang jelas."
             }
         ]
+    },
+    "withdrawal": {
+        "title": "Tersedia Berbagai Metode Penarikan (Withdrawal)",
+        "paragraph": "Pencairan rebate Anda cepat, aman, dan fleksibel. Pilih metode penarikan yang paling nyaman untuk Anda.",
+        "badge": "Metode Penarikan",
+        "bankTransfer": {
+            "title": "Bank Transfer",
+            "badge": "Aman & Terpercaya",
+            "description": "Nikmati pencairan rebate yang aman dan transparan langsung ke rekening bank lokal Anda.",
+            "availableBanks": "Bank Tersedia",
+            "others": "dan lainnya",
+            "process": "Proses 1-3 Hari Kerja"
+        },
+
+        "ewallet": {
+            "title": "E-Wallet",
+            "badge": "Praktis & Instant",
+            "description": "Terima rebate lebih cepat melalui berbagai dompet digital populer. Praktis, dan fleksibel.",
+            "availableWallets": "E-Wallet Tersedia",
+            "others": "dan lainnya",
+            "process": "Proses Instant (24/7)"
+        },
+
+        "crypto": {
+            "title": "Crypto",
+            "badge": "Cepat & Global",
+            "description": "Solusi tercepat bagi trader internasional. Nikmati transfer USDT melalui jaringan BNB Smart Chain.",
+            "currency": "Mata Uang",
+            "network": "Semua Network",
+            "networkLabel": "Network",
+            "usdtName": "Tether USD",
+            "bnbName": "BEP20",
+            "process": "Proses 10-60 Menit"
+        },
+
+        "security": {
+            "title": "100% Aman & Terverifikasi",
+            "description": "Kami menggunakan sistem keamanan berlapis untuk memastikan setiap transaksi penarikan Anda aman dan terlindungi.",
+            "ssl": "SSL Encrypted",
+            "trusted": "Aman & Terpercaya"
+        }
     },
     "reviews": {
         "title": "Apa Kata Trader yang Menggunakan FXPayout?",

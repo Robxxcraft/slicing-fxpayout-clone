@@ -184,6 +184,48 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "다양한 출금 방법 지원",
+        "paragraph": "리베이트를 빠르고 안전하며 편리하게 출금하세요. 가장 편리한 출금 방법을 선택할 수 있습니다.",
+        "badge": "출금 방법",
+
+        "bankTransfer": {
+            "title": "은행 송금",
+            "badge": "안전하고 신뢰할 수 있음",
+            "description": "리베이트를 안전하고 투명하게 회원님의 국내 은행 계좌로 직접 출금하세요.",
+            "availableBanks": "지원 은행",
+            "others": "외 다수",
+            "process": "1~3영업일 내 처리"
+        },
+
+        "ewallet": {
+            "title": "전자지갑",
+            "badge": "빠르고 즉시",
+            "description": "인기 있는 전자지갑을 통해 리베이트를 더욱 빠르게 받아보세요. 빠르고 편리하며 유연합니다.",
+            "availableWallets": "지원 전자지갑",
+            "others": "외 다수",
+            "process": "즉시 처리 (24시간 365일)"
+        },
+
+        "crypto": {
+            "title": "암호화폐",
+            "badge": "빠르고 글로벌",
+            "description": "해외 트레이더를 위한 가장 빠른 출금 방법입니다. BNB Smart Chain 네트워크를 통해 USDT를 받을 수 있습니다.",
+            "currency": "통화",
+            "network": "모든 네트워크",
+            "networkLabel": "네트워크",
+            "usdtName": "Tether USD",
+            "bnbName": "BEP20",
+            "process": "10~60분 내 처리"
+        },
+
+        "security": {
+            "title": "100% 안전 및 검증 완료",
+            "description": "모든 출금 거래가 안전하게 보호될 수 있도록 다중 보안 시스템을 적용하고 있습니다.",
+            "ssl": "SSL 암호화",
+            "trusted": "안전하고 신뢰할 수 있음"
+        }
+        },
     "reviews": {
         "title": "FXPayout을 이용한 트레이더들의 평가는?",
         "paragraph": "리베이트 프로그램으로 추가 수익을 얻은 트레이더들의 생생한 경험입니다.",
