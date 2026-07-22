@@ -225,6 +225,66 @@
             "trusted": "Aman & Terpercaya"
         }
     },
+    "rebateSimulation": {
+        "badge": "Rebate Transparan Real-Time",
+        "title": "Pantau Rebate Anda Secara Real-Time",
+        "description": "Semua data rebate tercatat otomatis dan transparan. Lihat total komisi, persentase rebate, dan pembayaran yang sudah Anda terima.",
+
+        "hero": {
+        "badge": "100% TRANSPARAN",
+        "title": [
+            "Semua Rebate Anda,",
+            "Tercatat dengan Jelas."
+        ],
+        "description": "Kami memastikan setiap transaksi trading Anda memberikan rebate terbaik tanpa biaya tersembunyi."
+        },
+
+        "features": [
+        {
+            "title": "Data Real-Time",
+            "description": "Update otomatis setiap ada komisi masuk."
+        },
+        {
+            "title": "Transparan & Akurat",
+            "description": "Semua data dapat diverifikasi dan dipercaya."
+        },
+        {
+            "title": "Pembayaran Cepat",
+            "description": "Proses payout cepat ke rekening atau e-wallet."
+        },
+        {
+            "title": "Aman & Terlindungi",
+            "description": "Data Anda aman dengan sistem enkripsi berlapis."
+        }
+        ],
+
+        "table": {
+        "broker": "Broker",
+        "commission": "Commission Received",
+        "rebate": "Rebate",
+        "paid": "Paid to Trader",
+        "manualRebate": "Manual Rebate"
+        },
+
+        "summary": {
+        "commission": "Total Commission",
+        "averageRebate": "Rata-rata Rebate",
+        "totalPaid": "Total Paid"
+        },
+
+        "footer": {
+        "note": "Data di atas adalah contoh distribusi rebate yang tercatat di sistem FXPAYOUT.",
+        "button": "Hitung Rebate Saya",
+        "history": "Lihat Riwayat Rebate Lengkap"
+        },
+
+        "highlights": [
+        "100% Tanpa Biaya Tambahan",
+        "Dana Langsung Ke Broker",
+        "Tanpa Akses Akun Anda",
+        "Transparan & Aman"
+        ]
+    },
     "reviews": {
         "title": "Apa Kata Trader yang Menggunakan FXPayout?",
         "paragraph": "Pengalaman nyata dari trader yang mendapatkan tambahan profit dari program rebate.",

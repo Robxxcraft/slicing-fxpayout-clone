@@ -226,6 +226,66 @@
         "trusted": "An Toàn & Uy Tín"
         }
     },
+    "rebateSimulation": {
+        "badge": "Hoàn Phí Minh Bạch Theo Thời Gian Thực",
+        "title": "Theo Dõi Hoàn Phí Theo Thời Gian Thực",
+        "description": "Mọi dữ liệu hoàn phí đều được ghi nhận tự động và minh bạch. Xem tổng hoa hồng, tỷ lệ hoàn phí và số tiền đã nhận.",
+
+        "hero": {
+            "badge": "MINH BẠCH 100%",
+            "title": [
+            "Mọi Khoản Hoàn Phí",
+            "Đều Được Ghi Rõ Ràng."
+            ],
+            "description": "Chúng tôi đảm bảo mọi giao dịch đều nhận được hoàn phí tốt nhất mà không có phí ẩn."
+        },
+
+        "features": [
+            {
+            "title": "Dữ Liệu Thời Gian Thực",
+            "description": "Tự động cập nhật khi có hoa hồng."
+            },
+            {
+            "title": "Minh Bạch & Chính Xác",
+            "description": "Mọi dữ liệu đều có thể kiểm chứng."
+            },
+            {
+            "title": "Thanh Toán Nhanh",
+            "description": "Rút tiền nhanh về ngân hàng hoặc ví điện tử."
+            },
+            {
+            "title": "An Toàn",
+            "description": "Dữ liệu được bảo vệ bằng nhiều lớp mã hóa."
+            }
+        ],
+
+        "table": {
+            "broker": "Sàn",
+            "commission": "Hoa Hồng",
+            "rebate": "Hoàn Phí",
+            "paid": "Đã Trả",
+            "manualRebate": "Hoàn Phí Thủ Công"
+        },
+
+        "summary": {
+            "commission": "Tổng Hoa Hồng",
+            "averageRebate": "Hoàn Phí Trung Bình",
+            "totalPaid": "Tổng Đã Trả"
+        },
+
+        "footer": {
+            "note": "Dữ liệu trên chỉ là ví dụ từ hệ thống FXPAYOUT.",
+            "button": "Tính Hoàn Phí",
+            "history": "Xem Lịch Sử Hoàn Phí"
+        },
+
+        "highlights": [
+            "Không Phí Phát Sinh",
+            "Tiền Chuyển Thẳng Đến Broker",
+            "Không Truy Cập Tài Khoản",
+            "Minh Bạch & An Toàn"
+        ]
+    },
     "reviews": {
         "title": "Trader Nói Gì Khi Dùng FXPayout?",
         "paragraph": "Trải nghiệm thực tế từ những trader đã có thêm lợi nhuận nhờ chương trình rebate.",

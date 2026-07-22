@@ -14,6 +14,7 @@ import Rewards from "@/components/pages/homePage/Rewards";
 import ProblemSection from "@/components/pages/homePage/ProblemSection";
 import SecuritySection from "@/components/pages/homePage/SecuritySection";
 import RiskSection from "@/components/pages/homePage/RiskSection";
+import SimulationRebate from "@/components/pages/homePage/SimulationRebate";
 import { getLocalizedPath } from "@/helper/pathHelper";
 import CtaRegisterBroker from "@/components/broker/CtaRegisterBroker";
 import MarqueeSection from "@/components/ui/MarqueeSection";
@@ -45,6 +46,7 @@ const HomePage = () => {
             <RunningText />
           </MarqueeSection>
           <RiskSection />
+          <SimulationRebate />
           <CtaSection 
             title={t("cta_trader.title")}
             paragraph={t("cta_trader.paragraph")}

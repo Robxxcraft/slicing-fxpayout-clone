@@ -225,7 +225,67 @@
             "ssl": "Cifrado SSL",
             "trusted": "Seguro y Confiable"
         }
+    },
+    "rebateSimulation": {
+        "badge": "Rebate Transparente en Tiempo Real",
+        "title": "Supervisa tu Rebate en Tiempo Real",
+        "description": "Todos los datos del rebate se registran automáticamente y de forma transparente. Consulta el total de comisiones, el porcentaje de rebate y los pagos recibidos.",
+
+        "hero": {
+            "badge": "100% TRANSPARENTE",
+            "title": [
+            "Todos tus Rebates,",
+            "Registrados con Claridad."
+            ],
+            "description": "Garantizamos el mejor rebate en cada operación sin costes ocultos."
         },
+
+        "features": [
+            {
+                "title": "Datos en Tiempo Real",
+                "description": "Actualización automática cada vez que se recibe una comisión."
+            },
+            {
+                "title": "Transparente y Preciso",
+                "description": "Todos los datos pueden verificarse y son fiables."
+            },
+            {
+                "title": "Pago Rápido",
+                "description": "Retiros rápidos a cuentas bancarias o billeteras electrónicas."
+            },
+            {
+                "title": "Seguro y Protegido",
+                "description": "Tus datos están protegidos mediante múltiples capas de cifrado."
+            }
+        ],
+
+        "table": {
+            "broker": "Bróker",
+            "commission": "Comisión Recibida",
+            "rebate": "Rebate",
+            "paid": "Pagado al Trader",
+            "manualRebate": "Rebate Manual"
+        },
+
+        "summary": {
+            "commission": "Comisión Total",
+            "averageRebate": "Rebate Promedio",
+            "totalPaid": "Total Pagado"
+        },
+
+        "footer": {
+            "note": "Los datos anteriores son un ejemplo de distribución de rebate registrada en el sistema FXPAYOUT.",
+            "button": "Calcular mi Rebate",
+            "history": "Ver Historial Completo de Rebate"
+        },
+
+        "highlights": [
+            "100% Sin Costes Adicionales",
+            "Fondos Directamente al Bróker",
+            "Sin Acceso a tu Cuenta",
+            "Transparente y Seguro"
+        ]
+    },
     "reviews": {
         "title": "¿Qué Dicen los Traders que Usan FXPayout?",
         "paragraph": "Experiencias reales de traders que obtienen beneficios adicionales gracias al programa de rebate.",

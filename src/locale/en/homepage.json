@@ -226,6 +226,66 @@
             "trusted": "Safe & Trusted"
         }
     },
+    "rebateSimulation": {
+        "badge": "Real-Time Transparent Rebate",
+        "title": "Monitor Your Rebates in Real-Time",
+        "description": "All rebate data is automatically recorded and fully transparent. View total commissions, rebate percentages, and payments you've received.",
+
+        "hero": {
+            "badge": "100% TRANSPARENT",
+            "title": [
+            "Every Rebate,",
+            "Clearly Recorded."
+            ],
+            "description": "We ensure every trading transaction provides the best rebates with no hidden fees."
+        },
+
+        "features": [
+            {
+                "title": "Real-Time Data",
+                "description": "Automatically updated whenever commissions are received."
+            },
+            {
+                "title": "Transparent & Accurate",
+                "description": "Every rebate can be verified and trusted."
+            },
+            {
+                "title": "Fast Payments",
+                "description": "Quick payouts to bank accounts or e-wallets."
+            },
+            {
+                "title": "Safe & Secure",
+                "description": "Your data is protected with multiple layers of encryption."
+            }
+        ],
+
+        "table": {
+            "broker": "Broker",
+            "commission": "Commission Received",
+            "rebate": "Rebate",
+            "paid": "Paid to Trader",
+            "manualRebate": "Manual Rebate"
+        },
+
+        "summary": {
+            "commission": "Total Commission",
+            "averageRebate": "Average Rebate",
+            "totalPaid": "Total Paid"
+        },
+
+        "footer": {
+            "note": "The data above is a sample rebate distribution recorded by the FXPAYOUT system.",
+            "button": "Calculate My Rebate",
+            "history": "View Complete Rebate History"
+        },
+
+        "highlights": [
+            "100% No Additional Fees",
+            "Funds Sent Directly to Broker",
+            "No Access to Your Trading Account",
+            "Transparent & Secure"
+        ]
+    },
     "reviews": {
         "title": "What Do Traders Who Use FXPayout Say?",
         "paragraph": "Real experiences from traders earning additional profit from the rebate program.",

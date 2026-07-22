@@ -4,38 +4,38 @@ import BadgeSection from "@/components/ui/BadgeSection";
 const banks: any = [
   {
     name: "BCA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg",
+    logo: "/withdrawal/bca.svg",
   },
   {
     name: "BNI",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Bank_Negara_Indonesia_logo_%282004%29.svg/250px-Bank_Negara_Indonesia_logo_%282004%29.svg.png",
+    logo: "/withdrawal/bni.webp",
   },
   {
     name: "Mandiri",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg",
+    logo: "/withdrawal/mandiri.svg",
   },
   {
     name: "BRI",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg",
+    logo: "/withdrawal/bri.svg",
   }
 ];
 
 const wallets: any = [
   {
     name: "DANA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg",
+    logo: "/withdrawal/dana.svg",
   },
   {
     name: "GOPAY",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg",
+    logo: "/withdrawal/gopay.svg",
   },
   {
     name: "OVO",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg",
+    logo: "/withdrawal/ovo.svg",
   },
   {
     name: "SHOPEEPAY",
-    logo: "https://assets.pikiran-rakyat.com/crop/0x0:0x0/720x0/webp/photo/2024/07/16/366956180.png",
+    logo: "/withdrawal/spay.webp",
   },
 ];
 
@@ -46,7 +46,7 @@ const Withdrawals = () => {
       <div className="flex flex-col justify-center items-center gap-y-4">
         <BadgeSection
           icon={
-            <img src="/withdrawal.svg" alt="Logo Fxpayout" 
+            <img src="/withdrawal.svg" alt="withdrawal" 
               className="h-8"/>
         }>
           {t("homepage:withdrawal.badge")}
@@ -78,7 +78,7 @@ const Withdrawals = () => {
               <span className="mt-1 inline-flex items-center gap-1 rounded-md bg-blue-100 px-3 py-1 text-xs font-medium text-blue-600">
                 <img
                 src="/shield.svg"
-                alt="logo fx payout"
+                alt="shield"
                 className="w-3 text-blue-600 my-1"
               /> {t("homepage:withdrawal.bankTransfer.badge")}
               </span>
@@ -122,7 +122,7 @@ const Withdrawals = () => {
           <button className="mt-5 flex w-full items-center justify-center gap-2 bg-blue-600 py-4 text-sm font-semibold text-white">
             <span><img
                 src="/clock.svg"
-                alt="logo fx payout"
+                alt="clock"
                 className="w-5 3xl:w-5 text-blue-600"
                 /></span>
             {t("homepage:withdrawal.bankTransfer.process")}
@@ -135,7 +135,7 @@ const Withdrawals = () => {
             <div className="flex items-center justify-center rounded-xl px-4 bg-blue-100">
                 <img
                 src="/e-wallet-blue.svg"
-                alt="logo fx payout"
+                alt="e-wallet"
                 className="w-7 3xl:w-7 text-blue-600"
                 />
             </div>
@@ -147,7 +147,7 @@ const Withdrawals = () => {
               <span className="mt-1 inline-flex items-center gap-1 rounded-md bg-blue-100 px-2.5 py-1 text-xs font-medium text-blue-600">
                 <img
                 src="/timer.svg"
-                alt="logo fx payout"
+                alt="timer"
                 className="w-4 text-blue-600 my-0.5"
               /> {t("homepage:withdrawal.ewallet.badge")}
               </span>
@@ -191,7 +191,7 @@ const Withdrawals = () => {
           <button className="mt-5 flex w-full items-center justify-center gap-2 bg-blue-600 py-4 text-sm font-semibold text-white">
             <span><img
                 src="/instant.svg"
-                alt="logo fx payout"
+                alt="instant"
                 className="w-4 3xl:w-4 text-blue-600"
                 /></span>
             {t("homepage:withdrawal.ewallet.process")}
@@ -204,7 +204,7 @@ const Withdrawals = () => {
             <div className="flex items-center justify-center rounded-xl px-4 bg-blue-100">
                 <img
                 src="/crypto.svg"
-                alt="logo fx payout"
+                alt="crypto"
                 className="w-7 3xl:w-7 text-blue-600"
                 />
             </div>
@@ -247,7 +247,7 @@ const Withdrawals = () => {
                 >
                   <div className="flex items-center space-x-1.5">
                     <img
-                      src="/usdt-tether.svg"
+                      src="/withdrawal/usdt-tether.svg"
                       alt="usdt-tether"
                       className="max-h-7 object-contain"
                     />
@@ -281,7 +281,7 @@ const Withdrawals = () => {
                   <div className="flex items-center space-x-1.5">
                     
                   <img
-                    src="/bnb.svg"
+                    src="/withdrawal/bnb.svg"
                     alt="bnb"
                     className="max-h-7 object-contain"
                   />
@@ -298,7 +298,7 @@ const Withdrawals = () => {
           <button className="mt-5 flex w-full items-center justify-center gap-2 bg-blue-600 py-4 text-sm font-semibold text-white">
             <span><img
                 src="/network.svg"
-                alt="logo fx payout"
+                alt="network"
                 className="w-5 3xl:w-5 text-blue-600"
                 /></span>
             {t("homepage:withdrawal.crypto.process")}
@@ -332,7 +332,7 @@ const Withdrawals = () => {
             <div className="flex items-center rounded-full border border-blue-500 px-3 text-blue-600 bg-blue-100">
               <div className="font-semibold text-sm py-1 flex"><img
                 src="/shield-2.svg"
-                alt="logo fx payout"
+                alt="shield"
                 className="w-4 3xl:w-5 text-blue-600 mr-2"
                 /><div className="text-sm lg:text-md">{t("homepage:withdrawal.security.ssl")}</div></div>
             </div>
@@ -341,7 +341,7 @@ const Withdrawals = () => {
               <div className="font-semibold text-sm py-1 flex">
                 <img
                 src="/shield-3.svg"
-                alt="logo fx payout"
+                alt="shield"
                 className="w-5 3xl:w-5 text-blue-600 mr-2"
                 />
                 <div className="text-sm lg:text-md">{t("homepage:withdrawal.security.trusted")}</div></div>
