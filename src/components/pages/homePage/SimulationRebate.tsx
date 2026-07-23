@@ -74,7 +74,7 @@ const RebateSimulations = () => {
         </p>
       </div>
 
-      <section className="bg-[#5C6EF8] rounded-2xl p-8 text-white mt-6">
+      <section className="bg-[#5C6EF8] rounded-2xl px-8 pt-8 md:pb-8 text-white mt-6">
         <div className="flex flex-col xl:flex-row gap-8 items-center">
           <div className="basis-5/12">
             <span className="inline-flex items-center rounded-xl bg-[#5BCB72] px-4 py-2 text-xs font-semibold">
@@ -124,22 +124,23 @@ const RebateSimulations = () => {
           </div>
 
           <div className="rounded-2xl bg-white p-6 shadow-xl basis-7/12">
-            <table className="w-full">
-              <thead className="text-gray-400">
-                <tr className="bg-blue-100 text-left">
-                  <th className="rounded-s-lg py-1.5 pl-3 font-medium text-blue-600 text-xs">
+          <div className="overflow-x-scroll sm:overflow-hidden block! w-80 sm:w-full">
+            <table className="w-xl sm:w-full">
+              <thead className="text-gray-400 w-full">
+                <tr className="bg-blue-100 text-left w-full">
+                  <th className="rounded-s-lg py-1.5 pl-3 font-medium text-blue-600 text-xs w-2/6">
                     {t("rebateSimulation.table.broker")}
                   </th>
 
-                  <th className="py-1 font-medium text-blue-600 text-xs">
+                  <th className="py-1 font-medium text-blue-600 text-xs 2/6">
                     {t("rebateSimulation.table.commission")}
                   </th>
 
-                  <th className="py-1 font-medium text-blue-600 text-xs">
+                  <th className="py-1 font-medium text-blue-600 text-xs w-1/6">
                     {t("rebateSimulation.table.rebate")}
                   </th>
 
-                  <th className="rounded-e-lg py-1 pr-3 font-medium text-blue-600 text-xs">
+                  <th className="rounded-e-lg py-1 pr-3 font-medium text-blue-600 text-xs w-1/6">
                     {t("rebateSimulation.table.paid")}
                   </th>
                 </tr>
@@ -182,7 +183,7 @@ const RebateSimulations = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6 bg-gray-100 p-2 shadow rounded-lg">
               <div className="flex">
