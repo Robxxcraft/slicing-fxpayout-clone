@@ -1,0 +1,1 @@
+import{be as e}from"./index-D98_ofSl.js";import{r as t}from"./router-DVhyhv__.js";const n=()=>{const r=t.useContext(e);if(!r)throw new Error("useBrokerUserContext must be used within BankProvider");return r};export{n as u};
