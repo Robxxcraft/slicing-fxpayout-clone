@@ -1,1 +1,0 @@
-import{a7 as e}from"./index-Df8Udwcx.js";import{r as o}from"./router-DVhyhv__.js";const s=()=>{const t=o.useContext(e);if(!t)throw new Error("useWalletContext must be used within BankProvider");return t};export{s as u};

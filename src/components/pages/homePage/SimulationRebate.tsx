@@ -36,7 +36,7 @@ const brokers = [
 function Feature({ icon, title, text }: any) {
   return (
     <div className="flex gap-4 border-b border-blue-300 pt-3 pb-4">
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-xl">
+      <div className="flex h-10 w-12 md:w-10 items-center justify-center rounded-lg bg-white text-xl">
         {icon}
       </div>
 

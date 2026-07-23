@@ -1,0 +1,4 @@
+import{j as e}from"./charts-XUXtmeqZ.js";import{N as t}from"./index-C7KGNwja.js";const o=({nameKey:n,detailError:r})=>e.jsxs(t,{className:"mt-6!",children:[e.jsx(t.Heading,{children:[n,"Keterangan"].map((s,a)=>e.jsx(t.HeadingItem,{className:`py-4! md:py-3! text-nowrap font-medium! text-sm! 3xl:text-lg!
+              ${a===0?"px-4! w-[100px]!":""}
+              select-none text-left!
+            `,children:e.jsx("span",{className:"text-sm whitespace-nowrap",children:s})},a))}),e.jsx(t.Body,{children:r.map((s,a)=>{const l="py-3! text-nowrap align-middle! group-hover:bg-gray-200";return e.jsxs(t.Row,{children:[e.jsx(t.Cell,{rowIndex:a,className:`${l} w-[100px]! px-4! 3xl:text-xl! whitespace-nowrap leading-normal truncate`,children:s.row}),e.jsx(t.Cell,{rowIndex:a,className:`${l} text-left! 3xl:text-xl! whitespace-nowrap leading-normal`,children:s.message})]},a)})})]});export{o as T};
