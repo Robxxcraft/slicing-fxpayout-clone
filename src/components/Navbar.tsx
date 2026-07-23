@@ -72,7 +72,7 @@ const Navbar = ({
       }}>
       <Link dir="ltr" to={`${getLocalizedPath("/", i18n.language)}`} className="flex gap-2 items-center">
         <img
-          src="/fxpayout-white.svg"
+          src="/new-fxpayout-white.svg"
           alt="logo fx payout"
           className="w-4 md:w-5 lg:w-5 3xl:w-5"
         />

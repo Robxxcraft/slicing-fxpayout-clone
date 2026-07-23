@@ -184,6 +184,108 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "Vários Métodos de Levantamento Disponíveis",
+        "paragraph": "Receba o seu rebate de forma rápida, segura e flexível. Escolha o método de levantamento mais conveniente para si.",
+        "badge": "Métodos de Levantamento",
+
+        "bankTransfer": {
+        "title": "Transferência Bancária",
+        "badge": "Segura e Fiável",
+        "description": "Receba o seu rebate de forma segura e transparente diretamente na sua conta bancária.",
+        "availableBanks": "Bancos Disponíveis",
+        "others": "e outros",
+        "process": "Processamento em 1–3 Dias Úteis"
+        },
+
+        "ewallet": {
+        "title": "Carteira Eletrónica",
+        "badge": "Prática e Instantânea",
+        "description": "Receba o seu rebate mais rapidamente através de várias carteiras digitais populares. Simples, prática e flexível.",
+        "availableWallets": "Carteiras Disponíveis",
+        "others": "e outras",
+        "process": "Processamento Instantâneo (24/7)"
+        },
+
+        "crypto": {
+        "title": "Criptomoedas",
+        "badge": "Rápido e Global",
+        "description": "A solução mais rápida para traders internacionais. Receba USDT através da rede BNB Smart Chain.",
+        "currency": "Moeda",
+        "network": "Todas as Redes",
+        "networkLabel": "Rede",
+        "usdtName": "Tether USD",
+        "bnbName": "BEP20",
+        "process": "Processamento em 10–60 Minutos"
+        },
+
+        "security": {
+        "title": "100% Seguro e Verificado",
+        "description": "Utilizamos um sistema de segurança em várias camadas para garantir que todas as transações de levantamento são protegidas e seguras.",
+        "ssl": "Encriptação SSL",
+        "trusted": "Seguro e Fiável"
+        }
+    },
+    "rebateSimulation": {
+        "badge": "Rebate Transparente em Tempo Real",
+        "title": "Acompanhe Seu Rebate em Tempo Real",
+        "description": "Todos os dados de rebate são registrados automaticamente e com total transparência. Veja comissões, porcentagem de rebate e pagamentos recebidos.",
+
+        "hero": {
+            "badge": "100% TRANSPARENTE",
+            "title": [
+            "Todos os Seus Rebates,",
+            "Registrados com Clareza."
+            ],
+            "description": "Garantimos o melhor rebate em cada negociação sem taxas ocultas."
+        },
+
+        "features": [
+            {
+            "title": "Dados em Tempo Real",
+            "description": "Atualização automática sempre que uma comissão é recebida."
+            },
+            {
+            "title": "Transparente e Preciso",
+            "description": "Todos os dados podem ser verificados."
+            },
+            {
+            "title": "Pagamento Rápido",
+            "description": "Pagamentos rápidos para banco ou carteira digital."
+            },
+            {
+            "title": "Seguro e Protegido",
+            "description": "Seus dados são protegidos por criptografia avançada."
+            }
+        ],
+
+        "table": {
+            "broker": "Corretora",
+            "commission": "Comissão Recebida",
+            "rebate": "Rebate",
+            "paid": "Pago ao Trader",
+            "manualRebate": "Rebate Manual"
+        },
+
+        "summary": {
+            "commission": "Comissão Total",
+            "averageRebate": "Rebate Médio",
+            "totalPaid": "Total Pago"
+        },
+
+        "footer": {
+            "note": "Os dados acima são apenas um exemplo registrado pelo sistema FXPAYOUT.",
+            "button": "Calcular Meu Rebate",
+            "history": "Ver Histórico Completo"
+        },
+
+        "highlights": [
+            "100% Sem Taxas Extras",
+            "Fundos Direto para a Corretora",
+            "Sem Acesso à Conta",
+            "Transparente e Seguro"
+        ]
+    },
     "reviews": {
         "title": "O que Dizem os Traders que Usam a FXPayout?",
         "paragraph": "Experiências reais de traders que conquistaram lucro extra com o programa de rebate.",

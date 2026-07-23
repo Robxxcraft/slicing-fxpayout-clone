@@ -184,6 +184,108 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "Nhiều Phương Thức Rút Tiền Có Sẵn",
+        "paragraph": "Rút rebate của bạn nhanh chóng, an toàn và linh hoạt. Hãy chọn phương thức rút tiền phù hợp nhất với bạn.",
+        "badge": "Phương Thức Rút Tiền",
+
+        "bankTransfer": {
+        "title": "Chuyển Khoản Ngân Hàng",
+        "badge": "An Toàn & Uy Tín",
+        "description": "Nhận rebate trực tiếp vào tài khoản ngân hàng của bạn với quy trình an toàn, minh bạch và đáng tin cậy.",
+        "availableBanks": "Ngân Hàng Hỗ Trợ",
+        "others": "và nhiều ngân hàng khác",
+        "process": "Xử Lý Trong 1–3 Ngày Làm Việc"
+        },
+
+        "ewallet": {
+        "title": "Ví Điện Tử",
+        "badge": "Tiện Lợi & Nhanh Chóng",
+        "description": "Nhận rebate nhanh hơn thông qua các ví điện tử phổ biến. Tiện lợi, linh hoạt và dễ sử dụng.",
+        "availableWallets": "Ví Điện Tử Hỗ Trợ",
+        "others": "và nhiều ví khác",
+        "process": "Xử Lý Tức Thì (24/7)"
+        },
+
+        "crypto": {
+        "title": "Tiền Điện Tử",
+        "badge": "Nhanh Chóng & Toàn Cầu",
+        "description": "Giải pháp nhanh nhất dành cho trader quốc tế. Nhận USDT thông qua mạng BNB Smart Chain.",
+        "currency": "Loại Tiền",
+        "network": "Hỗ Trợ Mọi Mạng",
+        "networkLabel": "Mạng",
+        "usdtName": "Tether USD",
+        "bnbName": "BEP20",
+        "process": "Xử Lý Trong 10–60 Phút"
+        },
+
+        "security": {
+        "title": "100% An Toàn & Đã Xác Minh",
+        "description": "Chúng tôi sử dụng hệ thống bảo mật nhiều lớp để đảm bảo mọi giao dịch rút tiền của bạn luôn được bảo vệ an toàn.",
+        "ssl": "Mã Hóa SSL",
+        "trusted": "An Toàn & Uy Tín"
+        }
+    },
+    "rebateSimulation": {
+        "badge": "Hoàn Phí Minh Bạch Theo Thời Gian Thực",
+        "title": "Theo Dõi Hoàn Phí Theo Thời Gian Thực",
+        "description": "Mọi dữ liệu hoàn phí đều được ghi nhận tự động và minh bạch. Xem tổng hoa hồng, tỷ lệ hoàn phí và số tiền đã nhận.",
+
+        "hero": {
+            "badge": "MINH BẠCH 100%",
+            "title": [
+            "Mọi Khoản Hoàn Phí",
+            "Đều Được Ghi Rõ Ràng."
+            ],
+            "description": "Chúng tôi đảm bảo mọi giao dịch đều nhận được hoàn phí tốt nhất mà không có phí ẩn."
+        },
+
+        "features": [
+            {
+            "title": "Dữ Liệu Thời Gian Thực",
+            "description": "Tự động cập nhật khi có hoa hồng."
+            },
+            {
+            "title": "Minh Bạch & Chính Xác",
+            "description": "Mọi dữ liệu đều có thể kiểm chứng."
+            },
+            {
+            "title": "Thanh Toán Nhanh",
+            "description": "Rút tiền nhanh về ngân hàng hoặc ví điện tử."
+            },
+            {
+            "title": "An Toàn",
+            "description": "Dữ liệu được bảo vệ bằng nhiều lớp mã hóa."
+            }
+        ],
+
+        "table": {
+            "broker": "Sàn",
+            "commission": "Hoa Hồng",
+            "rebate": "Hoàn Phí",
+            "paid": "Đã Trả",
+            "manualRebate": "Hoàn Phí Thủ Công"
+        },
+
+        "summary": {
+            "commission": "Tổng Hoa Hồng",
+            "averageRebate": "Hoàn Phí Trung Bình",
+            "totalPaid": "Tổng Đã Trả"
+        },
+
+        "footer": {
+            "note": "Dữ liệu trên chỉ là ví dụ từ hệ thống FXPAYOUT.",
+            "button": "Tính Hoàn Phí",
+            "history": "Xem Lịch Sử Hoàn Phí"
+        },
+
+        "highlights": [
+            "Không Phí Phát Sinh",
+            "Tiền Chuyển Thẳng Đến Broker",
+            "Không Truy Cập Tài Khoản",
+            "Minh Bạch & An Toàn"
+        ]
+    },
     "reviews": {
         "title": "Trader Nói Gì Khi Dùng FXPayout?",
         "paragraph": "Trải nghiệm thực tế từ những trader đã có thêm lợi nhuận nhờ chương trình rebate.",

@@ -184,6 +184,107 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "Tersedia Berbagai Metode Penarikan (Withdrawal)",
+        "paragraph": "Pencairan rebate Anda cepat, aman, dan fleksibel. Pilih metode penarikan yang paling nyaman untuk Anda.",
+        "badge": "Metode Penarikan",
+        "bankTransfer": {
+            "title": "Bank Transfer",
+            "badge": "Aman & Terpercaya",
+            "description": "Nikmati pencairan rebate yang aman dan transparan langsung ke rekening bank lokal Anda.",
+            "availableBanks": "Bank Tersedia",
+            "others": "dan lainnya",
+            "process": "Proses 1-3 Hari Kerja"
+        },
+
+        "ewallet": {
+            "title": "E-Wallet",
+            "badge": "Praktis & Instant",
+            "description": "Terima rebate lebih cepat melalui berbagai dompet digital populer. Praktis, dan fleksibel.",
+            "availableWallets": "E-Wallet Tersedia",
+            "others": "dan lainnya",
+            "process": "Proses Instant (24/7)"
+        },
+
+        "crypto": {
+            "title": "Crypto",
+            "badge": "Cepat & Global",
+            "description": "Solusi tercepat bagi trader internasional. Nikmati transfer USDT melalui jaringan BNB Smart Chain.",
+            "currency": "Mata Uang",
+            "network": "Semua Network",
+            "networkLabel": "Network",
+            "usdtName": "Tether USD",
+            "bnbName": "BEP20",
+            "process": "Proses 10-60 Menit"
+        },
+
+        "security": {
+            "title": "100% Aman & Terverifikasi",
+            "description": "Kami menggunakan sistem keamanan berlapis untuk memastikan setiap transaksi penarikan Anda aman dan terlindungi.",
+            "ssl": "SSL Encrypted",
+            "trusted": "Aman & Terpercaya"
+        }
+    },
+    "rebateSimulation": {
+        "badge": "Rebate Transparan Real-Time",
+        "title": "Pantau Rebate Anda Secara Real-Time",
+        "description": "Semua data rebate tercatat otomatis dan transparan. Lihat total komisi, persentase rebate, dan pembayaran yang sudah Anda terima.",
+
+        "hero": {
+        "badge": "100% TRANSPARAN",
+        "title": [
+            "Semua Rebate Anda,",
+            "Tercatat dengan Jelas."
+        ],
+        "description": "Kami memastikan setiap transaksi trading Anda memberikan rebate terbaik tanpa biaya tersembunyi."
+        },
+
+        "features": [
+        {
+            "title": "Data Real-Time",
+            "description": "Update otomatis setiap ada komisi masuk."
+        },
+        {
+            "title": "Transparan & Akurat",
+            "description": "Semua data dapat diverifikasi dan dipercaya."
+        },
+        {
+            "title": "Pembayaran Cepat",
+            "description": "Proses payout cepat ke rekening atau e-wallet."
+        },
+        {
+            "title": "Aman & Terlindungi",
+            "description": "Data Anda aman dengan sistem enkripsi berlapis."
+        }
+        ],
+
+        "table": {
+        "broker": "Broker",
+        "commission": "Commission Received",
+        "rebate": "Rebate",
+        "paid": "Paid to Trader",
+        "manualRebate": "Manual Rebate"
+        },
+
+        "summary": {
+        "commission": "Total Commission",
+        "averageRebate": "Rata-rata Rebate",
+        "totalPaid": "Total Paid"
+        },
+
+        "footer": {
+        "note": "Data di atas adalah contoh distribusi rebate yang tercatat di sistem FXPAYOUT.",
+        "button": "Hitung Rebate Saya",
+        "history": "Lihat Riwayat Rebate Lengkap"
+        },
+
+        "highlights": [
+        "100% Tanpa Biaya Tambahan",
+        "Dana Langsung Ke Broker",
+        "Tanpa Akses Akun Anda",
+        "Transparan & Aman"
+        ]
+    },
     "reviews": {
         "title": "Apa Kata Trader yang Menggunakan FXPayout?",
         "paragraph": "Pengalaman nyata dari trader yang mendapatkan tambahan profit dari program rebate.",

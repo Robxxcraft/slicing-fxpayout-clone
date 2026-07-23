@@ -184,6 +184,108 @@
             }
         ]
     },
+    "withdrawal": {
+        "title": "다양한 출금 방법 지원",
+        "paragraph": "리베이트를 빠르고 안전하며 편리하게 출금하세요. 가장 편리한 출금 방법을 선택할 수 있습니다.",
+        "badge": "출금 방법",
+
+        "bankTransfer": {
+            "title": "은행 송금",
+            "badge": "안전하고 신뢰할 수 있음",
+            "description": "리베이트를 안전하고 투명하게 회원님의 국내 은행 계좌로 직접 출금하세요.",
+            "availableBanks": "지원 은행",
+            "others": "외 다수",
+            "process": "1~3영업일 내 처리"
+        },
+
+        "ewallet": {
+            "title": "전자지갑",
+            "badge": "빠르고 즉시",
+            "description": "인기 있는 전자지갑을 통해 리베이트를 더욱 빠르게 받아보세요. 빠르고 편리하며 유연합니다.",
+            "availableWallets": "지원 전자지갑",
+            "others": "외 다수",
+            "process": "즉시 처리 (24시간 365일)"
+        },
+
+        "crypto": {
+            "title": "암호화폐",
+            "badge": "빠르고 글로벌",
+            "description": "해외 트레이더를 위한 가장 빠른 출금 방법입니다. BNB Smart Chain 네트워크를 통해 USDT를 받을 수 있습니다.",
+            "currency": "통화",
+            "network": "모든 네트워크",
+            "networkLabel": "네트워크",
+            "usdtName": "Tether USD",
+            "bnbName": "BEP20",
+            "process": "10~60분 내 처리"
+        },
+
+        "security": {
+            "title": "100% 안전 및 검증 완료",
+            "description": "모든 출금 거래가 안전하게 보호될 수 있도록 다중 보안 시스템을 적용하고 있습니다.",
+            "ssl": "SSL 암호화",
+            "trusted": "안전하고 신뢰할 수 있음"
+        }
+    },
+    "rebateSimulation": {
+        "badge": "실시간 투명 리베이트",
+        "title": "리베이트를 실시간으로 확인하세요",
+        "description": "모든 리베이트 데이터는 자동으로 기록되며 투명하게 관리됩니다. 총 커미션, 리베이트 비율 및 지급 내역을 확인하세요.",
+
+        "hero": {
+            "badge": "100% 투명",
+            "title": [
+            "모든 리베이트를",
+            "명확하게 기록합니다."
+            ],
+            "description": "숨겨진 수수료 없이 최고의 리베이트를 제공합니다."
+        },
+
+        "features": [
+            {
+                "title": "실시간 데이터",
+                "description": "커미션이 발생하면 자동으로 업데이트됩니다."
+            },
+            {
+                "title": "투명하고 정확함",
+                "description": "모든 데이터를 신뢰하고 검증할 수 있습니다."
+            },
+            {
+                "title": "빠른 지급",
+                "description": "은행 또는 전자지갑으로 빠르게 지급됩니다."
+            },
+            {
+                "title": "안전한 보호",
+                "description": "다중 암호화 시스템으로 데이터를 보호합니다."
+            }
+        ],
+
+        "table": {
+            "broker": "브로커",
+            "commission": "수령한 커미션",
+            "rebate": "리베이트",
+            "paid": "트레이더 지급액",
+            "manualRebate": "수동 리베이트"
+        },
+
+        "summary": {
+            "commission": "총 커미션",
+            "averageRebate": "평균 리베이트",
+            "totalPaid": "총 지급액"
+        },
+
+        "footer": {
+            "note": "위 데이터는 FXPAYOUT 시스템에 기록된 리베이트 예시입니다.",
+            "button": "리베이트 계산하기",
+            "history": "전체 리베이트 내역 보기"
+        },
+
+        "highlights": [
+            "추가 수수료 없음",
+            "자금은 브로커로 직접 전달",
+            "계정 접근 없음",
+            "투명하고 안전"
+        ]
+    },
     "reviews": {
         "title": "FXPayout을 이용한 트레이더들의 평가는?",
         "paragraph": "리베이트 프로그램으로 추가 수익을 얻은 트레이더들의 생생한 경험입니다.",
