@@ -273,22 +273,22 @@ const RebateSimulations = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-sm font-medium text-blue-600">
 
-          <div className="flex py-3 space-x-3 border-b md:border-r xl:border-none border-blue-200">
+          <div className="flex items-center py-3 space-x-3  border-b md:border-r xl:border-none border-blue-200">
             <img src="/no-fees.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.0")}</div>
           </div>
 
-          <div className="flex py-3 space-x-3 border-b xl:border-none border-blue-200 md:pl-6 xl:pl-0">
+          <div className="flex items-center py-3 space-x-3  border-b xl:border-none border-blue-200 md:pl-6 xl:pl-0">
             <img src="/bank-icon-blue.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.1")}</div>
           </div>
 
-          <div className="flex py-3 space-x-3 border-b md:border-b-0 md:border-r xl:border-none border-blue-200">
+          <div className="flex items-center py-3 space-x-3  border-b md:border-b-0 md:border-r xl:border-none border-blue-200">
             <img src="/user-lock.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.2")}</div>
           </div>
 
-          <div className="flex py-3 space-x-3 md:pl-6 xl:pl-0">
+          <div className="flex items-center py-3 space-x-3  md:pl-6 xl:pl-0">
             <img src="/shield-gradient.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.3")}</div>
           </div>
