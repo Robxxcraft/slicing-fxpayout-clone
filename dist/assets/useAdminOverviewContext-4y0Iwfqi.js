@@ -1,1 +1,0 @@
-import{b5 as t}from"./index-4OFSAGpq.js";import{r}from"./router-DVhyhv__.js";const n=()=>{const e=r.useContext(t);if(!e)throw new Error("useAdminOverviewContext must be used within AdminOverviewProvider");return e};export{n as u};

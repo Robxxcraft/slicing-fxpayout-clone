@@ -1,0 +1,3 @@
+import{j as a}from"./charts-XUXtmeqZ.js";import{a2 as l,a3 as t}from"./index-CczpT-Gh.js";const m=({isOpen:r,onClose:e,isOverlayClose:o=!0,maxWCL:i,children:n})=>a.jsx(l,{mode:"wait",children:r&&a.jsx(t.div,{initial:{opacity:0},animate:{opacity:1},exit:{opacity:0},transition:{duration:.15,ease:"easeOut"},onClick:o?e:void 0,className:"z-90 fixed w-full bg-black/5 backdrop-blur-[2px] h-full top-16 3xl:top-[90px] right-0 transform-gpu will-change-transform",children:a.jsx(t.div,{initial:{x:"100%"},animate:{x:0},exit:{x:"100%"},transition:{duration:.15,ease:"easeOut"},onClick:s=>s.stopPropagation(),className:`fixed right-0 z-99 w-full transform-gpu will-change-transform
+              ${i||"max-w-[460px] 3xl:max-w-[540px]"}  
+            `,children:n})})});export{m as D};
