@@ -1,0 +1,1 @@
+import{j as e}from"./charts-XUXtmeqZ.js";const r=({maxW:t="w-fit md:w-[760px]",colorCL:a="text-black",children:s})=>{const x=t==="full"?"w-full":t;return e.jsx("p",{className:`${a} ${x} text-base 3xl:text-xl leading-[169.2%]`,children:s})};export{r as P};

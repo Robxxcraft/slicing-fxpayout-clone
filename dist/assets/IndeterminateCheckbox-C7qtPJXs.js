@@ -1,0 +1,1 @@
+import{j as c}from"./charts-XUXtmeqZ.js";import{r as t}from"./router-DVhyhv__.js";const a=({indeterminate:e,...o})=>{const r=t.useRef(null);return t.useEffect(()=>{r.current&&(r.current.indeterminate=!!e)},[e]),c.jsx("input",{ref:r,type:"checkbox",className:"block size-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer accent-primary",...o})};export{a as I};

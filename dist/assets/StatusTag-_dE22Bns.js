@@ -1,0 +1,3 @@
+import{j as r}from"./charts-XUXtmeqZ.js";const t={pending:{background:"FEF3C6",text:"BE5409"},approved:{background:"E3FFE8",text:"18BD36"},rejected:{background:"FAD4D4",text:"DF1E1E"},auto_credited:{background:"E3FFE8",text:"18BD36"}},n=({status:e,text:o,icon:x,iconPosition:l="left"})=>r.jsxs("div",{style:{background:`#${t[e].background}`,borderColor:`#${t[e].text}`},className:`px-2.5 3xl:px-4 py-1 3xl:py flex justify-center items-center gap-1 border-[0.5px] rounded-full
+        ${l==="left"?"flex-row":"flex-row-reverse"}  
+      `,children:[x&&r.jsx("span",{style:{color:`#${t[e].text}`},children:x}),r.jsx("p",{style:{color:`#${t[e].text}`},className:"text-xs 3xl:text-base text-[#BE5409] font-medium",children:o})]});export{n as S};
