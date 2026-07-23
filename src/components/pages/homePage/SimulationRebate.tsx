@@ -74,7 +74,7 @@ const RebateSimulations = () => {
         </p>
       </div>
 
-      <section className="bg-[#5C6EF8] rounded-2xl px-8 pt-8 md:pb-8 text-white mt-6">
+      <section className="bg-[#5C6EF8] rounded-2xl px-4 pt-4 md:px-8 md:pt-8 md:pb-8 text-white mt-6">
         <div className="flex flex-col xl:flex-row gap-8 items-center">
           <div className="basis-5/12">
             <span className="inline-flex items-center rounded-xl bg-[#5BCB72] px-4 py-2 text-xs font-semibold">
