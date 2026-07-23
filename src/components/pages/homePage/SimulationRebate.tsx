@@ -36,8 +36,10 @@ const brokers = [
 function Feature({ icon, title, text }: any) {
   return (
     <div className="flex gap-4 border-b border-blue-300 pt-3 pb-4">
-      <div className="flex h-10 w-12 md:w-10 items-center justify-center rounded-lg bg-white text-xl">
-        {icon}
+      <div className="w-[40px]">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-xl ">
+          {icon}
+        </div>
       </div>
 
       <div>
@@ -76,7 +78,7 @@ const RebateSimulations = () => {
 
       <section className="bg-[#5C6EF8] rounded-2xl px-4 pt-4 md:px-8 md:pt-8 md:pb-8 text-white mt-6">
         <div className="flex flex-col xl:flex-row gap-8 items-center">
-          <div className="basis-5/12">
+          <div className="basis-5/12 mb-3 xl:mb-0">
             <span className="inline-flex items-center rounded-xl bg-[#5BCB72] px-4 py-2 text-xs font-semibold">
               <img
                 src="/shield-white.svg"
@@ -104,7 +106,7 @@ const RebateSimulations = () => {
                 />
 
                 <Feature
-                  icon={<img src="/simulation-rebate-blue.svg" className="w-4.5" />}
+                  icon={<img src="/simulation-rebate-blue.svg" className="w-4" />}
                   title={t("rebateSimulation.features.1.title")}
                   text={t("rebateSimulation.features.1.description")}
                 />
@@ -273,22 +275,22 @@ const RebateSimulations = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-sm font-medium text-blue-600">
 
-          <div className="flex items-center py-3 space-x-3  border-b md:border-r xl:border-none border-blue-200">
+          <div className="flex py-3 space-x-3 border-b md:border-r xl:border-none border-blue-200">
             <img src="/no-fees.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.0")}</div>
           </div>
 
-          <div className="flex items-center py-3 space-x-3  border-b xl:border-none border-blue-200 md:pl-6 xl:pl-0">
+          <div className="flex py-3 space-x-3 border-b xl:border-none border-blue-200 md:pl-6 xl:pl-0">
             <img src="/bank-icon-blue.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.1")}</div>
           </div>
 
-          <div className="flex items-center py-3 space-x-3  border-b md:border-b-0 md:border-r xl:border-none border-blue-200">
+          <div className="flex py-3 space-x-3 border-b md:border-b-0 md:border-r xl:border-none border-blue-200">
             <img src="/user-lock.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.2")}</div>
           </div>
 
-          <div className="flex items-center py-3 space-x-3  md:pl-6 xl:pl-0">
+          <div className="flex py-3 space-x-3 md:pl-6 xl:pl-0">
             <img src="/shield-gradient.svg" className="w-4" />
             <div>{t("rebateSimulation.highlights.3")}</div>
           </div>
